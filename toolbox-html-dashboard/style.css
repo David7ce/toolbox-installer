@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 25px;
+    padding: 11px;
+}
+
+/* Header */
+h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #444;
+}
+
+/* Columns of formulary */
+form {
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1 1 calc(20% - 20px);
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.column h4,
+.column h5 {
+    margin: 10px 0;
+}
+
+.column label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .column {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 900px) {
+    .column {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .column {
+        flex: 1 1 100%;
+    }
+}
+
+
+.selector {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.selector label {
+    font-size: 18px;
+}
+
+/* Input in different lines */
+label {
+    display: block; /* Display each label on a separate line */
+    margin-bottom: 5px; /* Add some vertical spacing between labels */
+}
+
+button {
+    display: block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+#result {
+    position: relative;
+}
+
+#installation-command {
+    display: block;
+    background-color: rgb(77, 77, 77);
+    color: rgb(255, 250, 231);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+#not-installable-packages {
+    display: block;
+    background-color: #ec9d2e;
+    color: rgb(255, 245, 234);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+#copy-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}

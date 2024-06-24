@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="container">
+        <h2>Generate Your Installation Script</h2>
+        <p>Every Operating System has a package manager that handles software installation and dependency resolution. <a
+                href="https://en.wikipedia.org/wiki/Package_manager">Learn more</a>
+        </p>
+        <h3>Select the software packages to install:</h3>
+    </header>
+
+    <div class="container">
+        <form id="packageForm">
+            <button type="button" onclick="toggleSelectAllPackages()">Select / Deselect All Packages</button>
+            <!-- <button type="button" onclick="favPackages()">Select / Deselect Favorite Packages</button> -->
+
+            <div id="packageContainer" class="package-container columns">
+                <!-- Aquí se generará dinámicamente el contenido -->
+            </div>
+
+            <h3>Select the distribution:</h3>
+            <label><input type="radio" name="distro" value="arch"> Arch Linux (<a href="https://archlinux.org/packages/">arch</a> + <a href="https://aur.archlinux.org/packages/">AUR packages</a>)</label>
+            <label><input type="radio" name="distro" value="debian"> Debian GNU/Linux (<a href="https://packages.debian.org/stable/admin/0install">deb packages</a>)</label>
+            <label><input type="radio" name="distro" value="fedora"> Fedora Linux (<a href="https://packages.fedoraproject.org/">fedora packages</a>)</label>
+            <label><input type="radio" name="distro" value="flatpak"> Linux (<a href="https://flathub.org/">Flatpak packages</a>)</label>
+            <label><input type="radio" name="distro" value="brew"> macOS/Linux (<a href="https://formulae.brew.sh/">brew packages</a>)</label>
+            <label><input type="radio" name="distro" value="winget"> Windows (<a href="https://winstall.app/">winget packages</a>)</label>
+
+            <button type="button" onclick="generateCommand()">Generate Installation Command</button>
+        </form>
+    </div>
+
+    <div id="installation-command" class="container">
+        <!-- Aquí se mostrará el comando de instalación generado -->
+    </div>
+
+    <script defer src="script.js"></script>
+</body>
+
+</html>

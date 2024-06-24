@@ -1,0 +1,1432 @@
+{
+    "packages": {
+        "7zip": {
+            "name": "7-Zip",
+            "category": "File-Man",
+            "subcategory": "compressor",
+            "package_manager": {
+                "arch_aur": "p7zip",
+                "arch_pacman": "p7zip",
+                "debian_apt": "p7zip-full",
+                "fedora_rpm": "p7zip",
+                "linux_flatpak": null,
+                "macos_brew": "p7zip",
+                "windows_winget": "7zip.7zip"
+            }
+        },
+        "ardour": {
+            "name": "Ardour",
+            "category": "Audio",
+            "subcategory": "digital-audio-workstation",
+            "package_manager": {
+                "arch_aur": "ardour",
+                "arch_pacman": "ardour",
+                "debian_apt": "ardour",
+                "fedora_rpm": "ardour",
+                "linux_flatpak": "org.ardour.Ardour",
+                "macos_brew": "ardour",
+                "windows_winget": "Ardour"
+            }
+        },
+        "audacious": {
+            "name": "Audacious",
+            "category": "Audio",
+            "subcategory": "audio-player",
+            "package_manager": {
+                "arch_aur": "audacious",
+                "arch_pacman": "audacious",
+                "debian_apt": "audacious",
+                "fedora_rpm": "audacious",
+                "linux_flatpak": "org.atheme.audacious",
+                "macos_brew": "audacious",
+                "windows_winget": "Audacious.Audacious"
+            }
+        },
+        "audacity": {
+            "name": "Audacity",
+            "category": "Audio",
+            "subcategory": "audio-recorder",
+            "package_manager": {
+                "arch_aur": "audacity",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": "audacity",
+                "linux_flatpak": "org.audacityteam.Audacity",
+                "macos_brew": "audacity",
+                "windows_winget": null
+            }
+        },
+        "bitwig-studio": {
+            "name": "Bitwig-Studio",
+            "category": "Audio",
+            "subcategory": "digital-audio-workstation",
+            "package_manager": {
+                "arch_aur": "bitwig-studio",
+                "arch_pacman": "bitwig-studio",
+                "debian_apt": null,
+                "fedora_rpm": "bitwig-studio",
+                "linux_flatpak": "com.bitwig.BitwigStudio",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "blender": {
+            "name": "Blender",
+            "category": "Image",
+            "subcategory": "modeling",
+            "package_manager": {
+                "arch_aur": "blender",
+                "arch_pacman": "blender",
+                "debian_apt": "blender",
+                "fedora_rpm": "blender",
+                "linux_flatpak": "org.blender.Blender",
+                "macos_brew": "blender",
+                "windows_winget": "BlenderFoundation.Blender"
+            }
+        },
+        "borg": {
+            "name": "Borg",
+            "category": "File-Man",
+            "subcategory": "backup",
+            "package_manager": {
+                "arch_aur": "borg",
+                "arch_pacman": "borg",
+                "debian_apt": "borgbackup",
+                "fedora_rpm": "borgbackup",
+                "linux_flatpak": null,
+                "macos_brew": "borgbackup",
+                "windows_winget": null
+            }
+        },
+        "bottles": {
+            "name": "Bottles",
+            "category": "Virtualization",
+            "subcategory": "windows-compatibility-layer",
+            "package_manager": {
+                "arch_aur": "bottles",
+                "arch_pacman": "bottles",
+                "debian_apt": "bottles",
+                "fedora_rpm": "bottles",
+                "linux_flatpak": "com.usebottles.bottles",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "calibre": {
+            "name": "Calibre",
+            "category": "Book",
+            "subcategory": "ebook-manager",
+            "package_manager": {
+                "arch_aur": "calibre",
+                "arch_pacman": "calibre",
+                "debian_apt": "calibre",
+                "fedora_rpm": "calibre",
+                "linux_flatpak": "com.calibre_ebook.calibre",
+                "macos_brew": "calibre",
+                "windows_winget": "Calibre"
+            }
+        },
+        "chromium": {
+            "name": "Chromium",
+            "category": "Browser",
+            "subcategory": "web-browser",
+            "package_manager": {
+                "arch_aur": "chromium",
+                "arch_pacman": "chromium",
+                "debian_apt": "chromium",
+                "fedora_rpm": "chromium",
+                "linux_flatpak": "org.chromium.Chromium",
+                "macos_brew": "chromium",
+                "windows_winget": "Google.Chrome"
+            }
+        },
+        "darktable": {
+            "name": "Darktable",
+            "category": "Image",
+            "subcategory": "raw-photo-editor",
+            "package_manager": {
+                "arch_aur": "darktable",
+                "arch_pacman": "darktable",
+                "debian_apt": "darktable",
+                "fedora_rpm": "darktable",
+                "linux_flatpak": "org.darktable.Darktable",
+                "macos_brew": "darktable",
+                "windows_winget": "Darktable.Darktable"
+            }
+        },
+        "davinci-resolve": {
+            "name": "DaVinci-Resolve",
+            "category": "Video",
+            "subcategory": "video-editor",
+            "package_manager": {
+                "arch_aur": "davinci-resolve",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": null,
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "digikam": {
+            "name": "digiKam",
+            "category": "Image",
+            "subcategory": "photo-gallery",
+            "package_manager": {
+                "arch_aur": "digikam",
+                "arch_pacman": "digikam",
+                "debian_apt": "digikam",
+                "fedora_rpm": "digikam",
+                "linux_flatpak": "org.darktable.Darktable",
+                "macos_brew": "digikam",
+                "windows_winget": "digiKam.digiKam"
+            }
+        },
+        "discord": {
+            "name": "Discord",
+            "category": "Communication",
+            "subcategory": "messaging",
+            "package_manager": {
+                "arch_aur": "discord",
+                "arch_pacman": "discord",
+                "debian_apt": "discord",
+                "fedora_rpm": "discord",
+                "linux_flatpak": "com.discordapp.Discord",
+                "macos_brew": "discord",
+                "windows_winget": "Discord.Discord"
+            }
+        },
+        "distrobox": {
+            "name": "Distrobox",
+            "category": "Virtualization",
+            "subcategory": "wrapping-layer",
+            "package_manager": {
+                "arch_aur": "distrobox",
+                "arch_pacman": "distrobox",
+                "debian_apt": "distrobox",
+                "fedora_rpm": "distrobox",
+                "linux_flatpak": "com.docker.docker",
+                "macos_brew": "distrobox",
+                "windows_winget": null
+            }
+        },
+        "docker": {
+            "name": "Docker",
+            "category": "Virtualization",
+            "subcategory": "containerization",
+            "package_manager": {
+                "arch_aur": "docker",
+                "arch_pacman": "docker",
+                "debian_apt": "docker.io",
+                "fedora_rpm": "docker",
+                "linux_flatpak": "",
+                "macos_brew": "docker",
+                "windows_winget": "Docker.DockerDesktop"
+            }
+        },
+        "dolphin": {
+            "name": "Dolphin",
+            "category": "File-Man",
+            "subcategory": "file-manager",
+            "package_manager": {
+                "arch_aur": "dolphin",
+                "arch_pacman": "dolphin",
+                "debian_apt": "dolphin",
+                "fedora_rpm": "dolphin",
+                "linux_flatpak": "org.kde.dolphin",
+                "macos_brew": null,
+                "windows_winget": "KDE.Dolphin"
+            }
+        },
+        "dropbox": {
+            "name": "Dropbox",
+            "category": "File-Man",
+            "subcategory": "client-cloud-storage",
+            "package_manager": {
+                "arch_aur": "dropbox",
+                "arch_pacman": "dropbox",
+                "debian_apt": "dropbox",
+                "fedora_rpm": "nautilus-dropbox",
+                "linux_flatpak": "com.dropbox.Client",
+                "macos_brew": "dropbox",
+                "windows_winget": "Dropbox.Dropbox"
+            }
+        },
+        "eaglemode": {
+            "name": "Eagle-Mode",
+            "category": "File-Man",
+            "subcategory": "file-manager",
+            "package_manager": {
+                "arch_aur": "eaglemode",
+                "arch_pacman": null,
+                "debian_apt": "eaglemode",
+                "fedora_rpm": null,
+                "linux_flatpak": null,
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "elisa": {
+            "name": "Elisa",
+            "category": "Audio",
+            "subcategory": "music-player",
+            "package_manager": {
+                "arch_aur": "elisa",
+                "arch_pacman": "elisa",
+                "debian_apt": "elisa",
+                "fedora_rpm": "elisa",
+                "linux_flatpak": "org.kde.elisa",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "evolution": {
+            "name": "Evolution",
+            "category": "Browser",
+            "subcategory": "email-client",
+            "package_manager": {
+                "arch_aur": "evolution",
+                "arch_pacman": "evolution",
+                "debian_apt": "evolution",
+                "fedora_rpm": "evolution",
+                "linux_flatpak": "org.gnome.Evolution",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "firefox": {
+            "name": "Firefox",
+            "category": "Browser",
+            "subcategory": "web-browser",
+            "package_manager": {
+                "arch_aur": "firefox",
+                "arch_pacman": "firefox",
+                "debian_apt": "firefox",
+                "fedora_rpm": "firefox",
+                "linux_flatpak": "org.mozilla.Firefox",
+                "macos_brew": "firefox",
+                "windows_winget": "Mozilla.Firefox"
+            }
+        },
+        "foliate": {
+            "name": "Foliate",
+            "category": "Book",
+            "subcategory": "ebook-reader",
+            "package_manager": {
+                "arch_aur": "foliate",
+                "arch_pacman": "foliate",
+                "debian_apt": "foliate",
+                "fedora_rpm": "foliate",
+                "linux_flatpak": "com.github.johnfactotum.Foliate",
+                "macos_brew": "foliate",
+                "windows_winget": null
+            }
+        },
+        "freefilesync": {
+            "name": "FreeFileSync",
+            "category": "File-Man",
+            "subcategory": "file-synchronization",
+            "package_manager": {
+                "arch_aur": "freefilesync",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": null,
+                "macos_brew": null,
+                "windows_winget": "FreeFileSync.FreeFileSync"
+            }
+        },
+        "freeplane": {
+            "name": "Freeplane",
+            "category": "Office",
+            "subcategory": "mapping",
+            "package_manager": {
+                "arch_aur": "freeplane",
+                "arch_pacman": "freeplane",
+                "debian_apt": "freeplane",
+                "fedora_rpm": "freeplane",
+                "linux_flatpak": "org.freeplane.Freeplane",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "gimp": {
+            "name": "GIMP",
+            "category": "Image",
+            "subcategory": "image-editor",
+            "package_manager": {
+                "arch_aur": "gimp",
+                "arch_pacman": "gimp",
+                "debian_apt": "gimp",
+                "fedora_rpm": "gimp",
+                "linux_flatpak": "org.gimp.GIMP",
+                "macos_brew": "gimp",
+                "windows_winget": "GIMP.GIMP"
+            }
+        },
+        "git": {
+            "name": "Git",
+            "category": "Utility",
+            "subcategory": "version-control",
+            "package_manager": {
+                "arch_aur": "git",
+                "arch_pacman": "git",
+                "debian_apt": "git",
+                "fedora_rpm": "git",
+                "linux_flatpak": null,
+                "macos_brew": "git",
+                "windows_winget": "Git.Git"
+            }
+        },
+        "godot": {
+            "name": "Godot",
+            "category": "Development",
+            "subcategory": "game-engine",
+            "package_manager": {
+                "arch_aur": "godot",
+                "arch_pacman": "godot",
+                "debian_apt": "godot3",
+                "fedora_rpm": "godot",
+                "linux_flatpak": "org.godotengine.Godot",
+                "macos_brew": "godot",
+                "windows_winget": "GodotEngine.Godot"
+            }
+        },
+        "google-earth": {
+            "name": "Google-Earth",
+            "category": "Science",
+            "subcategory": "geography-map",
+            "package_manager": {
+                "arch_aur": "google-earth-pro",
+                "arch_pacman": null,
+                "debian_apt": "google-earth-pro-stable",
+                "fedora_rpm": "flathub-com.google.EarthPro",
+                "linux_flatpak": "com.github.git",
+                "macos_brew": "google-earth-pro",
+                "windows_winget": "Google.GoogleEarthPro"
+            }
+        },
+        "geany": {
+            "name": "Geany",
+            "category": "Development",
+            "subcategory": "text-editor",
+            "package_manager": {
+                "arch_aur": "geany",
+                "arch_pacman": "geany",
+                "debian_apt": "geany",
+                "fedora_rpm": "geany",
+                "linux_flatpak": "flathub-org.geany.Geany",
+                "macos_brew": "geany",
+                "windows_winget": "Geany"
+            }
+        },
+        "gnome-boxes": {
+            "name": "Boxes",
+            "category": "Virtualization",
+            "subcategory": "virtual-machine-manager",
+            "package_manager": {
+                "arch_aur": "gnome-boxes",
+                "arch_pacman": "gnome-boxes",
+                "debian_apt": "gnome-boxes",
+                "fedora_rpm": "gnome-boxes",
+                "linux_flatpak": "org.gnome.Boxes",
+                "macos_brew": "gnome-boxes",
+                "windows_winget": "Boxes"
+            }
+        },
+        "gnucash": {
+            "name": "GnuCash",
+            "category": "Finance",
+            "subcategory": "manager",
+            "package_manager": {
+                "arch_aur": "gnucash",
+                "arch_pacman": "gnucash",
+                "debian_apt": "gnucash",
+                "fedora_rpm": "gnucash",
+                "linux_flatpak": "org.gnucash.Gnucash",
+                "macos_brew": "gnucash",
+                "windows_winget": null
+            }
+        },
+        "gwenview": {
+            "name": "Gwenview",
+            "category": "Image",
+            "subcategory": "image-viewer",
+            "package_manager": {
+                "arch_aur": "gwenview",
+                "arch_pacman": "gwenview",
+                "debian_apt": "gwenview",
+                "fedora_rpm": "gwenview",
+                "linux_flatpak": "com.github.unrud.VideoDownloader",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "handbrake": {
+            "name": "HandBrake",
+            "category": "File-Man",
+            "subcategory": "compressor",
+            "package_manager": {
+                "arch_aur": "handbrake-aur",
+                "arch_pacman": "handbrake",
+                "debian_apt": "handbrake",
+                "fedora_rpm": "handbrake",
+                "linux_flatpak": "io.github.waydroid",
+                "macos_brew": "handbrake",
+                "windows_winget": "HandBrake"
+            }
+        },
+        "haruna": {
+            "name": "Haruna",
+            "category": "Video",
+            "subcategory": "media-player",
+            "package_manager": {
+                "arch_aur": "haruna",
+                "arch_pacman": "haruna",
+                "debian_apt": "haruna",
+                "fedora_rpm": "haruna",
+                "linux_flatpak": "io.github.ytdl-org.yt-dlp",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "heroic-games-launcher": {
+            "name": "Heroic-Games-Launcher",
+            "category": "Browser",
+            "subcategory": "game-launcher",
+            "package_manager": {
+                "arch_aur": "heroic-games-launcher-bin",
+                "arch_pacman": null,
+                "debian_apt": "heroic-games-launcher",
+                "fedora_rpm": "com.heroicgameslauncher.hgl",
+                "linux_flatpak": "com.heroicgameslauncher.hgl",
+                "macos_brew": "heroic",
+                "windows_winget": "HeroicGamesLauncher.HeroicGamesLauncher"
+            }
+        },
+        "homebank": {
+            "name": "HomeBank",
+            "category": "Finance",
+            "subcategory": "manager",
+            "package_manager": {
+                "arch_aur": "homebank",
+                "arch_pacman": "homebank",
+                "debian_apt": "homebank",
+                "fedora_rpm": "homebank",
+                "linux_flatpak": "org.gnome.Boxes",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "inkscape": {
+            "name": "Inkscape",
+            "category": "Image",
+            "subcategory": "vector-graphics",
+            "package_manager": {
+                "arch_aur": "inkscape",
+                "arch_pacman": "inkscape",
+                "debian_apt": "inkscape",
+                "fedora_rpm": "inkscape",
+                "linux_flatpak": "org.inkscape.Inkscape",
+                "macos_brew": "inkscape",
+                "windows_winget": "Inkscape.Inkscape"
+            }
+        },
+        "jellyfin-client": {
+            "name": "Jellyfin-Client",
+            "category": "Video",
+            "subcategory": "media-server",
+            "package_manager": {
+                "arch_aur": "jellyfin-server",
+                "arch_pacman": null,
+                "debian_apt": "jellyfin",
+                "fedora_rpm": "jellyfin",
+                "linux_flatpak": "com.github.iwalton3.jellyfin-media-player",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "jellyfin-server": {
+            "name": "Jellyfin-Server",
+            "category": "Video",
+            "subcategory": "media-server",
+            "package_manager": {
+                "arch_aur": "jellyfin-server",
+                "arch_pacman": null,
+                "debian_apt": "jellyfin",
+                "fedora_rpm": "jellyfin",
+                "linux_flatpak": "org.jellyfin.JellyfinServer",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "kate": {
+            "name": "Kate",
+            "category": "Development",
+            "subcategory": "text-editor",
+            "package_manager": {
+                "arch_aur": "kate",
+                "arch_pacman": "kate",
+                "debian_apt": "kate",
+                "fedora_rpm": "kate",
+                "linux_flatpak": "",
+                "macos_brew": "kate",
+                "windows_winget": "KateEditor.Kate"
+            }
+        },
+        "kdenlive": {
+            "name": "Kdenlive",
+            "category": "Video",
+            "subcategory": "video-editor",
+            "package_manager": {
+                "arch_aur": "kdenlive",
+                "arch_pacman": "kdenlive",
+                "debian_apt": "kdenlive",
+                "fedora_rpm": "kdenlive",
+                "linux_flatpak": "org.kde.kdenlive",
+                "macos_brew": "kdenlive",
+                "windows_winget": "Kdenlive.Kdenlive"
+            }
+        },
+        "keepassxc": {
+            "name": "KeePassXC",
+            "category": "Utility",
+            "subcategory": "password-manager",
+            "package_manager": {
+                "arch_aur": "keepassxc",
+                "arch_pacman": "keepassxc",
+                "debian_apt": "keepassxc",
+                "fedora_rpm": "keepassxc",
+                "linux_flatpak": "org.keepassxc.KeePassXC",
+                "macos_brew": "keepassxc",
+                "windows_winget": "KeePassXCTeam.KeePassXC"
+            }
+        },
+        "koodoreader": {
+            "name": "Koodo-Reader",
+            "category": "Book",
+            "subcategory": "ebook-reader",
+            "package_manager": {
+                "arch_aur": "koodoreader",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": "org.godotengine.Godot",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "koreader": {
+            "name": "KOReader",
+            "category": "Book",
+            "subcategory": "ebook-reader",
+            "package_manager": {
+                "arch_aur": "koreader",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": null,
+                "macos_brew": "koreader",
+                "windows_winget": null
+            }
+        },
+        "krita": {
+            "name": "Krita",
+            "category": "Image",
+            "subcategory": "image-editor",
+            "package_manager": {
+                "arch_aur": "krita",
+                "arch_pacman": "krita",
+                "debian_apt": "krita",
+                "fedora_rpm": "krita",
+                "linux_flatpak": "com.google.EarthPro",
+                "macos_brew": "krita",
+                "windows_winget": "Krita"
+            }
+        },
+        "libreoffice": {
+            "name": "LibreOffice",
+            "category": "Office",
+            "subcategory": "office-suite",
+            "package_manager": {
+                "arch_aur": "libreoffice",
+                "arch_pacman": "libreoffice",
+                "debian_apt": "libreoffice",
+                "fedora_rpm": "libreoffice",
+                "linux_flatpak": "org.libreoffice.LibreOffice",
+                "macos_brew": "libreoffice",
+                "windows_winget": "LibreOffice.LibreOffice"
+            }
+        },
+        "librewolf": {
+            "name": "LibreWolf",
+            "category": "Browser",
+            "subcategory": "web-browser",
+            "package_manager": {
+                "arch_aur": "librewolf",
+                "arch_pacman": "librewolf",
+                "debian_apt": "librewolf",
+                "fedora_rpm": "librewolf",
+                "linux_flatpak": "io.gitlab.librewolf-community",
+                "macos_brew": "librewolf",
+                "windows_winget": "LibreWolf"
+            }
+        },
+        "lmms": {
+            "name": "LMMS",
+            "category": "Audio",
+            "subcategory": "digital-audio-workstation",
+            "package_manager": {
+                "arch_aur": "lmms",
+                "arch_pacman": "lmms",
+                "debian_apt": "lmms",
+                "fedora_rpm": "lmms",
+                "linux_flatpak": "",
+                "macos_brew": "lmms",
+                "windows_winget": "LMMS.LMMS"
+            }
+        },
+        "lutris": {
+            "name": "Lutris",
+            "category": "Browser",
+            "subcategory": "game-launcher",
+            "package_manager": {
+                "arch_aur": "lutris",
+                "arch_pacman": "lutris",
+                "debian_apt": "lutris",
+                "fedora_rpm": "lutris",
+                "linux_flatpak": "org.videolan.VLC",
+                "macos_brew": "lutris",
+                "windows_winget": "Lutris"
+            }
+        },
+        "mega": {
+            "name": "MEGAsync",
+            "category": "File-Man",
+            "subcategory": "client-cloud-storage",
+            "package_manager": {
+                "arch_aur": "megasync",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": "flathub-nz.mega.MEGAsync",
+                "macos_brew": null,
+                "windows_winget": "MegaLimited.MEGAsync"
+            }
+        },
+        "mpv": {
+            "name": "MPV",
+            "category": "Video",
+            "subcategory": "media-player",
+            "package_manager": {
+                "arch_aur": "mpv",
+                "arch_pacman": "mpv",
+                "debian_apt": "mpv",
+                "fedora_rpm": "mpv",
+                "linux_flatpak": "io.mpv.Mpv",
+                "macos_brew": "mpv",
+                "windows_winget": "MPVPlayer.MPV"
+            }
+        },
+        "musescore": {
+            "name": "MuseScore",
+            "category": "Audio",
+            "subcategory": "music-notation",
+            "package_manager": {
+                "arch_aur": "musescore",
+                "arch_pacman": "musescore",
+                "debian_apt": "musescore",
+                "fedora_rpm": "musescore",
+                "linux_flatpak": "org.jellyfin.JellyfinServer",
+                "macos_brew": "musescore",
+                "windows_winget": "MuseScore.MuseScore"
+            }
+        },
+        "musicbee": {
+            "name": "MusicBee",
+            "category": "Audio",
+            "subcategory": "music-player",
+            "package_manager": {
+                "arch_aur": null,
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": "org.kde.digikam",
+                "macos_brew": null,
+                "windows_winget": "MusicBee"
+            }
+        },
+        "musicbrainz-picard": {
+            "name": "MusicBrainz-Picard",
+            "category": "File-Man",
+            "subcategory": "music-tagger",
+            "package_manager": {
+                "arch_aur": "picard",
+                "arch_pacman": "picard",
+                "debian_apt": "picard",
+                "fedora_rpm": "picard",
+                "linux_flatpak": "org.kde.dolphin",
+                "macos_brew": "picard",
+                "windows_winget": "MusicBrainz.Picard"
+            }
+        },
+        "neovim": {
+            "name": "Neovim",
+            "category": "Development",
+            "subcategory": "text-editor",
+            "package_manager": {
+                "arch_aur": "neovim",
+                "arch_pacman": "neovim",
+                "debian_apt": "neovim",
+                "fedora_rpm": "neovim",
+                "linux_flatpak": "org.kde.gwenview",
+                "macos_brew": "neovim",
+                "windows_winget": "Neovim.Neovim"
+            }
+        },
+        "nmap": {
+            "name": "Nmap",
+            "category": "Utility",
+            "subcategory": "networking",
+            "package_manager": {
+                "arch_aur": "nmap",
+                "arch_pacman": "nmap",
+                "debian_apt": "nmap",
+                "fedora_rpm": "nmap",
+                "linux_flatpak": "org.kde.haruna",
+                "macos_brew": "nmap",
+                "windows_winget": "Nmap.Nmap"
+            }
+        },
+        "nodejs": {
+            "name": "Node.js",
+            "category": "Utility",
+            "subcategory": "runtime",
+            "package_manager": {
+                "arch_aur": "nodejs",
+                "arch_pacman": "nodejs",
+                "debian_apt": "nodejs",
+                "fedora_rpm": "nodejs",
+                "linux_flatpak": "org.kde.kate",
+                "macos_brew": "node",
+                "windows_winget": "OpenJS.Nodejs"
+            }
+        },
+        "obs-studio": {
+            "name": "OBS-Studio",
+            "category": "Video",
+            "subcategory": "video-recorder",
+            "package_manager": {
+                "arch_aur": "obs-studio",
+                "arch_pacman": "obs-studio",
+                "debian_apt": "obs-studio",
+                "fedora_rpm": "obs-studio",
+                "linux_flatpak": "org.kde.kdenlive",
+                "macos_brew": "obs",
+                "windows_winget": "OBSProject.OBSStudio"
+            }
+        },
+        "obsidian": {
+            "name": "Obsidian",
+            "category": "Office",
+            "subcategory": "note-taking",
+            "package_manager": {
+                "arch_aur": "obsidian",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": "org.kde.krita",
+                "macos_brew": "obsidian",
+                "windows_winget": "Obsidian.Obsidian"
+            }
+        },
+        "ocenaudio": {
+            "name": "Ocenaudio",
+            "category": "Audio",
+            "subcategory": "audio-recorder",
+            "package_manager": {
+                "arch_aur": "ocenaudio",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": null,
+                "macos_brew": "ocenaudio",
+                "windows_winget": "Ocenaudio.Ocenaudio"
+            }
+        },
+        "okular": {
+            "name": "Okular",
+            "category": "Office",
+            "subcategory": "document-viewer",
+            "package_manager": {
+                "arch_aur": "okular",
+                "arch_pacman": "okular",
+                "debian_apt": "okular",
+                "fedora_rpm": "okular",
+                "linux_flatpak": "org.kde.okular",
+                "macos_brew": "okular",
+                "windows_winget": null
+            }
+        },
+        "onlyoffice": {
+            "name": "ONLYOFFICE",
+            "category": "Office",
+            "subcategory": "office-suite",
+            "package_manager": {
+                "arch_aur": "onlyoffice-desktopeditors",
+                "arch_pacman": "onlyoffice-desktopeditors",
+                "debian_apt": "onlyoffice-desktopeditors",
+                "fedora_rpm": "onlyoffice-desktopeditors",
+                "linux_flatpak": "com.visualstudio.code",
+                "macos_brew": "onlyoffice-desktopeditors",
+                "windows_winget": "ONLYOFFICE"
+            }
+        },
+        "openshot": {
+            "name": "OpenShot",
+            "category": "Video",
+            "subcategory": "video-editor",
+            "package_manager": {
+                "arch_aur": "openshot",
+                "arch_pacman": "openshot",
+                "debian_apt": "openshot",
+                "fedora_rpm": "openshot",
+                "linux_flatpak": "org.openshot.OpenShot",
+                "macos_brew": "openshot",
+                "windows_winget": "OpenShot"
+            }
+        },
+        "playonlinux": {
+            "name": "PlayOnLinux",
+            "category": "Virtualization",
+            "subcategory": "windows-compatibility-layer",
+            "package_manager": {
+                "arch_aur": "playonlinux",
+                "arch_pacman": "playonlinux",
+                "debian_apt": "playonlinux",
+                "fedora_rpm": "playonlinux",
+                "linux_flatpak": "org.phoenicis.playonlinux",
+                "macos_brew": "playonlinux",
+                "windows_winget": "PlayOnLinux"
+            }
+        },
+        "proton": {
+            "name": "Proton",
+            "category": "Virtualization",
+            "subcategory": "windows-compatibility-layer",
+            "package_manager": {
+                "arch_aur": "proton-ge-custom-bin",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": "org.koreader.Koreader",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "proton-qt": {
+            "name": "Proton-QT",
+            "category": "Virtualization",
+            "subcategory": "windows-compatibility-layer",
+            "package_manager": {
+                "arch_aur": "proton-qt",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": "org.libreoffice.LibreOffice",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "putty": {
+            "name": "PuTTY",
+            "category": "Utility",
+            "subcategory": "terminal-emulator",
+            "package_manager": {
+                "arch_aur": "putty",
+                "arch_pacman": "putty",
+                "debian_apt": "putty",
+                "fedora_rpm": "putty",
+                "linux_flatpak": "io.lmms.LMMS",
+                "macos_brew": "putty",
+                "windows_winget": "PuTTY.PuTTY"
+            }
+        },
+        "python": {
+            "name": "Python",
+            "category": "Development",
+            "subcategory": "programming-language",
+            "package_manager": {
+                "arch_aur": "python",
+                "arch_pacman": "python",
+                "debian_apt": "python3",
+                "fedora_rpm": "python3",
+                "linux_flatpak": "net.lutris.Lutris",
+                "macos_brew": "python",
+                "windows_winget": "Python.Python.3"
+            }
+        },
+        "qbittorrent": {
+            "name": "qBittorrent",
+            "category": "File-sharing",
+            "subcategory": "torrent-client",
+            "package_manager": {
+                "arch_aur": "qbittorrent",
+                "arch_pacman": "qbittorrent",
+                "debian_apt": "qbittorrent",
+                "fedora_rpm": "qbittorrent",
+                "linux_flatpak": "org.qbittorrent.qBittorrent",
+                "macos_brew": "qbittorrent",
+                "windows_winget": "qBittorrent.qBittorrent"
+            }
+        },
+        "qemu": {
+            "name": "QEMU",
+            "category": "Virtualization",
+            "subcategory": "hypervisor",
+            "package_manager": {
+                "arch_aur": "qemu",
+                "arch_pacman": "qemu",
+                "debian_apt": "qemu",
+                "fedora_rpm": "qemu",
+                "linux_flatpak": null,
+                "macos_brew": "qemu",
+                "windows_winget": null
+            }
+        },
+        "rclone": {
+            "name": "Rclone",
+            "category": "File-Man",
+            "subcategory": "client-cloud-storage",
+            "package_manager": {
+                "arch_aur": "rclone",
+                "arch_pacman": "rclone",
+                "debian_apt": "rclone",
+                "fedora_rpm": "rclone",
+                "linux_flatpak": "org.mozilla.Thunderbird",
+                "macos_brew": "rclone",
+                "windows_winget": "Rclone.Rclone"
+            }
+        },
+        "reaper": {
+            "name": "REAPER",
+            "category": "Audio",
+            "subcategory": "audio-workstation",
+            "package_manager": {
+                "arch_aur": "reaper",
+                "arch_pacman": "reaper",
+                "debian_apt": "reaper",
+                "fedora_rpm": "reaper",
+                "linux_flatpak": "fm.reaper.Reaper",
+                "macos_brew": "reaper",
+                "windows_winget": "REAPER"
+            }
+        },
+        "rsync": {
+            "name": "Rsync",
+            "category": "File-Man",
+            "subcategory": "file-synchronization",
+            "package_manager": {
+                "arch_aur": "rsync",
+                "arch_pacman": "rsync",
+                "debian_apt": "rsync",
+                "fedora_rpm": "rsync",
+                "linux_flatpak": null,
+                "macos_brew": "rsync",
+                "windows_winget": "WayneDavison.Rsync"
+            }
+        },
+        "shotcut": {
+            "name": "Shotcut",
+            "category": "Video",
+            "subcategory": "video-editor",
+            "package_manager": {
+                "arch_aur": "shotcut",
+                "arch_pacman": "shotcut",
+                "debian_apt": "shotcut",
+                "fedora_rpm": "shotcut",
+                "linux_flatpak": "org.musescore.MuseScore",
+                "macos_brew": "shotcut",
+                "windows_winget": "Meltytech.Shotcut"
+            }
+        },
+        "shotwell": {
+            "name": "Shotwell",
+            "category": "Image",
+            "subcategory": "photo-manager",
+            "package_manager": {
+                "arch_aur": "shotwell",
+                "arch_pacman": "shotwell",
+                "debian_apt": "shotwell",
+                "fedora_rpm": "shotwell",
+                "linux_flatpak": "org.gnome.Shotwell",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "stability-matrix": {
+            "name": "StabilityMatrix",
+            "category": "Image",
+            "subcategory": "AI-image-generator",
+            "package_manager": {
+                "arch_aur": "stabilitymatrix",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": "org.winehq.Wine",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "stable-diffusion-webui": {
+            "name": "Stable-Diffusion-WebUI",
+            "category": "Image",
+            "subcategory": "AI-image-generator",
+            "package_manager": {
+                "arch_aur": "stable-diffusion-webui",
+                "arch_pacman": "stable-diffusion-webui",
+                "debian_apt": "stable-diffusion-webui",
+                "fedora_rpm": "stable-diffusion-webui",
+                "linux_flatpak": "org.xenproject.Xen",
+                "macos_brew": "stable-diffusion-webui",
+                "windows_winget": "Stable-Diffusion-WebUI"
+            }
+        },
+        "steam": {
+            "name": "Steam",
+            "category": "Browser",
+            "subcategory": "game-launcher",
+            "package_manager": {
+                "arch_aur": "steam",
+                "arch_pacman": "steam",
+                "debian_apt": "steam",
+                "fedora_rpm": "steam",
+                "linux_flatpak": "io.neovim.nvim",
+                "macos_brew": "steam",
+                "windows_winget": "Valve.Steam"
+            }
+        },
+        "stellarium": {
+            "name": "Stellarium",
+            "category": "Science",
+            "subcategory": "astronomy",
+            "package_manager": {
+                "arch_aur": "stellarium",
+                "arch_pacman": "stellarium",
+                "debian_apt": "stellarium",
+                "fedora_rpm": "stellarium",
+                "linux_flatpak": "org.nmap.Zenmap",
+                "macos_brew": "stellarium",
+                "windows_winget": "Stellarium.Stellarium"
+            }
+        },
+        "strawberry": {
+            "name": "Strawberry",
+            "category": "Audio",
+            "subcategory": "music-player",
+            "package_manager": {
+                "arch_aur": "strawberry",
+                "arch_pacman": "strawberry",
+                "debian_apt": "strawberry",
+                "fedora_rpm": "strawberry",
+                "linux_flatpak": "md.obsidian.Obsidian",
+                "macos_brew": "strawberry",
+                "windows_winget": null
+            }
+        },
+        "sublime-text-4": {
+            "name": "Sublime-Text 4",
+            "category": "Development",
+            "subcategory": "text-editor",
+            "package_manager": {
+                "arch_aur": "sublime-text-4",
+                "arch_pacman": null,
+                "debian_apt": "sublime-text-4",
+                "fedora_rpm": "sublime-text",
+                "linux_flatpak": "com.obsproject.Studio",
+                "macos_brew": "sublime-text",
+                "windows_winget": "SublimeHQ.SublimeText.4"
+            }
+        },
+        "telegram": {
+            "name": "Telegram",
+            "category": "Communication",
+            "subcategory": "messaging",
+            "package_manager": {
+                "arch_aur": "telegram-desktop",
+                "arch_pacman": "telegram-desktop",
+                "debian_apt": "telegram-desktop",
+                "fedora_rpm": "telegram-desktop",
+                "linux_flatpak": "org.telegram.desktop",
+                "macos_brew": "telegram-desktop",
+                "windows_winget": "Telegram.TelegramDesktop"
+            }
+        },
+        "tenacity": {
+            "name": "Tenacity",
+            "category": "Audio",
+            "subcategory": "audio-editor",
+            "package_manager": {
+                "arch_aur": "tenacity-git",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": "org.onlyoffice.desktopeditors",
+                "macos_brew": "tenacity",
+                "windows_winget": null
+            }
+        },
+        "thunderbird": {
+            "name": "Thunderbird",
+            "category": "Browser",
+            "subcategory": "email-client",
+            "package_manager": {
+                "arch_aur": "thunderbird",
+                "arch_pacman": "thunderbird",
+                "debian_apt": "thunderbird",
+                "fedora_rpm": "thunderbird",
+                "linux_flatpak": "org.mozilla.Thunderbird",
+                "macos_brew": "thunderbird",
+                "windows_winget": "Mozilla.Thunderbird"
+            }
+        },
+        "tmux": {
+            "name": "tmux",
+            "category": "Utility",
+            "subcategory": "terminal-multiplexer",
+            "package_manager": {
+                "arch_aur": "tmux",
+                "arch_pacman": "tmux",
+                "debian_apt": "tmux",
+                "fedora_rpm": "tmux",
+                "linux_flatpak": "org.tmux.tmux",
+                "macos_brew": "tmux",
+                "windows_winget": "tmux"
+            }
+        },
+        "transmission": {
+            "name": "Transmission",
+            "category": "File-sharing",
+            "subcategory": "torrent-client",
+            "package_manager": {
+                "arch_aur": "transmission-cli",
+                "arch_pacman": "transmission-cli",
+                "debian_apt": "transmission",
+                "fedora_rpm": "transmission-cli",
+                "linux_flatpak": "org.putty.putty",
+                "macos_brew": "transmission",
+                "windows_winget": "Transmission"
+            }
+        },
+        "tree": {
+            "name": "tree",
+            "category": "Utility",
+            "subcategory": "file-tree-generator",
+            "package_manager": {
+                "arch_aur": "tree",
+                "arch_pacman": "tree",
+                "debian_apt": "tree",
+                "fedora_rpm": "tree",
+                "linux_flatpak": "org.qbittorrent.qBittorrent",
+                "macos_brew": "tree",
+                "windows_winget": "sharkdp.tree"
+            }
+        },
+        "ungoogled-chromium": {
+            "name": "Ungoogled-Chromium",
+            "category": "Browser",
+            "subcategory": "web-browser",
+            "package_manager": {
+                "arch_aur": "ungoogled-chromium",
+                "arch_pacman": "ungoogled-chromium",
+                "debian_apt": "ungoogled-chromium",
+                "fedora_rpm": "ungoogled-chromium",
+                "linux_flatpak": "org.chromium.Chromium",
+                "macos_brew": "ungoogled-chromium",
+                "windows_winget": "Ungoogled-Chromium"
+            }
+        },
+        "ventoy": {
+            "name": "Ventoy",
+            "category": "Utility",
+            "subcategory": "bootable-USB-creator",
+            "package_manager": {
+                "arch_aur": "ventoy-bin",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": "org.qemu.QEMU",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "veracrypt": {
+            "name": "VeraCrypt",
+            "category": "Utility",
+            "subcategory": "disk-encryption",
+            "package_manager": {
+                "arch_aur": "veracrypt",
+                "arch_pacman": "veracrypt",
+                "debian_apt": "veracrypt",
+                "fedora_rpm": "veracrypt",
+                "linux_flatpak": "com.veracrypt.VeraCrypt",
+                "macos_brew": "veracrypt",
+                "windows_winget": "IDRIX.VeraCrypt"
+            }
+        },
+        "virt-manager": {
+            "name": "virt-manager",
+            "category": "Virtualization",
+            "subcategory": "virtual-machine-manager",
+            "package_manager": {
+                "arch_aur": "virt-manager",
+                "arch_pacman": "virt-manager",
+                "debian_apt": "virt-manager",
+                "fedora_rpm": "virt-manager",
+                "linux_flatpak": "org.shotcut.Shotcut",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "virtualbox": {
+            "name": "VirtualBox",
+            "category": "Virtualization",
+            "subcategory": "virtual-machine-manager",
+            "package_manager": {
+                "arch_aur": "virtualbox-bin",
+                "arch_pacman": "virtualbox",
+                "debian_apt": "virtualbox",
+                "fedora_rpm": "VirtualBox",
+                "linux_flatpak": "net.sourceforge.eaglemode",
+                "macos_brew": "virtualbox",
+                "windows_winget": "Oracle.VirtualBox"
+            }
+        },
+        "visual-studio-code": {
+            "name": "Visual-Studio-Code",
+            "category": "Development",
+            "subcategory": "code-editor",
+            "package_manager": {
+                "arch_aur": "visual-studio-code-bin",
+                "arch_pacman": null,
+                "debian_apt": "code",
+                "fedora_rpm": "code",
+                "linux_flatpak": "com.stability.matrix",
+                "macos_brew": "visual-studio-code",
+                "windows_winget": "Microsoft.VisualStudioCode"
+            }
+        },
+        "vlc": {
+            "name": "VLC-Media-Player",
+            "category": "Video",
+            "subcategory": "media-player",
+            "package_manager": {
+                "arch_aur": "vlc",
+                "arch_pacman": "vlc",
+                "debian_apt": "vlc",
+                "fedora_rpm": "vlc",
+                "linux_flatpak": "com.steam.CompatibilityTool.Proton",
+                "macos_brew": "vlc",
+                "windows_winget": "VideoLAN.VLC"
+            }
+        },
+        "vmware": {
+            "name": "VMware-Workstation",
+            "category": "Virtualization",
+            "subcategory": "virtual-machine-manager",
+            "package_manager": {
+                "arch_aur": "vmware-workstation",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": "vmware-workstation-player",
+                "linux_flatpak": "org.stellarium.Stellarium",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "waydroid": {
+            "name": "WayDroid",
+            "category": "Virtualization",
+            "subcategory": "containerization",
+            "package_manager": {
+                "arch_aur": "waydroid-git",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "linux_flatpak": "com.sublimetext.three",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "wine": {
+            "name": "Wine",
+            "category": "Virtualization",
+            "subcategory": "windows-compatibility-layer",
+            "package_manager": {
+                "arch_aur": "wine",
+                "arch_pacman": "wine",
+                "debian_apt": "wine",
+                "fedora_rpm": "wine",
+                "linux_flatpak": "org.winehq.Platform",
+                "macos_brew": "wine",
+                "windows_winget": "WineHQ.Wine"
+            }
+        },
+        "xen": {
+            "name": "Xen",
+            "category": "Virtualization",
+            "subcategory": "hypervisor",
+            "package_manager": {
+                "arch_aur": "xen",
+                "arch_pacman": "xen",
+                "debian_apt": "xen-hypervisor",
+                "fedora_rpm": "xen",
+                "linux_flatpak": "org.tenacityaudio.Tenacity",
+                "macos_brew": null,
+                "windows_winget": null
+            }
+        },
+        "xnview": {
+            "name": "XnView-MP",
+            "category": "Image",
+            "subcategory": "image-viewer",
+            "package_manager": {
+                "arch_aur": "xnviewmp",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": "xnviewmp",
+                "linux_flatpak": "com.xnview.XnViewMP",
+                "macos_brew": "xnviewmp",
+                "windows_winget": null
+            }
+        },
+        "yt-dlp": {
+            "name": "YT-DLP",
+            "category": "Downloader",
+            "subcategory": "video-downloader",
+            "package_manager": {
+                "arch_aur": null,
+                "arch_pacman": "yt-dlp",
+                "debian_apt": "yt-dlp",
+                "fedora_rpm": "yt-dlp",
+                "linux_flatpak": "com.transmissionbt.Transmission",
+                "macos_brew": "yt-dl",
+                "windows_winget": "yt-dlp.yt-dlp"
+            }
+        },
+        "ytdownloader": {
+            "name": "ytdownloader",
+            "category": "Downloader",
+            "subcategory": "video-downloader",
+            "package_manager": {
+                "arch_aur": "youtube-dl",
+                "arch_pacman": "youtube-dl",
+                "debian_apt": "youtube-dl",
+                "fedora_rpm": "youtube-dl",
+                "linux_flatpak": null,
+                "macos_brew": "youtube-dl",
+                "windows_winget": null
+            }
+        }
+    }
+}

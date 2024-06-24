@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="14.2875mm"
+   height="14.2875mm"
+   viewBox="0 0 14.2875 14.2875"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-64.293748,-49.477084)">
+    <rect
+       style="fill:#115c77;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3833"
+       width="3.4395852"
+       height="13.758336"
+       x="64.558334"
+       y="49.741665" />
+    <rect
+       y="49.741665"
+       x="69.056252"
+       height="13.758334"
+       width="9.2604132"
+       id="rect3835"
+       style="fill:#115c77;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:#115c77;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       d="m 77.787502,50.006247 v 13.229166 h 0.79375 V 50.006247 Z"
+       id="rect3868" />
+    <path
+       id="path3871"
+       d="m 64.293753,50.006247 v 13.229166 h 0.79375 V 50.006247 Z"
+       style="fill:#115c77;fill-opacity:1;stroke:none;stroke-width:0.264583" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:125%;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="69.813156"
+       y="52.217258"
+       id="text887"><tspan
+         id="tspan885"
+         x="69.813156"
+         y="52.217258"
+         style="font-size:2.29306px;stroke-width:0.264583px">Shotcut</tspan></text>
+  </g>
+</svg>

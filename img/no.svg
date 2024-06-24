@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="svg1468"
+    sodipodi:docname="paperface2.svg"
+    viewBox="0 0 187.5 187.5"
+    sodipodi:version="0.32"
+    version="1.0"
+    y="0"
+    x="0"
+    inkscape:version="0.42"
+    sodipodi:docbase="C:\Documents and Settings\Jarno\Omat tiedostot\vanhasta\opencliparts\omat\symbols"
+  >
+  <sodipodi:namedview
+      id="base"
+      bordercolor="#666666"
+      inkscape:pageshadow="2"
+      inkscape:window-width="640"
+      pagecolor="#ffffff"
+      inkscape:zoom="1.8346667"
+      borderopacity="1.0"
+      inkscape:current-layer="svg1468"
+      inkscape:cx="93.750000"
+      inkscape:cy="93.750000"
+      inkscape:window-height="480"
+      inkscape:pageopacity="0.0"
+  />
+  <g
+      id="layer1"
+    >
+    <g
+        id="g2809"
+        transform="matrix(.78726 0 0 .78726 374.44 -151.98)"
+      >
+      <path
+          id="rect2752"
+          style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:3.75;fill:#ffffff"
+          d="m-412 236.36h104v136h-62l-42-44v-92z"
+      />
+      <path
+          id="path2755"
+          style="stroke:#000000;stroke-width:3.75;fill:none"
+          d="m-411.75 327.52l42.22-6.27-0.42 51.41"
+      />
+      <path
+          id="path2757"
+          style="stroke:#000000;stroke-width:2.8;fill:none"
+          d="m-379.98 362.63l-0.42-30.51"
+      />
+      <path
+          id="path2759"
+          style="stroke:#000000;stroke-width:2.8581;fill:none"
+          d="m-388.76 351.29l-0.41-17.86"
+      />
+      <path
+          id="path2761"
+          style="stroke:#000000;stroke-width:2.8;fill:none"
+          d="m-397.21 341.31l-0.42-6.68"
+      />
+    </g
+    >
+  </g
+  >
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+        <dc:title
+          >Paperface 2</dc:title
+        >
+        <dc:date
+          >2006-12-26T00:00:00</dc:date
+        >
+        <dc:description
+        />
+        <dc:source
+          >https://openclipart.org/detail/24799/-by--24799</dc:source
+        >
+        <dc:creator
+          >
+          <cc:Agent
+            >
+            <dc:title
+              >Anonymous</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:creator
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>
