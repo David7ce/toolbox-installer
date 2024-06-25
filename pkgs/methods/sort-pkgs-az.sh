@@ -1,6 +1,6 @@
 #!/bin/bash
 
-input_file="pkgs-names.json"
+input_file="../pkgs-names.json"
 
 # Check if input file exists
 if [ ! -f "$input_file" ]; then

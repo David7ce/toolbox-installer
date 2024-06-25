@@ -1622,7 +1622,7 @@
             }
         },
         "tree": {
-            "name": "tree",
+            "name": "Tree",
             "category": "Utility",
             "subcategory": "file-tree-generator",
             "package_manager": {

@@ -108,10 +108,13 @@ ytDownloader
 
 ---
 
-Go to packages-info.json
+- Go to packages-info.json and select all lines that contains `name` as regex mode.
 
+```
 Find: ^.*name.*$
-Select all lines with name: "..."
+```
 
+- Then click alt enter to select the text and copy all lines.
 
-gentoo sudo emerge 
+- Then paste this lines and remove the non part of the name like:
+`            "name": "` and `",`

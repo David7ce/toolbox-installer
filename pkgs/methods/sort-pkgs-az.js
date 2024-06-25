@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const jsonFilePath = 'packages-info.json';
+const jsonFilePath = '../packages-info.json';
 
 // Función para ordenar los paquetes alfabéticamente
 function ordenarPaquetesAlfabeticamente(filePath) {
