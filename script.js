@@ -156,26 +156,31 @@ async function generateCommand() {
 
         selectedPackages.forEach(pkg => {
             const packageInfo = packagesData.packages[pkg];
-            if (!packageInfo) {
-                nonInstallablePackages.push(pkg);
-            } else {
-                const packageDistroName = packageInfo.package_manager[getPackageType(selectedDistro)];
+
+            if (packageInfo) {
+                let packageDistroName = packageInfo.package_manager[getPackageType(selectedDistro)];
+
                 if (packageDistroName) {
-                    if (selectedDistro === 'arch' && packageDistroName.startsWith('aur_')) {
-                        aurPackages.push(packageDistroName.substr(4)); // Remove 'aur_' prefix
+                    if (selectedDistro === 'arch' && packageDistroName === 'arch_aur') {
+                        aurPackages.push(pkg); // Agregar el nombre del paquete al array de AUR
                     } else {
                         installationCommands.push(packageDistroName);
                     }
                 } else {
                     nonInstallablePackages.push(pkg);
                 }
+            } else {
+                nonInstallablePackages.push(pkg);
             }
         });
 
         let commandPrefix;
+        let aurCommand = '';
+
         switch (selectedDistro) {
             case 'arch':
                 commandPrefix = 'sudo pacman -S';
+                aurCommand = `yay -S ${aurPackages.join(' ')}`;
                 break;
             case 'debian':
                 commandPrefix = 'sudo apt install';
@@ -210,10 +215,6 @@ async function generateCommand() {
 
         const finalCommand = installationCommands.length
             ? `${commandPrefix} ${installationCommands.join(' ')}`
-            : '';
-
-        const aurCommand = aurPackages.length
-            ? `yay -S ${aurPackages.join(' ')}`
             : '';
 
         const resultCommand = [finalCommand, aurCommand].filter(cmd => cmd).join(' && ');
