@@ -1,6 +1,6 @@
 // URL del archivo JSON
-const jsonUrl = '../pkgs/packages-info.json';
-const imageUrl = '../img/';
+const jsonUrl = './pkgs/packages-info.json';
+const imageUrl = './img/';
 
 let packagesData; // Variable para almacenar los datos del JSON
 
@@ -29,14 +29,14 @@ function generatePackages(packagesData) {
 
     // Definir las categorías por columna
     const columnCategories = [
-        ["Browser"],
         ["File-Man", "File-Sharing", "Downloader"],
-        ["Communication", "Finance", "Science"],
-        ["Utility"],
+        ["Finance", "Science", "Utility"],
         ["Virtualization"],
+        ["Web"],
         ["Audio"],
-        ["Book", "Document", "Office"],
+        ["Book", "Office"],
         ["Development"],
+        ["Gaming"],
         ["Image"],
         ["Video"]
     ];
@@ -83,7 +83,7 @@ function generatePackages(packagesData) {
 
                     const packageImg = document.createElement('img');
                     packageImg.src = `${imageUrl}${pkgKey}.svg`;
-                    packageImg.width = 30;
+                    packageImg.width = 20;
 
                     packageLabel.appendChild(packageCheckbox);
                     packageLabel.appendChild(packageImg);

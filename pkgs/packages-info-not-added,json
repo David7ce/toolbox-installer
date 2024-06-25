@@ -1,0 +1,32 @@
+{
+    "packages": {
+        "floorp": {
+            "name": "floorp",
+            "category": "Browser",
+            "subcategory": "web-browser",
+            "package_manager": {
+                "arch_aur": "floorp",
+                "arch_pacman": "floorp",
+                "debian_apt": "floorp",
+                "fedora_rpm": "floorp",
+                "linux_flatpak": "one.ablaze.floorp",
+                "macos_brew": "floorp",
+                "windows_winget": null
+            }
+        },
+        "Stable-Diffusion-WebUI": {
+            "name": "Stable-Diffusion-WebUI",
+            "category": "Image",
+            "subcategory": "AI-image-generator",
+            "package_manager": {
+                "arch_aur": "floorp",
+                "arch_pacman": "floorp",
+                "debian_apt": "floorp",
+                "fedora_rpm": "floorp",
+                "linux_flatpak": "org.xenproject.Xen",
+                "macos_brew": "floorp",
+                "windows_winget": "Stable-Diffusion-WebUI"
+            }
+        }
+    }
+}
