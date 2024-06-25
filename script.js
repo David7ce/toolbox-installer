@@ -22,6 +22,14 @@ function loadPackages() {
     xhr.send();
 }
 
+// Función para seleccionar/deseleccionar todos los paquetes
+function toggleSelectAllPackages() {
+    const checkboxes = document.querySelectorAll('input[name="pkg"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = !checkbox.checked;
+    });
+}
+
 // Función para generar el contenido de los paquetes en el formulario
 function generatePackages(packagesData) {
     const packageContainer = document.getElementById('packageContainer');
@@ -79,11 +87,12 @@ function generatePackages(packagesData) {
                     const packageCheckbox = document.createElement('input');
                     packageCheckbox.type = 'checkbox';
                     packageCheckbox.name = 'pkg';
-                    packageCheckbox.value = pkgInfo.name;
+                    packageCheckbox.value = pkgKey; // Usar el key del paquete como valor
+                    packageCheckbox.dataset.packageName = pkgInfo.name; // Almacenar nombre del paquete como atributo de datos
 
                     const packageImg = document.createElement('img');
                     packageImg.src = `${imageUrl}${pkgKey}.svg`;
-                    packageImg.width = 20;
+                    packageImg.width = 30;
 
                     packageLabel.appendChild(packageCheckbox);
                     packageLabel.appendChild(packageImg);
@@ -96,69 +105,147 @@ function generatePackages(packagesData) {
     });
 }
 
-// Función para generar el comando de instalación según la distribución seleccionada
-function generateCommand() {
-    const form = document.getElementById('packageForm');
-    const selectedPackages = form.querySelectorAll('input[name="pkg"]:checked');
-    const selectedDistro = form.querySelector('input[name="distro"]:checked');
-
-    if (!selectedDistro) {
-        alert('Please select a distribution!');
-        return;
-    }
-
-    const distroValue = selectedDistro.value;
-
-    // Objeto para almacenar los nombres de los paquetes según la distribución seleccionada
-    const packageNames = [];
-
-    // Iterar sobre los paquetes seleccionados y agregar sus nombres al arreglo
-    selectedPackages.forEach(packageCheckbox => {
-        const packageName = packageCheckbox.value;
-        packageNames.push(packageName);
-    });
-
-    // Construir el comando de instalación
-    let command = 'Installation command:\n\n';
-
-    switch (distroValue) {
+// Función para obtener el tipo de paquete según la distribución
+function getPackageType(distro) {
+    switch (distro) {
         case 'arch':
-            command += 'pacman -S ';
-            break;
+            return 'arch_pacman';
         case 'debian':
-            command += 'apt install ';
-            break;
+            return 'debian_apt';
         case 'fedora':
-            command += 'dnf install ';
-            break;
+            return 'fedora_rpm';
+        case 'gentoo':
+            return 'gentoo_emerge';
+        case 'nixos':
+            return 'nixos_nix-env';
+        case 'void':
+            return 'void_xbps';
         case 'flatpak':
-            command += 'flatpak install ';
-            break;
+            return 'linux_flatpak';
+        case 'freebsd':
+            return 'freebsd_pkg';
         case 'brew':
-            command += 'brew install ';
-            break;
+            return 'macos_brew';
         case 'winget':
-            command += 'winget install ';
-            break;
+            return 'windows_winget';
         default:
-            break;
+            return '';
     }
-
-    // Agregar la lista de paquetes seleccionados al comando
-    command += packageNames.join(' ');
-
-    // Mostrar el comando generado dentro del elemento con ID 'installation-command'
-    const installationCommandElement = document.getElementById('installation-command');
-    installationCommandElement.textContent = command;
 }
 
-// Función para seleccionar/deseleccionar todos los paquetes
-function toggleSelectAllPackages() {
-    const checkboxes = document.querySelectorAll('input[name="pkg"]');
-    checkboxes.forEach(checkbox => {
-        checkbox.checked = !checkbox.checked;
-    });
+// Función para generar el comando de instalación según la distribución seleccionada
+async function generateCommand() {
+    console.log('Generate command button clicked');
+    try {
+        const selectedDistro = document.querySelector('input[name="distro"]:checked').value;
+
+        const selectedPackages = Array.from(document.querySelectorAll('input[name="pkg"]:checked'))
+            .map(checkbox => checkbox.value);
+
+        const response = await fetch(jsonUrl);
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const packagesData = await response.json();
+
+        const installationCommands = [];
+        const aurPackages = [];
+        const nonInstallablePackages = [];
+
+        selectedPackages.forEach(pkg => {
+            const packageInfo = packagesData.packages[pkg];
+            if (!packageInfo) {
+                nonInstallablePackages.push(pkg);
+            } else {
+                const packageDistroName = packageInfo.package_manager[getPackageType(selectedDistro)];
+                if (packageDistroName) {
+                    if (selectedDistro === 'arch' && packageDistroName.startsWith('aur_')) {
+                        aurPackages.push(packageDistroName.substr(4)); // Remove 'aur_' prefix
+                    } else {
+                        installationCommands.push(packageDistroName);
+                    }
+                } else {
+                    nonInstallablePackages.push(pkg);
+                }
+            }
+        });
+
+        let commandPrefix;
+        switch (selectedDistro) {
+            case 'arch':
+                commandPrefix = 'sudo pacman -S';
+                break;
+            case 'debian':
+                commandPrefix = 'sudo apt install';
+                break;
+            case 'fedora':
+                commandPrefix = 'sudo dnf install';
+                break;
+            case 'gentoo':
+                commandPrefix = 'sudo emerge';
+                break;
+            case 'nixos':
+                commandPrefix = 'sudo nix-env -iA';
+                break;
+            case 'void':
+                commandPrefix = 'sudo xbps-install -S';
+                break;
+            case 'flatpak':
+                commandPrefix = 'flatpak install';
+                break;
+            case 'freebsd':
+                commandPrefix = 'sudo pkg install';
+                break;
+            case 'brew':
+                commandPrefix = 'brew install';
+                break;
+            case 'winget':
+                commandPrefix = 'winget install';
+                break;
+            default:
+                throw new Error('Unsupported distribution');
+        }
+
+        const finalCommand = installationCommands.length
+            ? `${commandPrefix} ${installationCommands.join(' ')}`
+            : '';
+
+        const aurCommand = aurPackages.length
+            ? `yay -S ${aurPackages.join(' ')}`
+            : '';
+
+        const resultCommand = [finalCommand, aurCommand].filter(cmd => cmd).join(' && ');
+
+        if (!resultCommand) {
+            throw new Error('No installation commands generated. Please select at least one package.');
+        }
+
+        // Clear any existing content
+        const outputElement = document.getElementById("output");
+        outputElement.innerHTML = '';
+
+        // Create and append the installation command element
+        const installationCodeElement = document.createElement('code');
+        installationCodeElement.id = 'installation-command';
+        installationCodeElement.textContent = resultCommand;
+        outputElement.appendChild(installationCodeElement);
+
+        // Create and append the non-installable packages element if needed
+        if (nonInstallablePackages.length) {
+            const nonInstallablePackagesElement = document.createElement('code');
+            nonInstallablePackagesElement.id = 'not-installable-packages';
+            nonInstallablePackagesElement.innerHTML = `<strong>Packages not found:</strong> ${nonInstallablePackages.join(', ')}`;
+            outputElement.appendChild(nonInstallablePackagesElement);
+        }
+    } catch (error) {
+        alert(`There was an error generating the installation command: ${error.message}`);
+    }
 }
+
 
 // Llamar a la función para cargar el JSON y generar los paquetes al cargar la página
 loadPackages();
+
+

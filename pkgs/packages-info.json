@@ -9,7 +9,11 @@
                 "arch_pacman": "p7zip",
                 "debian_apt": "p7zip-full",
                 "fedora_rpm": "p7zip",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.p7zip",
+                "void_xbps": "p7zip",
                 "linux_flatpak": null,
+                "freebsd_pkg": "p7zip",
                 "macos_brew": "p7zip",
                 "windows_winget": "7zip.7zip"
             }
@@ -23,9 +27,13 @@
                 "arch_pacman": "ardour",
                 "debian_apt": "ardour",
                 "fedora_rpm": "ardour",
+                "gentoo_emerge": "media-sound/ardour",
+                "nixos_nix-env": "nixos_nix-env.ardour",
+                "void_xbps": "ardour",
                 "linux_flatpak": "org.ardour.Ardour",
+                "freebsd_pkg": "ardour",
                 "macos_brew": "ardour",
-                "windows_winget": "Ardour"
+                "windows_winget": null
             }
         },
         "audacious": {
@@ -37,7 +45,11 @@
                 "arch_pacman": "audacious",
                 "debian_apt": "audacious",
                 "fedora_rpm": "audacious",
+                "gentoo_emerge": "media-sound/audacious",
+                "nixos_nix-env": "nixos_nix-env.audacious",
+                "void_xbps": "audacious",
                 "linux_flatpak": "org.atheme.audacious",
+                "freebsd_pkg": "audacious",
                 "macos_brew": "audacious",
                 "windows_winget": "Audacious.Audacious"
             }
@@ -51,7 +63,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": "audacity",
+                "gentoo_emerge": "media-sound/audacity",
+                "nixos_nix-env": "nixos_nix-env.audacity",
+                "void_xbps": "audacity",
                 "linux_flatpak": "org.audacityteam.Audacity",
+                "freebsd_pkg": "audacity",
                 "macos_brew": "audacity",
                 "windows_winget": null
             }
@@ -65,7 +81,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": "bitwig-studio",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "bitwig-nixos_nix-env.bitwig-studio",
+                "void_xbps": "null",
                 "linux_flatpak": "com.bitwig.BitwigStudio",
+                "freebsd_pkg": "null",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -79,7 +99,11 @@
                 "arch_pacman": "blender",
                 "debian_apt": "blender",
                 "fedora_rpm": "blender",
+                "gentoo_emerge": "media-gfx/blender",
+                "nixos_nix-env": "nixos_nix-env.blender",
+                "void_xbps": "blender",
                 "linux_flatpak": "org.blender.Blender",
+                "freebsd_pkg": "blender",
                 "macos_brew": "blender",
                 "windows_winget": "BlenderFoundation.Blender"
             }
@@ -93,7 +117,11 @@
                 "arch_pacman": "borg",
                 "debian_apt": "borgbackup",
                 "fedora_rpm": "borgbackup",
+                "gentoo_emerge": "app-backup/borgbackup",
+                "nixos_nix-env": "nixos_nix-env.borgbackup",
+                "void_xbps": "borgbackup",
                 "linux_flatpak": null,
+                "freebsd_pkg": "py37-borgbackup",
                 "macos_brew": "borgbackup",
                 "windows_winget": null
             }
@@ -107,7 +135,11 @@
                 "arch_pacman": "bottles",
                 "debian_apt": "bottles",
                 "fedora_rpm": "bottles",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.bottles",
+                "void_xbps": "null",
                 "linux_flatpak": "com.usebottles.bottles",
+                "freebsd_pkg": "null",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -121,7 +153,11 @@
                 "arch_pacman": "calibre",
                 "debian_apt": "calibre",
                 "fedora_rpm": "calibre",
+                "gentoo_emerge": "app-text/calibre",
+                "nixos_nix-env": "nixos_nix-env.calibre",
+                "void_xbps": "calibre",
                 "linux_flatpak": "com.calibre_ebook.calibre",
+                "freebsd_pkg": "calibre",
                 "macos_brew": "calibre",
                 "windows_winget": "Calibre"
             }
@@ -135,7 +171,11 @@
                 "arch_pacman": "chromium",
                 "debian_apt": "chromium",
                 "fedora_rpm": "chromium",
+                "gentoo_emerge": "www-client/chromium",
+                "nixos_nix-env": "nixos_nix-env.chromium",
+                "void_xbps": "chromium",
                 "linux_flatpak": "org.chromium.Chromium",
+                "freebsd_pkg": "chromium",
                 "macos_brew": "chromium",
                 "windows_winget": "Google.Chrome"
             }
@@ -149,7 +189,11 @@
                 "arch_pacman": "darktable",
                 "debian_apt": "darktable",
                 "fedora_rpm": "darktable",
+                "gentoo_emerge": "media-gfx/darktable",
+                "nixos_nix-env": "nixos_nix-env.darktable",
+                "void_xbps": "darktable",
                 "linux_flatpak": "org.darktable.Darktable",
+                "freebsd_pkg": "darktable",
                 "macos_brew": "darktable",
                 "windows_winget": "Darktable.Darktable"
             }
@@ -163,7 +207,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "null",
+                "void_xbps": "null",
                 "linux_flatpak": null,
+                "freebsd_pkg": "null",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -177,7 +225,11 @@
                 "arch_pacman": "digikam",
                 "debian_apt": "digikam",
                 "fedora_rpm": "digikam",
+                "gentoo_emerge": "kde-apps/digikam",
+                "nixos_nix-env": "nixos_nix-env.digikam",
+                "void_xbps": "digikam",
                 "linux_flatpak": "org.darktable.Darktable",
+                "freebsd_pkg": "digikam",
                 "macos_brew": "digikam",
                 "windows_winget": "digiKam.digiKam"
             }
@@ -191,7 +243,11 @@
                 "arch_pacman": "discord",
                 "debian_apt": "discord",
                 "fedora_rpm": "discord",
+                "gentoo_emerge": "net-im/discord",
+                "nixos_nix-env": "nixos_nix-env.discord",
+                "void_xbps": "discord",
                 "linux_flatpak": "com.discordapp.Discord",
+                "freebsd_pkg": "discord",
                 "macos_brew": "discord",
                 "windows_winget": "Discord.Discord"
             }
@@ -205,7 +261,11 @@
                 "arch_pacman": "distrobox",
                 "debian_apt": "distrobox",
                 "fedora_rpm": "distrobox",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "null",
+                "void_xbps": "null",
                 "linux_flatpak": "com.docker.docker",
+                "freebsd_pkg": "null",
                 "macos_brew": "distrobox",
                 "windows_winget": null
             }
@@ -219,7 +279,11 @@
                 "arch_pacman": "docker",
                 "debian_apt": "docker.io",
                 "fedora_rpm": "docker",
+                "gentoo_emerge": "app-emulation/docker",
+                "nixos_nix-env": "nixos_nix-env.docker",
+                "void_xbps": "docker",
                 "linux_flatpak": "",
+                "freebsd_pkg": "null",
                 "macos_brew": "docker",
                 "windows_winget": "Docker.DockerDesktop"
             }
@@ -233,7 +297,11 @@
                 "arch_pacman": "dolphin",
                 "debian_apt": "dolphin",
                 "fedora_rpm": "dolphin",
+                "gentoo_emerge": "kde-apps/dolphin",
+                "nixos_nix-env": "nixos_nix-env.dolphin",
+                "void_xbps": "dolphin",
                 "linux_flatpak": "org.kde.dolphin",
+                "freebsd_pkg": "dolphin",
                 "macos_brew": null,
                 "windows_winget": "KDE.Dolphin"
             }
@@ -247,7 +315,11 @@
                 "arch_pacman": null,
                 "debian_apt": "dropbox",
                 "fedora_rpm": "nautilus-dropbox",
+                "gentoo_emerge": "net-misc/dropbox",
+                "nixos_nix-env": "nixos_nix-env.dropbox",
+                "void_xbps": "dropbox",
                 "linux_flatpak": "com.dropbox.Client",
+                "freebsd_pkg": "dropbox",
                 "macos_brew": "dropbox",
                 "windows_winget": "Dropbox.Dropbox"
             }
@@ -261,7 +333,11 @@
                 "arch_pacman": null,
                 "debian_apt": "eaglemode",
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "eagle-nixos_nix-env.eagle-mode",
+                "void_xbps": "eagle",
                 "linux_flatpak": null,
+                "freebsd_pkg": "eaglemode",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -275,7 +351,11 @@
                 "arch_pacman": "elisa",
                 "debian_apt": "elisa",
                 "fedora_rpm": "elisa",
+                "gentoo_emerge": "kde-apps/elisa",
+                "nixos_nix-env": "nixos_nix-env.elisa",
+                "void_xbps": "elisa",
                 "linux_flatpak": "org.kde.elisa",
+                "freebsd_pkg": "elisa",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -289,7 +369,11 @@
                 "arch_pacman": "evolution",
                 "debian_apt": "evolution",
                 "fedora_rpm": "evolution",
+                "gentoo_emerge": "mail-client/evolution",
+                "nixos_nix-env": "nixos_nix-env.evolution",
+                "void_xbps": "evolution",
                 "linux_flatpak": "org.gnome.Evolution",
+                "freebsd_pkg": "evolution",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -303,7 +387,11 @@
                 "arch_pacman": "ffmpeg",
                 "debian_apt": "ffmpeg",
                 "fedora_rpm": "ffmpeg-free",
+                "gentoo_emerge": "media-video/ffmpeg",
+                "nixos_nix-env": "nixos_nix-env.ffmpeg",
+                "void_xbps": "ffmpeg",
                 "linux_flatpak": null,
+                "freebsd_pkg": "ffmpeg",
                 "macos_brew": "ffmpeg",
                 "windows_winget": "Mozilla.Firefox"
             }
@@ -317,7 +405,11 @@
                 "arch_pacman": "firefox",
                 "debian_apt": "firefox",
                 "fedora_rpm": "firefox",
+                "gentoo_emerge": "www-client/firefox",
+                "nixos_nix-env": "nixos_nix-env.firefox",
+                "void_xbps": "firefox",
                 "linux_flatpak": "org.mozilla.Firefox",
+                "freebsd_pkg": "firefox",
                 "macos_brew": "firefox",
                 "windows_winget": "Mozilla.Firefox"
             }
@@ -331,7 +423,11 @@
                 "arch_pacman": "foliate",
                 "debian_apt": "foliate",
                 "fedora_rpm": "foliate",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.foliate",
+                "void_xbps": "foliate",
                 "linux_flatpak": "com.github.johnfactotum.Foliate",
+                "freebsd_pkg": "foliate",
                 "macos_brew": "foliate",
                 "windows_winget": null
             }
@@ -345,7 +441,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.freefilesync",
+                "void_xbps": "freefilesync",
                 "linux_flatpak": null,
+                "freebsd_pkg": "freefilesync",
                 "macos_brew": null,
                 "windows_winget": "FreeFileSync.FreeFileSync"
             }
@@ -359,7 +459,11 @@
                 "arch_pacman": "freeplane",
                 "debian_apt": "freeplane",
                 "fedora_rpm": "freeplane",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.freeplane",
+                "void_xbps": "freeplane",
                 "linux_flatpak": "org.freeplane.Freeplane",
+                "freebsd_pkg": "freeplane",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -373,7 +477,11 @@
                 "arch_pacman": "gimp",
                 "debian_apt": "gimp",
                 "fedora_rpm": "gimp",
+                "gentoo_emerge": "media-gfx/gimp",
+                "nixos_nix-env": "nixos_nix-env.gimp",
+                "void_xbps": "gimp",
                 "linux_flatpak": "org.gimp.GIMP",
+                "freebsd_pkg": "gimp",
                 "macos_brew": "gimp",
                 "windows_winget": "GIMP.GIMP"
             }
@@ -387,7 +495,11 @@
                 "arch_pacman": "git",
                 "debian_apt": "git",
                 "fedora_rpm": "git",
+                "gentoo_emerge": "dev-vcs/git",
+                "nixos_nix-env": "nixos_nix-env.git",
+                "void_xbps": "git",
                 "linux_flatpak": null,
+                "freebsd_pkg": "git",
                 "macos_brew": "git",
                 "windows_winget": "Git.Git"
             }
@@ -401,7 +513,11 @@
                 "arch_pacman": "godot",
                 "debian_apt": "godot3",
                 "fedora_rpm": "godot",
+                "gentoo_emerge": "games-engines/godot",
+                "nixos_nix-env": "nixos_nix-env.godot",
+                "void_xbps": "godot",
                 "linux_flatpak": "org.godotengine.Godot",
+                "freebsd_pkg": "godot",
                 "macos_brew": "godot",
                 "windows_winget": "GodotEngine.Godot"
             }
@@ -415,7 +531,11 @@
                 "arch_pacman": null,
                 "debian_apt": "google-earth-pro-stable",
                 "fedora_rpm": "flathub-com.google.EarthPro",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.googleearth",
+                "void_xbps": "null",
                 "linux_flatpak": "com.github.git",
+                "freebsd_pkg": "null",
                 "macos_brew": "google-earth-pro",
                 "windows_winget": "Google.GoogleEarthPro"
             }
@@ -429,7 +549,11 @@
                 "arch_pacman": "geany",
                 "debian_apt": "geany",
                 "fedora_rpm": "geany",
+                "gentoo_emerge": "app-editors/geany",
+                "nixos_nix-env": "nixos_nix-env.geany",
+                "void_xbps": "geany",
                 "linux_flatpak": "flathub-org.geany.Geany",
+                "freebsd_pkg": "geany",
                 "macos_brew": "geany",
                 "windows_winget": "Geany"
             }
@@ -443,7 +567,11 @@
                 "arch_pacman": "gnome-boxes",
                 "debian_apt": "gnome-boxes",
                 "fedora_rpm": "gnome-boxes",
+                "gentoo_emerge": "app-emulation/gnome-boxes",
+                "nixos_nix-env": "gnome-nixos_nix-env.gnome-boxes",
+                "void_xbps": "gnome-boxes",
                 "linux_flatpak": "org.gnome.Boxes",
+                "freebsd_pkg": "gnome-boxes",
                 "macos_brew": "gnome-boxes",
                 "windows_winget": "Boxes"
             }
@@ -457,7 +585,11 @@
                 "arch_pacman": "gnucash",
                 "debian_apt": "gnucash",
                 "fedora_rpm": "gnucash",
+                "gentoo_emerge": "app-office/gnucash",
+                "nixos_nix-env": "nixos_nix-env.gnucash",
+                "void_xbps": "gnucash",
                 "linux_flatpak": "org.gnucash.Gnucash",
+                "freebsd_pkg": "gnucash",
                 "macos_brew": "gnucash",
                 "windows_winget": null
             }
@@ -471,7 +603,11 @@
                 "arch_pacman": "gwenview",
                 "debian_apt": "gwenview",
                 "fedora_rpm": "gwenview",
+                "gentoo_emerge": "kde-apps/gwenview",
+                "nixos_nix-env": "nixos_nix-env.gwenview",
+                "void_xbps": "gwenview",
                 "linux_flatpak": "com.github.unrud.VideoDownloader",
+                "freebsd_pkg": "gwenview",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -485,7 +621,11 @@
                 "arch_pacman": "handbrake",
                 "debian_apt": "handbrake",
                 "fedora_rpm": "handbrake",
+                "gentoo_emerge": "media-video/handbrake",
+                "nixos_nix-env": "nixos_nix-env.handbrake",
+                "void_xbps": "handbrake",
                 "linux_flatpak": "io.github.waydroid",
+                "freebsd_pkg": "handbrake",
                 "macos_brew": "handbrake",
                 "windows_winget": "HandBrake"
             }
@@ -499,7 +639,11 @@
                 "arch_pacman": "haruna",
                 "debian_apt": "haruna",
                 "fedora_rpm": "haruna",
+                "gentoo_emerge": "kde-apps/haruna",
+                "nixos_nix-env": "nixos_nix-env.haruna",
+                "void_xbps": "null",
                 "linux_flatpak": "io.github.ytdl-org.yt-dlp",
+                "freebsd_pkg": "null",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -513,7 +657,11 @@
                 "arch_pacman": null,
                 "debian_apt": "heroic-games-launcher",
                 "fedora_rpm": "com.heroicgameslauncher.hgl",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "heroic-games-nixos_nix-env.heroic-games-launcher",
+                "void_xbps": "null",
                 "linux_flatpak": "com.heroicgameslauncher.hgl",
+                "freebsd_pkg": "null",
                 "macos_brew": "heroic",
                 "windows_winget": "HeroicGamesLauncher.HeroicGamesLauncher"
             }
@@ -527,7 +675,11 @@
                 "arch_pacman": "homebank",
                 "debian_apt": "homebank",
                 "fedora_rpm": "homebank",
+                "gentoo_emerge": "app-office/homebank",
+                "nixos_nix-env": "nixos_nix-env.homebank",
+                "void_xbps": "homebank",
                 "linux_flatpak": "org.gnome.Boxes",
+                "freebsd_pkg": "homebank",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -541,7 +693,11 @@
                 "arch_pacman": "inkscape",
                 "debian_apt": "inkscape",
                 "fedora_rpm": "inkscape",
+                "gentoo_emerge": "media-gfx/inkscape",
+                "nixos_nix-env": "nixos_nix-env.inkscape",
+                "void_xbps": "inkscape",
                 "linux_flatpak": "org.inkscape.Inkscape",
+                "freebsd_pkg": "inkscape",
                 "macos_brew": "inkscape",
                 "windows_winget": "Inkscape.Inkscape"
             }
@@ -555,7 +711,11 @@
                 "arch_pacman": null,
                 "debian_apt": "jellyfin",
                 "fedora_rpm": "jellyfin",
+                "gentoo_emerge": "media-tv/jellyfin-media-player",
+                "nixos_nix-env": "jellyfin-media-nixos_nix-env.jellyfin-media-player",
+                "void_xbps": "jellyfin-media-player",
                 "linux_flatpak": "com.github.iwalton3.jellyfin-media-player",
+                "freebsd_pkg": "jellyfin-web",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -569,7 +729,11 @@
                 "arch_pacman": "jellyfin-server",
                 "debian_apt": "jellyfin",
                 "fedora_rpm": "jellyfin",
+                "gentoo_emerge": "media-tv/jellyfin",
+                "nixos_nix-env": "nixos_nix-env.jellyfin",
+                "void_xbps": "jellyfin",
                 "linux_flatpak": "org.jellyfin.JellyfinServer",
+                "freebsd_pkg": "jellyfin",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -583,7 +747,11 @@
                 "arch_pacman": "kate",
                 "debian_apt": "kate",
                 "fedora_rpm": "kate",
+                "gentoo_emerge": "kde-apps/kate",
+                "nixos_nix-env": "nixos_nix-env.kate",
+                "void_xbps": "kate",
                 "linux_flatpak": "",
+                "freebsd_pkg": "kate",
                 "macos_brew": "kate",
                 "windows_winget": "KateEditor.Kate"
             }
@@ -597,7 +765,11 @@
                 "arch_pacman": "kdenlive",
                 "debian_apt": "kdenlive",
                 "fedora_rpm": "kdenlive",
+                "gentoo_emerge": "kde-apps/kdenlive",
+                "nixos_nix-env": "nixos_nix-env.kdenlive",
+                "void_xbps": "kdenlive",
                 "linux_flatpak": "org.kde.kdenlive",
+                "freebsd_pkg": "kdenlive",
                 "macos_brew": "kdenlive",
                 "windows_winget": "Kdenlive.Kdenlive"
             }
@@ -611,7 +783,11 @@
                 "arch_pacman": "keepassxc",
                 "debian_apt": "keepassxc",
                 "fedora_rpm": "keepassxc",
+                "gentoo_emerge": "app-admin/keepassxc",
+                "nixos_nix-env": "nixos_nix-env.keepassxc",
+                "void_xbps": "keepassxc",
                 "linux_flatpak": "org.keepassxc.KeePassXC",
+                "freebsd_pkg": "keepassxc",
                 "macos_brew": "keepassxc",
                 "windows_winget": "KeePassXCTeam.KeePassXC"
             }
@@ -625,7 +801,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "koodo-nixos_nix-env.koodo-reader",
+                "void_xbps": "null",
                 "linux_flatpak": "org.godotengine.Godot",
+                "freebsd_pkg": "null",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -639,7 +819,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.koreader",
+                "void_xbps": "null",
                 "linux_flatpak": null,
+                "freebsd_pkg": "null",
                 "macos_brew": "koreader",
                 "windows_winget": null
             }
@@ -653,7 +837,11 @@
                 "arch_pacman": "krita",
                 "debian_apt": "krita",
                 "fedora_rpm": "krita",
+                "gentoo_emerge": "kde-apps/krita",
+                "nixos_nix-env": "nixos_nix-env.krita",
+                "void_xbps": "krita",
                 "linux_flatpak": "com.google.EarthPro",
+                "freebsd_pkg": "krita",
                 "macos_brew": "krita",
                 "windows_winget": "KDE.Krita"
             }
@@ -667,7 +855,11 @@
                 "arch_pacman": "kstars",
                 "debian_apt": "kstars",
                 "fedora_rpm": "kstars",
+                "gentoo_emerge": "kde-apps/kstars",
+                "nixos_nix-env": "nixos_nix-env.kstars",
+                "void_xbps": "kstars",
                 "linux_flatpak": "org.kde.kstars",
+                "freebsd_pkg": "kstars",
                 "macos_brew": "kstars",
                 "windows_winget": "kstars"
             }
@@ -681,7 +873,11 @@
                 "arch_pacman": "libreoffice",
                 "debian_apt": "libreoffice",
                 "fedora_rpm": "libreoffice",
+                "gentoo_emerge": "app-office/libreoffice",
+                "nixos_nix-env": "nixos_nix-env.libreoffice",
+                "void_xbps": "libreoffice",
                 "linux_flatpak": "org.libreoffice.LibreOffice",
+                "freebsd_pkg": "libreoffice",
                 "macos_brew": "libreoffice",
                 "windows_winget": "LibreOffice.LibreOffice"
             }
@@ -695,7 +891,11 @@
                 "arch_pacman": "librewolf",
                 "debian_apt": "librewolf",
                 "fedora_rpm": "librewolf",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.librewolf",
+                "void_xbps": "null",
                 "linux_flatpak": "io.gitlab.librewolf-community",
+                "freebsd_pkg": "librewolf",
                 "macos_brew": "librewolf",
                 "windows_winget": "LibreWolf"
             }
@@ -709,7 +909,11 @@
                 "arch_pacman": "lmms",
                 "debian_apt": "lmms",
                 "fedora_rpm": "lmms",
+                "gentoo_emerge": "media-sound/lmms",
+                "nixos_nix-env": "nixos_nix-env.lmms",
+                "void_xbps": "lmms",
                 "linux_flatpak": "",
+                "freebsd_pkg": "lmms",
                 "macos_brew": "lmms",
                 "windows_winget": "LMMS.LMMS"
             }
@@ -723,7 +927,11 @@
                 "arch_pacman": "lutris",
                 "debian_apt": "lutris",
                 "fedora_rpm": "lutris",
+                "gentoo_emerge": "games-util/lutris",
+                "nixos_nix-env": "nixos_nix-env.lutris",
+                "void_xbps": "lutris",
                 "linux_flatpak": "org.videolan.VLC",
+                "freebsd_pkg": "lutris",
                 "macos_brew": "lutris",
                 "windows_winget": "Lutris"
             }
@@ -737,7 +945,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "net-misc/megasync",
+                "nixos_nix-env": "nixos_nix-env.megasync",
+                "void_xbps": "megasync",
                 "linux_flatpak": "flathub-nz.mega.MEGAsync",
+                "freebsd_pkg": "megasync",
                 "macos_brew": null,
                 "windows_winget": "MegaLimited.MEGAsync"
             }
@@ -751,7 +963,11 @@
                 "arch_pacman": "mypaint",
                 "debian_apt": "mypaint",
                 "fedora_rpm": "mypaint",
+                "gentoo_emerge": "media-gfx/mypaint",
+                "nixos_nix-env": "nixos_nix-env.mypaint",
+                "void_xbps": "mypaint",
                 "linux_flatpak": "org.mypaint.MyPaint",
+                "freebsd_pkg": "mypaint",
                 "macos_brew": "mypaint",
                 "windows_winget": "MyPaint.MyPaint"
             }
@@ -765,7 +981,11 @@
                 "arch_pacman": "mpv",
                 "debian_apt": "mpv",
                 "fedora_rpm": "mpv",
+                "gentoo_emerge": "media-video/mpv",
+                "nixos_nix-env": "nixos_nix-env.mpv",
+                "void_xbps": "mpv",
                 "linux_flatpak": "io.mpv.Mpv",
+                "freebsd_pkg": "mpv",
                 "macos_brew": "mpv",
                 "windows_winget": "MPVPlayer.MPV"
             }
@@ -779,7 +999,11 @@
                 "arch_pacman": "musescore",
                 "debian_apt": "musescore",
                 "fedora_rpm": "musescore",
+                "gentoo_emerge": "media-sound/musescore",
+                "nixos_nix-env": "nixos_nix-env.musescore",
+                "void_xbps": "musescore",
                 "linux_flatpak": "org.musescore.MuseScore",
+                "freebsd_pkg": "musescore",
                 "macos_brew": "musescore",
                 "windows_winget": "MuseScore.MuseScore"
             }
@@ -793,7 +1017,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "null",
+                "void_xbps": "null",
                 "linux_flatpak": "org.kde.digikam",
+                "freebsd_pkg": "null",
                 "macos_brew": null,
                 "windows_winget": "MusicBee"
             }
@@ -807,7 +1035,11 @@
                 "arch_pacman": "picard",
                 "debian_apt": "picard",
                 "fedora_rpm": "picard",
+                "gentoo_emerge": "media-sound/picard",
+                "nixos_nix-env": "nixos_nix-env.picard",
+                "void_xbps": "picard",
                 "linux_flatpak": "org.kde.dolphin",
+                "freebsd_pkg": "picard",
                 "macos_brew": "picard",
                 "windows_winget": "MusicBrainz.Picard"
             }
@@ -821,7 +1053,11 @@
                 "arch_pacman": "neovim",
                 "debian_apt": "neovim",
                 "fedora_rpm": "neovim",
+                "gentoo_emerge": "app-editors/neovim",
+                "nixos_nix-env": "nixos_nix-env.neovim",
+                "void_xbps": "neovim",
                 "linux_flatpak": "org.kde.gwenview",
+                "freebsd_pkg": "neovim",
                 "macos_brew": "neovim",
                 "windows_winget": "Neovim.Neovim"
             }
@@ -835,7 +1071,11 @@
                 "arch_pacman": "nmap",
                 "debian_apt": "nmap",
                 "fedora_rpm": "nmap",
+                "gentoo_emerge": "net-analyzer/nmap",
+                "nixos_nix-env": "nixos_nix-env.nmap",
+                "void_xbps": "nmap",
                 "linux_flatpak": "org.kde.haruna",
+                "freebsd_pkg": "nmap",
                 "macos_brew": "nmap",
                 "windows_winget": "Nmap.Nmap"
             }
@@ -849,7 +1089,11 @@
                 "arch_pacman": "nodejs",
                 "debian_apt": "nodejs",
                 "fedora_rpm": "nodejs",
+                "gentoo_emerge": "net-libs/nodejs",
+                "nixos_nix-env": "nixos_nix-env.nodejs",
+                "void_xbps": "nodejs",
                 "linux_flatpak": "org.kde.kate",
+                "freebsd_pkg": "node",
                 "macos_brew": "node",
                 "windows_winget": "OpenJS.Nodejs"
             }
@@ -863,7 +1107,11 @@
                 "arch_pacman": "obs-studio",
                 "debian_apt": "obs-studio",
                 "fedora_rpm": "obs-studio",
+                "gentoo_emerge": "media-video/obs-studio",
+                "nixos_nix-env": "obs-nixos_nix-env.obs-studio",
+                "void_xbps": "obs-studio",
                 "linux_flatpak": "org.kde.kdenlive",
+                "freebsd_pkg": "obs-studio",
                 "macos_brew": "obs",
                 "windows_winget": "OBSProject.OBSStudio"
             }
@@ -877,7 +1125,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.obsidian",
+                "void_xbps": "obsidian",
                 "linux_flatpak": "org.kde.krita",
+                "freebsd_pkg": "obsidian",
                 "macos_brew": "obsidian",
                 "windows_winget": "Obsidian.Obsidian"
             }
@@ -891,7 +1143,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.ocenaudio",
+                "void_xbps": "null",
                 "linux_flatpak": null,
+                "freebsd_pkg": "null",
                 "macos_brew": "ocenaudio",
                 "windows_winget": "Ocenaudio.Ocenaudio"
             }
@@ -905,7 +1161,11 @@
                 "arch_pacman": "okular",
                 "debian_apt": "okular",
                 "fedora_rpm": "okular",
+                "gentoo_emerge": "kde-apps/okular",
+                "nixos_nix-env": "nixos_nix-env.okular",
+                "void_xbps": "okular",
                 "linux_flatpak": "org.kde.okular",
+                "freebsd_pkg": "okular",
                 "macos_brew": "okular",
                 "windows_winget": null
             }
@@ -919,7 +1179,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": "onlyoffice",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "onlyoffice-nixos_nix-env.onlyoffice-bin",
+                "void_xbps": "null",
                 "linux_flatpak": "org.onlyoffice.desktopeditors",
+                "freebsd_pkg": "null",
                 "macos_brew": "onlyoffice",
                 "windows_winget": "ONLYOFFICE.DesktopEditors"
             }
@@ -933,7 +1197,11 @@
                 "arch_pacman": "openshot",
                 "debian_apt": "openshot",
                 "fedora_rpm": "openshot",
+                "gentoo_emerge": "media-video/openshot",
+                "nixos_nix-env": "nixos_nix-env.openshot",
+                "void_xbps": "openshot",
                 "linux_flatpak": "org.openshot.OpenShot",
+                "freebsd_pkg": "openshot",
                 "macos_brew": "openshot",
                 "windows_winget": "OpenShot"
             }
@@ -947,7 +1215,11 @@
                 "arch_pacman": "playonlinux",
                 "debian_apt": "playonlinux",
                 "fedora_rpm": "playonlinux",
+                "gentoo_emerge": "app-emulation/playonlinux",
+                "nixos_nix-env": "nixos_nix-env.playonlinux",
+                "void_xbps": "playonlinux",
                 "linux_flatpak": "org.phoenicis.playonlinux",
+                "freebsd_pkg": "playonlinux",
                 "macos_brew": "playonlinux",
                 "windows_winget": "PlayOnLinux"
             }
@@ -961,7 +1233,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.proton",
+                "void_xbps": "null",
                 "linux_flatpak": "org.koreader.Koreader",
+                "freebsd_pkg": "null",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -975,7 +1251,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "proton-nixos_nix-env.proton-qt",
+                "void_xbps": "null",
                 "linux_flatpak": "org.libreoffice.LibreOffice",
+                "freebsd_pkg": "null",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -989,7 +1269,11 @@
                 "arch_pacman": "putty",
                 "debian_apt": "putty",
                 "fedora_rpm": "putty",
+                "gentoo_emerge": "net-misc/putty",
+                "nixos_nix-env": "nixos_nix-env.putty",
+                "void_xbps": "putty",
                 "linux_flatpak": "io.lmms.LMMS",
+                "freebsd_pkg": "putty",
                 "macos_brew": "putty",
                 "windows_winget": "PuTTY.PuTTY"
             }
@@ -1003,7 +1287,11 @@
                 "arch_pacman": "python",
                 "debian_apt": "python3",
                 "fedora_rpm": "python3",
+                "gentoo_emerge": "dev-lang/python",
+                "nixos_nix-env": "nixos_nix-env.python3",
+                "void_xbps": "python3",
                 "linux_flatpak": "net.lutris.Lutris",
+                "freebsd_pkg": "python",
                 "macos_brew": "python",
                 "windows_winget": "Python.Python.3"
             }
@@ -1017,7 +1305,11 @@
                 "arch_pacman": "qbittorrent",
                 "debian_apt": "qbittorrent",
                 "fedora_rpm": "qbittorrent",
+                "gentoo_emerge": "net-p2p/qbittorrent",
+                "nixos_nix-env": "nixos_nix-env.qbittorrent",
+                "void_xbps": "qbittorrent",
                 "linux_flatpak": "org.qbittorrent.qBittorrent",
+                "freebsd_pkg": "qbittorrent",
                 "macos_brew": "qbittorrent",
                 "windows_winget": "qBittorrent.qBittorrent"
             }
@@ -1031,7 +1323,11 @@
                 "arch_pacman": "qemu",
                 "debian_apt": "qemu",
                 "fedora_rpm": "qemu",
+                "gentoo_emerge": "app-emulation/qemu",
+                "nixos_nix-env": "nixos_nix-env.qemu",
+                "void_xbps": "qemu",
                 "linux_flatpak": null,
+                "freebsd_pkg": "qemu",
                 "macos_brew": "qemu",
                 "windows_winget": null
             }
@@ -1046,7 +1342,11 @@
                 "arch_pacman": "rawtherapee",
                 "debian_apt": "rawtherapee",
                 "fedora_rpm": "rawtherapee",
+                "gentoo_emerge": "media-gfx/rawtherapee",
+                "nixos_nix-env": "nixos_nix-env.rawtherapee",
+                "void_xbps": "rawtherapee",
                 "linux_flatpak": "com.rawtherapee.RawTherapee",
+                "freebsd_pkg": "rawtherapee",
                 "macos_brew": "rawtherapee",
                 "windows_winget": "RawTherapee.RawTherapee"
             }
@@ -1060,7 +1360,11 @@
                 "arch_pacman": "rclone",
                 "debian_apt": "rclone",
                 "fedora_rpm": "rclone",
+                "gentoo_emerge": "net-misc/rclone",
+                "nixos_nix-env": "nixos_nix-env.rclone",
+                "void_xbps": "rclone",
                 "linux_flatpak": "org.mozilla.Thunderbird",
+                "freebsd_pkg": "rclone",
                 "macos_brew": "rclone",
                 "windows_winget": "Rclone.Rclone"
             }
@@ -1074,7 +1378,11 @@
                 "arch_pacman": "reaper",
                 "debian_apt": "reaper",
                 "fedora_rpm": "reaper",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.reaper",
+                "void_xbps": "null",
                 "linux_flatpak": "fm.reaper.Reaper",
+                "freebsd_pkg": "null",
                 "macos_brew": "reaper",
                 "windows_winget": "REAPER"
             }
@@ -1088,7 +1396,11 @@
                 "arch_pacman": "rsync",
                 "debian_apt": "rsync",
                 "fedora_rpm": "rsync",
+                "gentoo_emerge": "net-misc/rsync",
+                "nixos_nix-env": "nixos_nix-env.rsync",
+                "void_xbps": "rsync",
                 "linux_flatpak": null,
+                "freebsd_pkg": "rsync",
                 "macos_brew": "rsync",
                 "windows_winget": "WayneDavison.Rsync"
             }
@@ -1102,7 +1414,11 @@
                 "arch_pacman": "shotcut",
                 "debian_apt": "shotcut",
                 "fedora_rpm": "shotcut",
+                "gentoo_emerge": "media-video/shotcut",
+                "nixos_nix-env": "nixos_nix-env.shotcut",
+                "void_xbps": "shotcut",
                 "linux_flatpak": "org.musescore.MuseScore",
+                "freebsd_pkg": "shotcut",
                 "macos_brew": "shotcut",
                 "windows_winget": "Meltytech.Shotcut"
             }
@@ -1116,7 +1432,11 @@
                 "arch_pacman": "shotwell",
                 "debian_apt": "shotwell",
                 "fedora_rpm": "shotwell",
+                "gentoo_emerge": "media-gfx/shotwell",
+                "nixos_nix-env": "nixos_nix-env.shotwell",
+                "void_xbps": "shotwell",
                 "linux_flatpak": "org.gnome.Shotwell",
+                "freebsd_pkg": "shotwell",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -1130,7 +1450,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "null",
+                "void_xbps": "null",
                 "linux_flatpak": "org.winehq.Wine",
+                "freebsd_pkg": "null",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -1144,7 +1468,11 @@
                 "arch_pacman": "steam",
                 "debian_apt": "steam",
                 "fedora_rpm": "steam",
+                "gentoo_emerge": "games-util/steam-launcher",
+                "nixos_nix-env": "nixos_nix-env.steam",
+                "void_xbps": "steam",
                 "linux_flatpak": "io.neovim.nvim",
+                "freebsd_pkg": "steam",
                 "macos_brew": "steam",
                 "windows_winget": "Valve.Steam"
             }
@@ -1158,7 +1486,11 @@
                 "arch_pacman": "stellarium",
                 "debian_apt": "stellarium",
                 "fedora_rpm": "stellarium",
+                "gentoo_emerge": "sci-astronomy/stellarium",
+                "nixos_nix-env": "nixos_nix-env.stellarium",
+                "void_xbps": "stellarium",
                 "linux_flatpak": "org.nmap.Zenmap",
+                "freebsd_pkg": "stellarium",
                 "macos_brew": "stellarium",
                 "windows_winget": "Stellarium.Stellarium"
             }
@@ -1172,7 +1504,11 @@
                 "arch_pacman": "strawberry",
                 "debian_apt": "strawberry",
                 "fedora_rpm": "strawberry",
+                "gentoo_emerge": "media-sound/strawberry",
+                "nixos_nix-env": "nixos_nix-env.strawberry",
+                "void_xbps": "strawberry",
                 "linux_flatpak": "md.obsidian.Obsidian",
+                "freebsd_pkg": "strawberry",
                 "macos_brew": "strawberry",
                 "windows_winget": null
             }
@@ -1186,7 +1522,11 @@
                 "arch_pacman": null,
                 "debian_apt": "sublime-text-4",
                 "fedora_rpm": "sublime-text",
+                "gentoo_emerge": "app-editors/sublime-text",
+                "nixos_nix-env": "sublime-text-nixos_nix-env.sublime-text-4",
+                "void_xbps": "sublime-text",
                 "linux_flatpak": "com.obsproject.Studio",
+                "freebsd_pkg": "sublime-text",
                 "macos_brew": "sublime-text",
                 "windows_winget": "SublimeHQ.SublimeText.4"
             }
@@ -1200,7 +1540,11 @@
                 "arch_pacman": "telegram-desktop",
                 "debian_apt": "telegram-desktop",
                 "fedora_rpm": "telegram-desktop",
+                "gentoo_emerge": "net-im/telegram-desktop",
+                "nixos_nix-env": "telegram-nixos_nix-env.telegram-desktop",
+                "void_xbps": "telegram-desktop",
                 "linux_flatpak": "org.telegram.desktop",
+                "freebsd_pkg": "telegram-desktop",
                 "macos_brew": "telegram-desktop",
                 "windows_winget": "Telegram.TelegramDesktop"
             }
@@ -1214,7 +1558,11 @@
                 "arch_pacman": "tenacity",
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.tenacity",
+                "void_xbps": "tenacity",
                 "linux_flatpak": "org.tenacityaudio.Tenacity",
+                "freebsd_pkg": "tenacity",
                 "macos_brew": "tenacity",
                 "windows_winget": null
             }
@@ -1228,7 +1576,11 @@
                 "arch_pacman": "thunderbird",
                 "debian_apt": "thunderbird",
                 "fedora_rpm": "thunderbird",
+                "gentoo_emerge": "mail-client/thunderbird",
+                "nixos_nix-env": "nixos_nix-env.thunderbird",
+                "void_xbps": "thunderbird",
                 "linux_flatpak": "org.mozilla.Thunderbird",
+                "freebsd_pkg": "thunderbird",
                 "macos_brew": "thunderbird",
                 "windows_winget": "Mozilla.Thunderbird"
             }
@@ -1242,7 +1594,11 @@
                 "arch_pacman": "tmux",
                 "debian_apt": "tmux",
                 "fedora_rpm": "tmux",
+                "gentoo_emerge": "app-misc/tmux",
+                "nixos_nix-env": "nixos_nix-env.tmux",
+                "void_xbps": "tmux",
                 "linux_flatpak": "org.tmux.tmux",
+                "freebsd_pkg": "tmux",
                 "macos_brew": "tmux",
                 "windows_winget": "tmux"
             }
@@ -1256,7 +1612,11 @@
                 "arch_pacman": null,
                 "debian_apt": "transmission",
                 "fedora_rpm": "transmission",
+                "gentoo_emerge": "net-p2p/transmission",
+                "nixos_nix-env": "nixos_nix-env.transmission",
+                "void_xbps": "transmission",
                 "linux_flatpak": "com.transmissionbt.Transmission",
+                "freebsd_pkg": "transmission",
                 "macos_brew": "transmission",
                 "windows_winget": "Transmission.Transmission"
             }
@@ -1270,7 +1630,11 @@
                 "arch_pacman": "tree",
                 "debian_apt": "tree",
                 "fedora_rpm": "tree",
+                "gentoo_emerge": "app-text/tree",
+                "nixos_nix-env": "nixos_nix-env.tree",
+                "void_xbps": "tree",
                 "linux_flatpak": "org.qbittorrent.qBittorrent",
+                "freebsd_pkg": "tree",
                 "macos_brew": "tree",
                 "windows_winget": "sharkdp.tree"
             }
@@ -1284,7 +1648,11 @@
                 "arch_pacman": null,
                 "debian_apt": "ungoogled-chromium",
                 "fedora_rpm": "ungoogled-chromium",
+                "gentoo_emerge": "www-client/ungoogled-chromium",
+                "nixos_nix-env": "ungoogled-nixos_nix-env.ungoogled-chromium",
+                "void_xbps": "ungoogled-chromium",
                 "linux_flatpak": "org.chromium.Chromium",
+                "freebsd_pkg": "ungoogled-chromium",
                 "macos_brew": "ungoogled-chromium",
                 "windows_winget": "Ungoogled-Chromium"
             }
@@ -1298,7 +1666,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "nixos_nix-env.ventoy",
+                "void_xbps": "ventoy",
                 "linux_flatpak": "org.qemu.QEMU",
+                "freebsd_pkg": "ventoy",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -1312,7 +1684,11 @@
                 "arch_pacman": "veracrypt",
                 "debian_apt": "veracrypt",
                 "fedora_rpm": "veracrypt",
+                "gentoo_emerge": "app-crypt/veracrypt",
+                "nixos_nix-env": "nixos_nix-env.veracrypt",
+                "void_xbps": "veracrypt",
                 "linux_flatpak": "com.veracrypt.VeraCrypt",
+                "freebsd_pkg": "veracrypt",
                 "macos_brew": "veracrypt",
                 "windows_winget": "IDRIX.VeraCrypt"
             }
@@ -1326,7 +1702,11 @@
                 "arch_pacman": "virt-manager",
                 "debian_apt": "virt-manager",
                 "fedora_rpm": "virt-manager",
+                "gentoo_emerge": "virt-app-emulation/virt-manager",
+                "nixos_nix-env": "nixos_nix-env.virtmanager",
+                "void_xbps": "virt-manager",
                 "linux_flatpak": "org.shotcut.Shotcut",
+                "freebsd_pkg": "virt-manager",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -1340,7 +1720,11 @@
                 "arch_pacman": "virtualbox",
                 "debian_apt": "virtualbox",
                 "fedora_rpm": "VirtualBox",
+                "gentoo_emerge": "app-emulation/virtualbox",
+                "nixos_nix-env": "nixos_nix-env.virtualbox",
+                "void_xbps": "virtualbox",
                 "linux_flatpak": "net.sourceforge.eaglemode",
+                "freebsd_pkg": "virtualbox-ose",
                 "macos_brew": "virtualbox",
                 "windows_winget": "Oracle.VirtualBox"
             }
@@ -1354,7 +1738,11 @@
                 "arch_pacman": null,
                 "debian_apt": "code",
                 "fedora_rpm": "code",
+                "gentoo_emerge": "app-editors/vscode",
+                "nixos_nix-env": "visual-studio-nixos_nix-env.visual-studio-code",
+                "void_xbps": "visual-studio-code",
                 "linux_flatpak": "com.stability.matrix",
+                "freebsd_pkg": "vscode",
                 "macos_brew": "visual-studio-code",
                 "windows_winget": "Microsoft.VisualStudioCode"
             }
@@ -1368,7 +1756,11 @@
                 "arch_pacman": "vlc",
                 "debian_apt": "vlc",
                 "fedora_rpm": "vlc",
+                "gentoo_emerge": "media-video/vlc",
+                "nixos_nix-env": "nixos_nix-env.vlc",
+                "void_xbps": "vlc",
                 "linux_flatpak": "com.steam.CompatibilityTool.Proton",
+                "freebsd_pkg": "vlc",
                 "macos_brew": "vlc",
                 "windows_winget": "VideoLAN.VLC"
             }
@@ -1382,7 +1774,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": "vmware-workstation-player",
+                "gentoo_emerge": "app-emulation/vmware-workstation",
+                "nixos_nix-env": "vmware-nixos_nix-env.vmware-workstation",
+                "void_xbps": "null",
                 "linux_flatpak": "org.stellarium.Stellarium",
+                "freebsd_pkg": "null",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -1396,7 +1792,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": null,
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "null",
+                "void_xbps": "null",
                 "linux_flatpak": "com.sublimetext.three",
+                "freebsd_pkg": "null",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -1410,7 +1810,11 @@
                 "arch_pacman": "wine",
                 "debian_apt": "wine",
                 "fedora_rpm": "wine",
+                "gentoo_emerge": "app-emulation/wine",
+                "nixos_nix-env": "nixos_nix-env.wine",
+                "void_xbps": "wine",
                 "linux_flatpak": "org.winehq.Platform",
+                "freebsd_pkg": "wine",
                 "macos_brew": "wine",
                 "windows_winget": "WineHQ.Wine"
             }
@@ -1424,7 +1828,11 @@
                 "arch_pacman": "wordpress",
                 "debian_apt": "wordpress",
                 "fedora_rpm": "wordpress",
+                "gentoo_emerge": "www-apps/wordpress",
+                "nixos_nix-env": "nixos_nix-env.wordpress",
+                "void_xbps": "wordpress",
                 "linux_flatpak": null,
+                "freebsd_pkg": "wordpress",
                 "macos_brew": "wordpresscom",
                 "windows_winget": "Automattic.Wordpress"
             }
@@ -1438,7 +1846,11 @@
                 "arch_pacman": null,
                 "debian_apt": "xen-hypervisor",
                 "fedora_rpm": "xen",
+                "gentoo_emerge": "app-emulation/xen",
+                "nixos_nix-env": "nixos_nix-env.xen",
+                "void_xbps": "xen",
                 "linux_flatpak": "org.tenacityaudio.Tenacity",
+                "freebsd_pkg": "xen",
                 "macos_brew": null,
                 "windows_winget": null
             }
@@ -1452,7 +1864,11 @@
                 "arch_pacman": null,
                 "debian_apt": null,
                 "fedora_rpm": "xnviewmp",
+                "gentoo_emerge": "media-gfx/xnviewmp",
+                "nixos_nix-env": "nixos_nix-env.xnviewmp",
+                "void_xbps": "xnviewmp",
                 "linux_flatpak": "com.xnview.XnViewMP",
+                "freebsd_pkg": "xnview",
                 "macos_brew": "xnviewmp",
                 "windows_winget": null
             }
@@ -1466,7 +1882,11 @@
                 "arch_pacman": "yt-dlp",
                 "debian_apt": "yt-dlp",
                 "fedora_rpm": "yt-dlp",
+                "gentoo_emerge": "net-misc/yt-dlp",
+                "nixos_nix-env": "yt-nixos_nix-env.yt-dlp",
+                "void_xbps": "yt-dlp",
                 "linux_flatpak": "com.transmissionbt.Transmission",
+                "freebsd_pkg": "yt-dlp",
                 "macos_brew": "yt-dl",
                 "windows_winget": "yt-dlp.yt-dlp"
             }
@@ -1480,7 +1900,11 @@
                 "arch_pacman": null,
                 "debian_apt": "youtube-dl",
                 "fedora_rpm": "youtube-dl",
+                "gentoo_emerge": "null",
+                "nixos_nix-env": "null",
+                "void_xbps": "null",
                 "linux_flatpak": null,
+                "freebsd_pkg": "null",
                 "macos_brew": "youtube-dl",
                 "windows_winget": null
             }

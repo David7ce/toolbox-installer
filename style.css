@@ -128,7 +128,7 @@ button:hover {
     white-space: pre-wrap;
 }
 
-#not-installable-packages {
+#packages-not-found {
     display: block;
     background-color: #ec9d2e;
     color: rgb(255, 245, 234);
