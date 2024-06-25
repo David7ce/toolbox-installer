@@ -194,7 +194,7 @@ async function generateCommand() {
         // Create and append the non-installable packages element if needed
         if (nonInstallablePackages.length) {
             const nonInstallablePackagesElement = document.createElement('code');
-            nonInstallablePackagesElement.id = 'not-installable-packages';
+            nonInstallablePackagesElement.id = 'packages-not-found';
             nonInstallablePackagesElement.innerHTML = `<strong>Packages not found:</strong> ${nonInstallablePackages.join(', ')}`;
             outputElement.appendChild(nonInstallablePackagesElement);
         }

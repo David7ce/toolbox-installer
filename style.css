@@ -5,7 +5,7 @@ body {
     padding: 11px;
 }
 
-/* Header */
+/* Header styles */
 h2 {
     color: #333;
     font-size: 24px;
@@ -22,12 +22,13 @@ h3 {
     color: #444;
 }
 
-/* Columns of formulary */
+/* Form styles */
 form {
     margin-bottom: 20px;
 }
 
-.btn {
+/* Button styles */
+.btn, button {
     display: block;
     margin: 10px 0;
     padding: 10px 20px;
@@ -37,14 +38,20 @@ form {
     cursor: pointer;
 }
 
+.btn:hover, button:hover {
+    background-color: #0056b3;
+}
+
+/* Container for columns */
 .columns {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
+/* Individual column styles */
 .column {
-    flex: 1 1 calc(20% - 20px);
+    flex: 1 1 calc(20% - 20px); /* Adjusts columns to fit 5 per row with some margin */
     box-sizing: border-box;
     margin: 10px;
     padding: 10px;
@@ -65,23 +72,23 @@ form {
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .column {
-        flex: 1 1 calc(33.33% - 20px);
+        flex: 1 1 calc(33.33% - 20px); /* 3 columns per row */
     }
 }
 
 @media (max-width: 900px) {
     .column {
-        flex: 1 1 calc(50% - 20px);
+        flex: 1 1 calc(50% - 20px); /* 2 columns per row */
     }
 }
 
 @media (max-width: 600px) {
     .column {
-        flex: 1 1 100%;
+        flex: 1 1 100%; /* 1 column per row */
     }
 }
 
-
+/* Selector styles */
 .selector {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -91,28 +98,13 @@ form {
     font-size: 18px;
 }
 
-/* Input in different lines */
+/* Label styles */
 label {
     display: block; /* Display each label on a separate line */
     margin-bottom: 5px; /* Add some vertical spacing between labels */
 }
 
-button {
-    display: block;
-    margin: 20px 0;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-
+/* Output command styles */
 #result {
     position: relative;
 }
@@ -125,7 +117,7 @@ button:hover {
     padding: 10px;
     margin: 10px 0;
     font-family: monospace;
-    white-space: pre-wrap;
+    white-space: pre-wrap; /* Maintain whitespace formatting */
 }
 
 #packages-not-found {
@@ -136,9 +128,10 @@ button:hover {
     padding: 10px;
     margin: 10px 0;
     font-family: monospace;
-    white-space: pre-wrap;
+    white-space: pre-wrap; /* Maintain whitespace formatting */
 }
 
+/* Copy button styles */
 #copy-button {
     position: absolute;
     top: 5px;
