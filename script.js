@@ -1,28 +1,28 @@
-// URL del archivo JSON
+// URL of the JSON file
 const jsonUrl = './pkgs/packages-info.json';
 const imageUrl = './img/';
 
-let packagesData; // Variable para almacenar los datos del JSON
+let packagesData; // Variable to store JSON data
 
-// Función para cargar y procesar el JSON
+// Function to load and process the JSON
 function loadPackages() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', jsonUrl, true);
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            packagesData = JSON.parse(xhr.responseText); // Asignar los datos del JSON a packagesData
-            generatePackages(packagesData); // Llamar a la función para generar los paquetes
-        } else {
-            console.error('Failed to load packages data: ', xhr.statusText);
-        }
-    };
-    xhr.onerror = function () {
-        console.error('Network error while trying to load packages data.');
-    };
-    xhr.send();
+    fetch(jsonUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to load packages data: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            packagesData = data; // Assign JSON data to packagesData
+            generatePackages(packagesData); // Call function to generate packages
+        })
+        .catch(error => {
+            console.error('Error loading packages data: ', error);
+        });
 }
 
-// Función para seleccionar/deseleccionar todos los paquetes
+// Function to toggle select/deselect all packages
 function toggleSelectAllPackages() {
     const checkboxes = document.querySelectorAll('input[name="pkg"]');
     checkboxes.forEach(checkbox => {
@@ -30,12 +30,12 @@ function toggleSelectAllPackages() {
     });
 }
 
-// Función para generar el contenido de los paquetes en el formulario
+// Function to generate the content of packages in the form
 function generatePackages(packagesData) {
     const packageContainer = document.getElementById('packageContainer');
-    packageContainer.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevo contenido
+    packageContainer.innerHTML = ''; // Clear container before adding new content
 
-    // Definir las categorías por columna
+    // Define categories by column
     const columnCategories = [
         ["File-Man", "File-Sharing", "Downloader"],
         ["Finance", "Science", "Utility"],
@@ -49,7 +49,7 @@ function generatePackages(packagesData) {
         ["Video"]
     ];
 
-    // Crear columnas
+    // Create columns
     columnCategories.forEach(categoryList => {
         const columnDiv = document.createElement('div');
         columnDiv.classList.add('column');
@@ -87,8 +87,8 @@ function generatePackages(packagesData) {
                     const packageCheckbox = document.createElement('input');
                     packageCheckbox.type = 'checkbox';
                     packageCheckbox.name = 'pkg';
-                    packageCheckbox.value = pkgKey; // Usar el key del paquete como valor
-                    packageCheckbox.dataset.packageName = pkgInfo.name; // Almacenar nombre del paquete como atributo de datos
+                    packageCheckbox.value = pkgKey; // Use package key as value
+                    packageCheckbox.dataset.packageName = pkgInfo.name; // Store package name as data attribute
 
                     const packageImg = document.createElement('img');
                     packageImg.src = `${imageUrl}${pkgKey}.svg`;
@@ -105,35 +105,7 @@ function generatePackages(packagesData) {
     });
 }
 
-// Función para obtener el tipo de paquete según la distribución
-function getPackageType(distro) {
-    switch (distro) {
-        case 'arch':
-            return 'arch_pacman';
-        case 'debian':
-            return 'debian_apt';
-        case 'fedora':
-            return 'fedora_rpm';
-        case 'gentoo':
-            return 'gentoo_emerge';
-        case 'nixos':
-            return 'nixos_nix-env';
-        case 'void':
-            return 'void_xbps';
-        case 'flatpak':
-            return 'linux_flatpak';
-        case 'freebsd':
-            return 'freebsd_pkg';
-        case 'brew':
-            return 'macos_brew';
-        case 'winget':
-            return 'windows_winget';
-        default:
-            return '';
-    }
-}
-
-// Función para generar el comando de instalación según la distribución seleccionada
+// Function to generate the installation command based on the selected distribution
 async function generateCommand() {
     console.log('Generate command button clicked');
     try {
@@ -142,71 +114,53 @@ async function generateCommand() {
         const selectedPackages = Array.from(document.querySelectorAll('input[name="pkg"]:checked'))
             .map(checkbox => checkbox.value);
 
-        const response = await fetch(jsonUrl);
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        const packagesData = await response.json();
-
         const installationCommands = [];
         const aurPackages = [];
         const nonInstallablePackages = [];
 
+        // Iterate through each selected package
         selectedPackages.forEach(pkg => {
-            const packageInfo = packagesData.packages[pkg];
-
-            if (packageInfo) {
-                let packageDistroName = packageInfo.package_manager[getPackageType(selectedDistro)];
-
-                if (packageDistroName) {
-                    if (selectedDistro === 'arch' && packageDistroName === 'arch_aur') {
-                        aurPackages.push(pkg); // Agregar el nombre del paquete al array de AUR
-                    } else {
-                        installationCommands.push(packageDistroName);
-                    }
-                } else {
-                    nonInstallablePackages.push(pkg);
-                }
+            const pkgInfo = packagesData.packages[pkg];
+            if (pkgInfo.package_manager[selectedDistro]) {
+                installationCommands.push(pkgInfo.package_manager[selectedDistro]);
+            } else if (selectedDistro === 'arch_pacman' && pkgInfo.package_manager['arch_aur']) {
+                aurPackages.push(pkgInfo.package_manager['arch_aur']);
             } else {
-                nonInstallablePackages.push(pkg);
+                nonInstallablePackages.push(pkgInfo.name);
             }
         });
 
         let commandPrefix;
-        let aurCommand = '';
 
         switch (selectedDistro) {
-            case 'arch':
+            case 'arch_pacman':
                 commandPrefix = 'sudo pacman -S';
-                aurCommand = `yay -S ${aurPackages.join(' ')}`;
                 break;
-            case 'debian':
+            case 'debian_apt':
                 commandPrefix = 'sudo apt install';
                 break;
-            case 'fedora':
+            case 'fedora_rpm':
                 commandPrefix = 'sudo dnf install';
                 break;
-            case 'gentoo':
+            case 'gentoo_emerge':
                 commandPrefix = 'sudo emerge';
                 break;
-            case 'nixos':
+            case 'nixos_nix-env':
                 commandPrefix = 'sudo nix-env -iA';
                 break;
-            case 'void':
+            case 'void_xbps':
                 commandPrefix = 'sudo xbps-install -S';
                 break;
-            case 'flatpak':
+            case 'linux_flatpak':
                 commandPrefix = 'flatpak install';
                 break;
-            case 'freebsd':
+            case 'freebsd_pkg':
                 commandPrefix = 'sudo pkg install';
                 break;
-            case 'brew':
+            case 'macos_brew':
                 commandPrefix = 'brew install';
                 break;
-            case 'winget':
+            case 'windows_winget':
                 commandPrefix = 'winget install';
                 break;
             default:
@@ -215,6 +169,10 @@ async function generateCommand() {
 
         const finalCommand = installationCommands.length
             ? `${commandPrefix} ${installationCommands.join(' ')}`
+            : '';
+
+        const aurCommand = aurPackages.length
+            ? `yay -S ${aurPackages.join(' ')}`
             : '';
 
         const resultCommand = [finalCommand, aurCommand].filter(cmd => cmd).join(' && ');
@@ -245,8 +203,5 @@ async function generateCommand() {
     }
 }
 
-
-// Llamar a la función para cargar el JSON y generar los paquetes al cargar la página
-loadPackages();
-
-
+// Call the function to load JSON and generate packages on page load
+document.addEventListener('DOMContentLoaded', loadPackages);
