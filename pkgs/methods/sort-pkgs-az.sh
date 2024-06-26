@@ -4,7 +4,7 @@
 script_dir="$(dirname "$(realpath "$0")")"
 
 # Define the input file relative to the script directory
-input_file="$script_dir/../pkgs-names.json"
+input_file="$script_dir/../packages-info.json"
 
 # Check if input file exists
 if [ ! -f "$input_file" ]; then

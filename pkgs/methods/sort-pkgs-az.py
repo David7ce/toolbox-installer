@@ -1,7 +1,7 @@
 import json
 import shutil
 
-input_file = "../pkgs-names.json"
+input_file = "../packages-info.json"
 
 # Check if input file exists
 try:

@@ -1,2092 +1,2146 @@
 {
-    "packages": {
-        "apache": {
-            "name": "Apache",
-            "category": "Web",
-            "subcategory": "HTTP-Server",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "apache",
-                "debian_apt": "apache2",
-                "fedora_rpm": "httpd",
-                "gentoo_emerge": "www-servers/apache",
-                "nixos_nix-env": "apache-httpd",
-                "void_xbps": "apache",
-                "linux_flatpak": null,
-                "freebsd_pkg": "apache24",
-                "macos_brew": "httpd",
-                "windows_winget": "Apache.Httpd"
-            }
-        },
-        "mariadb": {
-            "name": "MariaDB",
-            "category": "Development",
-            "subcategory": "SQL",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "mariadb",
-                "debian_apt": "mariadb-server",
-                "fedora_rpm": "mariadb-server",
-                "gentoo_emerge": "dev-db/mariadb",
-                "nixos_nix-env": "mariadb",
-                "void_xbps": "mariadb",
-                "linux_flatpak": null,
-                "freebsd_pkg": "mariadb105-server",
-                "macos_brew": "mariadb",
-                "windows_winget": "MariaDB.MariaDBServer"
-            }
-        },
-        "mongodb": {
-            "name": "MongoDB",
-            "category": "Development",
-            "subcategory": "noSQL",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "mongodb-bin",
-                "debian_apt": "mongodb-org",
-                "fedora_rpm": "mongodb-org",
-                "gentoo_emerge": "dev-db/mongodb",
-                "nixos_nix-env": "mongodb",
-                "void_xbps": "mongodb",
-                "linux_flatpak": null,
-                "freebsd_pkg": "mongodb42",
-                "macos_brew": "mongodb-community",
-                "windows_winget": "MongoDB.Server"
-            }
-        },
-        "sqlite": {
-            "name": "SQLite",
-            "category": "Development",
-            "subcategory": "SQL",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "sqlite",
-                "debian_apt": "sqlite3",
-                "fedora_rpm": "sqlite",
-                "gentoo_emerge": "dev-db/sqlite",
-                "nixos_nix-env": "sqlite",
-                "void_xbps": "sqlite",
-                "linux_flatpak": null,
-                "freebsd_pkg": "sqlite3",
-                "macos_brew": "sqlite",
-                "windows_winget": "SQLite.SQLite3"
-            }
-        },
-        "postgresql": {
-            "name": "PostgreSQL",
-            "category": "Development",
-            "subcategory": "SQL",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "postgresql",
-                "debian_apt": "postgresql",
-                "fedora_rpm": "postgresql-server",
-                "gentoo_emerge": "dev-db/postgresql",
-                "nixos_nix-env": "postgresql",
-                "void_xbps": "postgresql",
-                "linux_flatpak": null,
-                "freebsd_pkg": "postgresql13-server",
-                "macos_brew": "postgresql",
-                "windows_winget": "PostgreSQL.PostgreSQL"
-            }
-        },
-        "deno": {
-            "name": "Deno",
-            "category": "Development",
-            "subcategory": "programming-language",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "deno",
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": null,
-                "nixos_nix-env": "deno",
-                "void_xbps": "deno",
-                "linux_flatpak": null,
-                "freebsd_pkg": null,
-                "macos_brew": "deno",
-                "windows_winget": "Deno.Deno"
-            }
-        },
-        "dotnet-runtime": {
-            "name": "Dotnet-runtime",
-            "category": "Development",
-            "subcategory": "framework",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "dotnet-runtime",
-                "debian_apt": "dotnet-runtime-6.0",
-                "fedora_rpm": "dotnet-runtime-6.0",
-                "gentoo_emerge": "dev-dotnet/dotnet-runtime",
-                "nixos_nix-env": "dotnet-runtime",
-                "void_xbps": "dotnet-runtime",
-                "linux_flatpak": null,
-                "freebsd_pkg": null,
-                "macos_brew": "dotnet",
-                "windows_winget": "Microsoft.DotNet.SDK"
-            }
-        },
-        "gcc": {
-            "name": "GCC",
-            "category": "Development",
-            "subcategory": "compiler",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "gcc",
-                "debian_apt": "gcc",
-                "fedora_rpm": "gcc",
-                "gentoo_emerge": "sys-devel/gcc",
-                "nixos_nix-env": "gcc",
-                "void_xbps": "gcc",
-                "linux_flatpak": null,
-                "freebsd_pkg": "gcc",
-                "macos_brew": "gcc",
-                "windows_winget": "GNU.GCC"
-            }
-        },
-        "xampp": {
-            "name": "XAMPP",
-            "category": "Development",
-            "subcategory": "Development-Environment",
-            "package_manager": {
-                "arch_aur": "xampp",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": null,
-                "nixos_nix-env": null,
-                "void_xbps": null,
-                "linux_flatpak": null,
-                "freebsd_pkg": null,
-                "macos_brew": null,
-                "windows_winget": "Xampp.Xampp"
-            }
-        },
-        "nginx": {
-            "name": "Nginx",
-            "category": "Web",
-            "subcategory": "HTTP-Server",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "nginx",
-                "debian_apt": "nginx",
-                "fedora_rpm": "nginx",
-                "gentoo_emerge": "www-servers/nginx",
-                "nixos_nix-env": "nginx",
-                "void_xbps": "nginx",
-                "linux_flatpak": null,
-                "freebsd_pkg": "nginx",
-                "macos_brew": "nginx",
-                "windows_winget": "Nginx.Nginx"
-            }
-        },
-        "7zip": {
-            "name": "7-Zip",
-            "category": "File-Man",
-            "subcategory": "compressor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "p7zip",
-                "debian_apt": "p7zip-full",
-                "fedora_rpm": "p7zip",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.p7zip",
-                "void_xbps": "p7zip",
-                "linux_flatpak": null,
-                "freebsd_pkg": "p7zip",
-                "macos_brew": "p7zip",
-                "windows_winget": "7zip.7zip"
-            }
-        },
-        "ardour": {
-            "name": "Ardour",
-            "category": "Audio",
-            "subcategory": "digital-audio-workstation",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "ardour",
-                "debian_apt": "ardour",
-                "fedora_rpm": "ardour",
-                "gentoo_emerge": "media-sound/ardour",
-                "nixos_nix-env": "nixos_nix-env.ardour",
-                "void_xbps": "ardour",
-                "linux_flatpak": "org.ardour.Ardour",
-                "freebsd_pkg": "ardour",
-                "macos_brew": "ardour",
-                "windows_winget": null
-            }
-        },
-        "audacious": {
-            "name": "Audacious",
-            "category": "Audio",
-            "subcategory": "audio-player",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "audacious",
-                "debian_apt": "audacious",
-                "fedora_rpm": "audacious",
-                "gentoo_emerge": "media-sound/audacious",
-                "nixos_nix-env": "nixos_nix-env.audacious",
-                "void_xbps": "audacious",
-                "linux_flatpak": "org.atheme.audacious",
-                "freebsd_pkg": "audacious",
-                "macos_brew": "audacious",
-                "windows_winget": "Audacious.Audacious"
-            }
-        },
-        "audacity": {
-            "name": "Audacity",
-            "category": "Audio",
-            "subcategory": "audio-recorder",
-            "package_manager": {
-                "arch_aur": "audacity",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": "audacity",
-                "gentoo_emerge": "media-sound/audacity",
-                "nixos_nix-env": "nixos_nix-env.audacity",
-                "void_xbps": "audacity",
-                "linux_flatpak": "org.audacityteam.Audacity",
-                "freebsd_pkg": "audacity",
-                "macos_brew": "audacity",
-                "windows_winget": null
-            }
-        },
-        "bitwig-studio": {
-            "name": "Bitwig-Studio",
-            "category": "Audio",
-            "subcategory": "digital-audio-workstation",
-            "package_manager": {
-                "arch_aur": "bitwig-studio",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": "bitwig-studio",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "bitwig-nixos_nix-env.bitwig-studio",
-                "void_xbps": "null",
-                "linux_flatpak": "com.bitwig.BitwigStudio",
-                "freebsd_pkg": "null",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "blender": {
-            "name": "Blender",
-            "category": "Image",
-            "subcategory": "modeling",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "blender",
-                "debian_apt": "blender",
-                "fedora_rpm": "blender",
-                "gentoo_emerge": "media-gfx/blender",
-                "nixos_nix-env": "nixos_nix-env.blender",
-                "void_xbps": "blender",
-                "linux_flatpak": "org.blender.Blender",
-                "freebsd_pkg": "blender",
-                "macos_brew": "blender",
-                "windows_winget": "BlenderFoundation.Blender"
-            }
-        },
-        "borg": {
-            "name": "Borg",
-            "category": "File-Man",
-            "subcategory": "backup",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "borg",
-                "debian_apt": "borgbackup",
-                "fedora_rpm": "borgbackup",
-                "gentoo_emerge": "app-backup/borgbackup",
-                "nixos_nix-env": "nixos_nix-env.borgbackup",
-                "void_xbps": "borgbackup",
-                "linux_flatpak": null,
-                "freebsd_pkg": "py37-borgbackup",
-                "macos_brew": "borgbackup",
-                "windows_winget": null
-            }
-        },
-        "bottles": {
-            "name": "Bottles",
-            "category": "Virtualization",
-            "subcategory": "windows-compatibility-layer",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "bottles",
-                "debian_apt": "bottles",
-                "fedora_rpm": "bottles",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.bottles",
-                "void_xbps": "null",
-                "linux_flatpak": "com.usebottles.bottles",
-                "freebsd_pkg": "null",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "calibre": {
-            "name": "Calibre",
-            "category": "Book",
-            "subcategory": "ebook-manager",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "calibre",
-                "debian_apt": "calibre",
-                "fedora_rpm": "calibre",
-                "gentoo_emerge": "app-text/calibre",
-                "nixos_nix-env": "nixos_nix-env.calibre",
-                "void_xbps": "calibre",
-                "linux_flatpak": "com.calibre_ebook.calibre",
-                "freebsd_pkg": "calibre",
-                "macos_brew": "calibre",
-                "windows_winget": "Calibre"
-            }
-        },
-        "chromium": {
-            "name": "Chromium",
-            "category": "Web",
-            "subcategory": "web-browser",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "chromium",
-                "debian_apt": "chromium",
-                "fedora_rpm": "chromium",
-                "gentoo_emerge": "www-client/chromium",
-                "nixos_nix-env": "nixos_nix-env.chromium",
-                "void_xbps": "chromium",
-                "linux_flatpak": "org.chromium.Chromium",
-                "freebsd_pkg": "chromium",
-                "macos_brew": "chromium",
-                "windows_winget": "Google.Chrome"
-            }
-        },
-        "darktable": {
-            "name": "Darktable",
-            "category": "Image",
-            "subcategory": "raw-photo-editor",
-            "package_manager": {
-                "arch_aur": "darktable",
-                "arch_pacman": "darktable",
-                "debian_apt": "darktable",
-                "fedora_rpm": "darktable",
-                "gentoo_emerge": "media-gfx/darktable",
-                "nixos_nix-env": "nixos_nix-env.darktable",
-                "void_xbps": "darktable",
-                "linux_flatpak": "org.darktable.Darktable",
-                "freebsd_pkg": "darktable",
-                "macos_brew": "darktable",
-                "windows_winget": "Darktable.Darktable"
-            }
-        },
-        "davinci-resolve": {
-            "name": "DaVinci-Resolve",
-            "category": "Video",
-            "subcategory": "video-editor",
-            "package_manager": {
-                "arch_aur": "davinci-resolve",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "null",
-                "void_xbps": "null",
-                "linux_flatpak": null,
-                "freebsd_pkg": "null",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "digikam": {
-            "name": "digiKam",
-            "category": "Image",
-            "subcategory": "photo-manager",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "digikam",
-                "debian_apt": "digikam",
-                "fedora_rpm": "digikam",
-                "gentoo_emerge": "kde-apps/digikam",
-                "nixos_nix-env": "nixos_nix-env.digikam",
-                "void_xbps": "digikam",
-                "linux_flatpak": "org.darktable.Darktable",
-                "freebsd_pkg": "digikam",
-                "macos_brew": "digikam",
-                "windows_winget": "digiKam.digiKam"
-            }
-        },
-        "discord": {
-            "name": "Discord",
-            "category": "Web",
-            "subcategory": "messaging",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "discord",
-                "debian_apt": "discord",
-                "fedora_rpm": "discord",
-                "gentoo_emerge": "net-im/discord",
-                "nixos_nix-env": "nixos_nix-env.discord",
-                "void_xbps": "discord",
-                "linux_flatpak": "com.discordapp.Discord",
-                "freebsd_pkg": "discord",
-                "macos_brew": "discord",
-                "windows_winget": "Discord.Discord"
-            }
-        },
-        "distrobox": {
-            "name": "Distrobox",
-            "category": "Virtualization",
-            "subcategory": "wrapping-layer",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "distrobox",
-                "debian_apt": "distrobox",
-                "fedora_rpm": "distrobox",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "null",
-                "void_xbps": "null",
-                "linux_flatpak": "com.docker.docker",
-                "freebsd_pkg": "null",
-                "macos_brew": "distrobox",
-                "windows_winget": null
-            }
-        },
-        "docker": {
-            "name": "Docker",
-            "category": "Virtualization",
-            "subcategory": "containerization",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "docker",
-                "debian_apt": "docker.io",
-                "fedora_rpm": "docker",
-                "gentoo_emerge": "app-emulation/docker",
-                "nixos_nix-env": "nixos_nix-env.docker",
-                "void_xbps": "docker",
-                "linux_flatpak": "",
-                "freebsd_pkg": "null",
-                "macos_brew": "docker",
-                "windows_winget": "Docker.DockerDesktop"
-            }
-        },
-        "dolphin": {
-            "name": "Dolphin",
-            "category": "File-Man",
-            "subcategory": "file-manager",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "dolphin",
-                "debian_apt": "dolphin",
-                "fedora_rpm": "dolphin",
-                "gentoo_emerge": "kde-apps/dolphin",
-                "nixos_nix-env": "nixos_nix-env.dolphin",
-                "void_xbps": "dolphin",
-                "linux_flatpak": "org.kde.dolphin",
-                "freebsd_pkg": "dolphin",
-                "macos_brew": null,
-                "windows_winget": "KDE.Dolphin"
-            }
-        },
-        "dropbox": {
-            "name": "Dropbox",
-            "category": "File-Man",
-            "subcategory": "client-cloud-storage",
-            "package_manager": {
-                "arch_aur": "dropbox",
-                "arch_pacman": null,
-                "debian_apt": "dropbox",
-                "fedora_rpm": "nautilus-dropbox",
-                "gentoo_emerge": "net-misc/dropbox",
-                "nixos_nix-env": "nixos_nix-env.dropbox",
-                "void_xbps": "dropbox",
-                "linux_flatpak": "com.dropbox.Client",
-                "freebsd_pkg": "dropbox",
-                "macos_brew": "dropbox",
-                "windows_winget": "Dropbox.Dropbox"
-            }
-        },
-        "eaglemode": {
-            "name": "Eagle-Mode",
-            "category": "File-Man",
-            "subcategory": "file-manager",
-            "package_manager": {
-                "arch_aur": "eaglemode",
-                "arch_pacman": null,
-                "debian_apt": "eaglemode",
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "eagle-nixos_nix-env.eagle-mode",
-                "void_xbps": "eagle",
-                "linux_flatpak": null,
-                "freebsd_pkg": "eaglemode",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "elisa": {
-            "name": "Elisa",
-            "category": "Audio",
-            "subcategory": "audio-player",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "elisa",
-                "debian_apt": "elisa",
-                "fedora_rpm": "elisa",
-                "gentoo_emerge": "kde-apps/elisa",
-                "nixos_nix-env": "nixos_nix-env.elisa",
-                "void_xbps": "elisa",
-                "linux_flatpak": "org.kde.elisa",
-                "freebsd_pkg": "elisa",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "evolution": {
-            "name": "Evolution",
-            "category": "Web",
-            "subcategory": "email-client",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "evolution",
-                "debian_apt": "evolution",
-                "fedora_rpm": "evolution",
-                "gentoo_emerge": "mail-client/evolution",
-                "nixos_nix-env": "nixos_nix-env.evolution",
-                "void_xbps": "evolution",
-                "linux_flatpak": "org.gnome.Evolution",
-                "freebsd_pkg": "evolution",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "ffmpeg": {
-            "name": "FFMPEG",
-            "category": "Utility",
-            "subcategory": "converter-decoder",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "ffmpeg",
-                "debian_apt": "ffmpeg",
-                "fedora_rpm": "ffmpeg-free",
-                "gentoo_emerge": "media-video/ffmpeg",
-                "nixos_nix-env": "nixos_nix-env.ffmpeg",
-                "void_xbps": "ffmpeg",
-                "linux_flatpak": null,
-                "freebsd_pkg": "ffmpeg",
-                "macos_brew": "ffmpeg",
-                "windows_winget": "Mozilla.Firefox"
-            }
-        },
-        "firefox": {
-            "name": "Firefox",
-            "category": "Web",
-            "subcategory": "web-browser",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "firefox",
-                "debian_apt": "firefox",
-                "fedora_rpm": "firefox",
-                "gentoo_emerge": "www-client/firefox",
-                "nixos_nix-env": "nixos_nix-env.firefox",
-                "void_xbps": "firefox",
-                "linux_flatpak": "org.mozilla.Firefox",
-                "freebsd_pkg": "firefox",
-                "macos_brew": "firefox",
-                "windows_winget": "Mozilla.Firefox"
-            }
-        },
-        "foliate": {
-            "name": "Foliate",
-            "category": "Book",
-            "subcategory": "ebook-reader",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "foliate",
-                "debian_apt": "foliate",
-                "fedora_rpm": "foliate",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.foliate",
-                "void_xbps": "foliate",
-                "linux_flatpak": "com.github.johnfactotum.Foliate",
-                "freebsd_pkg": "foliate",
-                "macos_brew": "foliate",
-                "windows_winget": null
-            }
-        },
-        "freefilesync": {
-            "name": "FreeFileSync",
-            "category": "File-Man",
-            "subcategory": "file-synchronization",
-            "package_manager": {
-                "arch_aur": "freefilesync",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.freefilesync",
-                "void_xbps": "freefilesync",
-                "linux_flatpak": null,
-                "freebsd_pkg": "freefilesync",
-                "macos_brew": null,
-                "windows_winget": "FreeFileSync.FreeFileSync"
-            }
-        },
-        "freeplane": {
-            "name": "Freeplane",
-            "category": "Office",
-            "subcategory": "mapping",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "freeplane",
-                "debian_apt": "freeplane",
-                "fedora_rpm": "freeplane",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.freeplane",
-                "void_xbps": "freeplane",
-                "linux_flatpak": "org.freeplane.Freeplane",
-                "freebsd_pkg": "freeplane",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "gimp": {
-            "name": "GIMP",
-            "category": "Image",
-            "subcategory": "image-editor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "gimp",
-                "debian_apt": "gimp",
-                "fedora_rpm": "gimp",
-                "gentoo_emerge": "media-gfx/gimp",
-                "nixos_nix-env": "nixos_nix-env.gimp",
-                "void_xbps": "gimp",
-                "linux_flatpak": "org.gimp.GIMP",
-                "freebsd_pkg": "gimp",
-                "macos_brew": "gimp",
-                "windows_winget": "GIMP.GIMP"
-            }
-        },
-        "git": {
-            "name": "Git",
-            "category": "Utility",
-            "subcategory": "version-control",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "git",
-                "debian_apt": "git",
-                "fedora_rpm": "git",
-                "gentoo_emerge": "dev-vcs/git",
-                "nixos_nix-env": "nixos_nix-env.git",
-                "void_xbps": "git",
-                "linux_flatpak": null,
-                "freebsd_pkg": "git",
-                "macos_brew": "git",
-                "windows_winget": "Git.Git"
-            }
-        },
-        "godot": {
-            "name": "Godot",
-            "category": "Development",
-            "subcategory": "game-engine",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "godot",
-                "debian_apt": "godot3",
-                "fedora_rpm": "godot",
-                "gentoo_emerge": "games-engines/godot",
-                "nixos_nix-env": "nixos_nix-env.godot",
-                "void_xbps": "godot",
-                "linux_flatpak": "org.godotengine.Godot",
-                "freebsd_pkg": "godot",
-                "macos_brew": "godot",
-                "windows_winget": "GodotEngine.Godot"
-            }
-        },
-        "google-earth": {
-            "name": "Google-Earth",
-            "category": "Science",
-            "subcategory": "geography-map",
-            "package_manager": {
-                "arch_aur": "google-earth-pro",
-                "arch_pacman": null,
-                "debian_apt": "google-earth-pro-stable",
-                "fedora_rpm": "flathub-com.google.EarthPro",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.googleearth",
-                "void_xbps": "null",
-                "linux_flatpak": "com.github.git",
-                "freebsd_pkg": "null",
-                "macos_brew": "google-earth-pro",
-                "windows_winget": "Google.GoogleEarthPro"
-            }
-        },
-        "geany": {
-            "name": "Geany",
-            "category": "Development",
-            "subcategory": "text-editor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "geany",
-                "debian_apt": "geany",
-                "fedora_rpm": "geany",
-                "gentoo_emerge": "app-editors/geany",
-                "nixos_nix-env": "nixos_nix-env.geany",
-                "void_xbps": "geany",
-                "linux_flatpak": "flathub-org.geany.Geany",
-                "freebsd_pkg": "geany",
-                "macos_brew": "geany",
-                "windows_winget": "Geany"
-            }
-        },
-        "gnome-boxes": {
-            "name": "Boxes",
-            "category": "Virtualization",
-            "subcategory": "virtual-machine-manager",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "gnome-boxes",
-                "debian_apt": "gnome-boxes",
-                "fedora_rpm": "gnome-boxes",
-                "gentoo_emerge": "app-emulation/gnome-boxes",
-                "nixos_nix-env": "gnome-nixos_nix-env.gnome-boxes",
-                "void_xbps": "gnome-boxes",
-                "linux_flatpak": "org.gnome.Boxes",
-                "freebsd_pkg": "gnome-boxes",
-                "macos_brew": "gnome-boxes",
-                "windows_winget": "Boxes"
-            }
-        },
-        "gnucash": {
-            "name": "GnuCash",
-            "category": "Finance",
-            "subcategory": "manager",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "gnucash",
-                "debian_apt": "gnucash",
-                "fedora_rpm": "gnucash",
-                "gentoo_emerge": "app-office/gnucash",
-                "nixos_nix-env": "nixos_nix-env.gnucash",
-                "void_xbps": "gnucash",
-                "linux_flatpak": "org.gnucash.Gnucash",
-                "freebsd_pkg": "gnucash",
-                "macos_brew": "gnucash",
-                "windows_winget": null
-            }
-        },
-        "gwenview": {
-            "name": "Gwenview",
-            "category": "Image",
-            "subcategory": "image-viewer",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "gwenview",
-                "debian_apt": "gwenview",
-                "fedora_rpm": "gwenview",
-                "gentoo_emerge": "kde-apps/gwenview",
-                "nixos_nix-env": "nixos_nix-env.gwenview",
-                "void_xbps": "gwenview",
-                "linux_flatpak": "com.github.unrud.VideoDownloader",
-                "freebsd_pkg": "gwenview",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "handbrake": {
-            "name": "HandBrake",
-            "category": "File-Man",
-            "subcategory": "compressor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "handbrake",
-                "debian_apt": "handbrake",
-                "fedora_rpm": "handbrake",
-                "gentoo_emerge": "media-video/handbrake",
-                "nixos_nix-env": "nixos_nix-env.handbrake",
-                "void_xbps": "handbrake",
-                "linux_flatpak": "io.github.waydroid",
-                "freebsd_pkg": "handbrake",
-                "macos_brew": "handbrake",
-                "windows_winget": "HandBrake"
-            }
-        },
-        "haruna": {
-            "name": "Haruna",
-            "category": "Video",
-            "subcategory": "media-player",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "haruna",
-                "debian_apt": "haruna",
-                "fedora_rpm": "haruna",
-                "gentoo_emerge": "kde-apps/haruna",
-                "nixos_nix-env": "nixos_nix-env.haruna",
-                "void_xbps": "null",
-                "linux_flatpak": "io.github.ytdl-org.yt-dlp",
-                "freebsd_pkg": "null",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "heroic-games-launcher": {
-            "name": "Heroic-Games-Launcher",
-            "category": "Gaming",
-            "subcategory": "game-launcher",
-            "package_manager": {
-                "arch_aur": "heroic-games-launcher-bin",
-                "arch_pacman": null,
-                "debian_apt": "heroic-games-launcher",
-                "fedora_rpm": "com.heroicgameslauncher.hgl",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "heroic-games-nixos_nix-env.heroic-games-launcher",
-                "void_xbps": "null",
-                "linux_flatpak": "com.heroicgameslauncher.hgl",
-                "freebsd_pkg": "null",
-                "macos_brew": "heroic",
-                "windows_winget": "HeroicGamesLauncher.HeroicGamesLauncher"
-            }
-        },
-        "homebank": {
-            "name": "HomeBank",
-            "category": "Finance",
-            "subcategory": "manager",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "homebank",
-                "debian_apt": "homebank",
-                "fedora_rpm": "homebank",
-                "gentoo_emerge": "app-office/homebank",
-                "nixos_nix-env": "nixos_nix-env.homebank",
-                "void_xbps": "homebank",
-                "linux_flatpak": "org.gnome.Boxes",
-                "freebsd_pkg": "homebank",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "inkscape": {
-            "name": "Inkscape",
-            "category": "Image",
-            "subcategory": "vector-graphics",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "inkscape",
-                "debian_apt": "inkscape",
-                "fedora_rpm": "inkscape",
-                "gentoo_emerge": "media-gfx/inkscape",
-                "nixos_nix-env": "nixos_nix-env.inkscape",
-                "void_xbps": "inkscape",
-                "linux_flatpak": "org.inkscape.Inkscape",
-                "freebsd_pkg": "inkscape",
-                "macos_brew": "inkscape",
-                "windows_winget": "Inkscape.Inkscape"
-            }
-        },
-        "jellyfin-client": {
-            "name": "Jellyfin-Client",
-            "category": "Video",
-            "subcategory": "media-server",
-            "package_manager": {
-                "arch_aur": "jellyfin-media-player",
-                "arch_pacman": null,
-                "debian_apt": "jellyfin",
-                "fedora_rpm": "jellyfin",
-                "gentoo_emerge": "media-tv/jellyfin-media-player",
-                "nixos_nix-env": "jellyfin-media-nixos_nix-env.jellyfin-media-player",
-                "void_xbps": "jellyfin-media-player",
-                "linux_flatpak": "com.github.iwalton3.jellyfin-media-player",
-                "freebsd_pkg": "jellyfin-web",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "jellyfin-server": {
-            "name": "Jellyfin-Server",
-            "category": "Video",
-            "subcategory": "media-server",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "jellyfin-server",
-                "debian_apt": "jellyfin",
-                "fedora_rpm": "jellyfin",
-                "gentoo_emerge": "media-tv/jellyfin",
-                "nixos_nix-env": "nixos_nix-env.jellyfin",
-                "void_xbps": "jellyfin",
-                "linux_flatpak": "org.jellyfin.JellyfinServer",
-                "freebsd_pkg": "jellyfin",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "kate": {
-            "name": "Kate",
-            "category": "Development",
-            "subcategory": "text-editor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "kate",
-                "debian_apt": "kate",
-                "fedora_rpm": "kate",
-                "gentoo_emerge": "kde-apps/kate",
-                "nixos_nix-env": "nixos_nix-env.kate",
-                "void_xbps": "kate",
-                "linux_flatpak": "",
-                "freebsd_pkg": "kate",
-                "macos_brew": "kate",
-                "windows_winget": "KateEditor.Kate"
-            }
-        },
-        "kdenlive": {
-            "name": "Kdenlive",
-            "category": "Video",
-            "subcategory": "video-editor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "kdenlive",
-                "debian_apt": "kdenlive",
-                "fedora_rpm": "kdenlive",
-                "gentoo_emerge": "kde-apps/kdenlive",
-                "nixos_nix-env": "nixos_nix-env.kdenlive",
-                "void_xbps": "kdenlive",
-                "linux_flatpak": "org.kde.kdenlive",
-                "freebsd_pkg": "kdenlive",
-                "macos_brew": "kdenlive",
-                "windows_winget": "Kdenlive.Kdenlive"
-            }
-        },
-        "keepassxc": {
-            "name": "KeePassXC",
-            "category": "Utility",
-            "subcategory": "password-manager",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "keepassxc",
-                "debian_apt": "keepassxc",
-                "fedora_rpm": "keepassxc",
-                "gentoo_emerge": "app-admin/keepassxc",
-                "nixos_nix-env": "nixos_nix-env.keepassxc",
-                "void_xbps": "keepassxc",
-                "linux_flatpak": "org.keepassxc.KeePassXC",
-                "freebsd_pkg": "keepassxc",
-                "macos_brew": "keepassxc",
-                "windows_winget": "KeePassXCTeam.KeePassXC"
-            }
-        },
-        "koodoreader": {
-            "name": "Koodo-Reader",
-            "category": "Book",
-            "subcategory": "ebook-reader",
-            "package_manager": {
-                "arch_aur": "koodoreader",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "koodo-nixos_nix-env.koodo-reader",
-                "void_xbps": "null",
-                "linux_flatpak": "org.godotengine.Godot",
-                "freebsd_pkg": "null",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "koreader": {
-            "name": "KOReader",
-            "category": "Book",
-            "subcategory": "ebook-reader",
-            "package_manager": {
-                "arch_aur": "koreader",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.koreader",
-                "void_xbps": "null",
-                "linux_flatpak": null,
-                "freebsd_pkg": "null",
-                "macos_brew": "koreader",
-                "windows_winget": null
-            }
-        },
-        "krita": {
-            "name": "Krita",
-            "category": "Image",
-            "subcategory": "image-editor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "krita",
-                "debian_apt": "krita",
-                "fedora_rpm": "krita",
-                "gentoo_emerge": "kde-apps/krita",
-                "nixos_nix-env": "nixos_nix-env.krita",
-                "void_xbps": "krita",
-                "linux_flatpak": "com.google.EarthPro",
-                "freebsd_pkg": "krita",
-                "macos_brew": "krita",
-                "windows_winget": "KDE.Krita"
-            }
-        },
-        "kstars": {
-            "name": "kstars",
-            "category": "Science",
-            "subcategory": "astronomy",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "kstars",
-                "debian_apt": "kstars",
-                "fedora_rpm": "kstars",
-                "gentoo_emerge": "kde-apps/kstars",
-                "nixos_nix-env": "nixos_nix-env.kstars",
-                "void_xbps": "kstars",
-                "linux_flatpak": "org.kde.kstars",
-                "freebsd_pkg": "kstars",
-                "macos_brew": "kstars",
-                "windows_winget": "kstars"
-            }
-        },
-        "libreoffice": {
-            "name": "LibreOffice",
-            "category": "Office",
-            "subcategory": "office-suite",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "libreoffice",
-                "debian_apt": "libreoffice",
-                "fedora_rpm": "libreoffice",
-                "gentoo_emerge": "app-office/libreoffice",
-                "nixos_nix-env": "nixos_nix-env.libreoffice",
-                "void_xbps": "libreoffice",
-                "linux_flatpak": "org.libreoffice.LibreOffice",
-                "freebsd_pkg": "libreoffice",
-                "macos_brew": "libreoffice",
-                "windows_winget": "LibreOffice.LibreOffice"
-            }
-        },
-        "librewolf": {
-            "name": "LibreWolf",
-            "category": "Web",
-            "subcategory": "web-browser",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "librewolf",
-                "debian_apt": "librewolf",
-                "fedora_rpm": "librewolf",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.librewolf",
-                "void_xbps": "null",
-                "linux_flatpak": "io.gitlab.librewolf-community",
-                "freebsd_pkg": "librewolf",
-                "macos_brew": "librewolf",
-                "windows_winget": "LibreWolf"
-            }
-        },
-        "lmms": {
-            "name": "LMMS",
-            "category": "Audio",
-            "subcategory": "digital-audio-workstation",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "lmms",
-                "debian_apt": "lmms",
-                "fedora_rpm": "lmms",
-                "gentoo_emerge": "media-sound/lmms",
-                "nixos_nix-env": "nixos_nix-env.lmms",
-                "void_xbps": "lmms",
-                "linux_flatpak": "",
-                "freebsd_pkg": "lmms",
-                "macos_brew": "lmms",
-                "windows_winget": "LMMS.LMMS"
-            }
-        },
-        "lutris": {
-            "name": "Lutris",
-            "category": "Gaming",
-            "subcategory": "game-launcher",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "lutris",
-                "debian_apt": "lutris",
-                "fedora_rpm": "lutris",
-                "gentoo_emerge": "games-util/lutris",
-                "nixos_nix-env": "nixos_nix-env.lutris",
-                "void_xbps": "lutris",
-                "linux_flatpak": "org.videolan.VLC",
-                "freebsd_pkg": "lutris",
-                "macos_brew": "lutris",
-                "windows_winget": "Lutris"
-            }
-        },
-        "mega": {
-            "name": "MEGAsync",
-            "category": "File-Man",
-            "subcategory": "client-cloud-storage",
-            "package_manager": {
-                "arch_aur": "megasync",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "net-misc/megasync",
-                "nixos_nix-env": "nixos_nix-env.megasync",
-                "void_xbps": "megasync",
-                "linux_flatpak": "flathub-nz.mega.MEGAsync",
-                "freebsd_pkg": "megasync",
-                "macos_brew": null,
-                "windows_winget": "MegaLimited.MEGAsync"
-            }
-        },
-        "mypaint": {
-            "name": "MyPaint",
-            "category": "Image",
-            "subcategory": "image-editor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "mypaint",
-                "debian_apt": "mypaint",
-                "fedora_rpm": "mypaint",
-                "gentoo_emerge": "media-gfx/mypaint",
-                "nixos_nix-env": "nixos_nix-env.mypaint",
-                "void_xbps": "mypaint",
-                "linux_flatpak": "org.mypaint.MyPaint",
-                "freebsd_pkg": "mypaint",
-                "macos_brew": "mypaint",
-                "windows_winget": "MyPaint.MyPaint"
-            }
-        },
-        "mpv": {
-            "name": "MPV",
-            "category": "Video",
-            "subcategory": "media-player",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "mpv",
-                "debian_apt": "mpv",
-                "fedora_rpm": "mpv",
-                "gentoo_emerge": "media-video/mpv",
-                "nixos_nix-env": "nixos_nix-env.mpv",
-                "void_xbps": "mpv",
-                "linux_flatpak": "io.mpv.Mpv",
-                "freebsd_pkg": "mpv",
-                "macos_brew": "mpv",
-                "windows_winget": "MPVPlayer.MPV"
-            }
-        },
-        "musescore": {
-            "name": "MuseScore",
-            "category": "Audio",
-            "subcategory": "music-notation",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "musescore",
-                "debian_apt": "musescore",
-                "fedora_rpm": "musescore",
-                "gentoo_emerge": "media-sound/musescore",
-                "nixos_nix-env": "nixos_nix-env.musescore",
-                "void_xbps": "musescore",
-                "linux_flatpak": "org.musescore.MuseScore",
-                "freebsd_pkg": "musescore",
-                "macos_brew": "musescore",
-                "windows_winget": "MuseScore.MuseScore"
-            }
-        },
-        "musicbee": {
-            "name": "MusicBee",
-            "category": "Audio",
-            "subcategory": "audio-player",
-            "package_manager": {
-                "arch_aur": "musicbee",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "null",
-                "void_xbps": "null",
-                "linux_flatpak": "org.kde.digikam",
-                "freebsd_pkg": "null",
-                "macos_brew": null,
-                "windows_winget": "MusicBee"
-            }
-        },
-        "musicbrainz-picard": {
-            "name": "MusicBrainz-Picard",
-            "category": "File-Man",
-            "subcategory": "music-tagger",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "picard",
-                "debian_apt": "picard",
-                "fedora_rpm": "picard",
-                "gentoo_emerge": "media-sound/picard",
-                "nixos_nix-env": "nixos_nix-env.picard",
-                "void_xbps": "picard",
-                "linux_flatpak": "org.kde.dolphin",
-                "freebsd_pkg": "picard",
-                "macos_brew": "picard",
-                "windows_winget": "MusicBrainz.Picard"
-            }
-        },
-        "neovim": {
-            "name": "Neovim",
-            "category": "Development",
-            "subcategory": "text-editor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "neovim",
-                "debian_apt": "neovim",
-                "fedora_rpm": "neovim",
-                "gentoo_emerge": "app-editors/neovim",
-                "nixos_nix-env": "nixos_nix-env.neovim",
-                "void_xbps": "neovim",
-                "linux_flatpak": "org.kde.gwenview",
-                "freebsd_pkg": "neovim",
-                "macos_brew": "neovim",
-                "windows_winget": "Neovim.Neovim"
-            }
-        },
-        "nmap": {
-            "name": "Nmap",
-            "category": "Utility",
-            "subcategory": "networking",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "nmap",
-                "debian_apt": "nmap",
-                "fedora_rpm": "nmap",
-                "gentoo_emerge": "net-analyzer/nmap",
-                "nixos_nix-env": "nixos_nix-env.nmap",
-                "void_xbps": "nmap",
-                "linux_flatpak": "org.kde.haruna",
-                "freebsd_pkg": "nmap",
-                "macos_brew": "nmap",
-                "windows_winget": "Nmap.Nmap"
-            }
-        },
-        "nodejs": {
-            "name": "Node.js",
-            "category": "Utility",
-            "subcategory": "runtime",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "nodejs",
-                "debian_apt": "nodejs",
-                "fedora_rpm": "nodejs",
-                "gentoo_emerge": "net-libs/nodejs",
-                "nixos_nix-env": "nixos_nix-env.nodejs",
-                "void_xbps": "nodejs",
-                "linux_flatpak": "org.kde.kate",
-                "freebsd_pkg": "node",
-                "macos_brew": "node",
-                "windows_winget": "OpenJS.Nodejs"
-            }
-        },
-        "obs-studio": {
-            "name": "OBS-Studio",
-            "category": "Video",
-            "subcategory": "video-recorder",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "obs-studio",
-                "debian_apt": "obs-studio",
-                "fedora_rpm": "obs-studio",
-                "gentoo_emerge": "media-video/obs-studio",
-                "nixos_nix-env": "obs-nixos_nix-env.obs-studio",
-                "void_xbps": "obs-studio",
-                "linux_flatpak": "org.kde.kdenlive",
-                "freebsd_pkg": "obs-studio",
-                "macos_brew": "obs",
-                "windows_winget": "OBSProject.OBSStudio"
-            }
-        },
-        "obsidian": {
-            "name": "Obsidian",
-            "category": "Office",
-            "subcategory": "note-taking",
-            "package_manager": {
-                "arch_aur": "obsidian",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.obsidian",
-                "void_xbps": "obsidian",
-                "linux_flatpak": "org.kde.krita",
-                "freebsd_pkg": "obsidian",
-                "macos_brew": "obsidian",
-                "windows_winget": "Obsidian.Obsidian"
-            }
-        },
-        "ocenaudio": {
-            "name": "Ocenaudio",
-            "category": "Audio",
-            "subcategory": "audio-recorder",
-            "package_manager": {
-                "arch_aur": "ocenaudio",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.ocenaudio",
-                "void_xbps": "null",
-                "linux_flatpak": null,
-                "freebsd_pkg": "null",
-                "macos_brew": "ocenaudio",
-                "windows_winget": "Ocenaudio.Ocenaudio"
-            }
-        },
-        "okular": {
-            "name": "Okular",
-            "category": "Office",
-            "subcategory": "document-viewer",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "okular",
-                "debian_apt": "okular",
-                "fedora_rpm": "okular",
-                "gentoo_emerge": "kde-apps/okular",
-                "nixos_nix-env": "nixos_nix-env.okular",
-                "void_xbps": "okular",
-                "linux_flatpak": "org.kde.okular",
-                "freebsd_pkg": "okular",
-                "macos_brew": "okular",
-                "windows_winget": null
-            }
-        },
-        "onlyoffice": {
-            "name": "OnlyOffice",
-            "category": "Office",
-            "subcategory": "office-suite",
-            "package_manager": {
-                "arch_aur": "onlyoffice-bin",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": "onlyoffice",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "onlyoffice-nixos_nix-env.onlyoffice-bin",
-                "void_xbps": "null",
-                "linux_flatpak": "org.onlyoffice.desktopeditors",
-                "freebsd_pkg": "null",
-                "macos_brew": "onlyoffice",
-                "windows_winget": "ONLYOFFICE.DesktopEditors"
-            }
-        },
-        "openshot": {
-            "name": "OpenShot",
-            "category": "Video",
-            "subcategory": "video-editor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "openshot",
-                "debian_apt": "openshot",
-                "fedora_rpm": "openshot",
-                "gentoo_emerge": "media-video/openshot",
-                "nixos_nix-env": "nixos_nix-env.openshot",
-                "void_xbps": "openshot",
-                "linux_flatpak": "org.openshot.OpenShot",
-                "freebsd_pkg": "openshot",
-                "macos_brew": "openshot",
-                "windows_winget": "OpenShot"
-            }
-        },
-        "playonlinux": {
-            "name": "PlayOnLinux",
-            "category": "Virtualization",
-            "subcategory": "windows-compatibility-layer",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "playonlinux",
-                "debian_apt": "playonlinux",
-                "fedora_rpm": "playonlinux",
-                "gentoo_emerge": "app-emulation/playonlinux",
-                "nixos_nix-env": "nixos_nix-env.playonlinux",
-                "void_xbps": "playonlinux",
-                "linux_flatpak": "org.phoenicis.playonlinux",
-                "freebsd_pkg": "playonlinux",
-                "macos_brew": "playonlinux",
-                "windows_winget": "PlayOnLinux"
-            }
-        },
-        "proton": {
-            "name": "Proton",
-            "category": "Virtualization",
-            "subcategory": "windows-compatibility-layer",
-            "package_manager": {
-                "arch_aur": "proton-ge-custom-bin",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.proton",
-                "void_xbps": "null",
-                "linux_flatpak": "org.koreader.Koreader",
-                "freebsd_pkg": "null",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "proton-qt": {
-            "name": "Proton-QT",
-            "category": "Virtualization",
-            "subcategory": "windows-compatibility-layer",
-            "package_manager": {
-                "arch_aur": "proton-qt",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "proton-nixos_nix-env.proton-qt",
-                "void_xbps": "null",
-                "linux_flatpak": "org.libreoffice.LibreOffice",
-                "freebsd_pkg": "null",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "putty": {
-            "name": "PuTTY",
-            "category": "Utility",
-            "subcategory": "terminal-emulator",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "putty",
-                "debian_apt": "putty",
-                "fedora_rpm": "putty",
-                "gentoo_emerge": "net-misc/putty",
-                "nixos_nix-env": "nixos_nix-env.putty",
-                "void_xbps": "putty",
-                "linux_flatpak": "io.lmms.LMMS",
-                "freebsd_pkg": "putty",
-                "macos_brew": "putty",
-                "windows_winget": "PuTTY.PuTTY"
-            }
-        },
-        "python": {
-            "name": "Python",
-            "category": "Development",
-            "subcategory": "programming-language",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "python",
-                "debian_apt": "python3",
-                "fedora_rpm": "python3",
-                "gentoo_emerge": "dev-lang/python",
-                "nixos_nix-env": "nixos_nix-env.python3",
-                "void_xbps": "python3",
-                "linux_flatpak": "net.lutris.Lutris",
-                "freebsd_pkg": "python",
-                "macos_brew": "python",
-                "windows_winget": "Python.Python.3"
-            }
-        },
-        "qbittorrent": {
-            "name": "qBittorrent",
-            "category": "File-Sharing",
-            "subcategory": "torrent-client",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "qbittorrent",
-                "debian_apt": "qbittorrent",
-                "fedora_rpm": "qbittorrent",
-                "gentoo_emerge": "net-p2p/qbittorrent",
-                "nixos_nix-env": "nixos_nix-env.qbittorrent",
-                "void_xbps": "qbittorrent",
-                "linux_flatpak": "org.qbittorrent.qBittorrent",
-                "freebsd_pkg": "qbittorrent",
-                "macos_brew": "qbittorrent",
-                "windows_winget": "qBittorrent.qBittorrent"
-            }
-        },
-        "qemu": {
-            "name": "QEMU",
-            "category": "Virtualization",
-            "subcategory": "hypervisor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "qemu",
-                "debian_apt": "qemu",
-                "fedora_rpm": "qemu",
-                "gentoo_emerge": "app-emulation/qemu",
-                "nixos_nix-env": "nixos_nix-env.qemu",
-                "void_xbps": "qemu",
-                "linux_flatpak": null,
-                "freebsd_pkg": "qemu",
-                "macos_brew": "qemu",
-                "windows_winget": null
-            }
-        },
-        "rawtherapee": {
-            "name": "RawTherapee",
-            "category": "Image",
-            "subcategory": "raw-photo-editor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "rawtherapee",
-                "debian_apt": "rawtherapee",
-                "fedora_rpm": "rawtherapee",
-                "gentoo_emerge": "media-gfx/rawtherapee",
-                "nixos_nix-env": "nixos_nix-env.rawtherapee",
-                "void_xbps": "rawtherapee",
-                "linux_flatpak": "com.rawtherapee.RawTherapee",
-                "freebsd_pkg": "rawtherapee",
-                "macos_brew": "rawtherapee",
-                "windows_winget": "RawTherapee.RawTherapee"
-            }
-        },
-        "rclone": {
-            "name": "Rclone",
-            "category": "File-Man",
-            "subcategory": "file-synchronization",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "rclone",
-                "debian_apt": "rclone",
-                "fedora_rpm": "rclone",
-                "gentoo_emerge": "net-misc/rclone",
-                "nixos_nix-env": "nixos_nix-env.rclone",
-                "void_xbps": "rclone",
-                "linux_flatpak": "org.mozilla.Thunderbird",
-                "freebsd_pkg": "rclone",
-                "macos_brew": "rclone",
-                "windows_winget": "Rclone.Rclone"
-            }
-        },
-        "reaper": {
-            "name": "REAPER",
-            "category": "Audio",
-            "subcategory": "digital-audio-workstation",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "reaper",
-                "debian_apt": "reaper",
-                "fedora_rpm": "reaper",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.reaper",
-                "void_xbps": "null",
-                "linux_flatpak": "fm.reaper.Reaper",
-                "freebsd_pkg": "null",
-                "macos_brew": "reaper",
-                "windows_winget": "REAPER"
-            }
-        },
-        "rsync": {
-            "name": "Rsync",
-            "category": "File-Man",
-            "subcategory": "file-synchronization",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "rsync",
-                "debian_apt": "rsync",
-                "fedora_rpm": "rsync",
-                "gentoo_emerge": "net-misc/rsync",
-                "nixos_nix-env": "nixos_nix-env.rsync",
-                "void_xbps": "rsync",
-                "linux_flatpak": null,
-                "freebsd_pkg": "rsync",
-                "macos_brew": "rsync",
-                "windows_winget": "WayneDavison.Rsync"
-            }
-        },
-        "shotcut": {
-            "name": "Shotcut",
-            "category": "Video",
-            "subcategory": "video-editor",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "shotcut",
-                "debian_apt": "shotcut",
-                "fedora_rpm": "shotcut",
-                "gentoo_emerge": "media-video/shotcut",
-                "nixos_nix-env": "nixos_nix-env.shotcut",
-                "void_xbps": "shotcut",
-                "linux_flatpak": "org.musescore.MuseScore",
-                "freebsd_pkg": "shotcut",
-                "macos_brew": "shotcut",
-                "windows_winget": "Meltytech.Shotcut"
-            }
-        },
-        "shotwell": {
-            "name": "Shotwell",
-            "category": "Image",
-            "subcategory": "photo-manager",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "shotwell",
-                "debian_apt": "shotwell",
-                "fedora_rpm": "shotwell",
-                "gentoo_emerge": "media-gfx/shotwell",
-                "nixos_nix-env": "nixos_nix-env.shotwell",
-                "void_xbps": "shotwell",
-                "linux_flatpak": "org.gnome.Shotwell",
-                "freebsd_pkg": "shotwell",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "stability-matrix": {
-            "name": "StabilityMatrix",
-            "category": "Image",
-            "subcategory": "AI-image-generator",
-            "package_manager": {
-                "arch_aur": "stabilitymatrix",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "null",
-                "void_xbps": "null",
-                "linux_flatpak": "org.winehq.Wine",
-                "freebsd_pkg": "null",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "steam": {
-            "name": "Steam",
-            "category": "Gaming",
-            "subcategory": "game-launcher",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "steam",
-                "debian_apt": "steam",
-                "fedora_rpm": "steam",
-                "gentoo_emerge": "games-util/steam-launcher",
-                "nixos_nix-env": "nixos_nix-env.steam",
-                "void_xbps": "steam",
-                "linux_flatpak": "io.neovim.nvim",
-                "freebsd_pkg": "steam",
-                "macos_brew": "steam",
-                "windows_winget": "Valve.Steam"
-            }
-        },
-        "stellarium": {
-            "name": "Stellarium",
-            "category": "Science",
-            "subcategory": "astronomy",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "stellarium",
-                "debian_apt": "stellarium",
-                "fedora_rpm": "stellarium",
-                "gentoo_emerge": "sci-astronomy/stellarium",
-                "nixos_nix-env": "nixos_nix-env.stellarium",
-                "void_xbps": "stellarium",
-                "linux_flatpak": "org.nmap.Zenmap",
-                "freebsd_pkg": "stellarium",
-                "macos_brew": "stellarium",
-                "windows_winget": "Stellarium.Stellarium"
-            }
-        },
-        "strawberry": {
-            "name": "Strawberry",
-            "category": "Audio",
-            "subcategory": "audio-player",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "strawberry",
-                "debian_apt": "strawberry",
-                "fedora_rpm": "strawberry",
-                "gentoo_emerge": "media-sound/strawberry",
-                "nixos_nix-env": "nixos_nix-env.strawberry",
-                "void_xbps": "strawberry",
-                "linux_flatpak": "md.obsidian.Obsidian",
-                "freebsd_pkg": "strawberry",
-                "macos_brew": "strawberry",
-                "windows_winget": null
-            }
-        },
-        "sublime-text-4": {
-            "name": "Sublime-Text 4",
-            "category": "Development",
-            "subcategory": "text-editor",
-            "package_manager": {
-                "arch_aur": "sublime-text-4",
-                "arch_pacman": null,
-                "debian_apt": "sublime-text-4",
-                "fedora_rpm": "sublime-text",
-                "gentoo_emerge": "app-editors/sublime-text",
-                "nixos_nix-env": "sublime-text-nixos_nix-env.sublime-text-4",
-                "void_xbps": "sublime-text",
-                "linux_flatpak": "com.obsproject.Studio",
-                "freebsd_pkg": "sublime-text",
-                "macos_brew": "sublime-text",
-                "windows_winget": "SublimeHQ.SublimeText.4"
-            }
-        },
-        "telegram": {
-            "name": "Telegram",
-            "category": "Web",
-            "subcategory": "messaging",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "telegram-desktop",
-                "debian_apt": "telegram-desktop",
-                "fedora_rpm": "telegram-desktop",
-                "gentoo_emerge": "net-im/telegram-desktop",
-                "nixos_nix-env": "telegram-nixos_nix-env.telegram-desktop",
-                "void_xbps": "telegram-desktop",
-                "linux_flatpak": "org.telegram.desktop",
-                "freebsd_pkg": "telegram-desktop",
-                "macos_brew": "telegram-desktop",
-                "windows_winget": "Telegram.TelegramDesktop"
-            }
-        },
-        "tenacity": {
-            "name": "Tenacity",
-            "category": "Audio",
-            "subcategory": "audio-recorder",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "tenacity",
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.tenacity",
-                "void_xbps": "tenacity",
-                "linux_flatpak": "org.tenacityaudio.Tenacity",
-                "freebsd_pkg": "tenacity",
-                "macos_brew": "tenacity",
-                "windows_winget": null
-            }
-        },
-        "thunderbird": {
-            "name": "Thunderbird",
-            "category": "Web",
-            "subcategory": "email-client",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "thunderbird",
-                "debian_apt": "thunderbird",
-                "fedora_rpm": "thunderbird",
-                "gentoo_emerge": "mail-client/thunderbird",
-                "nixos_nix-env": "nixos_nix-env.thunderbird",
-                "void_xbps": "thunderbird",
-                "linux_flatpak": "org.mozilla.Thunderbird",
-                "freebsd_pkg": "thunderbird",
-                "macos_brew": "thunderbird",
-                "windows_winget": "Mozilla.Thunderbird"
-            }
-        },
-        "tmux": {
-            "name": "tmux",
-            "category": "Utility",
-            "subcategory": "terminal-multiplexer",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "tmux",
-                "debian_apt": "tmux",
-                "fedora_rpm": "tmux",
-                "gentoo_emerge": "app-misc/tmux",
-                "nixos_nix-env": "nixos_nix-env.tmux",
-                "void_xbps": "tmux",
-                "linux_flatpak": "org.tmux.tmux",
-                "freebsd_pkg": "tmux",
-                "macos_brew": "tmux",
-                "windows_winget": "tmux"
-            }
-        },
-        "transmission": {
-            "name": "Transmission",
-            "category": "File-Sharing",
-            "subcategory": "torrent-client",
-            "package_manager": {
-                "arch_aur": "transmission-gtk",
-                "arch_pacman": null,
-                "debian_apt": "transmission",
-                "fedora_rpm": "transmission",
-                "gentoo_emerge": "net-p2p/transmission",
-                "nixos_nix-env": "nixos_nix-env.transmission",
-                "void_xbps": "transmission",
-                "linux_flatpak": "com.transmissionbt.Transmission",
-                "freebsd_pkg": "transmission",
-                "macos_brew": "transmission",
-                "windows_winget": "Transmission.Transmission"
-            }
-        },
-        "tree": {
-            "name": "Tree",
-            "category": "Utility",
-            "subcategory": "file-tree-generator",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "tree",
-                "debian_apt": "tree",
-                "fedora_rpm": "tree",
-                "gentoo_emerge": "app-text/tree",
-                "nixos_nix-env": "nixos_nix-env.tree",
-                "void_xbps": "tree",
-                "linux_flatpak": "org.qbittorrent.qBittorrent",
-                "freebsd_pkg": "tree",
-                "macos_brew": "tree",
-                "windows_winget": "sharkdp.tree"
-            }
-        },
-        "ungoogled-chromium": {
-            "name": "Ungoogled-Chromium",
-            "category": "Web",
-            "subcategory": "web-browser",
-            "package_manager": {
-                "arch_aur": "ungoogled-chromium-bin",
-                "arch_pacman": null,
-                "debian_apt": "ungoogled-chromium",
-                "fedora_rpm": "ungoogled-chromium",
-                "gentoo_emerge": "www-client/ungoogled-chromium",
-                "nixos_nix-env": "ungoogled-nixos_nix-env.ungoogled-chromium",
-                "void_xbps": "ungoogled-chromium",
-                "linux_flatpak": "org.chromium.Chromium",
-                "freebsd_pkg": "ungoogled-chromium",
-                "macos_brew": "ungoogled-chromium",
-                "windows_winget": "Ungoogled-Chromium"
-            }
-        },
-        "ventoy": {
-            "name": "Ventoy",
-            "category": "Utility",
-            "subcategory": "bootable-USB-creator",
-            "package_manager": {
-                "arch_aur": "ventoy-bin",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "nixos_nix-env.ventoy",
-                "void_xbps": "ventoy",
-                "linux_flatpak": "org.qemu.QEMU",
-                "freebsd_pkg": "ventoy",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "veracrypt": {
-            "name": "VeraCrypt",
-            "category": "Utility",
-            "subcategory": "disk-encryption",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "veracrypt",
-                "debian_apt": "veracrypt",
-                "fedora_rpm": "veracrypt",
-                "gentoo_emerge": "app-crypt/veracrypt",
-                "nixos_nix-env": "nixos_nix-env.veracrypt",
-                "void_xbps": "veracrypt",
-                "linux_flatpak": "com.veracrypt.VeraCrypt",
-                "freebsd_pkg": "veracrypt",
-                "macos_brew": "veracrypt",
-                "windows_winget": "IDRIX.VeraCrypt"
-            }
-        },
-        "virt-manager": {
-            "name": "virt-manager",
-            "category": "Virtualization",
-            "subcategory": "virtual-machine-manager",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "virt-manager",
-                "debian_apt": "virt-manager",
-                "fedora_rpm": "virt-manager",
-                "gentoo_emerge": "virt-app-emulation/virt-manager",
-                "nixos_nix-env": "nixos_nix-env.virtmanager",
-                "void_xbps": "virt-manager",
-                "linux_flatpak": "org.shotcut.Shotcut",
-                "freebsd_pkg": "virt-manager",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "virtualbox": {
-            "name": "VirtualBox",
-            "category": "Virtualization",
-            "subcategory": "virtual-machine-manager",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "virtualbox",
-                "debian_apt": "virtualbox",
-                "fedora_rpm": "VirtualBox",
-                "gentoo_emerge": "app-emulation/virtualbox",
-                "nixos_nix-env": "nixos_nix-env.virtualbox",
-                "void_xbps": "virtualbox",
-                "linux_flatpak": "net.sourceforge.eaglemode",
-                "freebsd_pkg": "virtualbox-ose",
-                "macos_brew": "virtualbox",
-                "windows_winget": "Oracle.VirtualBox"
-            }
-        },
-        "visual-studio-code": {
-            "name": "Visual-Studio-Code",
-            "category": "Development",
-            "subcategory": "code-editor",
-            "package_manager": {
-                "arch_aur": "visual-studio-code-bin",
-                "arch_pacman": null,
-                "debian_apt": "code",
-                "fedora_rpm": "code",
-                "gentoo_emerge": "app-editors/vscode",
-                "nixos_nix-env": "visual-studio-nixos_nix-env.visual-studio-code",
-                "void_xbps": "visual-studio-code",
-                "linux_flatpak": "com.stability.matrix",
-                "freebsd_pkg": "vscode",
-                "macos_brew": "visual-studio-code",
-                "windows_winget": "Microsoft.VisualStudioCode"
-            }
-        },
-        "vlc": {
-            "name": "VLC-Media-Player",
-            "category": "Video",
-            "subcategory": "media-player",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "vlc",
-                "debian_apt": "vlc",
-                "fedora_rpm": "vlc",
-                "gentoo_emerge": "media-video/vlc",
-                "nixos_nix-env": "nixos_nix-env.vlc",
-                "void_xbps": "vlc",
-                "linux_flatpak": "com.steam.CompatibilityTool.Proton",
-                "freebsd_pkg": "vlc",
-                "macos_brew": "vlc",
-                "windows_winget": "VideoLAN.VLC"
-            }
-        },
-        "vmware": {
-            "name": "VMware-Workstation",
-            "category": "Virtualization",
-            "subcategory": "virtual-machine-manager",
-            "package_manager": {
-                "arch_aur": "vmware-workstation",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": "vmware-workstation-player",
-                "gentoo_emerge": "app-emulation/vmware-workstation",
-                "nixos_nix-env": "vmware-nixos_nix-env.vmware-workstation",
-                "void_xbps": "null",
-                "linux_flatpak": "org.stellarium.Stellarium",
-                "freebsd_pkg": "null",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "waydroid": {
-            "name": "WayDroid",
-            "category": "Virtualization",
-            "subcategory": "containerization",
-            "package_manager": {
-                "arch_aur": "waydroid-git",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": null,
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "null",
-                "void_xbps": "null",
-                "linux_flatpak": "com.sublimetext.three",
-                "freebsd_pkg": "null",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "wine": {
-            "name": "Wine",
-            "category": "Virtualization",
-            "subcategory": "windows-compatibility-layer",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "wine",
-                "debian_apt": "wine",
-                "fedora_rpm": "wine",
-                "gentoo_emerge": "app-emulation/wine",
-                "nixos_nix-env": "nixos_nix-env.wine",
-                "void_xbps": "wine",
-                "linux_flatpak": "org.winehq.Platform",
-                "freebsd_pkg": "wine",
-                "macos_brew": "wine",
-                "windows_winget": "WineHQ.Wine"
-            }
-        },
-        "wordpress": {
-            "name": "Wordpress",
-            "category": "Development",
-            "subcategory": "content-management-system",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "wordpress",
-                "debian_apt": "wordpress",
-                "fedora_rpm": "wordpress",
-                "gentoo_emerge": "www-apps/wordpress",
-                "nixos_nix-env": "nixos_nix-env.wordpress",
-                "void_xbps": "wordpress",
-                "linux_flatpak": null,
-                "freebsd_pkg": "wordpress",
-                "macos_brew": "wordpresscom",
-                "windows_winget": "Automattic.Wordpress"
-            }
-        },
-        "xen": {
-            "name": "Xen",
-            "category": "Virtualization",
-            "subcategory": "hypervisor",
-            "package_manager": {
-                "arch_aur": "xen",
-                "arch_pacman": null,
-                "debian_apt": "xen-hypervisor",
-                "fedora_rpm": "xen",
-                "gentoo_emerge": "app-emulation/xen",
-                "nixos_nix-env": "nixos_nix-env.xen",
-                "void_xbps": "xen",
-                "linux_flatpak": "org.tenacityaudio.Tenacity",
-                "freebsd_pkg": "xen",
-                "macos_brew": null,
-                "windows_winget": null
-            }
-        },
-        "xnview": {
-            "name": "XnView-MP",
-            "category": "Image",
-            "subcategory": "image-viewer",
-            "package_manager": {
-                "arch_aur": "xnviewmp",
-                "arch_pacman": null,
-                "debian_apt": null,
-                "fedora_rpm": "xnviewmp",
-                "gentoo_emerge": "media-gfx/xnviewmp",
-                "nixos_nix-env": "nixos_nix-env.xnviewmp",
-                "void_xbps": "xnviewmp",
-                "linux_flatpak": "com.xnview.XnViewMP",
-                "freebsd_pkg": "xnview",
-                "macos_brew": "xnviewmp",
-                "windows_winget": null
-            }
-        },
-        "yt-dlp": {
-            "name": "YT-DLP",
-            "category": "Downloader",
-            "subcategory": "video-downloader",
-            "package_manager": {
-                "arch_aur": null,
-                "arch_pacman": "yt-dlp",
-                "debian_apt": "yt-dlp",
-                "fedora_rpm": "yt-dlp",
-                "gentoo_emerge": "net-misc/yt-dlp",
-                "nixos_nix-env": "yt-nixos_nix-env.yt-dlp",
-                "void_xbps": "yt-dlp",
-                "linux_flatpak": "com.transmissionbt.Transmission",
-                "freebsd_pkg": "yt-dlp",
-                "macos_brew": "yt-dl",
-                "windows_winget": "yt-dlp.yt-dlp"
-            }
-        },
-        "ytdownloader": {
-            "name": "ytDownloader",
-            "category": "Downloader",
-            "subcategory": "video-downloader",
-            "package_manager": {
-                "arch_aur": "ytdownloader-gui",
-                "arch_pacman": null,
-                "debian_apt": "youtube-dl",
-                "fedora_rpm": "youtube-dl",
-                "gentoo_emerge": "null",
-                "nixos_nix-env": "null",
-                "void_xbps": "null",
-                "linux_flatpak": null,
-                "freebsd_pkg": "null",
-                "macos_brew": "youtube-dl",
-                "windows_winget": null
-            }
-        }
+  "packages": {
+    "7zip": {
+      "name": "7-Zip",
+      "category": "File-Man",
+      "subcategory": "Compressor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "p7zip",
+        "debian_apt": "p7zip-full",
+        "fedora_rpm": "p7zip",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.p7zip",
+        "void_xbps": "p7zip",
+        "linux_flatpak": null,
+        "freebsd_pkg": "p7zip",
+        "macos_brew": "p7zip",
+        "windows_winget": "7zip.7zip"
+      }
+    },
+    "apache": {
+      "name": "Apache",
+      "category": "Web",
+      "subcategory": "HTTP-Server",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "apache",
+        "debian_apt": "apache2",
+        "fedora_rpm": "httpd",
+        "gentoo_emerge": "www-servers/apache",
+        "nixos_nix-env": "apache-httpd",
+        "void_xbps": "apache",
+        "linux_flatpak": null,
+        "freebsd_pkg": "apache24",
+        "macos_brew": "httpd",
+        "windows_winget": "Apache.Httpd"
+      }
+    },
+    "ardour": {
+      "name": "Ardour",
+      "category": "Audio",
+      "subcategory": "Digital-Audio-Workstation",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "ardour",
+        "debian_apt": "ardour",
+        "fedora_rpm": "ardour",
+        "gentoo_emerge": "media-sound/ardour",
+        "nixos_nix-env": "nixos_nix-env.ardour",
+        "void_xbps": "ardour",
+        "linux_flatpak": "org.ardour.Ardour",
+        "freebsd_pkg": "ardour",
+        "macos_brew": "ardour",
+        "windows_winget": null
+      }
+    },
+    "audacious": {
+      "name": "Audacious",
+      "category": "Audio",
+      "subcategory": "Audio-player",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "audacious",
+        "debian_apt": "audacious",
+        "fedora_rpm": "audacious",
+        "gentoo_emerge": "media-sound/audacious",
+        "nixos_nix-env": "nixos_nix-env.audacious",
+        "void_xbps": "audacious",
+        "linux_flatpak": "org.atheme.audacious",
+        "freebsd_pkg": "audacious",
+        "macos_brew": "audacious",
+        "windows_winget": "Audacious.Audacious"
+      }
+    },
+    "audacity": {
+      "name": "Audacity",
+      "category": "Audio",
+      "subcategory": "Audio-recorder",
+      "package_Manager": {
+        "arch_aur": "audacity",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": "audacity",
+        "gentoo_emerge": "media-sound/audacity",
+        "nixos_nix-env": "nixos_nix-env.audacity",
+        "void_xbps": "audacity",
+        "linux_flatpak": "org.audacityteam.Audacity",
+        "freebsd_pkg": "audacity",
+        "macos_brew": "audacity",
+        "windows_winget": null
+      }
+    },
+    "bitwig-studio": {
+      "name": "Bitwig-Studio",
+      "category": "Audio",
+      "subcategory": "Digital-Audio-Workstation",
+      "package_Manager": {
+        "arch_aur": "bitwig-studio",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": "bitwig-studio",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "bitwig-nixos_nix-env.bitwig-studio",
+        "void_xbps": "null",
+        "linux_flatpak": "com.bitwig.BitwigStudio",
+        "freebsd_pkg": "null",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "blender": {
+      "name": "Blender",
+      "category": "Image",
+      "subcategory": "Modeling",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "blender",
+        "debian_apt": "blender",
+        "fedora_rpm": "blender",
+        "gentoo_emerge": "media-gfx/blender",
+        "nixos_nix-env": "nixos_nix-env.blender",
+        "void_xbps": "blender",
+        "linux_flatpak": "org.blender.Blender",
+        "freebsd_pkg": "blender",
+        "macos_brew": "blender",
+        "windows_winget": "BlenderFoundation.Blender"
+      }
+    },
+    "borg": {
+      "name": "Borg",
+      "category": "File-Man",
+      "subcategory": "Backup",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "borg",
+        "debian_apt": "borgBackup",
+        "fedora_rpm": "borgBackup",
+        "gentoo_emerge": "app-Backup/borgBackup",
+        "nixos_nix-env": "nixos_nix-env.borgBackup",
+        "void_xbps": "borgBackup",
+        "linux_flatpak": null,
+        "freebsd_pkg": "py37-borgBackup",
+        "macos_brew": "borgBackup",
+        "windows_winget": null
+      }
+    },
+    "bottles": {
+      "name": "Bottles",
+      "category": "Virtualization",
+      "subcategory": "Windows-compatibility-layer",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "bottles",
+        "debian_apt": "bottles",
+        "fedora_rpm": "bottles",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.bottles",
+        "void_xbps": "null",
+        "linux_flatpak": "com.usebottles.bottles",
+        "freebsd_pkg": "null",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "calibre": {
+      "name": "Calibre",
+      "category": "Book",
+      "subcategory": "Ebook-manager",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "calibre",
+        "debian_apt": "calibre",
+        "fedora_rpm": "calibre",
+        "gentoo_emerge": "app-text/calibre",
+        "nixos_nix-env": "nixos_nix-env.calibre",
+        "void_xbps": "calibre",
+        "linux_flatpak": "com.calibre_ebook.calibre",
+        "freebsd_pkg": "calibre",
+        "macos_brew": "calibre",
+        "windows_winget": "Calibre"
+      }
+    },
+    "chromium": {
+      "name": "Chromium",
+      "category": "Web",
+      "subcategory": "Web-browser",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "chromium",
+        "debian_apt": "chromium",
+        "fedora_rpm": "chromium",
+        "gentoo_emerge": "www-client/chromium",
+        "nixos_nix-env": "nixos_nix-env.chromium",
+        "void_xbps": "chromium",
+        "linux_flatpak": "org.chromium.Chromium",
+        "freebsd_pkg": "chromium",
+        "macos_brew": "chromium",
+        "windows_winget": "Google.Chrome"
+      }
+    },
+    "darktable": {
+      "name": "Darktable",
+      "category": "Image",
+      "subcategory": "RAW-Photo-editor",
+      "package_Manager": {
+        "arch_aur": "darktable",
+        "arch_pacman": "darktable",
+        "debian_apt": "darktable",
+        "fedora_rpm": "darktable",
+        "gentoo_emerge": "media-gfx/darktable",
+        "nixos_nix-env": "nixos_nix-env.darktable",
+        "void_xbps": "darktable",
+        "linux_flatpak": "org.darktable.Darktable",
+        "freebsd_pkg": "darktable",
+        "macos_brew": "darktable",
+        "windows_winget": "Darktable.Darktable"
+      }
+    },
+    "davinci-resolve": {
+      "name": "DaVinci-Resolve",
+      "category": "Video",
+      "subcategory": "Video-editor",
+      "package_Manager": {
+        "arch_aur": "davinci-resolve",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "null",
+        "void_xbps": "null",
+        "linux_flatpak": null,
+        "freebsd_pkg": "null",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "deno": {
+      "name": "Deno",
+      "category": "Development",
+      "subcategory": "Runtime",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "deno",
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "deno",
+        "void_xbps": "deno",
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": "deno",
+        "windows_winget": "Deno.Deno"
+      }
+    },
+    "digikam": {
+      "name": "digiKam",
+      "category": "Image",
+      "subcategory": "Photo-manager",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "digikam",
+        "debian_apt": "digikam",
+        "fedora_rpm": "digikam",
+        "gentoo_emerge": "kde-apps/digikam",
+        "nixos_nix-env": "nixos_nix-env.digikam",
+        "void_xbps": "digikam",
+        "linux_flatpak": "org.darktable.Darktable",
+        "freebsd_pkg": "digikam",
+        "macos_brew": "digikam",
+        "windows_winget": "digiKam.digiKam"
+      }
+    },
+    "discord": {
+      "name": "Discord",
+      "category": "Web",
+      "subcategory": "Messaging",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "discord",
+        "debian_apt": "discord",
+        "fedora_rpm": "discord",
+        "gentoo_emerge": "net-im/discord",
+        "nixos_nix-env": "nixos_nix-env.discord",
+        "void_xbps": "discord",
+        "linux_flatpak": "com.discordapp.Discord",
+        "freebsd_pkg": "discord",
+        "macos_brew": "discord",
+        "windows_winget": "Discord.Discord"
+      }
+    },
+    "distrobox": {
+      "name": "Distrobox",
+      "category": "Virtualization",
+      "subcategory": "Wrapping-layer",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "distrobox",
+        "debian_apt": "distrobox",
+        "fedora_rpm": "distrobox",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "null",
+        "void_xbps": "null",
+        "linux_flatpak": "com.docker.docker",
+        "freebsd_pkg": "null",
+        "macos_brew": "distrobox",
+        "windows_winget": null
+      }
+    },
+    "docker": {
+      "name": "Docker",
+      "category": "Virtualization",
+      "subcategory": "Containerization",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "docker",
+        "debian_apt": "docker.io",
+        "fedora_rpm": "docker",
+        "gentoo_emerge": "app-emulation/docker",
+        "nixos_nix-env": "nixos_nix-env.docker",
+        "void_xbps": "docker",
+        "linux_flatpak": "",
+        "freebsd_pkg": "null",
+        "macos_brew": "docker",
+        "windows_winget": "Docker.DockerDesktop"
+      }
+    },
+    "dolphin": {
+      "name": "Dolphin",
+      "category": "File-Man",
+      "subcategory": "File-Manager",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "dolphin",
+        "debian_apt": "dolphin",
+        "fedora_rpm": "dolphin",
+        "gentoo_emerge": "kde-apps/dolphin",
+        "nixos_nix-env": "nixos_nix-env.dolphin",
+        "void_xbps": "dolphin",
+        "linux_flatpak": "org.kde.dolphin",
+        "freebsd_pkg": "dolphin",
+        "macos_brew": null,
+        "windows_winget": "KDE.Dolphin"
+      }
+    },
+    "dotnet-runtime": {
+      "name": "Dotnet-runtime",
+      "category": "Development",
+      "subcategory": "Runtime",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "dotnet-runtime",
+        "debian_apt": "dotnet-runtime-6.0",
+        "fedora_rpm": "dotnet-runtime-6.0",
+        "gentoo_emerge": "dev-dotnet/dotnet-runtime",
+        "nixos_nix-env": "dotnet-runtime",
+        "void_xbps": "dotnet-runtime",
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": "dotnet",
+        "windows_winget": "Microsoft.DotNet.SDK"
+      }
+    },
+    "dropbox": {
+      "name": "Dropbox",
+      "category": "File-Man",
+      "subcategory": "Client-cloud-storage",
+      "package_Manager": {
+        "arch_aur": "dropbox",
+        "arch_pacman": null,
+        "debian_apt": "dropbox",
+        "fedora_rpm": "nautilus-dropbox",
+        "gentoo_emerge": "net-misc/dropbox",
+        "nixos_nix-env": "nixos_nix-env.dropbox",
+        "void_xbps": "dropbox",
+        "linux_flatpak": "com.dropbox.Client",
+        "freebsd_pkg": "dropbox",
+        "macos_brew": "dropbox",
+        "windows_winget": "Dropbox.Dropbox"
+      }
+    },
+    "eaglemode": {
+      "name": "Eagle-Mode",
+      "category": "File-Man",
+      "subcategory": "File-Manager",
+      "package_Manager": {
+        "arch_aur": "eaglemode",
+        "arch_pacman": null,
+        "debian_apt": "eaglemode",
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "eagle-nixos_nix-env.eagle-mode",
+        "void_xbps": "eagle",
+        "linux_flatpak": null,
+        "freebsd_pkg": "eaglemode",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "elisa": {
+      "name": "Elisa",
+      "category": "Audio",
+      "subcategory": "Audio-player",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "elisa",
+        "debian_apt": "elisa",
+        "fedora_rpm": "elisa",
+        "gentoo_emerge": "kde-apps/elisa",
+        "nixos_nix-env": "nixos_nix-env.elisa",
+        "void_xbps": "elisa",
+        "linux_flatpak": "org.kde.elisa",
+        "freebsd_pkg": "elisa",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "evolution": {
+      "name": "Evolution",
+      "category": "Web",
+      "subcategory": "Email-client",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "evolution",
+        "debian_apt": "evolution",
+        "fedora_rpm": "evolution",
+        "gentoo_emerge": "mail-client/evolution",
+        "nixos_nix-env": "nixos_nix-env.evolution",
+        "void_xbps": "evolution",
+        "linux_flatpak": "org.gnome.Evolution",
+        "freebsd_pkg": "evolution",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "fastfetch": {
+      "name": "fastfetch",
+      "category": "System",
+      "subcategory": "Utilities",
+      "package_Manager": {
+        "arch_aur": "fastfetch",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": "fastfetch",
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": "fastfetch",
+        "windows_winget": "fastfetch"
+      }
+    },
+    "ffmpeg": {
+      "name": "FFMPEG",
+      "category": "Utility",
+      "subcategory": "Converter-decoder",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "ffmpeg",
+        "debian_apt": "ffmpeg",
+        "fedora_rpm": "ffmpeg-free",
+        "gentoo_emerge": "media-video/ffmpeg",
+        "nixos_nix-env": "nixos_nix-env.ffmpeg",
+        "void_xbps": "ffmpeg",
+        "linux_flatpak": null,
+        "freebsd_pkg": "ffmpeg",
+        "macos_brew": "ffmpeg",
+        "windows_winget": "Mozilla.Firefox"
+      }
+    },
+    "firefox": {
+      "name": "Firefox",
+      "category": "Web",
+      "subcategory": "Web-browser",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "firefox",
+        "debian_apt": "firefox",
+        "fedora_rpm": "firefox",
+        "gentoo_emerge": "www-client/firefox",
+        "nixos_nix-env": "nixos_nix-env.firefox",
+        "void_xbps": "firefox",
+        "linux_flatpak": "org.mozilla.Firefox",
+        "freebsd_pkg": "firefox",
+        "macos_brew": "firefox",
+        "windows_winget": "Mozilla.Firefox"
+      }
+    },
+    "foliate": {
+      "name": "Foliate",
+      "category": "Book",
+      "subcategory": "Ebook-reader",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "foliate",
+        "debian_apt": "foliate",
+        "fedora_rpm": "foliate",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.foliate",
+        "void_xbps": "foliate",
+        "linux_flatpak": "com.github.johnfactotum.Foliate",
+        "freebsd_pkg": "foliate",
+        "macos_brew": "foliate",
+        "windows_winget": null
+      }
+    },
+    "freefilesync": {
+      "name": "FreeFileSync",
+      "category": "File-Man",
+      "subcategory": "File-synchronization",
+      "package_Manager": {
+        "arch_aur": "freefilesync",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.freefilesync",
+        "void_xbps": "freefilesync",
+        "linux_flatpak": null,
+        "freebsd_pkg": "freefilesync",
+        "macos_brew": null,
+        "windows_winget": "FreeFileSync.FreeFileSync"
+      }
+    },
+    "freeplane": {
+      "name": "Freeplane",
+      "category": "Office",
+      "subcategory": "Mind-map-editor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "freeplane",
+        "debian_apt": "freeplane",
+        "fedora_rpm": "freeplane",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.freeplane",
+        "void_xbps": "freeplane",
+        "linux_flatpak": "org.freeplane.Freeplane",
+        "freebsd_pkg": "freeplane",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "gcc": {
+      "name": "GCC",
+      "category": "Development",
+      "subcategory": "Compiler",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "gcc",
+        "debian_apt": "gcc",
+        "fedora_rpm": "gcc",
+        "gentoo_emerge": "sys-devel/gcc",
+        "nixos_nix-env": "gcc",
+        "void_xbps": "gcc",
+        "linux_flatpak": null,
+        "freebsd_pkg": "gcc",
+        "macos_brew": "gcc",
+        "windows_winget": "GNU.GCC"
+      }
+    },
+    "geany": {
+      "name": "Geany",
+      "category": "Development",
+      "subcategory": "Text-editor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "geany",
+        "debian_apt": "geany",
+        "fedora_rpm": "geany",
+        "gentoo_emerge": "app-editors/geany",
+        "nixos_nix-env": "nixos_nix-env.geany",
+        "void_xbps": "geany",
+        "linux_flatpak": "flathub-org.geany.Geany",
+        "freebsd_pkg": "geany",
+        "macos_brew": "geany",
+        "windows_winget": "Geany"
+      }
+    },
+    "gimp": {
+      "name": "GIMP",
+      "category": "Image",
+      "subcategory": "Image-editor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "gimp",
+        "debian_apt": "gimp",
+        "fedora_rpm": "gimp",
+        "gentoo_emerge": "media-gfx/gimp",
+        "nixos_nix-env": "nixos_nix-env.gimp",
+        "void_xbps": "gimp",
+        "linux_flatpak": "org.gimp.GIMP",
+        "freebsd_pkg": "gimp",
+        "macos_brew": "gimp",
+        "windows_winget": "GIMP.GIMP"
+      }
+    },
+    "git": {
+      "name": "Git",
+      "category": "Utility",
+      "subcategory": "Version-control",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "git",
+        "debian_apt": "git",
+        "fedora_rpm": "git",
+        "gentoo_emerge": "dev-vcs/git",
+        "nixos_nix-env": "nixos_nix-env.git",
+        "void_xbps": "git",
+        "linux_flatpak": null,
+        "freebsd_pkg": "git",
+        "macos_brew": "git",
+        "windows_winget": "Git.Git"
+      }
+    },
+    "gnome-boxes": {
+      "name": "Boxes",
+      "category": "Virtualization",
+      "subcategory": "Virtual-machine-manager",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "gnome-boxes",
+        "debian_apt": "gnome-boxes",
+        "fedora_rpm": "gnome-boxes",
+        "gentoo_emerge": "app-emulation/gnome-boxes",
+        "nixos_nix-env": "gnome-nixos_nix-env.gnome-boxes",
+        "void_xbps": "gnome-boxes",
+        "linux_flatpak": "org.gnome.Boxes",
+        "freebsd_pkg": "gnome-boxes",
+        "macos_brew": "gnome-boxes",
+        "windows_winget": "Boxes"
+      }
+    },
+    "gnucash": {
+      "name": "GnuCash",
+      "category": "Finance",
+      "subcategory": "Finance-manager",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "gnucash",
+        "debian_apt": "gnucash",
+        "fedora_rpm": "gnucash",
+        "gentoo_emerge": "app-office/gnucash",
+        "nixos_nix-env": "nixos_nix-env.gnucash",
+        "void_xbps": "gnucash",
+        "linux_flatpak": "org.gnucash.Gnucash",
+        "freebsd_pkg": "gnucash",
+        "macos_brew": "gnucash",
+        "windows_winget": null
+      }
+    },
+    "godot": {
+      "name": "Godot",
+      "category": "Development",
+      "subcategory": "Game-engine",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "godot",
+        "debian_apt": "godot3",
+        "fedora_rpm": "godot",
+        "gentoo_emerge": "games-engines/godot",
+        "nixos_nix-env": "nixos_nix-env.godot",
+        "void_xbps": "godot",
+        "linux_flatpak": "org.godotengine.Godot",
+        "freebsd_pkg": "godot",
+        "macos_brew": "godot",
+        "windows_winget": "GodotEngine.Godot"
+      }
+    },
+    "google-earth": {
+      "name": "Google-Earth",
+      "category": "Science",
+      "subcategory": "Geography-map",
+      "package_Manager": {
+        "arch_aur": "google-earth-pro",
+        "arch_pacman": null,
+        "debian_apt": "google-earth-pro-stable",
+        "fedora_rpm": "flathub-com.google.EarthPro",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.googleearth",
+        "void_xbps": "null",
+        "linux_flatpak": "com.github.git",
+        "freebsd_pkg": "null",
+        "macos_brew": "google-earth-pro",
+        "windows_winget": "Google.GoogleEarthPro"
+      }
+    },
+    "gparted": {
+      "name": "gparted",
+      "category": "Utility",
+      "subcategory": "System",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "gparted",
+        "debian_apt": "gparted",
+        "fedora_rpm": "gparted",
+        "gentoo_emerge": "sys-block/gparted",
+        "nixos_nix-env": "gparted",
+        "void_xbps": "gparted",
+        "linux_flatpak": null,
+        "freebsd_pkg": "gparted",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "gwenview": {
+      "name": "Gwenview",
+      "category": "Image",
+      "subcategory": "image-viewer",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "gwenview",
+        "debian_apt": "gwenview",
+        "fedora_rpm": "gwenview",
+        "gentoo_emerge": "kde-apps/gwenview",
+        "nixos_nix-env": "nixos_nix-env.gwenview",
+        "void_xbps": "gwenview",
+        "linux_flatpak": "com.github.unrud.VideoDownloader",
+        "freebsd_pkg": "gwenview",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "handbrake": {
+      "name": "HandBrake",
+      "category": "File-Man",
+      "subcategory": "Compressor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "handbrake",
+        "debian_apt": "handbrake",
+        "fedora_rpm": "handbrake",
+        "gentoo_emerge": "media-video/handbrake",
+        "nixos_nix-env": "nixos_nix-env.handbrake",
+        "void_xbps": "handbrake",
+        "linux_flatpak": "io.github.waydroid",
+        "freebsd_pkg": "handbrake",
+        "macos_brew": "handbrake",
+        "windows_winget": "HandBrake"
+      }
+    },
+    "haruna": {
+      "name": "Haruna",
+      "category": "Video",
+      "subcategory": "Media-player",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "haruna",
+        "debian_apt": "haruna",
+        "fedora_rpm": "haruna",
+        "gentoo_emerge": "kde-apps/haruna",
+        "nixos_nix-env": "nixos_nix-env.haruna",
+        "void_xbps": "null",
+        "linux_flatpak": "io.github.ytdl-org.yt-dlp",
+        "freebsd_pkg": "null",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "heroic-games-launcher": {
+      "name": "Heroic-Games-Launcher",
+      "category": "Gaming",
+      "subcategory": "Game-launcher",
+      "package_Manager": {
+        "arch_aur": "heroic-games-launcher-bin",
+        "arch_pacman": null,
+        "debian_apt": "heroic-games-launcher",
+        "fedora_rpm": "com.heroicgameslauncher.hgl",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "heroic-games-nixos_nix-env.heroic-games-launcher",
+        "void_xbps": "null",
+        "linux_flatpak": "com.heroicgameslauncher.hgl",
+        "freebsd_pkg": "null",
+        "macos_brew": "heroic",
+        "windows_winget": "HeroicGamesLauncher.HeroicGamesLauncher"
+      }
+    },
+    "homebank": {
+      "name": "HomeBank",
+      "category": "Finance",
+      "subcategory": "Finance-manager",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "homebank",
+        "debian_apt": "homebank",
+        "fedora_rpm": "homebank",
+        "gentoo_emerge": "app-office/homebank",
+        "nixos_nix-env": "nixos_nix-env.homebank",
+        "void_xbps": "homebank",
+        "linux_flatpak": "org.gnome.Boxes",
+        "freebsd_pkg": "homebank",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "inkscape": {
+      "name": "Inkscape",
+      "category": "Image",
+      "subcategory": "Vector-graphics",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "inkscape",
+        "debian_apt": "inkscape",
+        "fedora_rpm": "inkscape",
+        "gentoo_emerge": "media-gfx/inkscape",
+        "nixos_nix-env": "nixos_nix-env.inkscape",
+        "void_xbps": "inkscape",
+        "linux_flatpak": "org.inkscape.Inkscape",
+        "freebsd_pkg": "inkscape",
+        "macos_brew": "inkscape",
+        "windows_winget": "Inkscape.Inkscape"
+      }
+    },
+    "jellyfin-client": {
+      "name": "Jellyfin-Client",
+      "category": "Video",
+      "subcategory": "Media-server",
+      "package_Manager": {
+        "arch_aur": "jellyfin-media-player",
+        "arch_pacman": null,
+        "debian_apt": "jellyfin",
+        "fedora_rpm": "jellyfin",
+        "gentoo_emerge": "media-tv/jellyfin-media-player",
+        "nixos_nix-env": "jellyfin-media-nixos_nix-env.jellyfin-media-player",
+        "void_xbps": "jellyfin-media-player",
+        "linux_flatpak": "com.github.iwalton3.jellyfin-media-player",
+        "freebsd_pkg": "jellyfin-web",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "jellyfin-server": {
+      "name": "Jellyfin-Server",
+      "category": "Video",
+      "subcategory": "Media-server",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "jellyfin-server",
+        "debian_apt": "jellyfin",
+        "fedora_rpm": "jellyfin",
+        "gentoo_emerge": "media-tv/jellyfin",
+        "nixos_nix-env": "nixos_nix-env.jellyfin",
+        "void_xbps": "jellyfin",
+        "linux_flatpak": "org.jellyfin.JellyfinServer",
+        "freebsd_pkg": "jellyfin",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "kate": {
+      "name": "Kate",
+      "category": "Development",
+      "subcategory": "Text-editor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "kate",
+        "debian_apt": "kate",
+        "fedora_rpm": "kate",
+        "gentoo_emerge": "kde-apps/kate",
+        "nixos_nix-env": "nixos_nix-env.kate",
+        "void_xbps": "kate",
+        "linux_flatpak": "",
+        "freebsd_pkg": "kate",
+        "macos_brew": "kate",
+        "windows_winget": "KateEditor.Kate"
+      }
+    },
+    "kdenlive": {
+      "name": "Kdenlive",
+      "category": "Video",
+      "subcategory": "Video-editor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "kdenlive",
+        "debian_apt": "kdenlive",
+        "fedora_rpm": "kdenlive",
+        "gentoo_emerge": "kde-apps/kdenlive",
+        "nixos_nix-env": "nixos_nix-env.kdenlive",
+        "void_xbps": "kdenlive",
+        "linux_flatpak": "org.kde.kdenlive",
+        "freebsd_pkg": "kdenlive",
+        "macos_brew": "kdenlive",
+        "windows_winget": "Kdenlive.Kdenlive"
+      }
+    },
+    "keepassxc": {
+      "name": "KeePassXC",
+      "category": "Utility",
+      "subcategory": "Password-Manager",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "keepassxc",
+        "debian_apt": "keepassxc",
+        "fedora_rpm": "keepassxc",
+        "gentoo_emerge": "app-admin/keepassxc",
+        "nixos_nix-env": "nixos_nix-env.keepassxc",
+        "void_xbps": "keepassxc",
+        "linux_flatpak": "org.keepassxc.KeePassXC",
+        "freebsd_pkg": "keepassxc",
+        "macos_brew": "keepassxc",
+        "windows_winget": "KeePassXCTeam.KeePassXC"
+      }
+    },
+    "koodoreader": {
+      "name": "Koodo-Reader",
+      "category": "Book",
+      "subcategory": "Ebook-reader",
+      "package_Manager": {
+        "arch_aur": "koodoreader",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "koodo-nixos_nix-env.koodo-reader",
+        "void_xbps": "null",
+        "linux_flatpak": "org.godotengine.Godot",
+        "freebsd_pkg": "null",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "koreader": {
+      "name": "KOReader",
+      "category": "Book",
+      "subcategory": "Ebook-reader",
+      "package_Manager": {
+        "arch_aur": "koreader",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.koreader",
+        "void_xbps": "null",
+        "linux_flatpak": null,
+        "freebsd_pkg": "null",
+        "macos_brew": "koreader",
+        "windows_winget": null
+      }
+    },
+    "krita": {
+      "name": "Krita",
+      "category": "Image",
+      "subcategory": "Image-editor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "krita",
+        "debian_apt": "krita",
+        "fedora_rpm": "krita",
+        "gentoo_emerge": "kde-apps/krita",
+        "nixos_nix-env": "nixos_nix-env.krita",
+        "void_xbps": "krita",
+        "linux_flatpak": "com.google.EarthPro",
+        "freebsd_pkg": "krita",
+        "macos_brew": "krita",
+        "windows_winget": "KDE.Krita"
+      }
+    },
+    "kstars": {
+      "name": "kstars",
+      "category": "Science",
+      "subcategory": "Astronomy",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "kstars",
+        "debian_apt": "kstars",
+        "fedora_rpm": "kstars",
+        "gentoo_emerge": "kde-apps/kstars",
+        "nixos_nix-env": "nixos_nix-env.kstars",
+        "void_xbps": "kstars",
+        "linux_flatpak": "org.kde.kstars",
+        "freebsd_pkg": "kstars",
+        "macos_brew": "kstars",
+        "windows_winget": "kstars"
+      }
+    },
+    "libreoffice": {
+      "name": "LibreOffice",
+      "category": "Office",
+      "subcategory": "Office-suite",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "libreoffice",
+        "debian_apt": "libreoffice",
+        "fedora_rpm": "libreoffice",
+        "gentoo_emerge": "app-office/libreoffice",
+        "nixos_nix-env": "nixos_nix-env.libreoffice",
+        "void_xbps": "libreoffice",
+        "linux_flatpak": "org.libreoffice.LibreOffice",
+        "freebsd_pkg": "libreoffice",
+        "macos_brew": "libreoffice",
+        "windows_winget": "LibreOffice.LibreOffice"
+      }
+    },
+    "librewolf": {
+      "name": "LibreWolf",
+      "category": "Web",
+      "subcategory": "Web-browser",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "librewolf",
+        "debian_apt": "librewolf",
+        "fedora_rpm": "librewolf",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.librewolf",
+        "void_xbps": "null",
+        "linux_flatpak": "io.gitlab.librewolf-community",
+        "freebsd_pkg": "librewolf",
+        "macos_brew": "librewolf",
+        "windows_winget": "LibreWolf"
+      }
+    },
+    "lmms": {
+      "name": "LMMS",
+      "category": "Audio",
+      "subcategory": "Digital-Audio-Workstation",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "lmms",
+        "debian_apt": "lmms",
+        "fedora_rpm": "lmms",
+        "gentoo_emerge": "media-sound/lmms",
+        "nixos_nix-env": "nixos_nix-env.lmms",
+        "void_xbps": "lmms",
+        "linux_flatpak": "",
+        "freebsd_pkg": "lmms",
+        "macos_brew": "lmms",
+        "windows_winget": "LMMS.LMMS"
+      }
+    },
+    "lutris": {
+      "name": "Lutris",
+      "category": "Gaming",
+      "subcategory": "Game-launcher",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "lutris",
+        "debian_apt": "lutris",
+        "fedora_rpm": "lutris",
+        "gentoo_emerge": "games-util/lutris",
+        "nixos_nix-env": "nixos_nix-env.lutris",
+        "void_xbps": "lutris",
+        "linux_flatpak": "org.videolan.VLC",
+        "freebsd_pkg": "lutris",
+        "macos_brew": "lutris",
+        "windows_winget": "Lutris"
+      }
+    },
+    "mariadb": {
+      "name": "MariaDB",
+      "category": "Development",
+      "subcategory": "SQL",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "mariadb",
+        "debian_apt": "mariadb-server",
+        "fedora_rpm": "mariadb-server",
+        "gentoo_emerge": "dev-db/mariadb",
+        "nixos_nix-env": "mariadb",
+        "void_xbps": "mariadb",
+        "linux_flatpak": null,
+        "freebsd_pkg": "mariadb105-server",
+        "macos_brew": "mariadb",
+        "windows_winget": "MariaDB.MariaDBServer"
+      }
+    },
+    "mega": {
+      "name": "MEGAsync",
+      "category": "File-Man",
+      "subcategory": "Client-cloud-storage",
+      "package_Manager": {
+        "arch_aur": "megasync",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "net-misc/megasync",
+        "nixos_nix-env": "nixos_nix-env.megasync",
+        "void_xbps": "megasync",
+        "linux_flatpak": "flathub-nz.mega.MEGAsync",
+        "freebsd_pkg": "megasync",
+        "macos_brew": null,
+        "windows_winget": "MegaLimited.MEGAsync"
+      }
+    },
+    "meld": {
+      "name": "meld",
+      "category": "Utility",
+      "subcategory": "File-Comparator",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "meld",
+        "debian_apt": "meld",
+        "fedora_rpm": "meld",
+        "gentoo_emerge": "app-misc/meld",
+        "nixos_nix-env": "meld",
+        "void_xbps": "meld",
+        "linux_flatpak": null,
+        "freebsd_pkg": "meld",
+        "macos_brew": "meld",
+        "windows_winget": "meld"
+      }
+    },
+    "mongodb": {
+      "name": "MongoDB",
+      "category": "Development",
+      "subcategory": "noSQL",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "mongodb-bin",
+        "debian_apt": "mongodb-org",
+        "fedora_rpm": "mongodb-org",
+        "gentoo_emerge": "dev-db/mongodb",
+        "nixos_nix-env": "mongodb",
+        "void_xbps": "mongodb",
+        "linux_flatpak": null,
+        "freebsd_pkg": "mongodb42",
+        "macos_brew": "mongodb-community",
+        "windows_winget": "MongoDB.Server"
+      }
+    },
+    "mpv": {
+      "name": "MPV",
+      "category": "Video",
+      "subcategory": "Media-player",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "mpv",
+        "debian_apt": "mpv",
+        "fedora_rpm": "mpv",
+        "gentoo_emerge": "media-video/mpv",
+        "nixos_nix-env": "nixos_nix-env.mpv",
+        "void_xbps": "mpv",
+        "linux_flatpak": "io.mpv.Mpv",
+        "freebsd_pkg": "mpv",
+        "macos_brew": "mpv",
+        "windows_winget": "MPVPlayer.MPV"
+      }
+    },
+    "musescore": {
+      "name": "MuseScore",
+      "category": "Audio",
+      "subcategory": "Music-notation",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "musescore",
+        "debian_apt": "musescore",
+        "fedora_rpm": "musescore",
+        "gentoo_emerge": "media-sound/musescore",
+        "nixos_nix-env": "nixos_nix-env.musescore",
+        "void_xbps": "musescore",
+        "linux_flatpak": "org.musescore.MuseScore",
+        "freebsd_pkg": "musescore",
+        "macos_brew": "musescore",
+        "windows_winget": "MuseScore.MuseScore"
+      }
+    },
+    "musicbee": {
+      "name": "MusicBee",
+      "category": "Audio",
+      "subcategory": "Audio-player",
+      "package_Manager": {
+        "arch_aur": "musicbee",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "null",
+        "void_xbps": "null",
+        "linux_flatpak": "org.kde.digikam",
+        "freebsd_pkg": "null",
+        "macos_brew": null,
+        "windows_winget": "MusicBee"
+      }
+    },
+    "musicbrainz-picard": {
+      "name": "MusicBrainz-Picard",
+      "category": "File-Man",
+      "subcategory": "Music-tagger",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "picard",
+        "debian_apt": "picard",
+        "fedora_rpm": "picard",
+        "gentoo_emerge": "media-sound/picard",
+        "nixos_nix-env": "nixos_nix-env.picard",
+        "void_xbps": "picard",
+        "linux_flatpak": "org.kde.dolphin",
+        "freebsd_pkg": "picard",
+        "macos_brew": "picard",
+        "windows_winget": "MusicBrainz.Picard"
+      }
+    },
+    "mypaint": {
+      "name": "MyPaint",
+      "category": "Image",
+      "subcategory": "Image-editor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "mypaint",
+        "debian_apt": "mypaint",
+        "fedora_rpm": "mypaint",
+        "gentoo_emerge": "media-gfx/mypaint",
+        "nixos_nix-env": "nixos_nix-env.mypaint",
+        "void_xbps": "mypaint",
+        "linux_flatpak": "org.mypaint.MyPaint",
+        "freebsd_pkg": "mypaint",
+        "macos_brew": "mypaint",
+        "windows_winget": "MyPaint.MyPaint"
+      }
+    },
+    "neovim": {
+      "name": "Neovim",
+      "category": "Development",
+      "subcategory": "Text-editor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "neovim",
+        "debian_apt": "neovim",
+        "fedora_rpm": "neovim",
+        "gentoo_emerge": "app-editors/neovim",
+        "nixos_nix-env": "nixos_nix-env.neovim",
+        "void_xbps": "neovim",
+        "linux_flatpak": "org.kde.gwenview",
+        "freebsd_pkg": "neovim",
+        "macos_brew": "neovim",
+        "windows_winget": "Neovim.Neovim"
+      }
+    },
+    "nginx": {
+      "name": "Nginx",
+      "category": "Web",
+      "subcategory": "HTTP-Server",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "nginx",
+        "debian_apt": "nginx",
+        "fedora_rpm": "nginx",
+        "gentoo_emerge": "www-servers/nginx",
+        "nixos_nix-env": "nginx",
+        "void_xbps": "nginx",
+        "linux_flatpak": null,
+        "freebsd_pkg": "nginx",
+        "macos_brew": "nginx",
+        "windows_winget": "Nginx.Nginx"
+      }
+    },
+    "nmap": {
+      "name": "Nmap",
+      "category": "Utility",
+      "subcategory": "Networking",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "nmap",
+        "debian_apt": "nmap",
+        "fedora_rpm": "nmap",
+        "gentoo_emerge": "net-analyzer/nmap",
+        "nixos_nix-env": "nixos_nix-env.nmap",
+        "void_xbps": "nmap",
+        "linux_flatpak": "org.kde.haruna",
+        "freebsd_pkg": "nmap",
+        "macos_brew": "nmap",
+        "windows_winget": "Nmap.Nmap"
+      }
+    },
+    "nodejs": {
+      "name": "Node.js",
+      "category": "Development",
+      "subcategory": "Runtime",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "nodejs",
+        "debian_apt": "nodejs",
+        "fedora_rpm": "nodejs",
+        "gentoo_emerge": "net-libs/nodejs",
+        "nixos_nix-env": "nixos_nix-env.nodejs",
+        "void_xbps": "nodejs",
+        "linux_flatpak": "org.kde.kate",
+        "freebsd_pkg": "node",
+        "macos_brew": "node",
+        "windows_winget": "OpenJS.Nodejs"
+      }
+    },
+    "obs-studio": {
+      "name": "OBS-Studio",
+      "category": "Video",
+      "subcategory": "Video-recorder",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "obs-studio",
+        "debian_apt": "obs-studio",
+        "fedora_rpm": "obs-studio",
+        "gentoo_emerge": "media-video/obs-studio",
+        "nixos_nix-env": "obs-nixos_nix-env.obs-studio",
+        "void_xbps": "obs-studio",
+        "linux_flatpak": "org.kde.kdenlive",
+        "freebsd_pkg": "obs-studio",
+        "macos_brew": "obs",
+        "windows_winget": "OBSProject.OBSStudio"
+      }
+    },
+    "obsidian": {
+      "name": "Obsidian",
+      "category": "Office",
+      "subcategory": "Note-taking",
+      "package_Manager": {
+        "arch_aur": "obsidian",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.obsidian",
+        "void_xbps": "obsidian",
+        "linux_flatpak": "org.kde.krita",
+        "freebsd_pkg": "obsidian",
+        "macos_brew": "obsidian",
+        "windows_winget": "Obsidian.Obsidian"
+      }
+    },
+    "ocenaudio": {
+      "name": "Ocenaudio",
+      "category": "Audio",
+      "subcategory": "Audio-recorder",
+      "package_Manager": {
+        "arch_aur": "ocenaudio",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.ocenaudio",
+        "void_xbps": "null",
+        "linux_flatpak": null,
+        "freebsd_pkg": "null",
+        "macos_brew": "ocenaudio",
+        "windows_winget": "Ocenaudio.Ocenaudio"
+      }
+    },
+    "okular": {
+      "name": "Okular",
+      "category": "Office",
+      "subcategory": "Document-viewer",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "okular",
+        "debian_apt": "okular",
+        "fedora_rpm": "okular",
+        "gentoo_emerge": "kde-apps/okular",
+        "nixos_nix-env": "nixos_nix-env.okular",
+        "void_xbps": "okular",
+        "linux_flatpak": "org.kde.okular",
+        "freebsd_pkg": "okular",
+        "macos_brew": "okular",
+        "windows_winget": null
+      }
+    },
+    "onlyoffice": {
+      "name": "OnlyOffice",
+      "category": "Office",
+      "subcategory": "Office-suite",
+      "package_Manager": {
+        "arch_aur": "onlyoffice-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": "onlyoffice",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "onlyoffice-nixos_nix-env.onlyoffice-bin",
+        "void_xbps": "null",
+        "linux_flatpak": "org.onlyoffice.desktopeditors",
+        "freebsd_pkg": "null",
+        "macos_brew": "onlyoffice",
+        "windows_winget": "ONLYOFFICE.DesktopEditors"
+      }
+    },
+    "openshot": {
+      "name": "OpenShot",
+      "category": "Video",
+      "subcategory": "Video-editor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "openshot",
+        "debian_apt": "openshot",
+        "fedora_rpm": "openshot",
+        "gentoo_emerge": "media-video/openshot",
+        "nixos_nix-env": "nixos_nix-env.openshot",
+        "void_xbps": "openshot",
+        "linux_flatpak": "org.openshot.OpenShot",
+        "freebsd_pkg": "openshot",
+        "macos_brew": "openshot",
+        "windows_winget": "OpenShot"
+      }
+    },
+    "playonlinux": {
+      "name": "PlayOnLinux",
+      "category": "Virtualization",
+      "subcategory": "Windows-compatibility-layer",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "playonlinux",
+        "debian_apt": "playonlinux",
+        "fedora_rpm": "playonlinux",
+        "gentoo_emerge": "app-emulation/playonlinux",
+        "nixos_nix-env": "nixos_nix-env.playonlinux",
+        "void_xbps": "playonlinux",
+        "linux_flatpak": "org.phoenicis.playonlinux",
+        "freebsd_pkg": "playonlinux",
+        "macos_brew": "playonlinux",
+        "windows_winget": "PlayOnLinux"
+      }
+    },
+    "postgresql": {
+      "name": "PostgreSQL",
+      "category": "Development",
+      "subcategory": "SQL",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "postgresql",
+        "debian_apt": "postgresql",
+        "fedora_rpm": "postgresql-server",
+        "gentoo_emerge": "dev-db/postgresql",
+        "nixos_nix-env": "postgresql",
+        "void_xbps": "postgresql",
+        "linux_flatpak": null,
+        "freebsd_pkg": "postgresql13-server",
+        "macos_brew": "postgresql",
+        "windows_winget": "PostgreSQL.PostgreSQL"
+      }
+    },
+    "proton": {
+      "name": "Proton",
+      "category": "Virtualization",
+      "subcategory": "Windows-compatibility-layer",
+      "package_Manager": {
+        "arch_aur": "proton-ge-custom-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.proton",
+        "void_xbps": "null",
+        "linux_flatpak": "org.koreader.Koreader",
+        "freebsd_pkg": "null",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "proton-qt": {
+      "name": "Proton-QT",
+      "category": "Virtualization",
+      "subcategory": "Windows-compatibility-layer",
+      "package_Manager": {
+        "arch_aur": "proton-qt",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "proton-nixos_nix-env.proton-qt",
+        "void_xbps": "null",
+        "linux_flatpak": "org.libreoffice.LibreOffice",
+        "freebsd_pkg": "null",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "putty": {
+      "name": "PuTTY",
+      "category": "Utility",
+      "subcategory": "Terminal-emulator",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "putty",
+        "debian_apt": "putty",
+        "fedora_rpm": "putty",
+        "gentoo_emerge": "net-misc/putty",
+        "nixos_nix-env": "nixos_nix-env.putty",
+        "void_xbps": "putty",
+        "linux_flatpak": "io.lmms.LMMS",
+        "freebsd_pkg": "putty",
+        "macos_brew": "putty",
+        "windows_winget": "PuTTY.PuTTY"
+      }
+    },
+    "python": {
+      "name": "Python",
+      "category": "Development",
+      "subcategory": "Programming-language",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "python",
+        "debian_apt": "python3",
+        "fedora_rpm": "python3",
+        "gentoo_emerge": "dev-lang/python",
+        "nixos_nix-env": "nixos_nix-env.python3",
+        "void_xbps": "python3",
+        "linux_flatpak": "net.lutris.Lutris",
+        "freebsd_pkg": "python",
+        "macos_brew": "python",
+        "windows_winget": "Python.Python.3"
+      }
+    },
+    "qbittorrent": {
+      "name": "qBittorrent",
+      "category": "File-Sharing",
+      "subcategory": "Torrent-client",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "qbittorrent",
+        "debian_apt": "qbittorrent",
+        "fedora_rpm": "qbittorrent",
+        "gentoo_emerge": "net-p2p/qbittorrent",
+        "nixos_nix-env": "nixos_nix-env.qbittorrent",
+        "void_xbps": "qbittorrent",
+        "linux_flatpak": "org.qbittorrent.qBittorrent",
+        "freebsd_pkg": "qbittorrent",
+        "macos_brew": "qbittorrent",
+        "windows_winget": "qBittorrent.qBittorrent"
+      }
+    },
+    "qemu": {
+      "name": "QEMU",
+      "category": "Virtualization",
+      "subcategory": "Hypervisor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "qemu",
+        "debian_apt": "qemu",
+        "fedora_rpm": "qemu",
+        "gentoo_emerge": "app-emulation/qemu",
+        "nixos_nix-env": "nixos_nix-env.qemu",
+        "void_xbps": "qemu",
+        "linux_flatpak": null,
+        "freebsd_pkg": "qemu",
+        "macos_brew": "qemu",
+        "windows_winget": null
+      }
+    },
+    "rawtherapee": {
+      "name": "RawTherapee",
+      "category": "Image",
+      "subcategory": "RAW-Photo-editor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "rawtherapee",
+        "debian_apt": "rawtherapee",
+        "fedora_rpm": "rawtherapee",
+        "gentoo_emerge": "media-gfx/rawtherapee",
+        "nixos_nix-env": "nixos_nix-env.rawtherapee",
+        "void_xbps": "rawtherapee",
+        "linux_flatpak": "com.rawtherapee.RawTherapee",
+        "freebsd_pkg": "rawtherapee",
+        "macos_brew": "rawtherapee",
+        "windows_winget": "RawTherapee.RawTherapee"
+      }
+    },
+    "rclone": {
+      "name": "Rclone",
+      "category": "File-Man",
+      "subcategory": "File-synchronization",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "rclone",
+        "debian_apt": "rclone",
+        "fedora_rpm": "rclone",
+        "gentoo_emerge": "net-misc/rclone",
+        "nixos_nix-env": "nixos_nix-env.rclone",
+        "void_xbps": "rclone",
+        "linux_flatpak": "org.mozilla.Thunderbird",
+        "freebsd_pkg": "rclone",
+        "macos_brew": "rclone",
+        "windows_winget": "Rclone.Rclone"
+      }
+    },
+    "reaper": {
+      "name": "REAPER",
+      "category": "Audio",
+      "subcategory": "Digital-Audio-Workstation",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "reaper",
+        "debian_apt": "reaper",
+        "fedora_rpm": "reaper",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.reaper",
+        "void_xbps": "null",
+        "linux_flatpak": "fm.reaper.Reaper",
+        "freebsd_pkg": "null",
+        "macos_brew": "reaper",
+        "windows_winget": "REAPER"
+      }
+    },
+    "rsync": {
+      "name": "Rsync",
+      "category": "File-Man",
+      "subcategory": "File-synchronization",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "rsync",
+        "debian_apt": "rsync",
+        "fedora_rpm": "rsync",
+        "gentoo_emerge": "net-misc/rsync",
+        "nixos_nix-env": "nixos_nix-env.rsync",
+        "void_xbps": "rsync",
+        "linux_flatpak": null,
+        "freebsd_pkg": "rsync",
+        "macos_brew": "rsync",
+        "windows_winget": "WayneDavison.Rsync"
+      }
+    },
+    "shotcut": {
+      "name": "Shotcut",
+      "category": "Video",
+      "subcategory": "Video-editor",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "shotcut",
+        "debian_apt": "shotcut",
+        "fedora_rpm": "shotcut",
+        "gentoo_emerge": "media-video/shotcut",
+        "nixos_nix-env": "nixos_nix-env.shotcut",
+        "void_xbps": "shotcut",
+        "linux_flatpak": "org.musescore.MuseScore",
+        "freebsd_pkg": "shotcut",
+        "macos_brew": "shotcut",
+        "windows_winget": "Meltytech.Shotcut"
+      }
+    },
+    "shotwell": {
+      "name": "Shotwell",
+      "category": "Image",
+      "subcategory": "Photo-manager",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "shotwell",
+        "debian_apt": "shotwell",
+        "fedora_rpm": "shotwell",
+        "gentoo_emerge": "media-gfx/shotwell",
+        "nixos_nix-env": "nixos_nix-env.shotwell",
+        "void_xbps": "shotwell",
+        "linux_flatpak": "org.gnome.Shotwell",
+        "freebsd_pkg": "shotwell",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "sqlite": {
+      "name": "SQLite",
+      "category": "Development",
+      "subcategory": "SQL",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "sqlite",
+        "debian_apt": "sqlite3",
+        "fedora_rpm": "sqlite",
+        "gentoo_emerge": "dev-db/sqlite",
+        "nixos_nix-env": "sqlite",
+        "void_xbps": "sqlite",
+        "linux_flatpak": null,
+        "freebsd_pkg": "sqlite3",
+        "macos_brew": "sqlite",
+        "windows_winget": "SQLite.SQLite3"
+      }
+    },
+    "stability-matrix": {
+      "name": "StabilityMatrix",
+      "category": "Image",
+      "subcategory": "AI-image-generator",
+      "package_Manager": {
+        "arch_aur": "stabilitymatrix",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "null",
+        "void_xbps": "null",
+        "linux_flatpak": "org.winehq.Wine",
+        "freebsd_pkg": "null",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "steam": {
+      "name": "Steam",
+      "category": "Gaming",
+      "subcategory": "Game-launcher",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "steam",
+        "debian_apt": "steam",
+        "fedora_rpm": "steam",
+        "gentoo_emerge": "games-util/steam-launcher",
+        "nixos_nix-env": "nixos_nix-env.steam",
+        "void_xbps": "steam",
+        "linux_flatpak": "io.neovim.nvim",
+        "freebsd_pkg": "steam",
+        "macos_brew": "steam",
+        "windows_winget": "Valve.Steam"
+      }
+    },
+    "stellarium": {
+      "name": "Stellarium",
+      "category": "Science",
+      "subcategory": "astronomy",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "stellarium",
+        "debian_apt": "stellarium",
+        "fedora_rpm": "stellarium",
+        "gentoo_emerge": "sci-astronomy/stellarium",
+        "nixos_nix-env": "nixos_nix-env.stellarium",
+        "void_xbps": "stellarium",
+        "linux_flatpak": "org.nmap.Zenmap",
+        "freebsd_pkg": "stellarium",
+        "macos_brew": "stellarium",
+        "windows_winget": "Stellarium.Stellarium"
+      }
+    },
+    "strawberry": {
+      "name": "Strawberry",
+      "category": "Audio",
+      "subcategory": "Audio-player",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "strawberry",
+        "debian_apt": "strawberry",
+        "fedora_rpm": "strawberry",
+        "gentoo_emerge": "media-sound/strawberry",
+        "nixos_nix-env": "nixos_nix-env.strawberry",
+        "void_xbps": "strawberry",
+        "linux_flatpak": "md.obsidian.Obsidian",
+        "freebsd_pkg": "strawberry",
+        "macos_brew": "strawberry",
+        "windows_winget": null
+      }
+    },
+    "sublime-text-4": {
+      "name": "Sublime-Text 4",
+      "category": "Development",
+      "subcategory": "Text-editor",
+      "package_Manager": {
+        "arch_aur": "sublime-text-4",
+        "arch_pacman": null,
+        "debian_apt": "sublime-text-4",
+        "fedora_rpm": "sublime-text",
+        "gentoo_emerge": "app-editors/sublime-text",
+        "nixos_nix-env": "sublime-text-nixos_nix-env.sublime-text-4",
+        "void_xbps": "sublime-text",
+        "linux_flatpak": "com.obsproject.Studio",
+        "freebsd_pkg": "sublime-text",
+        "macos_brew": "sublime-text",
+        "windows_winget": "SublimeHQ.SublimeText.4"
+      }
+    },
+    "telegram": {
+      "name": "Telegram",
+      "category": "Web",
+      "subcategory": "Messaging",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "telegram-desktop",
+        "debian_apt": "telegram-desktop",
+        "fedora_rpm": "telegram-desktop",
+        "gentoo_emerge": "net-im/telegram-desktop",
+        "nixos_nix-env": "telegram-nixos_nix-env.telegram-desktop",
+        "void_xbps": "telegram-desktop",
+        "linux_flatpak": "org.telegram.desktop",
+        "freebsd_pkg": "telegram-desktop",
+        "macos_brew": "telegram-desktop",
+        "windows_winget": "Telegram.TelegramDesktop"
+      }
+    },
+    "tenacity": {
+      "name": "Tenacity",
+      "category": "Audio",
+      "subcategory": "Audio-recorder",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "tenacity",
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.tenacity",
+        "void_xbps": "tenacity",
+        "linux_flatpak": "org.tenacityaudio.Tenacity",
+        "freebsd_pkg": "tenacity",
+        "macos_brew": "tenacity",
+        "windows_winget": null
+      }
+    },
+    "thunderbird": {
+      "name": "Thunderbird",
+      "category": "Web",
+      "subcategory": "Email-client",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "thunderbird",
+        "debian_apt": "thunderbird",
+        "fedora_rpm": "thunderbird",
+        "gentoo_emerge": "mail-client/thunderbird",
+        "nixos_nix-env": "nixos_nix-env.thunderbird",
+        "void_xbps": "thunderbird",
+        "linux_flatpak": "org.mozilla.Thunderbird",
+        "freebsd_pkg": "thunderbird",
+        "macos_brew": "thunderbird",
+        "windows_winget": "Mozilla.Thunderbird"
+      }
+    },
+    "tmux": {
+      "name": "tmux",
+      "category": "Utility",
+      "subcategory": "Terminal-multiplexer",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "tmux",
+        "debian_apt": "tmux",
+        "fedora_rpm": "tmux",
+        "gentoo_emerge": "app-misc/tmux",
+        "nixos_nix-env": "nixos_nix-env.tmux",
+        "void_xbps": "tmux",
+        "linux_flatpak": "org.tmux.tmux",
+        "freebsd_pkg": "tmux",
+        "macos_brew": "tmux",
+        "windows_winget": "tmux"
+      }
+    },
+    "transmission": {
+      "name": "Transmission",
+      "category": "File-Sharing",
+      "subcategory": "Torrent-client",
+      "package_Manager": {
+        "arch_aur": "transmission-gtk",
+        "arch_pacman": null,
+        "debian_apt": "transmission",
+        "fedora_rpm": "transmission",
+        "gentoo_emerge": "net-p2p/transmission",
+        "nixos_nix-env": "nixos_nix-env.transmission",
+        "void_xbps": "transmission",
+        "linux_flatpak": "com.transmissionbt.Transmission",
+        "freebsd_pkg": "transmission",
+        "macos_brew": "transmission",
+        "windows_winget": "Transmission.Transmission"
+      }
+    },
+    "tree": {
+      "name": "Tree",
+      "category": "Utility",
+      "subcategory": "File-tree-generator",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "tree",
+        "debian_apt": "tree",
+        "fedora_rpm": "tree",
+        "gentoo_emerge": "app-text/tree",
+        "nixos_nix-env": "nixos_nix-env.tree",
+        "void_xbps": "tree",
+        "linux_flatpak": "org.qbittorrent.qBittorrent",
+        "freebsd_pkg": "tree",
+        "macos_brew": "tree",
+        "windows_winget": "sharkdp.tree"
+      }
+    },
+    "ungoogled-chromium": {
+      "name": "Ungoogled-Chromium",
+      "category": "Web",
+      "subcategory": "Web-browser",
+      "package_Manager": {
+        "arch_aur": "ungoogled-chromium-bin",
+        "arch_pacman": null,
+        "debian_apt": "ungoogled-chromium",
+        "fedora_rpm": "ungoogled-chromium",
+        "gentoo_emerge": "www-client/ungoogled-chromium",
+        "nixos_nix-env": "ungoogled-nixos_nix-env.ungoogled-chromium",
+        "void_xbps": "ungoogled-chromium",
+        "linux_flatpak": "org.chromium.Chromium",
+        "freebsd_pkg": "ungoogled-chromium",
+        "macos_brew": "ungoogled-chromium",
+        "windows_winget": "Ungoogled-Chromium"
+      }
+    },
+    "ventoy": {
+      "name": "Ventoy",
+      "category": "Utility",
+      "subcategory": "Bootable-USB-creator",
+      "package_Manager": {
+        "arch_aur": "ventoy-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "nixos_nix-env.ventoy",
+        "void_xbps": "ventoy",
+        "linux_flatpak": "org.qemu.QEMU",
+        "freebsd_pkg": "ventoy",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "veracrypt": {
+      "name": "VeraCrypt",
+      "category": "Utility",
+      "subcategory": "Disk-encryption",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "veracrypt",
+        "debian_apt": "veracrypt",
+        "fedora_rpm": "veracrypt",
+        "gentoo_emerge": "app-crypt/veracrypt",
+        "nixos_nix-env": "nixos_nix-env.veracrypt",
+        "void_xbps": "veracrypt",
+        "linux_flatpak": "com.veracrypt.VeraCrypt",
+        "freebsd_pkg": "veracrypt",
+        "macos_brew": "veracrypt",
+        "windows_winget": "IDRIX.VeraCrypt"
+      }
+    },
+    "virt-manager": {
+      "name": "Virt-manager",
+      "category": "Virtualization",
+      "subcategory": "Virtual-machine-manager",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "virt-manager",
+        "debian_apt": "virt-manager",
+        "fedora_rpm": "virt-manager",
+        "gentoo_emerge": "virt-app-emulation/virt-manager",
+        "nixos_nix-env": "nixos_nix-env.virtManager",
+        "void_xbps": "virt-manager",
+        "linux_flatpak": "org.shotcut.Shotcut",
+        "freebsd_pkg": "virt-Mmnager",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "virtualbox": {
+      "name": "VirtualBox",
+      "category": "Virtualization",
+      "subcategory": "Virtual-machine-manager",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "virtualbox",
+        "debian_apt": "virtualbox",
+        "fedora_rpm": "VirtualBox",
+        "gentoo_emerge": "app-emulation/virtualbox",
+        "nixos_nix-env": "nixos_nix-env.virtualbox",
+        "void_xbps": "virtualbox",
+        "linux_flatpak": "net.sourceforge.eaglemode",
+        "freebsd_pkg": "virtualbox-ose",
+        "macos_brew": "virtualbox",
+        "windows_winget": "Oracle.VirtualBox"
+      }
+    },
+    "visual-studio-code": {
+      "name": "Visual-Studio-Code",
+      "category": "Development",
+      "subcategory": "Code-editor",
+      "package_Manager": {
+        "arch_aur": "visual-studio-code-bin",
+        "arch_pacman": null,
+        "debian_apt": "code",
+        "fedora_rpm": "code",
+        "gentoo_emerge": "app-editors/vscode",
+        "nixos_nix-env": "visual-studio-nixos_nix-env.visual-studio-code",
+        "void_xbps": "visual-studio-code",
+        "linux_flatpak": "com.stability.matrix",
+        "freebsd_pkg": "vscode",
+        "macos_brew": "visual-studio-code",
+        "windows_winget": "Microsoft.VisualStudioCode"
+      }
+    },
+    "vlc": {
+      "name": "VLC-Media-Player",
+      "category": "Video",
+      "subcategory": "Media-player",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "vlc",
+        "debian_apt": "vlc",
+        "fedora_rpm": "vlc",
+        "gentoo_emerge": "media-video/vlc",
+        "nixos_nix-env": "nixos_nix-env.vlc",
+        "void_xbps": "vlc",
+        "linux_flatpak": "com.steam.CompatibilityTool.Proton",
+        "freebsd_pkg": "vlc",
+        "macos_brew": "vlc",
+        "windows_winget": "VideoLAN.VLC"
+      }
+    },
+    "vmware": {
+      "name": "VMware-Workstation",
+      "category": "Virtualization",
+      "subcategory": "Virtual-machine-manager",
+      "package_Manager": {
+        "arch_aur": "vmware-workstation",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": "vmware-workstation-player",
+        "gentoo_emerge": "app-emulation/vmware-workstation",
+        "nixos_nix-env": "vmware-nixos_nix-env.vmware-workstation",
+        "void_xbps": "null",
+        "linux_flatpak": "org.stellarium.Stellarium",
+        "freebsd_pkg": "null",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "waydroid": {
+      "name": "WayDroid",
+      "category": "Virtualization",
+      "subcategory": "Containerization",
+      "package_Manager": {
+        "arch_aur": "waydroid-git",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "null",
+        "void_xbps": "null",
+        "linux_flatpak": "com.sublimetext.three",
+        "freebsd_pkg": "null",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "wine": {
+      "name": "Wine",
+      "category": "Virtualization",
+      "subcategory": "Windows-compatibility-layer",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "wine",
+        "debian_apt": "wine",
+        "fedora_rpm": "wine",
+        "gentoo_emerge": "app-emulation/wine",
+        "nixos_nix-env": "nixos_nix-env.wine",
+        "void_xbps": "wine",
+        "linux_flatpak": "org.winehq.Platform",
+        "freebsd_pkg": "wine",
+        "macos_brew": "wine",
+        "windows_winget": "WineHQ.Wine"
+      }
+    },
+    "wordpress": {
+      "name": "Wordpress",
+      "category": "Development",
+      "subcategory": "CMS",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "wordpress",
+        "debian_apt": "wordpress",
+        "fedora_rpm": "wordpress",
+        "gentoo_emerge": "www-apps/wordpress",
+        "nixos_nix-env": "nixos_nix-env.wordpress",
+        "void_xbps": "wordpress",
+        "linux_flatpak": null,
+        "freebsd_pkg": "wordpress",
+        "macos_brew": "wordpresscom",
+        "windows_winget": "Automattic.Wordpress"
+      }
+    },
+    "xampp": {
+      "name": "XAMPP",
+      "category": "Development",
+      "subcategory": "Development-Environment",
+      "package_Manager": {
+        "arch_aur": "xampp",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": "Xampp.Xampp"
+      }
+    },
+    "xen": {
+      "name": "Xen",
+      "category": "Virtualization",
+      "subcategory": "Hypervisor",
+      "package_Manager": {
+        "arch_aur": "xen",
+        "arch_pacman": null,
+        "debian_apt": "xen-hypervisor",
+        "fedora_rpm": "xen",
+        "gentoo_emerge": "app-emulation/xen",
+        "nixos_nix-env": "nixos_nix-env.xen",
+        "void_xbps": "xen",
+        "linux_flatpak": "org.tenacityaudio.Tenacity",
+        "freebsd_pkg": "xen",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
+    "xnview": {
+      "name": "XnView-MP",
+      "category": "Image",
+      "subcategory": "image-viewer",
+      "package_Manager": {
+        "arch_aur": "xnviewmp",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": "xnviewmp",
+        "gentoo_emerge": "media-gfx/xnviewmp",
+        "nixos_nix-env": "nixos_nix-env.xnviewmp",
+        "void_xbps": "xnviewmp",
+        "linux_flatpak": "com.xnview.XnViewMP",
+        "freebsd_pkg": "xnview",
+        "macos_brew": "xnviewmp",
+        "windows_winget": null
+      }
+    },
+    "yt-dlp": {
+      "name": "YT-DLP",
+      "category": "Downloader",
+      "subcategory": "Video-downloader",
+      "package_Manager": {
+        "arch_aur": null,
+        "arch_pacman": "yt-dlp",
+        "debian_apt": "yt-dlp",
+        "fedora_rpm": "yt-dlp",
+        "gentoo_emerge": "net-misc/yt-dlp",
+        "nixos_nix-env": "yt-nixos_nix-env.yt-dlp",
+        "void_xbps": "yt-dlp",
+        "linux_flatpak": "com.transmissionbt.Transmission",
+        "freebsd_pkg": "yt-dlp",
+        "macos_brew": "yt-dl",
+        "windows_winget": "yt-dlp.yt-dlp"
+      }
+    },
+    "ytdownloader": {
+      "name": "ytDownloader",
+      "category": "Downloader",
+      "subcategory": "Video-downloader",
+      "package_Manager": {
+        "arch_aur": "ytdownloader-gui",
+        "arch_pacman": null,
+        "debian_apt": "youtube-dl",
+        "fedora_rpm": "youtube-dl",
+        "gentoo_emerge": "null",
+        "nixos_nix-env": "null",
+        "void_xbps": "null",
+        "linux_flatpak": null,
+        "freebsd_pkg": "null",
+        "macos_brew": "youtube-dl",
+        "windows_winget": null
+      }
     }
+  }
 }
