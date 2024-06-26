@@ -1,6 +1,10 @@
 #!/bin/bash
 
-input_file="../pkgs-names.json"
+# Get the directory of the script
+script_dir="$(dirname "$(realpath "$0")")"
+
+# Define the input file relative to the script directory
+input_file="$script_dir/../pkgs-names.json"
 
 # Check if input file exists
 if [ ! -f "$input_file" ]; then

@@ -1,5 +1,185 @@
 {
     "packages": {
+        "apache": {
+            "name": "Apache",
+            "category": "Web",
+            "subcategory": "HTTP-Server",
+            "package_manager": {
+                "arch_aur": null,
+                "arch_pacman": "apache",
+                "debian_apt": "apache2",
+                "fedora_rpm": "httpd",
+                "gentoo_emerge": "www-servers/apache",
+                "nixos_nix-env": "apache-httpd",
+                "void_xbps": "apache",
+                "linux_flatpak": null,
+                "freebsd_pkg": "apache24",
+                "macos_brew": "httpd",
+                "windows_winget": "Apache.Httpd"
+            }
+        },
+        "mariadb": {
+            "name": "MariaDB",
+            "category": "Development",
+            "subcategory": "SQL",
+            "package_manager": {
+                "arch_aur": null,
+                "arch_pacman": "mariadb",
+                "debian_apt": "mariadb-server",
+                "fedora_rpm": "mariadb-server",
+                "gentoo_emerge": "dev-db/mariadb",
+                "nixos_nix-env": "mariadb",
+                "void_xbps": "mariadb",
+                "linux_flatpak": null,
+                "freebsd_pkg": "mariadb105-server",
+                "macos_brew": "mariadb",
+                "windows_winget": "MariaDB.MariaDBServer"
+            }
+        },
+        "mongodb": {
+            "name": "MongoDB",
+            "category": "Development",
+            "subcategory": "noSQL",
+            "package_manager": {
+                "arch_aur": null,
+                "arch_pacman": "mongodb-bin",
+                "debian_apt": "mongodb-org",
+                "fedora_rpm": "mongodb-org",
+                "gentoo_emerge": "dev-db/mongodb",
+                "nixos_nix-env": "mongodb",
+                "void_xbps": "mongodb",
+                "linux_flatpak": null,
+                "freebsd_pkg": "mongodb42",
+                "macos_brew": "mongodb-community",
+                "windows_winget": "MongoDB.Server"
+            }
+        },
+        "sqlite": {
+            "name": "SQLite",
+            "category": "Development",
+            "subcategory": "SQL",
+            "package_manager": {
+                "arch_aur": null,
+                "arch_pacman": "sqlite",
+                "debian_apt": "sqlite3",
+                "fedora_rpm": "sqlite",
+                "gentoo_emerge": "dev-db/sqlite",
+                "nixos_nix-env": "sqlite",
+                "void_xbps": "sqlite",
+                "linux_flatpak": null,
+                "freebsd_pkg": "sqlite3",
+                "macos_brew": "sqlite",
+                "windows_winget": "SQLite.SQLite3"
+            }
+        },
+        "postgresql": {
+            "name": "PostgreSQL",
+            "category": "Development",
+            "subcategory": "SQL",
+            "package_manager": {
+                "arch_aur": null,
+                "arch_pacman": "postgresql",
+                "debian_apt": "postgresql",
+                "fedora_rpm": "postgresql-server",
+                "gentoo_emerge": "dev-db/postgresql",
+                "nixos_nix-env": "postgresql",
+                "void_xbps": "postgresql",
+                "linux_flatpak": null,
+                "freebsd_pkg": "postgresql13-server",
+                "macos_brew": "postgresql",
+                "windows_winget": "PostgreSQL.PostgreSQL"
+            }
+        },
+        "deno": {
+            "name": "Deno",
+            "category": "Development",
+            "subcategory": "programming-language",
+            "package_manager": {
+                "arch_aur": null,
+                "arch_pacman": "deno",
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "gentoo_emerge": null,
+                "nixos_nix-env": "deno",
+                "void_xbps": "deno",
+                "linux_flatpak": null,
+                "freebsd_pkg": null,
+                "macos_brew": "deno",
+                "windows_winget": "Deno.Deno"
+            }
+        },
+        "dotnet-runtime": {
+            "name": "Dotnet-runtime",
+            "category": "Development",
+            "subcategory": "framework",
+            "package_manager": {
+                "arch_aur": null,
+                "arch_pacman": "dotnet-runtime",
+                "debian_apt": "dotnet-runtime-6.0",
+                "fedora_rpm": "dotnet-runtime-6.0",
+                "gentoo_emerge": "dev-dotnet/dotnet-runtime",
+                "nixos_nix-env": "dotnet-runtime",
+                "void_xbps": "dotnet-runtime",
+                "linux_flatpak": null,
+                "freebsd_pkg": null,
+                "macos_brew": "dotnet",
+                "windows_winget": "Microsoft.DotNet.SDK"
+            }
+        },
+        "gcc": {
+            "name": "GCC",
+            "category": "Development",
+            "subcategory": "compiler",
+            "package_manager": {
+                "arch_aur": null,
+                "arch_pacman": "gcc",
+                "debian_apt": "gcc",
+                "fedora_rpm": "gcc",
+                "gentoo_emerge": "sys-devel/gcc",
+                "nixos_nix-env": "gcc",
+                "void_xbps": "gcc",
+                "linux_flatpak": null,
+                "freebsd_pkg": "gcc",
+                "macos_brew": "gcc",
+                "windows_winget": "GNU.GCC"
+            }
+        },
+        "xampp": {
+            "name": "XAMPP",
+            "category": "Development",
+            "subcategory": "Development-Environment",
+            "package_manager": {
+                "arch_aur": "xampp",
+                "arch_pacman": null,
+                "debian_apt": null,
+                "fedora_rpm": null,
+                "gentoo_emerge": null,
+                "nixos_nix-env": null,
+                "void_xbps": null,
+                "linux_flatpak": null,
+                "freebsd_pkg": null,
+                "macos_brew": null,
+                "windows_winget": "Xampp.Xampp"
+            }
+        },
+        "nginx": {
+            "name": "Nginx",
+            "category": "Web",
+            "subcategory": "HTTP-Server",
+            "package_manager": {
+                "arch_aur": null,
+                "arch_pacman": "nginx",
+                "debian_apt": "nginx",
+                "fedora_rpm": "nginx",
+                "gentoo_emerge": "www-servers/nginx",
+                "nixos_nix-env": "nginx",
+                "void_xbps": "nginx",
+                "linux_flatpak": null,
+                "freebsd_pkg": "nginx",
+                "macos_brew": "nginx",
+                "windows_winget": "Nginx.Nginx"
+            }
+        },
         "7zip": {
             "name": "7-Zip",
             "category": "File-Man",
@@ -1332,8 +1512,7 @@
                 "windows_winget": null
             }
         },
-        "rawtherapee":
-        {
+        "rawtherapee": {
             "name": "RawTherapee",
             "category": "Image",
             "subcategory": "raw-photo-editor",
@@ -1554,7 +1733,7 @@
             "category": "Audio",
             "subcategory": "audio-recorder",
             "package_manager": {
-                "arch_aur":  null,
+                "arch_aur": null,
                 "arch_pacman": "tenacity",
                 "debian_apt": null,
                 "fedora_rpm": null,
@@ -1572,7 +1751,7 @@
             "category": "Web",
             "subcategory": "email-client",
             "package_manager": {
-                "arch_aur":  null,
+                "arch_aur": null,
                 "arch_pacman": "thunderbird",
                 "debian_apt": "thunderbird",
                 "fedora_rpm": "thunderbird",
@@ -1590,7 +1769,7 @@
             "category": "Utility",
             "subcategory": "terminal-multiplexer",
             "package_manager": {
-                "arch_aur":  null,
+                "arch_aur": null,
                 "arch_pacman": "tmux",
                 "debian_apt": "tmux",
                 "fedora_rpm": "tmux",
