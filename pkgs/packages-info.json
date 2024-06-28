@@ -18,6 +18,168 @@
         "windows_winget": "7zip.7zip"
       }
     },
+    "mandelbulber": {
+      "name": "Mandelbulber2",
+      "category": "Image",
+      "subcategory": "Fractal-generation",
+      "package_manager": {
+        "arch_aur": "mandelbulber2",
+        "arch_pacman": null,
+        "debian_apt": "mandelbulber2",
+        "fedora_rpm": null,
+        "gentoo_emerge": "media-gfx/mandelbulber",
+        "nixos_nix-env": "mandelbulber",
+        "void_xbps": null,
+        "linux_flatpak": "com.github.buddhi1980.mandelbulber2",
+        "freebsd_pkg": "mandelbulber",
+        "macos_brew": null,
+        "windows_winget": "Mandelbulber.Mandelbulber"
+      }
+    },
+    "drawio": {
+      "name": "draw.io",
+      "category": "Office",
+      "subcategory": "Diagramming",
+      "package_manager": {
+        "arch_aur": "drawio-desktop-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "drawio",
+        "void_xbps": null,
+        "linux_flatpak": "io.github.jgraph.drawio",
+        "freebsd_pkg": null,
+        "macos_brew": "drawio",
+        "windows_winget": "JGraph.drawio"
+      }
+    },
+    "upscayl": {
+      "name": "Upscayl",
+      "category": "Image",
+      "subcategory": "Image-upscaling",
+      "package_manager": {
+        "arch_aur": "upscayl-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "upscayl",
+        "void_xbps": null,
+        "linux_flatpak": "io.github.upscayl.Upscayl",
+        "freebsd_pkg": null,
+        "macos_brew": "upscayl",
+        "windows_winget": null
+      }
+    },
+    "ppsspp": {
+      "name": "PPSSPP",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": "ppsspp",
+        "debian_apt": "ppsspp",
+        "fedora_rpm": "ppsspp",
+        "gentoo_emerge": "games-emulation/ppsspp",
+        "nixos_nix-env": "ppsspp",
+        "void_xbps": "ppsspp",
+        "linux_flatpak": "org.ppsspp.PPSSPP",
+        "freebsd_pkg": "ppsspp",
+        "macos_brew": "ppsspp",
+        "windows_winget": "HenrikRydgard.PPSSPP"
+      }
+    },
+    "duckstation": {
+      "name": "DuckStation",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": "duckstation-git",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": "duckstation",
+        "gentoo_emerge": null,
+        "nixos_nix-env": "duckstation",
+        "void_xbps": null,
+        "linux_flatpak": "org.duckstation.DuckStation",
+        "freebsd_pkg": null,
+        "macos_brew": "duckstation",
+        "windows_winget": null
+      }
+    },
+    "pcsx2": {
+      "name": "PCSX2",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": "pcsx2",
+        "debian_apt": "pcsx2",
+        "fedora_rpm": "pcsx2",
+        "gentoo_emerge": "games-emulation/pcsx2",
+        "nixos_nix-env": "pcsx2",
+        "void_xbps": "pcsx2",
+        "linux_flatpak": "net.pcsx2.PCSX2",
+        "freebsd_pkg": "pcsx2",
+        "macos_brew": "pcsx2",
+        "windows_winget": null
+      }
+    },
+    "dolphin-emu": {
+      "name": "Dolphin-emu",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": "dolphin-emu",
+        "debian_apt": "dolphin-emu",
+        "fedora_rpm": "dolphin-emu",
+        "gentoo_emerge": "games-emulation/dolphin",
+        "nixos_nix-env": "dolphinEmu",
+        "void_xbps": "dolphin-emu",
+        "linux_flatpak": "org.DolphinEmu.dolphin-emu",
+        "freebsd_pkg": "dolphin-emu",
+        "macos_brew": "dolphin",
+        "windows_winget": "dolphin-emulator"
+      }
+    },
+    "melonds": {
+      "name": "melonDS",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": "melonds",
+        "arch_pacman": null,
+        "debian_apt": "melonds",
+        "fedora_rpm": "melonds",
+        "gentoo_emerge": "games-emulation/melonds",
+        "nixos_nix-env": "melonds",
+        "void_xbps": "melonds",
+        "linux_flatpak": null,
+        "freebsd_pkg": "melonds",
+        "macos_brew": "melonds",
+        "windows_winget": null
+      }
+    },
+    "xemu": {
+      "name": "Xemu",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": "xemu-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": "xemu",
+        "gentoo_emerge": null,
+        "nixos_nix-env": "xemu",
+        "void_xbps": null,
+        "linux_flatpak": "app.xemu.xemu",
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
     "apache": {
       "name": "Apache",
       "category": "Web",
