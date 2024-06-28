@@ -38,11 +38,12 @@ function generatePackages(packagesData) {
     // Define categories by column
     const columnCategories = [
         ["File-Man", "File-Sharing", "Downloader"],
-        ["Finance", "Science", "Utility"],
+        ["Utility", "Science"],
         ["Virtualization"],
         ["Web"],
         ["Audio"],
-        ["Book", "Office"],
+        ["Book"],
+        ["Office", "Finance"],
         ["Development"],
         ["Gaming"],
         ["Image"],
