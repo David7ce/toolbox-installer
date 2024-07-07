@@ -14,13 +14,12 @@
     </header>
     <div class="container">
         <form id="packageForm">
-            <button type="button" onclick="toggleSelectAllPackages()">Select / Deselect All Packages</button>
-            <button id="importButton">Import Selected</button>
-            <button onclick="exportPackages()">Export Selected</button>
-            <!-- <button type="button" onclick="favPackages()">Select / Deselect Favorite Packages</button> -->
+            <button type="button" onclick="toggleSelectAllPackages()">Select / Deselect All packages</button>
+            <label id="importBtn" for="fileInput">Import list of packages as JSON</label>
+            <button onclick="exportPackages()">Export selected packages</button>
             
             <div id="packageContainer" class="package-container columns">
-                <!-- Aquí se generará dinámicamente el contenido -->
+                <!-- Generated content -->
             </div>
             <h3>Select the distribution:</h3>
             <label><input type="radio" name="distro" value="arch_pacman"> Arch Linux (<a href="https://archlinux.org/packages/">arch</a> + <a href="https://aur.archlinux.org/packages/">AUR packages</a>)</label>

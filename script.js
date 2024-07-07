@@ -1,8 +1,8 @@
 // URL of the JSON file
 const jsonUrl = './pkgs/packages-info.json';
 const imageUrl = './img/';
-
 let packagesData; // Variable to store JSON data
+let allSelected = false; // Variable to keep track of the toggle state
 
 // Function to load and process the JSON
 function loadPackages() {
@@ -200,15 +200,16 @@ async function generateCommand() {
 // Call the function to load JSON and generate packages on page load
 document.addEventListener('DOMContentLoaded', loadPackages);
 
-/// Now functions to select all packages and import / export
+
 
 // Function to select or deselect all packages
 function toggleSelectAllPackages() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    // const checkboxes = document.querySelectorAll('input[name="pkg"]');
     checkboxes.forEach(cb => {
-        cb.checked = !cb.checked;
+        cb.checked = !allSelected;
     });
+    // Toggle the state
+    allSelected = !allSelected;
 }
 
 // Function to export selected packages (mocking data)
@@ -241,88 +242,37 @@ function exportPackages() {
     alert('Selected packages exported successfully!');
 }
 
-// Read functions
-function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function () {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-        }
-    }
-    rawFile.send(null);
-}
+document.getElementById('fileInput').addEventListener('change', function (e) {
+    importPackages(e.target.files[0]);
+});
 
-readTextFile("./toolbox-exported-packages.json", function (text) {
-    try {
-        var data = JSON.parse(text);
-        console.log(data);
+async function importPackages(file) {
+    const reader = new FileReader();
 
-        // Wait for a short delay to ensure all checkboxes are rendered
-        setTimeout(() => {
-            data.forEach(function (pkgName) {
-                var checkbox = document.getElementById(pkgName);
+    reader.onload = async function (event) {
+        try {
+            const contents = event.target.result;
+            const importedPackages = JSON.parse(contents);
+            console.log(importedPackages);
+
+            // Simulate fetching data and processing checkboxes after a short delay
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            importedPackages.forEach(pkgId => {
+                const checkbox = document.getElementById(pkgId);
                 if (checkbox) {
                     checkbox.checked = true;
                 } else {
-                    console.warn(`Checkbox with ID ${pkgName} not found.`);
+                    console.warn(`Checkbox with ID ${pkgId} not found.`);
                 }
             });
 
             alert('Packages imported successfully!');
-        }, 100); // Adjust delay as needed
+        } catch (error) {
+            console.error('Error parsing JSON file:', error);
+            alert('Error importing packages. Please check the JSON file format.');
+        }
+    };
 
-    } catch (error) {
-        console.error("Error parsing JSON:", error);
-        alert('Error importing packages. Please check the JSON file format.');
-    }
-});
-
-// document.addEventListener('DOMContentLoaded', (event) => {
-//     document.getElementById('importButton').addEventListener('click', function () {
-//         importPackages();
-//     });
-// });
-
-// function importPackages() {
-//     const fileInput = document.createElement('input');
-//     fileInput.type = 'file';
-//     fileInput.accept = '.json';
-
-//     fileInput.onchange = function (e) {
-//         const file = e.target.files[0];
-//         if (!file) return;
-
-//         const reader = new FileReader();
-//         reader.onload = function (event) {
-//             const contents = event.target.result;
-
-//             try {
-//                 const importedPackages = JSON.parse(contents);
-//                 console.log(importedPackages);
-
-//                 Wait for a short delay to ensure all checkboxes are rendered
-//                 setTimeout(() => {
-//                     importedPackages.forEach(pkgName => {
-//                         const checkbox = document.getElementById(pkgName);
-//                         if (checkbox) {
-//                             checkbox.checked = true;
-//                         } else {
-//                             console.warn(`Checkbox with ID ${pkgName} not found.`);
-//                         }
-//                     });
-//                     alert('Packages imported successfully!');
-//                 }, 100); // Adjust delay as needed
-
-//             } catch (error) {
-//                 console.error('Error parsing JSON file:', error);
-//                 alert('Error importing packages. Please check the JSON file format.');
-//             }
-//         };
-//         reader.readAsText(file);
-//     };
-
-//     Simulate click to trigger file selection
-//     fileInput.click();
-// }
+    reader.readAsText(file);
+}

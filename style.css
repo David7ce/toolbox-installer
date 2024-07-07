@@ -28,7 +28,7 @@ form {
 }
 
 /* Button styles */
-.btn, button {
+.btn, button, #importBtn {
     display: block;
     margin: 10px 0;
     padding: 10px 20px;
@@ -36,6 +36,12 @@ form {
     color: white;
     border: none;
     cursor: pointer;
+    font-size: small;
+}
+
+#importBtn {
+    width: fit-content;
+    font-size: small;
 }
 
 .btn:hover, button:hover {
