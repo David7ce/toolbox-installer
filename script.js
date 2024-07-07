@@ -22,14 +22,6 @@ function loadPackages() {
         });
 }
 
-// Function to toggle select/deselect all packages
-function toggleSelectAllPackages() {
-    const checkboxes = document.querySelectorAll('input[name="pkg"]');
-    checkboxes.forEach(checkbox => {
-        checkbox.checked = !checkbox.checked;
-    });
-}
-
 // Function to generate the content of packages in the form
 function generatePackages(packagesData) {
     const packageContainer = document.getElementById('packageContainer');
@@ -89,6 +81,7 @@ function generatePackages(packagesData) {
                     packageCheckbox.type = 'checkbox';
                     packageCheckbox.name = 'pkg';
                     packageCheckbox.value = pkgKey; // Use package key as value
+                    packageCheckbox.id = pkgKey;
                     packageCheckbox.dataset.packageName = pkgInfo.name; // Store package name as data attribute
 
                     const packageImg = document.createElement('img');
@@ -206,3 +199,130 @@ async function generateCommand() {
 
 // Call the function to load JSON and generate packages on page load
 document.addEventListener('DOMContentLoaded', loadPackages);
+
+/// Now functions to select all packages and import / export
+
+// Function to select or deselect all packages
+function toggleSelectAllPackages() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    // const checkboxes = document.querySelectorAll('input[name="pkg"]');
+    checkboxes.forEach(cb => {
+        cb.checked = !cb.checked;
+    });
+}
+
+// Function to export selected packages (mocking data)
+function exportPackages() {
+    const categories = document.querySelectorAll('.category');
+    const selectedPackages = [];
+
+    categories.forEach(category => {
+        const subcategories = category.querySelectorAll('.subcategory');
+        subcategories.forEach(subcategory => {
+            const checkboxes = subcategory.querySelectorAll('input[type="checkbox"]:checked');
+            checkboxes.forEach(checkbox => {
+                selectedPackages.push(checkbox.value);
+            });
+        });
+    });
+
+    const jsonData = JSON.stringify(selectedPackages, null, 2);
+    const blob = new Blob([jsonData], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = 'toolbox-exported-packages.json';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+
+    alert('Selected packages exported successfully!');
+}
+
+// Read functions
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    }
+    rawFile.send(null);
+}
+
+readTextFile("./toolbox-exported-packages.json", function (text) {
+    try {
+        var data = JSON.parse(text);
+        console.log(data);
+
+        // Wait for a short delay to ensure all checkboxes are rendered
+        setTimeout(() => {
+            data.forEach(function (pkgName) {
+                var checkbox = document.getElementById(pkgName);
+                if (checkbox) {
+                    checkbox.checked = true;
+                } else {
+                    console.warn(`Checkbox with ID ${pkgName} not found.`);
+                }
+            });
+
+            alert('Packages imported successfully!');
+        }, 100); // Adjust delay as needed
+
+    } catch (error) {
+        console.error("Error parsing JSON:", error);
+        alert('Error importing packages. Please check the JSON file format.');
+    }
+});
+
+// document.addEventListener('DOMContentLoaded', (event) => {
+//     document.getElementById('importButton').addEventListener('click', function () {
+//         importPackages();
+//     });
+// });
+
+// function importPackages() {
+//     const fileInput = document.createElement('input');
+//     fileInput.type = 'file';
+//     fileInput.accept = '.json';
+
+//     fileInput.onchange = function (e) {
+//         const file = e.target.files[0];
+//         if (!file) return;
+
+//         const reader = new FileReader();
+//         reader.onload = function (event) {
+//             const contents = event.target.result;
+
+//             try {
+//                 const importedPackages = JSON.parse(contents);
+//                 console.log(importedPackages);
+
+//                 Wait for a short delay to ensure all checkboxes are rendered
+//                 setTimeout(() => {
+//                     importedPackages.forEach(pkgName => {
+//                         const checkbox = document.getElementById(pkgName);
+//                         if (checkbox) {
+//                             checkbox.checked = true;
+//                         } else {
+//                             console.warn(`Checkbox with ID ${pkgName} not found.`);
+//                         }
+//                     });
+//                     alert('Packages imported successfully!');
+//                 }, 100); // Adjust delay as needed
+
+//             } catch (error) {
+//                 console.error('Error parsing JSON file:', error);
+//                 alert('Error importing packages. Please check the JSON file format.');
+//             }
+//         };
+//         reader.readAsText(file);
+//     };
+
+//     Simulate click to trigger file selection
+//     fileInput.click();
+// }

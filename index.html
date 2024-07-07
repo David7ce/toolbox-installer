@@ -15,7 +15,10 @@
     <div class="container">
         <form id="packageForm">
             <button type="button" onclick="toggleSelectAllPackages()">Select / Deselect All Packages</button>
+            <button id="importButton">Import Selected</button>
+            <button onclick="exportPackages()">Export Selected</button>
             <!-- <button type="button" onclick="favPackages()">Select / Deselect Favorite Packages</button> -->
+            
             <div id="packageContainer" class="package-container columns">
                 <!-- Aquí se generará dinámicamente el contenido -->
             </div>
