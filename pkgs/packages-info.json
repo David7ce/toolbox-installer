@@ -558,6 +558,24 @@
         "windows_winget": null
       }
     },
+    "easy-effects": {
+      "name": "Easy Effects",
+      "category": "Audio",
+      "subcategory": "Audio-processing",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": "com.github.wwmm.easyeffects",
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
     "elisa": {
       "name": "Elisa",
       "category": "Audio",
@@ -1816,6 +1834,24 @@
         "freebsd_pkg": "sqlite3",
         "macos_brew": "sqlite",
         "windows_winget": "SQLite.SQLite3"
+      }
+    },
+    "speech-note": {
+      "name": "Speech Note",
+      "category": "Audio",
+      "subcategory": "TTS",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": "flathub net.mkiol.SpeechNote",
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": null
       }
     },
     "spotify": {
