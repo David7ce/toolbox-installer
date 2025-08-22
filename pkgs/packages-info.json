@@ -39,7 +39,7 @@
     "apache": {
       "name": "Apache",
       "category": "Web",
-      "subcategory": "HTTP Server",
+      "subcategory": "Http Server",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "apache",
@@ -128,8 +128,8 @@
     },
     "balena-etcher": {
       "name": "Balena Etcher",
-      "category": "Utility",
-      "subcategory": "Disk Imager",
+      "category": "System",
+      "subcategory": "Disk Imagering",
       "package_manager": {
         "arch_aur": "balena-etcher",
         "arch_pacman": null,
@@ -273,7 +273,7 @@
     "darktable": {
       "name": "Darktable",
       "category": "Image",
-      "subcategory": "RAW Photo Editor",
+      "subcategory": "Raw Photo Editor",
       "package_manager": {
         "arch_aur": "darktable",
         "arch_pacman": "darktable",
@@ -345,7 +345,7 @@
     "discord": {
       "name": "Discord",
       "category": "Web",
-      "subcategory": "Chat Client",
+      "subcategory": "Messaging",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "discord",
@@ -417,7 +417,7 @@
     "dolphin-emu": {
       "name": "Dolphin-emu",
       "category": "Gaming",
-      "subcategory": "Emulator",
+      "subcategory": "Emulation",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "dolphin-emu",
@@ -453,7 +453,7 @@
     "drawio": {
       "name": "draw.io",
       "category": "Office",
-      "subcategory": "Diagram Editor",
+      "subcategory": "Diagramming",
       "package_manager": {
         "arch_aur": "drawio-desktop-bin",
         "arch_pacman": null,
@@ -489,7 +489,7 @@
     "duckstation": {
       "name": "DuckStation",
       "category": "Gaming",
-      "subcategory": "Emulator",
+      "subcategory": "Emulation",
       "package_manager": {
         "arch_aur": "duckstation-git",
         "arch_pacman": null,
@@ -525,7 +525,7 @@
     "easy-effects": {
       "name": "Easy Effects",
       "category": "Audio",
-      "subcategory": "Audio Processor",
+      "subcategory": "Audio Processing",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": null,
@@ -579,7 +579,7 @@
     "fastfetch": {
       "name": "fastfetch",
       "category": "System",
-      "subcategory": "Utilities",
+      "subcategory": "Info System",
       "package_manager": {
         "arch_aur": "fastfetch",
         "arch_pacman": null,
@@ -596,7 +596,7 @@
     },
     "ffmpeg": {
       "name": " FFmpeg",
-      "category": "Utility",
+      "category": "System",
       "subcategory": "Converter Decoder",
       "package_manager": {
         "arch_aur": null,
@@ -651,7 +651,7 @@
     "folo": {
       "name": "Folo",
       "category": "Book",
-      "subcategory": "RSS Reader",
+      "subcategory": "Rss Reader",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": null,
@@ -723,7 +723,7 @@
     "geany": {
       "name": "Geany",
       "category": "Development",
-      "subcategory": "Text editor",
+      "subcategory": "Text Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "geany",
@@ -758,7 +758,7 @@
     },
     "git": {
       "name": "Git",
-      "category": "Utility",
+      "category": "System",
       "subcategory": "Version Control",
       "package_manager": {
         "arch_aur": null,
@@ -848,8 +848,8 @@
     },
     "gparted": {
       "name": "gparted",
-      "category": "Utility",
-      "subcategory": "System",
+      "category": "System",
+      "subcategory": "System Partition",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "gparted",
@@ -867,7 +867,7 @@
     "gpxsee": {
       "name": "GPXSee",
       "category": "Utility",
-      "subcategory": "GPS Viewer",
+      "subcategory": "Gps Viewer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "gpxsee",
@@ -903,7 +903,7 @@
     "gwenview": {
       "name": "Gwenview",
       "category": "Image",
-      "subcategory": "image Viewer",
+      "subcategory": "Image Viewer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "gwenview",
@@ -990,6 +990,24 @@
         "windows_winget": null
       }
     },
+    "imagemagick": {
+      "name": "ImageMagick",
+      "category": "Image",
+      "subcategory": "Image Editor",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": "imagemagick",
+        "debian_apt": "imagemagick",
+        "fedora_rpm": "ImageMagick",
+        "gentoo_emerge": "media-gfx/imagemagick",
+        "nixos_nix-env": "imagemagick",
+        "void_xbps": "ImageMagick",
+        "linux_flatpak": null,
+        "freebsd_pkg": "ImageMagick7",
+        "macos_brew": "imagemagick",
+        "windows_winget": "ImageMagick.ImageMagick"
+      }
+    },
     "inkscape": {
       "name": "Inkscape",
       "category": "Image",
@@ -1047,7 +1065,7 @@
     "kate": {
       "name": "Kate",
       "category": "Development",
-      "subcategory": "Text editor",
+      "subcategory": "Text Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "kate",
@@ -1281,7 +1299,7 @@
     "mariadb": {
       "name": "MariaDB",
       "category": "Development",
-      "subcategory": "SQL",
+      "subcategory": "Sql",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "mariadb",
@@ -1316,7 +1334,7 @@
     },
     "meld": {
       "name": "meld",
-      "category": "Utility",
+      "category": "System",
       "subcategory": "File Comparator",
       "package_manager": {
         "arch_aur": null,
@@ -1335,7 +1353,7 @@
     "melonds": {
       "name": "melonDS",
       "category": "Gaming",
-      "subcategory": "Emulator",
+      "subcategory": "Emulation",
       "package_manager": {
         "arch_aur": "melonds",
         "arch_pacman": null,
@@ -1353,7 +1371,7 @@
     "mongodb": {
       "name": "MongoDB",
       "category": "Development",
-      "subcategory": "noSQL",
+      "subcategory": "Nosql",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "mongodb-bin",
@@ -1479,7 +1497,7 @@
     "neovim": {
       "name": "Neovim",
       "category": "Development",
-      "subcategory": "Text editor",
+      "subcategory": "Text Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "neovim",
@@ -1497,7 +1515,7 @@
     "newelle": {
       "name": "NewElle",
       "category": "Development",
-      "subcategory": "AI Client",
+      "subcategory": "Ai Client",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": null,
@@ -1515,7 +1533,7 @@
     "nginx": {
       "name": "Nginx",
       "category": "Web",
-      "subcategory": "HTTP Server",
+      "subcategory": "Http Server",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "nginx",
@@ -1532,7 +1550,7 @@
     },
     "nmap": {
       "name": "Nmap",
-      "category": "Utility",
+      "category": "System",
       "subcategory": "Networking",
       "package_manager": {
         "arch_aur": null,
@@ -1641,7 +1659,7 @@
     "ollama": {
       "name": "Ollama",
       "category": "Development",
-      "subcategory": "AI client",
+      "subcategory": "Ai Client",
       "package_manager": {
         "arch_aur": "ollama",
         "arch_pacman": null,
@@ -1695,7 +1713,7 @@
     "pcsx2": {
       "name": "PCSX2",
       "category": "Gaming",
-      "subcategory": "Emulator",
+      "subcategory": "Emulation",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "pcsx2",
@@ -1731,7 +1749,7 @@
     "postgresql": {
       "name": "PostgreSQL",
       "category": "Development",
-      "subcategory": "SQL",
+      "subcategory": "Sql",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "postgresql",
@@ -1749,7 +1767,7 @@
     "ppsspp": {
       "name": "PPSSPP",
       "category": "Gaming",
-      "subcategory": "Emulator",
+      "subcategory": "Emulation",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "ppsspp",
@@ -1802,7 +1820,7 @@
     },
     "putty": {
       "name": "PuTTY",
-      "category": "Utility",
+      "category": "System",
       "subcategory": "Terminal Emulator",
       "package_manager": {
         "arch_aur": null,
@@ -1821,7 +1839,7 @@
     "python": {
       "name": "Python",
       "category": "Development",
-      "subcategory": "Programming language",
+      "subcategory": "Programming Language",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "python",
@@ -1875,7 +1893,7 @@
     "rawtherapee": {
       "name": "RawTherapee",
       "category": "Image",
-      "subcategory": "RAW Photo Editor",
+      "subcategory": "Raw Photo Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "rawtherapee",
@@ -2001,7 +2019,7 @@
     "speech-note": {
       "name": "Speech Note",
       "category": "Audio",
-      "subcategory": "Text To Speech",
+      "subcategory": "Tts",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": null,
@@ -2037,7 +2055,7 @@
     "sqlite": {
       "name": "SQLite",
       "category": "Development",
-      "subcategory": "SQL",
+      "subcategory": "Sql",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "sqlite",
@@ -2055,7 +2073,7 @@
     "stability-matrix": {
       "name": "StabilityMatrix",
       "category": "Image",
-      "subcategory": "AI image Generator",
+      "subcategory": "Ai Image Generator",
       "package_manager": {
         "arch_aur": "stabilitymatrix",
         "arch_pacman": null,
@@ -2068,6 +2086,42 @@
         "freebsd_pkg": "null",
         "macos_brew": null,
         "windows_winget": null
+      }
+    },
+    "starship": {
+      "name": "Starship",
+      "category": "System",
+      "subcategory": "Terminal Prompt",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": "starship",
+        "debian_apt": null,
+        "fedora_rpm": "starship",
+        "gentoo_emerge": "app-shells/starship",
+        "nixos_nix-env": "starship",
+        "void_xbps": "starship",
+        "linux_flatpak": null,
+        "freebsd_pkg": "starship",
+        "macos_brew": "starship",
+        "windows_winget": "Starship.Starship"
+      },
+      "fastfetch": {
+        "name": "FastFetch",
+        "category": "System",
+        "subcategory": "Terminal Prompt",
+        "package_manager": {
+          "arch_aur": null,
+          "arch_pacman": "fastfetch",
+          "debian_apt": null,
+          "fedora_rpm": "fastfetch",
+          "gentoo_emerge": "app-shells/fastfetch",
+          "nixos_nix-env": "fastfetch",
+          "void_xbps": "fastfetch",
+          "linux_flatpak": null,
+          "freebsd_pkg": "fastfetch",
+          "macos_brew": "fastfetch",
+          "windows_winget": "Fastfetch-cli.Fastfetch"
+        }
       }
     },
     "steam": {
@@ -2127,7 +2181,7 @@
     "sublime-text-4": {
       "name": "Sublime-Text 4",
       "category": "Development",
-      "subcategory": "Text editor",
+      "subcategory": "Text Editor",
       "package_manager": {
         "arch_aur": "sublime-text-4",
         "arch_pacman": null,
@@ -2145,7 +2199,7 @@
     "telegram": {
       "name": "Telegram",
       "category": "Web",
-      "subcategory": "Chat Client",
+      "subcategory": "Messaging",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "telegram-desktop",
@@ -2198,7 +2252,7 @@
     },
     "tmux": {
       "name": "tmux",
-      "category": "Utility",
+      "category": "System",
       "subcategory": "Terminal Multiplexer",
       "package_manager": {
         "arch_aur": null,
@@ -2234,7 +2288,7 @@
     },
     "tree": {
       "name": "Tree",
-      "category": "Utility",
+      "category": "System",
       "subcategory": "File Tree Generator",
       "package_manager": {
         "arch_aur": null,
@@ -2306,8 +2360,8 @@
     },
     "ventoy": {
       "name": "Ventoy",
-      "category": "Utility",
-      "subcategory": "Bootable USB Creator",
+      "category": "System",
+      "subcategory": "Bootable Usb Creator",
       "package_manager": {
         "arch_aur": "ventoy-bin",
         "arch_pacman": null,
@@ -2324,8 +2378,8 @@
     },
     "veracrypt": {
       "name": "VeraCrypt",
-      "category": "Utility",
-      "subcategory": "Disk Encryptor",
+      "category": "System",
+      "subcategory": "Disk Encryption",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "veracrypt",
@@ -2469,7 +2523,7 @@
     "wordpress": {
       "name": "Wordpress",
       "category": "Development",
-      "subcategory": "CMS",
+      "subcategory": "Cms",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "wordpress",
@@ -2505,7 +2559,7 @@
     "xemu": {
       "name": "Xemu",
       "category": "Gaming",
-      "subcategory": "Emulator",
+      "subcategory": "Emulation",
       "package_manager": {
         "arch_aur": "xemu-bin",
         "arch_pacman": null,
