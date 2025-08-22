@@ -21,7 +21,7 @@
     "anytype": {
       "name": "Anytype",
       "category": "Office",
-      "subcategory": "Note taking",
+      "subcategory": "Note Taking",
       "package_manager": {
         "arch_aur": "anytype-bin",
         "arch_pacman": null,
@@ -75,7 +75,7 @@
     "audacious": {
       "name": "Audacious",
       "category": "Audio",
-      "subcategory": "Audio player",
+      "subcategory": "Audio Player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "audacious",
@@ -111,7 +111,7 @@
     "balabolka": {
       "name": "Balabolka",
       "category": "Audio",
-      "subcategory": "Text to speech",
+      "subcategory": "Text To Speech",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": null,
@@ -129,7 +129,7 @@
     "balena-etcher": {
       "name": "Balena Etcher",
       "category": "Utility",
-      "subcategory": "Disk imaging",
+      "subcategory": "Disk Imager",
       "package_manager": {
         "arch_aur": "balena-etcher",
         "arch_pacman": null,
@@ -147,7 +147,7 @@
     "bitwarden": {
       "name": "Bitwarden",
       "category": "Utility",
-      "subcategory": "Password manager",
+      "subcategory": "Password Manager",
       "package_manager": {
         "arch_aur": "bitwarden-bin",
         "arch_pacman": null,
@@ -219,7 +219,7 @@
     "bottles": {
       "name": "Bottles",
       "category": "Virtualization",
-      "subcategory": "Windows compatibility layer",
+      "subcategory": "Windows Compatibility Layer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "bottles",
@@ -237,7 +237,7 @@
     "calibre": {
       "name": "Calibre",
       "category": "Book",
-      "subcategory": "Ebook manager",
+      "subcategory": "Ebook Manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "calibre",
@@ -255,7 +255,7 @@
     "chromium": {
       "name": "Chromium",
       "category": "Web",
-      "subcategory": "Web browser",
+      "subcategory": "Web Browser",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "chromium",
@@ -327,7 +327,7 @@
     "digikam": {
       "name": "digiKam",
       "category": "Image",
-      "subcategory": "Photo manager",
+      "subcategory": "Photo Manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "digikam",
@@ -345,7 +345,7 @@
     "discord": {
       "name": "Discord",
       "category": "Web",
-      "subcategory": "Messaging",
+      "subcategory": "Chat Client",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "discord",
@@ -363,7 +363,7 @@
     "distrobox": {
       "name": "Distrobox",
       "category": "Virtualization",
-      "subcategory": "Wrapping layer",
+      "subcategory": "Wrapping Layer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "distrobox",
@@ -417,7 +417,7 @@
     "dolphin-emu": {
       "name": "Dolphin-emu",
       "category": "Gaming",
-      "subcategory": "Emulation",
+      "subcategory": "Emulator",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "dolphin-emu",
@@ -453,7 +453,7 @@
     "drawio": {
       "name": "draw.io",
       "category": "Office",
-      "subcategory": "Diagramming",
+      "subcategory": "Diagram Editor",
       "package_manager": {
         "arch_aur": "drawio-desktop-bin",
         "arch_pacman": null,
@@ -471,7 +471,7 @@
     "dropbox": {
       "name": "Dropbox",
       "category": "File Man",
-      "subcategory": "Client cloud storage",
+      "subcategory": "Client Cloud Storage",
       "package_manager": {
         "arch_aur": "dropbox",
         "arch_pacman": null,
@@ -489,7 +489,7 @@
     "duckstation": {
       "name": "DuckStation",
       "category": "Gaming",
-      "subcategory": "Emulation",
+      "subcategory": "Emulator",
       "package_manager": {
         "arch_aur": "duckstation-git",
         "arch_pacman": null,
@@ -525,7 +525,7 @@
     "easy-effects": {
       "name": "Easy Effects",
       "category": "Audio",
-      "subcategory": "Audio processing",
+      "subcategory": "Audio Processor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": null,
@@ -543,7 +543,7 @@
     "elisa": {
       "name": "Elisa",
       "category": "Audio",
-      "subcategory": "Audio player",
+      "subcategory": "Audio Player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "elisa",
@@ -561,7 +561,7 @@
     "evolution": {
       "name": "Evolution",
       "category": "Web",
-      "subcategory": "Email client",
+      "subcategory": "Email Client",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "evolution",
@@ -597,7 +597,7 @@
     "ffmpeg": {
       "name": " FFmpeg",
       "category": "Utility",
-      "subcategory": "Converter decoder",
+      "subcategory": "Converter Decoder",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "ffmpeg",
@@ -615,7 +615,7 @@
     "firefox": {
       "name": "Firefox",
       "category": "Web",
-      "subcategory": "Web browser",
+      "subcategory": "Web Browser",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "firefox",
@@ -633,7 +633,7 @@
     "foliate": {
       "name": "Foliate",
       "category": "Book",
-      "subcategory": "Ebook reader",
+      "subcategory": "Ebook Reader",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "foliate",
@@ -687,7 +687,7 @@
     "freeplane": {
       "name": "Freeplane",
       "category": "Office",
-      "subcategory": "Mind map editor",
+      "subcategory": "Mind Map Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "freeplane",
@@ -741,7 +741,7 @@
     "gimp": {
       "name": "GIMP",
       "category": "Image",
-      "subcategory": "Image editor",
+      "subcategory": "Image Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "gimp",
@@ -759,7 +759,7 @@
     "git": {
       "name": "Git",
       "category": "Utility",
-      "subcategory": "Version control",
+      "subcategory": "Version Control",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "git",
@@ -777,7 +777,7 @@
     "gnome-boxes": {
       "name": "Boxes",
       "category": "Virtualization",
-      "subcategory": "Virtual machine manager",
+      "subcategory": "Virtual Machine Manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "gnome-boxes",
@@ -795,7 +795,7 @@
     "gnucash": {
       "name": "GnuCash",
       "category": "Finance",
-      "subcategory": "Finance manager",
+      "subcategory": "Finance Manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "gnucash",
@@ -831,7 +831,7 @@
     "google-earth": {
       "name": "Google-Earth",
       "category": "Science",
-      "subcategory": "Geography map",
+      "subcategory": "Geography Map",
       "package_manager": {
         "arch_aur": "google-earth-pro",
         "arch_pacman": null,
@@ -867,7 +867,7 @@
     "gpxsee": {
       "name": "GPXSee",
       "category": "Utility",
-      "subcategory": "GPS viewer",
+      "subcategory": "GPS Viewer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "gpxsee",
@@ -903,7 +903,7 @@
     "gwenview": {
       "name": "Gwenview",
       "category": "Image",
-      "subcategory": "image viewer",
+      "subcategory": "image Viewer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "gwenview",
@@ -939,7 +939,7 @@
     "haruna": {
       "name": "Haruna",
       "category": "Video",
-      "subcategory": "Media player",
+      "subcategory": "Media Player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "haruna",
@@ -957,7 +957,7 @@
     "heroic-games-launcher": {
       "name": "Heroic",
       "category": "Gaming",
-      "subcategory": "Game launcher",
+      "subcategory": "Game Launcher",
       "package_manager": {
         "arch_aur": "heroic-games-launcher-bin",
         "arch_pacman": null,
@@ -975,7 +975,7 @@
     "homebank": {
       "name": "HomeBank",
       "category": "Finance",
-      "subcategory": "Finance manager",
+      "subcategory": "Finance Manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "homebank",
@@ -993,7 +993,7 @@
     "inkscape": {
       "name": "Inkscape",
       "category": "Image",
-      "subcategory": "Vector graphics",
+      "subcategory": "Vector Graphics",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "inkscape",
@@ -1011,7 +1011,7 @@
     "jellyfin-client": {
       "name": "Jellyfin-Client",
       "category": "Video",
-      "subcategory": "Media server",
+      "subcategory": "Media Server",
       "package_manager": {
         "arch_aur": "jellyfin-media-player",
         "arch_pacman": null,
@@ -1029,7 +1029,7 @@
     "jellyfin-server": {
       "name": "Jellyfin-Server",
       "category": "Video",
-      "subcategory": "Media server",
+      "subcategory": "Media Server",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "jellyfin-server",
@@ -1101,7 +1101,7 @@
     "koodoreader": {
       "name": "Koodo-Reader",
       "category": "Book",
-      "subcategory": "Ebook reader",
+      "subcategory": "Ebook Reader",
       "package_manager": {
         "arch_aur": "koodoreader",
         "arch_pacman": null,
@@ -1119,7 +1119,7 @@
     "koreader": {
       "name": "KOReader",
       "category": "Book",
-      "subcategory": "Ebook reader",
+      "subcategory": "Ebook Reader",
       "package_manager": {
         "arch_aur": "koreader",
         "arch_pacman": null,
@@ -1137,7 +1137,7 @@
     "krita": {
       "name": "Krita",
       "category": "Image",
-      "subcategory": "Image editor",
+      "subcategory": "Image Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "krita",
@@ -1173,7 +1173,7 @@
     "libreoffice": {
       "name": "LibreOffice",
       "category": "Office",
-      "subcategory": "Office suite",
+      "subcategory": "Office Suite",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "libreoffice",
@@ -1191,7 +1191,7 @@
     "librewolf": {
       "name": "LibreWolf",
       "category": "Web",
-      "subcategory": "Web browser",
+      "subcategory": "Web Browser",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "librewolf",
@@ -1245,7 +1245,7 @@
     "lutris": {
       "name": "Lutris",
       "category": "Gaming",
-      "subcategory": "Game launcher",
+      "subcategory": "Game Launcher",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "lutris",
@@ -1263,7 +1263,7 @@
     "mandelbulber": {
       "name": "Mandelbulber2",
       "category": "Image",
-      "subcategory": "Fractal generation",
+      "subcategory": "Fractal Generation",
       "package_manager": {
         "arch_aur": "mandelbulber2",
         "arch_pacman": null,
@@ -1299,7 +1299,7 @@
     "mega": {
       "name": "MEGAsync",
       "category": "File Man",
-      "subcategory": "Client cloud storage",
+      "subcategory": "Client Cloud Storage",
       "package_manager": {
         "arch_aur": "megasync",
         "arch_pacman": null,
@@ -1335,7 +1335,7 @@
     "melonds": {
       "name": "melonDS",
       "category": "Gaming",
-      "subcategory": "Emulation",
+      "subcategory": "Emulator",
       "package_manager": {
         "arch_aur": "melonds",
         "arch_pacman": null,
@@ -1371,7 +1371,7 @@
     "mpc-hc": {
       "name": "MPC-HC",
       "category": "Video",
-      "subcategory": "Video player",
+      "subcategory": "Video Player",
       "package_manager": {
         "arch_aur": "mpc-hc",
         "arch_pacman": null,
@@ -1389,7 +1389,7 @@
     "mpv": {
       "name": "MPV",
       "category": "Video",
-      "subcategory": "Media player",
+      "subcategory": "Media Player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "mpv",
@@ -1407,7 +1407,7 @@
     "musescore": {
       "name": "MuseScore",
       "category": "Audio",
-      "subcategory": "Music notation",
+      "subcategory": "Music Notation",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "musescore",
@@ -1425,7 +1425,7 @@
     "musicbee": {
       "name": "MusicBee",
       "category": "Audio",
-      "subcategory": "Audio player",
+      "subcategory": "Audio Player",
       "package_manager": {
         "arch_aur": "musicbee",
         "arch_pacman": null,
@@ -1443,7 +1443,7 @@
     "musicbrainz-picard": {
       "name": "MusicBrainz-Picard",
       "category": "File Man",
-      "subcategory": "Music tagger",
+      "subcategory": "Music Tagger",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "picard",
@@ -1461,7 +1461,7 @@
     "mypaint": {
       "name": "MyPaint",
       "category": "Image",
-      "subcategory": "Image editor",
+      "subcategory": "Image Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "mypaint",
@@ -1497,7 +1497,7 @@
     "newelle": {
       "name": "NewElle",
       "category": "Development",
-      "subcategory": "AI client",
+      "subcategory": "AI Client",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": null,
@@ -1569,7 +1569,7 @@
     "obs-studio": {
       "name": "OBS-Studio",
       "category": "Video",
-      "subcategory": "Video recorder",
+      "subcategory": "Video Recorder",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "obs-studio",
@@ -1587,7 +1587,7 @@
     "obsidian": {
       "name": "Obsidian",
       "category": "Office",
-      "subcategory": "Note taking",
+      "subcategory": "Note Taking",
       "package_manager": {
         "arch_aur": "obsidian",
         "arch_pacman": null,
@@ -1623,7 +1623,7 @@
     "okular": {
       "name": "Okular",
       "category": "Office",
-      "subcategory": "Document viewer",
+      "subcategory": "Document Viewer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "okular",
@@ -1659,7 +1659,7 @@
     "onlyoffice": {
       "name": "OnlyOffice",
       "category": "Office",
-      "subcategory": "Office suite",
+      "subcategory": "Office Suite",
       "package_manager": {
         "arch_aur": "onlyoffice-bin",
         "arch_pacman": null,
@@ -1695,7 +1695,7 @@
     "pcsx2": {
       "name": "PCSX2",
       "category": "Gaming",
-      "subcategory": "Emulation",
+      "subcategory": "Emulator",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "pcsx2",
@@ -1713,7 +1713,7 @@
     "playonlinux": {
       "name": "PlayOnLinux",
       "category": "Virtualization",
-      "subcategory": "Windows compatibility layer",
+      "subcategory": "Windows Compatibility Layer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "playonlinux",
@@ -1749,7 +1749,7 @@
     "ppsspp": {
       "name": "PPSSPP",
       "category": "Gaming",
-      "subcategory": "Emulation",
+      "subcategory": "Emulator",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "ppsspp",
@@ -1767,7 +1767,7 @@
     "proton": {
       "name": "Proton",
       "category": "Virtualization",
-      "subcategory": "Windows compatibility layer",
+      "subcategory": "Windows Compatibility Layer",
       "package_manager": {
         "arch_aur": "proton-ge-custom-bin",
         "arch_pacman": null,
@@ -1785,7 +1785,7 @@
     "proton-qt": {
       "name": "Proton-QT",
       "category": "Virtualization",
-      "subcategory": "Windows compatibility layer",
+      "subcategory": "Windows Compatibility Layer",
       "package_manager": {
         "arch_aur": "proton-qt",
         "arch_pacman": null,
@@ -1803,7 +1803,7 @@
     "putty": {
       "name": "PuTTY",
       "category": "Utility",
-      "subcategory": "Terminal emulator",
+      "subcategory": "Terminal Emulator",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "putty",
@@ -1839,7 +1839,7 @@
     "qbittorrent": {
       "name": "qBittorrent",
       "category": "File Sharing",
-      "subcategory": "Torrent client",
+      "subcategory": "Torrent Client",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "qbittorrent",
@@ -1983,7 +1983,7 @@
     "shotwell": {
       "name": "Shotwell",
       "category": "Image",
-      "subcategory": "Photo manager",
+      "subcategory": "Photo Manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "shotwell",
@@ -2001,7 +2001,7 @@
     "speech-note": {
       "name": "Speech Note",
       "category": "Audio",
-      "subcategory": "TTS",
+      "subcategory": "Text To Speech",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": null,
@@ -2055,7 +2055,7 @@
     "stability-matrix": {
       "name": "StabilityMatrix",
       "category": "Image",
-      "subcategory": "AI image generator",
+      "subcategory": "AI image Generator",
       "package_manager": {
         "arch_aur": "stabilitymatrix",
         "arch_pacman": null,
@@ -2073,7 +2073,7 @@
     "steam": {
       "name": "Steam",
       "category": "Gaming",
-      "subcategory": "Game launcher",
+      "subcategory": "Game Launcher",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "steam",
@@ -2091,7 +2091,7 @@
     "stellarium": {
       "name": "Stellarium",
       "category": "Science",
-      "subcategory": "astronomy",
+      "subcategory": "Astronomy",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "stellarium",
@@ -2109,7 +2109,7 @@
     "strawberry": {
       "name": "Strawberry",
       "category": "Audio",
-      "subcategory": "Audio player",
+      "subcategory": "Audio Player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "strawberry",
@@ -2145,7 +2145,7 @@
     "telegram": {
       "name": "Telegram",
       "category": "Web",
-      "subcategory": "Messaging",
+      "subcategory": "Chat Client",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "telegram-desktop",
@@ -2217,7 +2217,7 @@
     "transmission": {
       "name": "Transmission",
       "category": "File Sharing",
-      "subcategory": "Torrent client",
+      "subcategory": "Torrent Client",
       "package_manager": {
         "arch_aur": "transmission-gtk",
         "arch_pacman": null,
@@ -2235,7 +2235,7 @@
     "tree": {
       "name": "Tree",
       "category": "Utility",
-      "subcategory": "File tree generator",
+      "subcategory": "File Tree Generator",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "tree",
@@ -2253,7 +2253,7 @@
     "ungoogled-chromium": {
       "name": "Ungoogled-Chromium",
       "category": "Web",
-      "subcategory": "Web browser",
+      "subcategory": "Web Browser",
       "package_manager": {
         "arch_aur": "ungoogled-chromium-bin",
         "arch_pacman": null,
@@ -2325,7 +2325,7 @@
     "veracrypt": {
       "name": "VeraCrypt",
       "category": "Utility",
-      "subcategory": "Disk encryption",
+      "subcategory": "Disk Encryptor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "veracrypt",
@@ -2343,7 +2343,7 @@
     "virt-manager": {
       "name": "Virt-manager",
       "category": "Virtualization",
-      "subcategory": "Virtual machine manager",
+      "subcategory": "Virtual Machine Manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "virt-manager",
@@ -2397,7 +2397,7 @@
     "vlc": {
       "name": "VLC",
       "category": "Video",
-      "subcategory": "Media player",
+      "subcategory": "Media Player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "vlc",
@@ -2415,7 +2415,7 @@
     "vmware": {
       "name": "VMware-Workstation",
       "category": "Virtualization",
-      "subcategory": "Virtual machine manager",
+      "subcategory": "Virtual Machine Manager",
       "package_manager": {
         "arch_aur": "vmware-workstation",
         "arch_pacman": null,
@@ -2451,7 +2451,7 @@
     "wine": {
       "name": "Wine",
       "category": "Virtualization",
-      "subcategory": "Windows compatibility layer",
+      "subcategory": "Windows Compatibility Layer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "wine",
@@ -2505,7 +2505,7 @@
     "xemu": {
       "name": "Xemu",
       "category": "Gaming",
-      "subcategory": "Emulation",
+      "subcategory": "Emulator",
       "package_manager": {
         "arch_aur": "xemu-bin",
         "arch_pacman": null,
