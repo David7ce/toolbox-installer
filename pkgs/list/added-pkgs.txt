@@ -1,7 +1,11 @@
 7-Zip
+anytype
 Ardour
 Audacious
 Audacity
+balena-etcher
+balabolka
+bitwarden
 Bitwig-Studio
 Blender
 Borg
@@ -22,6 +26,7 @@ Evolution
 FFMPEG
 Firefox
 Foliate
+folo
 FreeFileSync
 Freeplane
 GIMP
@@ -29,6 +34,7 @@ Git
 Godot
 Google-Earth
 Geany
+gpxsee
 Boxes
 GnuCash
 Gwenview
@@ -49,20 +55,24 @@ kstars
 LibreOffice
 LibreWolf
 LMMS
+lucaschess
 Lutris
 MEGAsync
 MyPaint
+mpc-hc
 MPV
 MuseScore
 MusicBee
 MusicBrainz-Picard
 Neovim
 Nmap
+newelle
 Node.js
 OBS-Studio
 Obsidian
 Ocenaudio
 Okular
+ollama
 OnlyOffice
 OpenShot
 PlayOnLinux
@@ -76,6 +86,7 @@ RawTherapee
 Rclone
 REAPER
 Rsync
+scrapy
 Shotcut
 Shotwell
 StabilityMatrix
@@ -90,6 +101,7 @@ tmux
 Transmission
 tree
 Ungoogled-Chromium
+unity
 Ventoy
 VeraCrypt
 virt-manager
@@ -104,3 +116,4 @@ Xen
 XnView-MP
 YT-DLP
 ytDownloader
+zoom

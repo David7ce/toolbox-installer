@@ -1,0 +1,2 @@
+floorp
+stable-diffusion-webui

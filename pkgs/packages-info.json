@@ -2,7 +2,7 @@
   "packages": {
     "7zip": {
       "name": "7-Zip",
-      "category": "File-Man",
+      "category": "File Man",
       "subcategory": "Compressor",
       "package_manager": {
         "arch_aur": null,
@@ -18,172 +18,28 @@
         "windows_winget": "7zip.7zip"
       }
     },
-    "mandelbulber": {
-      "name": "Mandelbulber2",
-      "category": "Image",
-      "subcategory": "Fractal-generation",
-      "package_manager": {
-        "arch_aur": "mandelbulber2",
-        "arch_pacman": null,
-        "debian_apt": "mandelbulber2",
-        "fedora_rpm": null,
-        "gentoo_emerge": "media-gfx/mandelbulber",
-        "nixos_nix-env": "mandelbulber",
-        "void_xbps": null,
-        "linux_flatpak": "com.github.buddhi1980.mandelbulber2",
-        "freebsd_pkg": "mandelbulber",
-        "macos_brew": null,
-        "windows_winget": "Mandelbulber.Mandelbulber"
-      }
-    },
-    "drawio": {
-      "name": "draw.io",
+    "anytype": {
+      "name": "Anytype",
       "category": "Office",
-      "subcategory": "Diagramming",
+      "subcategory": "Note taking",
       "package_manager": {
-        "arch_aur": "drawio-desktop-bin",
+        "arch_aur": "anytype-bin",
         "arch_pacman": null,
         "debian_apt": null,
         "fedora_rpm": null,
         "gentoo_emerge": null,
-        "nixos_nix-env": "drawio",
+        "nixos_nix-env": null,
         "void_xbps": null,
-        "linux_flatpak": "io.github.jgraph.drawio",
+        "linux_flatpak": "io.anytype.Anytype",
         "freebsd_pkg": null,
-        "macos_brew": "drawio",
-        "windows_winget": "JGraph.drawio"
-      }
-    },
-    "upscayl": {
-      "name": "Upscayl",
-      "category": "Image",
-      "subcategory": "Image-upscaling",
-      "package_manager": {
-        "arch_aur": "upscayl-bin",
-        "arch_pacman": null,
-        "debian_apt": null,
-        "fedora_rpm": null,
-        "gentoo_emerge": null,
-        "nixos_nix-env": "upscayl",
-        "void_xbps": null,
-        "linux_flatpak": "io.github.upscayl.Upscayl",
-        "freebsd_pkg": null,
-        "macos_brew": "upscayl",
-        "windows_winget": "Upscayl.Upscayl"
-      }
-    },
-    "ppsspp": {
-      "name": "PPSSPP",
-      "category": "Gaming",
-      "subcategory": "Emulation",
-      "package_manager": {
-        "arch_aur": null,
-        "arch_pacman": "ppsspp",
-        "debian_apt": "ppsspp",
-        "fedora_rpm": "ppsspp",
-        "gentoo_emerge": "games-emulation/ppsspp",
-        "nixos_nix-env": "ppsspp",
-        "void_xbps": "ppsspp",
-        "linux_flatpak": "org.ppsspp.PPSSPP",
-        "freebsd_pkg": "ppsspp",
-        "macos_brew": "ppsspp",
-        "windows_winget": "HenrikRydgard.PPSSPP"
-      }
-    },
-    "duckstation": {
-      "name": "DuckStation",
-      "category": "Gaming",
-      "subcategory": "Emulation",
-      "package_manager": {
-        "arch_aur": "duckstation-git",
-        "arch_pacman": null,
-        "debian_apt": null,
-        "fedora_rpm": "duckstation",
-        "gentoo_emerge": null,
-        "nixos_nix-env": "duckstation",
-        "void_xbps": null,
-        "linux_flatpak": "org.duckstation.DuckStation",
-        "freebsd_pkg": null,
-        "macos_brew": "duckstation",
-        "windows_winget": null
-      }
-    },
-    "pcsx2": {
-      "name": "PCSX2",
-      "category": "Gaming",
-      "subcategory": "Emulation",
-      "package_manager": {
-        "arch_aur": null,
-        "arch_pacman": "pcsx2",
-        "debian_apt": "pcsx2",
-        "fedora_rpm": "pcsx2",
-        "gentoo_emerge": "games-emulation/pcsx2",
-        "nixos_nix-env": "pcsx2",
-        "void_xbps": "pcsx2",
-        "linux_flatpak": "net.pcsx2.PCSX2",
-        "freebsd_pkg": "pcsx2",
-        "macos_brew": "pcsx2",
-        "windows_winget": null
-      }
-    },
-    "dolphin-emu": {
-      "name": "Dolphin-emu",
-      "category": "Gaming",
-      "subcategory": "Emulation",
-      "package_manager": {
-        "arch_aur": null,
-        "arch_pacman": "dolphin-emu",
-        "debian_apt": "dolphin-emu",
-        "fedora_rpm": "dolphin-emu",
-        "gentoo_emerge": "games-emulation/dolphin",
-        "nixos_nix-env": "dolphinEmu",
-        "void_xbps": "dolphin-emu",
-        "linux_flatpak": "org.DolphinEmu.dolphin-emu",
-        "freebsd_pkg": "dolphin-emu",
-        "macos_brew": "dolphin",
-        "windows_winget": "dolphin-emulator"
-      }
-    },
-    "melonds": {
-      "name": "melonDS",
-      "category": "Gaming",
-      "subcategory": "Emulation",
-      "package_manager": {
-        "arch_aur": "melonds",
-        "arch_pacman": null,
-        "debian_apt": "melonds",
-        "fedora_rpm": "melonds",
-        "gentoo_emerge": "games-emulation/melonds",
-        "nixos_nix-env": "melonds",
-        "void_xbps": "melonds",
-        "linux_flatpak": null,
-        "freebsd_pkg": "melonds",
-        "macos_brew": "melonds",
-        "windows_winget": null
-      }
-    },
-    "xemu": {
-      "name": "Xemu",
-      "category": "Gaming",
-      "subcategory": "Emulation",
-      "package_manager": {
-        "arch_aur": "xemu-bin",
-        "arch_pacman": null,
-        "debian_apt": null,
-        "fedora_rpm": "xemu",
-        "gentoo_emerge": null,
-        "nixos_nix-env": "xemu",
-        "void_xbps": null,
-        "linux_flatpak": "app.xemu.xemu",
-        "freebsd_pkg": null,
-        "macos_brew": null,
-        "windows_winget": null
+        "macos_brew": "anytype",
+        "windows_winget": "Anytype.Anytype"
       }
     },
     "apache": {
       "name": "Apache",
       "category": "Web",
-      "subcategory": "HTTP-Server",
+      "subcategory": "HTTP Server",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "apache",
@@ -201,7 +57,7 @@
     "ardour": {
       "name": "Ardour",
       "category": "Audio",
-      "subcategory": "Digital-Audio-Workstation",
+      "subcategory": "Digital Audio Workstation",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "ardour",
@@ -219,7 +75,7 @@
     "audacious": {
       "name": "Audacious",
       "category": "Audio",
-      "subcategory": "Audio-player",
+      "subcategory": "Audio player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "audacious",
@@ -237,7 +93,7 @@
     "audacity": {
       "name": "Audacity",
       "category": "Audio",
-      "subcategory": "Audio-recorder",
+      "subcategory": "Audio Recorder",
       "package_manager": {
         "arch_aur": "audacity",
         "arch_pacman": null,
@@ -252,10 +108,64 @@
         "windows_winget": "Audacity.Audacity"
       }
     },
+    "balabolka": {
+      "name": "Balabolka",
+      "category": "Audio",
+      "subcategory": "Text to speech",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": "Ilya.Morozov.Balabolka"
+      }
+    },
+    "balena-etcher": {
+      "name": "Balena Etcher",
+      "category": "Utility",
+      "subcategory": "Disk imaging",
+      "package_manager": {
+        "arch_aur": "balena-etcher",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "etcher",
+        "void_xbps": null,
+        "linux_flatpak": "io.balena.Etcher",
+        "freebsd_pkg": null,
+        "macos_brew": "balenaetcher",
+        "windows_winget": "Balena.Etcher"
+      }
+    },
+    "bitwarden": {
+      "name": "Bitwarden",
+      "category": "Utility",
+      "subcategory": "Password manager",
+      "package_manager": {
+        "arch_aur": "bitwarden-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "bitwarden",
+        "void_xbps": null,
+        "linux_flatpak": "com.bitwarden.desktop",
+        "freebsd_pkg": null,
+        "macos_brew": "bitwarden",
+        "windows_winget": "Bitwarden.Bitwarden"
+      }
+    },
     "bitwig-studio": {
       "name": "Bitwig-Studio",
       "category": "Audio",
-      "subcategory": "Digital-Audio-Workstation",
+      "subcategory": "Digital Audio Workstation",
       "package_manager": {
         "arch_aur": "bitwig-studio",
         "arch_pacman": null,
@@ -290,7 +200,7 @@
     },
     "borg": {
       "name": "Borg",
-      "category": "File-Man",
+      "category": "File Man",
       "subcategory": "Backup",
       "package_manager": {
         "arch_aur": null,
@@ -309,7 +219,7 @@
     "bottles": {
       "name": "Bottles",
       "category": "Virtualization",
-      "subcategory": "Windows-compatibility-layer",
+      "subcategory": "Windows compatibility layer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "bottles",
@@ -327,7 +237,7 @@
     "calibre": {
       "name": "Calibre",
       "category": "Book",
-      "subcategory": "Ebook-manager",
+      "subcategory": "Ebook manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "calibre",
@@ -345,7 +255,7 @@
     "chromium": {
       "name": "Chromium",
       "category": "Web",
-      "subcategory": "Web-browser",
+      "subcategory": "Web browser",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "chromium",
@@ -363,7 +273,7 @@
     "darktable": {
       "name": "Darktable",
       "category": "Image",
-      "subcategory": "RAW-Photo-editor",
+      "subcategory": "RAW Photo Editor",
       "package_manager": {
         "arch_aur": "darktable",
         "arch_pacman": "darktable",
@@ -381,7 +291,7 @@
     "davinci-resolve": {
       "name": "DaVinci-Resolve",
       "category": "Video",
-      "subcategory": "Video-editor",
+      "subcategory": "Video Editor",
       "package_manager": {
         "arch_aur": "davinci-resolve",
         "arch_pacman": null,
@@ -417,7 +327,7 @@
     "digikam": {
       "name": "digiKam",
       "category": "Image",
-      "subcategory": "Photo-manager",
+      "subcategory": "Photo manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "digikam",
@@ -453,7 +363,7 @@
     "distrobox": {
       "name": "Distrobox",
       "category": "Virtualization",
-      "subcategory": "Wrapping-layer",
+      "subcategory": "Wrapping layer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "distrobox",
@@ -488,8 +398,8 @@
     },
     "dolphin": {
       "name": "Dolphin",
-      "category": "File-Man",
-      "subcategory": "File-Manager",
+      "category": "File Man",
+      "subcategory": "File Manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "dolphin",
@@ -502,6 +412,24 @@
         "freebsd_pkg": "dolphin",
         "macos_brew": null,
         "windows_winget": "KDE.Dolphin"
+      }
+    },
+    "dolphin-emu": {
+      "name": "Dolphin-emu",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": "dolphin-emu",
+        "debian_apt": "dolphin-emu",
+        "fedora_rpm": "dolphin-emu",
+        "gentoo_emerge": "games-emulation/dolphin",
+        "nixos_nix-env": "dolphinEmu",
+        "void_xbps": "dolphin-emu",
+        "linux_flatpak": "org.DolphinEmu.dolphin-emu",
+        "freebsd_pkg": "dolphin-emu",
+        "macos_brew": "dolphin",
+        "windows_winget": "dolphin-emulator"
       }
     },
     "dotnet-runtime": {
@@ -522,10 +450,28 @@
         "windows_winget": "Microsoft.DotNet.SDK"
       }
     },
+    "drawio": {
+      "name": "draw.io",
+      "category": "Office",
+      "subcategory": "Diagramming",
+      "package_manager": {
+        "arch_aur": "drawio-desktop-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "drawio",
+        "void_xbps": null,
+        "linux_flatpak": "io.github.jgraph.drawio",
+        "freebsd_pkg": null,
+        "macos_brew": "drawio",
+        "windows_winget": "JGraph.drawio"
+      }
+    },
     "dropbox": {
       "name": "Dropbox",
-      "category": "File-Man",
-      "subcategory": "Client-cloud-storage",
+      "category": "File Man",
+      "subcategory": "Client cloud storage",
       "package_manager": {
         "arch_aur": "dropbox",
         "arch_pacman": null,
@@ -540,10 +486,28 @@
         "windows_winget": "Dropbox.Dropbox"
       }
     },
+    "duckstation": {
+      "name": "DuckStation",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": "duckstation-git",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": "duckstation",
+        "gentoo_emerge": null,
+        "nixos_nix-env": "duckstation",
+        "void_xbps": null,
+        "linux_flatpak": "org.duckstation.DuckStation",
+        "freebsd_pkg": null,
+        "macos_brew": "duckstation",
+        "windows_winget": null
+      }
+    },
     "eaglemode": {
       "name": "Eagle-Mode",
-      "category": "File-Man",
-      "subcategory": "File-Manager",
+      "category": "File Man",
+      "subcategory": "File Manager",
       "package_manager": {
         "arch_aur": "eaglemode",
         "arch_pacman": null,
@@ -561,7 +525,7 @@
     "easy-effects": {
       "name": "Easy Effects",
       "category": "Audio",
-      "subcategory": "Audio-processing",
+      "subcategory": "Audio processing",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": null,
@@ -579,7 +543,7 @@
     "elisa": {
       "name": "Elisa",
       "category": "Audio",
-      "subcategory": "Audio-player",
+      "subcategory": "Audio player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "elisa",
@@ -597,7 +561,7 @@
     "evolution": {
       "name": "Evolution",
       "category": "Web",
-      "subcategory": "Email-client",
+      "subcategory": "Email client",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "evolution",
@@ -631,9 +595,9 @@
       }
     },
     "ffmpeg": {
-      "name": "FFMPEG",
+      "name": " FFmpeg",
       "category": "Utility",
-      "subcategory": "Converter-decoder",
+      "subcategory": "Converter decoder",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "ffmpeg",
@@ -651,7 +615,7 @@
     "firefox": {
       "name": "Firefox",
       "category": "Web",
-      "subcategory": "Web-browser",
+      "subcategory": "Web browser",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "firefox",
@@ -669,7 +633,7 @@
     "foliate": {
       "name": "Foliate",
       "category": "Book",
-      "subcategory": "Ebook-reader",
+      "subcategory": "Ebook reader",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "foliate",
@@ -684,10 +648,28 @@
         "windows_winget": null
       }
     },
+    "folo": {
+      "name": "Folo",
+      "category": "Book",
+      "subcategory": "RSS Reader",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": "folo",
+        "windows_winget": "Folo.Folo"
+      }
+    },
     "freefilesync": {
       "name": "FreeFileSync",
-      "category": "File-Man",
-      "subcategory": "File-synchronization",
+      "category": "File Man",
+      "subcategory": "File Synchronization",
       "package_manager": {
         "arch_aur": "freefilesync",
         "arch_pacman": null,
@@ -705,7 +687,7 @@
     "freeplane": {
       "name": "Freeplane",
       "category": "Office",
-      "subcategory": "Mind-map-editor",
+      "subcategory": "Mind map editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "freeplane",
@@ -741,7 +723,7 @@
     "geany": {
       "name": "Geany",
       "category": "Development",
-      "subcategory": "Text-editor",
+      "subcategory": "Text editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "geany",
@@ -759,7 +741,7 @@
     "gimp": {
       "name": "GIMP",
       "category": "Image",
-      "subcategory": "Image-editor",
+      "subcategory": "Image editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "gimp",
@@ -777,7 +759,7 @@
     "git": {
       "name": "Git",
       "category": "Utility",
-      "subcategory": "Version-control",
+      "subcategory": "Version control",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "git",
@@ -795,7 +777,7 @@
     "gnome-boxes": {
       "name": "Boxes",
       "category": "Virtualization",
-      "subcategory": "Virtual-machine-manager",
+      "subcategory": "Virtual machine manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "gnome-boxes",
@@ -813,7 +795,7 @@
     "gnucash": {
       "name": "GnuCash",
       "category": "Finance",
-      "subcategory": "Finance-manager",
+      "subcategory": "Finance manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "gnucash",
@@ -831,7 +813,7 @@
     "godot": {
       "name": "Godot",
       "category": "Development",
-      "subcategory": "Game-engine",
+      "subcategory": "Game Engine",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "godot",
@@ -849,7 +831,7 @@
     "google-earth": {
       "name": "Google-Earth",
       "category": "Science",
-      "subcategory": "Geography-map",
+      "subcategory": "Geography map",
       "package_manager": {
         "arch_aur": "google-earth-pro",
         "arch_pacman": null,
@@ -882,22 +864,22 @@
         "windows_winget": null
       }
     },
-    "gwenview": {
-      "name": "Gwenview",
-      "category": "Image",
-      "subcategory": "image-viewer",
+    "gpxsee": {
+      "name": "GPXSee",
+      "category": "Utility",
+      "subcategory": "GPS viewer",
       "package_manager": {
         "arch_aur": null,
-        "arch_pacman": "gwenview",
-        "debian_apt": "gwenview",
-        "fedora_rpm": "gwenview",
-        "gentoo_emerge": "kde-apps/gwenview",
-        "nixos_nix-env": "nixos.gwenview",
-        "void_xbps": "gwenview",
-        "linux_flatpak": "com.github.unrud.VideoDownloader",
-        "freebsd_pkg": "gwenview",
-        "macos_brew": null,
-        "windows_winget": null
+        "arch_pacman": "gpxsee",
+        "debian_apt": "gpxsee",
+        "fedora_rpm": "gpxsee",
+        "gentoo_emerge": "sci-geosciences/gpxsee",
+        "nixos_nix-env": "gpxsee",
+        "void_xbps": "gpxsee",
+        "linux_flatpak": "org.gpxsee.GPXSee",
+        "freebsd_pkg": "gpxsee",
+        "macos_brew": "gpxsee",
+        "windows_winget": "gpxsee.GPXSee"
       }
     },
     "gramps": {
@@ -918,9 +900,27 @@
         "windows_winget": "Gramps.Gramps"
       }
     },
+    "gwenview": {
+      "name": "Gwenview",
+      "category": "Image",
+      "subcategory": "image viewer",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": "gwenview",
+        "debian_apt": "gwenview",
+        "fedora_rpm": "gwenview",
+        "gentoo_emerge": "kde-apps/gwenview",
+        "nixos_nix-env": "nixos.gwenview",
+        "void_xbps": "gwenview",
+        "linux_flatpak": "com.github.unrud.VideoDownloader",
+        "freebsd_pkg": "gwenview",
+        "macos_brew": null,
+        "windows_winget": null
+      }
+    },
     "handbrake": {
       "name": "HandBrake",
-      "category": "File-Man",
+      "category": "File Man",
       "subcategory": "Compressor",
       "package_manager": {
         "arch_aur": null,
@@ -939,7 +939,7 @@
     "haruna": {
       "name": "Haruna",
       "category": "Video",
-      "subcategory": "Media-player",
+      "subcategory": "Media player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "haruna",
@@ -955,9 +955,9 @@
       }
     },
     "heroic-games-launcher": {
-      "name": "Heroic-Games-Launcher",
+      "name": "Heroic",
       "category": "Gaming",
-      "subcategory": "Game-launcher",
+      "subcategory": "Game launcher",
       "package_manager": {
         "arch_aur": "heroic-games-launcher-bin",
         "arch_pacman": null,
@@ -975,7 +975,7 @@
     "homebank": {
       "name": "HomeBank",
       "category": "Finance",
-      "subcategory": "Finance-manager",
+      "subcategory": "Finance manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "homebank",
@@ -993,7 +993,7 @@
     "inkscape": {
       "name": "Inkscape",
       "category": "Image",
-      "subcategory": "Vector-graphics",
+      "subcategory": "Vector graphics",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "inkscape",
@@ -1011,7 +1011,7 @@
     "jellyfin-client": {
       "name": "Jellyfin-Client",
       "category": "Video",
-      "subcategory": "Media-server",
+      "subcategory": "Media server",
       "package_manager": {
         "arch_aur": "jellyfin-media-player",
         "arch_pacman": null,
@@ -1029,7 +1029,7 @@
     "jellyfin-server": {
       "name": "Jellyfin-Server",
       "category": "Video",
-      "subcategory": "Media-server",
+      "subcategory": "Media server",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "jellyfin-server",
@@ -1047,7 +1047,7 @@
     "kate": {
       "name": "Kate",
       "category": "Development",
-      "subcategory": "Text-editor",
+      "subcategory": "Text editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "kate",
@@ -1065,7 +1065,7 @@
     "kdenlive": {
       "name": "Kdenlive",
       "category": "Video",
-      "subcategory": "Video-editor",
+      "subcategory": "Video Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "kdenlive",
@@ -1083,7 +1083,7 @@
     "keepassxc": {
       "name": "KeePassXC",
       "category": "Utility",
-      "subcategory": "Password-Manager",
+      "subcategory": "Password Manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "keepassxc",
@@ -1101,7 +1101,7 @@
     "koodoreader": {
       "name": "Koodo-Reader",
       "category": "Book",
-      "subcategory": "Ebook-reader",
+      "subcategory": "Ebook reader",
       "package_manager": {
         "arch_aur": "koodoreader",
         "arch_pacman": null,
@@ -1119,7 +1119,7 @@
     "koreader": {
       "name": "KOReader",
       "category": "Book",
-      "subcategory": "Ebook-reader",
+      "subcategory": "Ebook reader",
       "package_manager": {
         "arch_aur": "koreader",
         "arch_pacman": null,
@@ -1137,7 +1137,7 @@
     "krita": {
       "name": "Krita",
       "category": "Image",
-      "subcategory": "Image-editor",
+      "subcategory": "Image editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "krita",
@@ -1173,7 +1173,7 @@
     "libreoffice": {
       "name": "LibreOffice",
       "category": "Office",
-      "subcategory": "Office-suite",
+      "subcategory": "Office suite",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "libreoffice",
@@ -1191,7 +1191,7 @@
     "librewolf": {
       "name": "LibreWolf",
       "category": "Web",
-      "subcategory": "Web-browser",
+      "subcategory": "Web browser",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "librewolf",
@@ -1209,7 +1209,7 @@
     "lmms": {
       "name": "LMMS",
       "category": "Audio",
-      "subcategory": "Digital-Audio-Workstation",
+      "subcategory": "Digital Audio Workstation",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "lmms",
@@ -1224,10 +1224,28 @@
         "windows_winget": "LMMS.LMMS"
       }
     },
+    "lucaschess": {
+      "name": "Lucas Chess",
+      "category": "Gaming",
+      "subcategory": "Chess",
+      "package_manager": {
+        "arch_aur": "lucaschess",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": "LucasChess.LucasChess"
+      }
+    },
     "lutris": {
       "name": "Lutris",
       "category": "Gaming",
-      "subcategory": "Game-launcher",
+      "subcategory": "Game launcher",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "lutris",
@@ -1240,6 +1258,24 @@
         "freebsd_pkg": "lutris",
         "macos_brew": "lutris",
         "windows_winget": "Lutris"
+      }
+    },
+    "mandelbulber": {
+      "name": "Mandelbulber2",
+      "category": "Image",
+      "subcategory": "Fractal generation",
+      "package_manager": {
+        "arch_aur": "mandelbulber2",
+        "arch_pacman": null,
+        "debian_apt": "mandelbulber2",
+        "fedora_rpm": null,
+        "gentoo_emerge": "media-gfx/mandelbulber",
+        "nixos_nix-env": "mandelbulber",
+        "void_xbps": null,
+        "linux_flatpak": "com.github.buddhi1980.mandelbulber2",
+        "freebsd_pkg": "mandelbulber",
+        "macos_brew": null,
+        "windows_winget": "Mandelbulber.Mandelbulber"
       }
     },
     "mariadb": {
@@ -1262,8 +1298,8 @@
     },
     "mega": {
       "name": "MEGAsync",
-      "category": "File-Man",
-      "subcategory": "Client-cloud-storage",
+      "category": "File Man",
+      "subcategory": "Client cloud storage",
       "package_manager": {
         "arch_aur": "megasync",
         "arch_pacman": null,
@@ -1281,7 +1317,7 @@
     "meld": {
       "name": "meld",
       "category": "Utility",
-      "subcategory": "File-Comparator",
+      "subcategory": "File Comparator",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "meld",
@@ -1294,6 +1330,24 @@
         "freebsd_pkg": "meld",
         "macos_brew": "meld",
         "windows_winget": "meld"
+      }
+    },
+    "melonds": {
+      "name": "melonDS",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": "melonds",
+        "arch_pacman": null,
+        "debian_apt": "melonds",
+        "fedora_rpm": "melonds",
+        "gentoo_emerge": "games-emulation/melonds",
+        "nixos_nix-env": "melonds",
+        "void_xbps": "melonds",
+        "linux_flatpak": null,
+        "freebsd_pkg": "melonds",
+        "macos_brew": "melonds",
+        "windows_winget": null
       }
     },
     "mongodb": {
@@ -1314,10 +1368,28 @@
         "windows_winget": "MongoDB.Server"
       }
     },
+    "mpc-hc": {
+      "name": "MPC-HC",
+      "category": "Video",
+      "subcategory": "Video player",
+      "package_manager": {
+        "arch_aur": "mpc-hc",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": "clsid2.mpc-hc"
+      }
+    },
     "mpv": {
       "name": "MPV",
       "category": "Video",
-      "subcategory": "Media-player",
+      "subcategory": "Media player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "mpv",
@@ -1335,7 +1407,7 @@
     "musescore": {
       "name": "MuseScore",
       "category": "Audio",
-      "subcategory": "Music-notation",
+      "subcategory": "Music notation",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "musescore",
@@ -1353,7 +1425,7 @@
     "musicbee": {
       "name": "MusicBee",
       "category": "Audio",
-      "subcategory": "Audio-player",
+      "subcategory": "Audio player",
       "package_manager": {
         "arch_aur": "musicbee",
         "arch_pacman": null,
@@ -1370,8 +1442,8 @@
     },
     "musicbrainz-picard": {
       "name": "MusicBrainz-Picard",
-      "category": "File-Man",
-      "subcategory": "Music-tagger",
+      "category": "File Man",
+      "subcategory": "Music tagger",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "picard",
@@ -1389,7 +1461,7 @@
     "mypaint": {
       "name": "MyPaint",
       "category": "Image",
-      "subcategory": "Image-editor",
+      "subcategory": "Image editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "mypaint",
@@ -1407,7 +1479,7 @@
     "neovim": {
       "name": "Neovim",
       "category": "Development",
-      "subcategory": "Text-editor",
+      "subcategory": "Text editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "neovim",
@@ -1422,10 +1494,28 @@
         "windows_winget": "Neovim.Neovim"
       }
     },
+    "newelle": {
+      "name": "NewElle",
+      "category": "Development",
+      "subcategory": "AI client",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": "NewElle.NewElle"
+      }
+    },
     "nginx": {
       "name": "Nginx",
       "category": "Web",
-      "subcategory": "HTTP-Server",
+      "subcategory": "HTTP Server",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "nginx",
@@ -1479,7 +1569,7 @@
     "obs-studio": {
       "name": "OBS-Studio",
       "category": "Video",
-      "subcategory": "Video-recorder",
+      "subcategory": "Video recorder",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "obs-studio",
@@ -1497,7 +1587,7 @@
     "obsidian": {
       "name": "Obsidian",
       "category": "Office",
-      "subcategory": "Note-taking",
+      "subcategory": "Note taking",
       "package_manager": {
         "arch_aur": "obsidian",
         "arch_pacman": null,
@@ -1515,7 +1605,7 @@
     "ocenaudio": {
       "name": "Ocenaudio",
       "category": "Audio",
-      "subcategory": "Audio-recorder",
+      "subcategory": "Audio Recorder",
       "package_manager": {
         "arch_aur": "ocenaudio",
         "arch_pacman": null,
@@ -1533,7 +1623,7 @@
     "okular": {
       "name": "Okular",
       "category": "Office",
-      "subcategory": "Document-viewer",
+      "subcategory": "Document viewer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "okular",
@@ -1548,10 +1638,28 @@
         "windows_winget": null
       }
     },
+    "ollama": {
+      "name": "Ollama",
+      "category": "Development",
+      "subcategory": "AI client",
+      "package_manager": {
+        "arch_aur": "ollama",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "ollama",
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": "ollama",
+        "windows_winget": "Ollama.Ollama"
+      }
+    },
     "onlyoffice": {
       "name": "OnlyOffice",
       "category": "Office",
-      "subcategory": "Office-suite",
+      "subcategory": "Office suite",
       "package_manager": {
         "arch_aur": "onlyoffice-bin",
         "arch_pacman": null,
@@ -1569,7 +1677,7 @@
     "openshot": {
       "name": "OpenShot",
       "category": "Video",
-      "subcategory": "Video-editor",
+      "subcategory": "Video Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "openshot",
@@ -1584,10 +1692,28 @@
         "windows_winget": "OpenShot"
       }
     },
+    "pcsx2": {
+      "name": "PCSX2",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": "pcsx2",
+        "debian_apt": "pcsx2",
+        "fedora_rpm": "pcsx2",
+        "gentoo_emerge": "games-emulation/pcsx2",
+        "nixos_nix-env": "pcsx2",
+        "void_xbps": "pcsx2",
+        "linux_flatpak": "net.pcsx2.PCSX2",
+        "freebsd_pkg": "pcsx2",
+        "macos_brew": "pcsx2",
+        "windows_winget": null
+      }
+    },
     "playonlinux": {
       "name": "PlayOnLinux",
       "category": "Virtualization",
-      "subcategory": "Windows-compatibility-layer",
+      "subcategory": "Windows compatibility layer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "playonlinux",
@@ -1620,10 +1746,28 @@
         "windows_winget": "PostgreSQL.PostgreSQL"
       }
     },
+    "ppsspp": {
+      "name": "PPSSPP",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": "ppsspp",
+        "debian_apt": "ppsspp",
+        "fedora_rpm": "ppsspp",
+        "gentoo_emerge": "games-emulation/ppsspp",
+        "nixos_nix-env": "ppsspp",
+        "void_xbps": "ppsspp",
+        "linux_flatpak": "org.ppsspp.PPSSPP",
+        "freebsd_pkg": "ppsspp",
+        "macos_brew": "ppsspp",
+        "windows_winget": "HenrikRydgard.PPSSPP"
+      }
+    },
     "proton": {
       "name": "Proton",
       "category": "Virtualization",
-      "subcategory": "Windows-compatibility-layer",
+      "subcategory": "Windows compatibility layer",
       "package_manager": {
         "arch_aur": "proton-ge-custom-bin",
         "arch_pacman": null,
@@ -1641,7 +1785,7 @@
     "proton-qt": {
       "name": "Proton-QT",
       "category": "Virtualization",
-      "subcategory": "Windows-compatibility-layer",
+      "subcategory": "Windows compatibility layer",
       "package_manager": {
         "arch_aur": "proton-qt",
         "arch_pacman": null,
@@ -1659,7 +1803,7 @@
     "putty": {
       "name": "PuTTY",
       "category": "Utility",
-      "subcategory": "Terminal-emulator",
+      "subcategory": "Terminal emulator",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "putty",
@@ -1677,7 +1821,7 @@
     "python": {
       "name": "Python",
       "category": "Development",
-      "subcategory": "Programming-language",
+      "subcategory": "Programming language",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "python",
@@ -1694,8 +1838,8 @@
     },
     "qbittorrent": {
       "name": "qBittorrent",
-      "category": "File-Sharing",
-      "subcategory": "Torrent-client",
+      "category": "File Sharing",
+      "subcategory": "Torrent client",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "qbittorrent",
@@ -1731,7 +1875,7 @@
     "rawtherapee": {
       "name": "RawTherapee",
       "category": "Image",
-      "subcategory": "RAW-Photo-editor",
+      "subcategory": "RAW Photo Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "rawtherapee",
@@ -1748,8 +1892,8 @@
     },
     "rclone": {
       "name": "Rclone",
-      "category": "File-Man",
-      "subcategory": "File-synchronization",
+      "category": "File Man",
+      "subcategory": "File Synchronization",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "rclone",
@@ -1767,7 +1911,7 @@
     "reaper": {
       "name": "REAPER",
       "category": "Audio",
-      "subcategory": "Digital-Audio-Workstation",
+      "subcategory": "Digital Audio Workstation",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "reaper",
@@ -1784,8 +1928,8 @@
     },
     "rsync": {
       "name": "Rsync",
-      "category": "File-Man",
-      "subcategory": "File-synchronization",
+      "category": "File Man",
+      "subcategory": "File Synchronization",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "rsync",
@@ -1800,10 +1944,28 @@
         "windows_winget": "WayneDavison.Rsync"
       }
     },
+    "scrapy": {
+      "name": "Scrapy",
+      "category": "Development",
+      "subcategory": "Web Scraping",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": "python-scrapy",
+        "debian_apt": "python3-scrapy",
+        "fedora_rpm": "python3-scrapy",
+        "gentoo_emerge": "dev-python/scrapy",
+        "nixos_nix-env": "python3Packages.scrapy",
+        "void_xbps": "python3-scrapy",
+        "linux_flatpak": null,
+        "freebsd_pkg": "py39-scrapy",
+        "macos_brew": "scrapy",
+        "windows_winget": null
+      }
+    },
     "shotcut": {
       "name": "Shotcut",
       "category": "Video",
-      "subcategory": "Video-editor",
+      "subcategory": "Video Editor",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "shotcut",
@@ -1821,7 +1983,7 @@
     "shotwell": {
       "name": "Shotwell",
       "category": "Image",
-      "subcategory": "Photo-manager",
+      "subcategory": "Photo manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "shotwell",
@@ -1834,24 +1996,6 @@
         "freebsd_pkg": "shotwell",
         "macos_brew": null,
         "windows_winget": null
-      }
-    },
-    "sqlite": {
-      "name": "SQLite",
-      "category": "Development",
-      "subcategory": "SQL",
-      "package_manager": {
-        "arch_aur": null,
-        "arch_pacman": "sqlite",
-        "debian_apt": "sqlite3",
-        "fedora_rpm": "sqlite",
-        "gentoo_emerge": "dev-db/sqlite",
-        "nixos_nix-env": "sqlite",
-        "void_xbps": "sqlite",
-        "linux_flatpak": null,
-        "freebsd_pkg": "sqlite3",
-        "macos_brew": "sqlite",
-        "windows_winget": "SQLite.SQLite3"
       }
     },
     "speech-note": {
@@ -1875,7 +2019,7 @@
     "spotify": {
       "name": "spotify",
       "category": "Audio",
-      "subcategory": "Music-streaming",
+      "subcategory": "Music Streaming",
       "package_manager": {
         "arch_aur": "spotify",
         "arch_pacman": null,
@@ -1890,10 +2034,28 @@
         "windows_winget": "Spotify.Spotify"
       }
     },
+    "sqlite": {
+      "name": "SQLite",
+      "category": "Development",
+      "subcategory": "SQL",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": "sqlite",
+        "debian_apt": "sqlite3",
+        "fedora_rpm": "sqlite",
+        "gentoo_emerge": "dev-db/sqlite",
+        "nixos_nix-env": "sqlite",
+        "void_xbps": "sqlite",
+        "linux_flatpak": null,
+        "freebsd_pkg": "sqlite3",
+        "macos_brew": "sqlite",
+        "windows_winget": "SQLite.SQLite3"
+      }
+    },
     "stability-matrix": {
       "name": "StabilityMatrix",
       "category": "Image",
-      "subcategory": "AI-image-generator",
+      "subcategory": "AI image generator",
       "package_manager": {
         "arch_aur": "stabilitymatrix",
         "arch_pacman": null,
@@ -1911,7 +2073,7 @@
     "steam": {
       "name": "Steam",
       "category": "Gaming",
-      "subcategory": "Game-launcher",
+      "subcategory": "Game launcher",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "steam",
@@ -1947,7 +2109,7 @@
     "strawberry": {
       "name": "Strawberry",
       "category": "Audio",
-      "subcategory": "Audio-player",
+      "subcategory": "Audio player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "strawberry",
@@ -1965,7 +2127,7 @@
     "sublime-text-4": {
       "name": "Sublime-Text 4",
       "category": "Development",
-      "subcategory": "Text-editor",
+      "subcategory": "Text editor",
       "package_manager": {
         "arch_aur": "sublime-text-4",
         "arch_pacman": null,
@@ -2001,7 +2163,7 @@
     "tenacity": {
       "name": "Tenacity",
       "category": "Audio",
-      "subcategory": "Audio-recorder",
+      "subcategory": "Audio Recorder",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "tenacity",
@@ -2019,7 +2181,7 @@
     "thunderbird": {
       "name": "Thunderbird",
       "category": "Web",
-      "subcategory": "Email-client",
+      "subcategory": "Email Client",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "thunderbird",
@@ -2037,7 +2199,7 @@
     "tmux": {
       "name": "tmux",
       "category": "Utility",
-      "subcategory": "Terminal-multiplexer",
+      "subcategory": "Terminal Multiplexer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "tmux",
@@ -2054,8 +2216,8 @@
     },
     "transmission": {
       "name": "Transmission",
-      "category": "File-Sharing",
-      "subcategory": "Torrent-client",
+      "category": "File Sharing",
+      "subcategory": "Torrent client",
       "package_manager": {
         "arch_aur": "transmission-gtk",
         "arch_pacman": null,
@@ -2073,7 +2235,7 @@
     "tree": {
       "name": "Tree",
       "category": "Utility",
-      "subcategory": "File-tree-generator",
+      "subcategory": "File tree generator",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "tree",
@@ -2091,7 +2253,7 @@
     "ungoogled-chromium": {
       "name": "Ungoogled-Chromium",
       "category": "Web",
-      "subcategory": "Web-browser",
+      "subcategory": "Web browser",
       "package_manager": {
         "arch_aur": "ungoogled-chromium-bin",
         "arch_pacman": null,
@@ -2106,10 +2268,46 @@
         "windows_winget": "Ungoogled-Chromium"
       }
     },
+    "unity": {
+      "name": "Unity",
+      "category": "Development",
+      "subcategory": "Game Engine",
+      "package_manager": {
+        "arch_aur": "unityhub",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": "com.unity.UnityHub",
+        "freebsd_pkg": null,
+        "macos_brew": "unity-hub",
+        "windows_winget": "Unity.UnityHub"
+      }
+    },
+    "upscayl": {
+      "name": "Upscayl",
+      "category": "Image",
+      "subcategory": "Image Upscaling",
+      "package_manager": {
+        "arch_aur": "upscayl-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "upscayl",
+        "void_xbps": null,
+        "linux_flatpak": "io.github.upscayl.Upscayl",
+        "freebsd_pkg": null,
+        "macos_brew": "upscayl",
+        "windows_winget": "Upscayl.Upscayl"
+      }
+    },
     "ventoy": {
       "name": "Ventoy",
       "category": "Utility",
-      "subcategory": "Bootable-USB-creator",
+      "subcategory": "Bootable USB Creator",
       "package_manager": {
         "arch_aur": "ventoy-bin",
         "arch_pacman": null,
@@ -2127,7 +2325,7 @@
     "veracrypt": {
       "name": "VeraCrypt",
       "category": "Utility",
-      "subcategory": "Disk-encryption",
+      "subcategory": "Disk encryption",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "veracrypt",
@@ -2145,7 +2343,7 @@
     "virt-manager": {
       "name": "Virt-manager",
       "category": "Virtualization",
-      "subcategory": "Virtual-machine-manager",
+      "subcategory": "Virtual machine manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "virt-manager",
@@ -2163,7 +2361,7 @@
     "virtualbox": {
       "name": "VirtualBox",
       "category": "Virtualization",
-      "subcategory": "Virtual-machine-manager",
+      "subcategory": "Virtual Machine Manager",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "virtualbox",
@@ -2181,7 +2379,7 @@
     "visual-studio-code": {
       "name": "Visual-Studio-Code",
       "category": "Development",
-      "subcategory": "Code-editor",
+      "subcategory": "Code Editor",
       "package_manager": {
         "arch_aur": "visual-studio-code-bin",
         "arch_pacman": null,
@@ -2197,9 +2395,9 @@
       }
     },
     "vlc": {
-      "name": "VLC-Media-Player",
+      "name": "VLC",
       "category": "Video",
-      "subcategory": "Media-player",
+      "subcategory": "Media player",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "vlc",
@@ -2217,7 +2415,7 @@
     "vmware": {
       "name": "VMware-Workstation",
       "category": "Virtualization",
-      "subcategory": "Virtual-machine-manager",
+      "subcategory": "Virtual machine manager",
       "package_manager": {
         "arch_aur": "vmware-workstation",
         "arch_pacman": null,
@@ -2253,7 +2451,7 @@
     "wine": {
       "name": "Wine",
       "category": "Virtualization",
-      "subcategory": "Windows-compatibility-layer",
+      "subcategory": "Windows compatibility layer",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "wine",
@@ -2289,7 +2487,7 @@
     "xampp": {
       "name": "XAMPP",
       "category": "Development",
-      "subcategory": "Development-Environment",
+      "subcategory": "Development Environment",
       "package_manager": {
         "arch_aur": "xampp",
         "arch_pacman": null,
@@ -2302,6 +2500,24 @@
         "freebsd_pkg": null,
         "macos_brew": null,
         "windows_winget": "Xampp.Xampp"
+      }
+    },
+    "xemu": {
+      "name": "Xemu",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "arch_aur": "xemu-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": "xemu",
+        "gentoo_emerge": null,
+        "nixos_nix-env": "xemu",
+        "void_xbps": null,
+        "linux_flatpak": "app.xemu.xemu",
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": null
       }
     },
     "xen": {
@@ -2325,7 +2541,7 @@
     "xnview": {
       "name": "XnView-MP",
       "category": "Image",
-      "subcategory": "image-viewer",
+      "subcategory": "Image Viewer",
       "package_manager": {
         "arch_aur": "xnviewmp",
         "arch_pacman": null,
@@ -2341,9 +2557,9 @@
       }
     },
     "yt-dlp": {
-      "name": "YT-DLP",
+      "name": "yt-dlp",
       "category": "Downloader",
-      "subcategory": "Video-downloader",
+      "subcategory": "Video Downloader",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "yt-dlp",
@@ -2361,7 +2577,7 @@
     "ytdownloader": {
       "name": "ytDownloader",
       "category": "Downloader",
-      "subcategory": "Video-downloader",
+      "subcategory": "Video Downloader",
       "package_manager": {
         "arch_aur": "ytdownloader-gui",
         "arch_pacman": null,
@@ -2374,6 +2590,24 @@
         "freebsd_pkg": "null",
         "macos_brew": "youtube-dl",
         "windows_winget": null
+      }
+    },
+    "zoom": {
+      "name": "Zoom",
+      "category": "Web",
+      "subcategory": "Video Conferencing",
+      "package_manager": {
+        "arch_aur": "zoom",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "zoom-us",
+        "void_xbps": null,
+        "linux_flatpak": "us.zoom.Zoom",
+        "freebsd_pkg": null,
+        "macos_brew": "zoom",
+        "windows_winget": "Zoom.Zoom"
       }
     }
   }

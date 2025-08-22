@@ -29,7 +29,7 @@ function generatePackages(packagesData) {
 
     // Define categories by column
     const columnCategories = [
-        ["File-Man", "File-Sharing", "Downloader"],
+        ["File Man", "File Sharing", "Downloader"],
         ["Utility", "Science"],
         ["Virtualization"],
         ["Web"],
@@ -50,7 +50,9 @@ function generatePackages(packagesData) {
 
         categoryList.forEach(category => {
             const categoryDiv = document.createElement('div');
-            categoryDiv.classList.add('category', category);
+            // Create CSS-safe class name by replacing spaces with hyphens
+            const categoryClass = category.replace(/\s+/g, '-').toLowerCase();
+            categoryDiv.classList.add('category', categoryClass);
             columnDiv.appendChild(categoryDiv);
 
             const categoryHeading = document.createElement('h4');
@@ -59,42 +61,53 @@ function generatePackages(packagesData) {
 
             const subcategories = {};
 
+            // First pass: collect all packages by subcategory
             Object.entries(packagesData.packages).forEach(([pkgKey, pkgInfo]) => {
                 if (pkgInfo.category === category) {
                     const subcategory = pkgInfo.subcategory;
-                    let subcategoryDiv = subcategories[subcategory];
-
-                    if (!subcategoryDiv) {
-                        subcategoryDiv = document.createElement('div');
-                        subcategoryDiv.classList.add('subcategory', subcategory);
-                        categoryDiv.appendChild(subcategoryDiv);
-
-                        const subcategoryHeading = document.createElement('h5');
-                        subcategoryHeading.textContent = subcategory;
-                        subcategoryDiv.appendChild(subcategoryHeading);
-
-                        subcategories[subcategory] = subcategoryDiv;
+                    
+                    if (!subcategories[subcategory]) {
+                        subcategories[subcategory] = [];
                     }
-
-                    const packageLabel = document.createElement('label');
-                    const packageCheckbox = document.createElement('input');
-                    packageCheckbox.type = 'checkbox';
-                    packageCheckbox.name = 'pkg';
-                    packageCheckbox.value = pkgKey; // Use package key as value
-                    packageCheckbox.id = pkgKey;
-                    packageCheckbox.dataset.packageName = pkgInfo.name; // Store package name as data attribute
-
-                    const packageImg = document.createElement('img');
-                    packageImg.src = `${imageUrl}${pkgKey}.svg`;
-                    packageImg.width = 30;
-
-                    packageLabel.appendChild(packageCheckbox);
-                    packageLabel.appendChild(packageImg);
-                    packageLabel.appendChild(document.createTextNode(` ${pkgInfo.name}`));
-
-                    subcategoryDiv.appendChild(packageLabel);
+                    subcategories[subcategory].push({ key: pkgKey, info: pkgInfo });
                 }
             });
+
+            // Second pass: create subcategory divs in alphabetical order
+            Object.keys(subcategories)
+                .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+                .forEach(subcategory => {
+                    const subcategoryDiv = document.createElement('div');
+                    // Create CSS-safe class name by replacing spaces with hyphens
+                    const subcategoryClass = subcategory.replace(/\s+/g, '-').toLowerCase();
+                    subcategoryDiv.classList.add('subcategory', subcategoryClass);
+                    categoryDiv.appendChild(subcategoryDiv);
+
+                    const subcategoryHeading = document.createElement('h5');
+                    subcategoryHeading.textContent = subcategory;
+                    subcategoryDiv.appendChild(subcategoryHeading);
+
+                    // Add packages to this subcategory (already sorted by the JSON sorter)
+                    subcategories[subcategory].forEach(({ key: pkgKey, info: pkgInfo }) => {
+                        const packageLabel = document.createElement('label');
+                        const packageCheckbox = document.createElement('input');
+                        packageCheckbox.type = 'checkbox';
+                        packageCheckbox.name = 'pkg';
+                        packageCheckbox.value = pkgKey; // Use package key as value
+                        packageCheckbox.id = pkgKey;
+                        packageCheckbox.dataset.packageName = pkgInfo.name; // Store package name as data attribute
+
+                        const packageImg = document.createElement('img');
+                        packageImg.src = `${imageUrl}${pkgKey}.svg`;
+                        packageImg.width = 30;
+
+                        packageLabel.appendChild(packageCheckbox);
+                        packageLabel.appendChild(packageImg);
+                        packageLabel.appendChild(document.createTextNode(` ${pkgInfo.name}`));
+
+                        subcategoryDiv.appendChild(packageLabel);
+                    });
+                });
         });
     });
 }
@@ -198,9 +211,25 @@ async function generateCommand() {
 }
 
 // Call the function to load JSON and generate packages on page load
-document.addEventListener('DOMContentLoaded', loadPackages);
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    loadPackages();
+    
+    // Add event listeners for OS selection highlighting
+    document.querySelectorAll('input[name="distro"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            // Remove highlight from all OS groups
+            document.querySelectorAll('.os-group').forEach(group => {
+                group.classList.remove('selected');
+            });
+            
+            // Add highlight to selected OS group
+            const selectedGroup = this.closest('.os-group');
+            if (selectedGroup) {
+                selectedGroup.classList.add('selected');
+            }
+        });
+    });
+});
 
 // Function to select or deselect all packages
 function toggleSelectAllPackages() {

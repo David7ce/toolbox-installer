@@ -1,151 +1,327 @@
+/* ==========================================================================
+   VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --background-color: #f2f2f2;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-muted: #999;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 25px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 25px;
-    padding: 11px;
+    background-color: var(--background-color);
+    margin: var(--spacing-xl);
+    padding: var(--spacing-sm);
+    line-height: 1.6;
 }
 
-/* Header styles */
 h2 {
-    color: #333;
+    color: var(--text-primary);
     font-size: 24px;
-}
-
-p {
-    font-size: 16px;
-    color: #666;
+    margin-bottom: var(--spacing-md);
 }
 
 h3 {
     font-size: 20px;
-    margin-top: 20px;
-    color: #444;
+    margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+    color: var(--text-primary);
 }
 
-/* Form styles */
-form {
-    margin-bottom: 20px;
+p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
 }
 
-/* Button styles */
+/* ==========================================================================
+   BUTTONS & FORM ELEMENTS
+   ========================================================================== */
 .btn, button, #importBtn {
-    display: block;
-    margin: 10px 0;
-    padding: 10px 20px;
-    background-color: #007bff;
+    display: inline-block;
+    margin: var(--spacing-sm) var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: var(--primary-color);
     color: white;
     border: none;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    font-size: small;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
-#importBtn {
-    width: fit-content;
-    font-size: small;
+.btn:hover, button:hover, #importBtn:hover {
+    background-color: var(--primary-hover);
 }
 
-.btn:hover, button:hover {
-    background-color: #0056b3;
+form {
+    margin-bottom: var(--spacing-lg);
 }
 
-/* Container for columns */
-.columns {
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   PACKAGE GRID LAYOUT
+   ========================================================================== */
+.package-actions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-lg) 0;
 }
 
-/* Individual column styles */
+.columns {
+    display: grid;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
 .column {
-    flex: 1 1 calc(20% - 20px); /* Adjusts columns to fit 5 per row with some margin */
-    box-sizing: border-box;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
 }
 
-.column h4,
-.column h5 {
-    margin: 10px 0;
+.column h4, .column h5 {
+    margin: var(--spacing-sm) 0;
+    color: var(--text-primary);
 }
 
 .column label {
-    display: block;
-    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+    padding: var(--spacing-xs);
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .column {
-        flex: 1 1 calc(33.33% - 20px); /* 3 columns per row */
-    }
+.column label:hover {
+    background-color: #f8f9fa;
 }
 
-@media (max-width: 900px) {
-    .column {
-        flex: 1 1 calc(50% - 20px); /* 2 columns per row */
-    }
+.column img {
+    margin-right: var(--spacing-xs);
 }
 
-@media (max-width: 600px) {
-    .column {
-        flex: 1 1 100%; /* 1 column per row */
-    }
+/* ==========================================================================
+   OPERATING SYSTEM SELECTION
+   ========================================================================== */
+.os-selection {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
 }
 
-/* Selector styles */
-.selector {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.os-group {
+    background-color: var(--card-background);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
 }
 
-.selector label {
+.os-group:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.os-group.selected {
+    border-color: var(--primary-color);
+    background-color: #f8f9ff;
+    box-shadow: 0 4px 16px rgba(0, 123, 255, 0.2);
+}
+
+.os-title {
+    margin: 0 0 var(--spacing-md) 0;
     font-size: 18px;
+    font-weight: bold;
+    color: var(--text-primary);
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: var(--spacing-xs);
 }
 
-/* Label styles */
-label {
-    display: block; /* Display each label on a separate line */
-    margin-bottom: 5px; /* Add some vertical spacing between labels */
+.os-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
 }
 
-/* Output command styles */
+.os-options label {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    font-size: 14px;
+}
+
+.os-options label:hover {
+    background-color: #f8f9fa;
+}
+
+.os-options input[type="radio"] {
+    margin-right: var(--spacing-sm);
+    transform: scale(1.1);
+}
+
+.os-options a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.os-options a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   OUTPUT STYLES
+   ========================================================================== */
 #result {
     position: relative;
 }
 
 #installation-command {
     display: block;
-    background-color: rgb(77, 77, 77);
-    color: rgb(255, 250, 231);
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
+    background-color: #4d4d4d;
+    color: #fffaef;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm) 0;
     font-family: monospace;
-    white-space: pre-wrap; /* Maintain whitespace formatting */
+    white-space: pre-wrap;
+    overflow-x: auto;
 }
 
 #packages-not-found {
     display: block;
     background-color: #ec9d2e;
-    color: rgb(255, 245, 234);
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
+    color: #fff5ea;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm) 0;
     font-family: monospace;
-    white-space: pre-wrap; /* Maintain whitespace formatting */
+    white-space: pre-wrap;
 }
 
-/* Copy button styles */
 #copy-button {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    padding: 5px 10px;
+    top: var(--spacing-xs);
+    right: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
     border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
     cursor: pointer;
+    font-size: 12px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN - 4 SCREEN SIZES
+   ========================================================================== */
+
+/* LARGE SCREENS (1200px and up) - Desktops with large monitors */
+@media (min-width: 1200px) {
+    .columns {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .os-selection {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    body {
+        max-width: 1400px;
+        margin: var(--spacing-xl) auto;
+    }
+}
+
+/* PC SCREENS (768px to 1199px) - Standard desktops and laptops */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .columns {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .os-selection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* TABLET SCREENS (480px to 767px) - Tablets and small laptops */
+@media (min-width: 480px) and (max-width: 767px) {
+    .columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .os-selection {
+        grid-template-columns: 1fr;
+    }
+    
+    .package-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn, button, #importBtn {
+        min-width: 220px;
+        width: max-content;
+        max-width: 100%;
+        margin: var(--spacing-xs) 0;
+        padding: var(--spacing-md);
+        text-align: center;
+    }
+    
+    body {
+        margin: var(--spacing-md);
+        padding: var(--spacing-xs);
+    }
+}
+
+/* MOBILE SCREENS (up to 479px) - Phones */
+@media (max-width: 479px) {
+    .columns {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+    
+    h3 {
+        font-size: 18px;
+    }
+    
+    .os-group {
+        padding: var(--spacing-md);
+    }
+    
+    .os-title {
+        font-size: 16px;
+    }
 }

@@ -1,49 +1,115 @@
-const fs = require('fs');
+const fs = require('fs').promises;
+const path = require('path');
 
-const jsonFilePath = '../packages-info.json';
+// Configuration
+const CONFIG = {
+    jsonFile: path.join(__dirname, '..', 'packages-info.json'),
+    encoding: 'utf8',
+    indentation: 2
+};
 
-// Función para ordenar los paquetes alfabéticamente
-function ordenarPaquetesAlfabeticamente(filePath) {
-    fs.readFile(filePath, 'utf8', (err, data) => {
-        if (err) {
-            console.error('Error al leer el archivo:', err);
-            return;
-        }
+/**
+ * Enhanced package sorting utility
+ * Sorts packages alphabetically and validates data structure
+ */
+class PackageSorter {
+    constructor(filePath) {
+        this.filePath = filePath;
+        this.stats = {
+            totalPackages: 0,
+            categories: new Set(),
+            subcategories: new Set()
+        };
+    }
 
+    /**
+     * Main sorting function - simplified and async
+     */
+    async sortPackages() {
         try {
-            const packagesJSON = JSON.parse(data);
+            console.log(`📁 Reading: ${path.resolve(this.filePath)}`);
+            
+            // Read and parse JSON
+            const data = await fs.readFile(this.filePath, CONFIG.encoding);
+            const packagesData = JSON.parse(data);
 
-            // Ordenar las claves (nombres de paquetes) alfabéticamente
-            const sortedPackages = {};
-            Object.keys(packagesJSON.packages)
-                .sort()
-                .forEach(key => {
-                    sortedPackages[key] = packagesJSON.packages[key];
-                });
+            if (!packagesData.packages) {
+                throw new Error('Invalid JSON structure: missing "packages" property');
+            }
 
-            // Crear un nuevo objeto JSON con los paquetes ordenados
-            const sortedJSON = {
-                packages: sortedPackages
-            };
+            // Sort packages alphabetically
+            const sortedPackages = this.createSortedPackages(packagesData.packages);
+            
+            // Create final JSON structure
+            const sortedJSON = { packages: sortedPackages };
+            
+            // Write back to file
+            const jsonString = JSON.stringify(sortedJSON, null, CONFIG.indentation);
+            await fs.writeFile(this.filePath, jsonString, CONFIG.encoding);
+            
+            // Display results
+            this.displayResults();
+            
+        } catch (error) {
+            console.error('❌ Error:', error.message);
+            if (error.code === 'ENOENT') {
+                console.error(`📂 Expected file location: ${path.resolve(this.filePath)}`);
+            }
+        }
+    }
 
-            // Convertir a JSON y mostrar por consola
-            const sortedJSONString = JSON.stringify(sortedJSON, null, 2);
-            console.log(sortedJSONString);
-
-            // Opcional: Escribir el JSON ordenado de vuelta al archivo
-            fs.writeFile(filePath, sortedJSONString, 'utf8', (err) => {
-                if (err) {
-                    console.error('Error al escribir el archivo ordenado:', err);
-                } else {
-                    console.log('Archivo ordenado guardado correctamente.');
-                }
+    /**
+     * Sort packages and collect statistics
+     */
+    createSortedPackages(packages) {
+        const sortedPackages = {};
+        
+        // Sort package keys alphabetically and process each package
+        Object.keys(packages)
+            .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+            .forEach(key => {
+                const pkg = packages[key];
+                sortedPackages[key] = pkg;
+                
+                // Collect statistics
+                this.stats.totalPackages++;
+                if (pkg.category) this.stats.categories.add(pkg.category);
+                if (pkg.subcategory) this.stats.subcategories.add(pkg.subcategory);
             });
 
-        } catch (error) {
-            console.error('Error al parsear el archivo JSON:', error);
+        return sortedPackages;
+    }
+
+    /**
+     * Display sorting results and statistics
+     */
+    displayResults() {
+        console.log('\n✅ Packages sorted successfully!');
+        console.log(`📦 Total packages: ${this.stats.totalPackages}`);
+        console.log(`📂 Categories: ${this.stats.categories.size}`);
+        console.log(`🏷️  Subcategories: ${this.stats.subcategories.size}`);
+        console.log(`💾 File saved: ${path.resolve(this.filePath)}`);
+        
+        // Optional: Show category breakdown
+        if (this.stats.categories.size > 0) {
+            console.log('\n📋 Categories found:');
+            Array.from(this.stats.categories).sort().forEach(cat => {
+                console.log(`   • ${cat}`);
+            });
         }
-    });
+    }
 }
 
-// Llama a la función para ordenar paquetes alfabéticamente
-ordenarPaquetesAlfabeticamente(jsonFilePath);
+/**
+ * Initialize and run the sorter
+ */
+async function main() {
+    console.log('🔄 Package Sorter - Enhanced Version');
+    console.log(`📍 Working directory: ${process.cwd()}`);
+    
+    const sorter = new PackageSorter(CONFIG.jsonFile);
+    await sorter.sortPackages();
+}
+
+// Run the script
+main().catch(console.error);
