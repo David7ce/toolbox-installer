@@ -1371,7 +1371,7 @@
     "mariadb": {
       "name": "MariaDB",
       "category": "Development",
-      "subcategory": "Sql",
+      "subcategory": "SQL",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "mariadb",
@@ -1857,7 +1857,7 @@
     "postgresql": {
       "name": "PostgreSQL",
       "category": "Development",
-      "subcategory": "Sql",
+      "subcategory": "SQL",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "postgresql",
@@ -2199,7 +2199,7 @@
     "sqlite": {
       "name": "SQLite",
       "category": "Development",
-      "subcategory": "Sql",
+      "subcategory": "SQL",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": "sqlite",
@@ -2505,7 +2505,7 @@
     "ventoy": {
       "name": "Ventoy",
       "category": "System",
-      "subcategory": "Bootable Usb Creator",
+      "subcategory": "Bootable USB Creator",
       "package_manager": {
         "arch_aur": "ventoy-bin",
         "arch_pacman": null,
