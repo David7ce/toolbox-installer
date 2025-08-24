@@ -56,7 +56,7 @@
     },
     "apache": {
       "name": "Apache",
-      "category": "Web",
+      "category": "Internet & Communication",
       "subcategory": "Http Server",
       "package_manager": {
         "arch_aur": null,
@@ -254,7 +254,7 @@
     },
     "calibre": {
       "name": "Calibre",
-      "category": "Book",
+      "category": "Reading",
       "subcategory": "Ebook Manager",
       "package_manager": {
         "arch_aur": null,
@@ -272,7 +272,7 @@
     },
     "chromium": {
       "name": "Chromium",
-      "category": "Web",
+      "category": "Internet & Communication",
       "subcategory": "Web Browser",
       "package_manager": {
         "arch_aur": null,
@@ -307,7 +307,7 @@
       }
     },
     "davinci-resolve": {
-      "name": "DaVinci-Resolve",
+      "name": "DaVinci Resolve",
       "category": "Video",
       "subcategory": "Video Editor",
       "package_manager": {
@@ -362,7 +362,7 @@
     },
     "discord": {
       "name": "Discord",
-      "category": "Web",
+      "category": "Internet & Communication",
       "subcategory": "Messaging",
       "package_manager": {
         "arch_aur": null,
@@ -578,7 +578,7 @@
     },
     "evolution": {
       "name": "Evolution",
-      "category": "Web",
+      "category": "Internet & Communication",
       "subcategory": "Email Client",
       "package_manager": {
         "arch_aur": null,
@@ -632,7 +632,7 @@
     },
     "firefox": {
       "name": "Firefox",
-      "category": "Web",
+      "category": "Internet & Communication",
       "subcategory": "Web Browser",
       "package_manager": {
         "arch_aur": null,
@@ -668,7 +668,7 @@
     },
     "foliate": {
       "name": "Foliate",
-      "category": "Book",
+      "category": "Reading",
       "subcategory": "Ebook Reader",
       "package_manager": {
         "arch_aur": null,
@@ -686,7 +686,7 @@
     },
     "folo": {
       "name": "Folo",
-      "category": "Book",
+      "category": "Reading",
       "subcategory": "RSS Reader",
       "package_manager": {
         "arch_aur": null,
@@ -775,7 +775,7 @@
       }
     },
     "geogebra": {
-      "name": "GeoGebra Calculator Suite",
+      "name": "GeoGebra",
       "category": "Science",
       "subcategory": "Mathematics",
       "package_manager": {
@@ -848,7 +848,7 @@
     },
     "gnucash": {
       "name": "GnuCash",
-      "category": "Finance",
+      "category": "Office",
       "subcategory": "Finance Manager",
       "package_manager": {
         "arch_aur": null,
@@ -1028,7 +1028,7 @@
     },
     "homebank": {
       "name": "HomeBank",
-      "category": "Finance",
+      "category": "Office",
       "subcategory": "Finance Manager",
       "package_manager": {
         "arch_aur": null,
@@ -1190,7 +1190,7 @@
     },
     "koodoreader": {
       "name": "Koodo-Reader",
-      "category": "Book",
+      "category": "Reading",
       "subcategory": "Ebook Reader",
       "package_manager": {
         "arch_aur": "koodoreader",
@@ -1208,7 +1208,7 @@
     },
     "koreader": {
       "name": "KOReader",
-      "category": "Book",
+      "category": "Reading",
       "subcategory": "Ebook Reader",
       "package_manager": {
         "arch_aur": "koreader",
@@ -1243,7 +1243,7 @@
       }
     },
     "kstars": {
-      "name": "kstars",
+      "name": "Kstars",
       "category": "Science",
       "subcategory": "Astronomy",
       "package_manager": {
@@ -1280,7 +1280,7 @@
     },
     "librewolf": {
       "name": "LibreWolf",
-      "category": "Web",
+      "category": "Internet & Communication",
       "subcategory": "Web Browser",
       "package_manager": {
         "arch_aur": null,
@@ -1604,7 +1604,7 @@
     },
     "nginx": {
       "name": "Nginx",
-      "category": "Web",
+      "category": "Internet & Communication",
       "subcategory": "Http Server",
       "package_manager": {
         "arch_aur": null,
@@ -1964,7 +1964,7 @@
     },
     "qbittorrent": {
       "name": "qBittorrent",
-      "category": "File Sharing",
+      "category": "Internet & Communication",
       "subcategory": "Torrent Client",
       "package_manager": {
         "arch_aur": null,
@@ -2342,7 +2342,7 @@
     },
     "telegram": {
       "name": "Telegram",
-      "category": "Web",
+      "category": "Internet & Communication",
       "subcategory": "Messaging",
       "package_manager": {
         "arch_aur": null,
@@ -2378,7 +2378,7 @@
     },
     "thunderbird": {
       "name": "Thunderbird",
-      "category": "Web",
+      "category": "Internet & Communication",
       "subcategory": "Email Client",
       "package_manager": {
         "arch_aur": null,
@@ -2414,7 +2414,7 @@
     },
     "transmission": {
       "name": "Transmission",
-      "category": "File Sharing",
+      "category": "Internet & Communication",
       "subcategory": "Torrent Client",
       "package_manager": {
         "arch_aur": "transmission-gtk",
@@ -2450,7 +2450,7 @@
     },
     "ungoogled-chromium": {
       "name": "Ungoogled Chromium",
-      "category": "Web",
+      "category": "Internet & Communication",
       "subcategory": "Web Browser",
       "package_manager": {
         "arch_aur": "ungoogled-chromium-bin",
@@ -2737,7 +2737,7 @@
       }
     },
     "xnview": {
-      "name": "XnView-MP",
+      "name": "XnView MP",
       "category": "Image",
       "subcategory": "Image Viewer",
       "package_manager": {
@@ -2756,7 +2756,7 @@
     },
     "yt-dlp": {
       "name": "yt-dlp",
-      "category": "Downloader",
+      "category": "Internet & Communication",
       "subcategory": "Video Downloader",
       "package_manager": {
         "arch_aur": null,
@@ -2774,7 +2774,7 @@
     },
     "ytdownloader": {
       "name": "ytDownloader",
-      "category": "Downloader",
+      "category": "Internet & Communication",
       "subcategory": "Video Downloader",
       "package_manager": {
         "arch_aur": "ytdownloader-gui",
@@ -2792,7 +2792,7 @@
     },
     "zoom": {
       "name": "Zoom",
-      "category": "Web",
+      "category": "Internet & Communication",
       "subcategory": "Video Conferencing",
       "package_manager": {
         "arch_aur": "zoom",
