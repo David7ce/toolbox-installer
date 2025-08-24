@@ -18,6 +18,24 @@
         "windows_winget": "7zip.7zip"
       }
     },
+    "anydesk": {
+      "name": "AnyDesk",
+      "category": "Utility",
+      "subcategory": "Remote Desktop",
+      "package_manager": {
+        "arch_aur": "anydesk-bin",
+        "arch_pacman": null,
+        "debian_apt": "anydesk",
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "anydesk",
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": "anydesk",
+        "windows_winget": "AnyDeskSoftwareGmbH.AnyDesk"
+      }
+    },
     "anytype": {
       "name": "Anytype",
       "category": "Office",
@@ -756,6 +774,24 @@
         "windows_winget": "Geany"
       }
     },
+    "geogebra": {
+      "name": "GeoGebra Calculator Suite",
+      "category": "Science",
+      "subcategory": "Mathematics",
+      "package_manager": {
+        "arch_aur": "geogebra",
+        "arch_pacman": null,
+        "debian_apt": "geogebra",
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "geogebra",
+        "void_xbps": null,
+        "linux_flatpak": "org.geogebra.GeoGebra",
+        "freebsd_pkg": null,
+        "macos_brew": "geogebra",
+        "windows_winget": "GeoGebra.CalculatorSuite"
+      }
+    },
     "gimp": {
       "name": "GIMP",
       "category": "Image",
@@ -1042,6 +1078,24 @@
         "freebsd_pkg": "inkscape",
         "macos_brew": "inkscape",
         "windows_winget": "Inkscape.Inkscape"
+      }
+    },
+    "intellij-idea-ultimate": {
+      "name": "IntelliJ IDEA Ultimate",
+      "category": "Development",
+      "subcategory": "IDE",
+      "package_manager": {
+        "arch_aur": "intellij-idea-ultimate-edition",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "jetbrains.idea-ultimate",
+        "void_xbps": null,
+        "linux_flatpak": "com.jetbrains.IntelliJ-IDEA-Ultimate",
+        "freebsd_pkg": null,
+        "macos_brew": "intellij-idea",
+        "windows_winget": "JetBrains.IntelliJIDEA.Ultimate"
       }
     },
     "jellyfin-client": {
@@ -1602,6 +1656,24 @@
         "windows_winget": "OpenJS.Nodejs"
       }
     },
+    "notion": {
+      "name": "Notion",
+      "category": "Office",
+      "subcategory": "Note Taking",
+      "package_manager": {
+        "arch_aur": "notion-app",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "notion-app-enhanced",
+        "void_xbps": null,
+        "linux_flatpak": "notion.id",
+        "freebsd_pkg": null,
+        "macos_brew": "notion",
+        "windows_winget": "Notion.Notion"
+      }
+    },
     "obs-studio": {
       "name": "OBS Studio",
       "category": "Video",
@@ -1762,6 +1834,24 @@
         "freebsd_pkg": "playonlinux",
         "macos_brew": "playonlinux",
         "windows_winget": "PlayOnLinux"
+      }
+    },
+    "plex": {
+      "name": "Plex",
+      "category": "Video",
+      "subcategory": "Media Player",
+      "package_manager": {
+        "arch_aur": "plex-media-player",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "plex-media-player",
+        "void_xbps": null,
+        "linux_flatpak": "tv.plex.PlexDesktop",
+        "freebsd_pkg": null,
+        "macos_brew": "plex",
+        "windows_winget": "Plex.Plex"
       }
     },
     "postgresql": {
@@ -1978,6 +2068,24 @@
         "freebsd_pkg": "rsync",
         "macos_brew": "rsync",
         "windows_winget": "WayneDavison.Rsync"
+      }
+    },
+    "rustdesk": {
+      "name": "RustDesk",
+      "category": "Utility",
+      "subcategory": "Remote Desktop",
+      "package_manager": {
+        "arch_aur": "rustdesk-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "rustdesk",
+        "void_xbps": null,
+        "linux_flatpak": "com.rustdesk.RustDesk",
+        "freebsd_pkg": null,
+        "macos_brew": "rustdesk",
+        "windows_winget": "RustDesk.RustDesk"
       }
     },
     "scrapy": {
