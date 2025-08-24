@@ -433,7 +433,7 @@
       }
     },
     "dotnet-runtime": {
-      "name": "Dotnet-runtime",
+      "name": "Dotnet Runtime",
       "category": "Development",
       "subcategory": "Runtime",
       "package_manager": {
@@ -630,6 +630,24 @@
         "windows_winget": "Mozilla.Firefox"
       }
     },
+    "flameshot": {
+      "name": "Flameshot",
+      "category": "Utility",
+      "subcategory": "Screenshot",
+      "package_manager": {
+        "arch_aur": "flameshot",
+        "arch_pacman": "flameshot",
+        "debian_apt": "flameshot",
+        "fedora_rpm": "flameshot",
+        "gentoo_emerge": "app-misc/flameshot",
+        "nixos_nix-env": "flameshot",
+        "void_xbps": "flameshot",
+        "linux_flatpak": "org.flameshot.Flameshot",
+        "freebsd_pkg": "flameshot",
+        "macos_brew": "flameshot",
+        "windows_winget": "Flameshot.Flameshot"
+      }
+    },
     "foliate": {
       "name": "Foliate",
       "category": "Book",
@@ -651,7 +669,7 @@
     "folo": {
       "name": "Folo",
       "category": "Book",
-      "subcategory": "Rss Reader",
+      "subcategory": "RSS Reader",
       "package_manager": {
         "arch_aur": null,
         "arch_pacman": null,
@@ -829,7 +847,7 @@
       }
     },
     "google-earth": {
-      "name": "Google-Earth",
+      "name": "Google Earth",
       "category": "Science",
       "subcategory": "Geography Map",
       "package_manager": {
@@ -1027,7 +1045,7 @@
       }
     },
     "jellyfin-client": {
-      "name": "Jellyfin-Client",
+      "name": "Jellyfin Client",
       "category": "Video",
       "subcategory": "Media Server",
       "package_manager": {
@@ -1045,7 +1063,7 @@
       }
     },
     "jellyfin-server": {
-      "name": "Jellyfin-Server",
+      "name": "Jellyfin Server",
       "category": "Video",
       "subcategory": "Media Server",
       "package_manager": {
@@ -1585,7 +1603,7 @@
       }
     },
     "obs-studio": {
-      "name": "OBS-Studio",
+      "name": "OBS Studio",
       "category": "Video",
       "subcategory": "Video Recorder",
       "package_manager": {
@@ -1801,7 +1819,7 @@
       }
     },
     "proton-qt": {
-      "name": "Proton-QT",
+      "name": "Proton QT",
       "category": "Virtualization",
       "subcategory": "Windows Compatibility Layer",
       "package_manager": {
@@ -1980,6 +1998,24 @@
         "windows_winget": null
       }
     },
+    "sharex": {
+      "name": "ShareX",
+      "category": "Utility",
+      "subcategory": "Screenshot",
+      "package_manager": {
+        "arch_aur": null,
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": "ShareX.ShareX"
+      }
+    },
     "shotcut": {
       "name": "Shotcut",
       "category": "Video",
@@ -2035,7 +2071,7 @@
       }
     },
     "spotify": {
-      "name": "spotify",
+      "name": "Spotify",
       "category": "Audio",
       "subcategory": "Music Streaming",
       "package_manager": {
@@ -2179,7 +2215,7 @@
       }
     },
     "sublime-text-4": {
-      "name": "Sublime-Text 4",
+      "name": "Sublime Text",
       "category": "Development",
       "subcategory": "Text Editor",
       "package_manager": {
@@ -2305,7 +2341,7 @@
       }
     },
     "ungoogled-chromium": {
-      "name": "Ungoogled-Chromium",
+      "name": "Ungoogled Chromium",
       "category": "Web",
       "subcategory": "Web Browser",
       "package_manager": {
@@ -2395,7 +2431,7 @@
       }
     },
     "virt-manager": {
-      "name": "Virt-manager",
+      "name": "Virt Manager",
       "category": "Virtualization",
       "subcategory": "Virtual Machine Manager",
       "package_manager": {
@@ -2467,7 +2503,7 @@
       }
     },
     "vmware": {
-      "name": "VMware-Workstation",
+      "name": "VMware Workstation",
       "category": "Virtualization",
       "subcategory": "Virtual Machine Manager",
       "package_manager": {
