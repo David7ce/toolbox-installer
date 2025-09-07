@@ -2376,6 +2376,24 @@
         "windows_winget": null
       }
     },
+    "th-ch.youtubemusic": {
+      "name": "YouTube Music",
+      "category": "Audio",
+      "subcategory": "Music Streaming",
+      "package_manager": {
+        "arch_aur": "youtube-music-bin",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": "th-ch.YouTubeMusic"
+      }
+    },
     "thunderbird": {
       "name": "Thunderbird",
       "category": "Internet & Communication",
@@ -2788,6 +2806,24 @@
         "freebsd_pkg": "null",
         "macos_brew": "youtube-dl",
         "windows_winget": null
+      }
+    },
+    "ytmdesktop": {
+      "name": "YTMDesktop",
+      "category": "Audio",
+      "subcategory": "Music Streaming",
+      "package_manager": {
+        "arch_aur": "ytmdesktop",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": "ytmdesktop-youtube-music",
+        "windows_winget": "Ytmdesktop.Ytmdesktop"
       }
     },
     "zoom": {
