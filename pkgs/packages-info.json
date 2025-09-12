@@ -548,7 +548,7 @@
         "freebsd_pkg": null,
         "macos_brew": "duckstation",
         "unix_nix_env": "duckstation",
-        "windows_winget": null
+        "windows_winget": "Stenzek.DuckStation"
       }
     },
     "eaglemode": {
@@ -605,7 +605,7 @@
         "freebsd_pkg": "elisa",
         "macos_brew": null,
         "unix_nix_env": "nixos.elisa",
-        "windows_winget": null
+        "windows_winget": "KDE.Elisa"
       }
     },
     "evolution": {
@@ -909,7 +909,7 @@
         "freebsd_pkg": "gnucash",
         "macos_brew": "gnucash",
         "unix_nix_env": "nixos.gnucash",
-        "windows_winget": null
+        "windows_winget": "GnuCash.GnuCash"
       }
     },
     "godot": {
@@ -1099,7 +1099,7 @@
         "freebsd_pkg": "homebank",
         "macos_brew": null,
         "unix_nix_env": "nixos.homebank",
-        "windows_winget": null
+        "windows_winget": "HomeBank.HomeBank"
       }
     },
     "imagemagick": {
@@ -1175,7 +1175,7 @@
         "freebsd_pkg": "jellyfin-web",
         "macos_brew": null,
         "unix_nix_env": "jellyfin-media-nixos.jellyfin-media-player",
-        "windows_winget": null
+        "windows_winget": "Jellyfin.JellyfinMediaPlayer"
       }
     },
     "jellyfin-server": {
@@ -1840,7 +1840,7 @@
         "freebsd_pkg": "okular",
         "macos_brew": "okular",
         "unix_nix_env": "nixos.okular",
-        "windows_winget": null
+        "windows_winget": "KDE.Okular"
       }
     },
     "ollama": {
@@ -2524,7 +2524,7 @@
         "freebsd_pkg": "tenacity",
         "macos_brew": "tenacity",
         "unix_nix_env": "nixos.tenacity",
-        "windows_winget": null
+        "windows_winget": "TenacityTeam.Tenacity"
       }
     },
     "th-ch.youtubemusic": {
@@ -2942,7 +2942,7 @@
         "freebsd_pkg": "xen",
         "macos_brew": null,
         "unix_nix_env": "nixos.xen",
-        "windows_winget": null
+        "windows_winget": "XenServer.XenTools"
       }
     },
     "xnview": {
@@ -2961,7 +2961,7 @@
         "freebsd_pkg": "xnview",
         "macos_brew": "xnviewmp",
         "unix_nix_env": "nixos.xnviewmp",
-        "windows_winget": null
+        "windows_winget": "XnSoft.XnViewMP"
       }
     },
     "yt-dlp": {
@@ -2999,7 +2999,7 @@
         "freebsd_pkg": "null",
         "macos_brew": "youtube-dl",
         "unix_nix_env": "null",
-        "windows_winget": null
+        "windows_winget": "aandrew-me.ytDownloader"
       }
     },
     "ytmdesktop": {
