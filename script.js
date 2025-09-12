@@ -132,8 +132,8 @@ async function generateCommand() {
             const pkgInfo = packagesData.packages[pkg];
             if (pkgInfo.package_manager[selectedDistro]) {
                 installationCommands.push(pkgInfo.package_manager[selectedDistro]);
-            } else if (selectedDistro === 'arch_pacman' && pkgInfo.package_manager['arch_aur']) {
-                aurPackages.push(pkgInfo.package_manager['arch_aur']);
+            } else if (selectedDistro === 'linux_arch_pacman' && pkgInfo.package_manager['linux_arch_aur']) {
+                aurPackages.push(pkgInfo.package_manager['linux_arch_aur']);
             } else {
                 nonInstallablePackages.push(pkgInfo.name);
             }
@@ -142,26 +142,29 @@ async function generateCommand() {
         let commandPrefix;
 
         switch (selectedDistro) {
-            case 'arch_pacman':
+            case 'linux_arch_pacman':
                 commandPrefix = 'sudo pacman -S';
                 break;
-            case 'debian_apt':
+            case 'linux_debian_apt':
                 commandPrefix = 'sudo apt install';
                 break;
-            case 'fedora_rpm':
+            case 'linux_fedora_rpm':
                 commandPrefix = 'sudo dnf install';
                 break;
-            case 'gentoo_emerge':
+            case 'linux_gentoo_emerge':
                 commandPrefix = 'sudo emerge';
                 break;
-            case 'nixos_nix-env':
+            case 'unix_nix_env':
                 commandPrefix = 'sudo nix-env -iA';
                 break;
-            case 'void_xbps':
+            case 'linux_void_xbps':
                 commandPrefix = 'sudo xbps-install -S';
                 break;
             case 'linux_flatpak':
                 commandPrefix = 'flatpak install';
+                break;
+            case 'linux_snap':
+                commandPrefix = 'sudo snap install';
                 break;
             case 'freebsd_pkg':
                 commandPrefix = 'sudo pkg install';

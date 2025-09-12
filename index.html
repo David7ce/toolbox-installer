@@ -30,22 +30,30 @@
 
             <div class="os-selection">
                 <div class="os-group">
-                    <h4 class="os-title">🐧 Linux</h4>
+                    <h4 class="os-title">🔥 FreeBSD</h4>
                     <div class="os-options">
-                        <label><input type="radio" name="distro" value="arch_pacman"> Arch (<a href="https://archlinux.org/packages/">pacman pkgs</a> + <a href="https://aur.archlinux.org/packages/">AUR pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="debian_apt"> Debian (<a href="https://packages.debian.org/stable/admin/0install">apt</a>)</label>
-                        <label><input type="radio" name="distro" value="fedora_rpm"> Fedora (<a href="https://packages.fedoraproject.org/">dnf pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="gentoo_emerge"> Gentoo (<a href="https://packages.gentoo.org/">emerge pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="void_xbps"> Void (<a href="https://voidlinux.org/packages/">xbps pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_flatpak"> Universal Flatpak (<a href="https://flathub.org/">flatpak pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="nixos_nix-env"> Universal NixOS (<a href="https://search.nixos.org/packages">nix-env pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="freebsd_pkg"> FreeBSD Packages (<a href="https://ports.freebsd.org/cgi/ports.cgi">freebsd pkgs</a>)</label>
                     </div>
                 </div>
 
                 <div class="os-group">
-                    <h4 class="os-title">🍎 macOS</h4>
+                    <h4 class="os-title">🐧 Linux</h4>
+                    <div class="os-options">
+                        <label><input type="radio" name="distro" value="linux_arch_pacman"> Arch (<a href="https://archlinux.org/packages/">pacman pkgs</a> + <a href="https://aur.archlinux.org/packages/">AUR pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_debian_apt"> Debian (<a href="https://packages.debian.org/stable/admin/0install">apt</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_fedora_rpm"> Fedora (<a href="https://packages.fedoraproject.org/">dnf pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_gentoo_emerge"> Gentoo (<a href="https://packages.gentoo.org/">emerge pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_void_xbps"> Void (<a href="https://voidlinux.org/packages/">xbps pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_flatpak"> Universal Flatpak (<a href="https://flathub.org/">flatpak pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_snap"> Universal Snap (<a href="https://snapcraft.io/">snap pkgs</a>)</label>
+                    </div>
+                </div>
+                
+                <div class="os-group">
+                    <h4 class="os-title">🍎 Unix-like (macos, Linux)</h4>
                     <div class="os-options">
                         <label><input type="radio" name="distro" value="macos_brew"> Homebrew (<a href="https://formulae.brew.sh/">brew pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="unix_nix_env"> NixOS (<a href="https://search.nixos.org/packages">nix-env pkgs</a>)</label>
                     </div>
                 </div>
 
@@ -53,13 +61,6 @@
                     <h4 class="os-title">🪟 Windows</h4>
                     <div class="os-options">
                         <label><input type="radio" name="distro" value="windows_winget"> WinGet (<a href="https://winstall.app/">winget pkgs</a>)</label>
-                    </div>
-                </div>
-
-                <div class="os-group">
-                    <h4 class="os-title">🔥 FreeBSD</h4>
-                    <div class="os-options">
-                        <label><input type="radio" name="distro" value="freebsd_pkg"> FreeBSD Packages (<a href="https://ports.freebsd.org/cgi/ports.cgi">freebsd pkgs</a>)</label>
                     </div>
                 </div>
             </div>
