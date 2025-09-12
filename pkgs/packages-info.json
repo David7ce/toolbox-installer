@@ -1800,6 +1800,24 @@
         "windows_winget": "OpenShot"
       }
     },
+    "opera": {
+      "name": "Opera",
+      "category": "Internet & Communication",
+      "subcategory": "Web Browser",
+      "package_manager": {
+        "arch_aur": "opera",
+        "arch_pacman": null,
+        "debian_apt": "opera-stable",
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "opera",
+        "void_xbps": null,
+        "linux_flatpak": "com.opera.Opera",
+        "freebsd_pkg": null,
+        "macos_brew": "opera",
+        "windows_winget": "Opera.Opera"
+      }
+    },
     "pcsx2": {
       "name": "PCSX2",
       "category": "Gaming",
@@ -1996,6 +2014,24 @@
         "freebsd_pkg": "qemu",
         "macos_brew": "qemu",
         "windows_winget": null
+      }
+    },
+    "rapidraw": {
+      "name": "RapidRaw",
+      "category": "Image",
+      "subcategory": "Raw Converter",
+      "package_manager": {
+        "arch_aur": "rapidraw",
+        "arch_pacman": null,
+        "debian_apt": null,
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": null,
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "windows_winget": "RapidRaw.RapidRaw"
       }
     },
     "rawtherapee": {
@@ -2608,6 +2644,24 @@
         "freebsd_pkg": "vscode",
         "macos_brew": "visual-studio-code",
         "windows_winget": "Microsoft.VisualStudioCode"
+      }
+    },
+    "vivaldi": {
+      "name": "Vivaldi",
+      "category": "Internet & Communication",
+      "subcategory": "Web Browser",
+      "package_manager": {
+        "arch_aur": "vivaldi-stable",
+        "arch_pacman": null,
+        "debian_apt": "vivaldi-stable",
+        "fedora_rpm": null,
+        "gentoo_emerge": null,
+        "nixos_nix-env": "vivaldi",
+        "void_xbps": null,
+        "linux_flatpak": null,
+        "freebsd_pkg": null,
+        "macos_brew": "vivaldi",
+        "windows_winget": "Vivaldi.Vivaldi"
       }
     },
     "vlc": {
