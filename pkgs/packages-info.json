@@ -1159,6 +1159,25 @@
         "windows_winget": "JetBrains.IntelliJIDEA.Ultimate"
       }
     },
+    "iptvnator": {
+      "name": "iptvnator",
+      "category": "Video",
+      "subcategory": "IPTV Player",
+      "package_manager": {
+        "linux_arch_aur": "iptvnator-bin",
+        "linux_arch_pacman": "iptvnator",
+        "linux_debian_apt": "iptvnator",
+        "linux_fedora_rpm": "iptvnator",
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": "iptvnator",
+        "linux_flatpak": null,
+        "linux_snap": "iptvnator",
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "4gray.iptvnator"
+      }
+    },
     "jellyfin-client": {
       "name": "Jellyfin Client",
       "category": "Video",
