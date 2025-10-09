@@ -589,6 +589,25 @@
         "windows_winget": null
       }
     },
+    "electrum": {
+      "name": "Electrum",
+      "category": "Office",
+      "subcategory": "Cryptocurrency Wallet",
+      "package_manager": {
+        "linux_arch_aur": "electrum",
+        "linux_arch_pacman": "electrum",
+        "linux_debian_apt": "electrum",
+        "linux_fedora_rpm": "electrum",
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": "electrum",
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "electrum",
+        "unix_nix_env": null,
+        "windows_winget": "Electrum.Electrum"
+      }
+    },
     "elisa": {
       "name": "Elisa",
       "category": "Audio",
@@ -1349,6 +1368,25 @@
         "windows_winget": "kstars"
       }
     },
+    "ledger-live": {
+      "name": "Ledger Live",
+      "category": "Office",
+      "subcategory": "Cryptocurrency Wallet",
+      "package_manager": {
+        "linux_arch_aur": "ledger-live-bin",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "ledger-live",
+        "unix_nix_env": null,
+        "windows_winget": "Ledger.LedgerLive"
+      }
+    },
     "libreoffice": {
       "name": "LibreOffice",
       "category": "Office",
@@ -1537,6 +1575,25 @@
         "macos_brew": "melonds",
         "unix_nix_env": "melonds",
         "windows_winget": null
+      }
+    },
+    "monero-gui": {
+      "name": "Monero GUI Wallet",
+      "category": "Office",
+      "subcategory": "Cryptocurrency Wallet",
+      "package_manager": {
+        "linux_arch_aur": "monero-gui",
+        "linux_arch_pacman": "monero-gui",
+        "linux_debian_apt": "monero-gui",
+        "linux_fedora_rpm": "monero-gui",
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": "monero-gui",
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "Monero.MoneroGUI"
       }
     },
     "mongodb": {
