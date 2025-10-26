@@ -282,7 +282,7 @@
         "freebsd_pkg": "calibre",
         "macos_brew": "calibre",
         "unix_nix_env": "nixos.calibre",
-        "windows_winget": "Calibre"
+        "windows_winget": "calibre.calibre"
       }
     },
     "chromium": {
@@ -667,8 +667,8 @@
     },
     "ffmpeg": {
       "name": " FFmpeg",
-      "category": "System",
-      "subcategory": "Converter Decoder",
+      "category": "Video",
+      "subcategory": "Video encoder/decoder",
       "package_manager": {
         "linux_arch_aur": null,
         "linux_arch_pacman": "ffmpeg",
@@ -757,7 +757,7 @@
         "freebsd_pkg": null,
         "macos_brew": "folo",
         "unix_nix_env": null,
-        "windows_winget": "Folo.Folo"
+        "windows_winget": "RSSNext.Folo"
       }
     },
     "freefilesync": {
@@ -776,7 +776,7 @@
         "freebsd_pkg": "freefilesync",
         "macos_brew": null,
         "unix_nix_env": "nixos.freefilesync",
-        "windows_winget": "FreeFileSync.FreeFileSync"
+        "windows_winget": null
       }
     },
     "freeplane": {
@@ -852,7 +852,7 @@
         "freebsd_pkg": null,
         "macos_brew": "geogebra",
         "unix_nix_env": "geogebra",
-        "windows_winget": "GeoGebra.CalculatorSuite"
+        "windows_winget": "GeoGebra.Classic"
       }
     },
     "gimp": {
@@ -966,7 +966,7 @@
         "freebsd_pkg": "null",
         "macos_brew": "google-earth-pro",
         "unix_nix_env": "nixos.googleearth",
-        "windows_winget": "Google.GoogleEarthPro"
+        "windows_winget": "Google.EarthPro"
       }
     },
     "gparted": {
@@ -1308,7 +1308,7 @@
         "freebsd_pkg": "null",
         "macos_brew": null,
         "unix_nix_env": "koodo-nixos.koodo-reader",
-        "windows_winget": "AppbyTroye.KoodoReader"
+        "windows_winget": "AppByTroye.KoodoReader"
       }
     },
     "koreader": {
@@ -1365,7 +1365,26 @@
         "freebsd_pkg": "kstars",
         "macos_brew": "kstars",
         "unix_nix_env": "nixos.kstars",
-        "windows_winget": "kstars"
+        "windows_winget": "KDE.Kstars"
+      }
+    },
+    "laragon" : {
+      "name": "Laragon",
+      "category": "Development",
+      "subcategory": "Development Environment",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "LeNgocKhoa.Laragon"
       }
     },
     "ledger-live": {
@@ -1422,7 +1441,7 @@
         "freebsd_pkg": "librewolf",
         "macos_brew": "librewolf",
         "unix_nix_env": "nixos.librewolf",
-        "windows_winget": "LibreWolf"
+        "windows_winget": "LibreWolf.LibreWolf"
       }
     },
     "lmms": {
@@ -1536,7 +1555,7 @@
         "freebsd_pkg": "megasync",
         "macos_brew": null,
         "unix_nix_env": "nixos.megasync",
-        "windows_winget": "MegaLimited.MEGAsync"
+        "windows_winget": "Mega.MEGAsync"
       }
     },
     "meld": {
@@ -1783,7 +1802,7 @@
         "freebsd_pkg": "nginx",
         "macos_brew": "nginx",
         "unix_nix_env": "nginx",
-        "windows_winget": "Nginx.Nginx"
+        "windows_winget": "nginxinc.nginx"
       }
     },
     "nmap": {
@@ -2277,7 +2296,7 @@
         "freebsd_pkg": "rsync",
         "macos_brew": "rsync",
         "unix_nix_env": "nixos.rsync",
-        "windows_winget": "WayneDavison.Rsync"
+        "windows_winget": null
       }
     },
     "rustdesk": {
