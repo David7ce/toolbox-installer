@@ -472,7 +472,7 @@
         "freebsd_pkg": "dolphin-emu",
         "macos_brew": "dolphin",
         "unix_nix_env": "dolphinEmu",
-        "windows_winget": "dolphin-emulator"
+        "windows_winget": "DolphinEmulator.Dolphin"
       }
     },
     "dotnet-runtime": {
