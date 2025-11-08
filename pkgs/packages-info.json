@@ -684,6 +684,25 @@
         "windows_winget": "Mozilla.Firefox"
       }
     },
+    "filezilla": {
+      "name": "FileZilla",
+      "category": "Internet & Communication",
+      "subcategory": "FTP Client",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "filezilla",
+        "linux_debian_apt": "filezilla",
+        "linux_fedora_rpm": "filezilla",
+        "linux_gentoo_emerge": "net-ftp/filezilla",
+        "linux_void_xbps": "filezilla",
+        "linux_flatpak": "org.filezillaproject.Filezilla",
+        "linux_snap": null,
+        "freebsd_pkg": "filezilla",
+        "macos_brew": "filezilla",
+        "unix_nix_env": "nixos.filezilla",
+        "windows_winget": "TimKosse.FileZilla.Client"
+      }
+    },
     "firefox": {
       "name": "Firefox",
       "category": "Internet & Communication",
@@ -1235,6 +1254,25 @@
         "windows_winget": "Jellyfin.Server"
       }
     },
+    "joplin": {
+      "name": "Joplin",
+      "category": "Office",
+      "subcategory": "Note Taking",
+      "package_manager": {
+        "linux_arch_aur": "joplin-appimage",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": "net.cozic.joplin_desktop",
+        "linux_snap": "joplin-desktop",
+        "freebsd_pkg": null,
+        "macos_brew": "joplin",
+        "unix_nix_env": "nixos.joplin-desktop",
+        "windows_winget": "Joplin.Joplin"
+      }
+    },
     "kate": {
       "name": "Kate",
       "category": "Development",
@@ -1368,7 +1406,7 @@
         "windows_winget": "KDE.Kstars"
       }
     },
-    "laragon" : {
+    "laragon": {
       "name": "Laragon",
       "category": "Development",
       "subcategory": "Development Environment",
@@ -1784,6 +1822,25 @@
         "macos_brew": null,
         "unix_nix_env": null,
         "windows_winget": "NewElle.NewElle"
+      }
+    },
+    "nextcloud-desktop": {
+      "name": "Nextcloud Desktop",
+      "category": "File Man",
+      "subcategory": "Client Cloud Storage",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "nextcloud-client",
+        "linux_debian_apt": "nextcloud-desktop",
+        "linux_fedora_rpm": "nextcloud-client",
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": "nextcloud-client",
+        "linux_flatpak": "com.nextcloud.desktopclient.nextcloud",
+        "linux_snap": "nextcloud",
+        "freebsd_pkg": "nextcloud-desktop",
+        "macos_brew": "nextcloud",
+        "unix_nix_env": "nixos.nextcloud-client",
+        "windows_winget": "Nextcloud.NextcloudDesktop"
       }
     },
     "nginx": {
@@ -2394,6 +2451,25 @@
         "windows_winget": null
       }
     },
+    "signal": {
+      "name": "Signal",
+      "category": "Internet & Communication",
+      "subcategory": "Messaging",
+      "package_manager": {
+        "linux_arch_aur": "signal-desktop",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": "signal-desktop",
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": "org.signal.Signal",
+        "linux_snap": "signal-desktop",
+        "freebsd_pkg": null,
+        "macos_brew": "signal",
+        "unix_nix_env": "nixos.signal-desktop",
+        "windows_winget": "OpenWhisperSystems.Signal"
+      }
+    },
     "speech-note": {
       "name": "Speech Note",
       "category": "Audio",
@@ -2584,6 +2660,25 @@
         "windows_winget": "SublimeHQ.SublimeText.4"
       }
     },
+    "syncthing": {
+      "name": "Syncthing",
+      "category": "File Man",
+      "subcategory": "File Synchronization",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "syncthing",
+        "linux_debian_apt": "syncthing",
+        "linux_fedora_rpm": "syncthing",
+        "linux_gentoo_emerge": "net-p2p/syncthing",
+        "linux_void_xbps": "syncthing",
+        "linux_flatpak": "me.kozec.syncthingtk",
+        "linux_snap": "syncthing",
+        "freebsd_pkg": "syncthing",
+        "macos_brew": "syncthing",
+        "unix_nix_env": "nixos.syncthing",
+        "windows_winget": "Syncthing.Syncthing"
+      }
+    },
     "telegram": {
       "name": "Telegram",
       "category": "Internet & Communication",
@@ -2658,6 +2753,25 @@
         "macos_brew": "thunderbird",
         "unix_nix_env": "nixos.thunderbird",
         "windows_winget": "Mozilla.Thunderbird"
+      }
+    },
+    "timeshift": {
+      "name": "Timeshift",
+      "category": "System",
+      "subcategory": "Backup",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "timeshift",
+        "linux_debian_apt": "timeshift",
+        "linux_fedora_rpm": "timeshift",
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": "timeshift",
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": "nixos.timeshift",
+        "windows_winget": null
       }
     },
     "tmux": {
@@ -2962,6 +3076,25 @@
         "macos_brew": "wine",
         "unix_nix_env": "nixos.wine",
         "windows_winget": "WineHQ.Wine"
+      }
+    },
+    "wireshark": {
+      "name": "Wireshark",
+      "category": "System",
+      "subcategory": "Network Analyzer",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "wireshark-qt",
+        "linux_debian_apt": "wireshark",
+        "linux_fedora_rpm": "wireshark",
+        "linux_gentoo_emerge": "net-analyzer/wireshark",
+        "linux_void_xbps": "wireshark",
+        "linux_flatpak": "org.wireshark.Wireshark",
+        "linux_snap": "wireshark",
+        "freebsd_pkg": "wireshark",
+        "macos_brew": "wireshark",
+        "unix_nix_env": "nixos.wireshark",
+        "windows_winget": "WiresharkFoundation.Wireshark"
       }
     },
     "wordpress": {
