@@ -35,7 +35,7 @@
         "freebsd_pkg": null,
         "macos_brew": "anydesk",
         "unix_nix_env": "anydesk",
-        "windows_winget": "AnyDeskSoftwareGmbH.AnyDesk"
+        "windows_winget": "AnyDesk.AnyDesk"
       }
     },
     "anytype": {
@@ -54,7 +54,7 @@
         "freebsd_pkg": null,
         "macos_brew": "anytype",
         "unix_nix_env": null,
-        "windows_winget": "Anytype.Anytype"
+        "windows_winget": "AnyAssociation.Anytype"
       }
     },
     "apache": {
@@ -852,7 +852,7 @@
         "freebsd_pkg": "geany",
         "macos_brew": "geany",
         "unix_nix_env": "nixos.geany",
-        "windows_winget": "Geany"
+        "windows_winget": "Geany.Geany"
       }
     },
     "geogebra": {
@@ -1460,7 +1460,7 @@
         "freebsd_pkg": "libreoffice",
         "macos_brew": "libreoffice",
         "unix_nix_env": "nixos.libreoffice",
-        "windows_winget": "LibreOffice.LibreOffice"
+        "windows_winget": "TheDocumentFoundation.LibreOffice"
       }
     },
     "librewolf": {
@@ -1536,7 +1536,7 @@
         "freebsd_pkg": "lutris",
         "macos_brew": "lutris",
         "unix_nix_env": "nixos.lutris",
-        "windows_winget": "Lutris"
+        "windows_winget": null
       }
     },
     "mandelbulber": {
