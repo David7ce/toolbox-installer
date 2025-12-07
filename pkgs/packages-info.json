@@ -1198,7 +1198,7 @@
       }
     },
     "iptvnator": {
-      "name": "iptvnator",
+      "name": "IPTVnator",
       "category": "Video",
       "subcategory": "IPTV Player",
       "package_manager": {
@@ -2112,7 +2112,7 @@
     "plex": {
       "name": "Plex",
       "category": "Video",
-      "subcategory": "Media Player",
+      "subcategory": "Media Server",
       "package_manager": {
         "linux_arch_aur": "plex-media-player",
         "linux_arch_pacman": null,
@@ -2473,7 +2473,7 @@
     "speech-note": {
       "name": "Speech Note",
       "category": "Audio",
-      "subcategory": "Tts",
+      "subcategory": "Text To Speech",
       "package_manager": {
         "linux_arch_aur": null,
         "linux_arch_pacman": null,
@@ -3266,6 +3266,386 @@
         "macos_brew": "zoom",
         "unix_nix_env": "zoom-us",
         "windows_winget": "Zoom.Zoom"
+      }
+    },
+    "alacritty": {
+      "name": "Alacritty",
+      "category": "System",
+      "subcategory": "Terminal Emulator",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "alacritty",
+        "linux_debian_apt": "alacritty",
+        "linux_fedora_rpm": "alacritty",
+        "linux_gentoo_emerge": "x11-terms/alacritty",
+        "linux_void_xbps": "alacritty",
+        "linux_flatpak": null,
+        "linux_snap": "alacritty",
+        "freebsd_pkg": "alacritty",
+        "macos_brew": "alacritty",
+        "unix_nix_env": "nixos.alacritty",
+        "windows_winget": "Alacritty.Alacritty"
+      }
+    },
+    "brave": {
+      "name": "Brave",
+      "category": "Internet & Communication",
+      "subcategory": "Web Browser",
+      "package_manager": {
+        "linux_arch_aur": "brave-bin",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": "brave-browser",
+        "linux_fedora_rpm": "brave-browser",
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": "com.brave.Browser",
+        "linux_snap": "brave",
+        "freebsd_pkg": null,
+        "macos_brew": "brave-browser",
+        "unix_nix_env": "brave",
+        "windows_winget": "Brave.Brave"
+      }
+    },
+    "cryptomator": {
+      "name": "Cryptomator",
+      "category": "System",
+      "subcategory": "File Encryption",
+      "package_manager": {
+        "linux_arch_aur": "cryptomator",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": "org.cryptomator.Cryptomator",
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "cryptomator",
+        "unix_nix_env": "cryptomator",
+        "windows_winget": "Cryptomator.Cryptomator"
+      }
+    },
+    "curl": {
+      "name": "cURL",
+      "category": "Internet & Communication",
+      "subcategory": "Download Manager",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "curl",
+        "linux_debian_apt": "curl",
+        "linux_fedora_rpm": "curl",
+        "linux_gentoo_emerge": "net-misc/curl",
+        "linux_void_xbps": "curl",
+        "linux_flatpak": null,
+        "linux_snap": "curl",
+        "freebsd_pkg": "curl",
+        "macos_brew": "curl",
+        "unix_nix_env": "curl",
+        "windows_winget": "cURL.cURL"
+      }
+    },
+    "freecad": {
+      "name": "FreeCAD",
+      "category": "Image",
+      "subcategory": "3D Modeling",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "freecad",
+        "linux_debian_apt": "freecad",
+        "linux_fedora_rpm": "freecad",
+        "linux_gentoo_emerge": "media-gfx/freecad",
+        "linux_void_xbps": "freecad",
+        "linux_flatpak": "org.freecadweb.FreeCAD",
+        "linux_snap": "freecad",
+        "freebsd_pkg": "freecad",
+        "macos_brew": "freecad",
+        "unix_nix_env": "nixos.freecad",
+        "windows_winget": "FreeCAD.FreeCAD"
+      }
+    },
+    "hugo": {
+      "name": "Hugo",
+      "category": "Development",
+      "subcategory": "Static Site Generator",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "hugo",
+        "linux_debian_apt": "hugo",
+        "linux_fedora_rpm": "hugo",
+        "linux_gentoo_emerge": "www-apps/hugo",
+        "linux_void_xbps": "hugo",
+        "linux_flatpak": null,
+        "linux_snap": "hugo",
+        "freebsd_pkg": "gohugo",
+        "macos_brew": "hugo",
+        "unix_nix_env": "hugo",
+        "windows_winget": "Hugo.Hugo"
+      }
+    },
+    "home-assistant": {
+      "name": "Home Assistant",
+      "category": "Internet & Communication",
+      "subcategory": "Home Automation",
+      "package_manager": {
+        "linux_arch_aur": "home-assistant",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "homeassistant-cli",
+        "unix_nix_env": null,
+        "windows_winget": null
+      }
+    },
+    "kodi": {
+      "name": "Kodi",
+      "category": "Video",
+      "subcategory": "Media Center",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "kodi",
+        "linux_debian_apt": "kodi",
+        "linux_fedora_rpm": "kodi",
+        "linux_gentoo_emerge": "media-tv/kodi",
+        "linux_void_xbps": "kodi",
+        "linux_flatpak": "tv.kodi.Kodi",
+        "linux_snap": "kodi",
+        "freebsd_pkg": "kodi",
+        "macos_brew": "kodi",
+        "unix_nix_env": "nixos.kodi",
+        "windows_winget": "XBMCFoundation.Kodi"
+      }
+    },
+    "konsole": {
+      "name": "Konsole",
+      "category": "System",
+      "subcategory": "Terminal Emulator",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "konsole",
+        "linux_debian_apt": "konsole",
+        "linux_fedora_rpm": "konsole",
+        "linux_gentoo_emerge": "kde-apps/konsole",
+        "linux_void_xbps": "konsole",
+        "linux_flatpak": "org.kde.konsole",
+        "linux_snap": "konsole",
+        "freebsd_pkg": "konsole",
+        "macos_brew": null,
+        "unix_nix_env": "nixos.konsole",
+        "windows_winget": "KDE.Konsole"
+      }
+    },
+    "mediawiki": {
+      "name": "MediaWiki",
+      "category": "Development",
+      "subcategory": "Cms",
+      "package_manager": {
+        "linux_arch_aur": "mediawiki",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": "mediawiki",
+        "linux_fedora_rpm": "mediawiki",
+        "linux_gentoo_emerge": "www-apps/mediawiki",
+        "linux_void_xbps": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": "mediawiki",
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": null
+      }
+    },
+    "moodle": {
+      "name": "Moodle",
+      "category": "Education",
+      "subcategory": "Learning Management System",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": null
+      }
+    },
+    "notepad-plus-plus": {
+      "name": "Notepad++",
+      "category": "Development",
+      "subcategory": "Text Editor",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "Notepad++.Notepad++"
+      }
+    },
+    "openrgb": {
+      "name": "OpenRGB",
+      "category": "Utility",
+      "subcategory": "RGB Control",
+      "package_manager": {
+        "linux_arch_aur": "openrgb",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": "org.openrgb.OpenRGB",
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": "openrgb",
+        "windows_winget": null
+      }
+    },
+    "pandoc": {
+      "name": "Pandoc",
+      "category": "Office",
+      "subcategory": "Document Converter",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "pandoc",
+        "linux_debian_apt": "pandoc",
+        "linux_fedora_rpm": "pandoc",
+        "linux_gentoo_emerge": "app-text/pandoc",
+        "linux_void_xbps": "pandoc",
+        "linux_flatpak": null,
+        "linux_snap": "pandoc",
+        "freebsd_pkg": "pandoc",
+        "macos_brew": "pandoc",
+        "unix_nix_env": "pandoc",
+        "windows_winget": "JohnMacFarlane.Pandoc"
+      }
+    },
+    "photoprism": {
+      "name": "PhotoPrism",
+      "category": "Image",
+      "subcategory": "Photo Manager",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": null
+      }
+    },
+    "qgis": {
+      "name": "QGIS",
+      "category": "Science",
+      "subcategory": "GIS",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "qgis",
+        "linux_debian_apt": "qgis",
+        "linux_fedora_rpm": "qgis",
+        "linux_gentoo_emerge": "sci-geosciences/qgis",
+        "linux_void_xbps": "qgis",
+        "linux_flatpak": "org.qgis.qgis",
+        "linux_snap": "qgis",
+        "freebsd_pkg": "qgis",
+        "macos_brew": "qgis",
+        "unix_nix_env": "nixos.qgis",
+        "windows_winget": "OSGeo.QGIS"
+      }
+    },
+    "teamviewer": {
+      "name": "TeamViewer",
+      "category": "Utility",
+      "subcategory": "Remote Desktop",
+      "package_manager": {
+        "linux_arch_aur": "teamviewer",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": "teamviewer",
+        "linux_fedora_rpm": "teamviewer",
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": null,
+        "linux_snap": "teamviewer",
+        "freebsd_pkg": null,
+        "macos_brew": "teamviewer",
+        "unix_nix_env": null,
+        "windows_winget": "TeamViewer.TeamViewer"
+      }
+    },
+    "tor-browser": {
+      "name": "Tor Browser",
+      "category": "Internet & Communication",
+      "subcategory": "Web Browser",
+      "package_manager": {
+        "linux_arch_aur": "tor-browser",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": "torbrowser-launcher",
+        "linux_fedora_rpm": "torbrowser-launcher",
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": "torbrowser-launcher",
+        "linux_flatpak": "com.github.micahflee.torbrowser-launcher",
+        "linux_snap": "tor-browser",
+        "freebsd_pkg": null,
+        "macos_brew": "tor-browser",
+        "unix_nix_env": "tor-browser-bundle-bin",
+        "windows_winget": "TorProject.TorBrowser"
+      }
+    },
+    "unreal-engine": {
+      "name": "Unreal Engine",
+      "category": "Development",
+      "subcategory": "Game Engine",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "EpicGames.EpicGamesLauncher"
+      }
+    },
+    "whatsapp": {
+      "name": "WhatsApp",
+      "category": "Internet & Communication",
+      "subcategory": "Messaging",
+      "package_manager": {
+        "linux_arch_aur": "whatsapp-nativefier",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": "io.github.mimbrero.WhatsAppDesktop",
+        "linux_snap": "whatsapp-for-linux",
+        "freebsd_pkg": null,
+        "macos_brew": "whatsapp",
+        "unix_nix_env": null,
+        "windows_winget": "WhatsApp.WhatsApp"
       }
     }
   }
