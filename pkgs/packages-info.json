@@ -1406,6 +1406,25 @@
         "windows_winget": "KDE.Kstars"
       }
     },
+    "kubectl": {
+      "name": "kubectl",
+      "category": "Development",
+      "subcategory": "Container Orchestration",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "kubectl",
+        "linux_debian_apt": "kubectl",
+        "linux_fedora_rpm": "kubernetes-client",
+        "linux_gentoo_emerge": "sys-cluster/kubectl",
+        "linux_void_xbps": "kubectl",
+        "linux_flatpak": null,
+        "linux_snap": "kubectl",
+        "freebsd_pkg": "kubectl",
+        "macos_brew": "kubectl",
+        "unix_nix_env": "kubectl",
+        "windows_winget": "Kubernetes.kubectl"
+      }
+    },
     "laragon": {
       "name": "Laragon",
       "category": "Development",
