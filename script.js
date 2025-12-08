@@ -89,8 +89,10 @@ function generatePackages(packagesData) {
                     subcategoryHeading.textContent = subcategory;
                     subcategoryDiv.appendChild(subcategoryHeading);
 
-                    // Add packages to this subcategory (already sorted by the JSON sorter)
-                    subcategories[subcategory].forEach(({ key: pkgKey, info: pkgInfo }) => {
+                    // Sort packages alphabetically by package key
+                    subcategories[subcategory]
+                        .sort((a, b) => a.key.localeCompare(b.key))
+                        .forEach(({ key: pkgKey, info: pkgInfo }) => {
                         const packageLabel = document.createElement('label');
                         const packageCheckbox = document.createElement('input');
                         packageCheckbox.type = 'checkbox';
@@ -309,4 +311,28 @@ async function importPackages(file) {
     };
 
     reader.readAsText(file);
+}
+
+async function loadFavorites() {
+    try {
+        const response = await fetch('pkgs/list/fav-packages.json');
+        const data = await response.json();
+        const favorites = data.favorites || data;
+        
+        // Deselect all first
+        const checkboxes = document.querySelectorAll('input[type="checkbox"][id]');
+        checkboxes.forEach(cb => cb.checked = false);
+        
+        // Select favorites
+        favorites.forEach(pkgId => {
+            const checkbox = document.getElementById(pkgId);
+            if (checkbox) {
+                checkbox.checked = true;
+            } else {
+                console.warn(`Checkbox with ID ${pkgId} not found.`);
+            }
+        });
+    } catch (error) {
+        console.error('Error loading favorites:', error);
+    }
 }
