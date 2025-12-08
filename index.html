@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Package Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="container">
-        <h2>Generate Your Installation Script</h2>
-        <p>Every Operating System has a package manager that handles software installation and dependency resolution. <a href="https://en.wikipedia.org/wiki/Package_manager">Learn more</a></p>
+        <h2>Install your list of packages</h2>
+        <p>Every major Operating System has a <a href="https://en.wikipedia.org/wiki/Package_manager">package manager</a>
+            that handles software installation and dependency resolution. Here you can select the list of your favorite
+            packages to install and generate the command installation. It is compatible with all major desktop OS
+            (Windows, macOS, Linux and freeBSD) and for Linux supports all the basic distributions.
+        </p>
         <h3>Select the software packages to install:</h3>
     </header>
     <div class="container">
         <form id="packageForm">
             <div class="package-actions">
-                <button type="button" onclick="toggleSelectAllPackages()" title="Select or deselect all packages">Select/Deselect All</button>
-                
-                <button type="button" onclick="loadFavorites()" title="Load your favorite packages list">My fav Packages</button>
-                
+                <button type="button" onclick="toggleSelectAllPackages()"
+                    title="Select or deselect all packages">Select/Deselect All</button>
+
+                <button type="button" onclick="loadFavorites()" title="Load your favorite packages list">My fav
+                    Packages ✨</button>
+
                 <input type="file" id="fileInput" accept=".json" style="display: none;">
-                <label id="importBtn" for="fileInput" class="action-btn" title="Import a list of packages from a JSON file">Import Packages (JSON)</label>
-                
-                <button type="button" onclick="exportPackages()" title="Export your selected packages as JSON">Export Selected Packages</button>
+                <label id="importBtn" for="fileInput" class="action-btn"
+                    title="Import a list of packages from a JSON file">Import Packages (JSON)</label>
+
+                <button type="button" onclick="exportPackages()" title="Export your selected packages as JSON">Export
+                    Selected Packages</button>
             </div>
-            
+
             <div id="packageContainer" class="package-container columns">
                 <!-- Generated content -->
             </div>
@@ -34,35 +44,48 @@
                 <div class="os-group">
                     <h4 class="os-title">🔥 FreeBSD</h4>
                     <div class="os-options">
-                        <label><input type="radio" name="distro" value="freebsd_pkg"> FreeBSD Packages (<a href="https://ports.freebsd.org/cgi/ports.cgi">freebsd pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="freebsd_pkg"> FreeBSD Packages (<a
+                                href="https://ports.freebsd.org/cgi/ports.cgi">freebsd pkgs</a>)</label>
                     </div>
                 </div>
 
                 <div class="os-group">
                     <h4 class="os-title">🐧 Linux</h4>
                     <div class="os-options">
-                        <label><input type="radio" name="distro" value="linux_arch_pacman"> Arch (<a href="https://archlinux.org/packages/">pacman pkgs</a> + <a href="https://aur.archlinux.org/packages/">AUR pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_debian_apt"> Debian (<a href="https://packages.debian.org/stable/admin/0install">apt</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_fedora_rpm"> Fedora (<a href="https://packages.fedoraproject.org/">dnf pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_gentoo_emerge"> Gentoo (<a href="https://packages.gentoo.org/">emerge pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_void_xbps"> Void (<a href="https://voidlinux.org/packages/">xbps pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_flatpak"> Universal Flatpak (<a href="https://flathub.org/">flatpak pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_snap"> Universal Snap (<a href="https://snapcraft.io/">snap pkgs</a>)</label>
-                    </div>
-                </div>
-                
-                <div class="os-group">
-                    <h4 class="os-title">🍎 Unix-like (macos, Linux)</h4>
-                    <div class="os-options">
-                        <label><input type="radio" name="distro" value="macos_brew"> Homebrew (<a href="https://formulae.brew.sh/">brew pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="unix_nix_env"> NixOS (<a href="https://search.nixos.org/packages">nix-env pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_arch_pacman"> Arch (<a
+                                href="https://archlinux.org/packages/">pacman pkgs</a> + <a
+                                href="https://aur.archlinux.org/packages/">AUR pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_debian_apt"> Debian (<a
+                                href="https://packages.debian.org/stable/admin/0install">apt</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_fedora_rpm"> Fedora (<a
+                                href="https://packages.fedoraproject.org/">dnf pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_gentoo_emerge"> Gentoo (<a
+                                href="https://packages.gentoo.org/">emerge pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_void_xbps"> Void (<a
+                                href="https://voidlinux.org/packages/">xbps pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="unix_nix_env">Universal Nix (<a
+                                href="https://search.nixos.org/packages">nix-env pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_flatpak"> Universal Flatpak (<a
+                                href="https://flathub.org/">flatpak pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="linux_snap"> Universal Snap (<a
+                                href="https://snapcraft.io/">snap pkgs</a>)</label>
                     </div>
                 </div>
 
                 <div class="os-group">
-                    <h4 class="os-title">🪟 Windows</h4>
+                    <h4 class="os-title">🍎 macOS <a href="https://apps.apple.com/mac/discover">(official store)</a>
+                    </h4>
                     <div class="os-options">
-                        <label><input type="radio" name="distro" value="windows_winget"> WinGet (<a href="https://winstall.app/">winget pkgs</a>)</label>
+                        <label><input type="radio" name="distro" value="macos_brew"> Homebrew (<a
+                                href="https://formulae.brew.sh/">brew pkgs</a>)</label>
+                    </div>
+                </div>
+
+                <div class="os-group">
+                    <h4 class="os-title">🪟 Windows <a href="https://apps.microsoft.com/home">(official store)</a></h4>
+                    <div class="os-options">
+                        <label><input type="radio" name="distro" value="windows_winget"> WinGet (<a
+                                href="https://winstall.app/">winget pkgs</a>)</label>
                     </div>
                 </div>
             </div>
@@ -73,4 +96,5 @@
     </div>
     <script defer src="script.js"></script>
 </body>
+
 </html>
