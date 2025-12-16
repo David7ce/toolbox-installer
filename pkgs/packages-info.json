@@ -2698,6 +2698,25 @@
         "windows_winget": null
       }
     },
+    "stremio": {
+      "name": "Stremio",
+      "category": "Video",
+      "subcategory": "Media Player",
+      "package_manager": {
+        "linux_arch_aur": "stremio",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_void_xbps": null,
+        "linux_flatpak": "com.stremio.Stremio",
+        "linux_snap": "stremio",
+        "freebsd_pkg": null,
+        "macos_brew": "stremio",
+        "unix_nix_env": null,
+        "windows_winget": "Stremio.Stremio"
+      }
+    },
     "sublime-text-4": {
       "name": "Sublime Text",
       "category": "Development",
