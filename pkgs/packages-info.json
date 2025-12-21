@@ -687,7 +687,7 @@
     "ffmpeg": {
       "name": " FFmpeg",
       "category": "Video",
-      "subcategory": "Video encoder/decoder",
+      "subcategory": "Video Encoder/Decoder",
       "package_manager": {
         "linux_arch_aur": null,
         "linux_arch_pacman": "ffmpeg",
@@ -1255,9 +1255,9 @@
       }
     },
     "jellyfin-client": {
-      "name": "Jellyfin Client",
+      "name": "Jellyfin Media Player",
       "category": "Video",
-      "subcategory": "Media Server",
+      "subcategory": "Client / Media Server",
       "package_manager": {
         "linux_arch_aur": "jellyfin-media-player",
         "linux_arch_pacman": null,
@@ -1276,7 +1276,7 @@
     "jellyfin-server": {
       "name": "Jellyfin Server",
       "category": "Video",
-      "subcategory": "Media Server",
+      "subcategory": "Client / Media Server",
       "package_manager": {
         "linux_arch_aur": null,
         "linux_arch_pacman": "jellyfin-server",
@@ -2169,7 +2169,7 @@
     "plex": {
       "name": "Plex",
       "category": "Video",
-      "subcategory": "Media Server",
+      "subcategory": "Client / Media Server",
       "package_manager": {
         "linux_arch_aur": "plex-media-player",
         "linux_arch_pacman": null,
@@ -2701,7 +2701,7 @@
     "stremio": {
       "name": "Stremio",
       "category": "Video",
-      "subcategory": "Media Player",
+      "subcategory": "Client / Media Server",
       "package_manager": {
         "linux_arch_aur": "stremio",
         "linux_arch_pacman": null,
@@ -2710,7 +2710,7 @@
         "linux_gentoo_emerge": null,
         "linux_void_xbps": null,
         "linux_flatpak": "com.stremio.Stremio",
-        "linux_snap": "stremio",
+        "linux_snap": null,
         "freebsd_pkg": null,
         "macos_brew": "stremio",
         "unix_nix_env": null,
