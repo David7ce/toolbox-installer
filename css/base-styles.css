@@ -1,0 +1,239 @@
+/* ==========================================================================
+   SHARED VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --background-color: #f2f2f2;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-muted: #999;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 25px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   BASE TYPOGRAPHY & LAYOUT - MOBILE FIRST
+   ========================================================================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    padding: var(--spacing-sm);
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+h1 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h2 {
+    color: var(--text-primary);
+    font-size: 18px;
+    margin-bottom: var(--spacing-sm);
+}
+
+h3 {
+    font-size: 16px;
+    margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+    color: var(--text-primary);
+}
+
+p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ==========================================================================
+   SHARED COMPONENTS - MOBILE FIRST
+   ========================================================================== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    padding: var(--spacing-md);
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.9em;
+}
+
+/* Buttons */
+.btn, button {
+    display: inline-block;
+    margin: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn:hover, button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Form Elements */
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="search"] {
+    width: 100%;
+    padding: 10px var(--spacing-sm);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 0.9em;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE FIRST APPROACH
+   ========================================================================== */
+
+/* TABLET SCREENS (min 480px) */
+@media (min-width: 480px) {
+    body {
+        padding: var(--spacing-md);
+    }
+
+    .container {
+        padding: var(--spacing-lg);
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    h2 {
+        font-size: 22px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .subtitle {
+        font-size: 1em;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .btn, button {
+        width: auto;
+        padding: var(--spacing-sm) var(--spacing-lg);
+        margin: var(--spacing-sm) var(--spacing-xs);
+    }
+
+    input[type="text"],
+    input[type="search"] {
+        padding: 11px var(--spacing-md);
+        font-size: 0.95em;
+    }
+}
+
+/* PC SCREENS (min 768px) */
+@media (min-width: 768px) {
+    body {
+        padding: var(--spacing-lg);
+    }
+
+    .container {
+        padding: var(--spacing-xl);
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .subtitle {
+        font-size: 1.05em;
+    }
+
+    input[type="text"],
+    input[type="search"] {
+        padding: 12px var(--spacing-lg);
+        font-size: 1em;
+    }
+}
+
+/* LARGE SCREENS (min 1200px) */
+@media (min-width: 1200px) {
+    body {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: var(--spacing-xl);
+    }
+
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+        margin-bottom: var(--spacing-xl);
+    }
+}

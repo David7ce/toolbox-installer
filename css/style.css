@@ -1,102 +1,136 @@
 /* ==========================================================================
-   VARIABLES & RESET
+   IMPORT BASE STYLES
    ========================================================================== */
-:root {
-    --primary-color: #007bff;
-    --primary-hover: #0056b3;
-    --background-color: #f2f2f2;
-    --card-background: #ffffff;
-    --border-color: #e0e0e0;
-    --text-primary: #333;
-    --text-secondary: #666;
-    --text-muted: #999;
-    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
-    --border-radius: 8px;
-    --spacing-xs: 5px;
-    --spacing-sm: 10px;
-    --spacing-md: 15px;
-    --spacing-lg: 20px;
-    --spacing-xl: 25px;
-}
-
-* {
-    box-sizing: border-box;
-}
+@import url('base-styles.css');
 
 /* ==========================================================================
-   BASE STYLES
+   PAGE LAYOUT - MOBILE FIRST
    ========================================================================== */
-body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    margin: var(--spacing-xl);
+.page-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.page-header {
+    padding: var(--spacing-md) var(--spacing-sm);
+    text-align: center;
+}
+
+.page-header h1 {
+    margin-bottom: 0;
+}
+
+.intro-section {
     padding: var(--spacing-sm);
-    line-height: 1.6;
-}
-
-h2 {
-    color: var(--text-primary);
-    font-size: 24px;
     margin-bottom: var(--spacing-md);
 }
 
-h3 {
-    font-size: 20px;
-    margin: var(--spacing-lg) 0 var(--spacing-md) 0;
-    color: var(--text-primary);
+.intro-section h2 {
+    margin-top: 0;
 }
 
-p {
-    font-size: 16px;
-    color: var(--text-secondary);
+.intro-section p {
+    line-height: 1.7;
+}
+
+.intro-section a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.intro-section a:hover {
+    text-decoration: underline;
+}
+
+.package-section {
+    padding: 0 var(--spacing-sm);
+}
+
+.package-section > h2 {
     margin-bottom: var(--spacing-md);
 }
 
 /* ==========================================================================
-   BUTTONS & FORM ELEMENTS
+   ACTION BUTTONS
    ========================================================================== */
-.btn, button, #importBtn {
+.action-btn {
     display: inline-block;
-    margin: var(--spacing-sm) var(--spacing-xs);
-    padding: var(--spacing-sm) var(--spacing-lg);
+    margin: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
     background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s ease;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: auto;
+    min-width: 160px;
+    max-width: 220px;
 }
 
-.btn:hover, button:hover, #importBtn:hover {
+.action-btn:hover {
     background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-light);
 }
 
+.action-btn:active {
+    transform: translateY(0);
+}
+
+#importBtn {
+    display: inline-block;
+    margin: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: auto;
+    min-width: 160px;
+    max-width: 220px;
+}
+
+#importBtn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-light);
+}
+
+/* ==========================================================================
+   FORM ELEMENTS
+   ========================================================================== */
 form {
     margin-bottom: var(--spacing-lg);
 }
 
-label {
-    display: block;
-    margin-bottom: var(--spacing-xs);
-    cursor: pointer;
-}
-
 /* ==========================================================================
-   PACKAGE GRID LAYOUT
+   PACKAGE GRID LAYOUT - MOBILE FIRST
    ========================================================================== */
 .package-actions {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    margin: var(--spacing-lg) 0;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin: var(--spacing-md) 0;
 }
 
 .columns {
     display: grid;
-    gap: var(--spacing-md);
-    margin: var(--spacing-lg) 0;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
 }
 
 .column {
@@ -106,7 +140,8 @@ label {
     padding: var(--spacing-md);
 }
 
-.column h4, .column h5 {
+.column h4,
+.column h5 {
     margin: var(--spacing-sm) 0;
     color: var(--text-primary);
 }
@@ -129,18 +164,19 @@ label {
 }
 
 /* ==========================================================================
-   OPERATING SYSTEM SELECTION
+   OPERATING SYSTEM SELECTION - MOBILE FIRST
    ========================================================================== */
 .os-selection {
     display: grid;
-    gap: var(--spacing-lg);
-    margin: var(--spacing-lg) 0;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
 }
 
 .os-group {
     background-color: var(--card-background);
     border: 2px solid var(--border-color);
-    border-radius: var(--border-radius);
+    border-radius: var(--bomder-radius);
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-light);
     transition: all 0.3s ease;
@@ -158,8 +194,8 @@ label {
 }
 
 .os-title {
-    margin: 0 0 var(--spacing-md) 0;
-    font-size: 18px;
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: 16px;
     font-weight: bold;
     color: var(--text-primary);
     border-bottom: 2px solid #f0f0f0;
@@ -178,7 +214,7 @@ label {
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: 6px;
     transition: background-color 0.2s ease;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .os-options label:hover {
@@ -243,85 +279,112 @@ label {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN - 4 SCREEN SIZES
+   RESPONSIVE - MOBILE FIRST APPROACH
    ========================================================================== */
 
-/* LARGE SCREENS (1200px and up) - Desktops with large monitors */
-@media (min-width: 1200px) {
+/* TABLET SCREENS (min 480px) */
+@media (min-width: 480px) {
+    .page-header {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .intro-section {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .package-section {
+        padding: 0 var(--spacing-md);
+    }
+
+    .package-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-sm);
+        margin: var(--spacing-lg) 0;
+    }
+
+    .action-btn {
+        width: calc(50% - var(--spacing-sm));
+        min-width: 180px;
+        max-width: 250px;
+    }
+
     .columns {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+        margin: var(--spacing-lg) 0;
     }
-    
+
     .os-selection {
-        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-lg);
+        margin: var(--spacing-lg) 0;
     }
-    
-    body {
-        max-width: 1400px;
-        margin: var(--spacing-xl) auto;
+
+    .os-group {
+        padding: var(--spacing-lg);
+    }
+
+    .os-title {
+        font-size: 17px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .action-btn {
+        width: auto;
+        min-width: 200px;
+        max-width: 220px;
+    }
+
+    .os-options label {
+        font-size: 14px;
     }
 }
 
-/* PC SCREENS (768px to 1199px) - Standard desktops and laptops */
-@media (min-width: 768px) and (max-width: 1199px) {
+/* PC SCREENS (min 768px) */
+@media (min-width: 768px) {
     .columns {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .os-selection {
         grid-template-columns: repeat(2, 1fr);
     }
-}
 
-/* TABLET SCREENS (480px to 767px) - Tablets and small laptops */
-@media (min-width: 480px) and (max-width: 767px) {
-    .columns {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .os-selection {
-        grid-template-columns: 1fr;
-    }
-    
-    .package-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .btn, button, #importBtn {
-        min-width: 220px;
-        width: max-content;
-        max-width: 100%;
-        margin: var(--spacing-xs) 0;
-        padding: var(--spacing-md);
-        text-align: center;
-    }
-    
-    body {
-        margin: var(--spacing-md);
-        padding: var(--spacing-xs);
-    }
-}
-
-/* MOBILE SCREENS (up to 479px) - Phones */
-@media (max-width: 479px) {
-    .columns {
-        grid-template-columns: 1fr;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-    
-    h3 {
+    .os-title {
         font-size: 18px;
     }
-    
-    .os-group {
-        padding: var(--spacing-md);
+}
+
+/* LARGE SCREENS (min 1200px) */
+@media (min-width: 1200px) {
+    .page-wrapper {
+        padding: 0 var(--spacing-lg);
     }
-    
-    .os-title {
-        font-size: 16px;
+
+    .page-header {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .intro-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .package-section {
+        padding: 0;
+    }
+
+    .columns {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .os-selection {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    body {
+        max-width: 1400px;
+        margin: var(--spacing-xl) auto;
     }
 }

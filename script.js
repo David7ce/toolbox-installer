@@ -278,11 +278,16 @@ function exportPackages() {
     alert('Selected packages exported successfully!');
 }
 
+// Function to trigger file input click
+function importPackages() {
+    document.getElementById('fileInput').click();
+}
+
 document.getElementById('fileInput').addEventListener('change', function (e) {
-    importPackages(e.target.files[0]);
+    importPackagesFromFile(e.target.files[0]);
 });
 
-async function importPackages(file) {
+async function importPackagesFromFile(file) {
     const reader = new FileReader();
 
     reader.onload = async function (event) {

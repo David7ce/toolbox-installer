@@ -5,34 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Package Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/base-styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header class="container">
-        <h2>Install your list of packages</h2>
-        <p>Every major Operating System has a <a href="https://en.wikipedia.org/wiki/Package_manager">package manager</a>
-            that handles software installation and dependency resolution. Here you can select the list of your favorite
-            packages to install and generate the command installation. It is compatible with all major desktop OS
-            (Windows, macOS, Linux and freeBSD) and for Linux supports all the basic distributions.
-        </p>
-        <h3>Select the software packages to install:</h3>
-    </header>
-    <div class="container">
+    <div class="page-wrapper">
+        <header class="page-header">
+            <h1>Generate your command to install packages</h1>
+        </header>
+
+        <section class="intro-section">
+            <h2>How to install packages</h2>
+            <p>Every major Operating System has a <a href="https://en.wikipedia.org/wiki/Package_manager">package manager</a>
+                that handles software installation and dependency resolution. Here you can select the list of your favorite
+                packages to install and generate the command installation. It is compatible with all major desktop OS
+                (Windows, macOS, Linux and freeBSD) and for Linux supports all the basic distributions.
+            </p>
+            <p>
+                Here is a list of package availability across different Operating Systems:
+                <a href="os-compatibility.html">Package OS Compatibility</a>
+            </p>
+        </section>
+
+        <section class="package-section">
+            <h2>Select the packages to install:</h2>
+            <div class="container">
         <form id="packageForm">
             <div class="package-actions">
-                <button type="button" onclick="toggleSelectAllPackages()"
+                <button type="button" class="action-btn" onclick="toggleSelectAllPackages()"
                     title="Select or deselect all packages">Select/Deselect All</button>
 
-                <button type="button" onclick="loadFavorites()" title="Load your favorite packages list">My fav
-                    Packages ✨</button>
+                <button type="button" class="action-btn" onclick="loadFavorites()" 
+                    title="Load your favorite packages list">Load Favorites ✨</button>
 
+                <button type="button" class="action-btn" onclick="importPackages()" 
+                    title="Import a list of packages from a JSON file">Import Selection</button>
                 <input type="file" id="fileInput" accept=".json" style="display: none;">
-                <label id="importBtn" for="fileInput" class="action-btn"
-                    title="Import a list of packages from a JSON file">Import Packages (JSON)</label>
 
-                <button type="button" onclick="exportPackages()" title="Export your selected packages as JSON">Export
-                    Selected Packages</button>
+                <button type="button" class="action-btn" onclick="exportPackages()" 
+                    title="Export your selected packages as JSON">Export Selection</button>
             </div>
 
             <div id="packageContainer" class="package-container columns">
@@ -88,6 +100,8 @@
                                 href="https://winstall.app/">winget pkgs</a>)</label>
                     </div>
                 </div>
+        </section>
+    </div>
             </div>
             <button type="button" onclick="generateCommand()">Generate Installation Command</button>
         </form>
