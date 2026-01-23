@@ -7,14 +7,20 @@
     <title>Package Generator</title>
     <link rel="stylesheet" href="css/base-styles.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/theme-toggle.js"></script>
+    <script defer src="js/script.js"></script>
 </head>
 
 <body>
     <div class="page-wrapper">
         <header class="page-header">
             <h1>Generate your command to install packages</h1>
+            <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode"
+                title="Dark mode">
+                🌙
+            </button>
         </header>
-
+        <!--
         <section class="intro-section">
             <h2>How to install packages</h2>
             <p>Every major Operating System has a <a href="https://en.wikipedia.org/wiki/Package_manager">package manager</a>
@@ -27,88 +33,91 @@
                 <a href="os-compatibility.html">Package OS Compatibility</a>
             </p>
         </section>
+    -->
 
         <section class="package-section">
-            <h2>Select the packages to install:</h2>
+            <!-- <h2>Select the packages to install:</h2> -->
             <div class="container">
-        <form id="packageForm">
-            <div class="package-actions">
-                <button type="button" class="action-btn" onclick="toggleSelectAllPackages()"
-                    title="Select or deselect all packages">Select/Deselect All</button>
+                <form id="packageForm">
+                    <div class="os-selector-container">
+                        <div class="primary-os-selector">
+                            <button type="button" class="os-btn" data-os="windows">🪟 Windows</button>
+                            <button type="button" class="os-btn" data-os="macos">🍎 macOS</button>
+                            <button type="button" class="os-btn active" data-os="linux">🐧 Linux</button>
+                            <button type="button" class="os-btn" data-os="bsd">🔥 BSD</button>
+                        </div>
 
-                <button type="button" class="action-btn" onclick="loadFavorites()" 
-                    title="Load your favorite packages list">Load Favorites ✨</button>
+                        <div class="secondary-os-selector" id="linuxDistroSelector">
+                            <button type="button" class="distro-btn active"
+                                data-distro="linux_arch_pacman">Arch</button>
+                            <button type="button" class="distro-btn"
+                                data-distro="linux_debian_apt">Debian/Ubuntu</button>
+                            <button type="button" class="distro-btn" data-distro="linux_fedora_rpm">Fedora</button>
+                            <button type="button" class="distro-btn" data-distro="linux_gentoo_emerge">Gentoo</button>
+                            <button type="button" class="distro-btn" data-distro="linux_void_xbps">Void</button>
+                            <button type="button" class="distro-btn" data-distro="unix_nix_env">Nix</button>
+                            <button type="button" class="distro-btn" data-distro="linux_flatpak">Flatpak</button>
+                            <button type="button" class="distro-btn" data-distro="linux_snap">Snap</button>
+                        </div>
 
-                <button type="button" class="action-btn" onclick="importPackages()" 
-                    title="Import a list of packages from a JSON file">Import Selection</button>
-                <input type="file" id="fileInput" accept=".json" style="display: none;">
+                        <div class="os-compatibility-link">
+                            <a href="os-compatibility.html"
+                                title="View package compatibility across different operating systems">📊 Package OS
+                                Compatibility</a>
+                        </div>
+                    </div>
 
-                <button type="button" class="action-btn" onclick="exportPackages()" 
-                    title="Export your selected packages as JSON">Export Selection</button>
+                    <div class="package-actions">
+                        <div class="main-controls">
+                            <label class="select-all-control">
+                                <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox">
+                                <span id="selectAllLabel">Select All</span>
+                            </label>
+                            <button type="button" class="toggle-all-btn" id="toggleAllBtn"
+                                title="Collapse/Expand all categories">
+                                <span id="toggleAllIcon">▼</span>
+                                <span id="toggleAllLabel">Collapse All</span>
+                            </button>
+                            <select id="optionsSelect" class="options-select">
+                                <option value="" hidden selected>⚙️ Options</option>
+                                <option value="loadFavorites">✨ My Favorites</option>
+                                <option value="importPackages">📥 Import Packages (JSON)</option>
+                                <option value="exportPackages">📤 Export Packages (JSON)</option>
+                            </select>
+                        </div>
+                        <input type="file" id="fileInput" accept=".json" style="display: none;">
+                    </div>
+
+                    <div id="packageContainer" class="package-container columns">
+                        <!-- Loading spinner -->
+                        <div class="loading-spinner" id="loadingSpinner">
+                            <div class="spinner"></div>
+                            <p>Loading packages...</p>
+                        </div>
+                        <!-- Generated content -->
+                    </div>
+                </form>
             </div>
-
-            <div id="packageContainer" class="package-container columns">
-                <!-- Generated content -->
-            </div>
-            <h3>Select your Operating System and Package Manager:</h3>
-
-            <div class="os-selection">
-                <div class="os-group">
-                    <h4 class="os-title">🔥 FreeBSD</h4>
-                    <div class="os-options">
-                        <label><input type="radio" name="distro" value="freebsd_pkg"> FreeBSD Packages (<a
-                                href="https://ports.freebsd.org/cgi/ports.cgi">freebsd pkgs</a>)</label>
-                    </div>
-                </div>
-
-                <div class="os-group">
-                    <h4 class="os-title">🐧 Linux</h4>
-                    <div class="os-options">
-                        <label><input type="radio" name="distro" value="linux_arch_pacman"> Arch (<a
-                                href="https://archlinux.org/packages/">pacman pkgs</a> + <a
-                                href="https://aur.archlinux.org/packages/">AUR pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_debian_apt"> Debian (<a
-                                href="https://packages.debian.org/stable/admin/0install">apt</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_fedora_rpm"> Fedora (<a
-                                href="https://packages.fedoraproject.org/">dnf pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_gentoo_emerge"> Gentoo (<a
-                                href="https://packages.gentoo.org/">emerge pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_void_xbps"> Void (<a
-                                href="https://voidlinux.org/packages/">xbps pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="unix_nix_env">Universal Nix (<a
-                                href="https://search.nixos.org/packages">nix-env pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_flatpak"> Universal Flatpak (<a
-                                href="https://flathub.org/">flatpak pkgs</a>)</label>
-                        <label><input type="radio" name="distro" value="linux_snap"> Universal Snap (<a
-                                href="https://snapcraft.io/">snap pkgs</a>)</label>
-                    </div>
-                </div>
-
-                <div class="os-group">
-                    <h4 class="os-title">🍎 macOS <a href="https://apps.apple.com/mac/discover">(official store)</a>
-                    </h4>
-                    <div class="os-options">
-                        <label><input type="radio" name="distro" value="macos_brew"> Homebrew (<a
-                                href="https://formulae.brew.sh/">brew pkgs</a>)</label>
-                    </div>
-                </div>
-
-                <div class="os-group">
-                    <h4 class="os-title">🪟 Windows <a href="https://apps.microsoft.com/home">(official store)</a></h4>
-                    <div class="os-options">
-                        <label><input type="radio" name="distro" value="windows_winget"> WinGet (<a
-                                href="https://winstall.app/">winget pkgs</a>)</label>
-                    </div>
-                </div>
         </section>
     </div>
+
+    <!-- Sticky Footer with Command -->
+    <div class="command-footer" id="commandFooter" role="region" aria-label="Installation command">
+        <div class="command-container">
+            <div class="command-output">
+                <button type="button" class="copy-btn" id="copyCommandBtn" title="Copy to clipboard"
+                    aria-label="Copy installation command to clipboard">
+                    📋 Copy
+                </button>
+                <div class="command-content">
+                    <strong class="command-label">Installation command</strong>
+                    <code id="installation-command"
+                        aria-live="polite">Select packages and OS to generate command...</code>
+                </div>
             </div>
-            <button type="button" onclick="generateCommand()">Generate Installation Command</button>
-        </form>
-        <div id="output">
+            <div class="command-warnings" id="commandWarnings" role="alert" aria-live="polite"></div>
         </div>
     </div>
-    <script defer src="script.js"></script>
 </body>
 
 </html>

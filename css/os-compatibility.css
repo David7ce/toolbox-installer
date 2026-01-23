@@ -11,6 +11,49 @@ body {
     padding: var(--spacing-md);
 }
 
+.page-header {
+    position: relative;
+    margin-bottom: var(--spacing-md);
+}
+
+.page-header h1 {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--card-background);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.theme-toggle:focus {
+    outline: 3px solid rgba(74, 158, 255, 0.5);
+    outline-offset: 2px;
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
 /* ==========================================================================
    MOBILE FIRST - BASE STYLES (for mobile)
    ========================================================================== */
