@@ -129,10 +129,6 @@ th.sortable {
     padding-right: clamp(14px, 2vw, 30px);
 }
 
-th.sortable:hover {
-    background: var(--primary-hover);
-}
-
 /* Category column - narrower */
 th:first-child,
 td:first-child {
@@ -209,8 +205,10 @@ tbody tr {
     transition: background-color 0.2s ease;
 }
 
-tbody tr:hover {
-    background-color: #f8f9ff;
+/* Explicit hover colors for table rows (light/dark via variables) */
+#packagesTable tbody tr:hover,
+.table-container table tbody tr:hover {
+    background-color: var(--table-row-hover-bg) !important;
 }
 
 /* App Info */
