@@ -41,23 +41,25 @@
                 <form id="packageForm">
                     <div class="os-selector-container">
                         <div class="primary-os-selector">
-                            <button type="button" class="os-btn" data-os="windows">🪟 Windows</button>
+                            <button type="button" class="os-btn active" data-os="windows">🪟 Windows</button>
                             <button type="button" class="os-btn" data-os="macos">🍎 macOS</button>
-                            <button type="button" class="os-btn active" data-os="linux">🐧 Linux</button>
-                            <button type="button" class="os-btn" data-os="bsd">🔥 BSD</button>
+                            <button type="button" class="os-btn" data-os="linux">🐧 Linux</button>
+                            <button type="button" class="os-btn" data-os="freebsd">🔥 FreeBSD</button>
                         </div>
 
-                        <div class="secondary-os-selector" id="linuxDistroSelector">
-                            <button type="button" class="distro-btn active"
-                                data-distro="linux_arch_pacman">Arch</button>
-                            <button type="button" class="distro-btn"
-                                data-distro="linux_debian_apt">Debian/Ubuntu</button>
-                            <button type="button" class="distro-btn" data-distro="linux_fedora_rpm">Fedora</button>
-                            <button type="button" class="distro-btn" data-distro="linux_gentoo_emerge">Gentoo</button>
-                            <button type="button" class="distro-btn" data-distro="linux_void_xbps">Void</button>
-                            <button type="button" class="distro-btn" data-distro="unix_nix_env">Nix</button>
-                            <button type="button" class="distro-btn" data-distro="linux_flatpak">Flatpak</button>
-                            <button type="button" class="distro-btn" data-distro="linux_snap">Snap</button>
+                        <div class="secondary-os-selector hidden" id="linuxDistroSelector">
+                            <button type="button" class="distro-btn active" data-distro="linux_arch_pacman">Arch
+                                (pm+yay)</button>
+                            <button type="button" class="distro-btn" data-distro="linux_debian_apt">Debian
+                                (apt)</button>
+                            <button type="button" class="distro-btn" data-distro="linux_fedora_rpm">Fedora
+                                (rpm)</button>
+                            <button type="button" class="distro-btn" data-distro="linux_gentoo_emerge">Gentoo
+                                (emerge)</button>
+                            <button type="button" class="distro-btn" data-distro="linux_flatpak">Linux
+                                (flatpak)</button>
+                            <button type="button" class="distro-btn" data-distro="unix_nix_env">Linux (nix)</button>
+                            <button type="button" class="distro-btn" data-distro="linux_snap">Linux (snap)</button>
                         </div>
 
                         <div class="info-link">
@@ -71,12 +73,12 @@
                         <div class="main-controls">
                             <label class="select-all-control">
                                 <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox">
-                                <span id="selectAllLabel">Select All</span>
+                                <span id="selectAllLabel">Select</span>
                             </label>
                             <button type="button" class="toggle-all-btn" id="toggleAllBtn"
                                 title="Collapse/Expand all categories">
                                 <span id="toggleAllIcon">▼</span>
-                                <span id="toggleAllLabel">Collapse All</span>
+                                <span id="toggleAllLabel">Collapse</span>
                             </button>
                             <select id="optionsSelect" class="options-select">
                                 <option value="" hidden selected>⚙️ Options</option>
@@ -105,15 +107,16 @@
     <div class="command-footer" id="commandFooter" role="region" aria-label="Installation command">
         <div class="command-container">
             <div class="command-output">
-                <button type="button" class="copy-btn" id="copyCommandBtn" title="Copy to clipboard"
-                    aria-label="Copy installation command to clipboard">
-                    📋 Copy
-                </button>
-                <div class="command-content">
-                    <strong class="command-label">Installation command</strong>
-                    <code id="installation-command"
-                        aria-live="polite">Select packages and OS to generate command...</code>
+                <div class="command-header">
+                    <span class="command-language" id="commandLanguage">Installation command:</span>
+                    <button type="button" class="copy-btn" id="copyCommandBtn" title="Copy to clipboard"
+                        aria-label="Copy installation command to clipboard">
+                        📋 Copy
+                    </button>
                 </div>
+                <code id="installation-command" aria-live="polite">
+                    <span>Select packages and OS to generate command...</span>
+                </code>
             </div>
             <div class="command-warnings" id="commandWarnings" role="alert" aria-live="polite"></div>
         </div>

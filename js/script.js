@@ -11,6 +11,53 @@ const imageUrl = './img/';
 let packagesData; // Variable to store JSON data
 
 // ============================================================================
+// INITIALIZATION
+// ============================================================================
+
+// Initialize application when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded - initializing application');
+    
+    // Load packages data
+    loadPackages();
+    
+    // Setup two-tier OS selection
+    setupOSSelector();
+    
+    // Setup select all checkbox when packages are loaded
+    document.addEventListener('packagesLoaded', function() {
+        setupSelectAllCheckbox();
+    });
+    
+    // Setup auto-generation of command
+    setupAutoCommandGeneration();
+    
+    // Setup copy button
+    setupCopyButton();
+
+    // Setup toggle all categories button
+    setupToggleAllButton();
+
+    // Setup options select
+    const optionsSelect = document.getElementById('optionsSelect');
+    
+    if (optionsSelect) {
+        optionsSelect.addEventListener('change', function(e) {
+            const action = e.target.value;
+            if (action === 'loadFavorites') {
+                loadFavorites();
+            } else if (action === 'importPackages') {
+                importPackages();
+            } else if (action === 'exportPackages') {
+                exportPackages();
+            }
+            // Reset select to default option
+            e.target.value = '';
+        });
+    }
+});
+
+// ============================================================================
 // CORE FUNCTIONS
 // ============================================================================
 
@@ -68,8 +115,8 @@ function generatePackages(packagesData) {
         ["Virtualization"],
         ["File Man"],
         ["Office"],
-        ["Audio"],
         ["Video"],
+        ["Audio"],
         ["Image"],
         ["System"],
         ["Internet & Communication"],
@@ -353,9 +400,6 @@ async function generateCommand() {
             case 'unix_nix_env':
                 commandPrefix = 'sudo nix-env -iA';
                 break;
-            case 'linux_void_xbps':
-                commandPrefix = 'sudo xbps-install -S';
-                break;
             case 'linux_flatpak':
                 commandPrefix = 'flatpak install';
                 break;
@@ -410,53 +454,6 @@ async function generateCommand() {
         alert(`There was an error generating the installation command: ${error.message}`);
     }
 }
-
-// ============================================================================
-// INITIALIZATION
-// ============================================================================
-
-// Initialize application when DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM fully loaded - initializing application');
-    
-    // Load packages data
-    loadPackages();
-    
-    // Setup two-tier OS selection
-    setupOSSelector();
-    
-    // Setup select all checkbox when packages are loaded
-    document.addEventListener('packagesLoaded', function() {
-        setupSelectAllCheckbox();
-    });
-    
-    // Setup auto-generation of command
-    setupAutoCommandGeneration();
-    
-    // Setup copy button
-    setupCopyButton();
-
-    // Setup toggle all categories button
-    setupToggleAllButton();
-
-    // Setup options select
-    const optionsSelect = document.getElementById('optionsSelect');
-    
-    if (optionsSelect) {
-        optionsSelect.addEventListener('change', function(e) {
-            const action = e.target.value;
-            if (action === 'loadFavorites') {
-                loadFavorites();
-            } else if (action === 'importPackages') {
-                importPackages();
-            } else if (action === 'exportPackages') {
-                exportPackages();
-            }
-            // Reset select to default option
-            e.target.value = '';
-        });
-    }
-});
 
 // Function to setup auto command generation
 function setupAutoCommandGeneration() {
@@ -562,7 +559,7 @@ function autoGenerateCommand() {
 
         // Show warnings if any
         if (nonInstallablePackages.length) {
-            warningsElement.innerHTML = `<strong>⚠️ Not available for this OS:</strong> ${nonInstallablePackages.join(', ')}`;
+            warningsElement.innerHTML = `<strong>⚠️ Not available for this OS:</strong> <span class="not-available-packages">${nonInstallablePackages.join(', ')}</span>`;
             warningsElement.classList.add('show');
         } else {
             warningsElement.classList.remove('show');
@@ -585,8 +582,6 @@ function getCommandPrefix(selectedDistro) {
             return 'sudo emerge';
         case 'unix_nix_env':
             return 'sudo nix-env -iA';
-        case 'linux_void_xbps':
-            return 'sudo xbps-install -S';
         case 'linux_flatpak':
             return 'flatpak install';
         case 'linux_snap':
@@ -708,6 +703,9 @@ function setupSelectAllCheckbox() {
         
         // Update category checkboxes
         updateAllCategoryCheckboxes();
+
+        // Refresh select-all label and indeterminate state
+        updateSelectAllState();
         
         // Trigger command generation
         autoGenerateCommand();
@@ -730,13 +728,13 @@ function setupToggleAllButton() {
         if (allCollapsed) {
             // Expand all
             categories.forEach(cat => cat.classList.remove('collapsed'));
-            toggleAllLabel.textContent = 'Collapse All';
+            toggleAllLabel.textContent = 'Collapse';
             toggleAllBtn.classList.remove('collapsed');
             allCollapsed = false;
         } else {
             // Collapse all
             categories.forEach(cat => cat.classList.add('collapsed'));
-            toggleAllLabel.textContent = 'Expand All';
+            toggleAllLabel.textContent = 'Expand';
             toggleAllBtn.classList.add('collapsed');
             allCollapsed = true;
         }
@@ -757,11 +755,11 @@ function updateSelectAllState() {
     if (checkedCount === 0) {
         selectAllCheckbox.indeterminate = false;
         selectAllCheckbox.checked = false;
-        selectAllLabel.textContent = 'Select All';
+        selectAllLabel.textContent = 'Select';
     } else if (checkedCount === totalCount) {
         selectAllCheckbox.indeterminate = false;
         selectAllCheckbox.checked = true;
-        selectAllLabel.textContent = 'Deselect All';
+        selectAllLabel.textContent = 'Deselect';
     } else {
         selectAllCheckbox.indeterminate = true;
         selectAllLabel.textContent = 'Selected';

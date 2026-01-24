@@ -2,9 +2,18 @@
    PAGE LAYOUT - MOBILE FIRST
    ========================================================================== */
 .page-wrapper {
-    max-width: 1400px;
+    max-width: 2200px;
     margin: 0 auto;
     padding: 0;
+}
+
+.container {
+    max-width: 2200px;
+    margin: 0 auto;
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    padding: var(--spacing-md);
 }
 
 .page-header {
@@ -92,6 +101,10 @@
     display: block;
 }
 
+.options-select {
+    width: 6rem;
+}
+
 .dropdown-item {
     display: flex;
     align-items: center;
@@ -149,7 +162,7 @@
     padding: 0 var(--spacing-sm);
 }
 
-.package-section > h2 {
+.package-section>h2 {
     margin-bottom: var(--spacing-md);
 }
 
@@ -366,7 +379,9 @@ form {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .loading-spinner p {
@@ -398,13 +413,15 @@ form {
 }
 
 .columns {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-sm);
     margin: var(--spacing-md) 0;
 }
 
 .column {
+    flex: 1 1 calc(100% - var(--spacing-sm));
+    min-width: 220px;
     background: var(--card-background);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
@@ -421,13 +438,13 @@ form {
     border-radius: 8px;
     transition: all 0.3s ease;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .category-header:hover {
     background: linear-gradient(135deg, #e0e7ef 0%, #b3c3da 100%);
     transform: translateY(-1px);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme="dark"] .category-header {
@@ -452,7 +469,7 @@ form {
     height: 40px;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] .category-emoji {
@@ -668,8 +685,8 @@ form {
     border-top: 2px solid var(--border-color);
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    padding: var(--spacing-md);
-    max-height: 40vh;
+    padding: var(--spacing-sm);
+    max-height: 30vh;
     overflow-y: auto;
     background: var(--card-background);
 }
@@ -679,67 +696,81 @@ form {
 }
 
 .command-container {
-    max-width: 1400px;
+    max-width: 2200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
 }
 
 .command-output {
-    position: relative;
-    background-color: #2d2d2d;
+    background-color: var(--card-background);
+    border: 2px solid var(--border-color);
     border-radius: var(--border-radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.command-header {
+    display: flex;
+    align-items: center;
     padding: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
+}
+
+.command-output code {
+    padding: var(--spacing-md);
 }
 
 [data-theme="dark"] .command-output {
     background-color: #1a1a1a;
-    border: 1px solid var(--border-color);
+    border: 2px solid #404040;
 }
 
-.command-content {
+.command-header {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-    padding-right: 70px; /* Space for copy button */
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-xs);
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(128, 128, 128, 0.05);
 }
 
-.command-label {
-    display: block;
-    color: #9ca3af;
+[data-theme="dark"] .command-header {
+    border-bottom-color: #404040;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.command-language {
     font-size: 12px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
+    color: var(--text-secondary);
+    letter-spacing: 0.3px;
 }
 
 .copy-btn {
-    position: absolute;
-    top: var(--spacing-sm);
-    right: var(--spacing-sm);
-    padding: 6px 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    background-color: rgba(128, 128, 128, 0.15);
+    color: var(--text-primary);
+    border: 1px solid rgba(128, 128, 128, 0.3);
     border-radius: var(--border-radius);
     cursor: pointer;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     transition: all 0.2s ease;
-    opacity: 0.7;
-    min-height: 32px;
-    z-index: 10;
+    white-space: nowrap;
+    max-width: fit-content;
 }
 
 .copy-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    opacity: 1;
+    background-color: rgba(128, 128, 128, 0.25);
+    border-color: rgba(128, 128, 128, 0.5);
+    transform: translateY(-1px);
 }
 
 .copy-btn:focus {
-    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline: 2px solid var(--primary-color);
     outline-offset: 2px;
-    opacity: 1;
 }
 
 .copy-btn:active {
@@ -749,26 +780,47 @@ form {
 .copy-btn.copied {
     background-color: #28a745;
     border-color: #28a745;
-    opacity: 1;
+    color: white;
 }
 
 .command-output code {
     display: block;
-    color: #fffaef;
+    color: var(--text-primary);
     font-family: 'Courier New', monospace;
-    font-size: 14px;
+    font-size: 12px;
     white-space: pre-wrap;
     word-break: break-all;
+    line-height: 1.5;
 }
 
 .command-warnings {
     display: none;
     background-color: #fff3cd;
-    border: 1px solid #ffc107;
+    border: 2px solid #ffc107;
     border-radius: var(--border-radius);
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md);
     color: #856404;
-    font-size: 13px;
+    font-size: 12px;
+    max-height: 60px;
+    overflow-y: auto;
+}
+
+/* Scrollbar styling for command-warnings */
+.command-warnings::-webkit-scrollbar {
+    width: 6px;
+}
+
+.command-warnings::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.command-warnings::-webkit-scrollbar-thumb {
+    background: rgba(255, 193, 7, 0.5);
+    border-radius: 3px;
+}
+
+.command-warnings::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 193, 7, 0.7);
 }
 
 [data-theme="dark"] .command-warnings {
@@ -784,61 +836,18 @@ form {
 .command-warnings strong {
     display: block;
     margin-bottom: var(--spacing-xs);
+    font-weight: 600;
 }
 
-/* Add padding to body to prevent content from being hidden under footer */
+/* Padding for body to prevent content under footer */
 body {
-    padding-bottom: 200px;
+    padding-bottom: 25vh;
 }
 
 /* ==========================================================================
-   OUTPUT STYLES (DEPRECATED - keeping for compatibility)
-   ========================================================================== */
-#result {
-    position: relative;
-}
-
-#installation-command {
-    display: block;
-    background-color: #4d4d4d;
-    color: #fffaef;
-    border-radius: var(--border-radius);
-    padding: var(--spacing-md);
-    margin: var(--spacing-sm) 0;
-    font-family: monospace;
-    white-space: pre-wrap;
-    overflow-x: auto;
-}
-
-#packages-not-found {
-    display: block;
-    background-color: #ec9d2e;
-    color: #fff5ea;
-    border-radius: var(--border-radius);
-    padding: var(--spacing-md);
-    margin: var(--spacing-sm) 0;
-    font-family: monospace;
-    white-space: pre-wrap;
-}
-
-#copy-button {
-    position: absolute;
-    top: var(--spacing-xs);
-    right: var(--spacing-xs);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border: none;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-size: 12px;
-}
-
-/* ==========================================================================
-   RESPONSIVE - MOBILE FIRST APPROACH
+   RESPONSIVE - MOBILE FIRST APPROACH WITH FLEXBOX
    ========================================================================== */
 
-/* TABLET SCREENS (min 480px) */
 @media (min-width: 480px) {
     .page-header {
         padding: var(--spacing-lg) var(--spacing-md);
@@ -867,12 +876,6 @@ body {
         max-width: 250px;
     }
 
-    .columns {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-md);
-        margin: var(--spacing-lg) 0;
-    }
-
     .os-btn {
         font-size: 16px;
         padding: var(--spacing-sm) var(--spacing-lg);
@@ -882,8 +885,6 @@ body {
     .copy-btn {
         font-size: 12px;
         padding: var(--spacing-xs) var(--spacing-sm);
-        top: var(--spacing-md);
-        right: var(--spacing-lg);
     }
 
     .os-selection {
@@ -909,29 +910,78 @@ body {
     .os-options label {
         font-size: 14px;
     }
-}
 
-/* PC SCREENS (min 768px) */
-@media (min-width: 768px) {
-    .columns {
-        grid-template-columns: repeat(3, 1fr);
+    /* Flexbox columns for tablet */
+    .column {
+        flex: 1 1 calc(50% - var(--spacing-sm));
     }
 
+    .command-footer {
+        padding: var(--spacing-md);
+    }
+
+    .command-language {
+        font-size: 13px;
+    }
+
+    .copy-btn {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
+    .command-output code {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) {
     .primary-os-selector {
-        grid-template-columns: repeat(4, 1fr);
+        flex-wrap: wrap;
     }
 
     .os-selection {
-        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
     }
 
     .os-title {
         font-size: 18px;
     }
+
+    /* Flexbox columns for small desktop */
+    .column {
+        flex: 1 1 calc(33.333% - var(--spacing-sm));
+    }
 }
 
-/* LARGE SCREENS (min 1200px) */
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
+    .command-footer {
+        padding: var(--spacing-md);
+    }
+
+    .command-language {
+        font-size: 14px;
+    }
+
+    .copy-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .command-output code {
+        font-size: 14px;
+    }
+
+    body {
+        padding-bottom: 30vh;
+    }
+
+    /* Flexbox columns grow naturally based on content */
+    .column {
+        flex: 1 1 calc(25% - var(--spacing-sm));
+    }
+}
+
+@media (min-width: 1400px) {
     .page-wrapper {
         padding: 0 var(--spacing-lg);
     }
@@ -948,16 +998,13 @@ body {
         padding: 0;
     }
 
-    .columns {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .os-selection {
-        grid-template-columns: repeat(4, 1fr);
+    /* Columns continue to adapt with flexible growth */
+    .column {
+        flex: 1 1 calc(20% - var(--spacing-sm));
     }
 
     body {
-        max-width: 1400px;
+        max-width: 2200px;
         margin: var(--spacing-xl) auto;
     }
 }

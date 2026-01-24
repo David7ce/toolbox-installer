@@ -84,7 +84,7 @@ p {
    SHARED COMPONENTS - MOBILE FIRST
    ========================================================================== */
 .container {
-    max-width: 1400px;
+    max-width: 2200px;
     margin: 0 auto;
     background: var(--card-background);
     border-radius: 8px;
@@ -265,13 +265,15 @@ input[type="search"]:focus {
 /* LARGE SCREENS (min 1200px) */
 @media (min-width: 1200px) {
     body {
-        max-width: 1600px;
+        max-width: 100%;
         margin: 0 auto;
         padding: var(--spacing-xl);
     }
 
     .container {
+        max-width: 2200px;
         padding: 30px;
+        margin: 0 auto;
     }
 
     h1 {

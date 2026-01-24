@@ -14,7 +14,6 @@ Add these pacakges to #packages-info.json using this format:
         "linux_fedora_rpm": "",
         "linux_gentoo_emerge": "",
         "unix_nix_env": "",
-        "linux_void_xbps": "",
         "linux_flatpak": "",
         "freebsd_pkg": "",
         "macos_brew": "",

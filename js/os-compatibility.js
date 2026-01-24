@@ -31,7 +31,6 @@ async function loadPackages() {
                             pm.linux_fedora_rpm !== null || 
                             pm.linux_flatpak !== null || 
                             pm.linux_snap !== null ||
-                            pm.linux_void_xbps !== null ||
                             pm.linux_gentoo_emerge !== null;
             const hasFreeBSD = pm.freebsd_pkg !== null && pm.freebsd_pkg !== undefined;
 
