@@ -731,7 +731,7 @@ form {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-xs);
+    padding: var(--spacing-md);
     border-bottom: 1px solid var(--border-color);
     background-color: rgba(128, 128, 128, 0.05);
 }

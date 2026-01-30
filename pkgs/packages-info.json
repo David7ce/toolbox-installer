@@ -259,13 +259,13 @@
       "package_manager": {
         "linux_arch_aur": null,
         "linux_arch_pacman": "borg",
-        "linux_debian_apt": "borgBackup",
-        "linux_fedora_rpm": "borgBackup",
-        "linux_gentoo_emerge": "app-Backup/borgBackup",
+        "linux_debian_apt": "borgbackup",
+        "linux_fedora_rpm": "borgbackup",
+        "linux_gentoo_emerge": "app-Backup/borgbackup",
         "linux_flatpak": null,
         "linux_snap": "borgbackup",
-        "freebsd_pkg": "py37-borgBackup",
-        "macos_brew": "borgBackup",
+        "freebsd_pkg": "py37-borgbackup",
+        "macos_brew": "borgbackup",
         "unix_nix_env": "nixos.borgBackup",
         "windows_winget": null
       }
@@ -859,7 +859,7 @@
         "linux_flatpak": null,
         "linux_snap": null,
         "freebsd_pkg": "freefilesync",
-        "macos_brew": null,
+        "macos_brew": "freefilesync",
         "unix_nix_env": "nixos.freefilesync",
         "windows_winget": null
       }

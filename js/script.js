@@ -501,7 +501,7 @@ function autoGenerateCommand() {
             case 'macos':
                 selectedDistro = 'macos_brew';
                 break;
-            case 'bsd':
+            case 'freebsd':
                 selectedDistro = 'freebsd_pkg';
                 break;
             default:
