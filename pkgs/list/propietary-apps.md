@@ -24,25 +24,23 @@ Companies that only develop to Windows or macOS: Adobe, Autodesk, Avid, Capture-
 | Autodesk           | Maya               | 3D Modeling             | Paid  | ✨       |
 | Avid               | ProTools           | Audio Production        | Paid  |          |
 | Capture One        | CaptureOne         | Photo Editing           | Paid  | ✨       |
+| Crystal Dew World  | CrystalDiskInfo    | Disk Utility            | Free  |          |
 | CorelDRAW          | Graphics-Suite     | Graphic Design          | Paid  |          |
 | Dassault-Systèmes  | Solidworks         | CAD                     | Paid  | ✨       |
 | Eagle              | Eagle.cool         | Asset Management        | Paid  | ✨       |
+| Epic Games         | UnrealEngine       | Game Development        | Free  |          |
+| Image-Line         | FL-Studio          | Music Production        | Paid  | ✨       |
+| JPEGView           | JPEGView           | Image Viewer            | Free  |          |
 | MAGIX              | Vegas Pro          | Video Editing           | Paid  |          |
 | Maxon              | Cinema-4D          | 3D Modeling             | Paid  |          |
 | Microsoft          | Office             | Office Suite            | Paid  |          |
+| Microsoft          | PowerToys          | Utility                 | Free  | ✨       |
+| MusicBee           | MusicBee           | Music player            | Free  |          |
+| MSI                | MSI Afterburner    | GPU Monitoring          | Free  |          |
 | Serif              | Affinity-Designer  | Graphic Design          | Paid  | ✨       |
 | Serif              | Affinity-Photo     | Photo Editing           | Paid  | ✨       |
 | Serif              | Affinity-Publisher | Photo Editing           | Paid  | ✨       |
 | Steinberg          | Cubase             | Music Production        | Paid  |          |
-| Techsmith          | Camtasia           | Video Editing           | Paid  |          |
-| Image-Line         | FL-Studio          | Music Production        | Paid  | ✨       |
-|--------------------|--------------------|-------------------------|-------|----------|
-| Crystal Dew World  | CrystalDiskInfo    | Disk Utility            | Free  |          |
-| Epic Games         | UnrealEngine       | Game Development        | Free  |          |
-| JPEGView           | JPEGView           | Image Viewer            | Free  |          |
-| Microsoft          | PowerToys          | Utility                 | Free  | ✨       |
-| MSI                | MSI Afterburner    | GPU Monitoring          | Free  |          |
-| MusicBee           | MusicBee           | Music player            | Free  |          |
 
 ### Great Apple paid software
 

@@ -31,6 +31,19 @@ Easily generate installation commands for popular software packages across all m
 3. Search for the software you want to install.
 4. Copy the generated install command and run it in your terminal.
 
+## Validation (winget)
+
+Validate `windows_winget` package IDs using the winget.run API:
+
+```sh
+node .\pkgs\methods\validate-winget.js --write .\pkgs\methods\winget-report.json
+```
+
+Optional flags:
+
+- `--limit 10` to keep more suggestions for missing IDs
+- `--delay-ms 200` to slow down requests
+
 ## Example
 
 To install VLC on Windows using winget:

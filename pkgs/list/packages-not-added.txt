@@ -1,5 +1,4 @@
 activitywatch.net
-affinity studio
 autohotkey
 bleachbit
 cgsecurity
@@ -10,10 +9,8 @@ eagle.cool
 foam
 firmaelectronica
 fnmt
-guitar-pro
 userbase.kde
 jitsi
-kubernetes.io
 lykos.ai
 mumble.info
 krosbits.in
@@ -24,7 +21,6 @@ portainer.io
 sketchup
 spacedesk.net
 stable-diffusion-webui
-stremio
 uptime-kuma
 virt-manager
 winutil

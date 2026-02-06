@@ -717,7 +717,7 @@
         "freebsd_pkg": null,
         "macos_brew": "fastfetch",
         "unix_nix_env": null,
-        "windows_winget": "fastfetch"
+        "windows_winget": "Fastfetch-cli.Fastfetch"
       }
     },
     "ffmpeg": {
@@ -1779,7 +1779,7 @@
         "freebsd_pkg": "melonds",
         "macos_brew": "melonds",
         "unix_nix_env": "melonds",
-        "windows_winget": null
+        "windows_winget": "melonDS.melonDS"
       }
     },
     "monero-gui": {
@@ -2291,8 +2291,8 @@
       "category": "Gaming",
       "subcategory": "Emulation",
       "package_manager": {
-        "linux_arch_aur": null,
-        "linux_arch_pacman": "pcsx2",
+        "linux_arch_aur": "pcsx2",
+        "linux_arch_pacman": null,
         "linux_debian_apt": "pcsx2",
         "linux_fedora_rpm": "pcsx2",
         "linux_gentoo_emerge": "games-emulation/pcsx2",
@@ -3057,7 +3057,7 @@
         "freebsd_pkg": "tmux",
         "macos_brew": "tmux",
         "unix_nix_env": "nixos.tmux",
-        "windows_winget": "tmux"
+        "windows_winget": null
       }
     },
     "tor-browser": {
@@ -3201,7 +3201,7 @@
         "freebsd_pkg": "ventoy",
         "macos_brew": null,
         "unix_nix_env": "nixos.ventoy",
-        "windows_winget": null
+        "windows_winget": "Ventoy.Ventoy"
       }
     },
     "veracrypt": {
@@ -3471,7 +3471,7 @@
         "freebsd_pkg": null,
         "macos_brew": null,
         "unix_nix_env": "xemu",
-        "windows_winget": null
+        "windows_winget": "xemu-project.xemu"
       }
     },
     "xen": {

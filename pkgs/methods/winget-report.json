@@ -1,0 +1,1466 @@
+{
+  "checkedAt": "2026-02-06T20:46:22.146Z",
+  "valid": [
+    {
+      "pkgKey": "7zip",
+      "wingetId": "7zip.7zip"
+    },
+    {
+      "pkgKey": "alacritty",
+      "wingetId": "Alacritty.Alacritty"
+    },
+    {
+      "pkgKey": "audacity",
+      "wingetId": "Audacity.Audacity"
+    },
+    {
+      "pkgKey": "balena-etcher",
+      "wingetId": "Balena.Etcher"
+    },
+    {
+      "pkgKey": "bitwarden",
+      "wingetId": "Bitwarden.Bitwarden"
+    },
+    {
+      "pkgKey": "bitwig-studio",
+      "wingetId": "bitwig.bitwig"
+    },
+    {
+      "pkgKey": "blender",
+      "wingetId": "BlenderFoundation.Blender"
+    },
+    {
+      "pkgKey": "brave",
+      "wingetId": "Brave.Brave"
+    },
+    {
+      "pkgKey": "calibre",
+      "wingetId": "calibre.calibre"
+    },
+    {
+      "pkgKey": "chromium",
+      "wingetId": "Google.Chrome"
+    },
+    {
+      "pkgKey": "cryptomator",
+      "wingetId": "Cryptomator.Cryptomator"
+    },
+    {
+      "pkgKey": "curl",
+      "wingetId": "cURL.cURL"
+    },
+    {
+      "pkgKey": "discord",
+      "wingetId": "Discord.Discord"
+    },
+    {
+      "pkgKey": "docker",
+      "wingetId": "Docker.DockerDesktop"
+    },
+    {
+      "pkgKey": "dolphin",
+      "wingetId": "KDE.Dolphin"
+    },
+    {
+      "pkgKey": "dolphin-emu",
+      "wingetId": "DolphinEmulator.Dolphin"
+    },
+    {
+      "pkgKey": "dropbox",
+      "wingetId": "Dropbox.Dropbox"
+    },
+    {
+      "pkgKey": "electrum",
+      "wingetId": "Electrum.Electrum"
+    },
+    {
+      "pkgKey": "ffmpeg",
+      "wingetId": "Mozilla.Firefox"
+    },
+    {
+      "pkgKey": "firefox",
+      "wingetId": "Mozilla.Firefox"
+    },
+    {
+      "pkgKey": "flameshot",
+      "wingetId": "Flameshot.Flameshot"
+    },
+    {
+      "pkgKey": "freecad",
+      "wingetId": "FreeCAD.FreeCAD"
+    },
+    {
+      "pkgKey": "freeplane",
+      "wingetId": "Freeplane.Freeplane"
+    },
+    {
+      "pkgKey": "geany",
+      "wingetId": "Geany.Geany"
+    },
+    {
+      "pkgKey": "geogebra",
+      "wingetId": "GeoGebra.Classic"
+    },
+    {
+      "pkgKey": "gimp",
+      "wingetId": "GIMP.GIMP"
+    },
+    {
+      "pkgKey": "git",
+      "wingetId": "Git.Git"
+    },
+    {
+      "pkgKey": "gnucash",
+      "wingetId": "GnuCash.GnuCash"
+    },
+    {
+      "pkgKey": "google-earth",
+      "wingetId": "Google.EarthPro"
+    },
+    {
+      "pkgKey": "gramps",
+      "wingetId": "Gramps.Gramps"
+    },
+    {
+      "pkgKey": "heroic-games-launcher",
+      "wingetId": "HeroicGamesLauncher.HeroicGamesLauncher"
+    },
+    {
+      "pkgKey": "homebank",
+      "wingetId": "HomeBank.HomeBank"
+    },
+    {
+      "pkgKey": "hugo",
+      "wingetId": "Hugo.Hugo"
+    },
+    {
+      "pkgKey": "imagemagick",
+      "wingetId": "ImageMagick.ImageMagick"
+    },
+    {
+      "pkgKey": "inkscape",
+      "wingetId": "Inkscape.Inkscape"
+    },
+    {
+      "pkgKey": "intellij-idea-ultimate",
+      "wingetId": "JetBrains.IntelliJIDEA.Ultimate"
+    },
+    {
+      "pkgKey": "iptvnator",
+      "wingetId": "4gray.iptvnator"
+    },
+    {
+      "pkgKey": "jellyfin-client",
+      "wingetId": "Jellyfin.JellyfinMediaPlayer"
+    },
+    {
+      "pkgKey": "jellyfin-server",
+      "wingetId": "Jellyfin.Server"
+    },
+    {
+      "pkgKey": "joplin",
+      "wingetId": "Joplin.Joplin"
+    },
+    {
+      "pkgKey": "keepassxc",
+      "wingetId": "KeePassXCTeam.KeePassXC"
+    },
+    {
+      "pkgKey": "kodi",
+      "wingetId": "XBMCFoundation.Kodi"
+    },
+    {
+      "pkgKey": "krita",
+      "wingetId": "KDE.Krita"
+    },
+    {
+      "pkgKey": "kubectl",
+      "wingetId": "Kubernetes.kubectl"
+    },
+    {
+      "pkgKey": "laragon",
+      "wingetId": "LeNgocKhoa.Laragon"
+    },
+    {
+      "pkgKey": "libreoffice",
+      "wingetId": "TheDocumentFoundation.LibreOffice"
+    },
+    {
+      "pkgKey": "librewolf",
+      "wingetId": "LibreWolf.LibreWolf"
+    },
+    {
+      "pkgKey": "lmms",
+      "wingetId": "LMMS.LMMS"
+    },
+    {
+      "pkgKey": "mandelbulber",
+      "wingetId": "Mandelbulber.Mandelbulber"
+    },
+    {
+      "pkgKey": "mongodb",
+      "wingetId": "MongoDB.Server"
+    },
+    {
+      "pkgKey": "mpc-hc",
+      "wingetId": "clsid2.mpc-hc"
+    },
+    {
+      "pkgKey": "mullvad-vpn",
+      "wingetId": "MullvadVPN.MullvadVPN"
+    },
+    {
+      "pkgKey": "musicbrainz-picard",
+      "wingetId": "MusicBrainz.Picard"
+    },
+    {
+      "pkgKey": "mypaint",
+      "wingetId": "MyPaint.MyPaint"
+    },
+    {
+      "pkgKey": "neovim",
+      "wingetId": "Neovim.Neovim"
+    },
+    {
+      "pkgKey": "nextcloud-desktop",
+      "wingetId": "Nextcloud.NextcloudDesktop"
+    },
+    {
+      "pkgKey": "notepad-plus-plus",
+      "wingetId": "Notepad++.Notepad++"
+    },
+    {
+      "pkgKey": "notion",
+      "wingetId": "Notion.Notion"
+    },
+    {
+      "pkgKey": "obs-studio",
+      "wingetId": "OBSProject.OBSStudio"
+    },
+    {
+      "pkgKey": "obsidian",
+      "wingetId": "Obsidian.Obsidian"
+    },
+    {
+      "pkgKey": "ocenaudio",
+      "wingetId": "Ocenaudio.Ocenaudio"
+    },
+    {
+      "pkgKey": "okular",
+      "wingetId": "KDE.Okular"
+    },
+    {
+      "pkgKey": "onlyoffice",
+      "wingetId": "ONLYOFFICE.DesktopEditors"
+    },
+    {
+      "pkgKey": "opera",
+      "wingetId": "Opera.Opera"
+    },
+    {
+      "pkgKey": "pandoc",
+      "wingetId": "JohnMacFarlane.Pandoc"
+    },
+    {
+      "pkgKey": "plex",
+      "wingetId": "Plex.Plex"
+    },
+    {
+      "pkgKey": "postgresql",
+      "wingetId": "PostgreSQL.PostgreSQL"
+    },
+    {
+      "pkgKey": "proton-vpn",
+      "wingetId": "ProtonTechnologies.ProtonVPN"
+    },
+    {
+      "pkgKey": "putty",
+      "wingetId": "PuTTY.PuTTY"
+    },
+    {
+      "pkgKey": "qbittorrent",
+      "wingetId": "qBittorrent.qBittorrent"
+    },
+    {
+      "pkgKey": "qgis",
+      "wingetId": "OSGeo.QGIS"
+    },
+    {
+      "pkgKey": "rawtherapee",
+      "wingetId": "RawTherapee.RawTherapee"
+    },
+    {
+      "pkgKey": "rclone",
+      "wingetId": "Rclone.Rclone"
+    },
+    {
+      "pkgKey": "rustdesk",
+      "wingetId": "RustDesk.RustDesk"
+    },
+    {
+      "pkgKey": "sharex",
+      "wingetId": "ShareX.ShareX"
+    },
+    {
+      "pkgKey": "shotcut",
+      "wingetId": "Meltytech.Shotcut"
+    },
+    {
+      "pkgKey": "signal",
+      "wingetId": "OpenWhisperSystems.Signal"
+    },
+    {
+      "pkgKey": "spotify",
+      "wingetId": "Spotify.Spotify"
+    },
+    {
+      "pkgKey": "starship",
+      "wingetId": "Starship.Starship"
+    },
+    {
+      "pkgKey": "steam",
+      "wingetId": "Valve.Steam"
+    },
+    {
+      "pkgKey": "stellarium",
+      "wingetId": "Stellarium.Stellarium"
+    },
+    {
+      "pkgKey": "stremio",
+      "wingetId": "Stremio.Stremio"
+    },
+    {
+      "pkgKey": "sublime-text-4",
+      "wingetId": "SublimeHQ.SublimeText.4"
+    },
+    {
+      "pkgKey": "teamviewer",
+      "wingetId": "TeamViewer.TeamViewer"
+    },
+    {
+      "pkgKey": "telegram",
+      "wingetId": "Telegram.TelegramDesktop"
+    },
+    {
+      "pkgKey": "thunderbird",
+      "wingetId": "Mozilla.Thunderbird"
+    },
+    {
+      "pkgKey": "tor-browser",
+      "wingetId": "TorProject.TorBrowser"
+    },
+    {
+      "pkgKey": "transmission",
+      "wingetId": "Transmission.Transmission"
+    },
+    {
+      "pkgKey": "unity",
+      "wingetId": "Unity.UnityHub"
+    },
+    {
+      "pkgKey": "unreal-engine",
+      "wingetId": "EpicGames.EpicGamesLauncher"
+    },
+    {
+      "pkgKey": "upscayl",
+      "wingetId": "Upscayl.Upscayl"
+    },
+    {
+      "pkgKey": "veracrypt",
+      "wingetId": "IDRIX.VeraCrypt"
+    },
+    {
+      "pkgKey": "virtualbox",
+      "wingetId": "Oracle.VirtualBox"
+    },
+    {
+      "pkgKey": "visual-studio-code",
+      "wingetId": "Microsoft.VisualStudioCode"
+    },
+    {
+      "pkgKey": "vlc",
+      "wingetId": "VideoLAN.VLC"
+    },
+    {
+      "pkgKey": "whatsapp",
+      "wingetId": "WhatsApp.WhatsApp"
+    },
+    {
+      "pkgKey": "windscribe",
+      "wingetId": "Windscribe.Windscribe"
+    },
+    {
+      "pkgKey": "wireshark",
+      "wingetId": "WiresharkFoundation.Wireshark"
+    },
+    {
+      "pkgKey": "wordpress",
+      "wingetId": "Automattic.Wordpress"
+    },
+    {
+      "pkgKey": "xnview",
+      "wingetId": "XnSoft.XnViewMP"
+    },
+    {
+      "pkgKey": "yt-dlp",
+      "wingetId": "yt-dlp.yt-dlp"
+    },
+    {
+      "pkgKey": "ytmdesktop",
+      "wingetId": "Ytmdesktop.Ytmdesktop"
+    },
+    {
+      "pkgKey": "zoom",
+      "wingetId": "Zoom.Zoom"
+    }
+  ],
+  "invalid": [
+    {
+      "pkgKey": "affinity-studio",
+      "wingetId": "Canva.Affinity"
+    },
+    {
+      "pkgKey": "anydesk",
+      "wingetId": "AnyDesk.AnyDesk"
+    },
+    {
+      "pkgKey": "anytype",
+      "wingetId": "AnyAssociation.Anytype"
+    },
+    {
+      "pkgKey": "apache",
+      "wingetId": "Apache.Httpd"
+    },
+    {
+      "pkgKey": "audacious",
+      "wingetId": "Audacious.Audacious"
+    },
+    {
+      "pkgKey": "balabolka",
+      "wingetId": "Ilya.Morozov.Balabolka"
+    },
+    {
+      "pkgKey": "darktable",
+      "wingetId": "Darktable.Darktable"
+    },
+    {
+      "pkgKey": "deno",
+      "wingetId": "Deno.Deno"
+    },
+    {
+      "pkgKey": "digikam",
+      "wingetId": "digiKam.digiKam"
+    },
+    {
+      "pkgKey": "dotnet-runtime",
+      "wingetId": "Microsoft.DotNet.SDK"
+    },
+    {
+      "pkgKey": "drawio",
+      "wingetId": "JGraph.drawio"
+    },
+    {
+      "pkgKey": "duckstation",
+      "wingetId": "Stenzek.DuckStation"
+    },
+    {
+      "pkgKey": "elisa",
+      "wingetId": "KDE.Elisa"
+    },
+    {
+      "pkgKey": "fastfetch",
+      "wingetId": "fastfetch"
+    },
+    {
+      "pkgKey": "filezilla",
+      "wingetId": "TimKosse.FileZilla.Client"
+    },
+    {
+      "pkgKey": "folo",
+      "wingetId": "RSSNext.Folo"
+    },
+    {
+      "pkgKey": "gcc",
+      "wingetId": "GNU.GCC"
+    },
+    {
+      "pkgKey": "gnome-boxes",
+      "wingetId": "Boxes"
+    },
+    {
+      "pkgKey": "godot",
+      "wingetId": "GodotEngine.Godot"
+    },
+    {
+      "pkgKey": "gpxsee",
+      "wingetId": "gpxsee.GPXSee"
+    },
+    {
+      "pkgKey": "guitar-pro",
+      "wingetId": "ArobasMusic.GuitarPro.8"
+    },
+    {
+      "pkgKey": "handbrake",
+      "wingetId": "HandBrake"
+    },
+    {
+      "pkgKey": "haruna",
+      "wingetId": "KDE.Haruna"
+    },
+    {
+      "pkgKey": "kate",
+      "wingetId": "KateEditor.Kate"
+    },
+    {
+      "pkgKey": "kdenlive",
+      "wingetId": "Kdenlive.Kdenlive"
+    },
+    {
+      "pkgKey": "konsole",
+      "wingetId": "KDE.Konsole"
+    },
+    {
+      "pkgKey": "koodoreader",
+      "wingetId": "AppByTroye.KoodoReader"
+    },
+    {
+      "pkgKey": "kstars",
+      "wingetId": "KDE.Kstars"
+    },
+    {
+      "pkgKey": "ledger-live",
+      "wingetId": "Ledger.LedgerLive"
+    },
+    {
+      "pkgKey": "lucaschess",
+      "wingetId": "LucasChess.LucasChess"
+    },
+    {
+      "pkgKey": "mariadb",
+      "wingetId": "MariaDB.MariaDBServer"
+    },
+    {
+      "pkgKey": "mega",
+      "wingetId": "Mega.MEGAsync"
+    },
+    {
+      "pkgKey": "meld",
+      "wingetId": "meld"
+    },
+    {
+      "pkgKey": "monero-gui",
+      "wingetId": "Monero.MoneroGUI"
+    },
+    {
+      "pkgKey": "mpv",
+      "wingetId": "MPVPlayer.MPV"
+    },
+    {
+      "pkgKey": "musescore",
+      "wingetId": "MuseScore.MuseScore"
+    },
+    {
+      "pkgKey": "musicbee",
+      "wingetId": "MusicBee.MusicBee"
+    },
+    {
+      "pkgKey": "newelle",
+      "wingetId": "NewElle.NewElle"
+    },
+    {
+      "pkgKey": "nginx",
+      "wingetId": "nginxinc.nginx"
+    },
+    {
+      "pkgKey": "nmap",
+      "wingetId": "Nmap.Nmap"
+    },
+    {
+      "pkgKey": "nodejs",
+      "wingetId": "OpenJS.Nodejs"
+    },
+    {
+      "pkgKey": "ollama",
+      "wingetId": "Ollama.Ollama"
+    },
+    {
+      "pkgKey": "openshot",
+      "wingetId": "OpenShot"
+    },
+    {
+      "pkgKey": "playonlinux",
+      "wingetId": "PlayOnLinux"
+    },
+    {
+      "pkgKey": "ppsspp",
+      "wingetId": "HenrikRydgard.PPSSPP"
+    },
+    {
+      "pkgKey": "python",
+      "wingetId": "Python.Python.3"
+    },
+    {
+      "pkgKey": "rapidraw",
+      "wingetId": "RapidRaw.RapidRaw"
+    },
+    {
+      "pkgKey": "reaper",
+      "wingetId": "REAPER"
+    },
+    {
+      "pkgKey": "sqlite",
+      "wingetId": "SQLite.SQLite3"
+    },
+    {
+      "pkgKey": "syncthing",
+      "wingetId": "Syncthing.Syncthing"
+    },
+    {
+      "pkgKey": "tenacity",
+      "wingetId": "TenacityTeam.Tenacity"
+    },
+    {
+      "pkgKey": "pear-desktop",
+      "wingetId": "pear-devs.pear-desktop"
+    },
+    {
+      "pkgKey": "tmux",
+      "wingetId": "tmux"
+    },
+    {
+      "pkgKey": "tree",
+      "wingetId": "sharkdp.tree"
+    },
+    {
+      "pkgKey": "ungoogled-chromium",
+      "wingetId": "Ungoogled-Chromium"
+    },
+    {
+      "pkgKey": "vivaldi",
+      "wingetId": "Vivaldi.Vivaldi"
+    },
+    {
+      "pkgKey": "wine",
+      "wingetId": "WineHQ.Wine"
+    },
+    {
+      "pkgKey": "xampp",
+      "wingetId": "Xampp.Xampp"
+    },
+    {
+      "pkgKey": "xen",
+      "wingetId": "XenServer.XenTools"
+    },
+    {
+      "pkgKey": "ytdownloader",
+      "wingetId": "aandrew-me.ytDownloader"
+    }
+  ],
+  "missing": [
+    {
+      "pkgKey": "ardour",
+      "query": "Ardour",
+      "results": [
+        {
+          "packageIdentifier": "File-New-Project.EarTrumpet",
+          "packageName": "EarTrumpet",
+          "publisher": "File-New-Project"
+        },
+        {
+          "packageIdentifier": "iA.iAWriter",
+          "packageName": "iA Writer",
+          "publisher": "iA Inc"
+        },
+        {
+          "packageIdentifier": "AirDroid.AirDroid",
+          "packageName": "AirDroid",
+          "publisher": "Sand Studio"
+        },
+        {
+          "packageIdentifier": "Kobo.Kobo",
+          "packageName": "Kobo",
+          "publisher": "Rakuten Kobo Inc."
+        },
+        {
+          "packageIdentifier": "Amazon.SendToKindle",
+          "packageName": "Amazon Send to Kindle",
+          "publisher": "Amazon"
+        }
+      ]
+    },
+    {
+      "pkgKey": "borg",
+      "query": "Borg",
+      "results": [
+        {
+          "packageIdentifier": "Adobe.Brackets",
+          "packageName": "Brackets",
+          "publisher": "brackets.io"
+        },
+        {
+          "packageIdentifier": "ProxymanLLC.Proxyman",
+          "packageName": "Proxyman",
+          "publisher": "Proxyman LLC"
+        },
+        {
+          "packageIdentifier": "PragmaTwice.proxinject",
+          "packageName": "proxinject",
+          "publisher": "PragmaTwice"
+        },
+        {
+          "packageIdentifier": "SuperCollider.SuperCollider",
+          "packageName": "SuperCollider",
+          "publisher": "SuperCollider Community"
+        },
+        {
+          "packageIdentifier": "Embarcadero.Dev-C++",
+          "packageName": "Embarcadero Dev-C++",
+          "publisher": "Embarcadero Technologies Inc."
+        }
+      ]
+    },
+    {
+      "pkgKey": "bottles",
+      "query": "Bottles",
+      "results": [
+        {
+          "packageIdentifier": "MongoDB.DatabaseTools",
+          "packageName": "MongoDB Tools",
+          "publisher": "MongoDB Inc."
+        },
+        {
+          "packageIdentifier": "Cyotek.CopyTools",
+          "packageName": "Cyotek CopyTools",
+          "publisher": "Cyotek"
+        },
+        {
+          "packageIdentifier": "IHMC.CmapTools",
+          "packageName": "IHMC CmapTools",
+          "publisher": "Institute for Human & Machine Cognition"
+        },
+        {
+          "packageIdentifier": "PowTools.FileShredder",
+          "packageName": "File Shredder",
+          "publisher": "Pow Tools"
+        },
+        {
+          "packageIdentifier": "WorshipTools.Presenter",
+          "packageName": "Presenter",
+          "publisher": "WorshipTools Software"
+        }
+      ]
+    },
+    {
+      "pkgKey": "davinci-resolve",
+      "query": "DaVinci Resolve",
+      "results": [
+        {
+          "packageIdentifier": "ArmagetronAdvanced.ArmagetronAdvanced",
+          "packageName": "Armagetron Advanced",
+          "publisher": "Armagetron Advanced Team"
+        },
+        {
+          "packageIdentifier": "OVRASTeam.OpenVR-AdvancedSettings",
+          "packageName": "OpenVR Advanced Settings",
+          "publisher": "OpenVR Advanced Settings Team"
+        },
+        {
+          "packageIdentifier": "EQAditu.AdvancedCombatTracker",
+          "packageName": "Advanced Combat Tracker",
+          "publisher": "EQAditu"
+        },
+        {
+          "packageIdentifier": "NirSoft.AdvancedRun",
+          "packageName": "AdvancedRun",
+          "publisher": "NirSoft"
+        },
+        {
+          "packageIdentifier": "OndrejSalplachta.AdvancedLogViewer",
+          "packageName": "Advanced Log Viewer",
+          "publisher": "Ondrej Salplachta"
+        }
+      ]
+    },
+    {
+      "pkgKey": "distrobox",
+      "query": "Distrobox",
+      "results": []
+    },
+    {
+      "pkgKey": "eaglemode",
+      "query": "Eagle-Mode",
+      "results": []
+    },
+    {
+      "pkgKey": "easy-effects",
+      "query": "Easy Effects",
+      "results": [
+        {
+          "packageIdentifier": "team-aie.aie",
+          "packageName": "aie",
+          "publisher": "team-aie"
+        },
+        {
+          "packageIdentifier": "maurizuki.O2",
+          "packageName": "O2",
+          "publisher": "maurizuki"
+        },
+        {
+          "packageIdentifier": "klaussinani.ao",
+          "packageName": "Ao",
+          "publisher": "Klaus Sinani"
+        },
+        {
+          "packageIdentifier": "YY.YY",
+          "packageName": "YY9",
+          "publisher": "广州津虹网络传媒有限公司"
+        },
+        {
+          "packageIdentifier": "UbiquitiInc.UI",
+          "packageName": "UI",
+          "publisher": "Ubiquiti Inc"
+        }
+      ]
+    },
+    {
+      "pkgKey": "evolution",
+      "query": "Evolution",
+      "results": []
+    },
+    {
+      "pkgKey": "foliate",
+      "query": "Foliate",
+      "results": [
+        {
+          "packageIdentifier": "Volta.Volta",
+          "packageName": "Volta",
+          "publisher": "The Volta Maintainers"
+        },
+        {
+          "packageIdentifier": "FoldingAtHome.FoldingAtHome",
+          "packageName": "Folding@home",
+          "publisher": "Folding@home.org"
+        },
+        {
+          "packageIdentifier": "Betaflight.Betaflight-Configurator",
+          "packageName": "Betaflight Configurator",
+          "publisher": "The Betaflight open source project."
+        },
+        {
+          "packageIdentifier": "andrewbrey.flot",
+          "packageName": "Flōt",
+          "publisher": "Andrew Brey"
+        },
+        {
+          "packageIdentifier": "VivaldiTechnologies.Vivaldi",
+          "packageName": "Vivaldi",
+          "publisher": "Vivaldi LLC"
+        }
+      ]
+    },
+    {
+      "pkgKey": "freefilesync",
+      "query": "FreeFileSync",
+      "results": []
+    },
+    {
+      "pkgKey": "gparted",
+      "query": "gparted",
+      "results": []
+    },
+    {
+      "pkgKey": "gwenview",
+      "query": "Gwenview",
+      "results": [
+        {
+          "packageIdentifier": "VirtualMagnifyingGlass.VirtualMagnifyingGlass",
+          "packageName": "Virtual Magnifying Glass",
+          "publisher": "The Virtual Magnifying Glass Team"
+        },
+        {
+          "packageIdentifier": "NirSoft.BlueScreenView",
+          "packageName": "BlueScreenView",
+          "publisher": "NirSoft"
+        },
+        {
+          "packageIdentifier": "Lakes.SCREENView",
+          "packageName": "Lakes Environmental SCREEN View",
+          "publisher": "Lakes Environmental Software"
+        },
+        {
+          "packageIdentifier": "Canva.Canva",
+          "packageName": "Canva",
+          "publisher": "Canva Pty Ltd"
+        },
+        {
+          "packageIdentifier": "converse.converse",
+          "packageName": "Converse Desktop",
+          "publisher": "The Converse Desktop Developers"
+        }
+      ]
+    },
+    {
+      "pkgKey": "home-assistant",
+      "query": "Home Assistant",
+      "results": [
+        {
+          "packageIdentifier": "SweetScape.Hamic",
+          "packageName": "Hamic",
+          "publisher": "SweetScape"
+        },
+        {
+          "packageIdentifier": "Zoho.ZohoMail.Desktop",
+          "packageName": "Zoho Mail - Desktop",
+          "publisher": "Zoho Mail"
+        },
+        {
+          "packageIdentifier": "HumbleBundle.HumbleApp",
+          "packageName": "Humble App",
+          "publisher": "Humble Bundle"
+        },
+        {
+          "packageIdentifier": "HamsterBase.HamsterBase.Server",
+          "packageName": "HamsterBase",
+          "publisher": "HamsterBase"
+        },
+        {
+          "packageIdentifier": "DataHammer.HammerPDF",
+          "packageName": "Hammer PDF",
+          "publisher": "DataHammer Group"
+        }
+      ]
+    },
+    {
+      "pkgKey": "koreader",
+      "query": "KOReader",
+      "results": [
+        {
+          "packageIdentifier": "YACReader.YACReader",
+          "packageName": "YACReader",
+          "publisher": "YACReader"
+        },
+        {
+          "packageIdentifier": "CrowTranslate.CrowTranslate",
+          "packageName": "Crow Translate",
+          "publisher": "Crow Translate"
+        },
+        {
+          "packageIdentifier": "ExpressLRS.ExpressLRS-Configurator",
+          "packageName": "ExpressLRS Configurator",
+          "publisher": "ExpressLRS Configurator Contributors"
+        },
+        {
+          "packageIdentifier": "pdfforge.PDFCreator",
+          "packageName": "PDFCreator",
+          "publisher": "pdfforge GmbH"
+        },
+        {
+          "packageIdentifier": "geeksoftwareGmbH.PDF24Creator",
+          "packageName": "PDF24 Creator",
+          "publisher": "geek software GmbH"
+        }
+      ]
+    },
+    {
+      "pkgKey": "lutris",
+      "query": "Lutris",
+      "results": [
+        {
+          "packageIdentifier": "TeamLidarr.Lidarr",
+          "packageName": "Lidarr",
+          "publisher": "Team Lidarr"
+        },
+        {
+          "packageIdentifier": "SuperCollider.SuperCollider",
+          "packageName": "SuperCollider",
+          "publisher": "SuperCollider Community"
+        },
+        {
+          "packageIdentifier": "zhanglun.Lettura",
+          "packageName": "Lettura",
+          "publisher": "lettura"
+        },
+        {
+          "packageIdentifier": "Ultra.Ultra",
+          "packageName": "Ultra",
+          "publisher": "The Ultra Authors"
+        },
+        {
+          "packageIdentifier": "LightyearVPN.LightyearVPN",
+          "packageName": "LightyearVPN",
+          "publisher": "LightyearVPN"
+        }
+      ]
+    },
+    {
+      "pkgKey": "mediawiki",
+      "query": "MediaWiki",
+      "results": [
+        {
+          "packageIdentifier": "Terraform-docs.Terraform-docs",
+          "packageName": "terraform-docs",
+          "publisher": "terraform-docs"
+        },
+        {
+          "packageIdentifier": "JamieOConnell.MIDI-OX",
+          "packageName": "MIDI-OX",
+          "publisher": "MIDIOX Computing"
+        },
+        {
+          "packageIdentifier": "DaMtech.PasswordGenerator",
+          "packageName": "DaMtech Password Generator",
+          "publisher": "DaMtech"
+        },
+        {
+          "packageIdentifier": "ExtremeTuxRacer.ExtremeTuxRacer",
+          "packageName": "Extreme TuxRacer",
+          "publisher": "The ExtremeTuxRacer team"
+        },
+        {
+          "packageIdentifier": "PeterDaveHello.TransmissionRemoteGUI",
+          "packageName": "Transmission Remote GUI",
+          "publisher": "Yury Sidorov & Transmission Remote GUI working group"
+        }
+      ]
+    },
+    {
+      "pkgKey": "melonds",
+      "query": "melonDS",
+      "results": []
+    },
+    {
+      "pkgKey": "moodle",
+      "query": "Moodle",
+      "results": [
+        {
+          "packageIdentifier": "MedalB.V.Medal",
+          "packageName": "Medal",
+          "publisher": "Medal B.V."
+        },
+        {
+          "packageIdentifier": "Modeliosoft.Modelio",
+          "packageName": "Modelio Open Source",
+          "publisher": "Modeliosoft"
+        },
+        {
+          "packageIdentifier": "mathworks.matlabdrive",
+          "packageName": "MATLAB Drive Connector",
+          "publisher": "MathWorks"
+        },
+        {
+          "packageIdentifier": "Serraniel.DiscordMediaLoader",
+          "packageName": "Discord Media Loader",
+          "publisher": "Serraniel"
+        },
+        {
+          "packageIdentifier": "the-sz.Homedale",
+          "packageName": "Homedale",
+          "publisher": "the sz development"
+        }
+      ]
+    },
+    {
+      "pkgKey": "openrgb",
+      "query": "OpenRGB",
+      "results": []
+    },
+    {
+      "pkgKey": "pcsx2",
+      "query": "PCSX2",
+      "results": [
+        {
+          "packageIdentifier": "joncampbell123.DOSBox-X",
+          "packageName": "DOSBox-X",
+          "publisher": "joncampbell123 [DOSBox-X Team]"
+        },
+        {
+          "packageIdentifier": "NAVER.MYBOX",
+          "packageName": "NAVER MYBOX Explorer",
+          "publisher": "NAVER Corp."
+        }
+      ]
+    },
+    {
+      "pkgKey": "photoprism",
+      "query": "PhotoPrism",
+      "results": []
+    },
+    {
+      "pkgKey": "proton-qt",
+      "query": "Proton QT",
+      "results": [
+        {
+          "packageIdentifier": "KDE.Kate",
+          "packageName": "Kate",
+          "publisher": "KDE e.V."
+        },
+        {
+          "packageIdentifier": "Git.Git",
+          "packageName": "Git",
+          "publisher": "The Git Development Community"
+        },
+        {
+          "packageIdentifier": "KiCad.KiCad",
+          "packageName": "KiCad",
+          "publisher": "KiCad"
+        },
+        {
+          "packageIdentifier": "dundee.gdu",
+          "packageName": "gdu",
+          "publisher": "Daniel Milde"
+        },
+        {
+          "packageIdentifier": "WalkoverTechnologies.giddh",
+          "packageName": "giddh",
+          "publisher": "Walkover Technologies"
+        }
+      ]
+    },
+    {
+      "pkgKey": "qemu",
+      "query": "QEMU",
+      "results": [
+        {
+          "packageIdentifier": "ChilliBits.CCom",
+          "packageName": "CCom",
+          "publisher": "ChilliBits"
+        },
+        {
+          "packageIdentifier": "GIMP.GIMP",
+          "packageName": "GIMP",
+          "publisher": "The GIMP Team"
+        },
+        {
+          "packageIdentifier": "QMPlay2.QMPlay2",
+          "packageName": "QMPlay2",
+          "publisher": "QMPlay2"
+        },
+        {
+          "packageIdentifier": "SageMath.SageMath",
+          "packageName": "SageMath",
+          "publisher": "SageMath"
+        },
+        {
+          "packageIdentifier": "QMK.QMKToolbox",
+          "packageName": "QMK Toolbox",
+          "publisher": "QMK"
+        }
+      ]
+    },
+    {
+      "pkgKey": "rsync",
+      "query": "Rsync",
+      "results": [
+        {
+          "packageIdentifier": "RyzenControllerTeam.RyzenController",
+          "packageName": "Ryzen Controller",
+          "publisher": "Ryzen Controller Team"
+        },
+        {
+          "packageIdentifier": "JumpingBytes.PureSync.Personal",
+          "packageName": "PureSync",
+          "publisher": "Jumping Bytes"
+        },
+        {
+          "packageIdentifier": "GIGABYTE.AORUS-ENGINE",
+          "packageName": "AORUS ENGINE",
+          "publisher": "GIGABYTE Technology Co.,Inc."
+        },
+        {
+          "packageIdentifier": "SteelSeries.SteelSeriesEngine",
+          "packageName": "SteelSeries Engine",
+          "publisher": "SteelSeries ApS"
+        },
+        {
+          "packageIdentifier": "SillyKoalaHugs.TheFreezingKoala",
+          "packageName": "The Freezing Koala",
+          "publisher": "SillyKoalaHugs"
+        }
+      ]
+    },
+    {
+      "pkgKey": "scrapy",
+      "query": "Scrapy",
+      "results": [
+        {
+          "packageIdentifier": "Microsoft.Skype.Insiders",
+          "packageName": "Skype Insiders",
+          "publisher": "Skype Technologies S.A."
+        },
+        {
+          "packageIdentifier": "OneScript.OneScript",
+          "packageName": "OneScript engine",
+          "publisher": "1Script Team (Open Source)"
+        },
+        {
+          "packageIdentifier": "Microsoft.Skype",
+          "packageName": "Skype",
+          "publisher": "Skype Technologies S.A."
+        },
+        {
+          "packageIdentifier": "Scribus.Scribus",
+          "packageName": "Scribus",
+          "publisher": "The Scribus Team"
+        },
+        {
+          "packageIdentifier": "Inkscape.Inkscape",
+          "packageName": "Inkscape",
+          "publisher": "Inkscape"
+        }
+      ]
+    },
+    {
+      "pkgKey": "shotwell",
+      "query": "Shotwell",
+      "results": [
+        {
+          "packageIdentifier": "RobinJullian.Shuttle",
+          "packageName": "Shuttle",
+          "publisher": "Robin Jullian"
+        },
+        {
+          "packageIdentifier": "BinaryFortress.HashTools",
+          "packageName": "HashTools",
+          "publisher": "Binary Fortress Software"
+        },
+        {
+          "packageIdentifier": "Heizi.HeiziFlashTools",
+          "packageName": "HeiziFlashTools",
+          "publisher": "Heizi"
+        },
+        {
+          "packageIdentifier": "squalou.google-chat-linux",
+          "packageName": "google-chat-linux",
+          "publisher": "Roberto Fasciolo"
+        },
+        {
+          "packageIdentifier": "ankurk91.GoogleChatElectron",
+          "packageName": "Google Chat Electron",
+          "publisher": "ankurk91"
+        }
+      ]
+    },
+    {
+      "pkgKey": "speech-note",
+      "query": "Speech Note",
+      "results": [
+        {
+          "packageIdentifier": "NathanBeals.WinSSH-Pageant",
+          "packageName": "WinSSH-Pageant",
+          "publisher": "Nathan Beals"
+        },
+        {
+          "packageIdentifier": "ndd.Notepad--",
+          "packageName": "Notepad--",
+          "publisher": "ndd开源组织"
+        },
+        {
+          "packageIdentifier": "Digimezzo.Knowte",
+          "packageName": "Knowte",
+          "publisher": "Digimezzo"
+        },
+        {
+          "packageIdentifier": "femtoCommunity.LegendUtil",
+          "packageName": "LegendUtil",
+          "publisher": "femto Community"
+        },
+        {
+          "packageIdentifier": "TeamSpeakSystems.TeamSpeakClient",
+          "packageName": "TeamSpeak 3 Client",
+          "publisher": "TeamSpeak Systems GmbH"
+        }
+      ]
+    },
+    {
+      "pkgKey": "stability-matrix",
+      "query": "StabilityMatrix",
+      "results": []
+    },
+    {
+      "pkgKey": "strawberry",
+      "query": "Strawberry",
+      "results": [
+        {
+          "packageIdentifier": "StrawberryPerl.StrawberryPerl",
+          "packageName": "Strawberry Perl",
+          "publisher": "strawberryperl.com project"
+        },
+        {
+          "packageIdentifier": "StrawberryMusicPlayer.Strawberry",
+          "packageName": "Strawberry Music Player",
+          "publisher": "Jonas Kvinge"
+        },
+        {
+          "packageIdentifier": "SolidClouds.Starborne",
+          "packageName": "Starborne",
+          "publisher": "Solid Clouds"
+        },
+        {
+          "packageIdentifier": "KalinSetterbergDataAB.Marathon",
+          "packageName": "Marathon",
+          "publisher": "Kalin Setterberg Data AB"
+        }
+      ]
+    },
+    {
+      "pkgKey": "timeshift",
+      "query": "Timeshift",
+      "results": []
+    },
+    {
+      "pkgKey": "ventoy",
+      "query": "Ventoy",
+      "results": [
+        {
+          "packageIdentifier": "SourceFoundry.HackFonts",
+          "packageName": "Hack Fonts",
+          "publisher": "Michael Hex / Source Foundry"
+        },
+        {
+          "packageIdentifier": "FontForge.FontForge",
+          "packageName": "FontForge",
+          "publisher": "FontForgeBuilds"
+        },
+        {
+          "packageIdentifier": "ventoy.Ventoy",
+          "packageName": "Ventoy",
+          "publisher": "ventoy"
+        },
+        {
+          "packageIdentifier": "Fnatic.FnaticOP",
+          "packageName": "Fnatic OP",
+          "publisher": "Fnatic"
+        },
+        {
+          "packageIdentifier": "Levitsky.FontBase",
+          "packageName": "FontBase",
+          "publisher": "Dominik Levitsky Studio, LLC"
+        }
+      ]
+    },
+    {
+      "pkgKey": "virt-manager",
+      "query": "Virt Manager",
+      "results": [
+        {
+          "packageIdentifier": "FortranLang.fpm",
+          "packageName": "Fortran Package Manager",
+          "publisher": "Fortran Programming Language Community"
+        },
+        {
+          "packageIdentifier": "SoftDeluxe.FreeDownloadManager",
+          "packageName": "Free Download Manager",
+          "publisher": "Softdeluxe"
+        },
+        {
+          "packageIdentifier": "RedHat.VirtViewer",
+          "packageName": "VirtViewer",
+          "publisher": "Virt Viewer Project"
+        },
+        {
+          "packageIdentifier": "Warzone2100Project.Warzone2100",
+          "packageName": "Warzone 2100",
+          "publisher": "Warzone 2100 Project"
+        },
+        {
+          "packageIdentifier": "BinaryMark.BatchFileManager",
+          "packageName": "Batch File Manager Free Edition",
+          "publisher": "BinaryMark"
+        }
+      ]
+    },
+    {
+      "pkgKey": "vmware",
+      "query": "VMware Workstation",
+      "results": [
+        {
+          "packageIdentifier": "VMware.HorizonClient",
+          "packageName": "VMware Horizon Client",
+          "publisher": "VMware, Inc."
+        },
+        {
+          "packageIdentifier": "VMware.WorkstationPro",
+          "packageName": "VMware Workstation Pro",
+          "publisher": "VMware, Inc."
+        },
+        {
+          "packageIdentifier": "VMware.WorkstationPlayer",
+          "packageName": "VMware Workstation Player",
+          "publisher": "VMware, Inc."
+        },
+        {
+          "packageIdentifier": "VMware.IntelligentHub",
+          "packageName": "Workspace ONE Intelligent Hub",
+          "publisher": "VMware, Inc."
+        },
+        {
+          "packageIdentifier": "ChefSoftware.Workstation",
+          "packageName": "Chef Workstation",
+          "publisher": "\"Chef Software, Inc. <maintainers@chef.io>\""
+        }
+      ]
+    },
+    {
+      "pkgKey": "waydroid",
+      "query": "WayDroid",
+      "results": [
+        {
+          "packageIdentifier": "TypeFaster.TypeFaster",
+          "packageName": "TypeFaster Typing Tutor",
+          "publisher": "TypeFaster"
+        },
+        {
+          "packageIdentifier": "EdrawSoft.ViewerComponent.Diagram",
+          "packageName": "Edraw Diagram Component",
+          "publisher": "EdrawSoft"
+        },
+        {
+          "packageIdentifier": "Microsoft.WindowsSDK",
+          "packageName": "Windows Software Development Kit",
+          "publisher": "Microsoft Corporation"
+        },
+        {
+          "packageIdentifier": "BinaryMark.BatchPhotoFace",
+          "packageName": "Batch Photo Face Free Edition",
+          "publisher": "BinaryMark"
+        },
+        {
+          "packageIdentifier": "FadeIn.FadeIn",
+          "packageName": "Fade In Professional Screenwriting Software Demo",
+          "publisher": "Fade In Professional Screenwriting Software"
+        }
+      ]
+    },
+    {
+      "pkgKey": "xemu",
+      "query": "Xemu",
+      "results": [
+        {
+          "packageIdentifier": "Zoom.Zoom",
+          "packageName": "Zoom",
+          "publisher": "Zoom"
+        },
+        {
+          "packageIdentifier": "Zoom.ZoomOutlookPlugin",
+          "packageName": "Zoom Outlook Plugin",
+          "publisher": "Zoom"
+        },
+        {
+          "packageIdentifier": "EclipseFoundation.SUMO",
+          "packageName": "SUMO",
+          "publisher": "Eclipse"
+        },
+        {
+          "packageIdentifier": "NSSM.NSSM",
+          "packageName": "NSSM",
+          "publisher": "NSSM"
+        },
+        {
+          "packageIdentifier": "RedDucks.CemUI",
+          "packageName": "CemUI",
+          "publisher": "RedDucks"
+        }
+      ]
+    }
+  ]
+}
