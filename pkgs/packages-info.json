@@ -3384,6 +3384,24 @@
         "windows_winget": "Windscribe.Windscribe"
       }
     },
+    "wireguard": {
+      "name": "WireGuard",
+      "category": "Internet & Communication",
+      "subcategory": "VPN",
+      "package_manager": {
+        "linux_arch_aur": "wireguard-tools",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": "wireguard",
+        "linux_fedora_rpm": "wireguard-tools",
+        "linux_gentoo_emerge": "net-vpn/wireguard-tools",
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": "wireguard-tools",
+        "macos_brew": "wireguard-tools",
+        "unix_nix_env": "nixos.wireguard-tools",
+        "windows_winget": "WireGuard.WireGuard"
+      }
+    },
     "wine": {
       "name": "Wine",
       "category": "Virtualization",
