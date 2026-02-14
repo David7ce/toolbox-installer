@@ -2340,6 +2340,24 @@
         "windows_winget": null
       }
     },
+    "pi-hole": {
+      "name": "Pi-hole",
+      "category": "Internet & Communication",
+      "subcategory": "DNS Server",
+      "package_manager": {
+        "linux_arch_aur": "pi-hole-core",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": null
+      }
+    },
     "playonlinux": {
       "name": "PlayOnLinux",
       "category": "Virtualization",
@@ -2986,6 +3004,24 @@
         "macos_brew": "teamviewer",
         "unix_nix_env": null,
         "windows_winget": "TeamViewer.TeamViewer"
+      }
+    },
+    "tailscale": {
+      "name": "Tailscale",
+      "category": "Internet & Communication",
+      "subcategory": "VPN",
+      "package_manager": {
+        "linux_arch_aur": "tailscale",
+        "linux_arch_pacman": "tailscale",
+        "linux_debian_apt": "tailscale",
+        "linux_fedora_rpm": "tailscale",
+        "linux_gentoo_emerge": "net-vpn/tailscale",
+        "linux_flatpak": null,
+        "linux_snap": "tailscale",
+        "freebsd_pkg": "tailscale",
+        "macos_brew": "tailscale",
+        "unix_nix_env": "tailscale",
+        "windows_winget": "Tailscale.Tailscale"
       }
     },
     "telegram": {
