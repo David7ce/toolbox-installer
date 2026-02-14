@@ -1217,7 +1217,7 @@
         "linux_fedora_rpm": null,
         "linux_gentoo_emerge": null,
         "linux_flatpak": null,
-        "linux_snap": null,
+        "linux_snap": "home-assistant-snap",
         "freebsd_pkg": null,
         "macos_brew": "homeassistant-cli",
         "unix_nix_env": null,
@@ -2247,7 +2247,7 @@
         "freebsd_pkg": null,
         "macos_brew": null,
         "unix_nix_env": "openrgb",
-        "windows_winget": null
+        "windows_winget": "OpenRGB.OpenRGB"
       }
     },
     "openshot": {
@@ -2517,7 +2517,7 @@
         "freebsd_pkg": "qemu",
         "macos_brew": "qemu",
         "unix_nix_env": "nixos.qemu",
-        "windows_winget": null
+        "windows_winget": "SoftwareFreedomConservancy.QEMU"
       }
     },
     "qgis": {
@@ -2759,7 +2759,7 @@
       "category": "Audio",
       "subcategory": "Text To Speech",
       "package_manager": {
-        "linux_arch_aur": null,
+        "linux_arch_aur": "dsnote",
         "linux_arch_pacman": null,
         "linux_debian_apt": null,
         "linux_fedora_rpm": null,
@@ -3232,7 +3232,7 @@
         "linux_debian_apt": null,
         "linux_fedora_rpm": null,
         "linux_gentoo_emerge": null,
-        "linux_flatpak": "org.qemu.QEMU",
+        "linux_flatpak": null,
         "linux_snap": null,
         "freebsd_pkg": "ventoy",
         "macos_brew": null,

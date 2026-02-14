@@ -43,12 +43,12 @@
             </div>
         </div>
 
-        <div id="validationWarnings" class="validation-warnings hidden" aria-live="polite"></div>
-
         <div class="legend" aria-label="OS compatibility legend">
             <div class="legend-item"><span class="legend-icon">✅</span> Available via listed package managers</div>
+            <div class="legend-item"><span class="legend-icon">⚠️</span> Available on Windows, not via Winget</div>
             <div class="legend-item"><span class="legend-icon">❌</span> Not listed in package data</div>
             <div class="legend-item legend-note">Linux includes: pacman, AUR, apt, rpm, emerge, flatpak, snap, nix</div>
+            <div class="legend-item legend-note" id="windowsNonWingetNote"></div>
         </div>
 
         <div class="table-container">

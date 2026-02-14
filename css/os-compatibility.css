@@ -119,42 +119,6 @@ h1 {
     outline-offset: 2px;
 }
 
-.validation-warnings {
-    border: 1px solid #f4c7c7;
-    background: #fff5f5;
-    color: #8a1f1f;
-    border-radius: var(--border-radius);
-    padding: var(--spacing-sm) var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    box-shadow: var(--shadow-light);
-}
-
-[data-theme="dark"] .validation-warnings {
-    background: #3b1b1b;
-    border-color: #6e2a2a;
-    color: #f2b6b6;
-}
-
-.validation-warnings.hidden {
-    display: none;
-}
-
-.validation-title {
-    font-weight: 600;
-    margin-bottom: var(--spacing-xs);
-}
-
-.validation-warnings ul {
-    list-style: disc;
-    margin-left: 18px;
-    margin-bottom: var(--spacing-xs);
-}
-
-.validation-note {
-    font-size: 12px;
-    color: var(--text-muted);
-}
-
 .legend {
     display: flex;
     flex-wrap: wrap;
@@ -249,11 +213,10 @@ td.sticky-col {
     box-shadow: 2px 0 0 var(--border-color);
 }
 
-th.sticky-col.app-col,
+/* th.sticky-col.app-col,
 td.sticky-col.app-col {
-    left: var(--sticky-first-col-width);
     z-index: 7;
-}
+} */
 
 th.sticky-col.app-col {
     z-index: 17;

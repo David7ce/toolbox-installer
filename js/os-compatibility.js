@@ -10,6 +10,18 @@ let packagesData = [];
 let filteredPackages = [];
 let currentSort = { column: 'name', direction: 'asc' };
 let activeOsFilters = new Set(['all']);
+const windowsNonWingetPackages = [
+    { id: 'ardour', name: 'Ardour' },
+    { id: 'davinci-resolve', name: 'DaVinci Resolve' },
+    { id: 'eaglemode', name: 'Eagle-Mode' },
+    { id: 'freefilesync', name: 'FreeFileSync' },
+    { id: 'mediawiki', name: 'MediaWiki' },
+    { id: 'moodle', name: 'Moodle' },
+    { id: 'stability-matrix', name: 'StabilityMatrix' },
+    { id: 'strawberry', name: 'Strawberry' },
+    { id: 'vmware', name: 'VMware' }
+];
+const windowsNonWingetIds = new Set(windowsNonWingetPackages.map(pkg => pkg.id));
 
 // ============================================================================
 // CORE FUNCTIONS
@@ -32,7 +44,9 @@ async function loadPackages() {
             };
 
             // Check OS availability based on package_manager entries
-            const hasWindows = isPresent(pm?.windows_winget);
+            const hasWinget = isPresent(pm?.windows_winget);
+            const isNonWingetWindows = windowsNonWingetIds.has(id);
+            const hasWindows = hasWinget || isNonWingetWindows;
             const hasMacOS = isPresent(pm?.macos_brew);
             const hasLinux = [
                 pm?.linux_arch_pacman,
@@ -52,6 +66,7 @@ async function loadPackages() {
                 category: pkg.category,
                 subcategory: pkg.subcategory,
                 windows: hasWindows,
+                windowsStatus: hasWinget ? 'winget' : (isNonWingetWindows ? 'non-winget' : 'none'),
                 macos: hasMacOS,
                 linux: hasLinux,
                 freebsd: hasFreeBSD
@@ -60,7 +75,7 @@ async function loadPackages() {
 
         sortTable('name', 'asc');
         setupFilters();
-        updateValidationWarnings(data.packages);
+        renderWindowsNonWingetNote();
         applyFilters();
     } catch (error) {
         console.error('Error loading packages:', error);
@@ -86,7 +101,7 @@ function renderTable() {
                     <span class="app-name">${pkg.name}</span>
                 </div>
             </td>
-            <td class="os-available">${pkg.windows ? '✅' : '❌'}</td>
+            <td class="os-available">${pkg.windowsStatus === 'winget' ? '✅' : (pkg.windowsStatus === 'non-winget' ? '⚠️' : '❌')}</td>
             <td class="os-available">${pkg.macos ? '✅' : '❌'}</td>
             <td class="os-available">${pkg.linux ? '✅' : '❌'}</td>
             <td class="os-available">${pkg.freebsd ? '✅' : '❌'}</td>
@@ -253,60 +268,14 @@ function applyFilters() {
     updateStats(filteredPackages);
 }
 
-function updateValidationWarnings(packages) {
-    const container = document.getElementById('validationWarnings');
-    if (!container || !packages) {
+function renderWindowsNonWingetNote() {
+    const note = document.getElementById('windowsNonWingetNote');
+    if (!note) {
         return;
     }
 
-    const warnings = [];
-
-    Object.entries(packages).forEach(([id, pkg]) => {
-        const managers = pkg.package_manager || {};
-        Object.entries(managers).forEach(([key, value]) => {
-            if (typeof value !== 'string') {
-                return;
-            }
-
-            const trimmed = value.trim();
-            const hasWhitespace = /\s/.test(value);
-            const hasUrl = /https?:\/\//i.test(value);
-
-            if (trimmed.length === 0) {
-                return;
-            }
-
-            if (value !== trimmed || hasWhitespace || hasUrl) {
-                warnings.push({
-                    id,
-                    name: pkg.name || id,
-                    manager: key,
-                    value
-                });
-            }
-        });
-    });
-
-    if (warnings.length === 0) {
-        container.classList.add('hidden');
-        container.innerHTML = '';
-        return;
-    }
-
-    const maxItems = 8;
-    const items = warnings.slice(0, maxItems).map(warning => {
-        return `<li><strong>${warning.name}</strong> (${warning.manager}): ${warning.value}</li>`;
-    }).join('');
-
-    const remaining = warnings.length - maxItems;
-    const remainingNote = remaining > 0 ? `<div class="validation-note">And ${remaining} more...</div>` : '';
-
-    container.classList.remove('hidden');
-    container.innerHTML = `
-        <div class="validation-title">Potential data issues detected</div>
-        <ul>${items}</ul>
-        ${remainingNote}
-    `;
+    const names = windowsNonWingetPackages.map(pkg => pkg.name).join(', ');
+    note.textContent = `Windows (non-Winget): ${names}`;
 }
 
 // ============================================================================
