@@ -34,20 +34,37 @@
                 <input type="text" id="searchInput" placeholder="🔍 Search package or category..."
                     onkeyup="filterTable()">
             </div>
+            <div class="filter-chips" role="group" aria-label="Filter by OS availability">
+                <button type="button" class="filter-chip active" data-os="all" aria-pressed="true">All</button>
+                <button type="button" class="filter-chip" data-os="windows" aria-pressed="false">Windows</button>
+                <button type="button" class="filter-chip" data-os="macos" aria-pressed="false">macOS</button>
+                <button type="button" class="filter-chip" data-os="linux" aria-pressed="false">Linux</button>
+                <button type="button" class="filter-chip" data-os="freebsd" aria-pressed="false">FreeBSD</button>
+            </div>
+        </div>
+
+        <div id="validationWarnings" class="validation-warnings hidden" aria-live="polite"></div>
+
+        <div class="legend" aria-label="OS compatibility legend">
+            <div class="legend-item"><span class="legend-icon">✅</span> Available via listed package managers</div>
+            <div class="legend-item"><span class="legend-icon">❌</span> Not listed in package data</div>
+            <div class="legend-item legend-note">Linux includes: pacman, AUR, apt, rpm, emerge, flatpak, snap, nix</div>
         </div>
 
         <div class="table-container">
             <table id="packagesTable">
                 <thead>
                     <tr>
-                        <th class="sortable" onclick="toggleSort('category')">
+                        <th class="sortable sticky-col category-col" onclick="toggleSort('category')" data-column="category"
+                            tabindex="0" role="button" aria-sort="none">
                             Category
                             <span class="sort-arrows">
                                 <span class="sort-arrow up" data-column="category" data-direction="asc"></span>
                                 <span class="sort-arrow down" data-column="category" data-direction="desc"></span>
                             </span>
                         </th>
-                        <th class="sortable" onclick="toggleSort('name')">
+                        <th class="sortable sticky-col app-col" onclick="toggleSort('name')" data-column="name"
+                            tabindex="0" role="button" aria-sort="none">
                             App
                             <span class="sort-arrows">
                                 <span class="sort-arrow up" data-column="name" data-direction="asc"></span>

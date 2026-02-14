@@ -7,7 +7,9 @@
 // GLOBAL VARIABLES
 // ============================================================================
 let packagesData = [];
+let filteredPackages = [];
 let currentSort = { column: 'name', direction: 'asc' };
+let activeOsFilters = new Set(['all']);
 
 // ============================================================================
 // CORE FUNCTIONS
@@ -21,18 +23,28 @@ async function loadPackages() {
         
         packagesData = Object.entries(data.packages).map(([id, pkg]) => {
             const pm = pkg.package_manager;
-            
-            // Check OS availability
-            const hasWindows = pm.windows_winget !== null && pm.windows_winget !== undefined;
-            const hasMacOS = pm.macos_brew !== null && pm.macos_brew !== undefined;
-            const hasLinux = pm.linux_arch_pacman !== null || 
-                            pm.linux_arch_aur !== null || 
-                            pm.linux_debian_apt !== null || 
-                            pm.linux_fedora_rpm !== null || 
-                            pm.linux_flatpak !== null || 
-                            pm.linux_snap !== null ||
-                            pm.linux_gentoo_emerge !== null;
-            const hasFreeBSD = pm.freebsd_pkg !== null && pm.freebsd_pkg !== undefined;
+
+            const isPresent = (value) => {
+                if (typeof value === 'string') {
+                    return value.trim().length > 0;
+                }
+                return value !== null && value !== undefined;
+            };
+
+            // Check OS availability based on package_manager entries
+            const hasWindows = isPresent(pm?.windows_winget);
+            const hasMacOS = isPresent(pm?.macos_brew);
+            const hasLinux = [
+                pm?.linux_arch_pacman,
+                pm?.linux_arch_aur,
+                pm?.linux_debian_apt,
+                pm?.linux_fedora_rpm,
+                pm?.linux_gentoo_emerge,
+                pm?.linux_flatpak,
+                pm?.linux_snap,
+                pm?.unix_nix_env
+            ].some(isPresent);
+            const hasFreeBSD = isPresent(pm?.freebsd_pkg);
 
             return {
                 id,
@@ -47,7 +59,9 @@ async function loadPackages() {
         });
 
         sortTable('name', 'asc');
-        updateStats();
+        setupFilters();
+        updateValidationWarnings(data.packages);
+        applyFilters();
     } catch (error) {
         console.error('Error loading packages:', error);
         document.getElementById('tableBody').innerHTML = 
@@ -60,11 +74,11 @@ function renderTable() {
     const tbody = document.getElementById('tableBody');
     tbody.innerHTML = '';
 
-    packagesData.forEach(pkg => {
+    filteredPackages.forEach(pkg => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td><span class="category-badge">${pkg.category}</span></td>
-            <td>
+            <td class="sticky-col category-col"><span class="category-badge">${pkg.category}</span></td>
+            <td class="sticky-col app-col">
                 <div class="app-info">
                     <img class="app-logo" src="img/${pkg.id}.svg" 
                          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23ddd%22 rx=%224%22/%3E%3Ctext x=%2216%22 y=%2220%22 font-size=%2216%22 text-anchor=%22middle%22 fill=%22%23999%22%3E${pkg.name.charAt(0)}%3C/text%3E%3C/svg%3E'" 
@@ -110,8 +124,9 @@ function sortTable(column, direction) {
         }
     });
 
-    renderTable();
+    applyFilters();
     updateSortArrows();
+    updateSortAria();
 }
 
 // Update sort arrow indicators
@@ -129,25 +144,31 @@ function updateSortArrows() {
     }
 }
 
+function updateSortAria() {
+    document.querySelectorAll('th.sortable').forEach(header => {
+        header.setAttribute('aria-sort', 'none');
+    });
+
+    const activeHeader = document.querySelector(`th.sortable[data-column="${currentSort.column}"]`);
+    if (activeHeader) {
+        const ariaValue = currentSort.direction === 'asc' ? 'ascending' : 'descending';
+        activeHeader.setAttribute('aria-sort', ariaValue);
+    }
+}
+
 // Filter table
 function filterTable() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const rows = document.querySelectorAll('#tableBody tr');
-
-    rows.forEach(row => {
-        const text = row.textContent.toLowerCase();
-        row.style.display = text.includes(searchTerm) ? '' : 'none';
-    });
+    applyFilters();
 }
 
 // Update statistics
-function updateStats() {
+function updateStats(list = filteredPackages) {
     const stats = {
-        total: packagesData.length,
-        windows: packagesData.filter(p => p.windows).length,
-        macos: packagesData.filter(p => p.macos).length,
-        linux: packagesData.filter(p => p.linux).length,
-        freebsd: packagesData.filter(p => p.freebsd).length
+        total: list.length,
+        windows: list.filter(p => p.windows).length,
+        macos: list.filter(p => p.macos).length,
+        linux: list.filter(p => p.linux).length,
+        freebsd: list.filter(p => p.freebsd).length
     };
 
     document.getElementById('totalPackages').textContent = stats.total;
@@ -157,6 +178,137 @@ function updateStats() {
     document.getElementById('freebsdCount').textContent = stats.freebsd;
 }
 
+function setupFilters() {
+    const chips = document.querySelectorAll('.filter-chip');
+    if (!chips.length) {
+        return;
+    }
+
+    chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const os = chip.dataset.os;
+            if (!os) {
+                return;
+            }
+
+            if (os === 'all') {
+                activeOsFilters = new Set(['all']);
+            } else {
+                if (activeOsFilters.has('all')) {
+                    activeOsFilters.delete('all');
+                }
+
+                if (activeOsFilters.has(os)) {
+                    activeOsFilters.delete(os);
+                } else {
+                    activeOsFilters.add(os);
+                }
+
+                if (activeOsFilters.size === 0) {
+                    activeOsFilters.add('all');
+                }
+            }
+
+            updateFilterChipState();
+            applyFilters();
+        });
+    });
+
+    updateFilterChipState();
+}
+
+function updateFilterChipState() {
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+        const os = chip.dataset.os;
+        const isActive = activeOsFilters.has(os);
+        chip.classList.toggle('active', isActive);
+        chip.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+}
+
+function applyFilters() {
+    const searchInput = document.getElementById('searchInput');
+    const searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : '';
+    const hasOsFilter = !activeOsFilters.has('all');
+
+    filteredPackages = packagesData.filter(pkg => {
+        const text = `${pkg.name} ${pkg.category} ${pkg.subcategory}`.toLowerCase();
+        const matchesSearch = searchTerm.length === 0 || text.includes(searchTerm);
+
+        if (!hasOsFilter) {
+            return matchesSearch;
+        }
+
+        const matchesOs = (
+            (activeOsFilters.has('windows') && pkg.windows) ||
+            (activeOsFilters.has('macos') && pkg.macos) ||
+            (activeOsFilters.has('linux') && pkg.linux) ||
+            (activeOsFilters.has('freebsd') && pkg.freebsd)
+        );
+
+        return matchesSearch && matchesOs;
+    });
+
+    renderTable();
+    updateStats(filteredPackages);
+}
+
+function updateValidationWarnings(packages) {
+    const container = document.getElementById('validationWarnings');
+    if (!container || !packages) {
+        return;
+    }
+
+    const warnings = [];
+
+    Object.entries(packages).forEach(([id, pkg]) => {
+        const managers = pkg.package_manager || {};
+        Object.entries(managers).forEach(([key, value]) => {
+            if (typeof value !== 'string') {
+                return;
+            }
+
+            const trimmed = value.trim();
+            const hasWhitespace = /\s/.test(value);
+            const hasUrl = /https?:\/\//i.test(value);
+
+            if (trimmed.length === 0) {
+                return;
+            }
+
+            if (value !== trimmed || hasWhitespace || hasUrl) {
+                warnings.push({
+                    id,
+                    name: pkg.name || id,
+                    manager: key,
+                    value
+                });
+            }
+        });
+    });
+
+    if (warnings.length === 0) {
+        container.classList.add('hidden');
+        container.innerHTML = '';
+        return;
+    }
+
+    const maxItems = 8;
+    const items = warnings.slice(0, maxItems).map(warning => {
+        return `<li><strong>${warning.name}</strong> (${warning.manager}): ${warning.value}</li>`;
+    }).join('');
+
+    const remaining = warnings.length - maxItems;
+    const remainingNote = remaining > 0 ? `<div class="validation-note">And ${remaining} more...</div>` : '';
+
+    container.classList.remove('hidden');
+    container.innerHTML = `
+        <div class="validation-title">Potential data issues detected</div>
+        <ul>${items}</ul>
+        ${remainingNote}
+    `;
+}
+
 // ============================================================================
 // INITIALIZATION
 // ============================================================================
@@ -164,5 +316,17 @@ function updateStats() {
 // Initialize application when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded - initializing OS compatibility table');
+    document.querySelectorAll('th.sortable').forEach(header => {
+        header.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                const column = header.dataset.column;
+                if (column) {
+                    toggleSort(column);
+                }
+            }
+        });
+    });
+
     loadPackages();
 });
