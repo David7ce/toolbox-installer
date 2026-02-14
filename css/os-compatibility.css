@@ -78,6 +78,12 @@ h1 {
     margin-bottom: var(--spacing-md);
 }
 
+.page-note {
+    font-size: 0.7em;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
 /* Controls & Search */
 .controls {
     margin-bottom: var(--spacing-md);

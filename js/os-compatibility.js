@@ -75,7 +75,6 @@ async function loadPackages() {
 
         sortTable('name', 'asc');
         setupFilters();
-        renderWindowsNonWingetNote();
         applyFilters();
     } catch (error) {
         console.error('Error loading packages:', error);
@@ -178,6 +177,8 @@ function filterTable() {
 
 // Update statistics
 function updateStats(list = filteredPackages) {
+    const windowsNonWingetCount = list.filter(p => p.windowsStatus === 'non-winget').length;
+    const windowsWingetCount = list.filter(p => p.windowsStatus === 'winget').length;
     const stats = {
         total: list.length,
         windows: list.filter(p => p.windows).length,
@@ -187,7 +188,7 @@ function updateStats(list = filteredPackages) {
     };
 
     document.getElementById('totalPackages').textContent = stats.total;
-    document.getElementById('windowsCount').textContent = stats.windows;
+    document.getElementById('windowsCount').textContent = `${windowsWingetCount} + (${windowsNonWingetCount})`;
     document.getElementById('macosCount').textContent = stats.macos;
     document.getElementById('linuxCount').textContent = stats.linux;
     document.getElementById('freebsdCount').textContent = stats.freebsd;
@@ -266,16 +267,6 @@ function applyFilters() {
 
     renderTable();
     updateStats(filteredPackages);
-}
-
-function renderWindowsNonWingetNote() {
-    const note = document.getElementById('windowsNonWingetNote');
-    if (!note) {
-        return;
-    }
-
-    const names = windowsNonWingetPackages.map(pkg => pkg.name).join(', ');
-    note.textContent = `Windows (non-Winget): ${names}`;
 }
 
 // ============================================================================
