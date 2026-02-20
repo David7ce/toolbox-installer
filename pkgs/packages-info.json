@@ -108,7 +108,7 @@
         "windows_winget": "Apache.Httpd"
       }
     },
-    "ardour": {
+            "ardour": {
       "name": "Ardour",
       "category": "Audio",
       "subcategory": "Digital Audio Workstation",
@@ -358,6 +358,24 @@
         "macos_brew": "chromium",
         "unix_nix_env": "nixos.chromium",
         "windows_winget": "Google.Chrome"
+      }
+    },
+    "comfyui": {
+      "name": "ComfyUI",
+      "category": "Image",
+      "subcategory": "AI Image Generator",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "comfyui",
+        "unix_nix_env": null,
+        "windows_winget": "Comfy.ComfyUI-Desktop"
       }
     },
     "cryptomator": {
@@ -702,6 +720,24 @@
         "windows_winget": "KDE.Elisa"
       }
     },
+    "espanso": {
+      "name": "Espanso",
+      "category": "System",
+      "subcategory": "Text Expander",
+      "package_manager": {
+        "linux_arch_aur": "espanso",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": "espanso",
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": "io.espanso.Espanso",
+        "linux_snap": "espanso",
+        "freebsd_pkg": null,
+        "macos_brew": "espanso",
+        "unix_nix_env": "espanso",
+        "windows_winget": "Federico.Espanso"
+      }
+    },
     "evolution": {
       "name": "Evolution",
       "category": "Internet & Communication",
@@ -952,6 +988,24 @@
         "macos_brew": "geogebra",
         "unix_nix_env": "geogebra",
         "windows_winget": "GeoGebra.Classic"
+      }
+    },
+    "ghostty": {
+      "name": "Ghostty",
+      "category": "System",
+      "subcategory": "Terminal Emulator",
+      "package_manager": {
+        "linux_arch_aur": "ghostty",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "ghostty",
+        "unix_nix_env": "ghostty",
+        "windows_winget": null
       }
     },
     "gimp": {
@@ -1260,6 +1314,24 @@
         "windows_winget": "Hugo.Hugo"
       }
     },
+    "iina": {
+      "name": "IINA",
+      "category": "Video",
+      "subcategory": "Media Player",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "iina",
+        "unix_nix_env": null,
+        "windows_winget": null
+      }
+    },
     "imagemagick": {
       "name": "ImageMagick",
       "category": "Image",
@@ -1438,6 +1510,24 @@
         "macos_brew": "keepassxc",
         "unix_nix_env": "nixos.keepassxc",
         "windows_winget": "KeePassXCTeam.KeePassXC"
+      }
+    },
+    "keka": {
+      "name": "Keka",
+      "category": "System",
+      "subcategory": "Archive Utility",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "keka",
+        "unix_nix_env": null,
+        "windows_winget": null
       }
     },
     "kodi": {
@@ -1672,6 +1762,24 @@
         "macos_brew": null,
         "unix_nix_env": null,
         "windows_winget": "LucasChess.LucasChess"
+      }
+    },
+    "lulu": {
+      "name": "LuLu",
+      "category": "System",
+      "subcategory": "Firewall",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "lulu",
+        "unix_nix_env": null,
+        "windows_winget": null
       }
     },
     "lutris": {
@@ -2322,6 +2430,24 @@
         "windows_winget": null
       }
     },
+    "pear-desktop": {
+      "name": "Pear Desktop (YT-Music)",
+      "category": "Audio",
+      "subcategory": "Music Streaming",
+      "package_manager": {
+        "linux_arch_aur": "pear-desktop",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "pear-devs.pear-desktop"
+      }
+    },
     "photoprism": {
       "name": "PhotoPrism",
       "category": "Image",
@@ -2502,6 +2628,24 @@
         "windows_winget": "Python.Python.3"
       }
     },
+    "qalculate": {
+      "name": "Qalculate!",
+      "category": "System",
+      "subcategory": "Calculator",
+      "package_manager": {
+        "linux_arch_aur": "qalculate-gtk",
+        "linux_arch_pacman": "qalculate-gtk",
+        "linux_debian_apt": "qalculate-gtk",
+        "linux_fedora_rpm": "qalculate",
+        "linux_gentoo_emerge": "sci-calculators/qalculate",
+        "linux_flatpak": "io.github.Qalculate",
+        "linux_snap": null,
+        "freebsd_pkg": "qalculate-gtk",
+        "macos_brew": "qalculate-gtk",
+        "unix_nix_env": "qalculate-gtk",
+        "windows_winget": "Qalculate.Qalculate"
+      }
+    },
     "qbittorrent": {
       "name": "qBittorrent",
       "category": "Internet & Communication",
@@ -2628,6 +2772,42 @@
         "windows_winget": "REAPER"
       }
     },
+    "rectangle": {
+      "name": "Rectangle",
+      "category": "System",
+      "subcategory": "Window Manager",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "rectangle",
+        "unix_nix_env": null,
+        "windows_winget": null
+      }
+    },
+    "redshift": {
+      "name": "Redshift",
+      "category": "System",
+      "subcategory": "Display Utility",
+      "package_manager": {
+        "linux_arch_aur": "redshift",
+        "linux_arch_pacman": "redshift",
+        "linux_debian_apt": "redshift",
+        "linux_fedora_rpm": "redshift",
+        "linux_gentoo_emerge": "x11-apps/redshift",
+        "linux_flatpak": "org.jonls.redshift",
+        "linux_snap": "redshift",
+        "freebsd_pkg": "redshift",
+        "macos_brew": "redshift",
+        "unix_nix_env": "redshift",
+        "windows_winget": null
+      }
+    },
     "rsync": {
       "name": "Rsync",
       "category": "File Man",
@@ -2700,24 +2880,6 @@
         "windows_winget": "ShareX.ShareX"
       }
     },
-    "shutter-encoder": {
-      "name": "Shutter Encoder",
-      "category": "Video",
-      "subcategory": "Video Converter",
-      "package_manager": {
-        "linux_arch_aur": null,
-        "linux_arch_pacman": null,
-        "linux_debian_apt": null,
-        "linux_fedora_rpm": null,
-        "linux_gentoo_emerge": null,
-        "linux_flatpak": null,
-        "linux_snap": null,
-        "freebsd_pkg": null,
-        "macos_brew": "shutter-encoder",
-        "unix_nix_env": null,
-        "windows_winget": "ShutterEncoder.ShutterEncoder"
-      }
-    },
     "shotcut": {
       "name": "Shotcut",
       "category": "Video",
@@ -2752,6 +2914,24 @@
         "macos_brew": null,
         "unix_nix_env": "nixos.shotwell",
         "windows_winget": null
+      }
+    },
+    "shutter-encoder": {
+      "name": "Shutter Encoder",
+      "category": "Video",
+      "subcategory": "Video Converter",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "shutter-encoder",
+        "unix_nix_env": null,
+        "windows_winget": "ShutterEncoder.ShutterEncoder"
       }
     },
     "signal": {
@@ -2880,6 +3060,24 @@
         }
       }
     },
+    "stats": {
+      "name": "Stats",
+      "category": "System",
+      "subcategory": "System Monitor",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "stats",
+        "unix_nix_env": null,
+        "windows_winget": null
+      }
+    },
     "steam": {
       "name": "Steam",
       "category": "Gaming",
@@ -2952,6 +3150,24 @@
         "windows_winget": "Stremio.Stremio"
       }
     },
+    "stretchly": {
+      "name": "Stretchly",
+      "category": "System",
+      "subcategory": "Break Reminder",
+      "package_manager": {
+        "linux_arch_aur": "stretchly",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": "io.github.asan.stretchly",
+        "linux_snap": "stretchly",
+        "freebsd_pkg": null,
+        "macos_brew": "stretchly",
+        "unix_nix_env": null,
+        "windows_winget": "hovancik.Stretchly"
+      }
+    },
     "sublime-text-4": {
       "name": "Sublime Text",
       "category": "Development",
@@ -2988,24 +3204,6 @@
         "windows_winget": "Syncthing.Syncthing"
       }
     },
-    "teamviewer": {
-      "name": "TeamViewer",
-      "category": "Utility",
-      "subcategory": "Remote Desktop",
-      "package_manager": {
-        "linux_arch_aur": "teamviewer",
-        "linux_arch_pacman": null,
-        "linux_debian_apt": "teamviewer",
-        "linux_fedora_rpm": "teamviewer",
-        "linux_gentoo_emerge": null,
-        "linux_flatpak": null,
-        "linux_snap": "teamviewer",
-        "freebsd_pkg": null,
-        "macos_brew": "teamviewer",
-        "unix_nix_env": null,
-        "windows_winget": "TeamViewer.TeamViewer"
-      }
-    },
     "tailscale": {
       "name": "Tailscale",
       "category": "Internet & Communication",
@@ -3022,6 +3220,42 @@
         "macos_brew": "tailscale",
         "unix_nix_env": "tailscale",
         "windows_winget": "Tailscale.Tailscale"
+      }
+    },
+    "taskwarrior": {
+      "name": "Taskwarrior",
+      "category": "System",
+      "subcategory": "Task Management",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "task",
+        "linux_debian_apt": "taskwarrior",
+        "linux_fedora_rpm": "task",
+        "linux_gentoo_emerge": "app-misc/task",
+        "linux_flatpak": null,
+        "linux_snap": "task",
+        "freebsd_pkg": "taskwarrior",
+        "macos_brew": "task",
+        "unix_nix_env": "taskwarrior",
+        "windows_winget": "TaskwarriorC.Taskwarrior"
+      }
+    },
+    "teamviewer": {
+      "name": "TeamViewer",
+      "category": "Utility",
+      "subcategory": "Remote Desktop",
+      "package_manager": {
+        "linux_arch_aur": "teamviewer",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": "teamviewer",
+        "linux_fedora_rpm": "teamviewer",
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": "teamviewer",
+        "freebsd_pkg": null,
+        "macos_brew": "teamviewer",
+        "unix_nix_env": null,
+        "windows_winget": "TeamViewer.TeamViewer"
       }
     },
     "telegram": {
@@ -3058,24 +3292,6 @@
         "macos_brew": "tenacity",
         "unix_nix_env": "nixos.tenacity",
         "windows_winget": "TenacityTeam.Tenacity"
-      }
-    },
-    "pear-desktop": {
-      "name": "Pear Desktop (YT-Music)",
-      "category": "Audio",
-      "subcategory": "Music Streaming",
-      "package_manager": {
-        "linux_arch_aur": "pear-desktop",
-        "linux_arch_pacman": null,
-        "linux_debian_apt": null,
-        "linux_fedora_rpm": null,
-        "linux_gentoo_emerge": null,
-        "linux_flatpak": null,
-        "linux_snap": null,
-        "freebsd_pkg": null,
-        "macos_brew": null,
-        "unix_nix_env": null,
-        "windows_winget": "pear-devs.pear-desktop"
       }
     },
     "thunderbird": {
@@ -3336,7 +3552,7 @@
       "subcategory": "Code Editor",
       "package_manager": {
         "linux_arch_aur": "visual-studio-code-bin",
-        "linux_arch_pacman": null,
+        "linux_arch_pacman": "code",
         "linux_debian_apt": "code",
         "linux_fedora_rpm": "code",
         "linux_gentoo_emerge": "app-editors/vscode",
@@ -3420,6 +3636,24 @@
         "windows_winget": null
       }
     },
+    "wezterm": {
+      "name": "WezTerm",
+      "category": "System",
+      "subcategory": "Terminal Emulator",
+      "package_manager": {
+        "linux_arch_aur": "wezterm",
+        "linux_arch_pacman": "wezterm",
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": "wezterm",
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": "org.wezfurlong.wezterm",
+        "linux_snap": "wezterm",
+        "freebsd_pkg": "wezterm",
+        "macos_brew": "wezterm",
+        "unix_nix_env": "wezterm",
+        "windows_winget": "wez.wezterm"
+      }
+    },
     "whatsapp": {
       "name": "WhatsApp",
       "category": "Internet & Communication",
@@ -3436,6 +3670,24 @@
         "macos_brew": "whatsapp",
         "unix_nix_env": null,
         "windows_winget": "WhatsApp.WhatsApp"
+      }
+    },
+    "whisper-cpp": {
+      "name": "Whisper.cpp",
+      "category": "Audio",
+      "subcategory": "Speech Recognition",
+      "package_manager": {
+        "linux_arch_aur": "whisper-cpp",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "whisper-cpp",
+        "unix_nix_env": null,
+        "windows_winget": null
       }
     },
     "windscribe": {
@@ -3456,24 +3708,6 @@
         "windows_winget": "Windscribe.Windscribe"
       }
     },
-    "wireguard": {
-      "name": "WireGuard",
-      "category": "Internet & Communication",
-      "subcategory": "VPN",
-      "package_manager": {
-        "linux_arch_aur": "wireguard-tools",
-        "linux_arch_pacman": null,
-        "linux_debian_apt": "wireguard",
-        "linux_fedora_rpm": "wireguard-tools",
-        "linux_gentoo_emerge": "net-vpn/wireguard-tools",
-        "linux_flatpak": null,
-        "linux_snap": null,
-        "freebsd_pkg": "wireguard-tools",
-        "macos_brew": "wireguard-tools",
-        "unix_nix_env": "nixos.wireguard-tools",
-        "windows_winget": "WireGuard.WireGuard"
-      }
-    },
     "wine": {
       "name": "Wine",
       "category": "Virtualization",
@@ -3490,6 +3724,24 @@
         "macos_brew": "wine",
         "unix_nix_env": "nixos.wine",
         "windows_winget": "WineHQ.Wine"
+      }
+    },
+    "wireguard": {
+      "name": "WireGuard",
+      "category": "Internet & Communication",
+      "subcategory": "VPN",
+      "package_manager": {
+        "linux_arch_aur": "wireguard-tools",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": "wireguard",
+        "linux_fedora_rpm": "wireguard-tools",
+        "linux_gentoo_emerge": "net-vpn/wireguard-tools",
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": "wireguard-tools",
+        "macos_brew": "wireguard-tools",
+        "unix_nix_env": "nixos.wireguard-tools",
+        "windows_winget": "WireGuard.WireGuard"
       }
     },
     "wireshark": {
