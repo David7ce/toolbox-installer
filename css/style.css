@@ -361,7 +361,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-md);
     text-align: center;
 }
 
@@ -413,15 +413,13 @@ form {
 }
 
 .columns {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--spacing-sm);
     margin: var(--spacing-md) 0;
 }
 
 .column {
-    flex: 1 1 calc(100% - var(--spacing-sm));
-    min-width: 220px;
     background: var(--card-background);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
@@ -911,10 +909,8 @@ body {
         font-size: 14px;
     }
 
-    /* Flexbox columns for tablet */
-    .column {
-        flex: 1 1 calc(50% - var(--spacing-sm));
-    }
+    /* Grid responsive handled automatically */
+    /* .column { flex: 1 1 calc(50% - var(--spacing-sm)); } */
 
     .command-footer {
         padding: var(--spacing-md);
@@ -947,10 +943,8 @@ body {
         font-size: 18px;
     }
 
-    /* Flexbox columns for small desktop */
-    .column {
-        flex: 1 1 calc(33.333% - var(--spacing-sm));
-    }
+    /* Grid responsive handled automatically */
+    /* .column { flex: 1 1 calc(33.333% - var(--spacing-sm)); } */
 }
 
 @media (min-width: 1024px) {
@@ -975,10 +969,8 @@ body {
         padding-bottom: 30vh;
     }
 
-    /* Flexbox columns grow naturally based on content */
-    .column {
-        flex: 1 1 calc(25% - var(--spacing-sm));
-    }
+    /* Grid responsive handled automatically */
+    /* .column { flex: 1 1 calc(25% - var(--spacing-sm)); } */
 }
 
 @media (min-width: 1400px) {
@@ -987,24 +979,24 @@ body {
     }
 
     .page-header {
-        padding: var(--spacing-xl) 0;
+        padding: var(--spacing-md) 0;
     }
 
     .intro-section {
-        padding: var(--spacing-xl) 0;
+        padding: var(--spacing-md) 0;
     }
 
     .package-section {
         padding: 0;
     }
 
-    /* Columns continue to adapt with flexible growth */
-    .column {
-        flex: 1 1 calc(20% - var(--spacing-sm));
-    }
+    /* Grid responsive handled automatically */
+    /* .column { flex: 1 1 calc(20% - var(--spacing-sm)); } */
 
     body {
         max-width: 2200px;
-        margin: var(--spacing-xl) auto;
+        margin: var(--spacing-md) auto;
     }
 }
+
+/* Grid responsive handled automatically with auto-fit */

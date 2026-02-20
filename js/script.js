@@ -108,19 +108,19 @@ function generatePackages(packagesData) {
 
     // Define categories by column with emojis
     const columnCategories = [
-        ["Science"],
-        ["Reading"],
-        ["Utility"],
-        ["Gaming"],
-        ["Virtualization"],
+        ["Development"],
+        ["Internet & Communication"],
+        ["System"],
         ["File Man"],
-        ["Office"],
-        ["Video"],
         ["Audio"],
         ["Image"],
-        ["System"],
-        ["Internet & Communication"],
-        ["Development"],
+        ["Video"],
+        ["Office"],
+        ["Virtualization"],
+        ["Utility"],
+        ["Gaming"],
+        ["Reading"],
+        ["Science"],
     ];
 
     // Category emoji mapping
