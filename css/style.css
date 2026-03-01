@@ -292,6 +292,48 @@ form {
     transform: rotate(-90deg);
 }
 
+/* ==========================================================================
+   FOSS TOGGLE BUTTON
+   ========================================================================== */
+.foss-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.foss-toggle-btn:hover {
+    background-color: var(--hover-bg);
+    border-color: #28a745;
+}
+
+.foss-toggle-btn:focus {
+    outline: 3px solid rgba(40, 167, 69, 0.5);
+    outline-offset: 2px;
+}
+
+.foss-toggle-btn.active {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.foss-toggle-btn.active:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.foss-hidden {
+    display: none;
+}
+
 .select-all-checkbox {
     width: 22px;
     height: 22px;
