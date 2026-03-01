@@ -254,7 +254,8 @@ td:nth-child(2) {
 }
 
 /* OS columns - much narrower */
-th.os-column {
+th.os-column,
+td.os-column {
     text-align: center;
     min-width: 32px;
     width: 100px;

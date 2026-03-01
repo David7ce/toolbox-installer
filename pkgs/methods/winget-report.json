@@ -142,8 +142,8 @@
       "wingetId": "Inkscape.Inkscape"
     },
     {
-      "pkgKey": "intellij-idea-ultimate",
-      "wingetId": "JetBrains.IntelliJIDEA.Ultimate"
+      "pkgKey": "intellij-idea",
+      "wingetId": "JetBrains.IntelliJIDEA"
     },
     {
       "pkgKey": "iptvnator",

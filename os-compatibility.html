@@ -7,8 +7,8 @@
     <title>Package OS Compatibility</title>
     <link rel="stylesheet" href="css/base-styles.css">
     <link rel="stylesheet" href="css/os-compatibility.css">
-    <script src="js/theme-toggle.js"></script>
-    <script src="js/os-compatibility.js"></script>
+    <script type="module" src="js/modules/theme-manager.js"></script>
+    <script type="module" src="js/modules/os-compat-init.js"></script>
 </head>
 
 <body>
@@ -31,8 +31,7 @@
 
         <div class="controls">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="🔍 Search package or category..."
-                    onkeyup="filterTable()">
+                <input type="text" id="searchInput" placeholder="🔍 Search package or category...">
             </div>
             <div class="filter-chips" role="group" aria-label="Filter by OS availability">
                 <button type="button" class="filter-chip active" data-os="all" aria-pressed="true">All</button>
@@ -56,7 +55,7 @@
             <table id="packagesTable">
                 <thead>
                     <tr>
-                        <th class="sortable sticky-col category-col" onclick="toggleSort('category')" data-column="category"
+                        <th class="sortable sticky-col category-col" data-column="category"
                             tabindex="0" role="button" aria-sort="none">
                             Category
                             <span class="sort-arrows">
@@ -64,7 +63,7 @@
                                 <span class="sort-arrow down" data-column="category" data-direction="desc"></span>
                             </span>
                         </th>
-                        <th class="sortable sticky-col app-col" onclick="toggleSort('name')" data-column="name"
+                        <th class="sortable sticky-col app-col" data-column="name"
                             tabindex="0" role="button" aria-sort="none">
                             App
                             <span class="sort-arrows">

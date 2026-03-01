@@ -1369,12 +1369,12 @@
       }
     },
     "intellij-idea": {
-      "name": "IntelliJ IDEA Ultimate",
+      "name": "IntelliJ IDEA",
       "category": "Development",
       "subcategory": "IDE",
       "package_manager": {
         "linux_arch_aur": null,
-        "linux_arch_pacman": "intellij-idea-community-edition ",
+        "linux_arch_pacman": "intellij-idea-community-edition",
         "linux_debian_apt": null,
         "linux_fedora_rpm": null,
         "linux_gentoo_emerge": null,
