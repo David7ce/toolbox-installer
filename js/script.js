@@ -26,8 +26,6 @@ const nonFOSS = [
     'dropbox',
     'google-earth',
     'guitar-pro',
-    'intellij-idea-ultimate',
-    'laragon',
     'mega',
     'musicbee',
     'notion',
@@ -38,12 +36,9 @@ const nonFOSS = [
     'reaper',
     'spotify',
     'steam',
-    'stremio',
     'sublime-text-4',
     'teamviewer',
     'unity',
-    'unreal-engine',
-    'visual-studio-code',
     'vivaldi',
     'vmware',
     'whatsapp',
@@ -58,8 +53,6 @@ const nonFOSS = [
 
 // Initialize application when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM fully loaded - initializing application');
-    
     // Load packages data
     loadPackages();
     
@@ -327,8 +320,12 @@ function setupCategoryCheckboxes() {
             
             // Use requestAnimationFrame to batch DOM updates
             requestAnimationFrame(() => {
+                // Only check/uncheck visible packages (not hidden by FOSS filter)
                 packageCheckboxes.forEach(cb => {
-                    cb.checked = newState;
+                    const label = cb.closest('label');
+                    if (label && !label.classList.contains('foss-hidden')) {
+                        cb.checked = newState;
+                    }
                 });
                 
                 this.indeterminate = false;
@@ -359,8 +356,14 @@ function updateCategoryCheckbox(category) {
     const categoryCheckbox = document.querySelector(`.category-checkbox[data-category="${category}"]`);
     const packageCheckboxes = document.querySelectorAll(`.package-checkbox[data-category="${category}"]`);
     
-    const checkedCount = Array.from(packageCheckboxes).filter(cb => cb.checked).length;
-    const totalCount = packageCheckboxes.length;
+    // Only count visible packages (not hidden by FOSS filter)
+    const visibleCheckboxes = Array.from(packageCheckboxes).filter(cb => {
+        const label = cb.closest('label');
+        return label && !label.classList.contains('foss-hidden');
+    });
+    
+    const checkedCount = visibleCheckboxes.filter(cb => cb.checked).length;
+    const totalCount = visibleCheckboxes.length;
     
     if (checkedCount === 0) {
         categoryCheckbox.checked = false;
@@ -376,7 +379,6 @@ function updateCategoryCheckbox(category) {
 
 // Function to generate the installation command based on the selected distribution
 async function generateCommand() {
-    console.log('Generate command button clicked');
     try {
         // Get selected distro from either dropdown or radio button
         let selectedDistro;
@@ -728,21 +730,21 @@ function setupSelectAllCheckbox() {
     const selectAllLabel = document.getElementById('selectAllLabel');
     
     if (!selectAllCheckbox || !selectAllLabel) {
-        console.warn('Select all elements not found');
         return;
     }
     
-    console.log('Setting up select all checkbox');
-    
     // Handle select all checkbox change
     selectAllCheckbox.addEventListener('change', function() {
-        const packageCheckboxes = document.querySelectorAll('.package-checkbox');
         const isChecked = this.checked;
+
+        // Only select/deselect visible packages (not hidden by FOSS filter)
+        const visibleCheckboxes = Array.from(document.querySelectorAll('.package-checkbox')).filter(cb => {
+            const label = cb.closest('label');
+            return label && !label.classList.contains('foss-hidden');
+        });
         
-        console.log('Select all clicked, found', packageCheckboxes.length, 'package checkboxes');
-        
-        // Set all package checkboxes to match the select all state
-        packageCheckboxes.forEach(cb => cb.checked = isChecked);
+        // Set all visible package checkboxes to match the select all state
+        visibleCheckboxes.forEach(cb => cb.checked = isChecked);
         
         // Update category checkboxes
         updateAllCategoryCheckboxes();
@@ -789,33 +791,35 @@ function setupFossToggle() {
     const fossToggleBtn = document.getElementById('fossToggleBtn');
     if (!fossToggleBtn) return;
 
-    // Cache label elements for non-FOSS packages at setup time
-    const nonFossLabels = nonFOSS.reduce((acc, pkgId) => {
-        const checkbox = document.getElementById(pkgId);
-        if (checkbox) {
-            const label = checkbox.closest('label');
-            if (label) acc.push({ label, checkbox });
-        }
-        return acc;
-    }, []);
+    let isActive = false;
 
     fossToggleBtn.addEventListener('click', function() {
-        this.classList.toggle('active');
-        applyFossFilter(nonFossLabels);
+        isActive = !isActive;
+        
+        if (isActive) {
+            this.classList.add('active');
+        } else {
+            this.classList.remove('active');
+        }
+        
+        applyFossFilter(isActive);
     });
 }
 
 // Function to show/hide non-FOSS packages based on the FOSS toggle state
-function applyFossFilter(nonFossLabels) {
-    const fossToggleBtn = document.getElementById('fossToggleBtn');
-    const isActive = fossToggleBtn && fossToggleBtn.classList.contains('active');
-
-    nonFossLabels.forEach(({ label, checkbox }) => {
-        if (isActive) {
-            label.classList.add('foss-hidden');
-            checkbox.checked = false;
-        } else {
-            label.classList.remove('foss-hidden');
+function applyFossFilter(isActive) {
+    nonFOSS.forEach(pkgId => {
+        const checkbox = document.getElementById(pkgId);
+        if (checkbox) {
+            const label = checkbox.closest('label');
+            if (label) {
+                if (isActive) {
+                    label.classList.add('foss-hidden');
+                    checkbox.checked = false;
+                } else {
+                    label.classList.remove('foss-hidden');
+                }
+            }
         }
     });
 
@@ -831,9 +835,15 @@ function updateSelectAllState() {
     
     if (!selectAllCheckbox || !selectAllLabel) return;
     
-    const packageCheckboxes = document.querySelectorAll('.package-checkbox');
-    const checkedCount = Array.from(packageCheckboxes).filter(cb => cb.checked).length;
-    const totalCount = packageCheckboxes.length;
+    // Only count visible (not hidden by FOSS filter) packages
+    const packageCheckboxes = document.querySelectorAll('.package-checkbox:not([id])');
+    const visibleCheckboxes = Array.from(document.querySelectorAll('.package-checkbox')).filter(cb => {
+        const label = cb.closest('label');
+        return label && !label.classList.contains('foss-hidden');
+    });
+    
+    const checkedCount = visibleCheckboxes.filter(cb => cb.checked).length;
+    const totalCount = visibleCheckboxes.length;
     
     if (checkedCount === 0) {
         selectAllCheckbox.indeterminate = false;
@@ -931,8 +941,6 @@ async function importPackagesFromFile(file) {
             if (!Array.isArray(importedPackages)) {
                 throw new Error('Invalid format: expected an array of package IDs');
             }
-            
-            console.log('Importing packages:', importedPackages);
 
             // Wait for packages to be loaded
             if (!packagesData) {
@@ -950,7 +958,6 @@ async function importPackagesFromFile(file) {
                     checkbox.checked = true;
                     importedCount++;
                 } else {
-                    console.warn(`Checkbox with ID ${pkgId} not found.`);
                     notFoundCount++;
                 }
             });
@@ -1007,8 +1014,6 @@ async function loadFavorites() {
             if (checkbox) {
                 checkbox.checked = true;
                 loadedCount++;
-            } else {
-                console.warn(`Checkbox with ID ${pkgId} not found.`);
             }
         });
         

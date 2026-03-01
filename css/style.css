@@ -332,6 +332,10 @@ form {
 
 .foss-hidden {
     display: none;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .select-all-checkbox {
@@ -533,7 +537,7 @@ form {
 }
 
 .category-content {
-    max-height: 2000px;
+    max-height: 5000px;
     overflow: hidden;
     transition: max-height 0.3s ease;
 }
