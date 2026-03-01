@@ -11,6 +11,48 @@ const imageUrl = './img/';
 let packagesData; // Variable to store JSON data
 
 // ============================================================================
+// FOSS FILTER
+// ============================================================================
+
+// Non-FOSS (proprietary/closed-source) packages — smaller list than FOSS
+const nonFOSS = [
+    'affinity-studio',
+    'anydesk',
+    'audiorelay',
+    'balabolka',
+    'bitwig-studio',
+    'davinci-resolve',
+    'discord',
+    'dropbox',
+    'google-earth',
+    'guitar-pro',
+    'intellij-idea-ultimate',
+    'laragon',
+    'mega',
+    'musicbee',
+    'notion',
+    'obsidian',
+    'ocenaudio',
+    'opera',
+    'plex',
+    'reaper',
+    'spotify',
+    'steam',
+    'stremio',
+    'sublime-text-4',
+    'teamviewer',
+    'unity',
+    'unreal-engine',
+    'visual-studio-code',
+    'vivaldi',
+    'vmware',
+    'whatsapp',
+    'windscribe',
+    'xnview',
+    'zoom',
+];
+
+// ============================================================================
 // INITIALIZATION
 // ============================================================================
 
@@ -24,9 +66,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup two-tier OS selection
     setupOSSelector();
     
-    // Setup select all checkbox when packages are loaded
+    // Setup select all checkbox and FOSS toggle when packages are loaded
     document.addEventListener('packagesLoaded', function() {
         setupSelectAllCheckbox();
+        setupFossToggle();
     });
     
     // Setup auto-generation of command
@@ -739,6 +782,46 @@ function setupToggleAllButton() {
             allCollapsed = true;
         }
     });
+}
+
+// Function to setup the FOSS-only toggle button
+function setupFossToggle() {
+    const fossToggleBtn = document.getElementById('fossToggleBtn');
+    if (!fossToggleBtn) return;
+
+    // Cache label elements for non-FOSS packages at setup time
+    const nonFossLabels = nonFOSS.reduce((acc, pkgId) => {
+        const checkbox = document.getElementById(pkgId);
+        if (checkbox) {
+            const label = checkbox.closest('label');
+            if (label) acc.push({ label, checkbox });
+        }
+        return acc;
+    }, []);
+
+    fossToggleBtn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        applyFossFilter(nonFossLabels);
+    });
+}
+
+// Function to show/hide non-FOSS packages based on the FOSS toggle state
+function applyFossFilter(nonFossLabels) {
+    const fossToggleBtn = document.getElementById('fossToggleBtn');
+    const isActive = fossToggleBtn && fossToggleBtn.classList.contains('active');
+
+    nonFossLabels.forEach(({ label, checkbox }) => {
+        if (isActive) {
+            label.classList.add('foss-hidden');
+            checkbox.checked = false;
+        } else {
+            label.classList.remove('foss-hidden');
+        }
+    });
+
+    updateAllCategoryCheckboxes();
+    updateSelectAllState();
+    autoGenerateCommand();
 }
 
 // Function to update select all checkbox state based on package selections
