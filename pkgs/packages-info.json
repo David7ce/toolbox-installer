@@ -18,6 +18,24 @@
         "windows_winget": "7zip.7zip"
       }
     },
+    "activitywatch": {
+      "name": "ActivityWatch",
+      "category": "Utility",
+      "subcategory": "Time Tracking",
+      "package_manager": {
+        "linux_arch_aur": "activitywatch-bin",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "activitywatch",
+        "unix_nix_env": null,
+        "windows_winget": "ActivityWatch.ActivityWatch"
+      }
+    },
     "affinity-studio": {
       "name": "Affinity Studio",
       "category": "Image",
@@ -468,6 +486,24 @@
         "windows_winget": "Deno.Deno"
       }
     },
+    "deepl": {
+      "name": "DeepL",
+      "category": "Utility",
+      "subcategory": "Translation",
+      "package_manager": {
+        "linux_arch_aur": "deepl",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "DeepL.DeepL"
+      }
+    },
     "digikam": {
       "name": "digiKam",
       "category": "Image",
@@ -826,6 +862,24 @@
         "macos_brew": "filezilla",
         "unix_nix_env": "nixos.filezilla",
         "windows_winget": "TimKosse.FileZilla.Client"
+      }
+    },
+    "files": {
+      "name": "Files",
+      "category": "File Man",
+      "subcategory": "File Manager",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "9NGHP3DX8HDX"
       }
     },
     "firefox": {
@@ -1602,6 +1656,24 @@
         "windows_winget": "KDE.Konsole"
       }
     },
+    "kiwix": {
+      "name": "Kiwix",
+      "category": "Reading",
+      "subcategory": "Offline Reader",
+      "package_manager": {
+        "linux_arch_aur": "kiwix-desktop-bin",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": "org.kiwix.desktop",
+        "linux_snap": "kiwix",
+        "freebsd_pkg": null,
+        "macos_brew": "kiwix",
+        "unix_nix_env": null,
+        "windows_winget": "Kiwix.KiwixJS"
+      }
+    },
     "koodoreader": {
       "name": "Koodo-Reader",
       "category": "Reading",
@@ -2376,6 +2448,24 @@
         "windows_winget": "ONLYOFFICE.DesktopEditors"
       }
     },
+    "onionshare": {
+      "name": "OnionShare",
+      "category": "Utility",
+      "subcategory": "File Sharing",
+      "package_manager": {
+        "linux_arch_aur": "onionshare",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": "onionshare",
+        "linux_fedora_rpm": "onionshare",
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": "org.onionshare.OnionShare",
+        "linux_snap": "onionshare",
+        "freebsd_pkg": null,
+        "macos_brew": "onionshare",
+        "unix_nix_env": "nixos.onionshare-gui",
+        "windows_winget": "OnionShare.OnionShare"
+      }
+    },
     "openrgb": {
       "name": "OpenRGB",
       "category": "Utility",
@@ -2772,6 +2862,24 @@
         "windows_winget": "RawTherapee.RawTherapee"
       }
     },
+    "raindropio": {
+      "name": "Raindrop.io",
+      "category": "Internet & Communication",
+      "subcategory": "Bookmark Manager",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": "io.raindrop.Raindrop",
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "raindropio",
+        "unix_nix_env": null,
+        "windows_winget": "Raindrop.Raindrop"
+      }
+    },
     "rclone": {
       "name": "Rclone",
       "category": "File Man",
@@ -2826,6 +2934,24 @@
         "windows_winget": null
       }
     },
+    "retroarch": {
+      "name": "RetroArch",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "retroarch",
+        "linux_debian_apt": "retroarch",
+        "linux_fedora_rpm": "retroarch",
+        "linux_gentoo_emerge": "games-emulation/retroarch",
+        "linux_flatpak": "org.libretro.RetroArch",
+        "linux_snap": "retroarch",
+        "freebsd_pkg": "retroarch",
+        "macos_brew": "retroarch",
+        "unix_nix_env": "nixos.retroarch",
+        "windows_winget": "Libretro.RetroArch"
+      }
+    },
     "redshift": {
       "name": "Redshift",
       "category": "System",
@@ -2860,6 +2986,24 @@
         "macos_brew": "rsync",
         "unix_nix_env": "nixos.rsync",
         "windows_winget": null
+      }
+    },
+    "rufus": {
+      "name": "Rufus",
+      "category": "System",
+      "subcategory": "Bootable USB Creator",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "Rufus.Rufus"
       }
     },
     "rustdesk": {
