@@ -1512,6 +1512,24 @@
         "windows_winget": "Kdenlive.Kdenlive"
       }
     },
+    "kde-connect": {
+      "name": "KDE Connect",
+      "category": "Utility",
+      "subcategory": "Remote Connectivity",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "kdeconnect",
+        "linux_debian_apt": "kdeconnect",
+        "linux_fedora_rpm": "kdeconnect",
+        "linux_gentoo_emerge": "kde-apps/kdeconnect",
+        "linux_flatpak": "org.kde.kdeconnect.kde",
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "kdeconnect",
+        "unix_nix_env": "nixos.kdeconnect",
+        "windows_winget": "KDE.KDEConnect"
+      }
+    },
     "keepassxc": {
       "name": "KeePassXC",
       "category": "Utility",
@@ -2896,6 +2914,24 @@
         "macos_brew": null,
         "unix_nix_env": null,
         "windows_winget": "ShareX.ShareX"
+      }
+    },
+    "sefirah": {
+      "name": "Sefirah",
+      "category": "File Man",
+      "subcategory": "File Manager",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "9PJV6D1JPG0H"
       }
     },
     "shotcut": {
