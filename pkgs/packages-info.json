@@ -2916,6 +2916,24 @@
         "windows_winget": "ShareX.ShareX"
       }
     },
+    "scrcpy": {
+      "name": "Scrcpy",
+      "category": "Utility",
+      "subcategory": "Mobile Device Control",
+      "package_manager": {
+        "linux_arch_aur": "scrcpy",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": "scrcpy",
+        "linux_fedora_rpm": "scrcpy",
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": "com.github.Genymobile.scrcpy",
+        "linux_snap": "scrcpy",
+        "freebsd_pkg": null,
+        "macos_brew": "scrcpy",
+        "unix_nix_env": "scrcpy",
+        "windows_winget": "Genymobile.scrcpy"
+      }
+    },
     "sefirah": {
       "name": "Sefirah",
       "category": "File Man",
