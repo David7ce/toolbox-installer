@@ -3225,7 +3225,7 @@
     "stability-matrix": {
       "name": "StabilityMatrix",
       "category": "Image",
-      "subcategory": "Ai Image Generator",
+      "subcategory": "AI Image Generator",
       "package_manager": {
         "linux_arch_aur": "stabilitymatrix",
         "linux_arch_pacman": null,
