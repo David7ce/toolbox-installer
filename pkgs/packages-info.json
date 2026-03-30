@@ -126,7 +126,7 @@
         "windows_winget": "Apache.Httpd"
       }
     },
-            "ardour": {
+    "ardour": {
       "name": "Ardour",
       "category": "Audio",
       "subcategory": "Digital Audio Workstation",
@@ -2014,6 +2014,24 @@
         "macos_brew": "melonds",
         "unix_nix_env": "melonds",
         "windows_winget": "melonDS.melonDS"
+      }
+    },
+    "mitmproxy": {
+      "name": "mitmproxy",
+      "category": "Development",
+      "subcategory": "Proxy / Network Debugger",
+      "package_manager": {
+        "linux_arch_aur": "mitmproxy",
+        "linux_arch_pacman": "mitmproxy",
+        "linux_debian_apt": "mitmproxy",
+        "linux_fedora_rpm": "mitmproxy",
+        "linux_gentoo_emerge": "net-proxy/mitmproxy",
+        "linux_flatpak": null,
+        "linux_snap": "mitmproxy",
+        "freebsd_pkg": "mitmproxy",
+        "macos_brew": "mitmproxy",
+        "unix_nix_env": "mitmproxy",
+        "windows_winget": "mitmproxy.mitmproxy"
       }
     },
     "monero-gui": {
