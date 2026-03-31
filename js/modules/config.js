@@ -6,8 +6,20 @@
 // ============================================================================
 // API & PATHS
 // ============================================================================
+// Detect context (desktop o mobile) según la ruta
+function detectJsonUrl() {
+    const path = window.location.pathname;
+    if (path.includes('mobile.html')) {
+        return './pkgs/packages-info-mobile.json';
+    } else if (path.includes('desktop.html')) {
+        return './pkgs/packages-info-desktop.json';
+    }
+    // Fallback (por compatibilidad)
+    return './pkgs/packages-info.json';
+}
+
 export const CONFIG = {
-    JSON_URL: './pkgs/packages-info.json',
+    JSON_URL: detectJsonUrl(),
     IMAGE_PATH: './img/',
     FAV_PACKAGES_URL: './pkgs/list/fav-packages.json',
     EXPORT_FILENAME: 'toolbox-exported-packages.json',
@@ -206,11 +218,20 @@ export const THEME_CONFIG = {
 // ============================================================================
 // OS COMPATIBILITY CONFIGURATION
 // ============================================================================
+function detectCompatJsonUrl() {
+    const path = window.location.pathname;
+    if (path.includes('mobile')) {
+        return './pkgs/packages-info-mobile.json';
+    } else if (path.includes('desktop')) {
+        return './pkgs/packages-info-desktop.json';
+    }
+    return './pkgs/packages-info.json';
+}
+
 export const OS_COMPAT_CONFIG = {
     // Data source
-    JSON_URL: './pkgs/packages-info.json', // Same as CONFIG.JSON_URL
+    JSON_URL: detectCompatJsonUrl(),
     IMAGE_PATH: './img/', // Same as CONFIG.IMAGE_PATH
-    
     // Windows packages that don't use winget
     WINDOWS_NON_WINGET: [
         { id: 'ardour', name: 'Ardour' },

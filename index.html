@@ -1,130 +1,26 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Package Generator</title>
-    <link rel="stylesheet" href="css/base-styles.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script type="module" src="js/modules/theme-manager.js"></script>
-    <script type="module" src="js/modules/app.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Toolbox Installer - Inicio</title>
+	<link rel="stylesheet" href="css/base-styles.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <div class="page-wrapper">
-        <header class="page-header">
-            <h1>Generate your command to install packages</h1>
-            <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode"
-                title="Dark mode">
-                🌙
-            </button>
-        </header>
-        <!--
-        <section class="intro-section">
-            <h2>How to install packages</h2>
-            <p>Every major Operating System has a <a href="https://en.wikipedia.org/wiki/Package_manager">package manager</a>
-                that handles software installation and dependency resolution. Here you can select the list of your favorite
-                packages to install and generate the command installation. It is compatible with all major desktop OS
-                (Windows, macOS, Linux and freeBSD) and for Linux supports all the basic distributions.
-            </p>
-            <p>
-                Here is a list of package availability across different Operating Systems:
-                <a href="os-compatibility.html">Package OS Compatibility</a>
-            </p>
-        </section>
-    -->
-
-        <section class="package-section">
-            <!-- <h2>Select the packages to install:</h2> -->
-            <div class="container">
-                <form id="packageForm">
-                    <div class="os-selector-container">
-                        <div class="primary-os-selector">
-                            <button type="button" class="os-btn active" data-os="windows">🪟 Windows</button>
-                            <button type="button" class="os-btn" data-os="macos">🍎 macOS</button>
-                            <button type="button" class="os-btn" data-os="linux">🐧 Linux</button>
-                            <button type="button" class="os-btn" data-os="freebsd">🔥 FreeBSD</button>
-                        </div>
-
-                        <div class="secondary-os-selector hidden" id="linuxDistroSelector">
-                            <button type="button" class="distro-btn active" data-distro="linux_arch_pacman">Arch
-                                (pm+yay)</button>
-                            <button type="button" class="distro-btn" data-distro="linux_debian_apt">Debian
-                                (apt)</button>
-                            <button type="button" class="distro-btn" data-distro="linux_fedora_rpm">Fedora
-                                (rpm)</button>
-                            <button type="button" class="distro-btn" data-distro="linux_gentoo_emerge">Gentoo
-                                (emerge)</button>
-                            <button type="button" class="distro-btn" data-distro="linux_flatpak">Linux
-                                (flatpak)</button>
-                            <button type="button" class="distro-btn" data-distro="unix_nix_env">Linux (nix)</button>
-                            <button type="button" class="distro-btn" data-distro="linux_snap">Linux (snap)</button>
-                        </div>
-
-                        <div class="info-link">
-                            <a href="os-compatibility.html"
-                                title="View package compatibility across different operating systems">📊 Package OS
-                                Compatibility</a>
-                        </div>
-                    </div>
-
-                    <div class="package-actions">
-                        <div class="main-controls">
-                            <label class="select-all-control">
-                                <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox">
-                                <span id="selectAllLabel">Select</span>
-                            </label>
-                            <button type="button" class="toggle-all-btn" id="toggleAllBtn"
-                                title="Collapse/Expand all categories">
-                                <span id="toggleAllIcon">▼</span>
-                                <span id="toggleAllLabel">Collapse</span>
-                            </button>
-                            <button type="button" class="foss-toggle-btn" id="fossToggleBtn"
-                                title="Show only Free and Open Source Software">
-                                🌿 FOSS
-                            </button>
-                            <select id="optionsSelect" class="options-select">
-                                <option value="" hidden selected>⚙️ Options</option>
-                                <option value="loadFavorites">✨ My Favorites</option>
-                                <option value="importPackages">📥 Import Packages (JSON)</option>
-                                <option value="exportPackages">📤 Export Packages (JSON)</option>
-                            </select>
-                        </div>
-                        <input type="file" id="fileInput" accept=".json" style="display: none;">
-                    </div>
-
-                    <div id="packageContainer" class="package-container columns">
-                        <!-- Loading spinner -->
-                        <div class="loading-spinner" id="loadingSpinner">
-                            <div class="spinner"></div>
-                            <p>Loading packages...</p>
-                        </div>
-                        <!-- Generated content -->
-                    </div>
-                </form>
-            </div>
-        </section>
-    </div>
-
-    <!-- Sticky Footer with Command -->
-    <div class="command-footer" id="commandFooter" role="region" aria-label="Installation command">
-        <div class="command-container">
-            <div class="command-output">
-                <div class="command-header">
-                    <span class="command-language" id="commandLanguage">Installation command:</span>
-                    <button type="button" class="copy-btn" id="copyCommandBtn" title="Copy to clipboard"
-                        aria-label="Copy installation command to clipboard">
-                        📋 Copy
-                    </button>
-                </div>
-                <code id="installation-command" aria-live="polite">
-                    <span>Select packages and OS to generate command...</span>
-                </code>
-            </div>
-            <div class="command-warnings" id="commandWarnings" role="alert" aria-live="polite"></div>
-        </div>
-    </div>
+	<div class="page-wrapper" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+		<header class="page-header" style="text-align:center;">
+			<h1>Toolbox Installer</h1>
+			<p>Selecciona la versión que deseas usar:</p>
+		</header>
+		<main style="display:flex;gap:2rem;">
+			<a href="desktop.html" class="main-link" style="padding:2rem 3rem;font-size:1.5rem;border-radius:10px;background:#2563eb;color:#fff;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.2s;">Versión Desktop</a>
+			<a href="mobile.html" class="main-link" style="padding:2rem 3rem;font-size:1.5rem;border-radius:10px;background:#00bfff;color:#fff;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.2s;">Versión Mobile</a>
+		</main>
+		<footer style="margin-top:2rem;text-align:center;color:#888;">
+			<p>&copy; 2026 Toolbox Installer</p>
+		</footer>
+	</div>
 </body>
-
 </html>

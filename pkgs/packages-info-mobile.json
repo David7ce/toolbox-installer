@@ -1,0 +1,121 @@
+{
+  "packages": {
+    "telegram": {
+      "name": "telegram",
+      "category": "Internet & Communication",
+      "subcategory": "Messaging",
+      "package_manager": {
+        "android_pkg": "org.telegram.messenger",
+        "ios_pkg": "telegram-messenger/id686449807"
+      }
+    },
+    "bbva": {
+      "name": "BBVA",
+      "category": "Office",
+      "subcategory": "Finance",
+      "package_manager": {
+        "android_pkg": "com.bbva.bbvacontigo",
+        "ios_pkg": "bbva-spain/id325813155"
+      }
+    },
+    "carpeta-ciudadana": {
+      "name": "Carpeta Ciudadana",
+      "category": "Office",
+      "subcategory": "Government",
+      "package_manager": {
+        "android_pkg": "es.gob.carpetaciudadana",
+        "ios_pkg": "carpeta-ciudadana/id1473679818"
+      }
+    },
+    "chess-prince": {
+      "name": "Chess Prince",
+      "category": "Gaming",
+      "subcategory": "Board Games",
+      "package_manager": {
+        "android_pkg": "com.chessking.android.learn",
+        "ios_pkg": "chess-prince/id1510069580"
+      }
+    },
+    "kiwi-browser": {
+      "name": "Kiwi Browser",
+      "category": "Internet & Communication",
+      "subcategory": "Web Browser",
+      "package_manager": {
+        "android_pkg": "com.kiwibrowser.browser",
+        "ios_pkg": ""
+      }
+    },
+    "libretube": {
+      "name": "LibreTube",
+      "category": "Video",
+      "subcategory": "Streaming",
+      "package_manager": {
+        "android_pkg": "com.github.libretube",
+        "ios_pkg": ""
+      }
+    },
+    "newpipe": {
+      "name": "NewPipe",
+      "category": "Video",
+      "subcategory": "Streaming",
+      "package_manager": {
+        "android_pkg": "org.schabi.newpipe",
+        "ios_pkg": ""
+      }
+    },
+    "periodic-table": {
+      "name": "Periodic Table",
+      "category": "Science",
+      "subcategory": "Chemistry",
+      "package_manager": {
+        "android_pkg": "mendeleev.redlime",
+        "ios_pkg": "periodic-table-2023-pro/id1473710520"
+      }
+    },
+    "star-walk-2": {
+      "name": "Star Walk",
+      "category": "Science",
+      "subcategory": "Astronomy",
+      "package_manager": {
+        "android_pkg": "com.vitotechnology.StarWalk2",
+        "ios_pkg": "star-walk-2-sky-guide-view/id892279069"
+      }
+    },
+    "ticktick": {
+      "name": "TickTick",
+      "category": "Office",
+      "subcategory": "Productivity",
+      "package_manager": {
+        "android_pkg": "com.ticktick.task",
+        "ios_pkg": "ticktick-things-to-do-list/id626144601"
+      }
+    },
+    "wolfram-alpha": {
+      "name": "Wolfram Alpha",
+      "category": "Science",
+      "subcategory": "Calculator",
+      "package_manager": {
+        "android_pkg": "com.wolfram.android.alpha",
+        "ios_pkg": "wolframalpha/id334989259"
+      }
+    },
+    "revanced-manager": {
+      "name": "Vanced Manager",
+      "category": "Video",
+      "subcategory": "Streaming",
+      "package_manager": {
+        "android_pkg": "com.vanced.manager",
+        "ios_pkg": ""
+      }
+    },
+    "xodo": {
+      "name": "Xodo PDF",
+      "category": "Reading",
+      "subcategory": "PDF Reader",
+      "package_manager": {
+        "android_pkg": "com.xodo.pdf.reader",
+        "ios_pkg": "xodo-pdf-reader-editor/id805075929"
+      }
+    }
+  }
+}

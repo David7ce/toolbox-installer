@@ -1,10 +1,6 @@
 # Propietary apps
 
-## Great Windows free software (only for Windows)
-
-Certainly! Here's an expanded table including CrystalDiskInfo and additional software that is exclusively free for Windows:
-
-### Great Windows paid software
+## Great Windows paid software
 
 Companies that only develop to Windows or macOS: Adobe, Autodesk, Avid, Capture-One, CorelDRAW, Image-Line, Dassault-Systèmes, MAGIX, Maxon, Microsoft, Serif, Steinberg, Techsmith.
 
@@ -42,7 +38,7 @@ Companies that only develop to Windows or macOS: Adobe, Autodesk, Avid, Capture-
 | Serif              | Affinity-Publisher | Photo Editing           | Paid  | ✨       |
 | Steinberg          | Cubase             | Music Production        | Paid  |          |
 
-### Great Apple paid software
+## Great Apple paid software
 
 | Company        | Name            | Category          |
 |----------------|-----------------|-------------------|

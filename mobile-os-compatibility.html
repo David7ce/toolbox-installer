@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages Table</title>
+    <link rel="stylesheet" href="./css/base-styles.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="container">
+        <h2>Mobile Packages Table</h2>
+        <p>Complete package names and official store links for Android and iOS.</p>
+        <div class="package-actions">
+            <a href="index.html" class="action-btn" title="Back to package selector">Back to Generator</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="table-wrapper">
+            <table id="packagesTable" class="packages-table">
+                <thead>
+                    <tr>
+                        <th>Package</th>
+                        <th>Android Package Name</th>
+                        <th>iOS Package Name</th>
+                        <th>Android URL</th>
+                        <th>iOS URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Generated rows -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+        <script type="module">
+            import { loadPackagesTable } from './js/modules/packages-table.js';
+            document.addEventListener('DOMContentLoaded', loadPackagesTable);
+        </script>
+</body>
+
+</html>

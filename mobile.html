@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Generator</title>
+    <link rel="stylesheet" href="./css/base-styles.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content container">
+            <div class="logo-title">
+                <img src="./img/logo.svg" alt="Logo" class="site-logo" onerror="this.style.display='none'">
+                <h1>Toolbox Mobile Installer</h1>
+            </div>
+            <button id="themeToggle" class="theme-toggle" title="Cambiar tema">🌙</button>
+        </div>
+        <div class="header-description container">
+            <h2>Instala tu lista de paquetes móviles</h2>
+            <p>Tabla de paquetes: <a href="mobile-os-compatibility.html" title="Ver tabla de paquetes">Ver tabla</a></p>
+            <h3>Selecciona los paquetes de software a instalar:</h3>
+        </div>
+    </header>
+    <div class="container">
+        <form id="packageForm">
+            <div class="package-actions">
+                <label class="master-select-label" for="masterPackageCheckbox" title="Seleccionar todos/ninguno">
+                    <input type="checkbox" id="masterPackageCheckbox">
+                    Seleccionar paquetes
+                </label>
+                <select id="packageActionsSelect" class="action-select" title="Importar o exportar paquetes">
+                    <option value="">Acciones de paquetes</option>
+                    <option value="import">Importar paquetes (JSON)</option>
+                    <option value="export">Exportar paquetes seleccionados</option>
+                </select>
+                <input type="file" id="fileInput" accept=".json" style="display: none;">
+            </div>
+            <div id="packageContainer" class="package-container columns">
+                <!-- Generated content -->
+            </div>
+            <h3>Selecciona tu sistema operativo y gestor de paquetes:</h3>
+            <div class="os-selection">
+                <div class="os-group">
+                    <h4 class="os-title">🔥 Android</h4>
+                    <div class="os-options">
+                        <label><input type="radio" name="distro" value="android_pkg"> Android Packages (<a href="https://play.google.com/store/apps">android pkgs</a>)</label>
+                    </div>
+                </div>
+                <div class="os-group">
+                    <h4 class="os-title">🐧 iOS</h4>
+                    <div class="os-options">
+                        <label><input type="radio" name="distro" value="ios_pkg"> iOS Packages (<a href="https://www.apple.com/ios/app-store/">iOS pkgs</a>)</label>
+                    </div>
+                </div>
+            </div>
+            <button type="button" onclick="generateCommand()">Generar comando de instalación</button>
+        </form>
+        <div id="output"></div>
+    </div>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 Toolbox Mobile Installer. Hecho con ❤️ para la comunidad móvil.</p>
+        </div>
+    </footer>
+    <script type="module" src="./js/modules/theme-manager.js"></script>
+    <script type="module" src="./js/modules/app.js"></script>
+</body>
+
+</html>

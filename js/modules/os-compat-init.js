@@ -1,6 +1,6 @@
 /**
  * OS Compatibility Application Initialization
- * Entry point for os-compatibility.html
+ * Entry point for desktop-os-compatibility.html
  */
 
 import { OS_COMPAT_CONFIG } from './config.js';

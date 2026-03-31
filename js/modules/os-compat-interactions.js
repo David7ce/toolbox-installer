@@ -277,7 +277,7 @@ function exportToCSV(packages) {
     
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('download', `os-compatibility-${Date.now()}.csv`);
+    link.setAttribute('download', `desktop-os-compatibility-${Date.now()}.csv`);
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
