@@ -27,14 +27,14 @@
     <div class="container">
         <form id="packageForm">
             <div class="package-actions">
-                <label class="master-select-label" for="masterPackageCheckbox" title="Seleccionar todos/ninguno">
-                    <input type="checkbox" id="masterPackageCheckbox">
-                    Seleccionar paquetes
+                <label class="select-all-control">
+                    <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox">
+                    <span id="selectAllLabel">Seleccionar todos</span>
                 </label>
-                <select id="packageActionsSelect" class="action-select" title="Importar o exportar paquetes">
-                    <option value="">Acciones de paquetes</option>
-                    <option value="import">Importar paquetes (JSON)</option>
-                    <option value="export">Exportar paquetes seleccionados</option>
+                <select id="optionsSelect" class="options-select">
+                    <option value="" hidden selected>⚙️ Opciones</option>
+                    <option value="importPackages">📥 Importar paquetes (JSON)</option>
+                    <option value="exportPackages">📤 Exportar paquetes (JSON)</option>
                 </select>
                 <input type="file" id="fileInput" accept=".json" style="display: none;">
             </div>
@@ -44,20 +44,30 @@
             <h3>Selecciona tu sistema operativo y gestor de paquetes:</h3>
             <div class="os-selection">
                 <div class="os-group">
-                    <h4 class="os-title">🔥 Android</h4>
-                    <div class="os-options">
-                        <label><input type="radio" name="distro" value="android_pkg"> Android Packages (<a href="https://play.google.com/store/apps">android pkgs</a>)</label>
-                    </div>
+                    <button type="button" class="os-btn" data-os="android">🔥 Android</button>
                 </div>
                 <div class="os-group">
-                    <h4 class="os-title">🐧 iOS</h4>
-                    <div class="os-options">
-                        <label><input type="radio" name="distro" value="ios_pkg"> iOS Packages (<a href="https://www.apple.com/ios/app-store/">iOS pkgs</a>)</label>
-                    </div>
+                    <button type="button" class="os-btn" data-os="ios">🐧 iOS</button>
                 </div>
             </div>
-            <button type="button" onclick="generateCommand()">Generar comando de instalación</button>
         </form>
+        <!-- Footer comando instalación -->
+        <div class="command-footer" id="commandFooter" role="region" aria-label="Comando de instalación">
+            <div class="command-container">
+                <div class="command-output">
+                    <div class="command-header">
+                        <span class="command-language" id="commandLanguage">Comando de instalación:</span>
+                        <button type="button" class="copy-btn" id="copyCommandBtn" title="Copiar al portapapeles" aria-label="Copiar comando de instalación">
+                            📋 Copiar
+                        </button>
+                    </div>
+                    <code id="installation-command" aria-live="polite">
+                        <span>Selecciona paquetes y sistema operativo para generar el comando...</span>
+                    </code>
+                </div>
+                <div class="command-warnings" id="commandWarnings" role="alert" aria-live="polite"></div>
+            </div>
+        </div>
         <div id="output"></div>
     </div>
     <footer class="main-footer">

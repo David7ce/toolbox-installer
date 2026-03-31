@@ -25,42 +25,52 @@ export function setupOSSelector() {
     const osBtns = document.querySelectorAll(`.${CLASS_NAMES.OS_BTN}`);
     const linuxSelector = getElement('LINUX_DISTRO_SELECTOR');
     const distroBtns = document.querySelectorAll(`.${CLASS_NAMES.DISTRO_BTN}`);
-    
+
     osBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             updateActiveButton(CLASS_NAMES.OS_BTN, this, true);
-            
-            // Show/hide Linux distro selector
+
+            // Show/hide Linux distro selector SOLO si existe (desktop)
             const os = this.dataset.os;
-            if (os === 'linux') {
-                linuxSelector.classList.remove('hidden');
-            } else {
-                linuxSelector.classList.add('hidden');
+            if (linuxSelector) {
+                if (os === 'linux') {
+                    linuxSelector.classList.remove('hidden');
+                } else {
+                    linuxSelector.classList.add('hidden');
+                }
             }
-            
+
             // Auto-generate command with new OS
             autoGenerateCommand();
-            
+
             // Notify OS change
             document.dispatchEvent(new CustomEvent(EVENT_NAMES.OS_CHANGED));
         });
     });
-    
-    // Setup distro button listeners
-    distroBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            updateActiveButton(CLASS_NAMES.DISTRO_BTN, this, false);
-            autoGenerateCommand();
+
+    // Activar el primer SO por defecto si ninguno está activo (mobile)
+    if (osBtns.length && !document.querySelector(`.${CLASS_NAMES.OS_BTN}.${CLASS_NAMES.ACTIVE}`)) {
+        osBtns[0].classList.add(CLASS_NAMES.ACTIVE);
+        autoGenerateCommand();
+    }
+
+    // Setup distro button listeners SOLO si existen (desktop)
+    if (distroBtns.length) {
+        distroBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                updateActiveButton(CLASS_NAMES.DISTRO_BTN, this, false);
+                autoGenerateCommand();
+            });
+
+            // Keyboard support
+            btn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
         });
-        
-        // Keyboard support
-        btn.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.click();
-            }
-        });
-    });
+    }
 }
 
 /**
@@ -233,6 +243,10 @@ function getDistroFromOS(activeOS) {
             return 'macos_brew';
         case 'freebsd':
             return 'freebsd_pkg';
+        case 'android':
+            return 'android_pkg';
+        case 'ios':
+            return 'ios_pkg';
         default:
             return null;
     }

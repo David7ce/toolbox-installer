@@ -95,6 +95,8 @@ export const DISTRO_PREFIXES = {
     freebsd_pkg: 'sudo pkg install',
     macos_brew: 'brew install',
     windows_winget: 'winget install',
+    android_pkg: 'adb install',
+    ios_pkg: 'apt install',
 };
 
 // ============================================================================
