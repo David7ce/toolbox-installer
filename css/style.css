@@ -1,6 +1,4 @@
-/* ==========================================================================
-   PAGE LAYOUT - MOBILE FIRST
-   ========================================================================== */
+/*   PAGE LAYOUT - MOBILE FIRST========================================================================== */
 .page-wrapper {
     max-width: 2200px;
     margin: 0 auto;
@@ -102,7 +100,9 @@
 }
 
 .options-select {
-    width: 6rem;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
 }
 
 .dropdown-item {
@@ -166,9 +166,6 @@
     margin-bottom: var(--spacing-md);
 }
 
-/* ==========================================================================
-   ACTION BUTTONS
-   ========================================================================== */
 .action-btn {
     display: inline-block;
     margin: var(--spacing-xs);
@@ -221,16 +218,10 @@
     box-shadow: var(--shadow-light);
 }
 
-/* ==========================================================================
-   FORM ELEMENTS
-   ========================================================================== */
 form {
     margin-bottom: var(--spacing-lg);
 }
 
-/* ==========================================================================
-   PACKAGE GRID LAYOUT - MOBILE FIRST
-   ========================================================================== */
 .package-actions {
     display: flex;
     flex-direction: column;
@@ -240,18 +231,32 @@ form {
 
 .main-controls {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
     gap: var(--spacing-md);
     padding: var(--spacing-md);
     background: var(--card-background);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 100%;
+    --main-control-height: 44px;
+    align-items: center;
+}
+
+.main-controls>* {
+    flex: 0 0 7rem;
+    width: 7rem;
+    min-width: 0;
+    height: var(--main-control-height);
+    box-sizing: border-box;
 }
 
 .select-all-control {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    height: var(--main-control-height);
+    padding: 0 var(--spacing-sm);
     gap: var(--spacing-sm);
     cursor: pointer;
     user-select: none;
@@ -262,6 +267,8 @@ form {
 .toggle-all-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: var(--main-control-height);
     gap: 6px;
     padding: var(--spacing-xs) var(--spacing-sm);
     background-color: transparent;
@@ -292,12 +299,12 @@ form {
     transform: rotate(-90deg);
 }
 
-/* ==========================================================================
-   FOSS TOGGLE BUTTON
-   ========================================================================== */
+/* FOSS TOGGLE BUTTON==========================================================================*/
 .foss-toggle-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: var(--main-control-height);
     gap: 6px;
     padding: var(--spacing-xs) var(--spacing-sm);
     background-color: transparent;
@@ -317,6 +324,12 @@ form {
 .foss-toggle-btn:focus {
     outline: 3px solid rgba(40, 167, 69, 0.5);
     outline-offset: 2px;
+}
+
+.main-controls .options-select {
+    height: var(--main-control-height);
+    padding: 0 var(--spacing-sm);
+    box-sizing: border-box;
 }
 
 .foss-toggle-btn.active {
@@ -585,9 +598,6 @@ form {
     flex-shrink: 0;
 }
 
-/* ==========================================================================
-   OPERATING SYSTEM SELECTION - TWO-TIER APPROACH
-   ========================================================================== */
 .os-selector-container {
     margin: var(--spacing-lg) 0;
     padding: var(--spacing-md);
@@ -718,9 +728,6 @@ form {
     text-decoration: underline;
 }
 
-/* ==========================================================================
-   STICKY COMMAND FOOTER
-   ========================================================================== */
 .command-footer {
     position: fixed;
     bottom: 0;
@@ -832,7 +839,6 @@ form {
     color: var(--text-primary);
     font-family: 'Courier New', monospace;
     font-size: 12px;
-    white-space: pre-wrap;
     word-break: break-all;
     line-height: 1.5;
 }
@@ -849,7 +855,6 @@ form {
     overflow-y: auto;
 }
 
-/* Scrollbar styling for command-warnings */
 .command-warnings::-webkit-scrollbar {
     width: 6px;
 }
@@ -883,14 +888,9 @@ form {
     font-weight: 600;
 }
 
-/* Padding for body to prevent content under footer */
 body {
     padding-bottom: 25vh;
 }
-
-/* ==========================================================================
-   RESPONSIVE - MOBILE FIRST APPROACH WITH FLEXBOX
-   ========================================================================== */
 
 @media (min-width: 480px) {
     .page-header {
@@ -955,9 +955,6 @@ body {
         font-size: 14px;
     }
 
-    /* Grid responsive handled automatically */
-    /* .column { flex: 1 1 calc(50% - var(--spacing-sm)); } */
-
     .command-footer {
         padding: var(--spacing-md);
     }
@@ -988,10 +985,8 @@ body {
     .os-title {
         font-size: 18px;
     }
-
-    /* Grid responsive handled automatically */
-    /* .column { flex: 1 1 calc(33.333% - var(--spacing-sm)); } */
 }
+
 
 @media (min-width: 1024px) {
     .command-footer {
@@ -1015,8 +1010,6 @@ body {
         padding-bottom: 30vh;
     }
 
-    /* Grid responsive handled automatically */
-    /* .column { flex: 1 1 calc(25% - var(--spacing-sm)); } */
 }
 
 @media (min-width: 1400px) {
@@ -1036,13 +1029,8 @@ body {
         padding: 0;
     }
 
-    /* Grid responsive handled automatically */
-    /* .column { flex: 1 1 calc(20% - var(--spacing-sm)); } */
-
     body {
         max-width: 2200px;
         margin: var(--spacing-md) auto;
     }
 }
-
-/* Grid responsive handled automatically with auto-fit */

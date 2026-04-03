@@ -1,0 +1,97 @@
+.home-page-wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding-top: 2rem;
+}
+
+.home-header {
+	position: relative;
+	width: 100%;
+	max-width: 900px;
+	padding-right: 4.5rem;
+	text-align: center;
+}
+
+.home-header h1,
+.home-header p {
+	text-align: center;
+}
+
+.home-header .theme-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.home-main {
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 1.5rem;
+	flex: 1;
+	align-content: flex-start;
+}
+
+.home-link {
+	padding: 2rem 3rem;
+	font-size: 1.5rem;
+	border-radius: 10px;
+	color: #fff;
+	text-decoration: none;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	transition: background 0.2s;
+}
+
+.home-link-desktop {
+	background: #2563eb;
+}
+
+.home-link-mobile {
+	background: #00bfff;
+}
+
+.home-footer {
+	margin-top: auto;
+	padding-top: 2rem;
+	text-align: center;
+	color: #888;
+}
+
+@media (max-width: 640px) {
+	.home-page-wrapper {
+		padding-top: 1.25rem;
+	}
+
+	.home-header {
+		padding-right: 0;
+		padding-top: 3.25rem;
+	}
+
+	.home-header .theme-toggle {
+		top: 0;
+		right: 0.5rem;
+	}
+}
+
+.home-back-link {
+	display: inline-block;
+	margin-bottom: 0.75rem;
+	padding: 0.55rem 1rem;
+	border: 1px solid var(--border-color);
+	border-radius: 999px;
+	background: var(--card-background);
+	color: var(--text-primary);
+	text-decoration: none;
+	font-size: 0.95rem;
+	transition: all 0.2s ease;
+}
+
+.home-back-link:hover {
+	border-color: var(--primary-color);
+	color: var(--primary-color);
+	box-shadow: var(--shadow-light);
+}

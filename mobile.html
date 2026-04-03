@@ -7,76 +7,82 @@
     <title>Package Generator</title>
     <link rel="stylesheet" href="./css/base-styles.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/modules/theme-manager.js"></script>
+    <script type="module" src="./js/modules/app.js"></script>
 </head>
 
 <body>
-    <header class="main-header">
-        <div class="header-content container">
-            <div class="logo-title">
-                <img src="./img/logo.svg" alt="Logo" class="site-logo" onerror="this.style.display='none'">
-                <h1>Toolbox Mobile Installer</h1>
-            </div>
-            <button id="themeToggle" class="theme-toggle" title="Cambiar tema">🌙</button>
+    <div class="page-wrapper">
+        <header class="page-header">
+            <h1>Toolbox Mobile Installer</h1>
+            <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode"
+                title="Dark mode">
+                🌙
+            </button>
+        </header>
+        <div class="info-link">
+            <a href="./index.html" title="Back to home page">⬅ Back to Home</a>
         </div>
-        <div class="header-description container">
-            <h2>Instala tu lista de paquetes móviles</h2>
-            <p>Tabla de paquetes: <a href="mobile-os-compatibility.html" title="Ver tabla de paquetes">Ver tabla</a></p>
-            <h3>Selecciona los paquetes de software a instalar:</h3>
-        </div>
-    </header>
-    <div class="container">
-        <form id="packageForm">
-            <div class="package-actions">
-                <label class="select-all-control">
-                    <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox">
-                    <span id="selectAllLabel">Seleccionar todos</span>
-                </label>
-                <select id="optionsSelect" class="options-select">
-                    <option value="" hidden selected>⚙️ Opciones</option>
-                    <option value="importPackages">📥 Importar paquetes (JSON)</option>
-                    <option value="exportPackages">📤 Exportar paquetes (JSON)</option>
-                </select>
-                <input type="file" id="fileInput" accept=".json" style="display: none;">
-            </div>
-            <div id="packageContainer" class="package-container columns">
-                <!-- Generated content -->
-            </div>
-            <h3>Selecciona tu sistema operativo y gestor de paquetes:</h3>
-            <div class="os-selection">
-                <div class="os-group">
-                    <button type="button" class="os-btn" data-os="android">🔥 Android</button>
-                </div>
-                <div class="os-group">
-                    <button type="button" class="os-btn" data-os="ios">🐧 iOS</button>
-                </div>
-            </div>
-        </form>
-        <!-- Footer comando instalación -->
-        <div class="command-footer" id="commandFooter" role="region" aria-label="Comando de instalación">
-            <div class="command-container">
-                <div class="command-output">
-                    <div class="command-header">
-                        <span class="command-language" id="commandLanguage">Comando de instalación:</span>
-                        <button type="button" class="copy-btn" id="copyCommandBtn" title="Copiar al portapapeles" aria-label="Copiar comando de instalación">
-                            📋 Copiar
-                        </button>
+
+        <section class="package-section">
+            <div class="container">
+                <form id="packageForm">
+                    <div class="os-selector-container">
+                        <h3>Select your operating system and package manager:</h3>
+                        <div class="primary-os-selector">
+                            <button type="button" class="os-btn" data-os="android">🔥 Android</button>
+                            <button type="button" class="os-btn" data-os="ios">🐧 iOS</button>
+                        </div>
+
+                        <div class="info-link">
+                            <a href="./mobile-os-compatibility.html"
+                                title="View package compatibility across mobile operating systems">📊 Mobile Package Compatibility</a>
+                        </div>
                     </div>
-                    <code id="installation-command" aria-live="polite">
-                        <span>Selecciona paquetes y sistema operativo para generar el comando...</span>
-                    </code>
-                </div>
-                <div class="command-warnings" id="commandWarnings" role="alert" aria-live="polite"></div>
+
+                    <div class="package-actions">
+                        <div class="main-controls">
+                            <label class="select-all-control">
+                                <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox">
+                                <span id="selectAllLabel">Select all</span>
+                            </label>
+                            <select id="optionsSelect" class="options-select">
+                                <option value="" hidden selected>⚙️ Options</option>
+                                <option value="importPackages">📥 Import packages (JSON)</option>
+                                <option value="exportPackages">📤 Export packages (JSON)</option>
+                            </select>
+                        </div>
+                        <input type="file" id="fileInput" accept=".json" style="display: none;">
+                    </div>
+
+                    <div id="packageContainer" class="package-container columns">
+                        <!-- Generated content -->
+                    </div>
+                </form>
             </div>
-        </div>
-        <div id="output"></div>
+
+            <div id="output"></div>
+        </section>
     </div>
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2026 Toolbox Mobile Installer. Hecho con ❤️ para la comunidad móvil.</p>
+
+    <!-- Sticky Footer with Command -->
+    <div class="command-footer" id="commandFooter" role="region" aria-label="Installation command">
+        <div class="command-container">
+            <div class="command-output">
+                <div class="command-header">
+                    <span class="command-language" id="commandLanguage">Installation command:</span>
+                    <button type="button" class="copy-btn" id="copyCommandBtn" title="Copy to clipboard"
+                        aria-label="Copy installation command to clipboard">
+                        📋 Copy
+                    </button>
+                </div>
+                <code id="installation-command" aria-live="polite">
+                    <span>Select packages and operating system to generate the command...</span>
+                </code>
+            </div>
+            <div class="command-warnings" id="commandWarnings" role="alert" aria-live="polite"></div>
         </div>
-    </footer>
-    <script type="module" src="./js/modules/theme-manager.js"></script>
-    <script type="module" src="./js/modules/app.js"></script>
+    </div>
 </body>
 
 </html>
