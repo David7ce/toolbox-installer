@@ -42,6 +42,14 @@
     margin-top: 3px;
 }
 
+.ext-icon {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    margin-top: 1px;
+    border-radius: 4px;
+}
+
 .extensions-table-wrapper {
     overflow-x: auto;
     border: 1px solid var(--border-color);

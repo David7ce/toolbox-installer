@@ -20,7 +20,7 @@ function detectJsonUrl() {
 
 export const CONFIG = {
     JSON_URL: detectJsonUrl(),
-    IMAGE_PATH: './img/',
+    IMAGE_PATH: './img/apps/',
     FAV_PACKAGES_URL: './pkgs/list/fav-packages.json',
     EXPORT_FILENAME: 'toolbox-exported-packages.json',
     MAX_FILE_SIZE: 5 * 1024 * 1024, // 5MB
@@ -233,7 +233,7 @@ function detectCompatJsonUrl() {
 export const OS_COMPAT_CONFIG = {
     // Data source
     JSON_URL: detectCompatJsonUrl(),
-    IMAGE_PATH: './img/', // Same as CONFIG.IMAGE_PATH
+    IMAGE_PATH: './img/apps/', // Same as CONFIG.IMAGE_PATH
     // Windows packages that don't use winget
     WINDOWS_NON_WINGET: [
         { id: 'ardour', name: 'Ardour' },

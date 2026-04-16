@@ -4,6 +4,11 @@ const state = {
     selected: new Set()
 };
 
+function getExtensionIconPath(extensionId) {
+    const fileName = extensionId.replace(/\./g, '-');
+    return `./img/vscode-extensions/${fileName}.svg`;
+}
+
 function groupByCategory(items) {
     return items.reduce((acc, item) => {
         if (!acc[item.category]) {
@@ -50,9 +55,20 @@ function renderCategories() {
                 });
 
                 const text = document.createElement('span');
+                const icon = document.createElement('img');
+                icon.className = 'ext-icon';
+                icon.width = 18;
+                icon.height = 18;
+                icon.alt = `${ext.name} icon`;
+                icon.src = getExtensionIconPath(ext.id);
+                icon.addEventListener('error', () => {
+                    icon.style.visibility = 'hidden';
+                });
+
                 text.textContent = ext.name;
 
                 label.appendChild(input);
+                label.appendChild(icon);
                 label.appendChild(text);
                 section.appendChild(label);
             });

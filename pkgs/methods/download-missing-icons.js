@@ -7,7 +7,7 @@ const CONFIG = {
         mobile: path.join(__dirname, '..', 'packages-info-mobile.json'),
         desktop: path.join(__dirname, '..', 'packages-info-desktop.json')
     },
-    imageDir: path.join(__dirname, '..', '..', 'img'),
+    imageDir: path.join(__dirname, '..', '..', 'img', 'apps'),
     timeoutMs: 15000,
     simpleIconsUrl: 'https://cdn.simpleicons.org/'
 };
