@@ -468,24 +468,6 @@
         "windows_winget": null
       }
     },
-    "deno": {
-      "name": "Deno",
-      "category": "Development",
-      "subcategory": "Runtime",
-      "package_manager": {
-        "linux_arch_aur": null,
-        "linux_arch_pacman": "deno",
-        "linux_debian_apt": null,
-        "linux_fedora_rpm": null,
-        "linux_gentoo_emerge": null,
-        "linux_flatpak": null,
-        "linux_snap": "deno",
-        "freebsd_pkg": null,
-        "macos_brew": "deno",
-        "unix_nix_env": "deno",
-        "windows_winget": "Deno.Deno"
-      }
-    },
     "deepl": {
       "name": "DeepL",
       "category": "Utility",
@@ -502,6 +484,24 @@
         "macos_brew": null,
         "unix_nix_env": null,
         "windows_winget": "DeepL.DeepL"
+      }
+    },
+    "deno": {
+      "name": "Deno",
+      "category": "Development",
+      "subcategory": "Runtime",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "deno",
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": "deno",
+        "freebsd_pkg": null,
+        "macos_brew": "deno",
+        "unix_nix_env": "deno",
+        "windows_winget": "Deno.Deno"
       }
     },
     "digikam": {
@@ -574,24 +574,6 @@
         "macos_brew": "docker",
         "unix_nix_env": "nixos.docker",
         "windows_winget": "Docker.DockerDesktop"
-      }
-    },
-    "duckduckgo": {
-      "name": "DuckDuckGo",
-      "category": "Internet & Communication",
-      "subcategory": "Web Browser",
-      "package_manager": {
-        "linux_arch_aur": null,
-        "linux_arch_pacman": null,
-        "linux_debian_apt": null,
-        "linux_fedora_rpm": null,
-        "linux_gentoo_emerge": null,
-        "linux_flatpak": null,
-        "linux_snap": null,
-        "freebsd_pkg": null,
-        "macos_brew": "duckduckgo",
-        "unix_nix_env": null,
-        "windows_winget": "DuckDuckGo.DesktopBrowser"
       }
     },
     "dolphin": {
@@ -682,6 +664,24 @@
         "macos_brew": "dropbox",
         "unix_nix_env": "nixos.dropbox",
         "windows_winget": "Dropbox.Dropbox"
+      }
+    },
+    "duckduckgo": {
+      "name": "DuckDuckGo",
+      "category": "Internet & Communication",
+      "subcategory": "Web Browser",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "duckduckgo",
+        "unix_nix_env": null,
+        "windows_winget": "DuckDuckGo.DesktopBrowser"
       }
     },
     "duckstation": {
@@ -846,24 +846,6 @@
         "windows_winget": "Mozilla.Firefox"
       }
     },
-    "filezilla": {
-      "name": "FileZilla",
-      "category": "Internet & Communication",
-      "subcategory": "FTP Client",
-      "package_manager": {
-        "linux_arch_aur": null,
-        "linux_arch_pacman": "filezilla",
-        "linux_debian_apt": "filezilla",
-        "linux_fedora_rpm": "filezilla",
-        "linux_gentoo_emerge": "net-ftp/filezilla",
-        "linux_flatpak": "org.filezillaproject.Filezilla",
-        "linux_snap": null,
-        "freebsd_pkg": "filezilla",
-        "macos_brew": "filezilla",
-        "unix_nix_env": "nixos.filezilla",
-        "windows_winget": "TimKosse.FileZilla.Client"
-      }
-    },
     "files": {
       "name": "Files",
       "category": "File Man",
@@ -880,6 +862,24 @@
         "macos_brew": null,
         "unix_nix_env": null,
         "windows_winget": "9NGHP3DX8HDX"
+      }
+    },
+    "filezilla": {
+      "name": "FileZilla",
+      "category": "Internet & Communication",
+      "subcategory": "FTP Client",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "filezilla",
+        "linux_debian_apt": "filezilla",
+        "linux_fedora_rpm": "filezilla",
+        "linux_gentoo_emerge": "net-ftp/filezilla",
+        "linux_flatpak": "org.filezillaproject.Filezilla",
+        "linux_snap": null,
+        "freebsd_pkg": "filezilla",
+        "macos_brew": "filezilla",
+        "unix_nix_env": "nixos.filezilla",
+        "windows_winget": "TimKosse.FileZilla.Client"
       }
     },
     "firefox": {
@@ -1548,24 +1548,6 @@
         "windows_winget": "KateEditor.Kate"
       }
     },
-    "kdenlive": {
-      "name": "Kdenlive",
-      "category": "Video",
-      "subcategory": "Video Editor",
-      "package_manager": {
-        "linux_arch_aur": null,
-        "linux_arch_pacman": "kdenlive",
-        "linux_debian_apt": "kdenlive",
-        "linux_fedora_rpm": "kdenlive",
-        "linux_gentoo_emerge": "kde-apps/kdenlive",
-        "linux_flatpak": "org.kde.kdenlive",
-        "linux_snap": "kdenlive",
-        "freebsd_pkg": "kdenlive",
-        "macos_brew": "kdenlive",
-        "unix_nix_env": "nixos.kdenlive",
-        "windows_winget": "Kdenlive.Kdenlive"
-      }
-    },
     "kde-connect": {
       "name": "KDE Connect",
       "category": "Utility",
@@ -1582,6 +1564,24 @@
         "macos_brew": "kdeconnect",
         "unix_nix_env": "nixos.kdeconnect",
         "windows_winget": "KDE.KDEConnect"
+      }
+    },
+    "kdenlive": {
+      "name": "Kdenlive",
+      "category": "Video",
+      "subcategory": "Video Editor",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "kdenlive",
+        "linux_debian_apt": "kdenlive",
+        "linux_fedora_rpm": "kdenlive",
+        "linux_gentoo_emerge": "kde-apps/kdenlive",
+        "linux_flatpak": "org.kde.kdenlive",
+        "linux_snap": "kdenlive",
+        "freebsd_pkg": "kdenlive",
+        "macos_brew": "kdenlive",
+        "unix_nix_env": "nixos.kdenlive",
+        "windows_winget": "Kdenlive.Kdenlive"
       }
     },
     "keepassxc": {
@@ -1620,6 +1620,24 @@
         "windows_winget": null
       }
     },
+    "kiwix": {
+      "name": "Kiwix",
+      "category": "Reading",
+      "subcategory": "Offline Reader",
+      "package_manager": {
+        "linux_arch_aur": "kiwix-desktop-bin",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": "org.kiwix.desktop",
+        "linux_snap": "kiwix",
+        "freebsd_pkg": null,
+        "macos_brew": "kiwix",
+        "unix_nix_env": null,
+        "windows_winget": "Kiwix.KiwixJS"
+      }
+    },
     "kodi": {
       "name": "Kodi",
       "category": "Video",
@@ -1654,24 +1672,6 @@
         "macos_brew": null,
         "unix_nix_env": "nixos.konsole",
         "windows_winget": "KDE.Konsole"
-      }
-    },
-    "kiwix": {
-      "name": "Kiwix",
-      "category": "Reading",
-      "subcategory": "Offline Reader",
-      "package_manager": {
-        "linux_arch_aur": "kiwix-desktop-bin",
-        "linux_arch_pacman": null,
-        "linux_debian_apt": null,
-        "linux_fedora_rpm": null,
-        "linux_gentoo_emerge": null,
-        "linux_flatpak": "org.kiwix.desktop",
-        "linux_snap": "kiwix",
-        "freebsd_pkg": null,
-        "macos_brew": "kiwix",
-        "unix_nix_env": null,
-        "windows_winget": "Kiwix.KiwixJS"
       }
     },
     "koodoreader": {
@@ -2448,24 +2448,6 @@
         "windows_winget": "Ollama.Ollama"
       }
     },
-    "onlyoffice": {
-      "name": "OnlyOffice",
-      "category": "Office",
-      "subcategory": "Office Suite",
-      "package_manager": {
-        "linux_arch_aur": "onlyoffice-bin",
-        "linux_arch_pacman": null,
-        "linux_debian_apt": null,
-        "linux_fedora_rpm": "onlyoffice",
-        "linux_gentoo_emerge": null,
-        "linux_flatpak": "org.onlyoffice.desktopeditors",
-        "linux_snap": "onlyoffice-desktopeditors",
-        "freebsd_pkg": null,
-        "macos_brew": "onlyoffice",
-        "unix_nix_env": "onlyoffice-nixos.onlyoffice-bin",
-        "windows_winget": "ONLYOFFICE.DesktopEditors"
-      }
-    },
     "onionshare": {
       "name": "OnionShare",
       "category": "Utility",
@@ -2482,6 +2464,24 @@
         "macos_brew": "onionshare",
         "unix_nix_env": "nixos.onionshare-gui",
         "windows_winget": "OnionShare.OnionShare"
+      }
+    },
+    "onlyoffice": {
+      "name": "OnlyOffice",
+      "category": "Office",
+      "subcategory": "Office Suite",
+      "package_manager": {
+        "linux_arch_aur": "onlyoffice-bin",
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": "onlyoffice",
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": "org.onlyoffice.desktopeditors",
+        "linux_snap": "onlyoffice-desktopeditors",
+        "freebsd_pkg": null,
+        "macos_brew": "onlyoffice",
+        "unix_nix_env": "onlyoffice-nixos.onlyoffice-bin",
+        "windows_winget": "ONLYOFFICE.DesktopEditors"
       }
     },
     "openrgb": {
@@ -2862,6 +2862,24 @@
         "windows_winget": "OSGeo.QGIS"
       }
     },
+    "raindropio": {
+      "name": "Raindrop.io",
+      "category": "Internet & Communication",
+      "subcategory": "Bookmark Manager",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": "io.raindrop.Raindrop",
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "raindropio",
+        "unix_nix_env": null,
+        "windows_winget": "Raindrop.Raindrop"
+      }
+    },
     "rapidraw": {
       "name": "RapidRaw",
       "category": "Image",
@@ -2896,24 +2914,6 @@
         "macos_brew": "rawtherapee",
         "unix_nix_env": "nixos.rawtherapee",
         "windows_winget": "RawTherapee.RawTherapee"
-      }
-    },
-    "raindropio": {
-      "name": "Raindrop.io",
-      "category": "Internet & Communication",
-      "subcategory": "Bookmark Manager",
-      "package_manager": {
-        "linux_arch_aur": null,
-        "linux_arch_pacman": null,
-        "linux_debian_apt": null,
-        "linux_fedora_rpm": null,
-        "linux_gentoo_emerge": null,
-        "linux_flatpak": "io.raindrop.Raindrop",
-        "linux_snap": null,
-        "freebsd_pkg": null,
-        "macos_brew": "raindropio",
-        "unix_nix_env": null,
-        "windows_winget": "Raindrop.Raindrop"
       }
     },
     "rclone": {
@@ -2970,24 +2970,6 @@
         "windows_winget": null
       }
     },
-    "retroarch": {
-      "name": "RetroArch",
-      "category": "Gaming",
-      "subcategory": "Emulation",
-      "package_manager": {
-        "linux_arch_aur": null,
-        "linux_arch_pacman": "retroarch",
-        "linux_debian_apt": "retroarch",
-        "linux_fedora_rpm": "retroarch",
-        "linux_gentoo_emerge": "games-emulation/retroarch",
-        "linux_flatpak": "org.libretro.RetroArch",
-        "linux_snap": "retroarch",
-        "freebsd_pkg": "retroarch",
-        "macos_brew": "retroarch",
-        "unix_nix_env": "nixos.retroarch",
-        "windows_winget": "Libretro.RetroArch"
-      }
-    },
     "redshift": {
       "name": "Redshift",
       "category": "System",
@@ -3004,6 +2986,24 @@
         "macos_brew": "redshift",
         "unix_nix_env": "redshift",
         "windows_winget": null
+      }
+    },
+    "retroarch": {
+      "name": "RetroArch",
+      "category": "Gaming",
+      "subcategory": "Emulation",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "retroarch",
+        "linux_debian_apt": "retroarch",
+        "linux_fedora_rpm": "retroarch",
+        "linux_gentoo_emerge": "games-emulation/retroarch",
+        "linux_flatpak": "org.libretro.RetroArch",
+        "linux_snap": "retroarch",
+        "freebsd_pkg": "retroarch",
+        "macos_brew": "retroarch",
+        "unix_nix_env": "nixos.retroarch",
+        "windows_winget": "Libretro.RetroArch"
       }
     },
     "rsync": {
@@ -3078,24 +3078,6 @@
         "windows_winget": null
       }
     },
-    "sharex": {
-      "name": "ShareX",
-      "category": "Utility",
-      "subcategory": "Screenshot",
-      "package_manager": {
-        "linux_arch_aur": null,
-        "linux_arch_pacman": null,
-        "linux_debian_apt": null,
-        "linux_fedora_rpm": null,
-        "linux_gentoo_emerge": null,
-        "linux_flatpak": null,
-        "linux_snap": null,
-        "freebsd_pkg": null,
-        "macos_brew": null,
-        "unix_nix_env": null,
-        "windows_winget": "ShareX.ShareX"
-      }
-    },
     "scrcpy": {
       "name": "Scrcpy",
       "category": "Utility",
@@ -3130,6 +3112,24 @@
         "macos_brew": null,
         "unix_nix_env": null,
         "windows_winget": "9PJV6D1JPG0H"
+      }
+    },
+    "sharex": {
+      "name": "ShareX",
+      "category": "Utility",
+      "subcategory": "Screenshot",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "ShareX.ShareX"
       }
     },
     "shotcut": {

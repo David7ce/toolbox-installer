@@ -3,7 +3,10 @@ const path = require('path');
 
 // Configuration
 const CONFIG = {
-    jsonFile: path.join(__dirname, '..', 'packages-info.json'),
+    files: {
+        mobile: path.join(__dirname, '..', 'packages-info-mobile.json'),
+        desktop: path.join(__dirname, '..', 'packages-info-desktop.json')
+    },
     encoding: 'utf8',
     indentation: 2
 };
@@ -106,9 +109,24 @@ class PackageSorter {
 async function main() {
     console.log('🔄 Package Sorter - Enhanced Version');
     console.log(`📍 Working directory: ${process.cwd()}`);
-    
-    const sorter = new PackageSorter(CONFIG.jsonFile);
-    await sorter.sortPackages();
+
+    const target = (process.argv[2] || 'mobile').toLowerCase();
+    const targets = [];
+
+    if (target === 'all') {
+        targets.push(CONFIG.files.mobile, CONFIG.files.desktop);
+    } else if (CONFIG.files[target]) {
+        targets.push(CONFIG.files[target]);
+    } else {
+        console.error('❌ Invalid target. Use: mobile | desktop | all');
+        process.exitCode = 1;
+        return;
+    }
+
+    for (const filePath of targets) {
+        const sorter = new PackageSorter(filePath);
+        await sorter.sortPackages();
+    }
 }
 
 // Run the script

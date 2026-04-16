@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Code Extensions - Command Generator</title>
+    <link rel="stylesheet" href="./css/base-styles.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style-vscode.css">
+    <script type="module" src="./js/modules/theme-manager.js"></script>
+    <script type="module" src="./js/modules/vscode-extensions-app.js"></script>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="page-header">
+            <h1>VS Code Extension Command Generator</h1>
+            <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">🌙</button>
+        </header>
+
+        <div class="info-link">
+            <a href="./index.html" class="back-link" title="Back to home page">⬅ Back to Home</a>
+        </div>
+
+        <div class="info-link">
+            <a href="./vscode-extensions-table.html" title="View installed extension list as table">📊 VS Code Extensions Table</a>
+        </div>
+
+        <section class="package-section">
+            <div class="container">
+                <div class="extensions-toolbar">
+                    <label class="select-all-control">
+                        <input type="checkbox" id="selectAllExtensions" class="select-all-checkbox">
+                        <span>Select all</span>
+                    </label>
+                    <input id="extensionsSearch" class="search-input" type="search" placeholder="Search by extension name or ID">
+                </div>
+
+                <div id="extensionsCategories" class="extensions-grid"></div>
+            </div>
+        </section>
+    </div>
+
+    <div class="command-footer" id="commandFooter" role="region" aria-label="Extension installation command">
+        <div class="command-container">
+            <div class="command-output">
+                <div class="command-header">
+                    <span class="command-language">Install command:</span>
+                    <button type="button" class="copy-btn" id="copyCommandBtn" title="Copy to clipboard" aria-label="Copy install command">📋 Copy</button>
+                </div>
+                <code id="installation-command" aria-live="polite">Select extensions to generate command...</code>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -11,6 +11,11 @@ Companies that only develop to Windows or macOS: Adobe, Autodesk, Avid, Capture-
 | Adobe              | Lightroom          | Photo Editing           | Paid  |          |
 | Adobe              | Photoshop          | Graphic Design          | Paid  |          |
 | Adobe              | PremierePro        | Video Editing           | Paid  |          |
+| Apple              | iMovie             | Video Editing           |       |          |
+| Apple              | iTunes             | Music Player            |       |          |
+| Apple              | Final Cut Pro      | Video Editing           |       |          |
+| Apple              | Garage Band        | Audio Production        |       |          |
+| Apple              | Logic Pro          | Audio Production        |       |          |
 | Arobas             | GuitarPro          | Music Composition       | Paid  | ✨       |
 | Autodesk           | 3dsMax             | 3D Modeling             | Paid  |          |
 | Autodesk           | AutoCAD            | CAD                     | Paid  | ✨       |
@@ -25,6 +30,7 @@ Companies that only develop to Windows or macOS: Adobe, Autodesk, Avid, Capture-
 | Dassault-Systèmes  | Solidworks         | CAD                     | Paid  | ✨       |
 | Eagle              | Eagle.cool         | Asset Management        | Paid  | ✨       |
 | Epic Games         | UnrealEngine       | Game Development        | Free  |          |
+| Flying Meat        | Acorn 7            | Image Editing           |       |          |
 | Image-Line         | FL-Studio          | Music Production        | Paid  | ✨       |
 | JPEGView           | JPEGView           | Image Viewer            | Free  |          |
 | MAGIX              | Vegas Pro          | Video Editing           | Paid  |          |
@@ -33,24 +39,13 @@ Companies that only develop to Windows or macOS: Adobe, Autodesk, Avid, Capture-
 | Microsoft          | PowerToys          | Utility                 | Free  | ✨       |
 | MusicBee           | MusicBee           | Music player            | Free  |          |
 | MSI                | MSI Afterburner    | GPU Monitoring          | Free  |          |
+| Readdle            | PDF Expert         | PDF Editing             |       |          |
+| Panic              | Transmit 5         | FTP Client              |       |          |
+| Parallels          | Parallels          | Virtualization          |       |          |
+| Pixelmator         | Pixelmator Pro     | Image Editing           |       |          |
 | Serif              | Affinity-Designer  | Graphic Design          | Paid  | ✨       |
 | Serif              | Affinity-Photo     | Photo Editing           | Paid  | ✨       |
 | Serif              | Affinity-Publisher | Photo Editing           | Paid  | ✨       |
+| Sketch B.V.        | Sketch             | Graphic Design          |       |          |
 | Steinberg          | Cubase             | Music Production        | Paid  |          |
-
-## Great Apple paid software
-
-| Company        | Name            | Category          |
-|----------------|-----------------|-------------------|
-| Apple          | iMovie          | Video Editing     |
-| Apple          | iTunes          | Music Player      |
-| Apple          | Final Cut Pro   | Video Editing     |
-| Apple          | Garage Band     | Audio Production  |
-| Apple          | Logic Pro       | Audio Production  |
-| Readdle        | PDF Expert      | PDF Editing       |
-| Flying Meat    | Acorn 7         | Image Editing     |
-| The Omni Group | OmniFocus       | Task Management   |
-| Panic          | Transmit 5      | FTP Client        |
-| Parallels      | Parallels       | Virtualization    |
-| Pixelmator     | Pixelmator Pro  | Image Editing     |
-| Sketch B.V.    | Sketch          | Graphic Design    |
+| The Omni Group     | OmniFocus          | Task Management         |       |          |

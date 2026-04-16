@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Code Extensions Table</title>
+    <link rel="stylesheet" href="./css/base-styles.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style-vscode.css">
+    <script type="module" src="./js/modules/theme-manager.js"></script>
+    <script type="module" src="./js/modules/vscode-extensions-table.js"></script>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="page-header">
+            <h1>VS Code Installed Extensions</h1>
+            <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">🌙</button>
+        </header>
+
+        <div class="info-link">
+            <a href="./index.html" class="back-link" title="Back to home page">⬅ Back to Home</a>
+        </div>
+
+        <div class="info-link">
+            <a href="./vscode.html" title="Go to extensions command generator">⚙️ Open Generator</a>
+        </div>
+
+        <section class="package-section">
+            <div class="container">
+                <input id="tableSearch" class="search-input" type="search" placeholder="Search extension name, package name, or category">
+                <p class="table-meta">Total shown: <strong id="extensionsCount">0</strong></p>
+
+                <div class="extensions-table-wrapper">
+                    <table class="extensions-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Package Name</th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+                        <tbody id="extensionsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

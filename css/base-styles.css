@@ -170,6 +170,40 @@ input[type="search"]:focus {
     outline-offset: 2px;
 }
 
+/* Shared Back Link Button */
+.back-link,
+.info-link a.back-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 40px;
+    padding: 0 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: var(--card-background);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.back-link:hover,
+.info-link a.back-link:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: rgba(0, 123, 255, 0.08);
+    box-shadow: var(--shadow-light);
+    text-decoration: none;
+}
+
+.back-link:focus,
+.info-link a.back-link:focus {
+    outline: 2px solid rgba(0, 123, 255, 0.5);
+    outline-offset: 2px;
+}
+
 /* ==========================================================================
    RESPONSIVE - MOBILE FIRST APPROACH
    ========================================================================== */
