@@ -9,13 +9,13 @@ const CONFIG = {
     simpleIconsUrl: 'https://cdn.simpleicons.org/',
     apps: {
         targets: {
-            mobile: path.join(__dirname, '..', 'packages-info-mobile.json'),
-            desktop: path.join(__dirname, '..', 'packages-info-desktop.json')
+            mobile: path.join(__dirname, '..', 'mobile-pkgs.json'),
+            desktop: path.join(__dirname, '..', 'desktop-pkgs.json')
         },
         outputDir: path.join(ROOT, 'img', 'apps')
     },
     vscode: {
-        dataFile: path.join(ROOT, 'js', 'modules', 'vscode-extensions-data.js'),
+        dataFile: path.join(ROOT, 'pkgs', 'vscode-extensions-pkgs.json'),
         appsDir: path.join(ROOT, 'img', 'apps'),
         outputDir: path.join(ROOT, 'img', 'vscode-extensions')
     }
@@ -299,7 +299,13 @@ function outVscodeName(id) {
 }
 
 function getVscodeIds(content) {
-    return [...content.matchAll(/id:\s*'([^']+)'/g)].map((m) => m[1]);
+    const parsed = JSON.parse(content);
+    if (!Array.isArray(parsed.extensions)) {
+        return [];
+    }
+    return parsed.extensions
+        .map((ext) => ext && ext.id)
+        .filter((id) => typeof id === 'string' && id.trim() !== '');
 }
 
 async function runVscode() {

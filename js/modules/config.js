@@ -10,9 +10,9 @@
 function detectJsonUrl() {
     const path = window.location.pathname;
     if (path.includes('mobile.html')) {
-        return './pkgs/packages-info-mobile.json';
+        return './pkgs/mobile-pkgs.json';
     } else if (path.includes('desktop.html')) {
-        return './pkgs/packages-info-desktop.json';
+        return './pkgs/desktop-pkgs.json';
     }
     // Fallback (por compatibilidad)
     return './pkgs/packages-info.json';
@@ -223,9 +223,9 @@ export const THEME_CONFIG = {
 function detectCompatJsonUrl() {
     const path = window.location.pathname;
     if (path.includes('mobile')) {
-        return './pkgs/packages-info-mobile.json';
+        return './pkgs/mobile-pkgs.json';
     } else if (path.includes('desktop')) {
-        return './pkgs/packages-info-desktop.json';
+        return './pkgs/desktop-pkgs.json';
     }
     return './pkgs/packages-info.json';
 }

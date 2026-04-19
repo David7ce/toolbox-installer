@@ -1008,6 +1008,24 @@
         "windows_winget": "Freeplane.Freeplane"
       }
     },
+    "fxsound": {
+      "name": "FxSound",
+      "category": "Audio",
+      "subcategory": "Audio Processing",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": null,
+        "unix_nix_env": null,
+        "windows_winget": "FxSoundLLC.FxSound"
+      }
+    },
     "gcc": {
       "name": "GCC",
       "category": "Development",

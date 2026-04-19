@@ -4,8 +4,8 @@ const path = require('path');
 // Configuration
 const CONFIG = {
     files: {
-        mobile: path.join(__dirname, '..', 'packages-info-mobile.json'),
-        desktop: path.join(__dirname, '..', 'packages-info-desktop.json')
+        mobile: path.join(__dirname, '..', 'mobile-pkgs.json'),
+        desktop: path.join(__dirname, '..', 'desktop-pkgs.json')
     },
     encoding: 'utf8',
     indentation: 2
