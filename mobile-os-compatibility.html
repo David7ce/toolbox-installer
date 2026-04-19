@@ -4,23 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Packages Table</title>
+    <title>Mobile Packages Compatibility</title>
     <link rel="stylesheet" href="./css/base-styles.css">
     <link rel="stylesheet" href="./css/os-compatibility.css">
+    <script type="module" src="./js/modules/theme-manager.js"></script>
 </head>
 
 <body>
-    <header class="container">
-        <h2>Mobile Packages Table</h2>
-        <p>Complete package names and official store links for Android and iOS.</p>
-        <div class="package-actions">
+    <div class="container">
+        <header class="page-header">
+            <h1>📱 Mobile Packages Compatibility</h1>
+            <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">
+                🌙
+            </button>
+        </header>
+
+        <p class="subtitle">Complete package names and official store links for Android and iOS.</p>
+
+        <div class="info-link">
             <a href="index.html" class="back-link" title="Back to package selector">⬅ Back to Installer</a>
         </div>
-    </header>
 
-    <main class="container">
-        <div class="table-wrapper">
-            <table id="packagesTable" class="packages-table">
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search package name...">
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="packagesTable">
                 <thead>
                     <tr>
                         <th>Package</th>
@@ -35,12 +47,12 @@
                 </tbody>
             </table>
         </div>
-    </main>
+    </div>
 
-        <script type="module">
-            import { loadPackagesTable } from './js/modules/packages-table.js';
-            document.addEventListener('DOMContentLoaded', loadPackagesTable);
-        </script>
+    <script type="module">
+        import { loadPackagesTable } from './js/modules/packages-table.js';
+        document.addEventListener('DOMContentLoaded', loadPackagesTable);
+    </script>
 </body>
 
 </html>

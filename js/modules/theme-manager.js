@@ -6,15 +6,22 @@
 import { THEME_CONFIG, EVENT_NAMES } from './config.js';
 
 let currentTheme = null;
+let isInitialized = false;
 
 /**
  * Initialize theme system
  * Loads saved theme and sets up toggle button
  */
 export function initTheme() {
+    if (isInitialized) {
+        updateToggleButton(getTheme());
+        return;
+    }
+
     const savedTheme = getSavedTheme();
     applyTheme(savedTheme);
     setupToggleButton();
+    isInitialized = true;
 }
 
 /**

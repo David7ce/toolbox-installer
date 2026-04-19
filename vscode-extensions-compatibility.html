@@ -12,11 +12,13 @@
 </head>
 
 <body>
-    <div class="page-wrapper">
+    <div class="container">
         <header class="page-header">
-            <h1>VS Code Installed Extensions</h1>
+            <h1>🧩 VS Code Extensions Compatibility</h1>
             <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">🌙</button>
         </header>
+
+        <p class="subtitle">Installed extension list and package identifiers for command generation.</p>
 
         <div class="info-link">
             <a href="./index.html" class="back-link" title="Back to home page">⬅ Back to Home</a>
@@ -26,25 +28,26 @@
             <a href="./vscode.html" title="Go to extensions command generator">⚙️ Open Generator</a>
         </div>
 
-        <section class="package-section">
-            <div class="container">
-                <input id="tableSearch" class="search-input" type="search" placeholder="Search extension name, package name, or category">
-                <p class="table-meta">Total shown: <strong id="extensionsCount">0</strong></p>
-
-                <div class="extensions-table-wrapper">
-                    <table class="extensions-table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Package Name</th>
-                                <th>Category</th>
-                            </tr>
-                        </thead>
-                        <tbody id="extensionsTableBody"></tbody>
-                    </table>
-                </div>
+        <div class="controls">
+            <div class="search-box">
+                <input id="tableSearch" type="search" placeholder="Search extension name, package name, or category">
             </div>
-        </section>
+        </div>
+
+        <p class="table-meta">Total shown: <strong id="extensionsCount">0</strong></p>
+
+        <div class="table-container">
+            <table id="packagesTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Package Name</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody id="extensionsTableBody"></tbody>
+            </table>
+        </div>
     </div>
 </body>
 

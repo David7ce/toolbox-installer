@@ -530,3 +530,16 @@ tbody tr {
     margin: var(--spacing-sm) 0;
     color: var(--text-secondary);
 }
+
+.store-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.store-icon {
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+}

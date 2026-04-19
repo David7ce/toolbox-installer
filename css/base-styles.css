@@ -80,6 +80,31 @@ p {
     margin-bottom: var(--spacing-sm);
 }
 
+a {
+    color: #0b57d0;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+}
+
+[data-theme="dark"] a {
+    color: #8ab4f8;
+}
+
+a:hover {
+    color: #0842a0;
+}
+
+[data-theme="dark"] a:hover {
+    color: #a8c7ff;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
 /* ==========================================================================
    SHARED COMPONENTS - MOBILE FIRST
    ========================================================================== */

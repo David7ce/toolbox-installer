@@ -64,7 +64,7 @@ export function renderPackagesTable(data) {
             const androidUrl = androidPackageName ? buildPlayStoreUrl(androidPackageName) : '';
             const iosUrl = iosPackageName ? buildAppleStoreUrl(iosPackageName) : '';
             const androidLinkCell = createLinkCell(androidUrl, 'Play Store', '▶');
-            const iosLinkCell = createLinkCell(iosUrl, 'App Store', '');
+            const iosLinkCell = createLinkCell(iosUrl, 'App Store', 'Ó');
             row.appendChild(packageNameCell);
             row.appendChild(androidPackageCell);
             row.appendChild(iosPackageCell);
