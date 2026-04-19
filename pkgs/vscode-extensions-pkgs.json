@@ -1,13 +1,73 @@
 {
   "extensions": [
     {
-      "id": "github.copilot-chat",
-      "name": "GitHub Copilot Chat",
+      "id": "bierner.markdown-mermaid",
+      "name": "Markdown Mermaid",
+      "category": "Markdown and Docs"
+    },
+    {
+      "id": "bmewburn.vscode-intelephense-client",
+      "name": "Intelephense",
+      "category": "Languages"
+    },
+    {
+      "id": "continue.continue",
+      "name": "Continue",
       "category": "AI"
     },
     {
-      "id": "github.vscode-pull-request-github",
-      "name": "GitHub Pull Requests",
+      "id": "cweijan.vscode-database-client2",
+      "name": "Database Client",
+      "category": "Databases"
+    },
+    {
+      "id": "davidanson.vscode-markdownlint",
+      "name": "Markdown Lint",
+      "category": "Markdown and Docs"
+    },
+    {
+      "id": "dbaeumer.vscode-eslint",
+      "name": "ESLint",
+      "category": "Formatting and Linting"
+    },
+    {
+      "id": "dotjoshjohnson.xml",
+      "name": "XML Tools",
+      "category": "Web and Frontend"
+    },
+    {
+      "id": "dracula-theme.theme-dracula",
+      "name": "Dracula Theme",
+      "category": "Utilities"
+    },
+    {
+      "id": "ecmel.vscode-html-css",
+      "name": "HTML CSS Support",
+      "category": "Web and Frontend"
+    },
+    {
+      "id": "editorconfig.editorconfig",
+      "name": "EditorConfig",
+      "category": "Formatting and Linting"
+    },
+    {
+      "id": "esbenp.prettier-vscode",
+      "name": "Prettier",
+      "category": "Formatting and Linting"
+    },
+    {
+      "id": "firefox-devtools.vscode-firefox-debug",
+      "name": "Firefox Debugger",
+      "category": "Utilities"
+    },
+    {
+      "id": "foam.foam-vscode",
+      "name": "Foam",
+      "category": "Markdown and Docs"
+    },
+    {
+      "id": "github.copilot-chat",
+      "name": "GitHub Copilot Chat",
       "category": "AI"
     },
     {
@@ -16,9 +76,39 @@
       "category": "AI"
     },
     {
-      "id": "continue.continue",
-      "name": "Continue",
+      "id": "github.vscode-pull-request-github",
+      "name": "GitHub Pull Requests",
       "category": "AI"
+    },
+    {
+      "id": "gruntfuggly.todo-tree",
+      "name": "Todo Tree",
+      "category": "Utilities"
+    },
+    {
+      "id": "mechatroner.rainbow-csv",
+      "name": "Rainbow CSV",
+      "category": "Utilities"
+    },
+    {
+      "id": "ms-azuretools.vscode-containers",
+      "name": "Dev Containers",
+      "category": "DevOps and Cloud"
+    },
+    {
+      "id": "ms-azuretools.vscode-docker",
+      "name": "Docker",
+      "category": "DevOps and Cloud"
+    },
+    {
+      "id": "ms-kubernetes-tools.vscode-kubernetes-tools",
+      "name": "Kubernetes",
+      "category": "DevOps and Cloud"
+    },
+    {
+      "id": "ms-python.debugpy",
+      "name": "Python Debugger",
+      "category": "Languages"
     },
     {
       "id": "ms-python.python",
@@ -31,119 +121,9 @@
       "category": "Languages"
     },
     {
-      "id": "ms-python.debugpy",
-      "name": "Python Debugger",
-      "category": "Languages"
-    },
-    {
-      "id": "ms-vscode.powershell",
-      "name": "PowerShell",
-      "category": "Languages"
-    },
-    {
-      "id": "bmewburn.vscode-intelephense-client",
-      "name": "Intelephense",
-      "category": "Languages"
-    },
-    {
-      "id": "xdebug.php-debug",
-      "name": "PHP Debug",
-      "category": "Languages"
-    },
-    {
-      "id": "zobo.php-intellisense",
-      "name": "PHP IntelliSense",
-      "category": "Languages"
-    },
-    {
-      "id": "redhat.vscode-xml",
-      "name": "XML",
-      "category": "Languages"
-    },
-    {
-      "id": "redhat.vscode-yaml",
-      "name": "YAML",
-      "category": "Languages"
-    },
-    {
-      "id": "vue.volar",
-      "name": "Volar",
-      "category": "Languages"
-    },
-    {
-      "id": "rodrigovallades.es7-react-js-snippets",
-      "name": "ES7 React Snippets",
-      "category": "Languages"
-    },
-    {
-      "id": "dbaeumer.vscode-eslint",
-      "name": "ESLint",
-      "category": "Formatting and Linting"
-    },
-    {
-      "id": "esbenp.prettier-vscode",
-      "name": "Prettier",
-      "category": "Formatting and Linting"
-    },
-    {
-      "id": "editorconfig.editorconfig",
-      "name": "EditorConfig",
-      "category": "Formatting and Linting"
-    },
-    {
-      "id": "standard.vscode-standard",
-      "name": "JavaScript Standard Style",
-      "category": "Formatting and Linting"
-    },
-    {
-      "id": "davidanson.vscode-markdownlint",
-      "name": "Markdown Lint",
-      "category": "Markdown and Docs"
-    },
-    {
-      "id": "bierner.markdown-mermaid",
-      "name": "Markdown Mermaid",
-      "category": "Markdown and Docs"
-    },
-    {
-      "id": "yzane.markdown-pdf",
-      "name": "Markdown PDF",
-      "category": "Markdown and Docs"
-    },
-    {
-      "id": "foam.foam-vscode",
-      "name": "Foam",
-      "category": "Markdown and Docs"
-    },
-    {
-      "id": "ms-vscode.live-server",
-      "name": "Live Server",
-      "category": "Web and Frontend"
-    },
-    {
-      "id": "ecmel.vscode-html-css",
-      "name": "HTML CSS Support",
-      "category": "Web and Frontend"
-    },
-    {
-      "id": "dotjoshjohnson.xml",
-      "name": "XML Tools",
-      "category": "Web and Frontend"
-    },
-    {
-      "id": "ms-azuretools.vscode-docker",
-      "name": "Docker",
-      "category": "DevOps and Cloud"
-    },
-    {
-      "id": "ms-azuretools.vscode-containers",
-      "name": "Dev Containers",
-      "category": "DevOps and Cloud"
-    },
-    {
-      "id": "ms-kubernetes-tools.vscode-kubernetes-tools",
-      "name": "Kubernetes",
-      "category": "DevOps and Cloud"
+      "id": "ms-vscode-remote.remote-containers",
+      "name": "Remote Containers",
+      "category": "Remote Development"
     },
     {
       "id": "ms-vscode-remote.remote-ssh",
@@ -156,9 +136,19 @@
       "category": "Remote Development"
     },
     {
-      "id": "ms-vscode-remote.remote-containers",
-      "name": "Remote Containers",
-      "category": "Remote Development"
+      "id": "ms-vscode.hexeditor",
+      "name": "Hex Editor",
+      "category": "Utilities"
+    },
+    {
+      "id": "ms-vscode.live-server",
+      "name": "Live Server",
+      "category": "Web and Frontend"
+    },
+    {
+      "id": "ms-vscode.powershell",
+      "name": "PowerShell",
+      "category": "Languages"
     },
     {
       "id": "ms-vscode.remote-explorer",
@@ -176,34 +166,44 @@
       "category": "Databases"
     },
     {
-      "id": "cweijan.vscode-database-client2",
-      "name": "Database Client",
-      "category": "Databases"
+      "id": "redhat.vscode-xml",
+      "name": "XML",
+      "category": "Languages"
     },
     {
-      "id": "ms-vscode.hexeditor",
-      "name": "Hex Editor",
-      "category": "Utilities"
+      "id": "redhat.vscode-yaml",
+      "name": "YAML",
+      "category": "Languages"
     },
     {
-      "id": "gruntfuggly.todo-tree",
-      "name": "Todo Tree",
-      "category": "Utilities"
+      "id": "rodrigovallades.es7-react-js-snippets",
+      "name": "ES7 React Snippets",
+      "category": "Languages"
     },
     {
-      "id": "dracula-theme.theme-dracula",
-      "name": "Dracula Theme",
-      "category": "Utilities"
+      "id": "standard.vscode-standard",
+      "name": "JavaScript Standard Style",
+      "category": "Formatting and Linting"
     },
     {
-      "id": "mechatroner.rainbow-csv",
-      "name": "Rainbow CSV",
-      "category": "Utilities"
+      "id": "vue.volar",
+      "name": "Volar",
+      "category": "Languages"
     },
     {
-      "id": "firefox-devtools.vscode-firefox-debug",
-      "name": "Firefox Debugger",
-      "category": "Utilities"
+      "id": "xdebug.php-debug",
+      "name": "PHP Debug",
+      "category": "Languages"
+    },
+    {
+      "id": "yzane.markdown-pdf",
+      "name": "Markdown PDF",
+      "category": "Markdown and Docs"
+    },
+    {
+      "id": "zobo.php-intellisense",
+      "name": "PHP IntelliSense",
+      "category": "Languages"
     }
   ]
 }

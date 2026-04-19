@@ -36,13 +36,51 @@ Easily generate installation commands for popular software packages across all m
 Validate `windows_winget` package IDs using the winget.run API:
 
 ```sh
-node .\pkgs\methods\validate-winget.js --write .\pkgs\methods\winget-report.json
+node .\pkgs\methods\validate-winget.js --target desktop --write .\pkgs\methods\winget-report.json
 ```
 
 Optional flags:
 
 - `--limit 10` to keep more suggestions for missing IDs
 - `--delay-ms 200` to slow down requests
+
+## Add Packages Workflow
+
+Primary flow to add packages in the new architecture:
+
+```sh
+node .\pkgs\methods\add-package.js --target <desktop|mobile|all> --id <id> --name "<Name>" --category "<Category>" --subcategory "<Subcategory>" [package manager fields]
+```
+
+The workflow performs all required steps:
+
+1. Validates and writes package info into `desktop-pkgs.json` and/or `mobile-pkgs.json`.
+2. Downloads SVG icon (or fallback) and minimizes it.
+3. Sorts JSON files A-Z using generic sorter.
+4. Regenerates package list at `pkgs/list/list-packages.json`.
+
+## Sort Pkgs JSON (Generic)
+
+Sort all `*-pkgs.json` files:
+
+```sh
+node .\pkgs\methods\sort-pkgs-az.js
+```
+
+Sort specific file/targets:
+
+```sh
+node .\pkgs\methods\sort-pkgs-az.js desktop
+node .\pkgs\methods\sort-pkgs-az.js mobile-pkgs.json
+```
+
+## Extract Package List
+
+Generate sorted unique package names list from desktop and mobile JSON files:
+
+```sh
+node .\pkgs\methods\extract-pkgs.js
+```
 
 ## Example
 

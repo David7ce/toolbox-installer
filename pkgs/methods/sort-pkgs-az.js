@@ -1,133 +1,77 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-// Configuration
 const CONFIG = {
-    files: {
-        mobile: path.join(__dirname, '..', 'mobile-pkgs.json'),
-        desktop: path.join(__dirname, '..', 'desktop-pkgs.json')
-    },
     encoding: 'utf8',
-    indentation: 2
+    indentation: 2,
 };
 
-/**
- * Enhanced package sorting utility
- * Sorts packages alphabetically and validates data structure
- */
-class PackageSorter {
-    constructor(filePath) {
-        this.filePath = filePath;
-        this.stats = {
-            totalPackages: 0,
-            categories: new Set(),
-            subcategories: new Set()
+function sortObjectByKey(input) {
+    return Object.keys(input)
+        .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+        .reduce((acc, key) => {
+            acc[key] = input[key];
+            return acc;
+        }, {});
+}
+
+function sortJsonData(data) {
+    if (data && typeof data === 'object' && data.packages && typeof data.packages === 'object' && !Array.isArray(data.packages)) {
+        return {
+            sorted: { ...data, packages: sortObjectByKey(data.packages) },
+            summary: `packages: ${Object.keys(data.packages).length}`,
         };
     }
 
-    /**
-     * Main sorting function - simplified and async
-     */
-    async sortPackages() {
-        try {
-            console.log(`📁 Reading: ${path.resolve(this.filePath)}`);
-            
-            // Read and parse JSON
-            const data = await fs.readFile(this.filePath, CONFIG.encoding);
-            const packagesData = JSON.parse(data);
-
-            if (!packagesData.packages) {
-                throw new Error('Invalid JSON structure: missing "packages" property');
-            }
-
-            // Sort packages alphabetically
-            const sortedPackages = this.createSortedPackages(packagesData.packages);
-            
-            // Create final JSON structure
-            const sortedJSON = { packages: sortedPackages };
-            
-            // Write back to file
-            const jsonString = JSON.stringify(sortedJSON, null, CONFIG.indentation);
-            await fs.writeFile(this.filePath, jsonString, CONFIG.encoding);
-            
-            // Display results
-            this.displayResults();
-            
-        } catch (error) {
-            console.error('❌ Error:', error.message);
-            if (error.code === 'ENOENT') {
-                console.error(`📂 Expected file location: ${path.resolve(this.filePath)}`);
-            }
-        }
+    if (data && typeof data === 'object' && Array.isArray(data.extensions)) {
+        const sortedExtensions = data.extensions.slice().sort((a, b) => {
+            const left = String(a?.id || a?.name || '').toLowerCase();
+            const right = String(b?.id || b?.name || '').toLowerCase();
+            return left.localeCompare(right);
+        });
+        return {
+            sorted: { ...data, extensions: sortedExtensions },
+            summary: `extensions: ${sortedExtensions.length}`,
+        };
     }
 
-    /**
-     * Sort packages and collect statistics
-     */
-    createSortedPackages(packages) {
-        const sortedPackages = {};
-        
-        // Sort package keys alphabetically and process each package
-        Object.keys(packages)
-            .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
-            .forEach(key => {
-                const pkg = packages[key];
-                sortedPackages[key] = pkg;
-                
-                // Collect statistics
-                this.stats.totalPackages++;
-                if (pkg.category) this.stats.categories.add(pkg.category);
-                if (pkg.subcategory) this.stats.subcategories.add(pkg.subcategory);
-            });
-
-        return sortedPackages;
-    }
-
-    /**
-     * Display sorting results and statistics
-     */
-    displayResults() {
-        console.log('\n✅ Packages sorted successfully!');
-        console.log(`📦 Total packages: ${this.stats.totalPackages}`);
-        console.log(`📂 Categories: ${this.stats.categories.size}`);
-        console.log(`🏷️  Subcategories: ${this.stats.subcategories.size}`);
-        console.log(`💾 File saved: ${path.resolve(this.filePath)}`);
-        
-        // Optional: Show category breakdown
-        if (this.stats.categories.size > 0) {
-            console.log('\n📋 Categories found:');
-            Array.from(this.stats.categories).sort().forEach(cat => {
-                console.log(`   • ${cat}`);
-            });
-        }
-    }
+    return {
+        sorted: data,
+        summary: 'unsupported schema (skipped)',
+        skipped: true,
+    };
 }
 
-/**
- * Initialize and run the sorter
- */
+async function sortFile(filePath) {
+    const resolved = path.resolve(filePath);
+    const raw = await fs.readFile(resolved, CONFIG.encoding);
+    const parsed = JSON.parse(raw);
+    const { sorted, summary, skipped } = sortJsonData(parsed);
+
+    if (skipped) {
+        console.log(`Skipped ${path.basename(resolved)} -> ${summary}`);
+        return;
+    }
+
+    await fs.writeFile(resolved, JSON.stringify(sorted, null, CONFIG.indentation), CONFIG.encoding);
+    console.log(`Sorted ${path.basename(resolved)} -> ${summary}`);
+}
+
 async function main() {
-    console.log('🔄 Package Sorter - Enhanced Version');
-    console.log(`📍 Working directory: ${process.cwd()}`);
+    const args = process.argv.slice(2).filter(Boolean);
 
-    const target = (process.argv[2] || 'mobile').toLowerCase();
-    const targets = [];
-
-    if (target === 'all') {
-        targets.push(CONFIG.files.mobile, CONFIG.files.desktop);
-    } else if (CONFIG.files[target]) {
-        targets.push(CONFIG.files[target]);
-    } else {
-        console.error('❌ Invalid target. Use: mobile | desktop | all');
+    if (args.length === 0) {
+        console.error('Usage: sort-pkgs-az.js <file1.json> [file2.json ...]');
         process.exitCode = 1;
         return;
     }
 
-    for (const filePath of targets) {
-        const sorter = new PackageSorter(filePath);
-        await sorter.sortPackages();
+    for (const filePath of args) {
+        await sortFile(filePath);
     }
 }
 
-// Run the script
-main().catch(console.error);
+main().catch((error) => {
+    console.error(`Error: ${error.message}`);
+    process.exitCode = 1;
+});

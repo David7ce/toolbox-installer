@@ -15,7 +15,7 @@ function detectJsonUrl() {
         return './pkgs/desktop-pkgs.json';
     }
     // Fallback (por compatibilidad)
-    return './pkgs/packages-info.json';
+    return './pkgs/desktop-pkgs.json';
 }
 
 export const CONFIG = {
@@ -227,7 +227,7 @@ function detectCompatJsonUrl() {
     } else if (path.includes('desktop')) {
         return './pkgs/desktop-pkgs.json';
     }
-    return './pkgs/packages-info.json';
+    return './pkgs/desktop-pkgs.json';
 }
 
 export const OS_COMPAT_CONFIG = {

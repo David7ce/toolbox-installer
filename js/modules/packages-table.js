@@ -6,7 +6,7 @@ export function getPackagesJsonUrl() {
     } else if (path.includes('desktop')) {
         return './pkgs/desktop-pkgs.json';
     }
-    return './pkgs/packages-info.json';
+    return './pkgs/desktop-pkgs.json';
 }
 
 export function getVscodeExtensionsJsonUrl() {

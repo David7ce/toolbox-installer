@@ -49,7 +49,7 @@ export function getPackageById(id) {
 
 /**
  * Transform raw JSON data into compatibility matrix
- * @param {Object} jsonData - Raw JSON from packages-info.json
+ * @param {Object} jsonData - Raw JSON from *-pkgs.json
  * @returns {Array} Transformed package array
  */
 function transformPackageData(jsonData) {
