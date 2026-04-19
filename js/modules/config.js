@@ -66,7 +66,7 @@ export const NON_FOSS_PACKAGES = [
 // CATEGORY EMOJIS
 // ============================================================================
 export const CATEGORY_EMOJIS = {
-    'File Man': '📁',
+    'File Management': '📁',
     'Internet & Communication': '🌐',
     'System': '⚙️',
     'Utility': '🔧',

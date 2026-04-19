@@ -23,15 +23,10 @@ function sortJsonData(data) {
         };
     }
 
-    if (data && typeof data === 'object' && Array.isArray(data.extensions)) {
-        const sortedExtensions = data.extensions.slice().sort((a, b) => {
-            const left = String(a?.id || a?.name || '').toLowerCase();
-            const right = String(b?.id || b?.name || '').toLowerCase();
-            return left.localeCompare(right);
-        });
+    if (data && typeof data === 'object' && data.extensions && typeof data.extensions === 'object' && !Array.isArray(data.extensions)) {
         return {
-            sorted: { ...data, extensions: sortedExtensions },
-            summary: `extensions: ${sortedExtensions.length}`,
+            sorted: { ...data, extensions: sortObjectByKey(data.extensions) },
+            summary: `extensions: ${Object.keys(data.extensions).length}`,
         };
     }
 

@@ -2,7 +2,7 @@
   "packages": {
     "7zip": {
       "name": "7-Zip",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "Compressor",
       "package_manager": {
         "linux_arch_aur": null,
@@ -290,7 +290,7 @@
     },
     "borg": {
       "name": "Borg",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "Backup",
       "package_manager": {
         "linux_arch_aur": null,
@@ -578,7 +578,7 @@
     },
     "dolphin": {
       "name": "Dolphin",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "File Manager",
       "package_manager": {
         "linux_arch_aur": null,
@@ -650,7 +650,7 @@
     },
     "dropbox": {
       "name": "Dropbox",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "Client Cloud Storage",
       "package_manager": {
         "linux_arch_aur": "dropbox",
@@ -704,7 +704,7 @@
     },
     "eaglemode": {
       "name": "Eagle-Mode",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "File Manager",
       "package_manager": {
         "linux_arch_aur": "eaglemode",
@@ -848,7 +848,7 @@
     },
     "files": {
       "name": "Files",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "File Manager",
       "package_manager": {
         "linux_arch_aur": null,
@@ -974,7 +974,7 @@
     },
     "freefilesync": {
       "name": "FreeFileSync",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "File Synchronization",
       "package_manager": {
         "linux_arch_aur": "freefilesync",
@@ -1298,7 +1298,7 @@
     },
     "handbrake": {
       "name": "HandBrake",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "Compressor",
       "package_manager": {
         "linux_arch_aur": null,
@@ -1982,7 +1982,7 @@
     },
     "mega": {
       "name": "MEGAsync",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "Client Cloud Storage",
       "package_manager": {
         "linux_arch_aur": "megasync",
@@ -2198,7 +2198,7 @@
     },
     "musicbrainz-picard": {
       "name": "MusicBrainz-Picard",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "Music Tagger",
       "package_manager": {
         "linux_arch_aur": null,
@@ -2270,7 +2270,7 @@
     },
     "nextcloud-desktop": {
       "name": "Nextcloud Desktop",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "Client Cloud Storage",
       "package_manager": {
         "linux_arch_aur": null,
@@ -2936,7 +2936,7 @@
     },
     "rclone": {
       "name": "Rclone",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "File Synchronization",
       "package_manager": {
         "linux_arch_aur": null,
@@ -3026,7 +3026,7 @@
     },
     "rsync": {
       "name": "Rsync",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "File Synchronization",
       "package_manager": {
         "linux_arch_aur": null,
@@ -3116,7 +3116,7 @@
     },
     "sefirah": {
       "name": "Sefirah",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "File Manager",
       "package_manager": {
         "linux_arch_aur": null,
@@ -3458,7 +3458,7 @@
     },
     "syncthing": {
       "name": "Syncthing",
-      "category": "File Man",
+      "category": "File Management",
       "subcategory": "File Synchronization",
       "package_manager": {
         "linux_arch_aur": null,

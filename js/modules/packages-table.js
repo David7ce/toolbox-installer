@@ -105,10 +105,10 @@ function groupByCategory(items) {
 }
 
 function getVscodeExtensionsFromData(data) {
-    if (!data || !Array.isArray(data.extensions)) {
+    if (!data || !data.extensions || typeof data.extensions !== 'object' || Array.isArray(data.extensions)) {
         return [];
     }
-    return data.extensions;
+    return Object.entries(data.extensions).map(([id, ext]) => ({ id, ...ext }));
 }
 
 function renderVscodeGenerator(items) {

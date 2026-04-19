@@ -25,7 +25,7 @@ export function generatePackages(packagesData) {
         ['Development'],
         ['Internet & Communication'],
         ['System'],
-        ['File Man'],
+        ['File Management'],
         ['Audio'],
         ['Image'],
         ['Video'],
