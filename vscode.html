@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VS Code Extensions - Command Generator</title>
     <link rel="stylesheet" href="./css/base-styles.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/style-vscode.css">
+    <link rel="stylesheet" href="./css/generator.css">
     <script type="module" src="./js/modules/theme-manager.js"></script>
     <script type="module" src="./js/modules/packages-table.js"></script>
 </head>
@@ -24,20 +23,22 @@
         </div>
 
         <div class="info-link">
-            <a href="./vscode-extensions-table.html" title="View installed extension list as table">📊 VS Code Extensions Table</a>
+            <a href="./vscode-extensions-compatibility.html" title="View installed extension list as table">📊 VS Code Extensions Table</a>
         </div>
 
         <section class="package-section">
             <div class="container">
-                <div class="extensions-toolbar">
-                    <label class="select-all-control">
-                        <input type="checkbox" id="selectAllExtensions" class="select-all-checkbox">
-                        <span>Select all</span>
-                    </label>
-                    <input id="extensionsSearch" class="search-input" type="search" placeholder="Search by extension name">
+                <div class="package-actions">
+                    <div class="main-controls">
+                        <label class="select-all-control">
+                            <input type="checkbox" id="selectAllExtensions" class="select-all-checkbox">
+                            <span>Select all</span>
+                        </label>
+                        <input id="extensionsSearch" class="search-input" type="search" placeholder="Search by extension name">
+                    </div>
                 </div>
 
-                <div id="extensionsCategories" class="extensions-grid"></div>
+                <div id="extensionsCategories" class="package-container columns"></div>
             </div>
         </section>
     </div>

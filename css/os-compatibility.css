@@ -492,3 +492,41 @@ tbody tr {
         font-size: 0.9em;
     }
 }
+
+/* ==========================================================================
+   GENERIC TABLE PAGES (MOBILE + VSCODE TABLE)
+   ========================================================================== */
+.table-wrapper,
+.extensions-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--card-background);
+    box-shadow: var(--shadow-light);
+}
+
+.packages-table,
+.extensions-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.packages-table th,
+.packages-table td,
+.extensions-table th,
+.extensions-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+}
+
+.extensions-table code {
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.table-meta {
+    margin: var(--spacing-sm) 0;
+    color: var(--text-secondary);
+}

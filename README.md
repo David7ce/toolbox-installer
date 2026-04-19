@@ -31,25 +31,12 @@ Easily generate installation commands for popular software packages across all m
 3. Search for the software you want to install.
 4. Copy the generated install command and run it in your terminal.
 
-## Validation (winget)
-
-Validate `windows_winget` package IDs using the winget.run API:
-
-```sh
-node .\pkgs\methods\validate-winget.js --target desktop --write .\pkgs\methods\winget-report.json
-```
-
-Optional flags:
-
-- `--limit 10` to keep more suggestions for missing IDs
-- `--delay-ms 200` to slow down requests
-
 ## Add Packages Workflow
 
 Primary flow to add packages in the new architecture:
 
 ```sh
-node .\pkgs\methods\add-package.js --target <desktop|mobile|all> --id <id> --name "<Name>" --category "<Category>" --subcategory "<Subcategory>" [package manager fields]
+node .\js\methods\add-package.js --target <desktop|mobile|all> --id <id> --name "<Name>" --category "<Category>" --subcategory "<Subcategory>" [package manager fields]
 ```
 
 The workflow performs all required steps:
@@ -64,14 +51,14 @@ The workflow performs all required steps:
 Sort all `*-pkgs.json` files:
 
 ```sh
-node .\pkgs\methods\sort-pkgs-az.js
+node .\js\methods\sort-pkgs-az.js .\pkgs\desktop-pkgs.json .\pkgs\mobile-pkgs.json .\pkgs\vscode-extensions-pkgs.json
 ```
 
 Sort specific file/targets:
 
 ```sh
-node .\pkgs\methods\sort-pkgs-az.js desktop
-node .\pkgs\methods\sort-pkgs-az.js mobile-pkgs.json
+node .\js\methods\sort-pkgs-az.js .\pkgs\desktop-pkgs.json
+node .\js\methods\sort-pkgs-az.js .\pkgs\mobile-pkgs.json
 ```
 
 ## Extract Package List
@@ -79,7 +66,7 @@ node .\pkgs\methods\sort-pkgs-az.js mobile-pkgs.json
 Generate sorted unique package names list from desktop and mobile JSON files:
 
 ```sh
-node .\pkgs\methods\extract-pkgs.js
+node .\js\methods\extract-pkgs.js .\pkgs\desktop-pkgs.json .\pkgs\mobile-pkgs.json --output .\pkgs\list\list-packages.json
 ```
 
 ## Example

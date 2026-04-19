@@ -133,9 +133,9 @@ function renderVscodeGenerator(items) {
 
     categories.forEach((category) => {
         const section = document.createElement('section');
-        section.className = 'ext-category';
+        section.className = 'column';
 
-        const title = document.createElement('h3');
+        const title = document.createElement('h4');
         title.textContent = category;
         section.appendChild(title);
 

@@ -25,7 +25,7 @@ function parseArgs(argv) {
 
 function printUsage() {
     console.log('Usage:');
-    console.log('  node pkgs/methods/add-package.js --target <desktop|mobile|all> --id <id> --name <name> --category <category> --subcategory <subcategory> [package manager fields] [--icon-slug <slug>] [--force]');
+    console.log('  node js/methods/add-package.js --target <desktop|mobile|all> --id <id> --name <name> --category <category> --subcategory <subcategory> [package manager fields] [--icon-slug <slug>] [--force]');
     console.log('');
     console.log('Desktop package manager fields:');
     console.log(`  ${DESKTOP_PM_KEYS.map((key) => `--${key} <value>`).join(' ')}`);
@@ -33,8 +33,8 @@ function printUsage() {
     console.log(`  ${MOBILE_PM_KEYS.map((key) => `--${key} <value>`).join(' ')}`);
     console.log('');
     console.log('Examples:');
-    console.log('  node pkgs/methods/add-package.js --target desktop --id fxsound --name "FxSound" --category Audio --subcategory "Audio Processing" --windows_winget FxSoundLLC.FxSound');
-    console.log('  node pkgs/methods/add-package.js --target mobile --id fxsound --name "FxSound" --category Audio --subcategory "Audio Processing" --android_pkg com.fxsound.app --ios_pkg fxsound/id1234567890');
+    console.log('  node js/methods/add-package.js --target desktop --id fxsound --name "FxSound" --category Audio --subcategory "Audio Processing" --windows_winget FxSoundLLC.FxSound');
+    console.log('  node js/methods/add-package.js --target mobile --id fxsound --name "FxSound" --category Audio --subcategory "Audio Processing" --android_pkg com.fxsound.app --ios_pkg fxsound/id1234567890');
 }
 
 module.exports = {
