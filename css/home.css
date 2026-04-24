@@ -41,29 +41,29 @@
 	padding: 2rem 3rem;
 	font-size: 1.5rem;
 	border-radius: 10px;
-	color: #fff;
+	color: var(--text-on-primary);
 	text-decoration: none;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	box-shadow: var(--elevation-soft);
 	transition: background 0.2s;
 }
 
 .home-link-desktop {
-	background: #2563eb;
+	background: var(--home-link-desktop-bg);
 }
 
 .home-link-mobile {
-	background: #00bfff;
+	background: var(--home-link-mobile-bg);
 }
 
 .home-link-vscode {
-	background: #007acc;
+	background: var(--home-link-vscode-bg);
 }
 
 .home-footer {
 	margin-top: auto;
 	padding-top: 2rem;
 	text-align: center;
-	color: #888;
+	color: var(--home-footer-text);
 }
 
 @media (max-width: 640px) {

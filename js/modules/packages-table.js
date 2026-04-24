@@ -111,33 +111,80 @@ function getVscodeExtensionsFromData(data) {
     return Object.entries(data.extensions).map(([id, ext]) => ({ id, ...ext }));
 }
 
+const NON_FOSS_VSCODE_EXTENSIONS = new Set([
+    'bmewburn.vscode-intelephense-client',
+    'github.copilot-chat',
+    'ms-python.vscode-pylance',
+]);
+
+const FAVORITE_VSCODE_EXTENSIONS = [
+    'dbaeumer.vscode-eslint',
+    'esbenp.prettier-vscode',
+    'github.copilot-chat',
+];
+
 function renderVscodeGenerator(items) {
     const container = document.getElementById('extensionsCategories');
     const commandTarget = document.getElementById('installation-command');
-    const selectAll = document.getElementById('selectAllExtensions');
+    const selectAll = document.getElementById('selectAllCheckbox');
+    const selectAllLabel = document.getElementById('selectAllLabel');
+    const toggleAllBtn = document.getElementById('toggleAllBtn');
+    const toggleAllLabel = document.getElementById('toggleAllLabel');
+    const fossToggleBtn = document.getElementById('fossToggleBtn');
+    const optionsSelect = document.getElementById('optionsSelect');
+    const fileInput = document.getElementById('fileInput');
     const searchInput = document.getElementById('extensionsSearch');
     const copyBtn = document.getElementById('copyCommandBtn');
 
-    if (!container || !commandTarget || !selectAll || !searchInput || !copyBtn) {
+    if (
+        !container || !commandTarget || !selectAll || !selectAllLabel
+        || !toggleAllBtn || !toggleAllLabel || !fossToggleBtn
+        || !optionsSelect || !fileInput || !searchInput || !copyBtn
+    ) {
         return;
     }
 
     const state = {
         selected: new Set(),
+        searchQuery: '',
+        fossOnly: false,
+        allCollapsed: false,
     };
 
-    const grouped = groupByCategory(items);
+    const normalizedItems = items.map((item) => ({
+        ...item,
+        isFoss: !NON_FOSS_VSCODE_EXTENSIONS.has(item.id),
+    }));
+
+    const grouped = groupByCategory(normalizedItems);
     const categories = Object.keys(grouped).sort((a, b) => a.localeCompare(b));
 
     container.innerHTML = '';
 
     categories.forEach((category) => {
         const section = document.createElement('section');
-        section.className = 'column';
+        section.className = 'column category';
+        section.dataset.category = category;
+
+        const header = document.createElement('div');
+        header.className = 'category-header';
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('aria-expanded', 'true');
 
         const title = document.createElement('h4');
         title.textContent = category;
-        section.appendChild(title);
+
+        const arrow = document.createElement('span');
+        arrow.className = 'toggle-arrow';
+        arrow.textContent = '▼';
+
+        header.appendChild(title);
+        header.appendChild(arrow);
+        section.appendChild(header);
+
+        const categoryContent = document.createElement('div');
+        categoryContent.className = 'category-content';
 
         grouped[category]
             .slice()
@@ -149,6 +196,7 @@ function renderVscodeGenerator(items) {
                 const input = document.createElement('input');
                 input.type = 'checkbox';
                 input.value = ext.id;
+                input.dataset.extensionId = ext.id;
 
                 const icon = document.createElement('img');
                 icon.className = 'ext-icon';
@@ -163,6 +211,9 @@ function renderVscodeGenerator(items) {
                 const text = document.createElement('span');
                 text.textContent = ext.name;
 
+                label.dataset.search = `${ext.name} ${ext.id}`.toLowerCase();
+                label.dataset.isFoss = ext.isFoss ? 'true' : 'false';
+
                 input.addEventListener('change', () => {
                     if (input.checked) {
                         state.selected.add(ext.id);
@@ -176,11 +227,37 @@ function renderVscodeGenerator(items) {
                 label.appendChild(input);
                 label.appendChild(icon);
                 label.appendChild(text);
-                section.appendChild(label);
+                categoryContent.appendChild(label);
             });
 
+        const toggleCategory = () => {
+            const collapsed = section.classList.toggle('collapsed');
+            header.setAttribute('aria-expanded', String(!collapsed));
+            updateGlobalCollapseState();
+        };
+
+        header.addEventListener('click', toggleCategory);
+        header.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleCategory();
+            }
+        });
+
+        section.appendChild(categoryContent);
         container.appendChild(section);
     });
+
+    function getAllExtensionCheckboxes() {
+        return Array.from(container.querySelectorAll('.ext-item input[type="checkbox"]'));
+    }
+
+    function getVisibleExtensionCheckboxes() {
+        return getAllExtensionCheckboxes().filter((checkbox) => {
+            const label = checkbox.closest('.ext-item');
+            return label && label.style.display !== 'none' && !label.classList.contains('foss-hidden');
+        });
+    }
 
     function getSortedSelectedExtensions() {
         return Array.from(state.selected).sort((a, b) => a.localeCompare(b));
@@ -196,17 +273,85 @@ function renderVscodeGenerator(items) {
         commandTarget.textContent = `code --install-extension ${selected.join(' ')}`;
     }
 
-    function updateSelectAllState() {
-        const allBoxes = document.querySelectorAll('.ext-item input[type="checkbox"]');
-        const checkedCount = Array.from(allBoxes).filter((el) => el.checked).length;
+    function applyFilters() {
+        const labels = container.querySelectorAll('.ext-item');
+        labels.forEach((label) => {
+            const matchesSearch = label.dataset.search.includes(state.searchQuery);
+            const isFoss = label.dataset.isFoss === 'true';
+            const passesFoss = !state.fossOnly || isFoss;
+            label.classList.toggle('foss-hidden', !passesFoss);
+            label.style.display = matchesSearch && passesFoss ? '' : 'none';
+        });
+    }
 
-        selectAll.checked = checkedCount > 0 && checkedCount === allBoxes.length;
-        selectAll.indeterminate = checkedCount > 0 && checkedCount < allBoxes.length;
+    function updateSelectAllState() {
+        const visibleBoxes = getVisibleExtensionCheckboxes();
+        const checkedCount = visibleBoxes.filter((el) => el.checked).length;
+        const totalCount = visibleBoxes.length;
+
+        if (totalCount === 0 || checkedCount === 0) {
+            selectAll.checked = false;
+            selectAll.indeterminate = false;
+            selectAllLabel.textContent = 'Select';
+            return;
+        }
+
+        if (checkedCount === totalCount) {
+            selectAll.checked = true;
+            selectAll.indeterminate = false;
+            selectAllLabel.textContent = 'Deselect';
+            return;
+        }
+
+        selectAll.checked = false;
+        selectAll.indeterminate = true;
+        selectAllLabel.textContent = 'Selected';
+    }
+
+    function updateGlobalCollapseState() {
+        const sections = Array.from(container.querySelectorAll('.category'));
+        const collapsedCount = sections.filter((section) => section.classList.contains('collapsed')).length;
+
+        state.allCollapsed = sections.length > 0 && collapsedCount === sections.length;
+        toggleAllBtn.classList.toggle('collapsed', state.allCollapsed);
+        toggleAllLabel.textContent = state.allCollapsed ? 'Expand' : 'Collapse';
+    }
+
+    function setAllCategoriesCollapsed(shouldCollapse) {
+        const sections = container.querySelectorAll('.category');
+        sections.forEach((section) => {
+            section.classList.toggle('collapsed', shouldCollapse);
+            const header = section.querySelector('.category-header');
+            if (header) {
+                header.setAttribute('aria-expanded', String(!shouldCollapse));
+            }
+        });
+        updateGlobalCollapseState();
+    }
+
+    function setSelectionByIds(ids) {
+        const targetIds = new Set(ids);
+        state.selected.clear();
+
+        getAllExtensionCheckboxes().forEach((checkbox) => {
+            const shouldSelect = targetIds.has(checkbox.value);
+            checkbox.checked = shouldSelect;
+            if (shouldSelect) {
+                state.selected.add(checkbox.value);
+            }
+        });
+
+        updateCommand();
+        updateSelectAllState();
     }
 
     selectAll.addEventListener('change', () => {
-        const allBoxes = document.querySelectorAll('.ext-item input[type="checkbox"]');
+        const allBoxes = getVisibleExtensionCheckboxes();
         state.selected.clear();
+
+        getAllExtensionCheckboxes().forEach((checkbox) => {
+            checkbox.checked = false;
+        });
 
         allBoxes.forEach((checkbox) => {
             checkbox.checked = selectAll.checked;
@@ -220,12 +365,74 @@ function renderVscodeGenerator(items) {
     });
 
     searchInput.addEventListener('input', () => {
-        const query = searchInput.value.trim().toLowerCase();
-        const labels = document.querySelectorAll('.ext-item');
-        labels.forEach((label) => {
-            const text = label.textContent.toLowerCase();
-            label.style.display = text.includes(query) ? '' : 'none';
-        });
+        state.searchQuery = searchInput.value.trim().toLowerCase();
+        applyFilters();
+        updateSelectAllState();
+    });
+
+    toggleAllBtn.addEventListener('click', () => {
+        setAllCategoriesCollapsed(!state.allCollapsed);
+    });
+
+    fossToggleBtn.addEventListener('click', () => {
+        state.fossOnly = !state.fossOnly;
+        fossToggleBtn.classList.toggle('active', state.fossOnly);
+        applyFilters();
+        updateSelectAllState();
+    });
+
+    optionsSelect.addEventListener('change', () => {
+        const action = optionsSelect.value;
+        if (!action) {
+            return;
+        }
+
+        if (action === 'loadFavorites') {
+            setSelectionByIds(FAVORITE_VSCODE_EXTENSIONS);
+        }
+
+        if (action === 'importPackages') {
+            fileInput.value = '';
+            fileInput.click();
+        }
+
+        if (action === 'exportPackages') {
+            const payload = {
+                extensions: getSortedSelectedExtensions(),
+            };
+            const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'toolbox-vscode-extensions.json';
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            URL.revokeObjectURL(url);
+        }
+
+        optionsSelect.value = '';
+    });
+
+    fileInput.addEventListener('change', async () => {
+        const file = fileInput.files && fileInput.files[0];
+        if (!file) {
+            return;
+        }
+
+        try {
+            const text = await file.text();
+            const parsed = JSON.parse(text);
+            const imported = Array.isArray(parsed)
+                ? parsed
+                : (Array.isArray(parsed.extensions) ? parsed.extensions : []);
+
+            if (imported.length > 0) {
+                setSelectionByIds(imported);
+            }
+        } catch (error) {
+            console.error('Unable to import extensions JSON:', error);
+        }
     });
 
     copyBtn.addEventListener('click', async () => {
@@ -246,7 +453,10 @@ function renderVscodeGenerator(items) {
         }
     });
 
+    applyFilters();
+    setAllCategoriesCollapsed(false);
     updateCommand();
+    updateSelectAllState();
 }
 
 function renderVscodeExtensionsTable(items) {

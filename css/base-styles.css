@@ -4,14 +4,51 @@
 :root {
     --primary-color: #007bff;
     --primary-hover: #0056b3;
+    --text-on-primary: #ffffff;
     --background-color: #f2f2f2;
     --card-background: #ffffff;
     --hover-bg: #f8f9fa;
     --table-row-hover-bg: #f8f9ff;
+    --surface-muted: #f8f9fa;
+    --surface-muted-strong: #e9ecef;
     --border-color: #e0e0e0;
     --text-primary: #333;
     --text-secondary: #666;
     --text-muted: #999;
+    --link-color: #0b57d0;
+    --link-hover-color: #0842a0;
+    --focus-ring-color: rgba(0, 123, 255, 0.5);
+    --focus-ring-color-soft: rgba(0, 123, 255, 0.4);
+    --primary-tint-10: rgba(0, 123, 255, 0.1);
+    --primary-tint-08: rgba(0, 123, 255, 0.08);
+    --neutral-overlay-05: rgba(128, 128, 128, 0.05);
+    --neutral-overlay-10: rgba(128, 128, 128, 0.1);
+    --neutral-overlay-15: rgba(128, 128, 128, 0.15);
+    --neutral-overlay-25: rgba(128, 128, 128, 0.25);
+    --neutral-overlay-30: rgba(128, 128, 128, 0.3);
+    --neutral-overlay-50: rgba(128, 128, 128, 0.5);
+    --success-color: #28a745;
+    --success-hover: #218838;
+    --success-focus-ring: rgba(40, 167, 69, 0.5);
+    --danger-bg: #f8d7da;
+    --danger-border: #f5c6cb;
+    --danger-text: #721c24;
+    --warning-bg: #fff3cd;
+    --warning-border: #ffc107;
+    --warning-text: #856404;
+    --warning-scrollbar-thumb: rgba(255, 193, 7, 0.5);
+    --warning-scrollbar-thumb-hover: rgba(255, 193, 7, 0.7);
+    --category-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --category-gradient-hover: linear-gradient(135deg, #e0e7ef 0%, #b3c3da 100%);
+    --category-emoji-bg: var(--card-background);
+    --category-badge-bg: #e3f2fd;
+    --category-badge-text: #1976d2;
+    --home-link-desktop-bg: #2563eb;
+    --home-link-mobile-bg: #00bfff;
+    --home-link-vscode-bg: #007acc;
+    --home-footer-text: #888;
+    --elevation-heavy: 0 10px 40px rgba(0, 0, 0, 0.2);
+    --elevation-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
     --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
     --border-radius: 8px;
@@ -25,15 +62,52 @@
 /* Dark mode variables */
 [data-theme="dark"] {
     --primary-color: #4a9eff;
-    --primary-hover: #3a8eef;
+    --primary-hover: #7cb7ff;
+    --text-on-primary: #0a1624;
     --background-color: #1a1a1a;
     --card-background: #2d2d2d;
     --hover-bg: #3a3a3a;
     --table-row-hover-bg: #3a3a3a;
+    --surface-muted: #3a3a3a;
+    --surface-muted-strong: #454545;
     --border-color: #404040;
     --text-primary: #e0e0e0;
     --text-secondary: #b0b0b0;
     --text-muted: #808080;
+    --link-color: #8ab4f8;
+    --link-hover-color: #ccddfd;
+    --focus-ring-color: rgba(124, 183, 255, 0.65);
+    --focus-ring-color-soft: rgba(124, 183, 255, 0.5);
+    --primary-tint-10: rgba(124, 183, 255, 0.15);
+    --primary-tint-08: rgba(124, 183, 255, 0.12);
+    --neutral-overlay-05: rgba(255, 255, 255, 0.05);
+    --neutral-overlay-10: rgba(255, 255, 255, 0.1);
+    --neutral-overlay-15: rgba(255, 255, 255, 0.15);
+    --neutral-overlay-25: rgba(255, 255, 255, 0.25);
+    --neutral-overlay-30: rgba(255, 255, 255, 0.3);
+    --neutral-overlay-50: rgba(255, 255, 255, 0.5);
+    --success-color: #34c759;
+    --success-hover: #2ca24a;
+    --success-focus-ring: rgba(52, 199, 89, 0.55);
+    --danger-bg: #4a1f26;
+    --danger-border: #7a2b37;
+    --danger-text: #ffb3bf;
+    --warning-bg: #3a3000;
+    --warning-border: #ffc107;
+    --warning-text: #ffd54f;
+    --warning-scrollbar-thumb: rgba(255, 193, 7, 0.5);
+    --warning-scrollbar-thumb-hover: rgba(255, 193, 7, 0.7);
+    --category-gradient: linear-gradient(135deg, #3a3a3a 0%, #2a4a6a 100%);
+    --category-gradient-hover: linear-gradient(135deg, #454545 0%, #355070 100%);
+    --category-emoji-bg: #404040;
+    --category-badge-bg: #1f3c56;
+    --category-badge-text: #8ec7ff;
+    --home-link-desktop-bg: #3a78ff;
+    --home-link-mobile-bg: #33ccff;
+    --home-link-vscode-bg: #2e9be0;
+    --home-footer-text: #b0b0b0;
+    --elevation-heavy: 0 10px 40px rgba(0, 0, 0, 0.35);
+    --elevation-soft: 0 2px 8px rgba(0, 0, 0, 0.18);
     --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
@@ -81,22 +155,14 @@ p {
 }
 
 a {
-    color: #0b57d0;
+    color: var(--link-color);
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
     text-underline-offset: 2px;
 }
 
-[data-theme="dark"] a {
-    color: #8ab4f8;
-}
-
 a:hover {
-    color: #0842a0;
-}
-
-[data-theme="dark"] a:hover {
-    color: #a8c7ff;
+    color: var(--link-hover-color);
 }
 
 a:focus-visible {
@@ -130,7 +196,7 @@ a:focus-visible {
     margin: var(--spacing-xs);
     padding: var(--spacing-sm) var(--spacing-md);
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-on-primary);
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
@@ -186,12 +252,12 @@ input[type="search"]:focus {
 }
 
 .info-link a:hover {
-    background-color: rgba(0, 123, 255, 0.1);
+    background-color: var(--primary-tint-10);
     text-decoration: underline;
 }
 
 .info-link a:focus {
-    outline: 2px solid rgba(0, 123, 255, 0.5);
+    outline: 2px solid var(--focus-ring-color);
     outline-offset: 2px;
 }
 
@@ -218,14 +284,14 @@ input[type="search"]:focus {
 .info-link a.back-link:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
-    background: rgba(0, 123, 255, 0.08);
+    background: var(--primary-tint-08);
     box-shadow: var(--shadow-light);
     text-decoration: none;
 }
 
 .back-link:focus,
 .info-link a.back-link:focus {
-    outline: 2px solid rgba(0, 123, 255, 0.5);
+    outline: 2px solid var(--focus-ring-color);
     outline-offset: 2px;
 }
 
@@ -289,7 +355,7 @@ input[type="search"]:focus {
     .container {
         padding: var(--spacing-xl);
         border-radius: 12px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        box-shadow: var(--elevation-heavy);
     }
 
     h1 {

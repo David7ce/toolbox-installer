@@ -90,6 +90,24 @@
         "ios_pkg": ""
       }
     },
+    "cloudflare-1111": {
+      "name": "1.1.1.1",
+      "category": "Utility",
+      "subcategory": "Security",
+      "package_manager": {
+        "android_pkg": "com.cloudflare.onedotonedotonedotone",
+        "ios_pkg": ""
+      }
+    },
+    "com-chess": {
+      "name": "Chess.com",
+      "category": "Gaming",
+      "subcategory": "Board Games",
+      "package_manager": {
+        "android_pkg": "com.chess",
+        "ios_pkg": ""
+      }
+    },
     "comaps": {
       "name": "CoMaps",
       "category": "Internet & Communication",
@@ -158,7 +176,7 @@
       "category": "Image",
       "subcategory": "Design Assets",
       "package_manager": {
-        "android_pkg": "",
+        "android_pkg": "com.freepikcompany.freepik",
         "ios_pkg": ""
       }
     },
@@ -207,6 +225,15 @@
         "ios_pkg": ""
       }
     },
+    "google-files": {
+      "name": "Files by Google",
+      "category": "Utility",
+      "subcategory": "File Manager",
+      "package_manager": {
+        "android_pkg": "com.google.android.apps.nbu.files",
+        "ios_pkg": ""
+      }
+    },
     "google-maps": {
       "name": "Google Maps",
       "category": "Internet & Communication",
@@ -232,6 +259,15 @@
       "package_manager": {
         "android_pkg": "com.google.android.apps.translate",
         "ios_pkg": "google-translate/id414706506"
+      }
+    },
+    "google-weather": {
+      "name": "Google Weather",
+      "category": "Utility",
+      "subcategory": "Weather",
+      "package_manager": {
+        "android_pkg": "com.google.android.apps.weather",
+        "ios_pkg": ""
       }
     },
     "gpxviewer": {
@@ -268,6 +304,15 @@
       "package_manager": {
         "android_pkg": "com.instagram.android",
         "ios_pkg": "instagram/id389801252"
+      }
+    },
+    "jetstartgames-chess": {
+      "name": "Chess",
+      "category": "Gaming",
+      "subcategory": "Board Games",
+      "package_manager": {
+        "android_pkg": "com.jetstartgames.chess",
+        "ios_pkg": ""
       }
     },
     "keepassxd": {
