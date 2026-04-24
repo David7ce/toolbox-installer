@@ -173,7 +173,21 @@ function createSubcategorySection(categoryContent, subcategory, subcategories) {
             packageCheckbox.dataset.category = pkgInfo.category;
             
             const packageImg = document.createElement('img');
-            packageImg.src = `${CONFIG.IMAGE_PATH}${pkgKey}.svg`;
+            const iconExtensions = ['svg', 'png', 'jpg', 'jpeg', 'webp'];
+            let iconIndex = 0;
+            const setIconSource = () => {
+                if (iconIndex >= iconExtensions.length) {
+                    return;
+                }
+                packageImg.src = `${CONFIG.IMAGE_PATH}${pkgKey}.${iconExtensions[iconIndex]}`;
+            };
+
+            packageImg.addEventListener('error', () => {
+                iconIndex += 1;
+                setIconSource();
+            });
+
+            setIconSource();
             packageImg.width = 30;
             packageImg.alt = pkgInfo.name;
 

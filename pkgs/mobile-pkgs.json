@@ -63,12 +63,21 @@
         "ios_pkg": "chatgpt/id6448311069"
       }
     },
+    "chess-com": {
+      "name": "Chess.com",
+      "category": "Gaming",
+      "subcategory": "Board Games",
+      "package_manager": {
+        "android_pkg": "com.chess",
+        "ios_pkg": ""
+      }
+    },
     "chess-prince": {
       "name": "Chess Prince",
       "category": "Gaming",
       "subcategory": "Board Games",
       "package_manager": {
-        "android_pkg": "com.chessking.android.learn",
+        "android_pkg": "com.jetstartgames.chess",
         "ios_pkg": "chess-prince/id1510069580"
       }
     },
@@ -96,15 +105,6 @@
       "subcategory": "Security",
       "package_manager": {
         "android_pkg": "com.cloudflare.onedotonedotonedotone",
-        "ios_pkg": ""
-      }
-    },
-    "com-chess": {
-      "name": "Chess.com",
-      "category": "Gaming",
-      "subcategory": "Board Games",
-      "package_manager": {
-        "android_pkg": "com.chess",
         "ios_pkg": ""
       }
     },
@@ -270,7 +270,7 @@
         "ios_pkg": ""
       }
     },
-    "gpxviewer": {
+    "gpx-viewer": {
       "name": "GPX Viewer",
       "category": "Internet & Communication",
       "subcategory": "Maps",
@@ -304,15 +304,6 @@
       "package_manager": {
         "android_pkg": "com.instagram.android",
         "ios_pkg": "instagram/id389801252"
-      }
-    },
-    "jetstartgames-chess": {
-      "name": "Chess",
-      "category": "Gaming",
-      "subcategory": "Board Games",
-      "package_manager": {
-        "android_pkg": "com.jetstartgames.chess",
-        "ios_pkg": ""
       }
     },
     "keepassxd": {
@@ -720,13 +711,13 @@
         "ios_pkg": "youtube-music/id1017492454"
       }
     },
-    "zen-player": {
-      "name": "Zen Player",
-      "category": "Audio",
-      "subcategory": "Music Player",
+    "zen-iptv": {
+      "name": "Zen IPTV",
+      "category": "Video",
+      "subcategory": "Streaming",
       "package_manager": {
         "android_pkg": "",
-        "ios_pkg": ""
+        "ios_pkg": "zen-iptv-player/id6458223193"
       }
     },
     "zepp": {
