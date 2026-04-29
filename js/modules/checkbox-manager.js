@@ -34,7 +34,11 @@ export function setupCategoryCheckboxes() {
                 // Only toggle visible packages (not hidden by FOSS filter)
                 packageCheckboxes.forEach(cb => {
                     const label = cb.closest('label');
-                    if (label && !label.classList.contains(CLASS_NAMES.FOSS_HIDDEN)) {
+                    if (
+                        label
+                        && !label.classList.contains(CLASS_NAMES.FOSS_HIDDEN)
+                        && !label.classList.contains(CLASS_NAMES.SEARCH_HIDDEN)
+                    ) {
                         cb.checked = newState;
                     }
                 });
@@ -73,7 +77,9 @@ export function updateCategoryCheckbox(category) {
     // Only count visible packages (not hidden by FOSS filter)
     const visibleCheckboxes = Array.from(packageCheckboxes).filter(cb => {
         const label = cb.closest('label');
-        return label && !label.classList.contains(CLASS_NAMES.FOSS_HIDDEN);
+        return label
+            && !label.classList.contains(CLASS_NAMES.FOSS_HIDDEN)
+            && !label.classList.contains(CLASS_NAMES.SEARCH_HIDDEN);
     });
     
     const checkedCount = visibleCheckboxes.filter(cb => cb.checked).length;

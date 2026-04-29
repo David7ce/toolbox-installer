@@ -74,15 +74,75 @@ export function renderPackagesTable(data) {
         });
 }
 
+function getMobileTableItems(data) {
+    const packageEntries = Object.entries(data?.packages || {});
+    return packageEntries.map(([, pkgInfo]) => ({
+        name: pkgInfo?.name || '-',
+        androidPackageName: pkgInfo?.package_manager?.android_pkg?.trim() || '',
+        iosPackageName: pkgInfo?.package_manager?.ios_pkg?.trim() || '',
+    }));
+}
+
+function renderMobilePackagesRows(items) {
+    const tbody = document.querySelector('#packagesTable tbody');
+    if (!tbody) return;
+
+    tbody.innerHTML = '';
+
+    items
+        .slice()
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .forEach((item) => {
+            const row = document.createElement('tr');
+            const packageNameCell = document.createElement('td');
+            packageNameCell.textContent = item.name;
+
+            const androidPackageCell = document.createElement('td');
+            androidPackageCell.textContent = item.androidPackageName || '-';
+
+            const iosPackageCell = document.createElement('td');
+            iosPackageCell.textContent = item.iosPackageName || '-';
+
+            const androidUrl = item.androidPackageName ? buildPlayStoreUrl(item.androidPackageName) : '';
+            const iosUrl = item.iosPackageName ? buildAppleStoreUrl(item.iosPackageName) : '';
+
+            row.appendChild(packageNameCell);
+            row.appendChild(androidPackageCell);
+            row.appendChild(iosPackageCell);
+            row.appendChild(createLinkCell(androidUrl, 'Play Store', '▶'));
+            row.appendChild(createLinkCell(iosUrl, 'App Store', '◉'));
+            tbody.appendChild(row);
+        });
+}
+
 export async function loadPackagesTable() {
     const tbody = document.querySelector('#packagesTable tbody');
+    const input = document.getElementById('searchInput');
     try {
         const response = await fetch(getPackagesJsonUrl());
         if (!response.ok) {
             throw new Error(`Failed to load packages data: ${response.statusText}`);
         }
         const data = await response.json();
-        renderPackagesTable(data);
+
+        if (window.location.pathname.includes('mobile-os-compatibility')) {
+            const items = getMobileTableItems(data);
+            renderMobilePackagesRows(items);
+
+            if (input) {
+                input.addEventListener('input', () => {
+                    const query = input.value.trim().toLowerCase();
+                    const filtered = items.filter((item) => (
+                        item.name.toLowerCase().includes(query)
+                        || item.androidPackageName.toLowerCase().includes(query)
+                        || item.iosPackageName.toLowerCase().includes(query)
+                    ));
+                    renderMobilePackagesRows(filtered);
+                });
+            }
+        } else {
+            renderPackagesTable(data);
+        }
     } catch (error) {
         console.error('Error loading table data:', error);
         if (tbody) tbody.innerHTML = '<tr><td colspan="5">Could not load package table.</td></tr>';

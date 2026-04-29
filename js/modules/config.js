@@ -114,6 +114,7 @@ export const CLASS_NAMES = {
     PACKAGE_CHECKBOX: 'package-checkbox',
     CATEGORY_CHECKBOX: 'category-checkbox',
     FOSS_HIDDEN: 'foss-hidden',
+    SEARCH_HIDDEN: 'search-hidden',
     
     // Layout
     COLUMN: 'column',
@@ -171,6 +172,7 @@ export const ELEMENT_IDS = {
     OS_SELECTOR: 'osSelector',
     LINUX_DISTRO_SELECTOR: 'linuxDistroSelector',
     OPTIONS_SELECT: 'optionsSelect',
+    SEARCH_INPUT: 'searchInput',
     
     // Command display
     INSTALLATION_COMMAND: 'installation-command',

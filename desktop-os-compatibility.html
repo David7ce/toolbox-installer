@@ -34,22 +34,30 @@
         </header>
         <p class="subtitle">Application availability across different operating systems.</p>
 
-        <div class="info-link">
-            <a href="index.html" class="back-link"
-                title="Back to package installer" aria-label="Back to package installer">⬅ Back to Installer</a>
-        </div>
-
-
-        <div class="controls">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="🔍 Search package or category...">
+        <nav class="page-nav" aria-label="Page links">
+            <div class="info-link">
+                <a href="index.html" title="Back to home page" aria-label="Back to home page">⬅ Back to Home</a>
             </div>
-            <div class="filter-chips" role="group" aria-label="Filter by OS availability">
-                <button type="button" class="filter-chip active" data-os="all" aria-pressed="true">All</button>
-                <button type="button" class="filter-chip" data-os="windows" aria-pressed="false">Windows</button>
-                <button type="button" class="filter-chip" data-os="macos" aria-pressed="false">macOS</button>
-                <button type="button" class="filter-chip" data-os="linux" aria-pressed="false">Linux</button>
-                <button type="button" class="filter-chip" data-os="freebsd" aria-pressed="false">FreeBSD</button>
+            <div class="info-link">
+                <a href="desktop.html" title="Go to installer" aria-label="Go to installer">⚙️ Go to Installer</a>
+            </div>
+        </nav>
+
+
+        <div class="page-controls controls">
+            <div class="page-controls-panel">
+                <div class="search-box">
+                    <input type="search" id="searchInput" placeholder="Search package or category">
+                </div>
+            </div>
+            <div class="page-controls-panel">
+                <div class="page-filter-row filter-chips" role="group" aria-label="Filter by OS availability">
+                    <button type="button" class="filter-chip active" data-os="all" aria-pressed="true">All</button>
+                    <button type="button" class="filter-chip" data-os="windows" aria-pressed="false">Windows</button>
+                    <button type="button" class="filter-chip" data-os="macos" aria-pressed="false">macOS</button>
+                    <button type="button" class="filter-chip" data-os="linux" aria-pressed="false">Linux</button>
+                    <button type="button" class="filter-chip" data-os="freebsd" aria-pressed="false">FreeBSD</button>
+                </div>
             </div>
         </div>
 

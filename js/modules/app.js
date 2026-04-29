@@ -12,6 +12,7 @@ import {
 import { setupFossToggle } from './foss-filter.js';
 import {
     setupOSSelector,
+    setupSearchInput,
     setupToggleAllButton,
     setupCopyButton,
     setupAutoCommandGeneration,
@@ -42,6 +43,7 @@ async function initializeApp() {
         
         // Setup interactions
         setupOSSelector();
+        setupSearchInput();
         setupToggleAllButton();
         setupCopyButton();
         setupAutoCommandGeneration();

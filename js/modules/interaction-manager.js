@@ -12,6 +12,10 @@ import {
     getSelectedPackageIds,
 } from './dom-utils.js';
 import {
+    updateAllCategoryCheckboxes,
+    updateSelectAllState,
+} from './checkbox-manager.js';
+import {
     buildCommand,
 } from './command-builder.js';
 import {
@@ -100,6 +104,31 @@ export function setupToggleAllButton() {
             toggleAllBtn.classList.add(CLASS_NAMES.COLLAPSED);
             allCollapsed = true;
         }
+    });
+}
+
+/**
+ * Setup package search input for desktop/mobile generators.
+ */
+export function setupSearchInput() {
+    const searchInput = getElement('SEARCH_INPUT');
+    const packageContainer = getElement('PACKAGE_CONTAINER');
+
+    if (!searchInput || !packageContainer) return;
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        const labels = packageContainer.querySelectorAll('label');
+
+        labels.forEach((label) => {
+            const searchText = label.dataset.search || '';
+            const matches = !query || searchText.includes(query);
+            label.classList.toggle(CLASS_NAMES.SEARCH_HIDDEN, !matches);
+        });
+
+        updateAllCategoryCheckboxes();
+        updateSelectAllState();
+        autoGenerateCommand();
     });
 }
 

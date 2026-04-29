@@ -194,6 +194,7 @@ function createSubcategorySection(categoryContent, subcategory, subcategories) {
             packageLabel.appendChild(packageCheckbox);
             packageLabel.appendChild(packageImg);
             packageLabel.appendChild(document.createTextNode(` ${pkgInfo.name}`));
+            packageLabel.dataset.search = `${pkgInfo.name} ${pkgKey} ${subcategory} ${pkgInfo.category}`.toLowerCase();
 
             subcategoryDiv.appendChild(packageLabel);
         });

@@ -16,7 +16,7 @@
             }
         })();
     </script>
-    <title>VS Code Extensions - Command Generator</title>
+    <title>VS Code Installer</title>
     <link rel="stylesheet" href="./css/base-styles.css">
     <link rel="stylesheet" href="./css/generator.css">
     <script type="module" src="./js/modules/theme-manager.js"></script>
@@ -26,22 +26,26 @@
 <body>
     <div class="page-wrapper">
         <header class="page-header">
-            <h1>VS Code Extension Command Generator</h1>
+            <h1>VS Code Installer</h1>
             <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">🌙</button>
         </header>
 
-        <div class="info-link">
-            <a href="./index.html" class="back-link" title="Back to home page">⬅ Back to Home</a>
-        </div>
-
-        <div class="info-link">
-            <a href="./vscode-extensions-compatibility.html" title="View installed extension list as table">📊 VS Code Extensions Table</a>
-        </div>
+        <nav class="page-nav" aria-label="Page links">
+            <div class="info-link">
+                <a href="./index.html" title="Back to home page">⬅ Back to Home</a>
+            </div>
+            <div class="info-link">
+                <a href="./vscode-extensions-compatibility.html" title="Go to VS Code packages table">📊 Go VS Code Packages Table</a>
+            </div>
+        </nav>
 
         <section class="package-section">
             <div class="container">
-                <div class="package-actions">
-                    <div class="main-controls">
+                <div class="page-controls">
+                    <div class="page-controls-panel">
+                        <input id="extensionsSearch" class="search-input" type="search" placeholder="Search by extension name">
+                    </div>
+                    <div class="page-controls-panel main-controls">
                         <label class="select-all-control">
                             <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox">
                             <span id="selectAllLabel">Select</span>
@@ -59,13 +63,12 @@
                             <option value="importPackages">📥 Import Extensions (JSON)</option>
                             <option value="exportPackages">📤 Export Extensions (JSON)</option>
                         </select>
-                        <input id="extensionsSearch" class="search-input" type="search" placeholder="Search by extension name">
                     </div>
                     <input type="file" id="fileInput" accept=".json" style="display: none;">
                 </div>
-
-                <div id="extensionsCategories" class="package-container columns"></div>
             </div>
+
+            <div id="extensionsCategories" class="package-container columns"></div>
         </section>
     </div>
 

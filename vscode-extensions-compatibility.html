@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./css/base-styles.css">
     <link rel="stylesheet" href="./css/os-compatibility.css">
     <script type="module" src="./js/modules/theme-manager.js"></script>
-    <script type="module" src="./js/modules/packages-table.js"></script>
+    <script type="module" src="./js/modules/software-table-pages.js"></script>
 </head>
 
 <body>
@@ -32,34 +32,36 @@
 
         <p class="subtitle">Installed extension list and package identifiers for command generation.</p>
 
-        <div class="info-link">
-            <a href="./index.html" class="back-link" title="Back to home page">⬅ Back to Home</a>
-        </div>
+        <nav class="page-nav" aria-label="Page links">
+            <div class="info-link">
+                <a href="./index.html" title="Back to home page">⬅ Back to Home</a>
+            </div>
+            <div class="info-link">
+                <a href="./vscode.html" title="Go to installer">⚙️ Go to Installer</a>
+            </div>
+        </nav>
 
-        <div class="info-link">
-            <a href="./vscode.html" title="Go to extensions command generator">⚙️ Open Generator</a>
-        </div>
-
-        <div class="controls">
-            <div class="search-box">
-                <input id="tableSearch" type="search" placeholder="Search extension name, package name, or category">
+        <div class="page-controls controls">
+            <div class="page-controls-panel">
+                <div class="search-box">
+                    <input id="searchInput" type="search" placeholder="Search extension name, package name, or category">
+                </div>
+            </div>
+            <div class="page-controls-panel">
+                <div class="page-filter-row filter-chips" id="filterChips" role="group" aria-label="Filter by extension category"></div>
             </div>
         </div>
 
-        <p class="table-meta">Total shown: <strong id="extensionsCount">0</strong></p>
+        <p class="page-note">Search, sort, and filter extensions by category with the same software-table pattern used on desktop.</p>
 
         <div class="table-container">
             <table id="packagesTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Package Name</th>
-                        <th>Category</th>
-                    </tr>
-                </thead>
-                <tbody id="extensionsTableBody"></tbody>
+                <thead id="tableHead"></thead>
+                <tbody id="tableBody"></tbody>
             </table>
         </div>
+
+        <div class="stats" id="statsContainer"></div>
     </div>
 </body>
 

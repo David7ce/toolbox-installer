@@ -22,7 +22,9 @@ export function getVisibleCheckboxes() {
     return Array.from(document.querySelectorAll(`.${CLASS_NAMES.PACKAGE_CHECKBOX}`))
         .filter(cb => {
             const label = cb.closest('label');
-            return label && !label.classList.contains(CLASS_NAMES.FOSS_HIDDEN);
+            return label
+                && !label.classList.contains(CLASS_NAMES.FOSS_HIDDEN)
+                && !label.classList.contains(CLASS_NAMES.SEARCH_HIDDEN);
         });
 }
 

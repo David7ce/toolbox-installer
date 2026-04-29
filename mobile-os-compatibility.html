@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./css/base-styles.css">
     <link rel="stylesheet" href="./css/os-compatibility.css">
     <script type="module" src="./js/modules/theme-manager.js"></script>
+    <script type="module" src="./js/modules/software-table-pages.js"></script>
 </head>
 
 <body>
@@ -33,38 +34,37 @@
 
         <p class="subtitle">Complete package names and official store links for Android and iOS.</p>
 
-        <div class="info-link">
-            <a href="index.html" class="back-link" title="Back to package selector">⬅ Back to Installer</a>
-        </div>
+        <nav class="page-nav" aria-label="Page links">
+            <div class="info-link">
+                <a href="index.html" title="Back to home page">⬅ Back to Home</a>
+            </div>
+            <div class="info-link">
+                <a href="mobile.html" title="Go to installer">⚙️ Go to Installer</a>
+            </div>
+        </nav>
 
-        <div class="controls">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search package name...">
+        <div class="page-controls controls">
+            <div class="page-controls-panel">
+                <div class="search-box">
+                    <input type="search" id="searchInput" placeholder="Search package, category, or store ID">
+                </div>
+            </div>
+            <div class="page-controls-panel">
+                <div class="page-filter-row filter-chips" id="filterChips" role="group" aria-label="Filter by mobile availability"></div>
             </div>
         </div>
 
+        <p class="page-note">Search, sort, and filter mobile software by category and store availability.</p>
+
         <div class="table-container">
             <table id="packagesTable">
-                <thead>
-                    <tr>
-                        <th>Package</th>
-                        <th>Android Package Name</th>
-                        <th>iOS Package Name</th>
-                        <th>Android URL</th>
-                        <th>iOS URL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Generated rows -->
-                </tbody>
+                <thead id="tableHead"></thead>
+                <tbody id="tableBody"></tbody>
             </table>
         </div>
-    </div>
 
-    <script type="module">
-        import { loadPackagesTable } from './js/modules/packages-table.js';
-        document.addEventListener('DOMContentLoaded', loadPackagesTable);
-    </script>
+        <div class="stats" id="statsContainer"></div>
+    </div>
 </body>
 
 </html>

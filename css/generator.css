@@ -351,6 +351,10 @@ form {
     padding: 0;
 }
 
+.search-hidden {
+    display: none;
+}
+
 .select-all-checkbox {
     width: 22px;
     height: 22px;
@@ -411,6 +415,12 @@ form {
 }
 
 .package-container {
+    max-width: 2200px;
+    margin: var(--spacing-md) auto 0 auto;
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    padding: var(--spacing-md);
     min-height: 200px;
     position: relative;
 }

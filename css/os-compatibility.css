@@ -18,6 +18,7 @@ body {
 .page-header {
     position: relative;
     margin-bottom: var(--spacing-md);
+    text-align: center;
 }
 
 .page-header h1 {
@@ -536,6 +537,16 @@ tbody tr {
     align-items: center;
     gap: 6px;
     font-weight: 600;
+}
+
+.table-inline-code {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: var(--surface-muted);
+    color: var(--text-primary);
+    white-space: nowrap;
+    font-size: 12px;
 }
 
 .store-icon {
