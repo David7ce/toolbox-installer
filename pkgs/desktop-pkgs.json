@@ -36,6 +36,24 @@
         "windows_winget": "ActivityWatch.ActivityWatch"
       }
     },
+    "adguard": {
+      "name": "AdGuard",
+      "category": "Internet & Communication",
+      "subcategory": "Ad Blocker",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": null,
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "adguard",
+        "unix_nix_env": null,
+        "windows_winget": "AdGuard.AdGuard"
+      }
+    },
     "affinity-studio": {
       "name": "Affinity Studio",
       "category": "Image",
@@ -1204,6 +1222,24 @@
         "macos_brew": "google-earth-pro",
         "unix_nix_env": "nixos.googleearth",
         "windows_winget": "Google.EarthPro"
+      }
+    },
+    "gource": {
+      "name": "Gource",
+      "category": "Development",
+      "subcategory": "Visualization",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "gource",
+        "linux_debian_apt": "gource",
+        "linux_fedora_rpm": "gource",
+        "linux_gentoo_emerge": "media-gfx/gource",
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": "gource",
+        "macos_brew": "gource",
+        "unix_nix_env": "gource",
+        "windows_winget": null
       }
     },
     "gparted": {
@@ -2880,7 +2916,7 @@
         "windows_winget": "OSGeo.QGIS"
       }
     },
-    "raindropio": {
+    "raindrop-io": {
       "name": "Raindrop.io",
       "category": "Internet & Communication",
       "subcategory": "Bookmark Manager",

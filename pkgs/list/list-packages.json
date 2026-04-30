@@ -1,7 +1,9 @@
 {
   "packages": [
+    "1.1.1.1",
     "7-Zip",
     "ActivityWatch",
+    "AdGuard",
     "Affinity Studio",
     "Alacritty",
     "AliExpress",
@@ -28,6 +30,7 @@
     "Carpeta Ciudadana",
     "ChatGPT",
     "Chess Prince",
+    "Chess.com",
     "Chromium",
     "Cl@ve",
     "CoMaps",
@@ -59,6 +62,7 @@
     "fastfetch",
     "FFmpeg",
     "Files",
+    "Files by Google",
     "FileZilla",
     "Firefox",
     "FitoTrack",
@@ -89,6 +93,8 @@
     "Google Maps",
     "Google Photos",
     "Google Translate",
+    "Google Weather",
+    "Gource",
     "gparted",
     "GPX Viewer",
     "GPXSee",
@@ -293,7 +299,7 @@
     "yt-dlp",
     "ytDownloader",
     "YTMDesktop",
-    "Zen Player",
+    "Zen IPTV",
     "Zepp",
     "Zoom"
   ]
