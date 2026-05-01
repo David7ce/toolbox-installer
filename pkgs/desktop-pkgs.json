@@ -4212,6 +4212,24 @@
         "windows_winget": "Ytmdesktop.Ytmdesktop"
       }
     },
+    "zed": {
+      "name": "Zed",
+      "category": "Development",
+      "subcategory": "Code Editor",
+      "package_manager": {
+        "linux_arch_aur": null,
+        "linux_arch_pacman": "zed",
+        "linux_debian_apt": null,
+        "linux_fedora_rpm": null,
+        "linux_gentoo_emerge": null,
+        "linux_flatpak": null,
+        "linux_snap": null,
+        "freebsd_pkg": null,
+        "macos_brew": "zed",
+        "unix_nix_env": "zed-editor",
+        "windows_winget": "ZedIndustries.Zed"
+      }
+    },
     "zoom": {
       "name": "Zoom",
       "category": "Internet & Communication",
