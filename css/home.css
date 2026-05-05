@@ -63,6 +63,10 @@
 	background: var(--home-link-browser-bg);
 }
 
+.home-link-lib {
+	background: var(--home-link-lib-bg);
+}
+
 .home-footer {
 	margin-top: auto;
 	padding-top: 2rem;

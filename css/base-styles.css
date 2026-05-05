@@ -47,6 +47,7 @@
     --home-link-mobile-bg: #00bfff;
     --home-link-vscode-bg: #007acc;
     --home-link-browser-bg: #7c3aed;
+    --home-link-lib-bg: #0d9488;
     --home-footer-text: #888;
     --elevation-heavy: 0 10px 40px rgba(0, 0, 0, 0.2);
     --elevation-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -107,6 +108,7 @@
     --home-link-mobile-bg: #33ccff;
     --home-link-vscode-bg: #2e9be0;
     --home-link-browser-bg: #9d5ef5;
+    --home-link-lib-bg: #14b8a6;
     --home-footer-text: #b0b0b0;
     --elevation-heavy: 0 10px 40px rgba(0, 0, 0, 0.35);
     --elevation-soft: 0 2px 8px rgba(0, 0, 0, 0.18);
