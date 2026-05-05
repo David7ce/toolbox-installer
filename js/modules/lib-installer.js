@@ -410,11 +410,13 @@ function updateCommand() {
     const libs = Array.from(selectedLibs);
     const cmdEl = document.getElementById('installation-command');
     const langEl = document.getElementById('commandLanguage');
+    const commandFooter = document.getElementById('commandFooter');
     if (!cmdEl || !langEl) return;
 
     if (libs.length === 0) {
         langEl.textContent = 'Install command:';
         cmdEl.textContent = 'Select libraries to generate install command...';
+        if (commandFooter) commandFooter.hidden = true;
         return;
     }
 
@@ -453,6 +455,7 @@ function updateCommand() {
 
     langEl.textContent = managerLabel;
     cmdEl.textContent = cmd;
+    if (commandFooter) commandFooter.hidden = false;
 }
 
 // ============================================================================

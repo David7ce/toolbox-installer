@@ -1,13 +1,5 @@
 {
   "extensions": {
-    "bierner.markdown-mermaid": {
-      "name": "Markdown Mermaid",
-      "category": "Markdown and Docs"
-    },
-    "bmewburn.vscode-intelephense-client": {
-      "name": "Intelephense",
-      "category": "Languages"
-    },
     "continue.continue": {
       "name": "Continue",
       "category": "AI"
@@ -16,32 +8,32 @@
       "name": "Database Client",
       "category": "Databases"
     },
-    "davidanson.vscode-markdownlint": {
-      "name": "Markdown Lint",
-      "category": "Markdown and Docs"
+    "ms-azuretools.vscode-containers": {
+      "name": "Dev Containers",
+      "category": "DevOps and Cloud"
     },
-    "dbaeumer.vscode-eslint": {
-      "name": "ESLint",
-      "category": "Formatting and Linting"
-    },
-    "dotjoshjohnson.xml": {
-      "name": "XML Tools",
-      "category": "Web and Frontend"
+    "ms-azuretools.vscode-docker": {
+      "name": "Docker",
+      "category": "DevOps and Cloud"
     },
     "dracula-theme.theme-dracula": {
       "name": "Dracula Theme",
       "category": "Utilities"
     },
-    "ecmel.vscode-html-css": {
-      "name": "HTML CSS Support",
-      "category": "Web and Frontend"
-    },
     "editorconfig.editorconfig": {
       "name": "EditorConfig",
       "category": "Formatting and Linting"
     },
-    "esbenp.prettier-vscode": {
-      "name": "Prettier",
+    "usernamehw.errorlens": {
+      "name": "Error Lens",
+      "category": "Formatting and Linting"
+    },
+    "rodrigovallades.es7-react-js-snippets": {
+      "name": "ES7 React Snippets",
+      "category": "Languages"
+    },
+    "dbaeumer.vscode-eslint": {
+      "name": "ESLint",
       "category": "Formatting and Linting"
     },
     "firefox-devtools.vscode-firefox-debug": {
@@ -52,52 +44,104 @@
       "name": "Foam",
       "category": "Markdown and Docs"
     },
-    "github.copilot-chat": {
-      "name": "GitHub Copilot Chat",
-      "category": "AI"
-    },
     "github.vscode-github-actions": {
       "name": "GitHub Actions",
+      "category": "AI"
+    },
+    "github.copilot-chat": {
+      "name": "GitHub Copilot Chat",
       "category": "AI"
     },
     "github.vscode-pull-request-github": {
       "name": "GitHub Pull Requests",
       "category": "AI"
     },
-    "gruntfuggly.todo-tree": {
-      "name": "Todo Tree",
+    "ms-vscode.hexeditor": {
+      "name": "Hex Editor",
       "category": "Utilities"
     },
-    "mechatroner.rainbow-csv": {
-      "name": "Rainbow CSV",
+    "mguellsegarra.highlight-on-copy": {
+      "name": "Highlight on Copy",
       "category": "Utilities"
     },
-    "ms-azuretools.vscode-containers": {
-      "name": "Dev Containers",
-      "category": "DevOps and Cloud"
+    "ecmel.vscode-html-css": {
+      "name": "HTML CSS Support",
+      "category": "Web and Frontend"
     },
-    "ms-azuretools.vscode-docker": {
-      "name": "Docker",
-      "category": "DevOps and Cloud"
+    "kisstkondoros.vscode-gutter-preview": {
+      "name": "Image Preview",
+      "category": "Utilities"
+    },
+    "bmewburn.vscode-intelephense-client": {
+      "name": "Intelephense",
+      "category": "Languages"
+    },
+    "standard.vscode-standard": {
+      "name": "JavaScript Standard Style",
+      "category": "Formatting and Linting"
     },
     "ms-kubernetes-tools.vscode-kubernetes-tools": {
       "name": "Kubernetes",
       "category": "DevOps and Cloud"
     },
-    "ms-python.debugpy": {
-      "name": "Python Debugger",
+    "ms-vscode.live-server": {
+      "name": "Live Server",
+      "category": "Web and Frontend"
+    },
+    "davidanson.vscode-markdownlint": {
+      "name": "Markdown Lint",
+      "category": "Markdown and Docs"
+    },
+    "bierner.markdown-mermaid": {
+      "name": "Markdown Mermaid",
+      "category": "Markdown and Docs"
+    },
+    "yzane.markdown-pdf": {
+      "name": "Markdown PDF",
+      "category": "Markdown and Docs"
+    },
+    "xdebug.php-debug": {
+      "name": "PHP Debug",
       "category": "Languages"
     },
-    "ms-python.python": {
-      "name": "Python",
+    "zobo.php-intellisense": {
+      "name": "PHP IntelliSense",
+      "category": "Languages"
+    },
+    "ms-vscode.powershell": {
+      "name": "PowerShell",
+      "category": "Languages"
+    },
+    "esbenp.prettier-vscode": {
+      "name": "Prettier",
+      "category": "Formatting and Linting"
+    },
+    "yoavbls.pretty-ts-errors": {
+      "name": "Pretty TypeScript Errors",
       "category": "Languages"
     },
     "ms-python.vscode-pylance": {
       "name": "Pylance",
       "category": "Languages"
     },
+    "ms-python.python": {
+      "name": "Python",
+      "category": "Languages"
+    },
+    "ms-python.debugpy": {
+      "name": "Python Debugger",
+      "category": "Languages"
+    },
+    "mechatroner.rainbow-csv": {
+      "name": "Rainbow CSV",
+      "category": "Utilities"
+    },
     "ms-vscode-remote.remote-containers": {
       "name": "Remote Containers",
+      "category": "Remote Development"
+    },
+    "ms-vscode.remote-explorer": {
+      "name": "Remote Explorer",
       "category": "Remote Development"
     },
     "ms-vscode-remote.remote-ssh": {
@@ -108,21 +152,9 @@
       "name": "Remote WSL",
       "category": "Remote Development"
     },
-    "ms-vscode.hexeditor": {
-      "name": "Hex Editor",
-      "category": "Utilities"
-    },
-    "ms-vscode.live-server": {
-      "name": "Live Server",
+    "humao.rest-client": {
+      "name": "REST Client",
       "category": "Web and Frontend"
-    },
-    "ms-vscode.powershell": {
-      "name": "PowerShell",
-      "category": "Languages"
-    },
-    "ms-vscode.remote-explorer": {
-      "name": "Remote Explorer",
-      "category": "Remote Development"
     },
     "mtxr.sqltools": {
       "name": "SQLTools",
@@ -132,36 +164,32 @@
       "name": "SQLTools MySQL Driver",
       "category": "Databases"
     },
-    "redhat.vscode-xml": {
-      "name": "XML",
-      "category": "Languages"
+    "miguelsolorio.symbols": {
+      "name": "Symbols",
+      "category": "Utilities"
     },
-    "redhat.vscode-yaml": {
-      "name": "YAML",
-      "category": "Languages"
+    "gruntfuggly.todo-tree": {
+      "name": "Todo Tree",
+      "category": "Utilities"
     },
-    "rodrigovallades.es7-react-js-snippets": {
-      "name": "ES7 React Snippets",
-      "category": "Languages"
-    },
-    "standard.vscode-standard": {
-      "name": "JavaScript Standard Style",
-      "category": "Formatting and Linting"
+    "pflannery.vscode-versionlens": {
+      "name": "Version Lens",
+      "category": "Utilities"
     },
     "vue.volar": {
       "name": "Volar",
       "category": "Languages"
     },
-    "xdebug.php-debug": {
-      "name": "PHP Debug",
+    "redhat.vscode-xml": {
+      "name": "XML",
       "category": "Languages"
     },
-    "yzane.markdown-pdf": {
-      "name": "Markdown PDF",
-      "category": "Markdown and Docs"
+    "dotjoshjohnson.xml": {
+      "name": "XML Tools",
+      "category": "Web and Frontend"
     },
-    "zobo.php-intellisense": {
-      "name": "PHP IntelliSense",
+    "redhat.vscode-yaml": {
+      "name": "YAML",
       "category": "Languages"
     }
   }

@@ -158,6 +158,10 @@ function getExtensionIconPath(extensionId) {
     return `./img/vscode-extensions/${fileName}.svg`;
 }
 
+function getBrowserExtensionIconPath(id) {
+    return `./img/browser-extensions/${id}.png`;
+}
+
 function groupByCategory(items) {
     return items.reduce((acc, item) => {
         if (!acc[item.category]) {
@@ -189,6 +193,7 @@ const FAVORITE_VSCODE_EXTENSIONS = [
 
 function renderVscodeGenerator(items) {
     const container = document.getElementById('extensionsCategories');
+    const commandFooter = document.getElementById('commandFooter');
     const commandTarget = document.getElementById('installation-command');
     const selectAll = document.getElementById('selectAllCheckbox');
     const selectAllLabel = document.getElementById('selectAllLabel');
@@ -269,7 +274,11 @@ function renderVscodeGenerator(items) {
                 icon.alt = `${ext.name} icon`;
                 icon.src = getExtensionIconPath(ext.id);
                 icon.addEventListener('error', () => {
-                    icon.style.visibility = 'hidden';
+                    if (icon.src.endsWith('.svg')) {
+                        icon.src = icon.src.replace('.svg', '.png');
+                    } else {
+                        icon.style.visibility = 'hidden';
+                    }
                 });
 
                 const text = document.createElement('span');
@@ -331,10 +340,12 @@ function renderVscodeGenerator(items) {
         const selected = getSortedSelectedExtensions();
         if (selected.length === 0) {
             commandTarget.textContent = 'Select extensions to generate command...';
+            if (commandFooter) commandFooter.hidden = true;
             return;
         }
 
         commandTarget.textContent = `code --install-extension ${selected.join(' ')}`;
+        if (commandFooter) commandFooter.hidden = false;
     }
 
     function applyFilters() {
@@ -609,6 +620,7 @@ function buildChromiumExtensionUrl(chromiumId) {
 
 function renderBrowserExtensionsGenerator(items) {
     const container = document.getElementById('browserExtensionsCategories');
+    const commandFooter = document.getElementById('commandFooter');
     const commandTarget = document.getElementById('installation-command');
     const selectAll = document.getElementById('selectAllCheckbox');
     const selectAllLabel = document.getElementById('selectAllLabel');
@@ -679,6 +691,16 @@ function renderBrowserExtensionsGenerator(items) {
                 const text = document.createElement('span');
                 text.textContent = ext.name;
 
+                const icon = document.createElement('img');
+                icon.className = 'ext-icon';
+                icon.width = 18;
+                icon.height = 18;
+                icon.alt = `${ext.name} icon`;
+                icon.src = getBrowserExtensionIconPath(ext.id);
+                icon.addEventListener('error', () => {
+                    icon.style.visibility = 'hidden';
+                });
+
                 label.dataset.search = `${ext.name} ${ext.id}`.toLowerCase();
                 label.dataset.firefoxSlug = ext.firefox_slug || '';
                 label.dataset.chromiumId = ext.chromium_id || '';
@@ -694,6 +716,7 @@ function renderBrowserExtensionsGenerator(items) {
                 });
 
                 label.appendChild(input);
+                label.appendChild(icon);
                 label.appendChild(text);
                 categoryContent.appendChild(label);
             });
@@ -731,6 +754,7 @@ function renderBrowserExtensionsGenerator(items) {
         const selectedIds = Array.from(state.selected).sort((a, b) => a.localeCompare(b));
         if (selectedIds.length === 0) {
             commandTarget.textContent = 'Select extensions to generate install links...';
+            if (commandFooter) commandFooter.hidden = true;
             return;
         }
 
@@ -755,6 +779,7 @@ function renderBrowserExtensionsGenerator(items) {
         commandTarget.textContent = lines.length > 0
             ? lines.join('\n')
             : 'No store links available for selected browser.';
+        if (commandFooter) commandFooter.hidden = false;
     }
 
     function applyFilters() {

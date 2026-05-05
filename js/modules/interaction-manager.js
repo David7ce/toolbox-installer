@@ -187,6 +187,7 @@ export function setupAutoCommandGeneration() {
  */
 export function autoGenerateCommand() {
     try {
+        const commandFooter = document.getElementById('commandFooter');
         const activeOS = getActiveOS();
         
         if (!activeOS) {
@@ -219,6 +220,7 @@ export function autoGenerateCommand() {
             if (warningsElement) {
                 warningsElement.classList.remove(CLASS_NAMES.SHOW);
             }
+            if (commandFooter) commandFooter.hidden = true;
             return;
         }
 
@@ -241,6 +243,7 @@ export function autoGenerateCommand() {
                 commandElement.textContent = 'No compatible packages selected for this OS';
             }
         }
+        if (commandFooter) commandFooter.hidden = false;
 
         // Show warnings if any
         const warningsElement = getElement('COMMAND_WARNINGS');
