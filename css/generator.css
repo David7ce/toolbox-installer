@@ -788,26 +788,16 @@ form {
 
 .command-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-md);
-}
-
-.command-output code {
-    padding: var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--neutral-overlay-05);
 }
 
 [data-theme="dark"] .command-output {
     background-color: var(--background-color);
     border: 2px solid var(--border-color);
-}
-
-.command-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md);
-    border-bottom: 1px solid var(--border-color);
-    background-color: var(--neutral-overlay-05);
 }
 
 .command-language {
@@ -861,43 +851,13 @@ form {
     line-height: 1.5;
 }
 
-.command-warnings {
-    display: none;
-    background-color: var(--warning-bg);
-    border: 2px solid var(--warning-border);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-md);
-    color: var(--warning-text);
-    font-size: 12px;
-    max-height: 60px;
-    overflow-y: auto;
+.distro-hidden {
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
-.command-warnings::-webkit-scrollbar {
-    width: 6px;
-}
-
-.command-warnings::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.command-warnings::-webkit-scrollbar-thumb {
-    background: var(--warning-scrollbar-thumb);
-    border-radius: 3px;
-}
-
-.command-warnings::-webkit-scrollbar-thumb:hover {
-    background: var(--warning-scrollbar-thumb-hover);
-}
-
-.command-warnings.show {
-    display: block;
-}
-
-.command-warnings strong {
-    display: block;
-    margin-bottom: var(--spacing-xs);
-    font-weight: 600;
+.distro-hidden input[type="checkbox"] {
+    cursor: not-allowed;
 }
 
 body {

@@ -3,6 +3,8 @@
  * Select libraries by language/category and generate install command.
  */
 
+import { createCommandFooter } from './command-footer.js';
+
 // ============================================================================
 // DATA
 // ============================================================================
@@ -517,6 +519,12 @@ function setupJavaToolButtons() {
 // ============================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    createCommandFooter({
+        ariaLabel: 'Install command',
+        commandLabel: 'Install command:',
+        hasLangId: true,
+        initialText: 'Select a language and libraries to generate install command...',
+    });
     renderLangButtons();
     renderJavaToolSelector();
     renderCategories();

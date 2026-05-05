@@ -43,7 +43,7 @@
             <div class="container">
                 <div class="page-controls">
                     <div class="page-controls-panel">
-                        <input id="extensionsSearch" class="search-input" type="search" placeholder="Search by extension name">
+                        <input id="searchInput" class="search-input" type="search" placeholder="Search by extension name">
                     </div>
                     <div class="page-controls-panel main-controls">
                         <label class="select-all-control">
@@ -70,18 +70,6 @@
 
             <div id="extensionsCategories" class="package-container columns"></div>
         </section>
-    </div>
-
-    <div class="command-footer" id="commandFooter" hidden role="region" aria-label="Extension installation command">
-        <div class="command-container">
-            <div class="command-output">
-                <div class="command-header">
-                    <span class="command-language">Install command:</span>
-                    <button type="button" class="copy-btn" id="copyCommandBtn" title="Copy to clipboard" aria-label="Copy install command">📋 Copy</button>
-                </div>
-                <code id="installation-command" aria-live="polite">Select extensions to generate command...</code>
-            </div>
-        </div>
     </div>
 </body>
 

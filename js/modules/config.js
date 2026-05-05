@@ -129,6 +129,8 @@ export const CLASS_NAMES = {
     // Other
     HIDDEN: 'hidden',
     SHOW: 'show',
+    PKG_ITEM: 'pkg-item',
+    DISTRO_HIDDEN: 'distro-hidden',
 };
 
 // ============================================================================
@@ -154,7 +156,6 @@ export const ELEMENT_IDS = {
     OUTPUT: 'output',
     PACKAGE_CONTAINER: 'packageContainer',
     LOADING_SPINNER: 'loadingSpinner',
-    COMMAND_WARNINGS: 'commandWarnings',
     
     // Buttons
     COPY_COMMAND_BTN: 'copyCommandBtn',

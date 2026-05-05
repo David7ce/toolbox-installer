@@ -21,6 +21,9 @@ import {
 import {
     getPackagesData,
 } from './data-manager.js';
+import {
+    applyDistroVisibilityFilter,
+} from './ui-builder.js';
 
 /**
  * Setup OS selector buttons and distro visibility
@@ -44,6 +47,9 @@ export function setupOSSelector() {
                 }
             }
 
+            // Filter packages by selected distro
+            applyDistroVisibilityFilter(getDistroFromOS(os));
+
             // Auto-generate command with new OS
             autoGenerateCommand();
 
@@ -55,7 +61,13 @@ export function setupOSSelector() {
     // Activar el primer SO por defecto si ninguno está activo (mobile)
     if (osBtns.length && !document.querySelector(`.${CLASS_NAMES.OS_BTN}.${CLASS_NAMES.ACTIVE}`)) {
         osBtns[0].classList.add(CLASS_NAMES.ACTIVE);
+        const firstOS = osBtns[0].dataset.os;
+        applyDistroVisibilityFilter(getDistroFromOS(firstOS));
         autoGenerateCommand();
+    } else {
+        // Apply filter for the already-active OS on initial load
+        const activeOS = document.querySelector(`.${CLASS_NAMES.OS_BTN}.${CLASS_NAMES.ACTIVE}`)?.dataset.os;
+        if (activeOS) applyDistroVisibilityFilter(getDistroFromOS(activeOS));
     }
 
     // Setup distro button listeners SOLO si existen (desktop)
@@ -63,6 +75,7 @@ export function setupOSSelector() {
         distroBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 updateActiveButton(CLASS_NAMES.DISTRO_BTN, this, false);
+                applyDistroVisibilityFilter(this.dataset.distro);
                 autoGenerateCommand();
             });
 
@@ -213,12 +226,8 @@ export function autoGenerateCommand() {
 
         if (selectedPackageIds.length === 0) {
             const commandElement = getElement('INSTALLATION_COMMAND');
-            const warningsElement = getElement('COMMAND_WARNINGS');
             if (commandElement) {
                 commandElement.textContent = 'Select packages to generate installation command...';
-            }
-            if (warningsElement) {
-                warningsElement.classList.remove(CLASS_NAMES.SHOW);
             }
             if (commandFooter) commandFooter.hidden = true;
             return;
@@ -244,17 +253,6 @@ export function autoGenerateCommand() {
             }
         }
         if (commandFooter) commandFooter.hidden = false;
-
-        // Show warnings if any
-        const warningsElement = getElement('COMMAND_WARNINGS');
-        if (warningsElement) {
-            if (result.nonInstallablePackages.length) {
-                warningsElement.innerHTML = `<strong>⚠️ Not available for this OS:</strong> <span class="not-available-packages">${result.nonInstallablePackages.join(', ')}</span>`;
-                warningsElement.classList.add(CLASS_NAMES.SHOW);
-            } else {
-                warningsElement.classList.remove(CLASS_NAMES.SHOW);
-            }
-        }
     } catch (error) {
         console.error('Error generating command:', error);
     }

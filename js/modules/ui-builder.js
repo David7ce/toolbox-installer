@@ -195,7 +195,32 @@ function createSubcategorySection(categoryContent, subcategory, subcategories) {
             packageLabel.appendChild(packageImg);
             packageLabel.appendChild(document.createTextNode(` ${pkgInfo.name}`));
             packageLabel.dataset.search = `${pkgInfo.name} ${pkgKey} ${subcategory} ${pkgInfo.category}`.toLowerCase();
+            packageLabel.classList.add(CLASS_NAMES.PKG_ITEM);
+            packageLabel.dataset.supportedDistros = Object.entries(pkgInfo.package_manager)
+                .filter(([, v]) => v !== null)
+                .map(([k]) => k)
+                .join(' ');
 
             subcategoryDiv.appendChild(packageLabel);
         });
+}
+
+/**
+ * Disable package labels that don't support the given distro.
+ * Unavailable packages remain visible but their checkboxes are unchecked and disabled.
+ * Pass null/undefined to re-enable all packages.
+ * @param {string|null} distro - The distro key (e.g. 'linux_arch_pacman') or null for no filter
+ */
+export function applyDistroVisibilityFilter(distro) {
+    const labels = document.querySelectorAll(`.${CLASS_NAMES.PKG_ITEM}`);
+    labels.forEach(label => {
+        const supported = label.dataset.supportedDistros || '';
+        const available = !distro || supported.split(' ').includes(distro);
+        const checkbox = label.querySelector('input[type="checkbox"]');
+        if (checkbox) {
+            checkbox.disabled = !available;
+            if (!available) checkbox.checked = false;
+        }
+        label.classList.toggle(CLASS_NAMES.DISTRO_HIDDEN, !available);
+    });
 }

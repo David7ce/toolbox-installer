@@ -3,6 +3,7 @@
  * Entry point for initializing all modules and functionality
  */
 
+import { createCommandFooter } from './command-footer.js';
 import { loadPackages, getPackagesData } from './data-manager.js';
 import { generatePackages } from './ui-builder.js';
 import {
@@ -27,6 +28,14 @@ import {
  */
 async function initializeApp() {
     try {
+        // Inject shared sticky footer
+        createCommandFooter({
+            ariaLabel: 'Installation command',
+            commandLabel: 'Installation command:',
+            hasLangId: true,
+            initialText: 'Select packages and OS to generate command...',
+        });
+
         // Load packages data
         console.log('Loading packages...');
         const packagesData = await loadPackages();

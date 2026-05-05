@@ -24,7 +24,8 @@ export function getVisibleCheckboxes() {
             const label = cb.closest('label');
             return label
                 && !label.classList.contains(CLASS_NAMES.FOSS_HIDDEN)
-                && !label.classList.contains(CLASS_NAMES.SEARCH_HIDDEN);
+                && !label.classList.contains(CLASS_NAMES.SEARCH_HIDDEN)
+                && !label.classList.contains(CLASS_NAMES.DISTRO_HIDDEN);
         });
 }
 

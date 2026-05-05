@@ -1,4 +1,6 @@
 // Módulo para renderizar la tabla de paquetes (desktop y mobile)
+import { createCommandFooter } from './command-footer.js';
+
 export function getPackagesJsonUrl() {
     const path = window.location.pathname;
     if (path.includes('mobile')) {
@@ -202,7 +204,7 @@ function renderVscodeGenerator(items) {
     const fossToggleBtn = document.getElementById('fossToggleBtn');
     const optionsSelect = document.getElementById('optionsSelect');
     const fileInput = document.getElementById('fileInput');
-    const searchInput = document.getElementById('extensionsSearch');
+    const searchInput = document.getElementById('searchInput');
     const copyBtn = document.getElementById('copyCommandBtn');
 
     if (
@@ -628,7 +630,7 @@ function renderBrowserExtensionsGenerator(items) {
     const toggleAllLabel = document.getElementById('toggleAllLabel');
     const browserSelect = document.getElementById('browserSelect');
     const optionsSelect = document.getElementById('optionsSelect');
-    const searchInput = document.getElementById('extensionsSearch');
+    const searchInput = document.getElementById('searchInput');
     const copyBtn = document.getElementById('copyCommandBtn');
 
     if (
@@ -939,12 +941,22 @@ export async function loadBrowserExtensionsGenerator() {
 
 function initSharedPages() {
     if (document.getElementById('extensionsCategories')) {
+        createCommandFooter({
+            ariaLabel: 'Extension installation command',
+            commandLabel: 'Install command:',
+            initialText: 'Select extensions to generate command...',
+        });
         loadVscodeExtensionsGenerator();
     }
     if (document.getElementById('extensionsTableBody')) {
         loadVscodeExtensionsTable();
     }
     if (document.getElementById('browserExtensionsCategories')) {
+        createCommandFooter({
+            ariaLabel: 'Extension install links',
+            commandLabel: 'Install links:',
+            initialText: 'Select extensions to generate install links...',
+        });
         loadBrowserExtensionsGenerator();
     }
 }
