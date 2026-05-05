@@ -9,6 +9,10 @@ function getPageType() {
         return 'vscode';
     }
 
+    if (path.includes('browser-extensions-compatibility')) {
+        return 'browser';
+    }
+
     return null;
 }
 
@@ -38,6 +42,27 @@ function createStoreLinkMarkup(url, label, icon) {
             <span>${escapeHtml(label)}</span>
         </a>
     `;
+}
+
+function normalizeBrowserData(data) {
+    return Object.entries(data?.extensions || {}).map(([id, ext]) => {
+        const firefoxSlug = ext?.firefox_slug?.trim() || '';
+        const chromiumId = ext?.chromium_id?.trim() || '';
+        return {
+            id,
+            category: ext?.category || 'Other',
+            name: ext?.name || id,
+            firefoxSlug,
+            chromiumId,
+            firefoxUrl: firefoxSlug
+                ? `https://addons.mozilla.org/en-US/firefox/addon/${encodeURIComponent(firefoxSlug)}/`
+                : '',
+            chromiumUrl: chromiumId
+                ? `https://chromewebstore.google.com/detail/${encodeURIComponent(chromiumId)}`
+                : '',
+            searchText: [ext?.name || '', id, ext?.category || '', firefoxSlug, chromiumId].join(' ').toLowerCase(),
+        };
+    });
 }
 
 function normalizeMobileData(data) {
@@ -116,6 +141,33 @@ const PAGE_CONFIGS = {
                 { label: 'Categories', value: categories.size },
                 { label: 'Android', value: filteredItems.filter((item) => item.androidPackageName).length },
                 { label: 'iOS', value: filteredItems.filter((item) => item.iosPackageName).length },
+            ];
+        },
+    },
+    browser: {
+        jsonUrl: './pkgs/browser-extensions-pkgs.json',
+        defaultSort: { column: 'name', direction: 'asc' },
+        normalizeData: normalizeBrowserData,
+        getFilterOptions(items) {
+            const categories = Array.from(new Set(items.map((item) => item.category))).sort((a, b) => a.localeCompare(b));
+            return [{ value: 'all', label: 'All' }, ...categories.map((category) => ({ value: category, label: category }))];
+        },
+        matchesFilter(item, filterValue) {
+            return item.category === filterValue;
+        },
+        columns: [
+            { key: 'category', label: 'Category', sortable: true, headerClass: 'sortable sticky-col category-col', cellClass: 'sticky-col category-col' },
+            { key: 'name', label: 'Extension', sortable: true, headerClass: 'sortable sticky-col app-col', cellClass: 'sticky-col app-col' },
+            { key: 'firefoxUrl', label: 'Firefox', sortable: false, renderCell: (item) => createStoreLinkMarkup(item.firefoxUrl, 'Add to Firefox', '🦊') },
+            { key: 'chromiumUrl', label: 'Chromium', sortable: false, renderCell: (item) => createStoreLinkMarkup(item.chromiumUrl, 'Add to Chromium', '🔵') },
+        ],
+        getStats(filteredItems) {
+            const categories = new Set(filteredItems.map((item) => item.category));
+            return [
+                { label: 'Total Extensions', value: filteredItems.length },
+                { label: 'Categories', value: categories.size },
+                { label: 'Firefox', value: filteredItems.filter((item) => item.firefoxUrl).length },
+                { label: 'Chromium', value: filteredItems.filter((item) => item.chromiumUrl).length },
             ];
         },
     },

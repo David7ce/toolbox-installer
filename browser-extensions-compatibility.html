@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            try {
+                const theme = localStorage.getItem('theme-preference') || 'light';
+                document.documentElement.setAttribute('data-theme', theme);
+                document.documentElement.style.colorScheme = theme === 'dark' ? 'dark' : 'light';
+            } catch (_) {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.documentElement.style.colorScheme = 'light';
+            }
+        })();
+    </script>
+    <title>Browser Extensions Table</title>
+    <link rel="stylesheet" href="./css/base-styles.css">
+    <link rel="stylesheet" href="./css/os-compatibility.css">
+    <script type="module" src="./js/modules/theme-manager.js"></script>
+    <script type="module" src="./js/modules/software-table-pages.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>🧩 Browser Extensions Compatibility</h1>
+            <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">🌙</button>
+        </header>
+
+        <p class="subtitle">Extension list and store links for Firefox and Chromium-based browsers.</p>
+
+        <nav class="page-nav" aria-label="Page links">
+            <div class="info-link">
+                <a href="./index.html" title="Back to home page">⬅ Back to Home</a>
+            </div>
+            <div class="info-link">
+                <a href="./browser.html" title="Go to installer">⚙️ Go to Installer</a>
+            </div>
+        </nav>
+
+        <div class="page-controls controls">
+            <div class="page-controls-panel">
+                <div class="search-box">
+                    <input id="searchInput" type="search" placeholder="Search extension name, id, or category">
+                </div>
+            </div>
+            <div class="page-controls-panel">
+                <div class="page-filter-row filter-chips" id="filterChips" role="group" aria-label="Filter by category"></div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="packagesTable">
+                <thead id="tableHead"></thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+
+        <div class="stats" id="statsContainer"></div>
+    </div>
+</body>
+
+</html>

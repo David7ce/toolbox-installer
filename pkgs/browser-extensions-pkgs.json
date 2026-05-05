@@ -1,0 +1,74 @@
+{
+    "extensions": {
+        "adguard-browser-assistant": {
+            "name": "AdGuard Browser Assistant",
+            "category": "Privacy and Security",
+            "firefox_id": "browserassistant@adguard.com",
+            "firefox_slug": "adguard-browser-assistant",
+            "chromium_id": null
+        },
+        "bitwarden": {
+            "name": "Bitwarden Password Manager",
+            "category": "Privacy and Security",
+            "firefox_id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
+            "firefox_slug": "bitwarden-password-manager",
+            "chromium_id": "nngceckbapebfimnlniiiahkandclblb"
+        },
+        "dark-reader": {
+            "name": "Dark Reader",
+            "category": "Appearance",
+            "firefox_id": "addon@darkreader.org",
+            "firefox_slug": "darkreader",
+            "chromium_id": "eimadpbcbfnmbkopoojfekhnkhdbieeh"
+        },
+        "i-still-dont-care-about-cookies": {
+            "name": "I still don't care about cookies",
+            "category": "Privacy and Security",
+            "firefox_id": "idcac-pub@guus.ninja",
+            "firefox_slug": "istilldontcareaboutcookies",
+            "chromium_id": null
+        },
+        "raindrop-io": {
+            "name": "Raindrop.io",
+            "category": "Productivity",
+            "firefox_id": "jid0-adyhmvsP91nUO8pRv0Mn2VKeB84@jetpack",
+            "firefox_slug": "raindropio",
+            "chromium_id": "ldgfbffkinooeloadekpmfoklnobpien"
+        },
+        "return-youtube-dislike": {
+            "name": "Return YouTube Dislike",
+            "category": "Media",
+            "firefox_id": "{762f9885-5a13-4abd-9c77-433dcd38b8fd}",
+            "firefox_slug": "return-youtube-dislikes",
+            "chromium_id": "gebbhagfogifgggkldgodflihgfeippi"
+        },
+        "sponsorblock": {
+            "name": "SponsorBlock for YouTube",
+            "category": "Media",
+            "firefox_id": "sponsorBlocker@ajay.app",
+            "firefox_slug": "sponsorblock",
+            "chromium_id": "mnjggcdmjocbbbhaepdhchncahnbgone"
+        },
+        "ublock-origin": {
+            "name": "uBlock Origin",
+            "category": "Privacy and Security",
+            "firefox_id": "uBlock0@raymondhill.net",
+            "firefox_slug": "ublock-origin",
+            "chromium_id": "cjpalhdlnbpafiamejdnhcphjbkeiagm"
+        },
+        "videoplayer": {
+            "name": "VideoPlayer MPD/M3U8/IPTV/EPG",
+            "category": "Media",
+            "firefox_id": "videoplayer@sharkiller.dev",
+            "firefox_slug": "videoplayer-mpd-m3u8",
+            "chromium_id": null
+        },
+        "youtube-custom-speed": {
+            "name": "Youtube Custom Speed",
+            "category": "Media",
+            "firefox_id": "youtube-custom-speed@niziolek.dev",
+            "firefox_slug": "youtube-custom-speed",
+            "chromium_id": null
+        }
+    }
+}

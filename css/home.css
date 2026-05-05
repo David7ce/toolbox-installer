@@ -59,6 +59,10 @@
 	background: var(--home-link-vscode-bg);
 }
 
+.home-link-browser {
+	background: var(--home-link-browser-bg);
+}
+
 .home-footer {
 	margin-top: auto;
 	padding-top: 2rem;

@@ -13,6 +13,10 @@ export function getVscodeExtensionsJsonUrl() {
     return './pkgs/vscode-extensions-pkgs.json';
 }
 
+export function getBrowserExtensionsJsonUrl() {
+    return './pkgs/browser-extensions-pkgs.json';
+}
+
 function buildPlayStoreUrl(androidPackageName) {
     return `https://play.google.com/store/apps/details?id=${encodeURIComponent(androidPackageName)}`;
 }
@@ -586,12 +590,337 @@ export async function loadVscodeExtensionsTable() {
     }
 }
 
+function getBrowserExtensionsFromData(data) {
+    if (!data || !data.extensions || typeof data.extensions !== 'object' || Array.isArray(data.extensions)) {
+        return [];
+    }
+    return Object.entries(data.extensions).map(([id, ext]) => ({ id, ...ext }));
+}
+
+function buildFirefoxAddonUrl(slug) {
+    if (!slug) return null;
+    return `https://addons.mozilla.org/en-US/firefox/addon/${encodeURIComponent(slug)}/`;
+}
+
+function buildChromiumExtensionUrl(chromiumId) {
+    if (!chromiumId) return null;
+    return `https://chromewebstore.google.com/detail/${encodeURIComponent(chromiumId)}`;
+}
+
+function renderBrowserExtensionsGenerator(items) {
+    const container = document.getElementById('browserExtensionsCategories');
+    const commandTarget = document.getElementById('installation-command');
+    const selectAll = document.getElementById('selectAllCheckbox');
+    const selectAllLabel = document.getElementById('selectAllLabel');
+    const toggleAllBtn = document.getElementById('toggleAllBtn');
+    const toggleAllLabel = document.getElementById('toggleAllLabel');
+    const browserSelect = document.getElementById('browserSelect');
+    const optionsSelect = document.getElementById('optionsSelect');
+    const searchInput = document.getElementById('extensionsSearch');
+    const copyBtn = document.getElementById('copyCommandBtn');
+
+    if (
+        !container || !commandTarget || !selectAll || !selectAllLabel
+        || !toggleAllBtn || !toggleAllLabel || !browserSelect
+        || !optionsSelect || !searchInput || !copyBtn
+    ) {
+        return;
+    }
+
+    const state = {
+        selected: new Set(),
+        searchQuery: '',
+        allCollapsed: false,
+        browser: 'both',
+    };
+
+    const grouped = groupByCategory(items);
+    const categories = Object.keys(grouped).sort((a, b) => a.localeCompare(b));
+
+    container.innerHTML = '';
+
+    categories.forEach((category) => {
+        const section = document.createElement('section');
+        section.className = 'column category';
+        section.dataset.category = category;
+
+        const header = document.createElement('div');
+        header.className = 'category-header';
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('aria-expanded', 'true');
+
+        const title = document.createElement('h4');
+        title.textContent = category;
+
+        const arrow = document.createElement('span');
+        arrow.className = 'toggle-arrow';
+        arrow.textContent = '▼';
+
+        header.appendChild(title);
+        header.appendChild(arrow);
+        section.appendChild(header);
+
+        const categoryContent = document.createElement('div');
+        categoryContent.className = 'category-content';
+
+        grouped[category]
+            .slice()
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .forEach((ext) => {
+                const label = document.createElement('label');
+                label.className = 'ext-item';
+
+                const input = document.createElement('input');
+                input.type = 'checkbox';
+                input.value = ext.id;
+                input.dataset.extensionId = ext.id;
+
+                const text = document.createElement('span');
+                text.textContent = ext.name;
+
+                label.dataset.search = `${ext.name} ${ext.id}`.toLowerCase();
+                label.dataset.firefoxSlug = ext.firefox_slug || '';
+                label.dataset.chromiumId = ext.chromium_id || '';
+
+                input.addEventListener('change', () => {
+                    if (input.checked) {
+                        state.selected.add(ext.id);
+                    } else {
+                        state.selected.delete(ext.id);
+                    }
+                    updateLinks();
+                    updateSelectAllState();
+                });
+
+                label.appendChild(input);
+                label.appendChild(text);
+                categoryContent.appendChild(label);
+            });
+
+        const toggleCategory = () => {
+            const collapsed = section.classList.toggle('collapsed');
+            header.setAttribute('aria-expanded', String(!collapsed));
+            updateGlobalCollapseState();
+        };
+
+        header.addEventListener('click', toggleCategory);
+        header.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleCategory();
+            }
+        });
+
+        section.appendChild(categoryContent);
+        container.appendChild(section);
+    });
+
+    function getAllExtensionCheckboxes() {
+        return Array.from(container.querySelectorAll('.ext-item input[type="checkbox"]'));
+    }
+
+    function getVisibleExtensionCheckboxes() {
+        return getAllExtensionCheckboxes().filter((checkbox) => {
+            const label = checkbox.closest('.ext-item');
+            return label && label.style.display !== 'none';
+        });
+    }
+
+    function updateLinks() {
+        const selectedIds = Array.from(state.selected).sort((a, b) => a.localeCompare(b));
+        if (selectedIds.length === 0) {
+            commandTarget.textContent = 'Select extensions to generate install links...';
+            return;
+        }
+
+        const selectedItems = items.filter((ext) => state.selected.has(ext.id));
+        const lines = [];
+
+        selectedItems
+            .slice()
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .forEach((ext) => {
+                const browser = state.browser;
+                if (browser === 'firefox' || browser === 'both') {
+                    const url = buildFirefoxAddonUrl(ext.firefox_slug);
+                    if (url) lines.push(`[Firefox] ${ext.name}: ${url}`);
+                }
+                if (browser === 'chromium' || browser === 'both') {
+                    const url = buildChromiumExtensionUrl(ext.chromium_id);
+                    if (url) lines.push(`[Chromium] ${ext.name}: ${url}`);
+                }
+            });
+
+        commandTarget.textContent = lines.length > 0
+            ? lines.join('\n')
+            : 'No store links available for selected browser.';
+    }
+
+    function applyFilters() {
+        const labels = container.querySelectorAll('.ext-item');
+        labels.forEach((label) => {
+            const matchesSearch = label.dataset.search.includes(state.searchQuery);
+            const browser = state.browser;
+            let matchesBrowser = true;
+            if (browser === 'firefox') {
+                matchesBrowser = label.dataset.firefoxSlug !== '';
+            } else if (browser === 'chromium') {
+                matchesBrowser = label.dataset.chromiumId !== '';
+            }
+            label.style.display = matchesSearch && matchesBrowser ? '' : 'none';
+        });
+    }
+
+    function updateSelectAllState() {
+        const visibleBoxes = getVisibleExtensionCheckboxes();
+        const checkedCount = visibleBoxes.filter((el) => el.checked).length;
+        const totalCount = visibleBoxes.length;
+
+        if (totalCount === 0 || checkedCount === 0) {
+            selectAll.checked = false;
+            selectAll.indeterminate = false;
+            selectAllLabel.textContent = 'Select';
+            return;
+        }
+
+        if (checkedCount === totalCount) {
+            selectAll.checked = true;
+            selectAll.indeterminate = false;
+            selectAllLabel.textContent = 'Deselect';
+            return;
+        }
+
+        selectAll.checked = false;
+        selectAll.indeterminate = true;
+        selectAllLabel.textContent = 'Selected';
+    }
+
+    function updateGlobalCollapseState() {
+        const sections = Array.from(container.querySelectorAll('.category'));
+        const collapsedCount = sections.filter((section) => section.classList.contains('collapsed')).length;
+
+        state.allCollapsed = sections.length > 0 && collapsedCount === sections.length;
+        toggleAllBtn.classList.toggle('collapsed', state.allCollapsed);
+        toggleAllLabel.textContent = state.allCollapsed ? 'Expand' : 'Collapse';
+    }
+
+    function setAllCategoriesCollapsed(shouldCollapse) {
+        const sections = container.querySelectorAll('.category');
+        sections.forEach((section) => {
+            section.classList.toggle('collapsed', shouldCollapse);
+            const header = section.querySelector('.category-header');
+            if (header) {
+                header.setAttribute('aria-expanded', String(!shouldCollapse));
+            }
+        });
+        updateGlobalCollapseState();
+    }
+
+    selectAll.addEventListener('change', () => {
+        const allBoxes = getVisibleExtensionCheckboxes();
+        state.selected.clear();
+
+        getAllExtensionCheckboxes().forEach((checkbox) => {
+            checkbox.checked = false;
+        });
+
+        allBoxes.forEach((checkbox) => {
+            checkbox.checked = selectAll.checked;
+            if (selectAll.checked) {
+                state.selected.add(checkbox.value);
+            }
+        });
+
+        updateLinks();
+        updateSelectAllState();
+    });
+
+    searchInput.addEventListener('input', () => {
+        state.searchQuery = searchInput.value.trim().toLowerCase();
+        applyFilters();
+        updateSelectAllState();
+    });
+
+    toggleAllBtn.addEventListener('click', () => {
+        setAllCategoriesCollapsed(!state.allCollapsed);
+    });
+
+    browserSelect.addEventListener('change', () => {
+        state.browser = browserSelect.value;
+        applyFilters();
+        updateLinks();
+        updateSelectAllState();
+    });
+
+    optionsSelect.addEventListener('change', () => {
+        const action = optionsSelect.value;
+        if (!action) return;
+
+        if (action === 'exportPackages') {
+            const selectedSorted = Array.from(state.selected).sort((a, b) => a.localeCompare(b));
+            const payload = { extensions: selectedSorted };
+            const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'toolbox-browser-extensions.json';
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            URL.revokeObjectURL(url);
+        }
+
+        optionsSelect.value = '';
+    });
+
+    copyBtn.addEventListener('click', async () => {
+        const command = commandTarget.textContent;
+        if (!command || command.startsWith('Select extensions')) {
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(command);
+            const original = copyBtn.textContent;
+            copyBtn.textContent = 'Copied';
+            setTimeout(() => {
+                copyBtn.textContent = original;
+            }, 1200);
+        } catch (error) {
+            console.error('Unable to copy links:', error);
+        }
+    });
+
+    applyFilters();
+    setAllCategoriesCollapsed(false);
+    updateLinks();
+    updateSelectAllState();
+}
+
+export async function loadBrowserExtensionsGenerator() {
+    try {
+        const response = await fetch(getBrowserExtensionsJsonUrl());
+        if (!response.ok) {
+            throw new Error(`Failed to load browser extensions data: ${response.statusText}`);
+        }
+        const data = await response.json();
+        const items = getBrowserExtensionsFromData(data);
+        renderBrowserExtensionsGenerator(items);
+    } catch (error) {
+        console.error('Error loading browser extensions generator data:', error);
+    }
+}
+
 function initSharedPages() {
     if (document.getElementById('extensionsCategories')) {
         loadVscodeExtensionsGenerator();
     }
     if (document.getElementById('extensionsTableBody')) {
         loadVscodeExtensionsTable();
+    }
+    if (document.getElementById('browserExtensionsCategories')) {
+        loadBrowserExtensionsGenerator();
     }
 }
 
