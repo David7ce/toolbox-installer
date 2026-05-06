@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const BASE = import.meta.env.BASE_URL;
+const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 <BaseLayout title="Toolbox Installer" extraStyles={['styles/generator.css', 'styles/home.css']}>
   <div class="page-wrapper home-page-wrapper">

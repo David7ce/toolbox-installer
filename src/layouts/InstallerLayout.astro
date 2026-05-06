@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { title, heading, navBack, navCompat, extraStyles = [] } = Astro.props;
-const BASE = import.meta.env.BASE_URL;
+const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 // Resolve paths relative to base (strip leading slash, then prefix with BASE_URL)
 const resolveHref = (href: string) => `${BASE}${href.replace(/^\//, '')}`;

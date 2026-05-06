@@ -1,6 +1,6 @@
 // Módulo para renderizar la tabla de paquetes (desktop y mobile)
 
-const BASE = import.meta.env.BASE_URL;
+const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 export function getPackagesJsonUrl() {
     const path = window.location.pathname;

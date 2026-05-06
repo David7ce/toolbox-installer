@@ -3,7 +3,7 @@
 // ============================================================================
 // API & PATHS
 // ============================================================================
-const BASE = import.meta.env.BASE_URL;
+const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 function detectJsonUrl(): string {
     const path = window.location.pathname;

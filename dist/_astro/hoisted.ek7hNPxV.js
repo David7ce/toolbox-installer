@@ -1,4 +1,4 @@
-import"./hoisted.-UcRO2xe.js";function p(){const t=window.location.pathname;return t.includes("mobile-os-compatibility")?"mobile":t.includes("vscode-extensions-compatibility")?"vscode":t.includes("browser-extensions-compatibility")?"browser":null}function c(t){const r=document.createElement("div");return r.textContent=t??"",r.innerHTML}function b(t){return`
+import"./hoisted.BMmXbGrB.js";function p(){const t=window.location.pathname;return t.includes("mobile-os-compatibility")?"mobile":t.includes("vscode-extensions-compatibility")?"vscode":t.includes("browser-extensions-compatibility")?"browser":null}function c(t){const r=document.createElement("div");return r.textContent=t??"",r.innerHTML}function b(t){return`
         <span class="sort-arrows">
             <span class="sort-arrow up" data-column="${t}" data-direction="asc"></span>
             <span class="sort-arrow down" data-column="${t}" data-direction="desc"></span>

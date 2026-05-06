@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const BASE = import.meta.env.BASE_URL;
+const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 <BaseLayout title="Library Compatibility" extraStyles={['styles/os-compatibility.css', 'styles/lib-installer.css']}>
   <div class="container">
