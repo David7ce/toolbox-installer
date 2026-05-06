@@ -351,7 +351,7 @@ function setupSearch() {
 // INIT
 // ============================================================================
 
-export function initLibCompat() {
+document.addEventListener('DOMContentLoaded', () => {
     buildTable();
     setupSearch();
-}
+});

@@ -17,295 +17,80 @@ const CATEGORY_EMOJIS = {
     'Auth / Security': '🔐',
 };
 
-const LANG_DATA = {
-    javascript: {
-        label: 'JavaScript',
-        emoji: '🟨',
-        manager: { name: 'npm', cmd: 'npm install' },
-        categories: {
-            'Backend Framework': [
-                { name: 'express', badges: ['popular'] },
-                { name: 'fastify', badges: ['modern', 'lightweight'] },
-                { name: 'hono', badges: ['modern', 'lightweight'] },
-            ],
-            'HTTP Client': [
-                { name: 'axios', badges: ['popular'] },
-                { name: 'ky', badges: ['modern', 'lightweight'] },
-                { name: 'got', badges: ['modern'] },
-            ],
-            'ORM / Database': [
-                { name: 'prisma', badges: ['popular', 'modern'] },
-                { name: 'drizzle-orm', badges: ['modern', 'lightweight'] },
-                { name: 'typeorm', badges: ['popular'] },
-            ],
-            'Testing': [
-                { name: 'vitest', badges: ['modern', 'lightweight'] },
-                { name: 'jest', badges: ['popular'] },
-                { name: 'mocha', badges: ['popular'] },
-            ],
-            'Logging': [
-                { name: 'pino', badges: ['modern', 'lightweight'] },
-                { name: 'winston', badges: ['popular'] },
-            ],
-            'Validation': [
-                { name: 'zod', badges: ['popular', 'modern'] },
-                { name: 'yup', badges: ['popular'] },
-                { name: 'valibot', badges: ['modern', 'lightweight'] },
-            ],
-            'Auth / Security': [
-                { name: 'passport', badges: ['popular'] },
-                { name: 'jose', badges: ['modern', 'lightweight'] },
-                { name: 'better-auth', badges: ['modern'] },
-            ],
-        },
-    },
-    python: {
-        label: 'Python',
-        emoji: '🐍',
-        manager: { name: 'pip', cmd: 'pip install' },
-        categories: {
-            'Backend Framework': [
-                { name: 'fastapi', badges: ['popular', 'modern'] },
-                { name: 'flask', badges: ['popular', 'lightweight'] },
-                { name: 'django', badges: ['popular'] },
-            ],
-            'HTTP Client': [
-                { name: 'httpx', badges: ['modern'] },
-                { name: 'requests', badges: ['popular'] },
-                { name: 'aiohttp', badges: ['popular'] },
-            ],
-            'ORM / Database': [
-                { name: 'sqlalchemy', badges: ['popular'] },
-                { name: 'tortoise-orm', badges: ['modern'] },
-                { name: 'peewee', badges: ['lightweight'] },
-            ],
-            'Testing': [
-                { name: 'pytest', badges: ['popular'] },
-                { name: 'hypothesis', badges: ['modern'] },
-                { name: 'factory-boy', badges: ['popular'] },
-            ],
-            'Logging': [
-                { name: 'loguru', badges: ['popular', 'modern'] },
-                { name: 'structlog', badges: ['modern'] },
-            ],
-            'Validation': [
-                { name: 'pydantic', badges: ['popular', 'modern'] },
-                { name: 'marshmallow', badges: ['popular'] },
-                { name: 'cerberus', badges: ['lightweight'] },
-            ],
-            'Auth / Security': [
-                { name: 'python-jose', badges: ['popular'] },
-                { name: 'authlib', badges: ['modern'] },
-                { name: 'passlib', badges: ['popular'] },
-            ],
-        },
-    },
-    java: {
-        label: 'Java',
-        emoji: '☕',
-        manager: { name: 'Maven', cmd: 'maven' },
-        categories: {
-            'Backend Framework': [
-                { name: 'org.springframework.boot:spring-boot-starter-web', display: 'Spring Boot Web', badges: ['popular'] },
-                { name: 'io.quarkus:quarkus-resteasy-reactive', display: 'Quarkus RESTEasy', badges: ['modern'] },
-                { name: 'io.micronaut:micronaut-http-server-netty', display: 'Micronaut HTTP', badges: ['modern', 'lightweight'] },
-            ],
-            'HTTP Client': [
-                { name: 'com.squareup.okhttp3:okhttp', display: 'OkHttp', badges: ['popular'] },
-                { name: 'com.squareup.retrofit2:retrofit', display: 'Retrofit', badges: ['popular'] },
-                { name: 'io.github.openfeign:feign-core', display: 'Feign', badges: ['lightweight'] },
-            ],
-            'ORM / Database': [
-                { name: 'org.hibernate.orm:hibernate-core', display: 'Hibernate ORM', badges: ['popular'] },
-                { name: 'org.jooq:jooq', display: 'jOOQ', badges: ['popular', 'modern'] },
-                { name: 'org.mybatis:mybatis', display: 'MyBatis', badges: ['popular'] },
-            ],
-            'Testing': [
-                { name: 'org.junit.jupiter:junit-jupiter', display: 'JUnit 5', badges: ['popular'] },
-                { name: 'org.mockito:mockito-core', display: 'Mockito', badges: ['popular'] },
-                { name: 'org.assertj:assertj-core', display: 'AssertJ', badges: ['popular', 'modern'] },
-            ],
-            'Logging': [
-                { name: 'ch.qos.logback:logback-classic', display: 'Logback', badges: ['popular'] },
-                { name: 'org.apache.logging.log4j:log4j-core', display: 'Log4j 2', badges: ['popular'] },
-            ],
-            'Validation': [
-                { name: 'org.hibernate.validator:hibernate-validator', display: 'Hibernate Validator', badges: ['popular'] },
-                { name: 'jakarta.validation:jakarta.validation-api', display: 'Jakarta Validation', badges: ['popular'] },
-            ],
-            'Auth / Security': [
-                { name: 'org.springframework.security:spring-security-core', display: 'Spring Security', badges: ['popular'] },
-                { name: 'com.auth0:java-jwt', display: 'java-jwt', badges: ['popular'] },
-                { name: 'com.nimbusds:nimbus-jose-jwt', display: 'nimbus-jose-jwt', badges: ['popular'] },
-            ],
-        },
-    },
-    csharp: {
-        label: 'C#',
-        emoji: '🔷',
-        manager: { name: 'dotnet', cmd: 'dotnet add package' },
-        categories: {
-            'Backend Framework': [
-                { name: 'Carter', badges: ['lightweight', 'modern'] },
-                { name: 'FastEndpoints', badges: ['modern'] },
-                { name: 'ServiceStack', badges: ['popular'] },
-            ],
-            'HTTP Client': [
-                { name: 'Refit', badges: ['popular', 'modern'] },
-                { name: 'RestSharp', badges: ['popular'] },
-                { name: 'Flurl.Http', badges: ['lightweight'] },
-            ],
-            'ORM / Database': [
-                { name: 'Microsoft.EntityFrameworkCore', badges: ['popular'] },
-                { name: 'Dapper', badges: ['popular', 'lightweight'] },
-                { name: 'NHibernate', badges: ['popular'] },
-            ],
-            'Testing': [
-                { name: 'xunit', badges: ['popular', 'modern'] },
-                { name: 'Moq', badges: ['popular'] },
-                { name: 'FluentAssertions', badges: ['popular', 'modern'] },
-            ],
-            'Logging': [
-                { name: 'Serilog', badges: ['popular', 'modern'] },
-                { name: 'NLog', badges: ['popular'] },
-            ],
-            'Validation': [
-                { name: 'FluentValidation', badges: ['popular', 'modern'] },
-                { name: 'GuardClauses', badges: ['lightweight'] },
-            ],
-            'Auth / Security': [
-                { name: 'Microsoft.AspNetCore.Authentication.JwtBearer', badges: ['popular'] },
-                { name: 'BCrypt.Net-Next', badges: ['popular'] },
-                { name: 'IdentityModel', badges: ['popular'] },
-            ],
-        },
-    },
-    go: {
-        label: 'Go',
-        emoji: '🐹',
-        manager: { name: 'go get', cmd: 'go get' },
-        categories: {
-            'Backend Framework': [
-                { name: 'github.com/gin-gonic/gin', display: 'Gin', badges: ['popular'] },
-                { name: 'github.com/gofiber/fiber/v2', display: 'Fiber', badges: ['modern', 'lightweight'] },
-                { name: 'github.com/labstack/echo/v4', display: 'Echo', badges: ['popular', 'lightweight'] },
-            ],
-            'HTTP Client': [
-                { name: 'github.com/go-resty/resty/v2', display: 'Resty', badges: ['popular'] },
-                { name: 'github.com/imroc/req/v3', display: 'req', badges: ['modern'] },
-            ],
-            'ORM / Database': [
-                { name: 'gorm.io/gorm', display: 'GORM', badges: ['popular'] },
-                { name: 'github.com/uptrace/bun', display: 'Bun', badges: ['modern', 'lightweight'] },
-                { name: 'github.com/jmoiron/sqlx', display: 'sqlx', badges: ['popular', 'lightweight'] },
-            ],
-            'Testing': [
-                { name: 'github.com/stretchr/testify', display: 'testify', badges: ['popular'] },
-                { name: 'github.com/onsi/ginkgo/v2', display: 'Ginkgo', badges: ['popular'] },
-                { name: 'github.com/vektra/mockery/v2', display: 'mockery', badges: ['popular'] },
-            ],
-            'Logging': [
-                { name: 'go.uber.org/zap', display: 'Zap', badges: ['popular', 'modern'] },
-                { name: 'github.com/rs/zerolog', display: 'zerolog', badges: ['modern', 'lightweight'] },
-                { name: 'github.com/sirupsen/logrus', display: 'logrus', badges: ['popular'] },
-            ],
-            'Validation': [
-                { name: 'github.com/go-playground/validator/v10', display: 'validator', badges: ['popular'] },
-                { name: 'github.com/asaskevich/govalidator', display: 'govalidator', badges: ['popular'] },
-            ],
-            'Auth / Security': [
-                { name: 'github.com/golang-jwt/jwt/v5', display: 'golang-jwt', badges: ['popular'] },
-                { name: 'golang.org/x/oauth2', display: 'oauth2', badges: ['popular'] },
-            ],
-        },
-    },
-    rust: {
-        label: 'Rust',
-        emoji: '🦀',
-        manager: { name: 'cargo add', cmd: 'cargo add' },
-        categories: {
-            'Backend Framework': [
-                { name: 'axum', badges: ['popular', 'modern'] },
-                { name: 'actix-web', badges: ['popular'] },
-                { name: 'rocket', badges: ['popular'] },
-            ],
-            'HTTP Client': [
-                { name: 'reqwest', badges: ['popular'] },
-                { name: 'ureq', badges: ['lightweight'] },
-                { name: 'hyper', badges: ['popular'] },
-            ],
-            'ORM / Database': [
-                { name: 'sqlx', badges: ['popular', 'modern'] },
-                { name: 'diesel', badges: ['popular'] },
-                { name: 'sea-orm', badges: ['modern'] },
-            ],
-            'Testing': [
-                { name: 'mockall', badges: ['popular'] },
-                { name: 'rstest', badges: ['modern', 'lightweight'] },
-                { name: 'proptest', badges: ['modern'] },
-            ],
-            'Logging': [
-                { name: 'tracing', badges: ['popular', 'modern'] },
-                { name: 'log', badges: ['popular', 'lightweight'] },
-                { name: 'env_logger', badges: ['popular', 'lightweight'] },
-            ],
-            'Validation': [
-                { name: 'validator', badges: ['popular'] },
-                { name: 'garde', badges: ['modern'] },
-            ],
-            'Auth / Security': [
-                { name: 'jsonwebtoken', badges: ['popular'] },
-                { name: 'argon2', badges: ['popular', 'modern'] },
-                { name: 'bcrypt', badges: ['popular'] },
-            ],
-        },
-    },
-    php: {
-        label: 'PHP',
-        emoji: '🐘',
-        manager: { name: 'Composer', cmd: 'composer require' },
-        categories: {
-            'Backend Framework': [
-                { name: 'laravel/framework', display: 'Laravel', badges: ['popular'] },
-                { name: 'symfony/symfony', display: 'Symfony', badges: ['popular'] },
-                { name: 'slim/slim', display: 'Slim', badges: ['lightweight'] },
-            ],
-            'HTTP Client': [
-                { name: 'guzzlehttp/guzzle', display: 'Guzzle', badges: ['popular'] },
-                { name: 'symfony/http-client', display: 'Symfony HTTP Client', badges: ['modern'] },
-            ],
-            'ORM / Database': [
-                { name: 'doctrine/orm', display: 'Doctrine ORM', badges: ['popular'] },
-                { name: 'illuminate/database', display: 'Eloquent', badges: ['popular'] },
-                { name: 'cycle/orm', display: 'Cycle ORM', badges: ['modern'] },
-            ],
-            'Testing': [
-                { name: 'phpunit/phpunit', display: 'PHPUnit', badges: ['popular'] },
-                { name: 'pestphp/pest', display: 'Pest', badges: ['modern'] },
-                { name: 'mockery/mockery', display: 'Mockery', badges: ['popular'] },
-            ],
-            'Logging': [
-                { name: 'monolog/monolog', display: 'Monolog', badges: ['popular'] },
-            ],
-            'Validation': [
-                { name: 'respect/validation', display: 'Respect Validation', badges: ['popular'] },
-                { name: 'illuminate/validation', display: 'Laravel Validator', badges: ['popular'] },
-                { name: 'rakit/validation', display: 'Rakit Validation', badges: ['lightweight'] },
-            ],
-            'Auth / Security': [
-                { name: 'firebase/php-jwt', display: 'firebase/php-jwt', badges: ['popular'] },
-                { name: 'lcobucci/jwt', display: 'lcobucci/jwt', badges: ['modern'] },
-                { name: 'defuse/php-encryption', display: 'defuse/php-encryption', badges: ['popular'] },
-            ],
-        },
-    },
+const LIB_ICONS = {
+    // JavaScript
+    'express': '⚡',
+    'fastify': '🚀',
+    'hono': '🔥',
+    'axios': '📡',
+    'prisma': '🔮',
+    'jest': '✅',
+    'vitest': '⚡',
+    'pino': '📝',
+    'winston': '📝',
+    'zod': '🛡️',
+    'passport': '🔑',
+    
+    // Python
+    'fastapi': '⚡',
+    'flask': '🍶',
+    'django': '🌍',
+    'sqlalchemy': '🗄️',
+    'pytest': '✅',
+    'pydantic': '🛡️',
+    
+    // Java
+    'spring-boot': '🍃',
+    'spring': '🍃',
+    'quarkus': '🚀',
+    'hibernate': '🗄️',
+    'junit': '✅',
+    
+    // C#
+    'carter': '🚀',
+    'efcore': '🗄️',
+    'xunit': '✅',
+    'moq': '🎭',
+    
+    // Go
+    'gin': '🍸',
+    'fiber': '⚡',
+    'gorm': '🗄️',
+    'testify': '✅',
+    
+    // Rust
+    'axum': '⚡',
+    'rocket': '🚀',
+    'sqlx': '🗄️',
+    'serde': '📦',
+    
+    // PHP
+    'laravel': '🚀',
+    'symfony': '🎭',
+    'eloquent': '🗄️',
+    'phpunit': '✅',
 };
 
+function getLibIcon(libName: string): string {
+    const normalized = libName.toLowerCase().replace(/[^a-z0-9-]/g, '').split('-')[0];
+    return LIB_ICONS[normalized] || '📦';
+}
+
+type LibEntry = { name: string; display?: string; badges: string[] };
+type LangEntry = {
+    label: string;
+    emoji: string;
+    manager: { name: string; cmd: string };
+    categories: Record<string, LibEntry[]>;
+};
+type LangDataType = Record<string, LangEntry>;
+
+let LANG_DATA: LangDataType = {};
 // ============================================================================
 // STATE
 // ============================================================================
 
-let selectedLang: keyof typeof LANG_DATA = 'javascript';
+let selectedLang: string = 'javascript';
 let selectedTool = 'maven';
 let selectedLibs = new Set<string>();
 
@@ -384,7 +169,8 @@ function renderCategories() {
 
             const nameSpan = document.createElement('span');
             nameSpan.className = 'lib-name';
-            nameSpan.textContent = (lib as { name: string; badges: string[]; display?: string }).display ?? lib.name;
+            const icon = getLibIcon((lib as { name: string; badges: string[]; display?: string }).display ?? lib.name);
+            nameSpan.textContent = `${icon} ${(lib as { name: string; badges: string[]; display?: string }).display ?? lib.name}`;
 
             const badgesDiv = document.createElement('div');
             badgesDiv.className = 'lib-badges';
@@ -598,7 +384,10 @@ function setupJavaToolButtons() {
 // INIT
 // ============================================================================
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+    const res = await fetch(`${base}pkgs/lib-pkgs.json`);
+    LANG_DATA = await res.json();
     renderLangButtons();
     renderJavaToolSelector();
     renderCategories();

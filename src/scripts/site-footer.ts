@@ -18,6 +18,8 @@ export function createSiteFooter() {
         <span>Data sourced from community package lists</span>
         <span class="site-footer-sep" aria-hidden="true">·</span>
         <a href="${REPO_URL}/issues" target="_blank" rel="noopener">Report an issue</a>
+        <span class="site-footer-sep" aria-hidden="true">·</span>
+        <a href="https://david7ce.github.io/toolbox-installer/lib" target="_blank" rel="noopener">Source code</a>
     `;
     document.body.appendChild(footer);
 }
