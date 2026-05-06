@@ -155,7 +155,7 @@ const PAGE_CONFIGS = {
         defaultSort: { column: 'name', direction: 'asc' },
         normalizeData: normalizeBrowserData,
         getFilterOptions(items) {
-            const categories = Array.from(new Set(items.map((item) => item.category))).sort((a, b) => (a as string).localeCompare(b as string));
+            const categories = (Array.from(new Set<string>(items.map((item) => String(item.category)))) as string[]).sort((a, b) => a.localeCompare(b));
             return [{ value: 'all', label: 'All' }, ...categories.map((category) => ({ value: category, label: category }))];
         },
         matchesFilter(item, filterValue) {
@@ -182,7 +182,7 @@ const PAGE_CONFIGS = {
         defaultSort: { column: 'name', direction: 'asc' },
         normalizeData: normalizeVscodeData,
         getFilterOptions(items) {
-            const categories = Array.from(new Set(items.map((item) => item.category))).sort((a, b) => (a as string).localeCompare(b as string));
+            const categories = (Array.from(new Set<string>(items.map((item) => String(item.category)))) as string[]).sort((a, b) => a.localeCompare(b));
             return [{ value: 'all', label: 'All' }, ...categories.map((category) => ({ value: category, label: category }))];
         },
         matchesFilter(item, filterValue) {
@@ -195,10 +195,11 @@ const PAGE_CONFIGS = {
         ],
         getStats(filteredItems) {
             const categories = filteredItems.reduce((acc, item) => {
-                acc[item.category] = (acc[item.category] || 0) + 1;
+                const cat = item.category as string;
+                acc[cat] = (acc[cat] || 0) + 1;
                 return acc;
             }, {} as Record<string, number>);
-            const topCategories = Object.entries(categories)
+            const topCategories = (Object.entries(categories) as [string, number][])
                 .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
                 .slice(0, 2);
 
@@ -338,7 +339,7 @@ function initializePage() {
         let items = [...state.items];
 
         if (state.searchTerm) {
-            items = items.filter((item) => item.searchText.includes(state.searchTerm));
+            items = items.filter((item) => (item.searchText as string).includes(state.searchTerm));
         }
 
         if (!state.activeFilters.has('all')) {

@@ -21,7 +21,7 @@ export function setupInteractions() {
  * Setup table sorting by clicking column headers
  */
 function setupSorting() {
-    const headers = document.querySelectorAll(OS_COMPAT_CONFIG.SELECTORS.SORTABLE_TH);
+    const headers = document.querySelectorAll<HTMLElement>(OS_COMPAT_CONFIG.SELECTORS.SORTABLE_TH);
     
     headers.forEach(th => {
         th.addEventListener('click', handleSortClick);
@@ -65,7 +65,7 @@ function handleSortClick(this: HTMLElement, _e: Event) {
  * Setup OS filtering buttons
  */
 function setupFiltering() {
-    const filterBtns = document.querySelectorAll(OS_COMPAT_CONFIG.SELECTORS.FILTER_BTN);
+    const filterBtns = document.querySelectorAll<HTMLElement>(OS_COMPAT_CONFIG.SELECTORS.FILTER_BTN);
     
     filterBtns.forEach(btn => {
         btn.addEventListener('click', handleFilterClick);

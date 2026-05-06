@@ -7,7 +7,7 @@ import { CONFIG, EVENT_NAMES } from './config';
 import { getSelectedPackageIds, getElement } from './dom-utils';
 
 // Module state
-let packagesData = null;
+let packagesData: { packages: Record<string, unknown> } | null = null;
 
 /**
  * Load packages from JSON file
@@ -94,7 +94,7 @@ export async function importPackagesFromFile(file) {
 
         reader.onload = async (event) => {
             try {
-                const contents = event.target.result;
+                const contents = (event.target as FileReader).result as string;
                 const importedPackages = JSON.parse(contents);
                 
                 // Validate that it's an array
@@ -114,7 +114,7 @@ export async function importPackagesFromFile(file) {
                 
                 // Select imported packages
                 importedPackages.forEach(pkgId => {
-                    const checkbox = document.getElementById(pkgId);
+                    const checkbox = document.getElementById(pkgId) as HTMLInputElement | null;
                     if (checkbox) {
                         checkbox.checked = true;
                         importedCount++;
@@ -203,13 +203,13 @@ export async function loadFavorites() {
         }
         
         // Deselect all first
-        const checkboxes = document.querySelectorAll('input[name="pkg"]');
+        const checkboxes = document.querySelectorAll<HTMLInputElement>('input[name="pkg"]');
         checkboxes.forEach(cb => cb.checked = false);
         
         // Select favorites
         let loadedCount = 0;
         favorites.forEach(pkgId => {
-            const checkbox = document.getElementById(pkgId);
+            const checkbox = document.getElementById(pkgId) as HTMLInputElement | null;
             if (checkbox) {
                 checkbox.checked = true;
                 loadedCount++;

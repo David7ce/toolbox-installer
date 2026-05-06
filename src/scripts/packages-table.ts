@@ -1,6 +1,6 @@
 // Módulo para renderizar la tabla de paquetes (desktop y mobile)
 
-const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const BASE = ((import.meta as unknown as { env: { BASE_URL: string } }).env.BASE_URL).replace(/\/?$/, '/');
 
 // ============================================================================
 // TYPES

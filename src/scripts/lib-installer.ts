@@ -384,7 +384,7 @@ function renderCategories() {
 
             const nameSpan = document.createElement('span');
             nameSpan.className = 'lib-name';
-            nameSpan.textContent = lib.display ?? lib.name;
+            nameSpan.textContent = (lib as { name: string; badges: string[]; display?: string }).display ?? lib.name;
 
             const badgesDiv = document.createElement('div');
             badgesDiv.className = 'lib-badges';

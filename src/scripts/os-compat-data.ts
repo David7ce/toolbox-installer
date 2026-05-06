@@ -5,8 +5,42 @@
 
 import { OS_COMPAT_CONFIG } from './config';
 
+interface RawPackageManager {
+    windows_winget?: string | null;
+    macos_brew?: string | null;
+    linux_arch_pacman?: string | null;
+    linux_arch_aur?: string | null;
+    linux_debian_apt?: string | null;
+    linux_fedora_rpm?: string | null;
+    linux_gentoo_emerge?: string | null;
+    linux_flatpak?: string | null;
+    linux_snap?: string | null;
+    unix_nix_env?: string | null;
+    freebsd_pkg?: string | null;
+    [key: string]: string | null | undefined;
+}
+
+interface RawPackage {
+    name: string;
+    category?: string;
+    subcategory?: string;
+    package_manager?: RawPackageManager;
+}
+
+interface CompatPackage {
+    id: string;
+    name: string;
+    category: string;
+    subcategory: string;
+    windows: boolean;
+    windowsStatus: string;
+    macos: boolean;
+    linux: boolean;
+    freebsd: boolean;
+}
+
 // Module state
-let packagesData = [];
+let packagesData: CompatPackage[] = [];
 
 /**
  * Load and transform package compatibility data
@@ -52,7 +86,7 @@ export function getPackageById(id) {
  * @param {Object} jsonData - Raw JSON from *-pkgs.json
  * @returns {Array} Transformed package array
  */
-function transformPackageData(jsonData) {
+function transformPackageData(jsonData: { packages: Record<string, RawPackage> }): CompatPackage[] {
     const windowsNonWingetIds = new Set(
         OS_COMPAT_CONFIG.WINDOWS_NON_WINGET.map(pkg => pkg.id)
     );
@@ -74,8 +108,8 @@ function transformPackageData(jsonData) {
         return {
             id,
             name: pkg.name,
-            category: pkg.category,
-            subcategory: pkg.subcategory,
+            category: pkg.category ?? '',
+            subcategory: pkg.subcategory ?? '',
             windows: hasWindows,
             windowsStatus,
             macos: hasMacOS,
