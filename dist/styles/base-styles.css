@@ -41,6 +41,7 @@
     --category-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     --category-gradient-hover: linear-gradient(135deg, #e0e7ef 0%, #b3c3da 100%);
     --category-emoji-bg: var(--card-background);
+    --icon-filter: none;
     --category-badge-bg: #e3f2fd;
     --category-badge-text: #1976d2;
     --home-link-desktop-bg: #2563eb;
@@ -102,6 +103,7 @@
     --category-gradient: linear-gradient(135deg, #3a3a3a 0%, #2a4a6a 100%);
     --category-gradient-hover: linear-gradient(135deg, #454545 0%, #355070 100%);
     --category-emoji-bg: #404040;
+    --icon-filter: invert(1) brightness(0.85);
     --category-badge-bg: #1f3c56;
     --category-badge-text: #8ec7ff;
     --home-link-desktop-bg: #3a78ff;

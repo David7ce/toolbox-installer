@@ -525,17 +525,38 @@ form {
     outline-offset: 2px;
 }
 
-.category-emoji {
-    font-size: 24px;
+.category-icon-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: var(--card-background);
+    background: var(--category-emoji-bg);
     border-radius: 8px;
     box-shadow: var(--shadow-light);
-    background: var(--category-emoji-bg);
+}
+
+.category-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: var(--icon-filter, none);
+}
+
+.lang-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    vertical-align: middle;
+    filter: var(--icon-filter, none);
+}
+
+.lib-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    vertical-align: middle;
+    filter: var(--icon-filter, none);
 }
 
 .category-header h4 {

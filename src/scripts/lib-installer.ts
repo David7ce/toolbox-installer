@@ -7,73 +7,151 @@
 // DATA
 // ============================================================================
 
-const CATEGORY_EMOJIS = {
-    'Backend Framework': '🖥️',
-    'HTTP Client': '🌐',
-    'ORM / Database': '🗄️',
-    'Testing': '🧪',
-    'Logging': '📋',
-    'Validation': '✅',
-    'Auth / Security': '🔐',
+// CDN base URLs
+const SIMPLE_ICONS_CDN = 'https://cdn.simpleicons.org';
+const LUCIDE_CDN = 'https://cdn.jsdelivr.net/npm/lucide-static@latest/icons';
+
+// Category icons (Lucide)
+const CATEGORY_ICONS: Record<string, string> = {
+    'Backend Framework': 'server',
+    'HTTP Client': 'globe',
+    'ORM / Database': 'database',
+    'Testing': 'flask-conical',
+    'Logging': 'scroll-text',
+    'Validation': 'shield-check',
+    'Auth / Security': 'lock-keyhole',
+    // Frontend categories
+    'UI Framework': 'layout-panel-left',
+    'Meta-Framework': 'layers',
+    'State Management': 'git-branch',
+    'Data Fetching': 'refresh-cw',
+    'Styling': 'palette',
+    'UI Components': 'component',
+    'Build Tools': 'wrench',
 };
 
-const LIB_ICONS = {
-    // JavaScript
-    'express': '⚡',
-    'fastify': '🚀',
-    'hono': '🔥',
-    'axios': '📡',
-    'prisma': '🔮',
-    'jest': '✅',
-    'vitest': '⚡',
-    'pino': '📝',
-    'winston': '📝',
-    'zod': '🛡️',
-    'passport': '🔑',
-    
+// Language icons (Simple Icons slugs)
+const LANG_ICONS: Record<string, string> = {
+    javascript: 'javascript',
+    python: 'python',
+    java: 'java',
+    csharp: 'csharp',
+    go: 'go',
+    rust: 'rust',
+    php: 'php',
+};
+
+// Library icons (Simple Icons slugs)
+// Keys are display names lowercased with all non-alphanumeric chars removed
+const LIB_ICON_SLUGS: Record<string, string> = {
+    // Frontend — UI Frameworks
+    react: 'react',
+    vue: 'vuedotjs',
+    svelte: 'svelte',
+    angular: 'angular',
+    solidjs: 'solid',
+    preact: 'preact',
+    // Frontend — Meta-Frameworks
+    nextjs: 'nextdotjs',
+    nuxt: 'nuxtdotjs',
+    astro: 'astro',
+    remix: 'remix',
+    sveltekit: 'svelte',
+    vite: 'vite',
+    // Frontend — State
+    reduxtoolkit: 'redux',
+    redux: 'redux',
+    mobx: 'mobx',
+    pinia: 'pinia',
+    // Frontend — Data Fetching
+    tanstackquery: 'reactquery',
+    swr: 'swr',
+    axios: 'axios',
+    apolloclient: 'apollographql',
+    // Frontend — Styling
+    tailwindcss: 'tailwindcss',
+    sass: 'sass',
+    styledcomponents: 'styledcomponents',
+    emotion: 'emotion',
+    unocss: 'unocss',
+    // Frontend — UI Components
+    antdesign: 'antdesign',
+    lucidereact: 'lucide',
+    framermotion: 'framer',
+    // Frontend — Testing
+    testinglibrary: 'testinglibrary',
+    playwright: 'playwright',
+    cypress: 'cypress',
+    vitest: 'vitest',
+    storybook: 'storybook',
+    // Frontend — Build Tools
+    webpack: 'webpack',
+    esbuild: 'esbuild',
+    rollup: 'rollupdotjs',
+    parcel: 'parcel',
+    // JavaScript backend
+    express: 'express',
+    fastify: 'fastify',
+    hono: 'hono',
+    nestjs: 'nestjs',
+    koa: 'koa',
+    prisma: 'prisma',
+    drizzleorm: 'drizzle',
+    typeorm: 'typeorm',
+    sequelize: 'sequelize',
+    mongoose: 'mongoose',
+    jest: 'jest',
+    mocha: 'mocha',
+    winston: 'winston',
+    zod: 'zod',
+    passport: 'passport',
+    jsonwebtoken: 'jsonwebtokens',
     // Python
-    'fastapi': '⚡',
-    'flask': '🍶',
-    'django': '🌍',
-    'sqlalchemy': '🗄️',
-    'pytest': '✅',
-    'pydantic': '🛡️',
-    
+    fastapi: 'fastapi',
+    flask: 'flask',
+    django: 'django',
+    sqlalchemy: 'sqlalchemy',
+    pytest: 'pytest',
+    pydantic: 'pydantic',
+    rich: 'rich',
     // Java
-    'spring-boot': '🍃',
-    'spring': '🍃',
-    'quarkus': '🚀',
-    'hibernate': '🗄️',
-    'junit': '✅',
-    
-    // C#
-    'carter': '🚀',
-    'efcore': '🗄️',
-    'xunit': '✅',
-    'moq': '🎭',
-    
-    // Go
-    'gin': '🍸',
-    'fiber': '⚡',
-    'gorm': '🗄️',
-    'testify': '✅',
-    
-    // Rust
-    'axum': '⚡',
-    'rocket': '🚀',
-    'sqlx': '🗄️',
-    'serde': '📦',
-    
+    springbootweb: 'spring',
+    spring: 'spring',
+    quarkusresteasy: 'quarkus',
+    quarkus: 'quarkus',
+    hibernateorm: 'hibernate',
+    hibernate: 'hibernate',
+    junit5: 'junit5',
     // PHP
-    'laravel': '🚀',
-    'symfony': '🎭',
-    'eloquent': '🗄️',
-    'phpunit': '✅',
+    laravel: 'laravel',
+    symfony: 'symfony',
+    guzzle: 'guzzle',
+    // Rust
+    actixweb: 'actix',
+    rocket: 'rocket',
+    // Go
+    gin: 'gin',
+    fiber: 'gofiber',
+    // C#
+    serilog: 'serilog',
 };
 
-function getLibIcon(libName: string): string {
-    const normalized = libName.toLowerCase().replace(/[^a-z0-9-]/g, '').split('-')[0];
-    return LIB_ICONS[normalized] || '📦';
+function getCategoryIconHtml(catName: string): string {
+    const iconName = CATEGORY_ICONS[catName] ?? 'package';
+    return `<img class="category-icon" src="${LUCIDE_CDN}/${iconName}.svg" alt="" width="18" height="18" aria-hidden="true">`;
+}
+
+function getLangIconHtml(langKey: string): string {
+    const slug = LANG_ICONS[langKey];
+    const src = slug ? `${SIMPLE_ICONS_CDN}/${slug}` : `${LUCIDE_CDN}/code.svg`;
+    return `<img class="lang-icon" src="${src}" alt="" width="16" height="16" aria-hidden="true">`;
+}
+
+function getLibIconHtml(libName: string): string {
+    const key = libName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const slug = LIB_ICON_SLUGS[key] ?? LIB_ICON_SLUGS[key.split(/[-_]/)[0]];
+    const src = slug ? `${SIMPLE_ICONS_CDN}/${slug}` : `${LUCIDE_CDN}/package.svg`;
+    return `<img class="lib-icon" src="${src}" alt="" width="16" height="16" aria-hidden="true" onerror="this.src='${LUCIDE_CDN}/package.svg'">`;
 }
 
 type LibEntry = { name: string; display?: string; badges: string[] };
@@ -107,7 +185,7 @@ function renderLangButtons() {
         btn.type = 'button';
         btn.className = `os-btn${key === selectedLang ? ' active' : ''}`;
         btn.dataset.lang = key;
-        btn.textContent = `${lang.emoji} ${lang.label}`;
+        btn.innerHTML = `${getLangIconHtml(key)} ${lang.label}`;
         btn.addEventListener('click', () => selectLang(key));
         container.appendChild(btn);
     }
@@ -137,7 +215,7 @@ function renderCategories() {
         header.setAttribute('tabindex', '0');
         header.setAttribute('aria-expanded', 'true');
         header.innerHTML = `
-            <span class="category-emoji">${CATEGORY_EMOJIS[catName] ?? '📦'}</span>
+            <span class="category-icon-wrap">${getCategoryIconHtml(catName)}</span>
             <h4>${catName}</h4>
             <span class="toggle-arrow">▼</span>
         `;
@@ -169,8 +247,9 @@ function renderCategories() {
 
             const nameSpan = document.createElement('span');
             nameSpan.className = 'lib-name';
-            const icon = getLibIcon((lib as { name: string; badges: string[]; display?: string }).display ?? lib.name);
-            nameSpan.textContent = `${icon} ${(lib as { name: string; badges: string[]; display?: string }).display ?? lib.name}`;
+            const displayName = (lib as { name: string; badges: string[]; display?: string }).display ?? lib.name;
+            nameSpan.innerHTML = getLibIconHtml(displayName);
+            nameSpan.appendChild(document.createTextNode(` ${displayName}`));
 
             const badgesDiv = document.createElement('div');
             badgesDiv.className = 'lib-badges';
