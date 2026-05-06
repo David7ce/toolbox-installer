@@ -1,5 +1,7 @@
 export {}; // module scope — prevents duplicate declaration conflicts
 
+const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
 function getPageType() {
     const path = window.location.pathname;
 
@@ -110,7 +112,7 @@ function normalizeVscodeData(data: unknown) {
 
 const PAGE_CONFIGS = {
     mobile: {
-        jsonUrl: '/pkgs/mobile-pkgs.json',
+        jsonUrl: `${BASE}pkgs/mobile-pkgs.json`,
         defaultSort: { column: 'name', direction: 'asc' },
         normalizeData: normalizeMobileData,
         getFilterOptions() {
@@ -151,7 +153,7 @@ const PAGE_CONFIGS = {
         },
     },
     browser: {
-        jsonUrl: '/pkgs/browser-extensions-pkgs.json',
+        jsonUrl: `${BASE}pkgs/browser-extensions-pkgs.json`,
         defaultSort: { column: 'name', direction: 'asc' },
         normalizeData: normalizeBrowserData,
         getFilterOptions(items) {
@@ -178,7 +180,7 @@ const PAGE_CONFIGS = {
         },
     },
     vscode: {
-        jsonUrl: '/pkgs/vscode-extensions-pkgs.json',
+        jsonUrl: `${BASE}pkgs/vscode-extensions-pkgs.json`,
         defaultSort: { column: 'name', direction: 'asc' },
         normalizeData: normalizeVscodeData,
         getFilterOptions(items) {
