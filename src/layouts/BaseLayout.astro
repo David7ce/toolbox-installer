@@ -1,0 +1,39 @@
+---
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title: string;
+  extraStyles?: string[];
+}
+
+const { title, extraStyles = [] } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script is:inline>
+    (function () {
+      try {
+        const theme = localStorage.getItem('theme-preference') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.colorScheme = theme === 'dark' ? 'dark' : 'light';
+      } catch (_) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.style.colorScheme = 'light';
+      }
+    })();
+  </script>
+  <title>{title}</title>
+  <link rel="stylesheet" href="/styles/base-styles.css" />
+  {extraStyles.map(href => <link rel="stylesheet" href={href} />)}
+</head>
+<body>
+  <slot />
+  <SiteFooter />
+  <script>
+    import '/src/scripts/theme-manager';
+  </script>
+</body>
+</html>

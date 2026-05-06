@@ -1,0 +1,51 @@
+---
+import InstallerLayout from '../layouts/InstallerLayout.astro';
+import CommandFooter from '../components/CommandFooter.astro';
+---
+<InstallerLayout
+  title="Mobile Installer"
+  heading="Mobile Installer"
+  navBack={{ href: '/index', label: 'Back to Home' }}
+  navCompat={{ href: '/mobile-os-compatibility', label: 'Go Mobile Packages Table' }}
+>
+  <section class="package-section">
+    <form id="packageForm">
+      <div class="container">
+        <div class="os-selector-container">
+          <div class="primary-os-selector">
+            <button type="button" class="os-btn" data-os="android">🔥 Android</button>
+            <button type="button" class="os-btn" data-os="ios">🐧 iOS</button>
+          </div>
+        </div>
+        <div class="page-controls">
+          <div class="page-controls-panel main-controls">
+            <input id="searchInput" class="search-input" type="search" placeholder="Search packages by name" />
+            <label class="select-all-control">
+              <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox" />
+              <span id="selectAllLabel">Select</span>
+            </label>
+            <button type="button" class="toggle-all-btn" id="toggleAllBtn" title="Collapse/Expand all categories">
+              <span id="toggleAllIcon">▼</span>
+              <span id="toggleAllLabel">Collapse</span>
+            </button>
+            <button type="button" class="foss-toggle-btn" id="fossToggleBtn" title="Show only Free and Open Source Software">🌿 FOSS</button>
+            <select id="optionsSelect" class="options-select">
+              <option value="" hidden selected>⚙️ Options</option>
+              <option value="loadFavorites">✨ My Favorites</option>
+              <option value="importPackages">📥 Import packages (JSON)</option>
+              <option value="exportPackages">📤 Export packages (JSON)</option>
+            </select>
+          </div>
+          <input type="file" id="fileInput" accept=".json" style="display: none;" />
+        </div>
+      </div>
+      <div id="packageContainer" class="package-container columns">
+        <!-- Generated content -->
+      </div>
+    </form>
+  </section>
+  <CommandFooter />
+  <script>
+    import '/src/scripts/app';
+  </script>
+</InstallerLayout>

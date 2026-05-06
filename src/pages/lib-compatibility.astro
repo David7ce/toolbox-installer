@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Library Compatibility" extraStyles={['/styles/os-compatibility.css', '/styles/lib-installer.css']}>
+  <div class="container">
+    <header class="page-header">
+      <h1>📚 Library Compatibility</h1>
+      <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">🌙</button>
+    </header>
+    <p class="subtitle">Equivalent external libraries by category and programming language.</p>
+    <nav class="page-nav" aria-label="Page links">
+      <div class="info-link">
+        <a href="/index" title="Back to home page">⬅ Back to Home</a>
+      </div>
+      <div class="info-link">
+        <a href="/lib" title="Go to library installer">⚙️ Go to Library Installer</a>
+      </div>
+    </nav>
+    <div class="page-controls controls">
+      <div class="page-controls-panel">
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="Search library or category..." />
+        </div>
+      </div>
+    </div>
+    <div class="legend" aria-label="Type legend">
+      <div class="legend-item">
+        <span class="compat-badge compat-badge-included">included</span>
+        Standard library / runtime (no install needed)
+      </div>
+      <div class="legend-item">
+        <span class="compat-badge compat-badge-external">external</span>
+        Requires package manager
+      </div>
+    </div>
+    <div class="table-container">
+      <table id="compatTable">
+        <thead id="tableHead"></thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+    <div class="info-note" role="note" aria-label="Note about C and C++">
+      <h3>⚠️ Note on C / C++</h3>
+      <p>C and C++ are intentionally excluded from this table because:</p>
+      <ul>
+        <li>They lack a universal, standardized package manager. Tools like <code>Conan</code> or <code>vcpkg</code> exist but are not universally adopted.</li>
+        <li>Libraries are typically integrated via compilation flags and manual linking (e.g. <code>-lfoo</code>, CMake <code>find_package()</code>, or <code>pkg-config</code>).</li>
+        <li>Dependency management varies significantly by platform, compiler, and build system.</li>
+      </ul>
+      <p>For these reasons, C/C++ is also excluded from the automatic install command generator.</p>
+    </div>
+  </div>
+  <script>
+    import '/src/scripts/lib-compat';
+  </script>
+</BaseLayout>

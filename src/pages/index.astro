@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Toolbox Installer" extraStyles={['/styles/generator.css', '/styles/home.css']}>
+  <div class="page-wrapper home-page-wrapper">
+    <header class="page-header home-header">
+      <h1>Toolbox Installer</h1>
+      <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">🌙</button>
+    </header>
+    <main class="home-main">
+      <a href="/desktop" class="home-link home-link-desktop">Desktop OS</a>
+      <a href="/mobile" class="home-link home-link-mobile">Mobile OS</a>
+      <a href="/vscode" class="home-link home-link-vscode">VS Code Extensions</a>
+      <a href="/browser" class="home-link home-link-browser">Browser Extensions</a>
+      <a href="/lib" class="home-link home-link-lib">Libraries</a>
+    </main>
+  </div>
+</BaseLayout>
