@@ -7,14 +7,4 @@ export default defineConfig({
   build: {
     format: 'file',
   },
-  vite: {
-    resolve: {
-      alias: {
-        '@scripts': '/src/scripts',
-        '@components': '/src/components',
-        '@layouts': '/src/layouts',
-        '@styles': '/src/styles',
-      }
-    }
-  }
 });
