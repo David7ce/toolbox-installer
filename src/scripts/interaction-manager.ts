@@ -34,7 +34,7 @@ export function setupOSSelector() {
     const distroBtns = document.querySelectorAll(`.${CLASS_NAMES.DISTRO_BTN}`);
 
     osBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function(this: HTMLElement) {
             updateActiveButton(CLASS_NAMES.OS_BTN, this, true);
 
             // Show/hide Linux distro selector SOLO si existe (desktop)
@@ -60,28 +60,29 @@ export function setupOSSelector() {
 
     // Activar el primer SO por defecto si ninguno está activo (mobile)
     if (osBtns.length && !document.querySelector(`.${CLASS_NAMES.OS_BTN}.${CLASS_NAMES.ACTIVE}`)) {
-        osBtns[0].classList.add(CLASS_NAMES.ACTIVE);
-        const firstOS = osBtns[0].dataset.os;
+        (osBtns[0] as HTMLElement).classList.add(CLASS_NAMES.ACTIVE);
+        const firstOS = (osBtns[0] as HTMLElement).dataset.os;
         applyDistroVisibilityFilter(getDistroFromOS(firstOS));
         autoGenerateCommand();
     } else {
         // Apply filter for the already-active OS on initial load
-        const activeOS = document.querySelector(`.${CLASS_NAMES.OS_BTN}.${CLASS_NAMES.ACTIVE}`)?.dataset.os;
+        const activeOS = (document.querySelector(`.${CLASS_NAMES.OS_BTN}.${CLASS_NAMES.ACTIVE}`) as HTMLElement | null)?.dataset.os;
         if (activeOS) applyDistroVisibilityFilter(getDistroFromOS(activeOS));
     }
 
     // Setup distro button listeners SOLO si existen (desktop)
     if (distroBtns.length) {
         distroBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function(this: HTMLElement) {
                 updateActiveButton(CLASS_NAMES.DISTRO_BTN, this, false);
                 applyDistroVisibilityFilter(this.dataset.distro);
                 autoGenerateCommand();
             });
 
             // Keyboard support
-            btn.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
+            btn.addEventListener('keydown', function(this: HTMLElement, e: Event) {
+                const ke = e as KeyboardEvent;
+                if (ke.key === 'Enter' || ke.key === ' ') {
                     e.preventDefault();
                     this.click();
                 }
@@ -130,7 +131,7 @@ export function setupSearchInput() {
     if (!searchInput || !packageContainer) return;
 
     searchInput.addEventListener('input', () => {
-        const query = searchInput.value.trim().toLowerCase();
+        const query = (searchInput as HTMLInputElement).value.trim().toLowerCase();
         const labels = packageContainer.querySelectorAll('label');
 
         labels.forEach((label) => {
@@ -184,7 +185,8 @@ export function setupCopyButton() {
 export function setupAutoCommandGeneration() {
     // Trigger on package checkbox change
     document.addEventListener('change', function(e) {
-        if (e.target.type === 'checkbox' && e.target.classList.contains(CLASS_NAMES.PACKAGE_CHECKBOX)) {
+        const target = e.target as HTMLInputElement | null;
+        if (target?.type === 'checkbox' && target?.classList.contains(CLASS_NAMES.PACKAGE_CHECKBOX)) {
             autoGenerateCommand();
         }
     });

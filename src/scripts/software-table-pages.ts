@@ -1,3 +1,5 @@
+export {}; // module scope — prevents duplicate declaration conflicts
+
 function getPageType() {
     const path = window.location.pathname;
 
@@ -44,8 +46,9 @@ function createStoreLinkMarkup(url, label, icon) {
     `;
 }
 
-function normalizeBrowserData(data) {
-    return Object.entries(data?.extensions || {}).map(([id, ext]) => {
+function normalizeBrowserData(data: unknown) {
+    const extensions = (data as Record<string, unknown>)?.extensions || {};
+    return Object.entries(extensions as Record<string, Record<string, string>>).map(([id, ext]) => {
         const firefoxSlug = ext?.firefox_slug?.trim() || '';
         const chromiumId = ext?.chromium_id?.trim() || '';
         return {
@@ -65,15 +68,17 @@ function normalizeBrowserData(data) {
     });
 }
 
-function normalizeMobileData(data) {
-    return Object.entries(data?.packages || {}).map(([id, pkg]) => {
-        const androidPackageName = pkg?.package_manager?.android_pkg?.trim() || '';
-        const iosPackageName = pkg?.package_manager?.ios_pkg?.trim() || '';
+function normalizeMobileData(data: unknown) {
+    const packages = (data as Record<string, unknown>)?.packages || {};
+    return Object.entries(packages as Record<string, Record<string, unknown>>).map(([id, pkg]) => {
+        const pm = pkg?.package_manager as Record<string, string> | undefined;
+        const androidPackageName = pm?.android_pkg?.trim() || '';
+        const iosPackageName = pm?.ios_pkg?.trim() || '';
 
         return {
             id,
-            category: pkg?.category || '-',
-            name: pkg?.name || '-',
+            category: (pkg as Record<string, string>)?.category || '-',
+            name: (pkg as Record<string, string>)?.name || '-',
             androidPackageName,
             iosPackageName,
             androidUrl: androidPackageName
@@ -83,9 +88,9 @@ function normalizeMobileData(data) {
                 ? `https://apps.apple.com/app/${iosPackageName}`
                 : '',
             searchText: [
-                pkg?.name || '',
-                pkg?.category || '',
-                pkg?.subcategory || '',
+                (pkg as Record<string, string>)?.name || '',
+                (pkg as Record<string, string>)?.category || '',
+                (pkg as Record<string, string>)?.subcategory || '',
                 androidPackageName,
                 iosPackageName,
             ].join(' ').toLowerCase(),
@@ -93,8 +98,9 @@ function normalizeMobileData(data) {
     });
 }
 
-function normalizeVscodeData(data) {
-    return Object.entries(data?.extensions || {}).map(([id, ext]) => ({
+function normalizeVscodeData(data: unknown) {
+    const extensions = (data as Record<string, unknown>)?.extensions || {};
+    return Object.entries(extensions as Record<string, Record<string, string>>).map(([id, ext]) => ({
         id,
         category: ext?.category || 'Other',
         name: ext?.name || id,
@@ -149,7 +155,7 @@ const PAGE_CONFIGS = {
         defaultSort: { column: 'name', direction: 'asc' },
         normalizeData: normalizeBrowserData,
         getFilterOptions(items) {
-            const categories = Array.from(new Set(items.map((item) => item.category))).sort((a, b) => a.localeCompare(b));
+            const categories = Array.from(new Set(items.map((item) => item.category))).sort((a, b) => (a as string).localeCompare(b as string));
             return [{ value: 'all', label: 'All' }, ...categories.map((category) => ({ value: category, label: category }))];
         },
         matchesFilter(item, filterValue) {
@@ -176,7 +182,7 @@ const PAGE_CONFIGS = {
         defaultSort: { column: 'name', direction: 'asc' },
         normalizeData: normalizeVscodeData,
         getFilterOptions(items) {
-            const categories = Array.from(new Set(items.map((item) => item.category))).sort((a, b) => a.localeCompare(b));
+            const categories = Array.from(new Set(items.map((item) => item.category))).sort((a, b) => (a as string).localeCompare(b as string));
             return [{ value: 'all', label: 'All' }, ...categories.map((category) => ({ value: category, label: category }))];
         },
         matchesFilter(item, filterValue) {
@@ -191,7 +197,7 @@ const PAGE_CONFIGS = {
             const categories = filteredItems.reduce((acc, item) => {
                 acc[item.category] = (acc[item.category] || 0) + 1;
                 return acc;
-            }, {});
+            }, {} as Record<string, number>);
             const topCategories = Object.entries(categories)
                 .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
                 .slice(0, 2);
@@ -311,8 +317,15 @@ function initializePage() {
     const config = PAGE_CONFIGS[pageType];
     if (!config) return;
 
-    const searchInput = document.getElementById('searchInput');
-    const state = {
+    const searchInput = document.getElementById('searchInput') as HTMLInputElement | null;
+    const state: {
+        items: Record<string, unknown>[];
+        filteredItems: Record<string, unknown>[];
+        activeFilters: Set<string>;
+        sortState: { column: string; direction: string };
+        searchTerm: string;
+        filterOptions: { value: string; label: string }[];
+    } = {
         items: [],
         filteredItems: [],
         activeFilters: new Set(['all']),
@@ -346,8 +359,9 @@ function initializePage() {
     function attachHeaderEvents() {
         const headers = document.querySelectorAll('#tableHead th.sortable');
         headers.forEach((header) => {
+            const el = header as HTMLElement;
             const handleSort = () => {
-                const column = header.dataset.column;
+                const column = el.dataset.column;
                 if (!column) return;
 
                 if (state.sortState.column === column) {
@@ -360,8 +374,8 @@ function initializePage() {
                 applyState();
             };
 
-            header.onclick = handleSort;
-            header.onkeydown = (event) => {
+            el.onclick = handleSort;
+            el.onkeydown = (event) => {
                 if (event.key === 'Enter' || event.key === ' ') {
                     event.preventDefault();
                     handleSort();
@@ -373,8 +387,9 @@ function initializePage() {
     function attachFilterEvents() {
         const filterButtons = document.querySelectorAll('#filterChips .filter-chip');
         filterButtons.forEach((button) => {
+            const btn = button as HTMLElement;
             const handleFilter = () => {
-                const filterValue = button.dataset.filter;
+                const filterValue = btn.dataset.filter;
                 if (!filterValue) return;
 
                 if (filterValue === 'all') {
@@ -396,8 +411,8 @@ function initializePage() {
                 applyState();
             };
 
-            button.onclick = handleFilter;
-            button.onkeydown = (event) => {
+            btn.onclick = handleFilter;
+            btn.onkeydown = (event) => {
                 if (event.key === 'Enter' || event.key === ' ') {
                     event.preventDefault();
                     handleFilter();

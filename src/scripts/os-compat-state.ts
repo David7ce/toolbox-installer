@@ -5,10 +5,21 @@
 
 import { OS_COMPAT_CONFIG } from './config';
 
+interface OsCompatPackage {
+    name: string;
+    category: string;
+    windowsStatus?: string;
+    windows?: unknown;
+    macos?: unknown;
+    linux?: unknown;
+    freebsd?: unknown;
+    [key: string]: unknown;
+}
+
 // Internal state (not exported directly)
 let state = {
-    packages: [],
-    filteredPackages: [],
+    packages: [] as OsCompatPackage[],
+    filteredPackages: [] as OsCompatPackage[],
     sortState: {
         column: OS_COMPAT_CONFIG.DEFAULT_SORT.COLUMN,
         direction: OS_COMPAT_CONFIG.DEFAULT_SORT.DIRECTION,

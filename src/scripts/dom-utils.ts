@@ -10,7 +10,7 @@ import { CLASS_NAMES, ATTR_NAMES, ELEMENT_IDS } from './config';
  * @returns {string[]} Array of selected package IDs
  */
 export function getSelectedPackageIds() {
-    return Array.from(document.querySelectorAll('input[name="pkg"]:checked'))
+    return Array.from(document.querySelectorAll<HTMLInputElement>('input[name="pkg"]:checked'))
         .map(checkbox => checkbox.value);
 }
 
@@ -34,7 +34,7 @@ export function getVisibleCheckboxes() {
  * @returns {string|null} The active OS (linux, windows, macos, freebsd) or null
  */
 export function getActiveOS() {
-    const activeBtn = document.querySelector(`.${CLASS_NAMES.OS_BTN}.${CLASS_NAMES.ACTIVE}`);
+    const activeBtn = document.querySelector(`.${CLASS_NAMES.OS_BTN}.${CLASS_NAMES.ACTIVE}`) as HTMLElement | null;
     return activeBtn ? activeBtn.dataset.os : null;
 }
 
@@ -43,7 +43,7 @@ export function getActiveOS() {
  * @returns {string|null} The active distro key or null
  */
 export function getActiveDistro() {
-    const activeBtn = document.querySelector(`.${CLASS_NAMES.DISTRO_BTN}.${CLASS_NAMES.ACTIVE}`);
+    const activeBtn = document.querySelector(`.${CLASS_NAMES.DISTRO_BTN}.${CLASS_NAMES.ACTIVE}`) as HTMLElement | null;
     return activeBtn ? activeBtn.dataset.distro : null;
 }
 
@@ -224,7 +224,14 @@ export function batchSetAttributes(element, attributes) {
  * @param {string} options.innerHTML - Inner HTML
  * @returns {HTMLElement} Created element
  */
-export function createElement(tagName, options = {}) {
+interface CreateElementOptions {
+    classes?: string[];
+    attributes?: Record<string, string>;
+    textContent?: string;
+    innerHTML?: string;
+}
+
+export function createElement(tagName: string, options: CreateElementOptions = {}) {
     const element = document.createElement(tagName);
     
     if (options.classes) {
@@ -358,9 +365,9 @@ export function scrollIntoView(element, options = { behavior: 'smooth', block: '
  * @param {number} delay - Delay in milliseconds
  * @returns {Function} Debounced function
  */
-export function debounce(func, delay) {
-    let timeoutId;
-    return function(...args) {
+export function debounce(func: (...args: unknown[]) => unknown, delay: number) {
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    return function(this: unknown, ...args: unknown[]) {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => func.apply(this, args), delay);
     };
@@ -372,9 +379,9 @@ export function debounce(func, delay) {
  * @param {number} limit - Time limit in milliseconds
  * @returns {Function} Throttled function
  */
-export function throttle(func, limit) {
-    let inThrottle;
-    return function(...args) {
+export function throttle(func: (...args: unknown[]) => unknown, limit: number) {
+    let inThrottle: boolean;
+    return function(this: unknown, ...args: unknown[]) {
         if (!inThrottle) {
             func.apply(this, args);
             inThrottle = true;

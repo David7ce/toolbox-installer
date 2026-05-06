@@ -28,7 +28,8 @@ function setupSorting() {
         
         // Keyboard support
         th.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+            const ke = e as KeyboardEvent;
+            if (ke.key === 'Enter' || ke.key === ' ') {
                 e.preventDefault();
                 handleSortClick.call(th, e);
             }
@@ -40,7 +41,7 @@ function setupSorting() {
  * Handle sort column click
  * @param {Event} e - Click event
  */
-function handleSortClick(e) {
+function handleSortClick(this: HTMLElement, _e: Event) {
     const column = this.getAttribute(OS_COMPAT_CONFIG.DATA_ATTRS.SORT);
     if (!column) return;
     
@@ -71,7 +72,8 @@ function setupFiltering() {
         
         // Keyboard support
         btn.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+            const ke = e as KeyboardEvent;
+            if (ke.key === 'Enter' || ke.key === ' ') {
                 e.preventDefault();
                 handleFilterClick.call(btn, e);
             }
@@ -83,7 +85,7 @@ function setupFiltering() {
  * Handle filter button click
  * @param {Event} e - Click event
  */
-function handleFilterClick(e) {
+function handleFilterClick(this: HTMLElement, _e: Event) {
     const filterOs = this.getAttribute(OS_COMPAT_CONFIG.DATA_ATTRS.FILTER);
     if (!filterOs) return;
     
@@ -111,15 +113,15 @@ function handleFilterClick(e) {
  * Setup search input
  */
 function setupSearch() {
-    const searchInput = document.getElementById(OS_COMPAT_CONFIG.ELEMENT_IDS.SEARCH_INPUT);
+    const searchInput = document.getElementById(OS_COMPAT_CONFIG.ELEMENT_IDS.SEARCH_INPUT) as HTMLInputElement | null;
     if (!searchInput) return;
     
     // Debounce search input
-    let debounceTimer;
+    let debounceTimer: ReturnType<typeof setTimeout> | undefined;
     searchInput.addEventListener('input', (e) => {
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
-            handleSearch(e.target.value);
+            handleSearch((e.target as HTMLInputElement).value);
         }, 300);
     });
     
@@ -185,7 +187,7 @@ function setupKeyboardShortcuts() {
         // Ctrl/Cmd + K to focus search
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
             e.preventDefault();
-            const searchInput = document.getElementById(OS_COMPAT_CONFIG.ELEMENT_IDS.SEARCH_INPUT);
+            const searchInput = document.getElementById(OS_COMPAT_CONFIG.ELEMENT_IDS.SEARCH_INPUT) as HTMLInputElement | null;
             if (searchInput) {
                 searchInput.focus();
                 searchInput.select();
@@ -194,7 +196,7 @@ function setupKeyboardShortcuts() {
         
         // Escape to clear search
         if (e.key === 'Escape') {
-            const searchInput = document.getElementById(OS_COMPAT_CONFIG.ELEMENT_IDS.SEARCH_INPUT);
+            const searchInput = document.getElementById(OS_COMPAT_CONFIG.ELEMENT_IDS.SEARCH_INPUT) as HTMLInputElement | null;
             if (searchInput && document.activeElement === searchInput) {
                 searchInput.value = '';
                 handleSearch('');
@@ -215,7 +217,7 @@ export function setupResetButton() {
         state.resetFilters();
         
         // Clear search input
-        const searchInput = document.getElementById(OS_COMPAT_CONFIG.ELEMENT_IDS.SEARCH_INPUT);
+        const searchInput = document.getElementById(OS_COMPAT_CONFIG.ELEMENT_IDS.SEARCH_INPUT) as HTMLInputElement | null;
         if (searchInput) {
             searchInput.value = '';
         }
@@ -331,7 +333,7 @@ export function setupColumnToggles() {
         label.textContent = col.charAt(0).toUpperCase() + col.slice(1);
         
         checkbox.addEventListener('change', (e) => {
-            toggleColumn(col, e.target.checked);
+            toggleColumn(col, (e.target as HTMLInputElement).checked);
         });
         
         toggleContainer.appendChild(checkbox);
@@ -349,9 +351,9 @@ function toggleColumn(column, visible) {
     
     // Update headers
     const headers = document.querySelectorAll(`th[data-column="${column}"]`);
-    headers.forEach(th => th.style.display = style);
+    headers.forEach(th => (th as HTMLElement).style.display = style);
     
     // Update cells
     const cells = document.querySelectorAll(`td[data-column="${column}"]`);
-    cells.forEach(td => td.style.display = style);
+    cells.forEach(td => (td as HTMLElement).style.display = style);
 }
