@@ -3,20 +3,22 @@
 // ============================================================================
 // API & PATHS
 // ============================================================================
+const BASE = import.meta.env.BASE_URL;
+
 function detectJsonUrl(): string {
     const path = window.location.pathname;
     if (path.includes('mobile')) {
-        return '/pkgs/mobile-pkgs.json';
+        return `${BASE}pkgs/mobile-pkgs.json`;
     } else if (path.includes('desktop')) {
-        return '/pkgs/desktop-pkgs.json';
+        return `${BASE}pkgs/desktop-pkgs.json`;
     }
-    return '/pkgs/desktop-pkgs.json';
+    return `${BASE}pkgs/desktop-pkgs.json`;
 }
 
 export const CONFIG = {
     JSON_URL: detectJsonUrl(),
-    IMAGE_PATH: '/img/apps/',
-    FAV_PACKAGES_URL: '/pkgs/list/fav-packages.json',
+    IMAGE_PATH: `${BASE}img/apps/`,
+    FAV_PACKAGES_URL: `${BASE}pkgs/list/fav-packages.json`,
     EXPORT_FILENAME: 'toolbox-exported-packages.json',
     MAX_FILE_SIZE: 5 * 1024 * 1024,
     FILE_EXTENSION: '.json',
@@ -177,16 +179,16 @@ export const THEME_CONFIG = {
 function detectCompatJsonUrl(): string {
     const path = window.location.pathname;
     if (path.includes('mobile')) {
-        return '/pkgs/mobile-pkgs.json';
+        return `${BASE}pkgs/mobile-pkgs.json`;
     } else if (path.includes('desktop')) {
-        return '/pkgs/desktop-pkgs.json';
+        return `${BASE}pkgs/desktop-pkgs.json`;
     }
-    return '/pkgs/desktop-pkgs.json';
+    return `${BASE}pkgs/desktop-pkgs.json`;
 }
 
 export const OS_COMPAT_CONFIG = {
     JSON_URL: detectCompatJsonUrl(),
-    IMAGE_PATH: '/img/apps/',
+    IMAGE_PATH: `${BASE}img/apps/`,
     WINDOWS_NON_WINGET: [
         { id: 'ardour', name: 'Ardour' },
         { id: 'davinci-resolve', name: 'DaVinci Resolve' },

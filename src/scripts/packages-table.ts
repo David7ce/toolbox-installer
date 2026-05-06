@@ -1,22 +1,23 @@
 // Módulo para renderizar la tabla de paquetes (desktop y mobile)
-import { createCommandFooter } from './command-footer';
+
+const BASE = import.meta.env.BASE_URL;
 
 export function getPackagesJsonUrl() {
     const path = window.location.pathname;
     if (path.includes('mobile')) {
-        return '/pkgs/mobile-pkgs.json';
+        return `${BASE}pkgs/mobile-pkgs.json`;
     } else if (path.includes('desktop')) {
-        return '/pkgs/desktop-pkgs.json';
+        return `${BASE}pkgs/desktop-pkgs.json`;
     }
-    return '/pkgs/desktop-pkgs.json';
+    return `${BASE}pkgs/desktop-pkgs.json`;
 }
 
 export function getVscodeExtensionsJsonUrl() {
-    return '/pkgs/vscode-extensions-pkgs.json';
+    return `${BASE}pkgs/vscode-extensions-pkgs.json`;
 }
 
 export function getBrowserExtensionsJsonUrl() {
-    return '/pkgs/browser-extensions-pkgs.json';
+    return `${BASE}pkgs/browser-extensions-pkgs.json`;
 }
 
 function buildPlayStoreUrl(androidPackageName) {
@@ -941,22 +942,12 @@ export async function loadBrowserExtensionsGenerator() {
 
 function initSharedPages() {
     if (document.getElementById('extensionsCategories')) {
-        createCommandFooter({
-            ariaLabel: 'Extension installation command',
-            commandLabel: 'Install command:',
-            initialText: 'Select extensions to generate command...',
-        });
         loadVscodeExtensionsGenerator();
     }
     if (document.getElementById('extensionsTableBody')) {
         loadVscodeExtensionsTable();
     }
     if (document.getElementById('browserExtensionsCategories')) {
-        createCommandFooter({
-            ariaLabel: 'Extension install links',
-            commandLabel: 'Install links:',
-            initialText: 'Select extensions to generate install links...',
-        });
         loadBrowserExtensionsGenerator();
     }
 }

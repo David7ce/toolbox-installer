@@ -12,11 +12,19 @@ interface Props {
 }
 
 const { title, heading, navBack, navCompat, extraStyles = [] } = Astro.props;
+const BASE = import.meta.env.BASE_URL;
+
+// Resolve paths relative to base (strip leading slash, then prefix with BASE_URL)
+const resolveHref = (href: string) => `${BASE}${href.replace(/^\//, '')}`;
+const backHref = navBack ? resolveHref(navBack.href) : BASE;
+const backLabel = navBack?.label ?? 'Back to Home';
+const compatHref = navCompat ? resolveHref(navCompat.href) : undefined;
+const compatLabel = navCompat?.label;
 ---
-<BaseLayout title={title} extraStyles={['/styles/generator.css', ...extraStyles]}>
+<BaseLayout title={title} extraStyles={['styles/generator.css', ...extraStyles]}>
   <div class="page-wrapper">
     <PageHeader heading={heading} />
-    <PageNav backHref={navBack?.href} backLabel={navBack?.label} compatHref={navCompat?.href} compatLabel={navCompat?.label} />
+    <PageNav backHref={backHref} backLabel={backLabel} compatHref={compatHref} compatLabel={compatLabel} />
     <slot />
   </div>
 </BaseLayout>

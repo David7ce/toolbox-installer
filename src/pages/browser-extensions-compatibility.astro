@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const BASE = import.meta.env.BASE_URL;
 ---
-<BaseLayout title="Browser Extensions Table" extraStyles={['/styles/os-compatibility.css']}>
+<BaseLayout title="Browser Extensions Table" extraStyles={['styles/os-compatibility.css']}>
   <div class="container">
     <header class="page-header">
       <h1>🧩 Browser Extensions Compatibility</h1>
@@ -10,10 +11,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p class="subtitle">Extension list and store links for Firefox and Chromium-based browsers.</p>
     <nav class="page-nav" aria-label="Page links">
       <div class="info-link">
-        <a href="/index" title="Back to home page">⬅ Back to Home</a>
+        <a href={BASE} title="Back to home page">⬅ Back to Home</a>
       </div>
       <div class="info-link">
-        <a href="/browser" title="Go to installer">⚙️ Go to Installer</a>
+        <a href={`${BASE}browser`} title="Go to installer">⚙️ Go to Installer</a>
       </div>
     </nav>
     <div class="page-controls controls">
