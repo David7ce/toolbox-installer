@@ -6,11 +6,25 @@
 import { CONFIG, CLASS_NAMES, ATTR_NAMES, CATEGORY_EMOJIS } from './config';
 import { getElement } from './dom-utils';
 
+interface PackageManager {
+  [distro: string]: string | null;
+}
+
+interface PackageInfo {
+  name: string;
+  category: string;
+  subcategory: string;
+  package_manager: PackageManager;
+}
+
+interface PackagesData {
+  packages: Record<string, PackageInfo>;
+}
+
 /**
  * Generate and insert the complete packages UI structure
- * @param {Object} packagesData - The packages data with structure: { packages: { id: {...} } }
  */
-export function generatePackages(packagesData) {
+export function generatePackages(packagesData: PackagesData): void {
     const packageContainer = getElement('PACKAGE_CONTAINER');
     
     if (!packageContainer) {
@@ -55,7 +69,7 @@ export function generatePackages(packagesData) {
  * @param {string} category - Category name
  * @param {Object} packagesData - The packages data
  */
-function createCategorySection(columnDiv, category, packagesData) {
+function createCategorySection(columnDiv: HTMLElement, category: string, packagesData: PackagesData): void {
     const categoryDiv = document.createElement('div');
     const categoryClass = category.replace(/\s+/g, '-').toLowerCase();
     categoryDiv.classList.add(CLASS_NAMES.CATEGORY, categoryClass);
@@ -100,7 +114,7 @@ function createCategorySection(columnDiv, category, packagesData) {
     categoryDiv.appendChild(categoryContent);
 
     // Collect packages by subcategory
-    const subcategories = {};
+    const subcategories: Record<string, { key: string; info: PackageInfo }[]> = {};
     Object.entries(packagesData.packages).forEach(([pkgKey, pkgInfo]) => {
         if (pkgInfo.category === category) {
             const subcategory = pkgInfo.subcategory;
@@ -120,10 +134,11 @@ function createCategorySection(columnDiv, category, packagesData) {
 
     // Add click handler for category toggle (just toggle class, don't interfere with checkbox)
     categoryHeader.addEventListener('click', function(e) {
-        if (!e.target.classList.contains(CLASS_NAMES.CATEGORY_CHECKBOX)) {
+        const target = e.target as HTMLElement;
+        if (!target.classList.contains(CLASS_NAMES.CATEGORY_CHECKBOX)) {
             categoryDiv.classList.toggle(CLASS_NAMES.COLLAPSED);
             const isExpanded = !categoryDiv.classList.contains(CLASS_NAMES.COLLAPSED);
-            categoryHeader.setAttribute(ATTR_NAMES.ARIA_EXPANDED, isExpanded);
+            categoryHeader.setAttribute(ATTR_NAMES.ARIA_EXPANDED, String(isExpanded));
         }
     });
     
@@ -131,10 +146,11 @@ function createCategorySection(columnDiv, category, packagesData) {
     categoryHeader.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            if (!e.target.classList.contains(CLASS_NAMES.CATEGORY_CHECKBOX)) {
+            const target = e.target as HTMLElement;
+            if (!target.classList.contains(CLASS_NAMES.CATEGORY_CHECKBOX)) {
                 categoryDiv.classList.toggle(CLASS_NAMES.COLLAPSED);
                 const isExpanded = !categoryDiv.classList.contains(CLASS_NAMES.COLLAPSED);
-                categoryHeader.setAttribute(ATTR_NAMES.ARIA_EXPANDED, isExpanded);
+                categoryHeader.setAttribute(ATTR_NAMES.ARIA_EXPANDED, String(isExpanded));
             }
         }
     });
@@ -142,11 +158,12 @@ function createCategorySection(columnDiv, category, packagesData) {
 
 /**
  * Create a subcategory section with its packages
- * @param {HTMLElement} categoryContent - The category content container
- * @param {string} subcategory - Subcategory name
- * @param {Object} subcategories - Object mapping subcategory names to package arrays
  */
-function createSubcategorySection(categoryContent, subcategory, subcategories) {
+function createSubcategorySection(
+    categoryContent: HTMLElement,
+    subcategory: string,
+    subcategories: Record<string, { key: string; info: PackageInfo }[]>
+): void {
     const subcategoryDiv = document.createElement('div');
     const subcategoryClass = subcategory.replace(/\s+/g, '-').toLowerCase();
     subcategoryDiv.classList.add(CLASS_NAMES.SUBCATEGORY, subcategoryClass);
@@ -207,16 +224,13 @@ function createSubcategorySection(categoryContent, subcategory, subcategories) {
 
 /**
  * Disable package labels that don't support the given distro.
- * Unavailable packages remain visible but their checkboxes are unchecked and disabled.
- * Pass null/undefined to re-enable all packages.
- * @param {string|null} distro - The distro key (e.g. 'linux_arch_pacman') or null for no filter
  */
-export function applyDistroVisibilityFilter(distro) {
-    const labels = document.querySelectorAll(`.${CLASS_NAMES.PKG_ITEM}`);
+export function applyDistroVisibilityFilter(distro: string | null | undefined): void {
+    const labels = document.querySelectorAll<HTMLElement>(`.${CLASS_NAMES.PKG_ITEM}`);
     labels.forEach(label => {
-        const supported = label.dataset.supportedDistros || '';
+        const supported = label.dataset.supportedDistros ?? '';
         const available = !distro || supported.split(' ').includes(distro);
-        const checkbox = label.querySelector('input[type="checkbox"]');
+        const checkbox = label.querySelector<HTMLInputElement>('input[type="checkbox"]');
         if (checkbox) {
             checkbox.disabled = !available;
             if (!available) checkbox.checked = false;

@@ -2,7 +2,73 @@
 
 const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
-export function getPackagesJsonUrl() {
+// ============================================================================
+// TYPES
+// ============================================================================
+
+interface PackageManager {
+    android_pkg?: string;
+    ios_pkg?: string;
+    [key: string]: string | undefined;
+}
+
+interface PackageInfo {
+    name?: string;
+    package_manager?: PackageManager;
+}
+
+interface PackagesData {
+    packages?: Record<string, PackageInfo>;
+}
+
+interface MobileTableItem {
+    name: string;
+    androidPackageName: string;
+    iosPackageName: string;
+}
+
+interface VscodeExtension {
+    id: string;
+    name: string;
+    category: string;
+    isFoss: boolean;
+}
+
+interface BrowserExtension {
+    id: string;
+    name: string;
+    category: string;
+    firefox_slug?: string;
+    chromium_id?: string;
+}
+
+interface RawVscodeExtension {
+    name: string;
+    category: string;
+    [key: string]: unknown;
+}
+
+interface RawBrowserExtension {
+    name: string;
+    category: string;
+    firefox_slug?: string;
+    chromium_id?: string;
+    [key: string]: unknown;
+}
+
+interface ExtensionData {
+    extensions?: Record<string, RawVscodeExtension>;
+}
+
+interface BrowserExtensionData {
+    extensions?: Record<string, RawBrowserExtension>;
+}
+
+// ============================================================================
+// URL HELPERS
+// ============================================================================
+
+export function getPackagesJsonUrl(): string {
     const path = window.location.pathname;
     if (path.includes('mobile')) {
         return `${BASE}pkgs/mobile-pkgs.json`;
@@ -12,23 +78,27 @@ export function getPackagesJsonUrl() {
     return `${BASE}pkgs/desktop-pkgs.json`;
 }
 
-export function getVscodeExtensionsJsonUrl() {
+export function getVscodeExtensionsJsonUrl(): string {
     return `${BASE}pkgs/vscode-extensions-pkgs.json`;
 }
 
-export function getBrowserExtensionsJsonUrl() {
+export function getBrowserExtensionsJsonUrl(): string {
     return `${BASE}pkgs/browser-extensions-pkgs.json`;
 }
 
-function buildPlayStoreUrl(androidPackageName) {
+// ============================================================================
+// MOBILE PACKAGES TABLE
+// ============================================================================
+
+function buildPlayStoreUrl(androidPackageName: string): string {
     return `https://play.google.com/store/apps/details?id=${encodeURIComponent(androidPackageName)}`;
 }
 
-function buildAppleStoreUrl(iosPackageName) {
+function buildAppleStoreUrl(iosPackageName: string): string {
     return `https://apps.apple.com/app/${iosPackageName}`;
 }
 
-function createLinkCell(url, label, iconText) {
+function createLinkCell(url: string, label: string, iconText: string): HTMLTableCellElement {
     const cell = document.createElement('td');
     if (!url || url.trim() === '') {
         cell.textContent = '-';
@@ -50,17 +120,17 @@ function createLinkCell(url, label, iconText) {
     return cell;
 }
 
-export function renderPackagesTable(data) {
+export function renderPackagesTable(data: PackagesData): void {
     const tbody = document.querySelector('#packagesTable tbody');
     if (!tbody) return;
     tbody.innerHTML = '';
-    const packageEntries = Object.entries(data?.packages || {});
+    const packageEntries = Object.entries(data?.packages ?? {});
     packageEntries
-        .sort(([, a], [, b]) => (a.name || '').localeCompare(b.name || ''))
+        .sort(([, a], [, b]) => (a.name ?? '').localeCompare(b.name ?? ''))
         .forEach(([, pkgInfo]) => {
-            const packageName = pkgInfo?.name || '-';
-            const androidPackageName = pkgInfo?.package_manager?.android_pkg?.trim() || '';
-            const iosPackageName = pkgInfo?.package_manager?.ios_pkg?.trim() || '';
+            const packageName = pkgInfo?.name ?? '-';
+            const androidPackageName = pkgInfo?.package_manager?.android_pkg?.trim() ?? '';
+            const iosPackageName = pkgInfo?.package_manager?.ios_pkg?.trim() ?? '';
             const row = document.createElement('tr');
             const packageNameCell = document.createElement('td');
             packageNameCell.textContent = packageName;
@@ -70,27 +140,25 @@ export function renderPackagesTable(data) {
             iosPackageCell.textContent = iosPackageName || '-';
             const androidUrl = androidPackageName ? buildPlayStoreUrl(androidPackageName) : '';
             const iosUrl = iosPackageName ? buildAppleStoreUrl(iosPackageName) : '';
-            const androidLinkCell = createLinkCell(androidUrl, 'Play Store', '▶');
-            const iosLinkCell = createLinkCell(iosUrl, 'App Store', 'Ó');
             row.appendChild(packageNameCell);
             row.appendChild(androidPackageCell);
             row.appendChild(iosPackageCell);
-            row.appendChild(androidLinkCell);
-            row.appendChild(iosLinkCell);
+            row.appendChild(createLinkCell(androidUrl, 'Play Store', '▶'));
+            row.appendChild(createLinkCell(iosUrl, 'App Store', '◉'));
             tbody.appendChild(row);
         });
 }
 
-function getMobileTableItems(data) {
-    const packageEntries = Object.entries(data?.packages || {});
+function getMobileTableItems(data: PackagesData): MobileTableItem[] {
+    const packageEntries = Object.entries(data?.packages ?? {});
     return packageEntries.map(([, pkgInfo]) => ({
-        name: pkgInfo?.name || '-',
-        androidPackageName: pkgInfo?.package_manager?.android_pkg?.trim() || '',
-        iosPackageName: pkgInfo?.package_manager?.ios_pkg?.trim() || '',
+        name: pkgInfo?.name ?? '-',
+        androidPackageName: pkgInfo?.package_manager?.android_pkg?.trim() ?? '',
+        iosPackageName: pkgInfo?.package_manager?.ios_pkg?.trim() ?? '',
     }));
 }
 
-function renderMobilePackagesRows(items) {
+function renderMobilePackagesRows(items: MobileTableItem[]): void {
     const tbody = document.querySelector('#packagesTable tbody');
     if (!tbody) return;
 
@@ -122,15 +190,15 @@ function renderMobilePackagesRows(items) {
         });
 }
 
-export async function loadPackagesTable() {
+export async function loadPackagesTable(): Promise<void> {
     const tbody = document.querySelector('#packagesTable tbody');
-    const input = document.getElementById('searchInput');
+    const input = document.getElementById('searchInput') as HTMLInputElement | null;
     try {
         const response = await fetch(getPackagesJsonUrl());
         if (!response.ok) {
             throw new Error(`Failed to load packages data: ${response.statusText}`);
         }
-        const data = await response.json();
+        const data = await response.json() as PackagesData;
 
         if (window.location.pathname.includes('mobile-os-compatibility')) {
             const items = getMobileTableItems(data);
@@ -156,17 +224,21 @@ export async function loadPackagesTable() {
     }
 }
 
-function getExtensionIconPath(extensionId) {
+// ============================================================================
+// SHARED HELPERS
+// ============================================================================
+
+function getExtensionIconPath(extensionId: string): string {
     const fileName = extensionId.replace(/\./g, '-');
     return `./img/vscode-extensions/${fileName}.svg`;
 }
 
-function getBrowserExtensionIconPath(id) {
+function getBrowserExtensionIconPath(id: string): string {
     return `./img/browser-extensions/${id}.png`;
 }
 
-function groupByCategory(items) {
-    return items.reduce((acc, item) => {
+function groupByCategory<T extends { category: string }>(items: T[]): Record<string, T[]> {
+    return items.reduce<Record<string, T[]>>((acc, item) => {
         if (!acc[item.category]) {
             acc[item.category] = [];
         }
@@ -175,8 +247,12 @@ function groupByCategory(items) {
     }, {});
 }
 
-function getVscodeExtensionsFromData(data) {
-    if (!data || !data.extensions || typeof data.extensions !== 'object' || Array.isArray(data.extensions)) {
+// ============================================================================
+// VS CODE EXTENSIONS GENERATOR
+// ============================================================================
+
+function getVscodeExtensionsFromData(data: ExtensionData): Omit<VscodeExtension, 'isFoss'>[] {
+    if (!data?.extensions || typeof data.extensions !== 'object' || Array.isArray(data.extensions)) {
         return [];
     }
     return Object.entries(data.extensions).map(([id, ext]) => ({ id, ...ext }));
@@ -194,18 +270,18 @@ const FAVORITE_VSCODE_EXTENSIONS = [
     'github.copilot-chat',
 ];
 
-function renderVscodeGenerator(items) {
+function renderVscodeGenerator(items: Omit<VscodeExtension, 'isFoss'>[]): void {
     const container = document.getElementById('extensionsCategories');
     const commandFooter = document.getElementById('commandFooter');
     const commandTarget = document.getElementById('installation-command');
-    const selectAll = document.getElementById('selectAllCheckbox');
+    const selectAll = document.getElementById('selectAllCheckbox') as HTMLInputElement | null;
     const selectAllLabel = document.getElementById('selectAllLabel');
     const toggleAllBtn = document.getElementById('toggleAllBtn');
     const toggleAllLabel = document.getElementById('toggleAllLabel');
     const fossToggleBtn = document.getElementById('fossToggleBtn');
-    const optionsSelect = document.getElementById('optionsSelect');
-    const fileInput = document.getElementById('fileInput');
-    const searchInput = document.getElementById('searchInput');
+    const optionsSelect = document.getElementById('optionsSelect') as HTMLSelectElement | null;
+    const fileInput = document.getElementById('fileInput') as HTMLInputElement | null;
+    const searchInput = document.getElementById('searchInput') as HTMLInputElement | null;
     const copyBtn = document.getElementById('copyCommandBtn');
 
     if (
@@ -217,13 +293,13 @@ function renderVscodeGenerator(items) {
     }
 
     const state = {
-        selected: new Set(),
+        selected: new Set<string>(),
         searchQuery: '',
         fossOnly: false,
         allCollapsed: false,
     };
 
-    const normalizedItems = items.map((item) => ({
+    const normalizedItems: VscodeExtension[] = items.map((item) => ({
         ...item,
         isFoss: !NON_FOSS_VSCODE_EXTENSIONS.has(item.id),
     }));
@@ -324,101 +400,89 @@ function renderVscodeGenerator(items) {
         container.appendChild(section);
     });
 
-    function getAllExtensionCheckboxes() {
-        return Array.from(container.querySelectorAll('.ext-item input[type="checkbox"]'));
+    function getAllExtensionCheckboxes(): HTMLInputElement[] {
+        return Array.from(container!.querySelectorAll<HTMLInputElement>('.ext-item input[type="checkbox"]'));
     }
 
-    function getVisibleExtensionCheckboxes() {
+    function getVisibleExtensionCheckboxes(): HTMLInputElement[] {
         return getAllExtensionCheckboxes().filter((checkbox) => {
-            const label = checkbox.closest('.ext-item');
-            return label && label.style.display !== 'none' && !label.classList.contains('foss-hidden');
+            const lbl = checkbox.closest<HTMLElement>('.ext-item');
+            return lbl && lbl.style.display !== 'none' && !lbl.classList.contains('foss-hidden');
         });
     }
 
-    function getSortedSelectedExtensions() {
+    function getSortedSelectedExtensions(): string[] {
         return Array.from(state.selected).sort((a, b) => a.localeCompare(b));
     }
 
-    function updateCommand() {
+    function updateCommand(): void {
         const selected = getSortedSelectedExtensions();
         if (selected.length === 0) {
-            commandTarget.textContent = 'Select extensions to generate command...';
+            commandTarget!.textContent = 'Select extensions to generate command...';
             if (commandFooter) commandFooter.hidden = true;
             return;
         }
-
-        commandTarget.textContent = `code --install-extension ${selected.join(' ')}`;
+        commandTarget!.textContent = `code --install-extension ${selected.join(' ')}`;
         if (commandFooter) commandFooter.hidden = false;
     }
 
-    function applyFilters() {
-        const labels = container.querySelectorAll('.ext-item');
-        labels.forEach((label) => {
-            const matchesSearch = label.dataset.search.includes(state.searchQuery);
-            const isFoss = label.dataset.isFoss === 'true';
+    function applyFilters(): void {
+        container!.querySelectorAll<HTMLElement>('.ext-item').forEach((lbl) => {
+            const matchesSearch = (lbl.dataset.search ?? '').includes(state.searchQuery);
+            const isFoss = lbl.dataset.isFoss === 'true';
             const passesFoss = !state.fossOnly || isFoss;
-            label.classList.toggle('foss-hidden', !passesFoss);
-            label.style.display = matchesSearch && passesFoss ? '' : 'none';
+            lbl.classList.toggle('foss-hidden', !passesFoss);
+            lbl.style.display = matchesSearch && passesFoss ? '' : 'none';
         });
     }
 
-    function updateSelectAllState() {
+    function updateSelectAllState(): void {
         const visibleBoxes = getVisibleExtensionCheckboxes();
         const checkedCount = visibleBoxes.filter((el) => el.checked).length;
         const totalCount = visibleBoxes.length;
 
         if (totalCount === 0 || checkedCount === 0) {
-            selectAll.checked = false;
-            selectAll.indeterminate = false;
-            selectAllLabel.textContent = 'Select';
+            selectAll!.checked = false;
+            selectAll!.indeterminate = false;
+            selectAllLabel!.textContent = 'Select';
             return;
         }
-
         if (checkedCount === totalCount) {
-            selectAll.checked = true;
-            selectAll.indeterminate = false;
-            selectAllLabel.textContent = 'Deselect';
+            selectAll!.checked = true;
+            selectAll!.indeterminate = false;
+            selectAllLabel!.textContent = 'Deselect';
             return;
         }
-
-        selectAll.checked = false;
-        selectAll.indeterminate = true;
-        selectAllLabel.textContent = 'Selected';
+        selectAll!.checked = false;
+        selectAll!.indeterminate = true;
+        selectAllLabel!.textContent = 'Selected';
     }
 
-    function updateGlobalCollapseState() {
-        const sections = Array.from(container.querySelectorAll('.category'));
-        const collapsedCount = sections.filter((section) => section.classList.contains('collapsed')).length;
-
+    function updateGlobalCollapseState(): void {
+        const sections = Array.from(container!.querySelectorAll('.category'));
+        const collapsedCount = sections.filter((s) => s.classList.contains('collapsed')).length;
         state.allCollapsed = sections.length > 0 && collapsedCount === sections.length;
-        toggleAllBtn.classList.toggle('collapsed', state.allCollapsed);
-        toggleAllLabel.textContent = state.allCollapsed ? 'Expand' : 'Collapse';
+        toggleAllBtn!.classList.toggle('collapsed', state.allCollapsed);
+        toggleAllLabel!.textContent = state.allCollapsed ? 'Expand' : 'Collapse';
     }
 
-    function setAllCategoriesCollapsed(shouldCollapse) {
-        const sections = container.querySelectorAll('.category');
-        sections.forEach((section) => {
-            section.classList.toggle('collapsed', shouldCollapse);
-            const header = section.querySelector('.category-header');
-            if (header) {
-                header.setAttribute('aria-expanded', String(!shouldCollapse));
-            }
+    function setAllCategoriesCollapsed(shouldCollapse: boolean): void {
+        container!.querySelectorAll('.category').forEach((s) => {
+            s.classList.toggle('collapsed', shouldCollapse);
+            const hdr = s.querySelector('.category-header');
+            if (hdr) hdr.setAttribute('aria-expanded', String(!shouldCollapse));
         });
         updateGlobalCollapseState();
     }
 
-    function setSelectionByIds(ids) {
+    function setSelectionByIds(ids: string[]): void {
         const targetIds = new Set(ids);
         state.selected.clear();
-
         getAllExtensionCheckboxes().forEach((checkbox) => {
             const shouldSelect = targetIds.has(checkbox.value);
             checkbox.checked = shouldSelect;
-            if (shouldSelect) {
-                state.selected.add(checkbox.value);
-            }
+            if (shouldSelect) state.selected.add(checkbox.value);
         });
-
         updateCommand();
         updateSelectAllState();
     }
@@ -426,24 +490,17 @@ function renderVscodeGenerator(items) {
     selectAll.addEventListener('change', () => {
         const allBoxes = getVisibleExtensionCheckboxes();
         state.selected.clear();
-
-        getAllExtensionCheckboxes().forEach((checkbox) => {
-            checkbox.checked = false;
-        });
-
+        getAllExtensionCheckboxes().forEach((checkbox) => { checkbox.checked = false; });
         allBoxes.forEach((checkbox) => {
-            checkbox.checked = selectAll.checked;
-            if (selectAll.checked) {
-                state.selected.add(checkbox.value);
-            }
+            checkbox.checked = selectAll!.checked;
+            if (selectAll!.checked) state.selected.add(checkbox.value);
         });
-
         updateCommand();
         updateSelectAllState();
     });
 
     searchInput.addEventListener('input', () => {
-        state.searchQuery = searchInput.value.trim().toLowerCase();
+        state.searchQuery = searchInput!.value.trim().toLowerCase();
         applyFilters();
         updateSelectAllState();
     });
@@ -460,24 +517,18 @@ function renderVscodeGenerator(items) {
     });
 
     optionsSelect.addEventListener('change', () => {
-        const action = optionsSelect.value;
-        if (!action) {
-            return;
-        }
+        const action = optionsSelect!.value;
+        if (!action) return;
 
         if (action === 'loadFavorites') {
             setSelectionByIds(FAVORITE_VSCODE_EXTENSIONS);
         }
-
         if (action === 'importPackages') {
-            fileInput.value = '';
-            fileInput.click();
+            fileInput!.value = '';
+            fileInput!.click();
         }
-
         if (action === 'exportPackages') {
-            const payload = {
-                extensions: getSortedSelectedExtensions(),
-            };
+            const payload = { extensions: getSortedSelectedExtensions() };
             const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
@@ -488,44 +539,34 @@ function renderVscodeGenerator(items) {
             link.remove();
             URL.revokeObjectURL(url);
         }
-
-        optionsSelect.value = '';
+        optionsSelect!.value = '';
     });
 
     fileInput.addEventListener('change', async () => {
-        const file = fileInput.files && fileInput.files[0];
-        if (!file) {
-            return;
-        }
-
+        const file = fileInput!.files?.[0];
+        if (!file) return;
         try {
             const text = await file.text();
-            const parsed = JSON.parse(text);
-            const imported = Array.isArray(parsed)
-                ? parsed
-                : (Array.isArray(parsed.extensions) ? parsed.extensions : []);
-
-            if (imported.length > 0) {
-                setSelectionByIds(imported);
-            }
+            const parsed = JSON.parse(text) as unknown;
+            const imported: string[] = Array.isArray(parsed)
+                ? (parsed as string[])
+                : (Array.isArray((parsed as { extensions?: unknown }).extensions)
+                    ? ((parsed as { extensions: string[] }).extensions)
+                    : []);
+            if (imported.length > 0) setSelectionByIds(imported);
         } catch (error) {
             console.error('Unable to import extensions JSON:', error);
         }
     });
 
     copyBtn.addEventListener('click', async () => {
-        const command = commandTarget.textContent;
-        if (!command || command.startsWith('Select extensions')) {
-            return;
-        }
-
+        const command = commandTarget!.textContent;
+        if (!command || command.startsWith('Select extensions')) return;
         try {
             await navigator.clipboard.writeText(command);
             const original = copyBtn.textContent;
             copyBtn.textContent = 'Copied';
-            setTimeout(() => {
-                copyBtn.textContent = original;
-            }, 1200);
+            setTimeout(() => { copyBtn.textContent = original; }, 1200);
         } catch (error) {
             console.error('Unable to copy command:', error);
         }
@@ -537,15 +578,12 @@ function renderVscodeGenerator(items) {
     updateSelectAllState();
 }
 
-function renderVscodeExtensionsTable(items) {
+function renderVscodeExtensionsTable(items: Omit<VscodeExtension, 'isFoss'>[]): void {
     const tbody = document.getElementById('extensionsTableBody');
     const countEl = document.getElementById('extensionsCount');
-    if (!tbody || !countEl) {
-        return;
-    }
+    if (!tbody || !countEl) return;
 
     tbody.innerHTML = '';
-
     items
         .slice()
         .sort((a, b) => a.name.localeCompare(b.name))
@@ -558,17 +596,14 @@ function renderVscodeExtensionsTable(items) {
             `;
             tbody.appendChild(row);
         });
-
     countEl.textContent = String(items.length);
 }
 
-export async function loadVscodeExtensionsGenerator() {
+export async function loadVscodeExtensionsGenerator(): Promise<void> {
     try {
         const response = await fetch(getVscodeExtensionsJsonUrl());
-        if (!response.ok) {
-            throw new Error(`Failed to load VS Code extensions data: ${response.statusText}`);
-        }
-        const data = await response.json();
+        if (!response.ok) throw new Error(`Failed to load VS Code extensions data: ${response.statusText}`);
+        const data = await response.json() as ExtensionData;
         const items = getVscodeExtensionsFromData(data);
         renderVscodeGenerator(items);
     } catch (error) {
@@ -576,18 +611,14 @@ export async function loadVscodeExtensionsGenerator() {
     }
 }
 
-export async function loadVscodeExtensionsTable() {
-    const input = document.getElementById('tableSearch');
+export async function loadVscodeExtensionsTable(): Promise<void> {
+    const input = document.getElementById('tableSearch') as HTMLInputElement | null;
     try {
         const response = await fetch(getVscodeExtensionsJsonUrl());
-        if (!response.ok) {
-            throw new Error(`Failed to load VS Code extensions data: ${response.statusText}`);
-        }
-        const data = await response.json();
+        if (!response.ok) throw new Error(`Failed to load VS Code extensions data: ${response.statusText}`);
+        const data = await response.json() as ExtensionData;
         const items = getVscodeExtensionsFromData(data);
-
         renderVscodeExtensionsTable(items);
-
         if (input) {
             input.addEventListener('input', () => {
                 const query = input.value.trim().toLowerCase();
@@ -604,34 +635,38 @@ export async function loadVscodeExtensionsTable() {
     }
 }
 
-function getBrowserExtensionsFromData(data) {
-    if (!data || !data.extensions || typeof data.extensions !== 'object' || Array.isArray(data.extensions)) {
+// ============================================================================
+// BROWSER EXTENSIONS GENERATOR
+// ============================================================================
+
+function getBrowserExtensionsFromData(data: BrowserExtensionData): BrowserExtension[] {
+    if (!data?.extensions || typeof data.extensions !== 'object' || Array.isArray(data.extensions)) {
         return [];
     }
     return Object.entries(data.extensions).map(([id, ext]) => ({ id, ...ext }));
 }
 
-function buildFirefoxAddonUrl(slug) {
+function buildFirefoxAddonUrl(slug: string | undefined): string | null {
     if (!slug) return null;
     return `https://addons.mozilla.org/en-US/firefox/addon/${encodeURIComponent(slug)}/`;
 }
 
-function buildChromiumExtensionUrl(chromiumId) {
+function buildChromiumExtensionUrl(chromiumId: string | undefined): string | null {
     if (!chromiumId) return null;
     return `https://chromewebstore.google.com/detail/${encodeURIComponent(chromiumId)}`;
 }
 
-function renderBrowserExtensionsGenerator(items) {
+function renderBrowserExtensionsGenerator(items: BrowserExtension[]): void {
     const container = document.getElementById('browserExtensionsCategories');
     const commandFooter = document.getElementById('commandFooter');
     const commandTarget = document.getElementById('installation-command');
-    const selectAll = document.getElementById('selectAllCheckbox');
+    const selectAll = document.getElementById('selectAllCheckbox') as HTMLInputElement | null;
     const selectAllLabel = document.getElementById('selectAllLabel');
     const toggleAllBtn = document.getElementById('toggleAllBtn');
     const toggleAllLabel = document.getElementById('toggleAllLabel');
-    const browserSelect = document.getElementById('browserSelect');
-    const optionsSelect = document.getElementById('optionsSelect');
-    const searchInput = document.getElementById('searchInput');
+    const browserSelect = document.getElementById('browserSelect') as HTMLSelectElement | null;
+    const optionsSelect = document.getElementById('optionsSelect') as HTMLSelectElement | null;
+    const searchInput = document.getElementById('searchInput') as HTMLInputElement | null;
     const copyBtn = document.getElementById('copyCommandBtn');
 
     if (
@@ -643,7 +678,7 @@ function renderBrowserExtensionsGenerator(items) {
     }
 
     const state = {
-        selected: new Set(),
+        selected: new Set<string>(),
         searchQuery: '',
         allCollapsed: false,
         browser: 'both',
@@ -700,13 +735,11 @@ function renderBrowserExtensionsGenerator(items) {
                 icon.height = 18;
                 icon.alt = `${ext.name} icon`;
                 icon.src = getBrowserExtensionIconPath(ext.id);
-                icon.addEventListener('error', () => {
-                    icon.style.visibility = 'hidden';
-                });
+                icon.addEventListener('error', () => { icon.style.visibility = 'hidden'; });
 
                 label.dataset.search = `${ext.name} ${ext.id}`.toLowerCase();
-                label.dataset.firefoxSlug = ext.firefox_slug || '';
-                label.dataset.chromiumId = ext.chromium_id || '';
+                label.dataset.firefoxSlug = ext.firefox_slug ?? '';
+                label.dataset.chromiumId = ext.chromium_id ?? '';
 
                 input.addEventListener('change', () => {
                     if (input.checked) {
@@ -742,27 +775,27 @@ function renderBrowserExtensionsGenerator(items) {
         container.appendChild(section);
     });
 
-    function getAllExtensionCheckboxes() {
-        return Array.from(container.querySelectorAll('.ext-item input[type="checkbox"]'));
+    function getAllExtensionCheckboxes(): HTMLInputElement[] {
+        return Array.from(container!.querySelectorAll<HTMLInputElement>('.ext-item input[type="checkbox"]'));
     }
 
-    function getVisibleExtensionCheckboxes() {
+    function getVisibleExtensionCheckboxes(): HTMLInputElement[] {
         return getAllExtensionCheckboxes().filter((checkbox) => {
-            const label = checkbox.closest('.ext-item');
-            return label && label.style.display !== 'none';
+            const lbl = checkbox.closest<HTMLElement>('.ext-item');
+            return lbl && lbl.style.display !== 'none';
         });
     }
 
-    function updateLinks() {
+    function updateLinks(): void {
         const selectedIds = Array.from(state.selected).sort((a, b) => a.localeCompare(b));
         if (selectedIds.length === 0) {
-            commandTarget.textContent = 'Select extensions to generate install links...';
+            commandTarget!.textContent = 'Select extensions to generate install links...';
             if (commandFooter) commandFooter.hidden = true;
             return;
         }
 
         const selectedItems = items.filter((ext) => state.selected.has(ext.id));
-        const lines = [];
+        const lines: string[] = [];
 
         selectedItems
             .slice()
@@ -779,68 +812,61 @@ function renderBrowserExtensionsGenerator(items) {
                 }
             });
 
-        commandTarget.textContent = lines.length > 0
+        commandTarget!.textContent = lines.length > 0
             ? lines.join('\n')
             : 'No store links available for selected browser.';
         if (commandFooter) commandFooter.hidden = false;
     }
 
-    function applyFilters() {
-        const labels = container.querySelectorAll('.ext-item');
-        labels.forEach((label) => {
-            const matchesSearch = label.dataset.search.includes(state.searchQuery);
+    function applyFilters(): void {
+        container!.querySelectorAll<HTMLElement>('.ext-item').forEach((lbl) => {
+            const matchesSearch = (lbl.dataset.search ?? '').includes(state.searchQuery);
             const browser = state.browser;
             let matchesBrowser = true;
             if (browser === 'firefox') {
-                matchesBrowser = label.dataset.firefoxSlug !== '';
+                matchesBrowser = (lbl.dataset.firefoxSlug ?? '') !== '';
             } else if (browser === 'chromium') {
-                matchesBrowser = label.dataset.chromiumId !== '';
+                matchesBrowser = (lbl.dataset.chromiumId ?? '') !== '';
             }
-            label.style.display = matchesSearch && matchesBrowser ? '' : 'none';
+            lbl.style.display = matchesSearch && matchesBrowser ? '' : 'none';
         });
     }
 
-    function updateSelectAllState() {
+    function updateSelectAllState(): void {
         const visibleBoxes = getVisibleExtensionCheckboxes();
         const checkedCount = visibleBoxes.filter((el) => el.checked).length;
         const totalCount = visibleBoxes.length;
 
         if (totalCount === 0 || checkedCount === 0) {
-            selectAll.checked = false;
-            selectAll.indeterminate = false;
-            selectAllLabel.textContent = 'Select';
+            selectAll!.checked = false;
+            selectAll!.indeterminate = false;
+            selectAllLabel!.textContent = 'Select';
             return;
         }
-
         if (checkedCount === totalCount) {
-            selectAll.checked = true;
-            selectAll.indeterminate = false;
-            selectAllLabel.textContent = 'Deselect';
+            selectAll!.checked = true;
+            selectAll!.indeterminate = false;
+            selectAllLabel!.textContent = 'Deselect';
             return;
         }
-
-        selectAll.checked = false;
-        selectAll.indeterminate = true;
-        selectAllLabel.textContent = 'Selected';
+        selectAll!.checked = false;
+        selectAll!.indeterminate = true;
+        selectAllLabel!.textContent = 'Selected';
     }
 
-    function updateGlobalCollapseState() {
-        const sections = Array.from(container.querySelectorAll('.category'));
-        const collapsedCount = sections.filter((section) => section.classList.contains('collapsed')).length;
-
+    function updateGlobalCollapseState(): void {
+        const sections = Array.from(container!.querySelectorAll('.category'));
+        const collapsedCount = sections.filter((s) => s.classList.contains('collapsed')).length;
         state.allCollapsed = sections.length > 0 && collapsedCount === sections.length;
-        toggleAllBtn.classList.toggle('collapsed', state.allCollapsed);
-        toggleAllLabel.textContent = state.allCollapsed ? 'Expand' : 'Collapse';
+        toggleAllBtn!.classList.toggle('collapsed', state.allCollapsed);
+        toggleAllLabel!.textContent = state.allCollapsed ? 'Expand' : 'Collapse';
     }
 
-    function setAllCategoriesCollapsed(shouldCollapse) {
-        const sections = container.querySelectorAll('.category');
-        sections.forEach((section) => {
-            section.classList.toggle('collapsed', shouldCollapse);
-            const header = section.querySelector('.category-header');
-            if (header) {
-                header.setAttribute('aria-expanded', String(!shouldCollapse));
-            }
+    function setAllCategoriesCollapsed(shouldCollapse: boolean): void {
+        container!.querySelectorAll('.category').forEach((s) => {
+            s.classList.toggle('collapsed', shouldCollapse);
+            const hdr = s.querySelector('.category-header');
+            if (hdr) hdr.setAttribute('aria-expanded', String(!shouldCollapse));
         });
         updateGlobalCollapseState();
     }
@@ -848,24 +874,17 @@ function renderBrowserExtensionsGenerator(items) {
     selectAll.addEventListener('change', () => {
         const allBoxes = getVisibleExtensionCheckboxes();
         state.selected.clear();
-
-        getAllExtensionCheckboxes().forEach((checkbox) => {
-            checkbox.checked = false;
-        });
-
+        getAllExtensionCheckboxes().forEach((checkbox) => { checkbox.checked = false; });
         allBoxes.forEach((checkbox) => {
-            checkbox.checked = selectAll.checked;
-            if (selectAll.checked) {
-                state.selected.add(checkbox.value);
-            }
+            checkbox.checked = selectAll!.checked;
+            if (selectAll!.checked) state.selected.add(checkbox.value);
         });
-
         updateLinks();
         updateSelectAllState();
     });
 
     searchInput.addEventListener('input', () => {
-        state.searchQuery = searchInput.value.trim().toLowerCase();
+        state.searchQuery = searchInput!.value.trim().toLowerCase();
         applyFilters();
         updateSelectAllState();
     });
@@ -875,14 +894,14 @@ function renderBrowserExtensionsGenerator(items) {
     });
 
     browserSelect.addEventListener('change', () => {
-        state.browser = browserSelect.value;
+        state.browser = browserSelect!.value;
         applyFilters();
         updateLinks();
         updateSelectAllState();
     });
 
     optionsSelect.addEventListener('change', () => {
-        const action = optionsSelect.value;
+        const action = optionsSelect!.value;
         if (!action) return;
 
         if (action === 'exportPackages') {
@@ -898,23 +917,17 @@ function renderBrowserExtensionsGenerator(items) {
             link.remove();
             URL.revokeObjectURL(url);
         }
-
-        optionsSelect.value = '';
+        optionsSelect!.value = '';
     });
 
     copyBtn.addEventListener('click', async () => {
-        const command = commandTarget.textContent;
-        if (!command || command.startsWith('Select extensions')) {
-            return;
-        }
-
+        const command = commandTarget!.textContent;
+        if (!command || command.startsWith('Select extensions')) return;
         try {
             await navigator.clipboard.writeText(command);
             const original = copyBtn.textContent;
             copyBtn.textContent = 'Copied';
-            setTimeout(() => {
-                copyBtn.textContent = original;
-            }, 1200);
+            setTimeout(() => { copyBtn.textContent = original; }, 1200);
         } catch (error) {
             console.error('Unable to copy links:', error);
         }
@@ -926,13 +939,11 @@ function renderBrowserExtensionsGenerator(items) {
     updateSelectAllState();
 }
 
-export async function loadBrowserExtensionsGenerator() {
+export async function loadBrowserExtensionsGenerator(): Promise<void> {
     try {
         const response = await fetch(getBrowserExtensionsJsonUrl());
-        if (!response.ok) {
-            throw new Error(`Failed to load browser extensions data: ${response.statusText}`);
-        }
-        const data = await response.json();
+        if (!response.ok) throw new Error(`Failed to load browser extensions data: ${response.statusText}`);
+        const data = await response.json() as BrowserExtensionData;
         const items = getBrowserExtensionsFromData(data);
         renderBrowserExtensionsGenerator(items);
     } catch (error) {
@@ -940,7 +951,11 @@ export async function loadBrowserExtensionsGenerator() {
     }
 }
 
-function initSharedPages() {
+// ============================================================================
+// INIT
+// ============================================================================
+
+function initSharedPages(): void {
     if (document.getElementById('extensionsCategories')) {
         loadVscodeExtensionsGenerator();
     }
@@ -957,3 +972,4 @@ if (document.readyState === 'loading') {
 } else {
     initSharedPages();
 }
+

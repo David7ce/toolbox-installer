@@ -30,7 +30,8 @@ export function setupOptionsSelect() {
     if (!optionsSelect) return;
     
     optionsSelect.addEventListener('change', async function(e) {
-        const action = e.target.value;
+        const target = e.target as HTMLSelectElement;
+        const action = target.value;
         
         try {
             if (action === 'loadFavorites') {
@@ -42,10 +43,10 @@ export function setupOptionsSelect() {
             }
         } catch (error) {
             console.error('Error handling option:', error);
-            alert(`Error: ${error.message}`);
+            alert(`Error: ${(error as Error).message}`);
         } finally {
             // Reset select to default option
-            e.target.value = '';
+            target.value = '';
         }
     });
 }
@@ -59,7 +60,8 @@ export function setupFileInput() {
     if (!fileInput) return;
     
     fileInput.addEventListener('change', async function(e) {
-        const file = e.target.files[0];
+        const target = e.target as HTMLInputElement;
+        const file = target.files?.[0];
         
         if (!file) return;
         
@@ -77,10 +79,10 @@ export function setupFileInput() {
             await handleFileImport(file);
         } catch (error) {
             console.error('Error importing file:', error);
-            alert(`Error importing packages: ${error.message}`);
+            alert(`Error importing packages: ${(error as Error).message}`);
         } finally {
             // Reset file input
-            fileInput.value = '';
+            (fileInput as HTMLInputElement).value = '';
         }
     });
 }
@@ -101,7 +103,7 @@ async function handleLoadFavorites() {
         alert(`${result.loadedCount} favorite packages loaded successfully!`);
     } catch (error) {
         console.error('Error loading favorites:', error);
-        throw new Error(`Failed to load favorites: ${error.message}`);
+        throw new Error(`Failed to load favorites: ${(error as Error).message}`);
     }
 }
 
@@ -117,16 +119,16 @@ function handleImportPackages() {
     }
     
     // Reset input to allow re-importing same file
-    fileInput.value = '';
+    (fileInput as HTMLInputElement).value = '';
     fileInput.click();
 }
 
 /**
  * Handle file import after file is selected
  */
-async function handleFileImport(file) {
+async function handleFileImport(file: File) {
     try {
-        const result = await importPackagesFromFile(file);
+        const result = await importPackagesFromFile(file) as { importedCount: number; notFoundCount: number };
         
         // Update UI
         updateAllCategoryCheckboxes();
@@ -141,7 +143,7 @@ async function handleFileImport(file) {
         }
     } catch (error) {
         console.error('Error importing packages:', error);
-        throw new Error(`Failed to import: ${error.message}`);
+        throw new Error(`Failed to import: ${(error as Error).message}`);
     }
 }
 
@@ -154,7 +156,7 @@ async function handleExportPackages() {
         alert('Selected packages exported successfully!');
     } catch (error) {
         console.error('Error exporting packages:', error);
-        throw new Error(`Failed to export: ${error.message}`);
+        throw new Error(`Failed to export: ${(error as Error).message}`);
     }
 }
 
@@ -175,7 +177,7 @@ export async function triggerExport() {
         await handleExportPackages();
     } catch (error) {
         console.error('Error exporting:', error);
-        alert(`Error exporting packages: ${error.message}`);
+        alert(`Error exporting packages: ${(error as Error).message}`);
     }
 }
 
@@ -188,6 +190,6 @@ export async function triggerLoadFavorites() {
         await handleLoadFavorites();
     } catch (error) {
         console.error('Error loading favorites:', error);
-        alert(`Error loading favorites: ${error.message}`);
+        alert(`Error loading favorites: ${(error as Error).message}`);
     }
 }

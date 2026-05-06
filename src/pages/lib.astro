@@ -1,6 +1,7 @@
 ---
 import InstallerLayout from '../layouts/InstallerLayout.astro';
 import CommandFooter from '../components/CommandFooter.astro';
+import PackageControls from '../components/PackageControls.astro';
 ---
 <InstallerLayout
   title="Library Installer"
@@ -18,23 +19,12 @@ import CommandFooter from '../components/CommandFooter.astro';
           <button type="button" class="distro-btn" data-tool="gradle">Gradle (build.gradle)</button>
         </div>
       </div>
-      <div class="page-controls">
-        <div class="page-controls-panel main-controls">
-          <input id="searchInput" class="search-input" type="search" placeholder="Search libraries by name" />
-          <label class="select-all-control">
-            <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox" />
-            <span id="selectAllLabel">Select</span>
-          </label>
-          <button type="button" class="toggle-all-btn" id="toggleAllBtn" title="Collapse/Expand all categories">
-            <span id="toggleAllIcon">▼</span>
-            <span id="toggleAllLabel">Collapse</span>
-          </button>
-          <select id="optionsSelect" class="options-select">
-            <option value="" hidden selected>⚙️ Options</option>
-            <option value="exportPackages">📤 Export Libraries (JSON)</option>
-          </select>
-        </div>
-      </div>
+      <PackageControls searchPlaceholder="Search libraries by name" showFossToggle={false} showFileInput={false}>
+        <select id="optionsSelect" class="options-select">
+          <option value="" hidden selected>⚙️ Options</option>
+          <option value="exportPackages">📤 Export Libraries (JSON)</option>
+        </select>
+      </PackageControls>
     </div>
     <div id="libContainer" class="package-container columns" role="list" aria-label="Library categories"></div>
   </section>

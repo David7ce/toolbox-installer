@@ -20,10 +20,11 @@ export function setupCategoryCheckboxes() {
     const categoryCheckboxes = document.querySelectorAll(`.${CLASS_NAMES.CATEGORY_CHECKBOX}`);
     
     categoryCheckboxes.forEach(categoryCheckbox => {
-        const category = categoryCheckbox.dataset.category;
+        const cb = categoryCheckbox as HTMLInputElement;
+        const category = cb.dataset.category;
         
         // Handle category checkbox click
-        categoryCheckbox.addEventListener('click', function(e) {
+        cb.addEventListener('click', function(this: HTMLInputElement, e) {
             e.stopPropagation();
             
             const packageCheckboxes = getPackageCheckboxesByCategory(category);
@@ -32,14 +33,14 @@ export function setupCategoryCheckboxes() {
             // Batch DOM updates
             requestAnimationFrame(() => {
                 // Only toggle visible packages (not hidden by FOSS filter)
-                packageCheckboxes.forEach(cb => {
-                    const label = cb.closest('label');
+                packageCheckboxes.forEach(pkgCb => {
+                    const label = pkgCb.closest('label');
                     if (
                         label
                         && !label.classList.contains(CLASS_NAMES.FOSS_HIDDEN)
                         && !label.classList.contains(CLASS_NAMES.SEARCH_HIDDEN)
                     ) {
-                        cb.checked = newState;
+                        (pkgCb as HTMLInputElement).checked = newState;
                     }
                 });
                 
@@ -68,8 +69,8 @@ export function setupCategoryCheckboxes() {
  * Update a category checkbox to reflect its packages' state (checked/unchecked/indeterminate)
  * @param {string} category - The category name
  */
-export function updateCategoryCheckbox(category) {
-    const categoryCheckbox = getCategoryCheckbox(category);
+export function updateCategoryCheckbox(category: string | undefined) {
+    const categoryCheckbox = getCategoryCheckbox(category) as HTMLInputElement | null;
     const packageCheckboxes = getPackageCheckboxesByCategory(category);
     
     if (!categoryCheckbox) return;
@@ -82,7 +83,7 @@ export function updateCategoryCheckbox(category) {
             && !label.classList.contains(CLASS_NAMES.SEARCH_HIDDEN);
     });
     
-    const checkedCount = visibleCheckboxes.filter(cb => cb.checked).length;
+    const checkedCount = visibleCheckboxes.filter(cb => (cb as HTMLInputElement).checked).length;
     const totalCount = visibleCheckboxes.length;
     
     if (checkedCount === 0) {
@@ -105,12 +106,12 @@ export function setupSelectAllCheckbox() {
     
     if (!selectAllCheckbox) return;
     
-    selectAllCheckbox.addEventListener('change', function() {
+    selectAllCheckbox.addEventListener('change', function(this: HTMLInputElement) {
         const isChecked = this.checked;
         const visibleCheckboxes = getVisibleCheckboxes();
         
         // Set all visible package checkboxes to match select all state
-        visibleCheckboxes.forEach(cb => cb.checked = isChecked);
+        visibleCheckboxes.forEach(cb => (cb as HTMLInputElement).checked = isChecked);
         
         // Update category checkboxes and notify
         updateAllCategoryCheckboxes();
@@ -128,20 +129,21 @@ export function updateSelectAllState() {
     
     if (!selectAllCheckbox || !selectAllLabel) return;
     
+    const selectAllInput = selectAllCheckbox as HTMLInputElement;
     const visibleCheckboxes = getVisibleCheckboxes();
-    const checkedCount = visibleCheckboxes.filter(cb => cb.checked).length;
+    const checkedCount = visibleCheckboxes.filter(cb => (cb as HTMLInputElement).checked).length;
     const totalCount = visibleCheckboxes.length;
     
     if (checkedCount === 0) {
-        selectAllCheckbox.indeterminate = false;
-        selectAllCheckbox.checked = false;
+        selectAllInput.indeterminate = false;
+        selectAllInput.checked = false;
         selectAllLabel.textContent = 'Select';
     } else if (checkedCount === totalCount) {
-        selectAllCheckbox.indeterminate = false;
-        selectAllCheckbox.checked = true;
+        selectAllInput.indeterminate = false;
+        selectAllInput.checked = true;
         selectAllLabel.textContent = 'Deselect';
     } else {
-        selectAllCheckbox.indeterminate = true;
+        selectAllInput.indeterminate = true;
         selectAllLabel.textContent = 'Selected';
     }
 }
@@ -152,7 +154,8 @@ export function updateSelectAllState() {
 export function updateAllCategoryCheckboxes() {
     const categoryCheckboxes = document.querySelectorAll(`.${CLASS_NAMES.CATEGORY_CHECKBOX}`);
     categoryCheckboxes.forEach(cb => {
-        const category = cb.dataset.category;
+        const input = cb as HTMLInputElement;
+        const category = input.dataset.category;
         updateCategoryCheckbox(category);
     });
 }
@@ -172,7 +175,7 @@ export function forEachVisibleCheckbox(callback) {
  */
 export function getCheckedVisibleCount() {
     const visibleCheckboxes = getVisibleCheckboxes();
-    return visibleCheckboxes.filter(cb => cb.checked).length;
+    return visibleCheckboxes.filter(cb => (cb as HTMLInputElement).checked).length;
 }
 
 /**

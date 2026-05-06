@@ -1,42 +1,26 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+import CompatLayout from '../layouts/CompatLayout.astro';
 ---
-<BaseLayout title="VS Code Extensions Table" extraStyles={['styles/os-compatibility.css']}>
-  <div class="container">
-    <header class="page-header">
-      <h1>🧩 VS Code Extensions Compatibility</h1>
-      <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">🌙</button>
-    </header>
-    <p class="subtitle">Installed extension list and package identifiers for command generation.</p>
-    <nav class="page-nav" aria-label="Page links">
-      <div class="info-link">
-        <a href={BASE} title="Back to home page">⬅ Back to Home</a>
-      </div>
-      <div class="info-link">
-        <a href={`${BASE}vscode`} title="Go to installer">⚙️ Go to Installer</a>
-      </div>
-    </nav>
-    <div class="page-controls controls">
-      <div class="page-controls-panel">
-        <div class="search-box">
-          <input id="searchInput" type="search" placeholder="Search extension name, package name, or category" />
-        </div>
-      </div>
-      <div class="page-controls-panel">
-        <div class="page-filter-row filter-chips" id="filterChips" role="group" aria-label="Filter by extension category"></div>
-      </div>
-    </div>
-    <p class="page-note">Search, sort, and filter extensions by category with the same software-table pattern used on desktop.</p>
-    <div class="table-container">
-      <table id="packagesTable">
-        <thead id="tableHead"></thead>
-        <tbody id="tableBody"></tbody>
-      </table>
-    </div>
-    <div class="stats" id="statsContainer"></div>
+<CompatLayout
+  title="VS Code Extensions Table"
+  heading="🧩 VS Code Extensions Compatibility"
+  subtitle="Installed extension list and package identifiers for command generation."
+  installerHref="vscode"
+  installerLabel="Go to Installer"
+  searchPlaceholder="Search extension name, package name, or category"
+>
+  <div slot="controls" class="page-controls-panel">
+    <div class="page-filter-row filter-chips" id="filterChips" role="group" aria-label="Filter by extension category"></div>
   </div>
-  <script>
+  <p class="page-note">Search, sort, and filter extensions by category with the same software-table pattern used on desktop.</p>
+  <div class="table-container">
+    <table id="packagesTable">
+      <thead id="tableHead"></thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+  <div class="stats" id="statsContainer"></div>
+  <script slot="script">
     import '/src/scripts/software-table-pages';
   </script>
-</BaseLayout>
+</CompatLayout>

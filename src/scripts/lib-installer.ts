@@ -305,9 +305,9 @@ const LANG_DATA = {
 // STATE
 // ============================================================================
 
-let selectedLang = 'javascript';
+let selectedLang: keyof typeof LANG_DATA = 'javascript';
 let selectedTool = 'maven';
-let selectedLibs = new Set();
+let selectedLibs = new Set<string>();
 
 // ============================================================================
 // RENDER
@@ -333,7 +333,7 @@ function renderJavaToolSelector() {
     if (!selector) return;
     selector.style.display = selectedLang === 'java' ? 'flex' : 'none';
     const btns = selector.querySelectorAll('.distro-btn');
-    btns.forEach(btn => btn.classList.toggle('active', btn.dataset.tool === selectedTool));
+    btns.forEach(btn => btn.classList.toggle('active', (btn as HTMLElement).dataset.tool === selectedTool));
 }
 
 function renderCategories() {
@@ -466,7 +466,7 @@ function updateCommand() {
 function selectLang(lang) {
     selectedLang = lang;
     selectedLibs.clear();
-    const searchInput = document.getElementById('searchInput');
+    const searchInput = document.getElementById('searchInput') as HTMLInputElement | null;
     if (searchInput) searchInput.value = '';
     renderLangButtons();
     renderJavaToolSelector();
@@ -482,7 +482,7 @@ function selectTool(tool) {
 }
 
 function setupSearch() {
-    const input = document.getElementById('searchInput');
+    const input = document.getElementById('searchInput') as HTMLInputElement | null;
     if (!input) return;
     input.addEventListener('input', () => {
         const q = input.value.trim().toLowerCase();
@@ -495,7 +495,7 @@ function setupSearch() {
 }
 
 function setupSelectAll() {
-    const checkbox = document.getElementById('selectAllCheckbox');
+    const checkbox = document.getElementById('selectAllCheckbox') as HTMLInputElement | null;
     const labelSpan = document.getElementById('selectAllLabel');
     if (!checkbox) return;
     checkbox.addEventListener('change', () => {
@@ -511,7 +511,7 @@ function setupSelectAll() {
 }
 
 function updateSelectAllState() {
-    const checkbox = document.getElementById('selectAllCheckbox');
+    const checkbox = document.getElementById('selectAllCheckbox') as HTMLInputElement | null;
     const labelSpan = document.getElementById('selectAllLabel');
     if (!checkbox) return;
     const visible = getVisibleLibCheckboxes();
@@ -521,8 +521,8 @@ function updateSelectAllState() {
     if (labelSpan) labelSpan.textContent = allChecked ? 'Deselect' : 'Select';
 }
 
-function getVisibleLibCheckboxes() {
-    return Array.from(document.querySelectorAll('.lib-item:not(.search-hidden) input[type="checkbox"]'));
+function getVisibleLibCheckboxes(): HTMLInputElement[] {
+    return Array.from(document.querySelectorAll<HTMLInputElement>('.lib-item:not(.search-hidden) input[type="checkbox"]'));
 }
 
 function setupToggleAll() {
@@ -540,7 +540,7 @@ function setupToggleAll() {
 }
 
 function setupOptionsSelect() {
-    const sel = document.getElementById('optionsSelect');
+    const sel = document.getElementById('optionsSelect') as HTMLSelectElement | null;
     if (!sel) return;
     sel.addEventListener('change', () => {
         const val = sel.value;
@@ -590,7 +590,7 @@ function fallbackCopy(text, callback) {
 
 function setupJavaToolButtons() {
     document.querySelectorAll('#javaToolSelector .distro-btn').forEach(btn => {
-        btn.addEventListener('click', () => selectTool(btn.dataset.tool));
+        btn.addEventListener('click', () => selectTool((btn as HTMLElement).dataset.tool ?? ''));
     });
 }
 

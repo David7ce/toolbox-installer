@@ -1,6 +1,7 @@
 ---
 import InstallerLayout from '../layouts/InstallerLayout.astro';
 import CommandFooter from '../components/CommandFooter.astro';
+import PackageControls from '../components/PackageControls.astro';
 ---
 <InstallerLayout
   title="Browser Extensions Installer"
@@ -10,30 +11,17 @@ import CommandFooter from '../components/CommandFooter.astro';
 >
   <section class="package-section">
     <div class="container">
-      <div class="page-controls">
-        <div class="page-controls-panel main-controls">
-          <input id="searchInput" class="search-input" type="search" placeholder="Search by extension name" />
-          <label class="select-all-control">
-            <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox" />
-            <span id="selectAllLabel">Select</span>
-          </label>
-          <button type="button" class="toggle-all-btn" id="toggleAllBtn" title="Collapse/Expand all categories">
-            <span id="toggleAllIcon">▼</span>
-            <span id="toggleAllLabel">Collapse</span>
-          </button>
-          <button type="button" class="foss-toggle-btn" id="fossToggleBtn" title="Show only Free and Open Source Software">🌿 FOSS</button>
-          <select id="browserSelect" class="options-select">
-            <option value="both">🌐 Both browsers</option>
-            <option value="firefox">🦊 Firefox</option>
-            <option value="chromium">🔵 Chromium</option>
-          </select>
-          <select id="optionsSelect" class="options-select">
-            <option value="" hidden selected>⚙️ Options</option>
-            <option value="exportPackages">📤 Export Extensions (JSON)</option>
-          </select>
-        </div>
-        <input type="file" id="fileInput" accept=".json" style="display: none;" />
-      </div>
+      <PackageControls searchPlaceholder="Search by extension name" showFileInput={false}>
+        <select id="browserSelect" class="options-select">
+          <option value="both">🌐 Both browsers</option>
+          <option value="firefox">🦊 Firefox</option>
+          <option value="chromium">🔵 Chromium</option>
+        </select>
+        <select id="optionsSelect" class="options-select">
+          <option value="" hidden selected>⚙️ Options</option>
+          <option value="exportPackages">📤 Export Extensions (JSON)</option>
+        </select>
+      </PackageControls>
     </div>
     <div id="browserExtensionsCategories" class="package-container columns"></div>
   </section>

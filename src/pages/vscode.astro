@@ -1,6 +1,7 @@
 ---
 import InstallerLayout from '../layouts/InstallerLayout.astro';
 import CommandFooter from '../components/CommandFooter.astro';
+import PackageControls from '../components/PackageControls.astro';
 ---
 <InstallerLayout
   title="VS Code Installer"
@@ -10,27 +11,14 @@ import CommandFooter from '../components/CommandFooter.astro';
 >
   <section class="package-section">
     <div class="container">
-      <div class="page-controls">
-        <div class="page-controls-panel main-controls">
-          <input id="searchInput" class="search-input" type="search" placeholder="Search by extension name" />
-          <label class="select-all-control">
-            <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox" />
-            <span id="selectAllLabel">Select</span>
-          </label>
-          <button type="button" class="toggle-all-btn" id="toggleAllBtn" title="Collapse/Expand all categories">
-            <span id="toggleAllIcon">▼</span>
-            <span id="toggleAllLabel">Collapse</span>
-          </button>
-          <button type="button" class="foss-toggle-btn" id="fossToggleBtn" title="Show only Free and Open Source Software">🌿 FOSS</button>
-          <select id="optionsSelect" class="options-select">
-            <option value="" hidden selected>⚙️ Options</option>
-            <option value="loadFavorites">✨ My Favorites</option>
-            <option value="importPackages">📥 Import Extensions (JSON)</option>
-            <option value="exportPackages">📤 Export Extensions (JSON)</option>
-          </select>
-        </div>
-        <input type="file" id="fileInput" accept=".json" style="display: none;" />
-      </div>
+      <PackageControls searchPlaceholder="Search by extension name">
+        <select id="optionsSelect" class="options-select">
+          <option value="" hidden selected>⚙️ Options</option>
+          <option value="loadFavorites">✨ My Favorites</option>
+          <option value="importPackages">📥 Import Extensions (JSON)</option>
+          <option value="exportPackages">📤 Export Extensions (JSON)</option>
+        </select>
+      </PackageControls>
     </div>
     <div id="extensionsCategories" class="package-container columns"></div>
   </section>
