@@ -54,6 +54,24 @@
                         <button type="button" class="distro-btn" data-tool="gradle">Gradle (build.gradle)</button>
                     </div>
                 </div>
+
+                <div class="page-controls">
+                    <div class="page-controls-panel main-controls">
+                        <input id="searchInput" class="search-input" type="search" placeholder="Search libraries by name">
+                        <label class="select-all-control">
+                            <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox">
+                            <span id="selectAllLabel">Select</span>
+                        </label>
+                        <button type="button" class="toggle-all-btn" id="toggleAllBtn" title="Collapse/Expand all categories">
+                            <span id="toggleAllIcon">▼</span>
+                            <span id="toggleAllLabel">Collapse</span>
+                        </button>
+                        <select id="optionsSelect" class="options-select">
+                            <option value="" hidden selected>⚙️ Options</option>
+                            <option value="exportPackages">📤 Export Libraries (JSON)</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 
             <!-- Library category cards — rendered by JS -->

@@ -4,6 +4,7 @@
  */
 
 import { THEME_CONFIG, EVENT_NAMES } from './config.js';
+import { createSiteFooter } from './site-footer.js';
 
 let currentTheme = null;
 let isInitialized = false;
@@ -131,7 +132,8 @@ function setupToggleButton() {
 
 // Auto-initialize when module loads (if DOM is ready)
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTheme);
+    document.addEventListener('DOMContentLoaded', () => { initTheme(); createSiteFooter(); });
 } else {
     initTheme();
+    createSiteFooter();
 }

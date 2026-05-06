@@ -380,6 +380,7 @@ function renderCategories() {
             checkbox.addEventListener('change', () => {
                 if (checkbox.checked) selectedLibs.add(lib.name);
                 else selectedLibs.delete(lib.name);
+                updateSelectAllState();
                 updateCommand();
             });
 
@@ -467,9 +468,12 @@ function updateCommand() {
 function selectLang(lang) {
     selectedLang = lang;
     selectedLibs.clear();
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) searchInput.value = '';
     renderLangButtons();
     renderJavaToolSelector();
     renderCategories();
+    updateSelectAllState();
     updateCommand();
 }
 
@@ -477,6 +481,84 @@ function selectTool(tool) {
     selectedTool = tool;
     renderJavaToolSelector();
     updateCommand();
+}
+
+function setupSearch() {
+    const input = document.getElementById('searchInput');
+    if (!input) return;
+    input.addEventListener('input', () => {
+        const q = input.value.trim().toLowerCase();
+        document.querySelectorAll('.lib-item').forEach(label => {
+            const name = label.querySelector('.lib-name')?.textContent?.toLowerCase() ?? '';
+            label.classList.toggle('search-hidden', q !== '' && !name.includes(q));
+        });
+        updateSelectAllState();
+    });
+}
+
+function setupSelectAll() {
+    const checkbox = document.getElementById('selectAllCheckbox');
+    const labelSpan = document.getElementById('selectAllLabel');
+    if (!checkbox) return;
+    checkbox.addEventListener('change', () => {
+        const visible = getVisibleLibCheckboxes();
+        visible.forEach(cb => {
+            cb.checked = checkbox.checked;
+            if (cb.checked) selectedLibs.add(cb.value);
+            else selectedLibs.delete(cb.value);
+        });
+        if (labelSpan) labelSpan.textContent = checkbox.checked ? 'Deselect' : 'Select';
+        updateCommand();
+    });
+}
+
+function updateSelectAllState() {
+    const checkbox = document.getElementById('selectAllCheckbox');
+    const labelSpan = document.getElementById('selectAllLabel');
+    if (!checkbox) return;
+    const visible = getVisibleLibCheckboxes();
+    const allChecked = visible.length > 0 && visible.every(cb => cb.checked);
+    checkbox.checked = allChecked;
+    checkbox.indeterminate = !allChecked && visible.some(cb => cb.checked);
+    if (labelSpan) labelSpan.textContent = allChecked ? 'Deselect' : 'Select';
+}
+
+function getVisibleLibCheckboxes() {
+    return Array.from(document.querySelectorAll('.lib-item:not(.search-hidden) input[type="checkbox"]'));
+}
+
+function setupToggleAll() {
+    const btn = document.getElementById('toggleAllBtn');
+    const icon = document.getElementById('toggleAllIcon');
+    const label = document.getElementById('toggleAllLabel');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        const columns = document.querySelectorAll('#libContainer .column');
+        const anyExpanded = Array.from(columns).some(col => !col.classList.contains('collapsed'));
+        columns.forEach(col => col.classList.toggle('collapsed', anyExpanded));
+        if (icon) icon.style.transform = anyExpanded ? 'rotate(-90deg)' : '';
+        if (label) label.textContent = anyExpanded ? 'Expand' : 'Collapse';
+    });
+}
+
+function setupOptionsSelect() {
+    const sel = document.getElementById('optionsSelect');
+    if (!sel) return;
+    sel.addEventListener('change', () => {
+        const val = sel.value;
+        sel.value = '';
+        if (val === 'exportPackages') exportLibraries();
+    });
+}
+
+function exportLibraries() {
+    const data = { language: selectedLang, libraries: Array.from(selectedLibs) };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${selectedLang}-libraries.json`;
+    a.click();
+    URL.revokeObjectURL(a.href);
 }
 
 function setupCopyButton() {
@@ -531,4 +613,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCommand();
     setupCopyButton();
     setupJavaToolButtons();
+    setupSearch();
+    setupSelectAll();
+    setupToggleAll();
+    setupOptionsSelect();
 });
