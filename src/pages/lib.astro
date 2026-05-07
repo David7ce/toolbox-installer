@@ -20,6 +20,10 @@ import PackageControls from '../components/PackageControls.astro';
         </div>
       </div>
       <PackageControls searchPlaceholder="Search libraries by name" showFossToggle={false} showFileInput={false}>
+        <button type="button" class="toggle-all-btn" id="internalToggleBtn" title="Show or hide internal libraries">
+          <span>🧪</span>
+          <span id="internalToggleLabel">Show internal</span>
+        </button>
         <select id="optionsSelect" class="options-select">
           <option value="" hidden selected>⚙️ Options</option>
           <option value="exportPackages">📤 Export Libraries (JSON)</option>
@@ -30,6 +34,6 @@ import PackageControls from '../components/PackageControls.astro';
   </section>
   <CommandFooter />
   <script>
-    import '/src/scripts/lib-installer';
+    import '../scripts/lib-installer';
   </script>
 </InstallerLayout>

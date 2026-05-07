@@ -7,41 +7,29 @@
 // DATA
 // ============================================================================
 
+import { BASE_LIB_CATEGORIES, CATEGORY_ICONS } from './lib-categories';
+
 // CDN base URLs
-const SIMPLE_ICONS_CDN = 'https://cdn.simpleicons.org';
+const DASHBOARD_ICONS_CDN = 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg';
 const LUCIDE_CDN = 'https://cdn.jsdelivr.net/npm/lucide-static@latest/icons';
 
-// Category icons (Lucide)
-const CATEGORY_ICONS: Record<string, string> = {
-    'Backend Framework': 'server',
-    'HTTP Client': 'globe',
-    'ORM / Database': 'database',
-    'Testing': 'flask-conical',
-    'Logging': 'scroll-text',
-    'Validation': 'shield-check',
-    'Auth / Security': 'lock-keyhole',
-    // Frontend categories
-    'UI Framework': 'layout-panel-left',
-    'Meta-Framework': 'layers',
-    'State Management': 'git-branch',
-    'Data Fetching': 'refresh-cw',
-    'Styling': 'palette',
-    'UI Components': 'component',
-    'Build Tools': 'wrench',
-};
-
-// Language icons (Simple Icons slugs)
+// Language icons (Dashboard Icons slugs)
 const LANG_ICONS: Record<string, string> = {
     javascript: 'javascript',
     python: 'python',
-    java: 'java',
-    csharp: 'csharp',
+    java: 'openjdk',
+    csharp: 'dotnet',
     go: 'go',
     rust: 'rust',
     php: 'php',
 };
 
-// Library icons (Simple Icons slugs)
+const LANG_ICON_URLS: Record<string, string> = {
+    java: `${DASHBOARD_ICONS_CDN}/java.svg`,
+    csharp: `${DASHBOARD_ICONS_CDN}/csharp.svg`,
+};
+
+// Library icons (Dashboard Icons slugs)
 // Keys are display names lowercased with all non-alphanumeric chars removed
 const LIB_ICON_SLUGS: Record<string, string> = {
     // Frontend — UI Frameworks
@@ -142,19 +130,20 @@ function getCategoryIconHtml(catName: string): string {
 }
 
 function getLangIconHtml(langKey: string): string {
+    const directUrl = LANG_ICON_URLS[langKey];
     const slug = LANG_ICONS[langKey];
-    const src = slug ? `${SIMPLE_ICONS_CDN}/${slug}` : `${LUCIDE_CDN}/code.svg`;
+    const src = directUrl ?? (slug ? `${DASHBOARD_ICONS_CDN}/${slug}.svg` : `${LUCIDE_CDN}/code.svg`);
     return `<img class="lang-icon" src="${src}" alt="" width="16" height="16" aria-hidden="true">`;
 }
 
 function getLibIconHtml(libName: string): string {
     const key = libName.toLowerCase().replace(/[^a-z0-9]/g, '');
     const slug = LIB_ICON_SLUGS[key] ?? LIB_ICON_SLUGS[key.split(/[-_]/)[0]];
-    const src = slug ? `${SIMPLE_ICONS_CDN}/${slug}` : `${LUCIDE_CDN}/package.svg`;
+    const src = slug ? `${DASHBOARD_ICONS_CDN}/${slug}.svg` : `${LUCIDE_CDN}/package.svg`;
     return `<img class="lib-icon" src="${src}" alt="" width="16" height="16" aria-hidden="true" onerror="this.src='${LUCIDE_CDN}/package.svg'">`;
 }
 
-type LibEntry = { name: string; display?: string; badges: string[] };
+type LibEntry = { name: string; display?: string; badges: string[]; internal?: boolean };
 type LangEntry = {
     label: string;
     emoji: string;
@@ -171,6 +160,7 @@ let LANG_DATA: LangDataType = {};
 let selectedLang: string = 'javascript';
 let selectedTool = 'maven';
 let selectedLibs = new Set<string>();
+let showInternalLibs = localStorage.getItem('lib-show-internal') === 'true';
 
 // ============================================================================
 // RENDER
@@ -199,13 +189,37 @@ function renderJavaToolSelector() {
     btns.forEach(btn => btn.classList.toggle('active', (btn as HTMLElement).dataset.tool === selectedTool));
 }
 
+function getOrderedCategories(categories: Record<string, LibEntry[]>): Array<[string, LibEntry[]]> {
+    const entries = Object.entries(categories);
+    const baseOrder: Record<string, number> = {};
+    BASE_LIB_CATEGORIES.forEach((name, index) => {
+        baseOrder[name] = index;
+    });
+
+    return entries.sort(([a], [b]) => {
+        const ia = Object.prototype.hasOwnProperty.call(baseOrder, a) ? baseOrder[a] : Number.MAX_SAFE_INTEGER;
+        const ib = Object.prototype.hasOwnProperty.call(baseOrder, b) ? baseOrder[b] : Number.MAX_SAFE_INTEGER;
+        if (ia !== ib) return ia - ib;
+        return a.localeCompare(b);
+    });
+}
+
+function renderInternalToggleLabel() {
+    const label = document.getElementById('internalToggleLabel');
+    if (!label) return;
+    label.textContent = showInternalLibs ? 'Hide internal' : 'Show internal';
+}
+
 function renderCategories() {
     const container = document.getElementById('libContainer');
     if (!container) return;
     const langData = LANG_DATA[selectedLang];
     container.innerHTML = '';
 
-    for (const [catName, libs] of Object.entries(langData.categories)) {
+    for (const [catName, libs] of getOrderedCategories(langData.categories)) {
+        const visibleLibs = libs.filter(lib => showInternalLibs || !lib.internal);
+        if (visibleLibs.length === 0) continue;
+
         const column = document.createElement('div');
         column.className = 'column';
 
@@ -230,9 +244,10 @@ function renderCategories() {
         const content = document.createElement('div');
         content.className = 'category-content';
 
-        for (const lib of libs) {
+        for (const lib of visibleLibs) {
             const label = document.createElement('label');
             label.className = 'lib-item';
+            if (lib.internal) label.classList.add('lib-item-internal');
 
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
@@ -257,6 +272,12 @@ function renderCategories() {
                 const badgeSpan = document.createElement('span');
                 badgeSpan.className = `badge badge-${badge}`;
                 badgeSpan.textContent = badge;
+                badgesDiv.appendChild(badgeSpan);
+            }
+            if (lib.internal) {
+                const badgeSpan = document.createElement('span');
+                badgeSpan.className = 'badge badge-internal';
+                badgeSpan.textContent = 'internal';
                 badgesDiv.appendChild(badgeSpan);
             }
 
@@ -414,6 +435,31 @@ function setupOptionsSelect() {
     });
 }
 
+function setupInternalToggle() {
+    const btn = document.getElementById('internalToggleBtn');
+    if (!btn) return;
+    renderInternalToggleLabel();
+    btn.addEventListener('click', () => {
+        showInternalLibs = !showInternalLibs;
+        localStorage.setItem('lib-show-internal', String(showInternalLibs));
+        if (!showInternalLibs) {
+            const selected = new Set<string>();
+            for (const lang of Object.values(LANG_DATA)) {
+                for (const libs of Object.values(lang.categories)) {
+                    for (const lib of libs) {
+                        if (lib.internal) selected.add(lib.name);
+                    }
+                }
+            }
+            selectedLibs = new Set(Array.from(selectedLibs).filter(lib => !selected.has(lib)));
+        }
+        renderInternalToggleLabel();
+        renderCategories();
+        updateSelectAllState();
+        updateCommand();
+    });
+}
+
 function exportLibraries() {
     const data = { language: selectedLang, libraries: Array.from(selectedLibs) };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -477,4 +523,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupSelectAll();
     setupToggleAll();
     setupOptionsSelect();
+    setupInternalToggle();
 });

@@ -3,24 +3,20 @@
  * Shows equivalent libraries across languages by category.
  */
 
+import { BASE_LIB_CATEGORIES } from './lib-categories';
+
 // ============================================================================
 // DATA
 // ============================================================================
 
 const LANGUAGES = ['JavaScript', 'Python', 'Java', 'C#', 'Go', 'Rust', 'PHP'];
 
-const CATEGORIES = [
-    'Backend Framework',
-    'HTTP Client',
-    'ORM / Database',
-    'Testing',
-    'Logging',
-    'Validation',
-    'Auth / Security',
-];
+const CATEGORIES = [...BASE_LIB_CATEGORIES];
+
+type CompatType = 'included' | 'external';
 
 // type: 'included' = part of stdlib/runtime, 'external' = requires package manager
-const COMPAT_TABLE = {
+const COMPAT_TABLE: Record<string, Record<string, Array<{ name: string; type: CompatType }>>> = {
     'Backend Framework': {
         'JavaScript': [
             { name: 'Express', type: 'external' },
@@ -281,10 +277,21 @@ const COMPAT_TABLE = {
 // BUILD TABLE
 // ============================================================================
 
+let compatVisibility: 'all' | 'external' | 'core' = 'external';
+
+function shouldShowType(type: CompatType): boolean {
+    if (compatVisibility === 'all') return true;
+    if (compatVisibility === 'external') return type === 'external';
+    return type === 'included';
+}
+
 function buildTable() {
     const thead = document.getElementById('tableHead');
     const tbody = document.getElementById('tableBody');
     if (!thead || !tbody) return;
+
+    thead.innerHTML = '';
+    tbody.innerHTML = '';
 
     // Header row
     const headerRow = document.createElement('tr');
@@ -314,14 +321,16 @@ function buildTable() {
         for (const lang of LANGUAGES) {
             const td = document.createElement('td');
             td.className = 'lang-cell';
-            const libs = COMPAT_TABLE[category]?.[lang] ?? [];
+            const libs = (COMPAT_TABLE[category]?.[lang] ?? []).filter(lib => shouldShowType(lib.type));
             for (const lib of libs) {
                 const item = document.createElement('div');
                 item.className = 'compat-lib-item';
                 const nameNode = document.createTextNode(lib.name + '\u00A0');
                 const badge = document.createElement('span');
                 badge.className = `compat-badge compat-badge-${lib.type}`;
-                badge.textContent = lib.type === 'included' ? 'included' : 'external';
+                const isCore = lib.type === 'included';
+                badge.textContent = isCore ? 'core' : 'ext';
+                badge.title = isCore ? 'Included in language/runtime' : 'Requires package manager';
                 item.appendChild(nameNode);
                 item.appendChild(badge);
                 td.appendChild(item);
@@ -336,14 +345,32 @@ function buildTable() {
 // SEARCH
 // ============================================================================
 
+function applySearchFilter() {
+    const input = document.getElementById('searchInput') as HTMLInputElement | null;
+    if (!input) return;
+    const q = input.value.toLowerCase();
+    document.querySelectorAll('#tableBody tr').forEach(row => {
+        (row as HTMLElement).style.display = row.textContent?.toLowerCase().includes(q) ? '' : 'none';
+    });
+}
+
 function setupSearch() {
     const input = document.getElementById('searchInput');
     if (!input) return;
-    input.addEventListener('input', () => {
-        const q = input.value.toLowerCase();
-        document.querySelectorAll('#tableBody tr').forEach(row => {
-            row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
-        });
+    input.addEventListener('input', applySearchFilter);
+}
+
+function setupVisibilityFilter() {
+    const select = document.getElementById('compatVisibilitySelect') as HTMLSelectElement | null;
+    if (!select) return;
+    select.value = compatVisibility;
+    select.addEventListener('change', () => {
+        const value = select.value;
+        if (value === 'all' || value === 'external' || value === 'core') {
+            compatVisibility = value;
+            buildTable();
+            applySearchFilter();
+        }
     });
 }
 
@@ -354,4 +381,5 @@ function setupSearch() {
 export function initLibCompat() {
     buildTable();
     setupSearch();
+    setupVisibilityFilter();
 }

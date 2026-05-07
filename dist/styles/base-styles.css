@@ -2,6 +2,7 @@
    SHARED VARIABLES & RESET
    ========================================================================== */
 :root {
+    color-scheme: light;
     --primary-color: #007bff;
     --primary-hover: #0056b3;
     --text-on-primary: #ffffff;
@@ -64,6 +65,7 @@
 
 /* Dark mode variables */
 [data-theme="dark"] {
+    color-scheme: dark;
     --primary-color: #4a9eff;
     --primary-hover: #7cb7ff;
     --text-on-primary: #0a1624;
@@ -224,19 +226,28 @@ label {
 }
 
 input[type="text"],
-input[type="search"] {
+input[type="search"],
+select {
     width: 100%;
     padding: 10px var(--spacing-sm);
     border: 2px solid var(--border-color);
+    background-color: var(--card-background);
+    color: var(--text-primary);
     border-radius: var(--border-radius);
     font-size: 0.9em;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 input[type="text"]:focus,
-input[type="search"]:focus {
+input[type="search"]:focus,
+select:focus {
     outline: none;
     border-color: var(--primary-color);
+}
+
+option {
+    background-color: var(--card-background);
+    color: var(--text-primary);
 }
 
 /* Info Links */

@@ -11,13 +11,21 @@ import CompatLayout from '../layouts/CompatLayout.astro';
   searchPlaceholder="Search library or category..."
 >
   <div slot="legend" class="legend" aria-label="Type legend">
-    <div class="legend-item">
-      <span class="compat-badge compat-badge-included">included</span>
-      Standard library / runtime (no install needed)
+    <div class="legend-tools">
+      <label for="compatVisibilitySelect" class="compat-filter-label">Libraries:</label>
+      <select id="compatVisibilitySelect" class="compat-visibility-select" aria-label="Filter compatibility by library type">
+        <option value="external" selected>External only</option>
+        <option value="all">All</option>
+        <option value="core">Core only</option>
+      </select>
     </div>
     <div class="legend-item">
-      <span class="compat-badge compat-badge-external">external</span>
-      Requires package manager
+      <span class="compat-badge compat-badge-included" title="Included in language/runtime">core</span>
+      Included in standard library or runtime
+    </div>
+    <div class="legend-item">
+      <span class="compat-badge compat-badge-external" title="Requires package manager">ext</span>
+      External dependency managed by package manager
     </div>
   </div>
   <div class="table-container">
