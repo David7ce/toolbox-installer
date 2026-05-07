@@ -159,8 +159,32 @@ h1 {
 }
 
 .search-box input {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--card-background);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    box-shadow: none;
     padding: 8px var(--spacing-md);
     font-size: 0.85em;
+}
+
+.search-box input::placeholder {
+    color: var(--text-muted);
+    opacity: 1;
+}
+
+.search-box input::-webkit-search-decoration,
+.search-box input::-webkit-search-cancel-button,
+.search-box input::-webkit-search-results-button,
+.search-box input::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+.search-box input:focus {
+    background-color: var(--card-background);
+    color: var(--text-primary);
+    border-color: var(--primary-color);
 }
 
 /* Table Container */

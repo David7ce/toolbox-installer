@@ -166,8 +166,8 @@ const PAGE_CONFIGS = {
         columns: [
             { key: 'category', label: 'Category', sortable: true, headerClass: 'sortable sticky-col category-col', cellClass: 'sticky-col category-col' },
             { key: 'name', label: 'Extension', sortable: true, headerClass: 'sortable sticky-col app-col', cellClass: 'sticky-col app-col' },
-            { key: 'firefoxUrl', label: 'Firefox', sortable: false, renderCell: (item) => createStoreLinkMarkup(item.firefoxUrl, 'Add to Firefox', '🦊') },
-            { key: 'chromiumUrl', label: 'Chromium', sortable: false, renderCell: (item) => createStoreLinkMarkup(item.chromiumUrl, 'Add to Chromium', '🔵') },
+            { key: 'firefoxUrl', label: 'Firefox', sortable: false, renderCell: (item) => createStoreLinkMarkup(item.firefoxUrl, 'Firefox Extension', '🦊') },
+            { key: 'chromiumUrl', label: 'Chromium', sortable: false, renderCell: (item) => createStoreLinkMarkup(item.chromiumUrl, 'Chromium Extension', '🔵') },
         ],
         getStats(filteredItems) {
             const categories = new Set(filteredItems.map((item) => item.category));
